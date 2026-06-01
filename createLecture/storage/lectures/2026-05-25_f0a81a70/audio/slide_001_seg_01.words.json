@@ -1,0 +1,32 @@
+[
+  {
+    "text": "이",
+    "offset_ms": 100.0,
+    "duration_ms": 222.5
+  },
+  {
+    "text": "슬라이드는",
+    "offset_ms": 322.5,
+    "duration_ms": 1112.5
+  },
+  {
+    "text": "딥러닝",
+    "offset_ms": 1435.0,
+    "duration_ms": 667.5
+  },
+  {
+    "text": "기초",
+    "offset_ms": 2102.5,
+    "duration_ms": 445.0
+  },
+  {
+    "text": "강의의",
+    "offset_ms": 2547.5,
+    "duration_ms": 667.5
+  },
+  {
+    "text": "표지입니다.",
+    "offset_ms": 3215.0,
+    "duration_ms": 1335.0
+  }
+]

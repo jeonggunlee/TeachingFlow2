@@ -1,0 +1,97 @@
+[
+  {
+    "text": "첫",
+    "offset_ms": 100.0,
+    "duration_ms": 190.6
+  },
+  {
+    "text": "번째로",
+    "offset_ms": 290.6,
+    "duration_ms": 571.9
+  },
+  {
+    "text": "머신러닝은",
+    "offset_ms": 862.5,
+    "duration_ms": 953.1
+  },
+  {
+    "text": "데이터로부터",
+    "offset_ms": 1815.6,
+    "duration_ms": 1143.8
+  },
+  {
+    "text": "패턴을",
+    "offset_ms": 2959.4,
+    "duration_ms": 571.9
+  },
+  {
+    "text": "학습하는",
+    "offset_ms": 3531.2,
+    "duration_ms": 762.5
+  },
+  {
+    "text": "분야입니다.",
+    "offset_ms": 4293.8,
+    "duration_ms": 1143.8
+  },
+  {
+    "text": "ML",
+    "offset_ms": 5387.5,
+    "duration_ms": 288.7
+  },
+  {
+    "text": "또는",
+    "offset_ms": 5676.2,
+    "duration_ms": 288.7
+  },
+  {
+    "text": "Statistical",
+    "offset_ms": 5965.0,
+    "duration_ms": 1588.0
+  },
+  {
+    "text": "Learning이라고도",
+    "offset_ms": 7552.9,
+    "duration_ms": 1732.4
+  },
+  {
+    "text": "불리며,",
+    "offset_ms": 9285.3,
+    "duration_ms": 577.5
+  },
+  {
+    "text": "AI의",
+    "offset_ms": 9862.7,
+    "duration_ms": 433.1
+  },
+  {
+    "text": "가장",
+    "offset_ms": 10295.8,
+    "duration_ms": 288.7
+  },
+  {
+    "text": "핵심적인",
+    "offset_ms": 10584.6,
+    "duration_ms": 577.5
+  },
+  {
+    "text": "기반",
+    "offset_ms": 11162.0,
+    "duration_ms": 288.7
+  },
+  {
+    "text": "기술",
+    "offset_ms": 11450.7,
+    "duration_ms": 288.7
+  },
+  {
+    "text": "중",
+    "offset_ms": 11739.5,
+    "duration_ms": 144.4
+  },
+  {
+    "text": "하나입니다.",
+    "offset_ms": 11883.8,
+    "duration_ms": 866.2
+  }
+]

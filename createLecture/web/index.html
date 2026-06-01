@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HALLYM EDUTECH — AI 강의 생성</title>
+  <link rel="stylesheet" href="/css/common.css" />
+  <style>
+    /* ── 진행바 ─────────────────────────────────── */
+    .progress-wrap { margin-top: 20px; }
+    .progress-label {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 8px;
+      min-height: 1.4em;
+    }
+    .progress-track {
+      height: 10px;
+      background: #1e293b;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      background: var(--accent);
+      border-radius: 999px;
+      transition: width 0.4s ease;
+    }
+    .progress-pct {
+      font-size: 12px;
+      color: var(--muted);
+      text-align: right;
+      margin-top: 4px;
+    }
+
+    /* ── CQI 입력 ────────────────────────────────── */
+    .cqi-card { margin-top: 16px; flex-direction: column; align-items: stretch; gap: 10px; }
+    .cqi-header { display: flex; flex-direction: column; gap: 4px; }
+    .cqi-label { font-size: 14px; font-weight: 600; color: var(--text); cursor: default; }
+    .cqi-hint { font-size: 12px; color: var(--muted); }
+    .cqi-textarea {
+      width: 100%;
+      background: #0b1220;
+      border: 1px solid #334155;
+      border-radius: 8px;
+      padding: 12px;
+      color: var(--text);
+      font-size: 14px;
+      line-height: 1.6;
+      resize: vertical;
+      font-family: inherit;
+    }
+    .cqi-textarea:focus { outline: none; border-color: var(--accent); }
+    .cqi-textarea::placeholder { color: var(--muted); }
+
+    /* ── 모드 선택 탭 ───────────────────────────── */
+    .mode-tabs {
+      display: flex;
+      gap: 4px;
+      margin: 24px 0 16px;
+      padding: 4px;
+      background: #0b1220;
+      border: 1px solid #1e293b;
+      border-radius: 10px;
+    }
+    .mode-tab {
+      flex: 1;
+      background: transparent;
+      border: 0;
+      padding: 12px 14px;
+      border-radius: 8px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s;
+    }
+    .mode-tab:hover { color: var(--text); background: rgba(56,189,248,0.06); }
+    .mode-tab.active {
+      background: var(--accent-strong);
+      color: white;
+    }
+    .mode-tab.active:hover { background: var(--accent); }
+    .mode-panel[hidden] { display: none; }
+
+    /* ── 프롬프트 입력 카드 ─────────────────────── */
+    .prompt-card { flex-direction: column; align-items: stretch; gap: 12px; }
+    .prompt-header { display: flex; flex-direction: column; gap: 4px; }
+    .prompt-label { font-size: 14px; font-weight: 600; color: var(--text); }
+    .prompt-hint { font-size: 12px; color: var(--muted); line-height: 1.5; }
+
+    /* CQI 입력 소스 선택 (학습 분석 가져오기 + 파일 업로드) */
+    .cqi-source-row {
+      display: flex;
+      align-items: stretch;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .cqi-fetch-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(56,189,248,.12);
+      border: 1px solid rgba(56,189,248,.5);
+      color: #93c5fd;
+      padding: 10px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 600;
+      transition: background .15s, color .15s, border-color .15s;
+    }
+    .cqi-fetch-btn:hover {
+      background: rgba(56,189,248,.22);
+      color: #fff;
+      border-color: var(--accent);
+    }
+    .cqi-source-divider {
+      display: flex;
+      align-items: center;
+      color: var(--muted);
+      font-size: 12px;
+      padding: 0 4px;
+    }
+    .cqi-file-label-sm {
+      flex: 1;
+      min-width: 220px;
+      padding: 10px 14px !important;
+      font-size: 13px !important;
+    }
+
+    /* CQI 보고서 모달 */
+    .cqi-modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.65);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+    .cqi-modal {
+      background: #0b1220;
+      border: 1px solid #1e293b;
+      border-radius: 12px;
+      width: min(640px, 92vw);
+      max-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .cqi-modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 18px;
+      border-bottom: 1px solid #1e293b;
+      background: #080e1a;
+    }
+    .cqi-modal-title {
+      font-size: 15px;
+      font-weight: 700;
+    }
+    .cqi-modal-close {
+      background: transparent;
+      border: 1px solid #334155;
+      color: var(--muted);
+      width: 30px;
+      height: 30px;
+      border-radius: 6px;
+      cursor: pointer;
+      padding: 0;
+    }
+    .cqi-modal-close:hover { border-color: var(--accent); color: var(--accent); }
+    .cqi-modal-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 18px;
+      border-bottom: 1px solid #1e293b;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .cqi-modal-toggle {
+      background: transparent;
+      border: 1px solid #334155;
+      color: var(--muted);
+      padding: 5px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 12px;
+    }
+    .cqi-modal-toggle:hover { border-color: var(--accent); color: var(--accent); }
+    .cqi-modal-list {
+      padding: 12px 18px;
+      overflow-y: auto;
+      flex: 1;
+    }
+    .cqi-report-card {
+      background: var(--panel);
+      border: 1px solid #1e293b;
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: border-color .15s, background .15s;
+    }
+    .cqi-report-card:hover {
+      border-color: var(--accent);
+      background: rgba(56,189,248,.05);
+    }
+    .cqi-report-card.disabled {
+      cursor: not-allowed;
+      opacity: 0.55;
+    }
+    .cqi-report-card.disabled:hover { border-color: #1e293b; background: var(--panel); }
+    .cqi-report-title {
+      font-size: 14px;
+      font-weight: 600;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .cqi-report-meta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 6px;
+      font-size: 11.5px;
+      color: var(--muted);
+      flex-wrap: wrap;
+    }
+    .cqi-status-badge {
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 10.5px;
+      font-weight: 700;
+    }
+    .cqi-status-done { background: rgba(34,197,94,.15); color: #86efac; border: 1px solid rgba(34,197,94,.3); }
+    .cqi-status-pending,
+    .cqi-status-processing { background: rgba(251,191,36,.12); color: #fcd34d; border: 1px solid rgba(251,191,36,.3); }
+    .cqi-status-error { background: rgba(239,68,68,.12); color: #fca5a5; border: 1px solid rgba(239,68,68,.3); }
+
+    /* 프롬프트 .txt 파일 업로드 옵션 */
+    .prompt-file-row {
+      display: flex;
+      align-items: stretch;
+      gap: 8px;
+    }
+    .prompt-file-label {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #0b1220;
+      border: 1px dashed #334155;
+      border-radius: 8px;
+      padding: 10px 14px;
+      cursor: pointer;
+      color: var(--muted);
+      font-size: 13px;
+      transition: border-color .15s, color .15s, background .15s;
+    }
+    .prompt-file-label:hover {
+      border-color: var(--accent);
+      color: var(--text);
+      background: rgba(56,189,248,.04);
+    }
+    .prompt-file-label.has-file {
+      border-style: solid;
+      border-color: var(--accent);
+      color: var(--accent);
+      background: rgba(56,189,248,.06);
+    }
+    .prompt-file-icon { font-size: 16px; }
+    .prompt-file-clear {
+      background: transparent;
+      border: 1px solid #334155;
+      color: var(--muted);
+      padding: 0 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 13px;
+    }
+    .prompt-file-clear:hover { border-color: var(--accent); color: var(--accent); }
+    .prompt-textarea {
+      width: 100%;
+      background: #0b1220;
+      border: 1px solid #334155;
+      border-radius: 8px;
+      padding: 12px;
+      color: var(--text);
+      font-size: 14px;
+      line-height: 1.6;
+      resize: vertical;
+      font-family: inherit;
+      min-height: 180px;
+    }
+    .prompt-textarea:focus { outline: none; border-color: var(--accent); }
+    .prompt-textarea::placeholder { color: var(--muted); }
+    .prompt-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .prompt-num-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .prompt-num-input {
+      width: 80px;
+      background: #0b1220;
+      border: 1px solid #334155;
+      border-radius: 6px;
+      padding: 8px 10px;
+      color: var(--text);
+      font-size: 14px;
+      font-family: inherit;
+    }
+    .prompt-num-input:focus { outline: none; border-color: var(--accent); }
+    .prompt-num-hint { color: #64748b; font-size: 12px; }
+    .prompt-submit { margin-left: auto; }
+
+    /* ── 포털 컨텍스트 ──────────────────────────── */
+    /* 상단 뒤로가기 바 */
+    .ctx-bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 24px;
+      background: #080e1a;
+      border-bottom: 1px solid #1e293b;
+      font-size: 13px;
+    }
+    .ctx-back {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .ctx-back:hover { text-decoration: underline; }
+    .ctx-sep { color: #334155; }
+    .ctx-bar-label { color: var(--muted); }
+
+    /* 메인 콘텐츠 상단 과목·주차 블록 */
+    .ctx-block {
+      margin-bottom: 28px;
+      padding: 20px 22px;
+      background: linear-gradient(135deg,
+        rgba(56,189,248,.09) 0%, rgba(14,165,233,.04) 100%);
+      border: 1px solid rgba(56,189,248,.22);
+      border-radius: 12px;
+    }
+    .ctx-course-chip {
+      display: inline-block;
+      background: rgba(56,189,248,.15);
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+    }
+    .ctx-week-heading {
+      margin: 0 0 4px;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.3;
+    }
+    .ctx-week-sub {
+      font-size: 13px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <!-- 사이트 네비게이션 -->
+  <nav class="site-nav">
+    <a id="ctx-back" class="nav-portal-back" href="http://localhost:8003">← 포털로 돌아가기</a>
+    <a href="/" class="site-nav-logo" id="nav-logo">HALLYM EDUTECH</a>
+    <span class="site-nav-sep">›</span>
+    <span class="nav-brand">TeachingFlow</span>
+    <span class="site-nav-sep">›</span>
+    <span class="site-nav-page">AI 강의 생성</span>
+  </nav>
+
+  <div class="page-layout">
+    <!-- 업로드 영역 (좌측) -->
+    <main class="upload-col">
+      <!-- 포털에서 진입 시: 과목·주차 표시 블록 -->
+      <div id="ctx-block" class="ctx-block" hidden>
+        <span class="ctx-course-chip" id="ctx-course"></span>
+        <h2 class="ctx-week-heading" id="ctx-week-heading"></h2>
+        <p class="ctx-week-sub" id="ctx-week-sub"></p>
+      </div>
+
+      <h1>AI 기반 강의 생성</h1>
+      <p class="subtitle">PPT 업로드 또는 강의 내용 프롬프트만으로 슬라이드 분석·음성 합성을 거쳐 강의로 변환됩니다.</p>
+
+      <!-- 모드 선택 탭 -->
+      <div class="mode-tabs" role="tablist">
+        <button type="button" id="tab-file" class="mode-tab active" role="tab" aria-selected="true">
+          📂 PPT 파일 업로드
+        </button>
+        <button type="button" id="tab-prompt" class="mode-tab" role="tab" aria-selected="false">
+          ✨ 프롬프트로 자동 생성
+        </button>
+      </div>
+
+      <!-- 모드 1: PPT 업로드 -->
+      <div id="panel-file" class="mode-panel">
+        <form id="upload-form" class="card">
+          <label for="file" class="file-label">
+            <span id="file-name">PPT 파일 선택 (.ppt, .pptx)</span>
+            <input id="file" type="file" name="file" accept=".ppt,.pptx" required hidden />
+          </label>
+          <button id="submit" type="submit">업로드</button>
+        </form>
+      </div>
+
+      <!-- 모드 2: 프롬프트로 자동 생성 -->
+      <div id="panel-prompt" class="mode-panel" hidden>
+        <form id="prompt-form" class="card prompt-card">
+          <div class="prompt-header">
+            <label for="prompt-text" class="prompt-label">강의 내용 프롬프트</label>
+            <span class="prompt-hint">
+              강의 주제·핵심 개념·다루고 싶은 세부 내용을 자유롭게 작성하세요.
+              AI가 슬라이드 구조와 디자인을 자동 설계하여 화이트 톤 미니멀 슬라이드를
+              직접 렌더링(HTML+CSS → PNG)한 뒤, Vision 분석 → TTS로 강의를 만듭니다.
+            </span>
+          </div>
+
+          <!-- 프롬프트 파일 업로드 옵션 (.txt 파일을 textarea로 불러오기) -->
+          <div class="prompt-file-row">
+            <label for="prompt-file" class="prompt-file-label">
+              <span class="prompt-file-icon">📄</span>
+              <span id="prompt-file-name">.txt 파일에서 프롬프트 불러오기 (선택)</span>
+              <input id="prompt-file" type="file" accept=".txt,text/plain" hidden />
+            </label>
+            <button type="button" id="prompt-file-clear" class="prompt-file-clear" hidden title="불러온 파일 해제">✕</button>
+          </div>
+
+          <textarea id="prompt-text" class="prompt-textarea" rows="9" required
+            placeholder="예) 본 강의는 '딥러닝 기초 — 역전파 알고리즘'을 다룬다. 도입부에서 신경망 구조와 손실 함수 개념을 복습한 뒤, 연쇄 법칙을 활용한 그래디언트 계산 과정을 단계별로 설명한다. 간단한 2-layer MLP 예시로 forward/backward 흐름을 시각화하고, 마지막에 vanishing gradient 문제와 활성화 함수 선택의 영향을 정리한다."></textarea>
+          <div class="prompt-row">
+            <div class="prompt-num-wrap">
+              <label for="prompt-num">슬라이드 수 (선택):</label>
+              <input id="prompt-num" type="number" min="3" max="30" class="prompt-num-input" placeholder="자동" />
+              <span class="prompt-num-hint">비워두면 8~14장 자동</span>
+            </div>
+            <button id="prompt-submit" type="submit" class="prompt-submit">PPT 생성 후 강의 만들기</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="card cqi-card" id="cqi-section">
+        <div class="cqi-header">
+          <label for="cqi-text" class="cqi-label">CQI 피드백 (선택)</label>
+          <span class="cqi-hint">
+            이전 강의에서 받은 수강생 피드백을 입력하거나, 학습 분석에서 내보낸 CQI 보고서 JSON을 업로드하면 AI가 스크립트를 자동 개선합니다
+          </span>
+        </div>
+
+        <!-- CQI 입력 옵션: 학습 분석에서 직접 가져오기 (권장) 또는 JSON 파일 업로드 -->
+        <div class="cqi-source-row">
+          <button type="button" id="btn-cqi-fetch" class="cqi-fetch-btn" title="analyzeLecture에서 보고서 가져오기">
+            <span class="prompt-file-icon">📊</span>
+            학습 분석에서 직접 가져오기
+          </button>
+          <span class="cqi-source-divider">또는</span>
+          <label for="cqi-file" class="prompt-file-label cqi-file-label-sm">
+            <span class="prompt-file-icon">📁</span>
+            <span id="cqi-file-name">.json 파일 업로드</span>
+            <input id="cqi-file" type="file" accept=".json,application/json" hidden />
+          </label>
+          <button type="button" id="cqi-file-clear" class="prompt-file-clear" hidden title="불러온 파일 해제">✕</button>
+        </div>
+
+        <textarea id="cqi-text" class="cqi-textarea" rows="4"
+          placeholder="예) 경사하강법(gradient descent)의 직관적인 의미가 제대로 전달되지 않는 것 같습니다. 학습률(learning rate)이 너무 크거나 작을 때 어떤 일이 일어나는지 시각적 예시(공이 굴러가는 비유 등)와 함께 더 구체적으로 설명해 주세요."></textarea>
+      </div>
+
+      <!-- 업로드 결과 / 에러 -->
+      <section id="status" class="status" hidden></section>
+
+      <!-- 진행바 (업로드 성공 후 표시) -->
+      <div id="progress-wrap" class="progress-wrap card" hidden>
+        <div id="progress-label" class="progress-label">처리 준비 중...</div>
+        <div class="progress-track">
+          <div id="progress-fill" class="progress-fill"></div>
+        </div>
+        <div id="progress-pct" class="progress-pct">0%</div>
+      </div>
+    </main>
+
+    <!-- 강의 목록 사이드바 (우측) -->
+    <aside class="lib-sidebar">
+      <div class="lib-sidebar-header">
+        <span class="lib-sidebar-title" id="lib-sidebar-title">생성된 강의 목록</span>
+        <button class="lib-refresh" id="btn-lib-refresh" title="목록 새로고침">↻</button>
+      </div>
+      <div id="library-list" class="lib-sidebar-list">
+        <p class="lib-empty">로딩 중...</p>
+      </div>
+
+      <!-- 최근 업로드 PPT (PPT 탭 활성 시 표시) -->
+      <div class="recent-section" id="recent-ppt" hidden>
+        <div class="lib-sidebar-header recent-header">
+          <span class="lib-sidebar-title">📂 최근 업로드 PPT</span>
+          <button class="lib-refresh" id="btn-recent-ppt-refresh" title="목록 새로고침">↻</button>
+        </div>
+        <div class="lib-sidebar-list recent-list" id="recent-ppt-list">
+          <p class="lib-empty">로딩 중...</p>
+        </div>
+      </div>
+
+      <!-- 최근 프롬프트 (프롬프트 탭 활성 시 표시) -->
+      <div class="recent-section" id="recent-prompt" hidden>
+        <div class="lib-sidebar-header recent-header">
+          <span class="lib-sidebar-title">✨ 최근 프롬프트</span>
+          <button class="lib-refresh" id="btn-recent-prompt-refresh" title="목록 새로고침">↻</button>
+        </div>
+        <div class="lib-sidebar-list recent-list" id="recent-prompt-list">
+          <p class="lib-empty">로딩 중...</p>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- CQI 보고서 선택 모달 -->
+  <div id="cqi-modal" class="cqi-modal-backdrop" hidden>
+    <div class="cqi-modal">
+      <div class="cqi-modal-header">
+        <span class="cqi-modal-title">📊 학습 분석 보고서 선택</span>
+        <button id="cqi-modal-close" class="cqi-modal-close" title="닫기">✕</button>
+      </div>
+      <div class="cqi-modal-toolbar">
+        <span id="cqi-modal-scope">현재 교과목·주차 보고서</span>
+        <button id="cqi-modal-toggle" class="cqi-modal-toggle">전체 보기</button>
+      </div>
+      <div id="cqi-modal-list" class="cqi-modal-list">
+        <p class="lib-empty">로딩 중...</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/upload.js?v=13" defer></script>
+</body>
+</html>

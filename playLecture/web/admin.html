@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>관리자 — HALLYM EDUTECH</title>
+  <link rel="stylesheet" href="/css/common.css?v=2" />
+  <link rel="stylesheet" href="/css/admin.css?v=2" />
+</head>
+<body>
+
+<nav class="site-nav">
+  <span class="site-nav-logo">HALLYM EDUTECH</span>
+  <span class="site-nav-sep">›</span>
+  <span class="site-nav-page">관리자</span>
+  <a href="/" style="margin-left:auto;font-size:12px;color:var(--muted);text-decoration:none;">← 강의 목록</a>
+</nav>
+
+<div class="page-wrap">
+  <div class="page-header">
+    <h1>관리자 패널</h1>
+    <p>강의 ZIP 파일을 등록하고 관리합니다.</p>
+  </div>
+
+  <!-- 로그인 섹션 -->
+  <div id="login-section" class="section">
+    <p class="section-title">관리자 로그인</p>
+    <form id="login-form" class="login-form">
+      <input
+        id="password-input"
+        type="password"
+        placeholder="관리자 비밀번호"
+        autocomplete="current-password"
+        required
+      />
+      <button type="submit">로그인</button>
+      <p id="login-error" class="login-error"></p>
+    </form>
+  </div>
+
+  <!-- 관리자 패널 (로그인 후 표시) -->
+  <div id="admin-section" hidden>
+
+    <!-- 헤더 -->
+    <div style="display:flex;align-items:center;margin-bottom:24px;">
+      <h2 style="margin:0;font-size:16px;color:var(--muted);">관리자 세션</h2>
+      <button id="btn-logout" class="btn-logout">로그아웃</button>
+    </div>
+
+    <!-- ZIP 업로드 -->
+    <div class="section">
+      <p class="section-title">강의 등록 (ZIP 업로드)</p>
+      <form id="upload-form">
+        <div class="upload-form">
+          <label class="file-label" for="zip-input">
+            <span id="zip-label">ZIP 파일 선택</span>
+          </label>
+          <input id="zip-input" type="file" accept=".zip" hidden />
+          <button type="submit">등록</button>
+        </div>
+        <div class="upload-progress-wrap">
+          <div class="upload-progress-bar">
+            <div id="upload-progress-fill" class="upload-progress-fill"></div>
+          </div>
+          <p id="upload-status" class="upload-status"></p>
+        </div>
+      </form>
+    </div>
+
+    <!-- 등록된 강의 목록 -->
+    <div class="section">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
+        <p class="section-title" style="margin:0;">등록된 강의</p>
+        <button
+          onclick="loadLectures()"
+          style="background:transparent;border:1px solid #334155;color:var(--muted);padding:5px 10px;font-size:12px;border-radius:6px;cursor:pointer;"
+        >↻ 새로고침</button>
+      </div>
+      <div id="lecture-list" class="lecture-list">
+        <p class="lecture-list-empty">로딩 중…</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script src="/js/admin.js?v=2" defer></script>
+</body>
+</html>

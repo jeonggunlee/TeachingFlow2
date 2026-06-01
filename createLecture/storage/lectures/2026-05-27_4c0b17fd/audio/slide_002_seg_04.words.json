@@ -1,0 +1,127 @@
+[
+  {
+    "text": "2017년",
+    "offset_ms": 100.0,
+    "duration_ms": 865.4
+  },
+  {
+    "text": "Transformer",
+    "offset_ms": 965.4,
+    "duration_ms": 1903.8
+  },
+  {
+    "text": "구조가",
+    "offset_ms": 2869.2,
+    "duration_ms": 519.2
+  },
+  {
+    "text": "등장하면서",
+    "offset_ms": 3388.5,
+    "duration_ms": 865.4
+  },
+  {
+    "text": "자연어",
+    "offset_ms": 4253.8,
+    "duration_ms": 519.2
+  },
+  {
+    "text": "처리와",
+    "offset_ms": 4773.1,
+    "duration_ms": 519.2
+  },
+  {
+    "text": "컴퓨터",
+    "offset_ms": 5292.3,
+    "duration_ms": 519.2
+  },
+  {
+    "text": "비전",
+    "offset_ms": 5811.5,
+    "duration_ms": 346.2
+  },
+  {
+    "text": "등",
+    "offset_ms": 6157.7,
+    "duration_ms": 173.1
+  },
+  {
+    "text": "전",
+    "offset_ms": 6330.8,
+    "duration_ms": 173.1
+  },
+  {
+    "text": "분야로",
+    "offset_ms": 6503.8,
+    "duration_ms": 519.2
+  },
+  {
+    "text": "딥러닝이",
+    "offset_ms": 7023.1,
+    "duration_ms": 692.3
+  },
+  {
+    "text": "확산되었습니다.",
+    "offset_ms": 7715.4,
+    "duration_ms": 1384.6
+  },
+  {
+    "text": "Transformer는",
+    "offset_ms": 9050.0,
+    "duration_ms": 1922.7
+  },
+  {
+    "text": "현재",
+    "offset_ms": 10972.7,
+    "duration_ms": 320.5
+  },
+  {
+    "text": "GPT,",
+    "offset_ms": 11293.2,
+    "duration_ms": 640.9
+  },
+  {
+    "text": "BERT",
+    "offset_ms": 11934.1,
+    "duration_ms": 640.9
+  },
+  {
+    "text": "등",
+    "offset_ms": 12575.0,
+    "duration_ms": 160.2
+  },
+  {
+    "text": "대형",
+    "offset_ms": 12735.2,
+    "duration_ms": 320.5
+  },
+  {
+    "text": "언어",
+    "offset_ms": 13055.7,
+    "duration_ms": 320.5
+  },
+  {
+    "text": "모델의",
+    "offset_ms": 13376.1,
+    "duration_ms": 480.7
+  },
+  {
+    "text": "핵심",
+    "offset_ms": 13856.8,
+    "duration_ms": 320.5
+  },
+  {
+    "text": "구조로",
+    "offset_ms": 14177.3,
+    "duration_ms": 480.7
+  },
+  {
+    "text": "활용되고",
+    "offset_ms": 14658.0,
+    "duration_ms": 640.9
+  },
+  {
+    "text": "있습니다.",
+    "offset_ms": 15298.9,
+    "duration_ms": 801.1
+  }
+]

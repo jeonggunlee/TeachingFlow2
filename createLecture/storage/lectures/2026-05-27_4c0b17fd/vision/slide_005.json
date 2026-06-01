@@ -1,0 +1,42 @@
+{
+  "slide_index": 5,
+  "title": "단일 뉴런의 선형 결합 수식",
+  "segments": [
+    {
+      "id": "seg_1",
+      "script": "이 슬라이드에서는 단일 뉴런의 핵심 수식인 Σ wixi + b를 살펴봅니다. 이 수식은 각 입력값 xi에 가중치 wi를 곱한 후 모두 합산하고, 편향 b를 더하는 선형 결합을 나타냅니다.",
+      "keyword": "선형 결합 수식",
+      "highlight": {
+        "x_pct": 18,
+        "y_pct": 22,
+        "w_pct": 64,
+        "h_pct": 32
+      },
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_2",
+      "script": "하단 제목에서 확인할 수 있듯이, 이 수식은 '단일 뉴런의 선형 결합 수식'을 표현합니다. 뉴런 하나가 입력 신호들을 어떻게 처리하는지 수학적으로 정의한 것입니다.",
+      "keyword": "단일 뉴런",
+      "highlight": {
+        "x_pct": 25,
+        "y_pct": 57,
+        "w_pct": 50,
+        "h_pct": 9
+      },
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_3",
+      "script": "활성화 함수 f를 적용하면 최종 출력값 y는 y = f(Σ wixi + b)로 결정됩니다. 선형 결합의 결과에 비선형 활성화 함수를 씌움으로써 뉴런이 복잡한 패턴을 학습할 수 있게 됩니다.",
+      "keyword": "활성화 함수",
+      "highlight": {
+        "x_pct": 20,
+        "y_pct": 68,
+        "w_pct": 60,
+        "h_pct": 8
+      },
+      "effect": "highlighter"
+    }
+  ]
+}

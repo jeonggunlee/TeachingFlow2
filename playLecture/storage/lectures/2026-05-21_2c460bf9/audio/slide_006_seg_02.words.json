@@ -1,0 +1,112 @@
+[
+  {
+    "text": "두",
+    "offset_ms": 100.0,
+    "duration_ms": 172.9
+  },
+  {
+    "text": "번째는",
+    "offset_ms": 272.9,
+    "duration_ms": 518.6
+  },
+  {
+    "text": "비지도학습(Unsupervised",
+    "offset_ms": 791.4,
+    "duration_ms": 3111.4
+  },
+  {
+    "text": "Learning)입니다.",
+    "offset_ms": 3902.9,
+    "duration_ms": 2247.1
+  },
+  {
+    "text": "정답",
+    "offset_ms": 6100.0,
+    "duration_ms": 400.0
+  },
+  {
+    "text": "레이블",
+    "offset_ms": 6500.0,
+    "duration_ms": 600.0
+  },
+  {
+    "text": "없이",
+    "offset_ms": 7100.0,
+    "duration_ms": 400.0
+  },
+  {
+    "text": "데이터의",
+    "offset_ms": 7500.0,
+    "duration_ms": 800.0
+  },
+  {
+    "text": "숨겨진",
+    "offset_ms": 8300.0,
+    "duration_ms": 600.0
+  },
+  {
+    "text": "구조를",
+    "offset_ms": 8900.0,
+    "duration_ms": 600.0
+  },
+  {
+    "text": "스스로",
+    "offset_ms": 9500.0,
+    "duration_ms": 600.0
+  },
+  {
+    "text": "발견하는",
+    "offset_ms": 10100.0,
+    "duration_ms": 800.0
+  },
+  {
+    "text": "방식입니다.",
+    "offset_ms": 10900.0,
+    "duration_ms": 1200.0
+  },
+  {
+    "text": "군집화,",
+    "offset_ms": 12100.0,
+    "duration_ms": 996.9
+  },
+  {
+    "text": "차원축소,",
+    "offset_ms": 13096.9,
+    "duration_ms": 1246.1
+  },
+  {
+    "text": "추천",
+    "offset_ms": 14343.0,
+    "duration_ms": 498.4
+  },
+  {
+    "text": "시스템,",
+    "offset_ms": 14841.4,
+    "duration_ms": 996.9
+  },
+  {
+    "text": "이상탐지",
+    "offset_ms": 15838.3,
+    "duration_ms": 996.9
+  },
+  {
+    "text": "등",
+    "offset_ms": 16835.2,
+    "duration_ms": 249.2
+  },
+  {
+    "text": "다양한",
+    "offset_ms": 17084.4,
+    "duration_ms": 747.7
+  },
+  {
+    "text": "분야에",
+    "offset_ms": 17832.0,
+    "duration_ms": 747.7
+  },
+  {
+    "text": "활용됩니다.",
+    "offset_ms": 18579.7,
+    "duration_ms": 1495.3
+  }
+]

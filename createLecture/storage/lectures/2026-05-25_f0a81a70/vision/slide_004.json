@@ -1,0 +1,54 @@
+{
+  "slide_index": 4,
+  "title": "인공신경망의 수학적 표현",
+  "segments": [
+    {
+      "id": "seg_1",
+      "script": "이 슬라이드에서는 인공신경망의 수학적 표현을 순전파와 역전파 두 가지 관점으로 살펴봅니다. 왼쪽 영역은 순전파, 즉 Forward Pass에 대한 내용을 담고 있습니다.",
+      "keyword": "순전파",
+      "highlight": {
+        "x_pct": 5,
+        "y_pct": 18,
+        "w_pct": 45,
+        "h_pct": 65
+      },
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_2",
+      "script": "순전파에서는 먼저 선형 변환 z = Wx + b를 통해 입력값을 변환합니다. 이후 활성화 함수 σ(z)를 적용하여 비선형성을 부여하고, 이를 층별로 반복하여 최종 출력을 산출합니다.",
+      "keyword": "선형 변환",
+      "highlight": {
+        "x_pct": 8,
+        "y_pct": 30,
+        "w_pct": 40,
+        "h_pct": 30
+      },
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_3",
+      "script": "오른쪽 영역은 학습 과정, 즉 역전파(Backpropagation)에 대한 내용입니다. 손실 함수 L로 예측 오차를 정량화하고, 연쇄 법칙을 이용해 가중치에 대한 기울기 ∂L/∂W를 계산합니다.",
+      "keyword": "역전파",
+      "highlight": {
+        "x_pct": 52,
+        "y_pct": 18,
+        "w_pct": 45,
+        "h_pct": 65
+      },
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_4",
+      "script": "마지막으로 경사하강법 공식 W ← W − η∇W L을 통해 가중치를 업데이트합니다. 여기서 η는 학습률로, 가중치가 손실을 최소화하는 방향으로 조금씩 이동하도록 조절합니다.",
+      "keyword": "경사하강법",
+      "highlight": {
+        "x_pct": 55,
+        "y_pct": 53,
+        "w_pct": 38,
+        "h_pct": 12
+      },
+      "effect": "highlighter"
+    }
+  ]
+}

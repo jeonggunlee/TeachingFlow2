@@ -1,0 +1,122 @@
+[
+  {
+    "text": "첫",
+    "offset_ms": 100.0,
+    "duration_ms": 250.0
+  },
+  {
+    "text": "번째",
+    "offset_ms": 350.0,
+    "duration_ms": 500.0
+  },
+  {
+    "text": "쟁점은",
+    "offset_ms": 850.0,
+    "duration_ms": 750.0
+  },
+  {
+    "text": "편향과",
+    "offset_ms": 1600.0,
+    "duration_ms": 750.0
+  },
+  {
+    "text": "공정성입니다.",
+    "offset_ms": 2350.0,
+    "duration_ms": 1750.0
+  },
+  {
+    "text": "학습",
+    "offset_ms": 4050.0,
+    "duration_ms": 363.3
+  },
+  {
+    "text": "데이터에",
+    "offset_ms": 4413.3,
+    "duration_ms": 726.7
+  },
+  {
+    "text": "내재된",
+    "offset_ms": 5140.0,
+    "duration_ms": 545.0
+  },
+  {
+    "text": "차별이",
+    "offset_ms": 5685.0,
+    "duration_ms": 545.0
+  },
+  {
+    "text": "AI의",
+    "offset_ms": 6230.0,
+    "duration_ms": 545.0
+  },
+  {
+    "text": "결과로",
+    "offset_ms": 6775.0,
+    "duration_ms": 545.0
+  },
+  {
+    "text": "그대로",
+    "offset_ms": 7320.0,
+    "duration_ms": 545.0
+  },
+  {
+    "text": "재생산될",
+    "offset_ms": 7865.0,
+    "duration_ms": 726.7
+  },
+  {
+    "text": "수",
+    "offset_ms": 8591.7,
+    "duration_ms": 181.7
+  },
+  {
+    "text": "있다는",
+    "offset_ms": 8773.3,
+    "duration_ms": 545.0
+  },
+  {
+    "text": "점에서,",
+    "offset_ms": 9318.3,
+    "duration_ms": 726.7
+  },
+  {
+    "text": "데이터",
+    "offset_ms": 10045.0,
+    "duration_ms": 545.0
+  },
+  {
+    "text": "수집",
+    "offset_ms": 10590.0,
+    "duration_ms": 363.3
+  },
+  {
+    "text": "단계부터",
+    "offset_ms": 10953.3,
+    "duration_ms": 726.7
+  },
+  {
+    "text": "공정성을",
+    "offset_ms": 11680.0,
+    "duration_ms": 726.7
+  },
+  {
+    "text": "확보하는",
+    "offset_ms": 12406.7,
+    "duration_ms": 726.7
+  },
+  {
+    "text": "것이",
+    "offset_ms": 13133.3,
+    "duration_ms": 363.3
+  },
+  {
+    "text": "매우",
+    "offset_ms": 13496.7,
+    "duration_ms": 363.3
+  },
+  {
+    "text": "중요합니다.",
+    "offset_ms": 13860.0,
+    "duration_ms": 1090.0
+  }
+]

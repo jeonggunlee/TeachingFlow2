@@ -1,0 +1,52 @@
+[
+  {
+    "layout": "title",
+    "title": "딥러닝 기초",
+    "subtitle": "역사·정의·인공신경망 구조와 수학적 표현"
+  },
+  {
+    "layout": "bullets",
+    "title": "딥러닝의 역사와 정의",
+    "bullets": [
+      "1943년 McCulloch & Pitts의 인공 뉴런 모델에서 출발",
+      "1986년 역전파 알고리즘 재조명으로 학습 가능성 입증",
+      "2012년 AlexNet이 ImageNet 대회에서 압도적 성능으로 딥러닝 부흥 촉발",
+      "딥러닝: 다층 신경망을 통해 데이터로부터 계층적 표현을 자동 학습하는 기법"
+    ]
+  },
+  {
+    "layout": "bullets",
+    "title": "인공신경망의 구조",
+    "bullets": [
+      "입력층(Input Layer): 원시 데이터를 네트워크에 전달하는 노드 집합",
+      "은닉층(Hidden Layer): 비선형 변환을 통해 특징을 단계적으로 추출",
+      "출력층(Output Layer): 최종 예측값 또는 확률 분포를 반환",
+      "활성화 함수(ReLU, Sigmoid 등): 비선형성을 부여하여 표현력 향상"
+    ]
+  },
+  {
+    "layout": "two_col",
+    "title": "인공신경망의 수학적 표현",
+    "left": {
+      "heading": "순전파 (Forward Pass)",
+      "points": [
+        "선형 변환: z = Wx + b",
+        "활성화: a = σ(z)",
+        "층별 반복 적용으로 출력 산출"
+      ]
+    },
+    "right": {
+      "heading": "학습 (Backpropagation)",
+      "points": [
+        "손실 함수 L로 예측 오차 정량화",
+        "연쇄 법칙으로 ∂L/∂W 계산",
+        "경사하강법: W ← W − η∇W L"
+      ]
+    }
+  },
+  {
+    "layout": "closing",
+    "title": "핵심 요약",
+    "subtitle": "딥러닝은 다층 신경망의 수학적 구조 위에서 데이터로부터 스스로 학습합니다."
+  }
+]

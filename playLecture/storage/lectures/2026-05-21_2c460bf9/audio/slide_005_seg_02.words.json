@@ -1,0 +1,152 @@
+[
+  {
+    "text": "다음으로",
+    "offset_ms": 100.0,
+    "duration_ms": 844.4
+  },
+  {
+    "text": "딥러닝에",
+    "offset_ms": 944.4,
+    "duration_ms": 844.4
+  },
+  {
+    "text": "대해",
+    "offset_ms": 1788.9,
+    "duration_ms": 422.2
+  },
+  {
+    "text": "살펴보겠습니다.",
+    "offset_ms": 2211.1,
+    "duration_ms": 1688.9
+  },
+  {
+    "text": "딥러닝은",
+    "offset_ms": 3850.0,
+    "duration_ms": 727.6
+  },
+  {
+    "text": "다층",
+    "offset_ms": 4577.6,
+    "duration_ms": 363.8
+  },
+  {
+    "text": "신경망을",
+    "offset_ms": 4941.4,
+    "duration_ms": 727.6
+  },
+  {
+    "text": "이용하여",
+    "offset_ms": 5669.1,
+    "duration_ms": 727.6
+  },
+  {
+    "text": "데이터의",
+    "offset_ms": 6396.7,
+    "duration_ms": 727.6
+  },
+  {
+    "text": "위계적",
+    "offset_ms": 7124.3,
+    "duration_ms": 545.7
+  },
+  {
+    "text": "표현을",
+    "offset_ms": 7670.1,
+    "duration_ms": 545.7
+  },
+  {
+    "text": "자동으로",
+    "offset_ms": 8215.8,
+    "duration_ms": 727.6
+  },
+  {
+    "text": "학습하는",
+    "offset_ms": 8943.4,
+    "duration_ms": 727.6
+  },
+  {
+    "text": "방식입니다.",
+    "offset_ms": 9671.1,
+    "duration_ms": 1091.4
+  },
+  {
+    "text": "특성을",
+    "offset_ms": 10762.5,
+    "duration_ms": 408.4
+  },
+  {
+    "text": "자동으로",
+    "offset_ms": 11170.9,
+    "duration_ms": 544.6
+  },
+  {
+    "text": "추출하는",
+    "offset_ms": 11715.5,
+    "duration_ms": 544.6
+  },
+  {
+    "text": "representation",
+    "offset_ms": 12260.1,
+    "duration_ms": 1906.0
+  },
+  {
+    "text": "learning이",
+    "offset_ms": 14166.1,
+    "duration_ms": 1225.3
+  },
+  {
+    "text": "가능하며,",
+    "offset_ms": 15391.4,
+    "duration_ms": 680.7
+  },
+  {
+    "text": "CNN,",
+    "offset_ms": 16072.1,
+    "duration_ms": 544.6
+  },
+  {
+    "text": "RNN,",
+    "offset_ms": 16616.7,
+    "duration_ms": 544.6
+  },
+  {
+    "text": "Transformer",
+    "offset_ms": 17161.3,
+    "duration_ms": 1497.6
+  },
+  {
+    "text": "등",
+    "offset_ms": 18658.9,
+    "duration_ms": 136.1
+  },
+  {
+    "text": "다양한",
+    "offset_ms": 18795.0,
+    "duration_ms": 408.4
+  },
+  {
+    "text": "아키텍처가",
+    "offset_ms": 19203.5,
+    "duration_ms": 680.7
+  },
+  {
+    "text": "있지만",
+    "offset_ms": 19884.2,
+    "duration_ms": 408.4
+  },
+  {
+    "text": "블랙박스",
+    "offset_ms": 20292.6,
+    "duration_ms": 544.6
+  },
+  {
+    "text": "문제가",
+    "offset_ms": 20837.2,
+    "duration_ms": 408.4
+  },
+  {
+    "text": "존재합니다.",
+    "offset_ms": 21245.6,
+    "duration_ms": 816.9
+  }
+]

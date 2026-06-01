@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HALLYM EDUTECH — 스크립트 편집</title>
+  <link rel="stylesheet" href="/css/common.css" />
+  <link rel="stylesheet" href="/css/scripts.css?v=2" />
+</head>
+<body>
+  <nav class="site-nav">
+    <a id="btn-portal-back" class="nav-portal-back" href="http://localhost:8003">← 포털로 돌아가기</a>
+    <a href="/" class="site-nav-logo">HALLYM EDUTECH</a>
+    <span class="site-nav-sep">›</span>
+    <span class="nav-brand">TeachingFlow</span>
+    <span class="site-nav-sep">›</span>
+    <span class="site-nav-page">스크립트 편집</span>
+  </nav>
+
+  <header class="top-bar">
+    <div class="top-bar-inner">
+      <div class="top-bar-title">
+        <h1>스크립트 편집</h1>
+        <span id="lecture-info" class="muted-sm"></span>
+      </div>
+      <div id="cqi-badge" class="cqi-badge" hidden>
+        <span class="cqi-icon">✦</span> CQI 반영됨
+      </div>
+    </div>
+  </header>
+
+  <div class="editor-layout">
+    <aside class="slide-list" id="slide-list">
+      <div class="slide-list-header">슬라이드 목록</div>
+      <div id="slide-thumbs"></div>
+    </aside>
+
+    <main class="slide-editor" id="slide-editor">
+      <div class="editor-placeholder">슬라이드를 불러오는 중...</div>
+    </main>
+  </div>
+
+  <footer class="bottom-bar">
+    <div class="bottom-bar-inner">
+      <div class="bottom-left">
+        <a id="btn-back-create" class="btn-secondary btn-back-create" href="/" title="AI 강의 생성 페이지로 돌아가기">
+          ← AI 강의 생성
+        </a>
+        <span id="save-status" class="save-status"></span>
+      </div>
+      <div class="bottom-actions">
+        <button id="btn-save"    class="btn-secondary">저장</button>
+        <button id="btn-rebuild" class="btn-secondary btn-rebuild" hidden title="스크립트 변경 없이 형광펜 위치·효과만 바꿨을 때 사용">
+          🎯 효과만 적용
+        </button>
+        <button id="btn-tts"    class="btn-primary">▶ TTS 음성 생성 시작</button>
+      </div>
+    </div>
+
+    <!-- TTS 진행바 -->
+    <div id="tts-progress" class="tts-progress" hidden>
+      <div id="tts-label" class="progress-label">음성 생성 중...</div>
+      <div class="progress-track">
+        <div id="tts-fill" class="progress-fill"></div>
+      </div>
+      <div id="tts-pct" class="progress-pct">0%</div>
+    </div>
+
+    <!-- 완료 패널 (TTS 또는 rebuild 후 표시) -->
+    <div id="done-panel" class="done-panel" hidden>
+      <span id="done-msg" class="done-msg">✓ 완료!</span>
+      <div class="done-actions">
+        <button id="btn-go-player" class="btn-primary">▶ 플레이어로 이동</button>
+        <button id="btn-keep-edit" class="btn-secondary">✏️ 계속 편집</button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 강조 영역 지정 모달 -->
+  <div id="draw-modal" class="draw-modal" hidden>
+    <div class="draw-modal-backdrop" id="draw-modal-backdrop"></div>
+    <div class="draw-modal-box">
+      <div class="draw-modal-header">
+        <span id="draw-modal-title" class="draw-modal-title"></span>
+        <button id="draw-modal-close" class="draw-modal-close">✕ 닫기</button>
+      </div>
+      <p id="draw-modal-hint" class="draw-modal-hint">
+        슬라이드 위에서 <strong>마우스를 드래그</strong>하여 강조할 영역을 지정하세요
+      </p>
+      <div class="draw-modal-canvas-wrap" id="draw-modal-canvas-wrap">
+        <img id="draw-modal-img" src="" alt="" />
+        <!-- canvas는 JS가 삽입 -->
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/scripts.js?v=9" defer></script>
+</body>
+</html>

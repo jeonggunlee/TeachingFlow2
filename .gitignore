@@ -1,0 +1,47 @@
+# ─── Secrets — NEVER commit ───────────────────────────
+**/.env
+.env
+.env.local
+.env.*.local
+# .env.example 템플릿은 유지
+!**/.env.example
+
+# ─── Databases (수강생 계정·세션 토큰·채팅 등 개인정보) ──
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+*.db-wal
+*.db-shm
+
+# ─── Python ───────────────────────────────────────────
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ─── Node (혹시 모를 경우) ────────────────────────────
+node_modules/
+
+# ─── 로그 / 임시 ──────────────────────────────────────
+*.log
+/tmp/
+
+# ─── OS / 에디터 ──────────────────────────────────────
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# ─── 빌드 산출물 ──────────────────────────────────────
+dist/
+build/

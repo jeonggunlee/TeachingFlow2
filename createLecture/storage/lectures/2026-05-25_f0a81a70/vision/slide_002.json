@@ -1,0 +1,56 @@
+{
+  "slide_index": 2,
+  "title": "딥러닝의 역사와 정의",
+  "segments": [
+    {
+      "id": "seg_1",
+      "script": "딥러닝의 역사는 1943년 McCulloch와 Pitts가 제안한  인공 뉴런 모델에서 시작됩니다. ",
+      "keyword": "인공 뉴런 모델",
+      "highlight": null,
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_6",
+      "script": "이 모델은 인간의 뇌 신경세포를 수학적으로 모사한 최초의 시도로, 현대 딥러닝의 출발점이 되었습니다.",
+      "keyword": "",
+      "highlight": null,
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_2",
+      "script": "1986년에는 역전파 알고리즘이 재조명되면서 다층 신경망의 학습 가능성이 입증되었습니다. 이 사건은 신경망 연구의 중요한 전환점으로, 오차를 역방향으로 전달하여 가중치를 업데이트하는 핵심 원리를 확립했습니다.",
+      "keyword": "역전파 알고리즘",
+      "highlight": {
+        "x_pct": 8.2,
+        "y_pct": 32.8,
+        "w_pct": 46,
+        "h_pct": 5.4
+      },
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_3",
+      "script": "2012년 AlexNet이 ImageNet 대회에서 압도적인 성능을 기록하면서 딥러닝 부흥의 시대가 열렸습니다. 이 사건은 딥러닝이 기존 머신러닝 방법론을 크게 앞지를 수 있음을 전 세계에 증명한 역사적 순간입니다.",
+      "keyword": "AlexNet",
+      "highlight": {
+        "x_pct": 8,
+        "y_pct": 41.2,
+        "w_pct": 63.8,
+        "h_pct": 4.4
+      },
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_4",
+      "script": "딥러닝은 다층 신경망을 통해 데이터로부터 계층적 표현을 자동으로 학습하는 기법으로 정의됩니다. 즉, 사람이 직접 특징을 설계하지 않아도 모델이 스스로 데이터의 패턴과 구조를 학습한다는 점이 핵심입니다.",
+      "keyword": "계층적 표현 학습",
+      "highlight": {
+        "x_pct": 8.4,
+        "y_pct": 48.9,
+        "w_pct": 63.8,
+        "h_pct": 5.4
+      },
+      "effect": "highlighter"
+    }
+  ]
+}

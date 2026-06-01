@@ -1,0 +1,142 @@
+[
+  {
+    "text": "이",
+    "offset_ms": 100.0,
+    "duration_ms": 207.4
+  },
+  {
+    "text": "슬라이드에서는",
+    "offset_ms": 307.4,
+    "duration_ms": 1452.0
+  },
+  {
+    "text": "단일",
+    "offset_ms": 1759.4,
+    "duration_ms": 414.8
+  },
+  {
+    "text": "뉴런의",
+    "offset_ms": 2174.2,
+    "duration_ms": 622.3
+  },
+  {
+    "text": "핵심",
+    "offset_ms": 2796.5,
+    "duration_ms": 414.8
+  },
+  {
+    "text": "수식인",
+    "offset_ms": 3211.3,
+    "duration_ms": 622.3
+  },
+  {
+    "text": "Σ",
+    "offset_ms": 3833.6,
+    "duration_ms": 207.4
+  },
+  {
+    "text": "wixi",
+    "offset_ms": 4041.0,
+    "duration_ms": 829.7
+  },
+  {
+    "text": "+",
+    "offset_ms": 4870.7,
+    "duration_ms": 207.4
+  },
+  {
+    "text": "b를",
+    "offset_ms": 5078.1,
+    "duration_ms": 414.8
+  },
+  {
+    "text": "살펴봅니다.",
+    "offset_ms": 5493.0,
+    "duration_ms": 1244.5
+  },
+  {
+    "text": "이",
+    "offset_ms": 6687.5,
+    "duration_ms": 205.6
+  },
+  {
+    "text": "수식은",
+    "offset_ms": 6893.1,
+    "duration_ms": 616.7
+  },
+  {
+    "text": "각",
+    "offset_ms": 7509.7,
+    "duration_ms": 205.6
+  },
+  {
+    "text": "입력값",
+    "offset_ms": 7715.3,
+    "duration_ms": 616.7
+  },
+  {
+    "text": "xi에",
+    "offset_ms": 8331.9,
+    "duration_ms": 616.7
+  },
+  {
+    "text": "가중치",
+    "offset_ms": 8948.6,
+    "duration_ms": 616.7
+  },
+  {
+    "text": "wi를",
+    "offset_ms": 9565.3,
+    "duration_ms": 616.7
+  },
+  {
+    "text": "곱한",
+    "offset_ms": 10181.9,
+    "duration_ms": 411.1
+  },
+  {
+    "text": "후",
+    "offset_ms": 10593.1,
+    "duration_ms": 205.6
+  },
+  {
+    "text": "모두",
+    "offset_ms": 10798.6,
+    "duration_ms": 411.1
+  },
+  {
+    "text": "합산하고,",
+    "offset_ms": 11209.7,
+    "duration_ms": 1027.8
+  },
+  {
+    "text": "편향",
+    "offset_ms": 12237.5,
+    "duration_ms": 411.1
+  },
+  {
+    "text": "b를",
+    "offset_ms": 12648.6,
+    "duration_ms": 411.1
+  },
+  {
+    "text": "더하는",
+    "offset_ms": 13059.7,
+    "duration_ms": 616.7
+  },
+  {
+    "text": "선형",
+    "offset_ms": 13676.4,
+    "duration_ms": 411.1
+  },
+  {
+    "text": "결합을",
+    "offset_ms": 14087.5,
+    "duration_ms": 616.7
+  },
+  {
+    "text": "나타냅니다.",
+    "offset_ms": 14704.2,
+    "duration_ms": 1233.3
+  }
+]

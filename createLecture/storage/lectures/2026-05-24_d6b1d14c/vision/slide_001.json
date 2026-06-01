@@ -1,0 +1,54 @@
+{
+  "slide_index": 1,
+  "title": "인공지능이란 무엇인가",
+  "segments": [
+    {
+      "id": "seg_1",
+      "script": "이 슬라이드에서는 인공지능의 정의를 살펴봅니다. John McCarthy가 1956년 다트머스 컨퍼런스에서 제시한 정의에 따르면, 인공지능은 인간의 지적 활동인 학습, 추론, 지각, 언어 이해를 기계가 모방하거나 수행하도록 만드는 과학과 공학의 한 분야입니다. 이 정의는 AI 연구의 출발점으로 널리 인용되고 있습니다.",
+      "keyword": "John McCarthy 정의",
+      "highlight": {
+        "x_pct": 2,
+        "y_pct": 18,
+        "w_pct": 45,
+        "h_pct": 45
+      },
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_2",
+      "script": "AI를 정의하는 네 가지 관점을 살펴보겠습니다. 첫째, 인간처럼 사고하는 접근(인지과학), 둘째, 합리적으로 사고하는 접근(논리·추론)이 있습니다. 이 두 관점은 AI의 내부적 사고 방식에 초점을 맞춥니다.",
+      "keyword": "네 가지 관점",
+      "highlight": {
+        "x_pct": 52,
+        "y_pct": 18,
+        "w_pct": 45,
+        "h_pct": 30
+      },
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_3",
+      "script": "세 번째와 네 번째 관점은 행동에 초점을 맞춥니다. 인간처럼 행동하는 접근은 튜링 테스트를 기준으로 삼으며, 합리적으로 행동하는 접근은 지능 에이전트 개념을 중심으로 합니다. 현대 AI 연구는 특히 합리적 행동 에이전트 관점을 많이 따릅니다.",
+      "keyword": "합리적 행동",
+      "highlight": {
+        "x_pct": 52,
+        "y_pct": 50,
+        "w_pct": 45,
+        "h_pct": 30
+      },
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_4",
+      "script": "이 슬라이드의 핵심 메시지는 AI가 단일 기술이 아니라는 점입니다. AI는 지능적 행동을 구현하려는 여러 접근의 학제적(interdisciplinary) 연구 분야로, 다양한 학문이 융합된 복합적인 영역임을 강조하고 있습니다.",
+      "keyword": "학제적(interdisciplinary)",
+      "highlight": {
+        "x_pct": 2,
+        "y_pct": 84,
+        "w_pct": 96,
+        "h_pct": 8
+      },
+      "effect": "highlighter"
+    }
+  ]
+}

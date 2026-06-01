@@ -1,0 +1,606 @@
+{
+  "lecture_id": "2026-05-24_AI101W4_94d320",
+  "title": "인공지능 기초-4주차-신경망과 딥러닝 입문",
+  "created_at": "2026-05-24T10:14:11.785064+00:00",
+  "slide_size": {
+    "w": 1500,
+    "h": 844
+  },
+  "slide_count": 3,
+  "segment_count": 10,
+  "slides": [
+    {
+      "index": 1,
+      "image": "slides/slide_001.png",
+      "segments": [
+        {
+          "id": "seg_1",
+          "script": "퍼셉트론은 가장 단순한 인공 신경망으로 입력의 가중합에 활성화 함수를 적용합니다.",
+          "keyword": "퍼셉트론",
+          "highlight": {
+            "x_pct": 6,
+            "y_pct": 6,
+            "w_pct": 50,
+            "h_pct": 12
+          },
+          "effect": "highlighter",
+          "audio": "audio/slide_001_seg_01.mp3",
+          "duration_ms": 4400.0,
+          "words": [
+            {
+              "text": "퍼셉트론은",
+              "offset_ms": 100.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "가장",
+              "offset_ms": 480.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "단순한",
+              "offset_ms": 860.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "인공",
+              "offset_ms": 1240.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "신경망으로",
+              "offset_ms": 1620.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "입력의",
+              "offset_ms": 2000.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "가중합에",
+              "offset_ms": 2380.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "활성화",
+              "offset_ms": 2760.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "함수를",
+              "offset_ms": 3140.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "적용합니다.",
+              "offset_ms": 3520.0,
+              "duration_ms": 300.0
+            }
+          ]
+        },
+        {
+          "id": "seg_2",
+          "script": "단층 퍼셉트론은 선형 분리 가능 문제만 해결할 수 있습니다.",
+          "keyword": "퍼셉트론",
+          "highlight": {
+            "x_pct": 6,
+            "y_pct": 6,
+            "w_pct": 50,
+            "h_pct": 12
+          },
+          "effect": "highlighter",
+          "audio": "audio/slide_001_seg_02.mp3",
+          "duration_ms": 4020.0,
+          "words": [
+            {
+              "text": "단층",
+              "offset_ms": 100.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "퍼셉트론은",
+              "offset_ms": 480.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "선형",
+              "offset_ms": 860.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "분리",
+              "offset_ms": 1240.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "가능",
+              "offset_ms": 1620.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "문제만",
+              "offset_ms": 2000.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "해결할",
+              "offset_ms": 2380.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "수",
+              "offset_ms": 2760.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "있습니다.",
+              "offset_ms": 3140.0,
+              "duration_ms": 300.0
+            }
+          ]
+        },
+        {
+          "id": "seg_3",
+          "script": "다층 퍼셉트론으로 XOR 같은 비선형 문제도 해결 가능합니다.",
+          "keyword": "퍼셉트론",
+          "highlight": {
+            "x_pct": 6,
+            "y_pct": 6,
+            "w_pct": 50,
+            "h_pct": 12
+          },
+          "effect": "highlighter",
+          "audio": "audio/slide_001_seg_03.mp3",
+          "duration_ms": 3640.0,
+          "words": [
+            {
+              "text": "다층",
+              "offset_ms": 100.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "퍼셉트론으로",
+              "offset_ms": 480.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "XOR",
+              "offset_ms": 860.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "같은",
+              "offset_ms": 1240.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "비선형",
+              "offset_ms": 1620.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "문제도",
+              "offset_ms": 2000.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "해결",
+              "offset_ms": 2380.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "가능합니다.",
+              "offset_ms": 2760.0,
+              "duration_ms": 300.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "image": "slides/slide_002.png",
+      "segments": [
+        {
+          "id": "seg_1",
+          "script": "역전파는 신경망의 가중치를 학습하는 핵심 알고리즘입니다.",
+          "keyword": "역전파",
+          "highlight": {
+            "x_pct": 10,
+            "y_pct": 30,
+            "w_pct": 80,
+            "h_pct": 18
+          },
+          "effect": "highlighter",
+          "audio": "audio/slide_002_seg_01.mp3",
+          "duration_ms": 2880.0,
+          "words": [
+            {
+              "text": "역전파는",
+              "offset_ms": 100.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "신경망의",
+              "offset_ms": 480.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "가중치를",
+              "offset_ms": 860.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "학습하는",
+              "offset_ms": 1240.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "핵심",
+              "offset_ms": 1620.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "알고리즘입니다.",
+              "offset_ms": 2000.0,
+              "duration_ms": 300.0
+            }
+          ]
+        },
+        {
+          "id": "seg_2",
+          "script": "순전파로 예측을 계산하고, 오차의 그래디언트를 출력층에서 입력층 방향으로 전파합니다.",
+          "keyword": "역전파",
+          "highlight": {
+            "x_pct": 10,
+            "y_pct": 30,
+            "w_pct": 80,
+            "h_pct": 18
+          },
+          "effect": "highlighter",
+          "audio": "audio/slide_002_seg_02.mp3",
+          "duration_ms": 4020.0,
+          "words": [
+            {
+              "text": "순전파로",
+              "offset_ms": 100.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "예측을",
+              "offset_ms": 480.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "계산하고,",
+              "offset_ms": 860.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "오차의",
+              "offset_ms": 1240.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "그래디언트를",
+              "offset_ms": 1620.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "출력층에서",
+              "offset_ms": 2000.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "입력층",
+              "offset_ms": 2380.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "방향으로",
+              "offset_ms": 2760.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "전파합니다.",
+              "offset_ms": 3140.0,
+              "duration_ms": 300.0
+            }
+          ]
+        },
+        {
+          "id": "seg_3",
+          "script": "체인 룰을 이용해 각 가중치에 대한 그래디언트를 효율적으로 계산합니다.",
+          "keyword": "역전파",
+          "highlight": {
+            "x_pct": 10,
+            "y_pct": 30,
+            "w_pct": 80,
+            "h_pct": 18
+          },
+          "effect": "highlighter",
+          "audio": "audio/slide_002_seg_03.mp3",
+          "duration_ms": 4020.0,
+          "words": [
+            {
+              "text": "체인",
+              "offset_ms": 100.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "룰을",
+              "offset_ms": 480.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "이용해",
+              "offset_ms": 860.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "각",
+              "offset_ms": 1240.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "가중치에",
+              "offset_ms": 1620.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "대한",
+              "offset_ms": 2000.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "그래디언트를",
+              "offset_ms": 2380.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "효율적으로",
+              "offset_ms": 2760.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "계산합니다.",
+              "offset_ms": 3140.0,
+              "duration_ms": 300.0
+            }
+          ]
+        },
+        {
+          "id": "seg_4",
+          "script": "학습률이 너무 크면 발산하고 작으면 수렴이 느립니다.",
+          "keyword": "역전파",
+          "highlight": {
+            "x_pct": 10,
+            "y_pct": 30,
+            "w_pct": 80,
+            "h_pct": 18
+          },
+          "effect": "highlighter",
+          "audio": "audio/slide_002_seg_04.mp3",
+          "duration_ms": 3260.0,
+          "words": [
+            {
+              "text": "학습률이",
+              "offset_ms": 100.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "너무",
+              "offset_ms": 480.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "크면",
+              "offset_ms": 860.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "발산하고",
+              "offset_ms": 1240.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "작으면",
+              "offset_ms": 1620.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "수렴이",
+              "offset_ms": 2000.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "느립니다.",
+              "offset_ms": 2380.0,
+              "duration_ms": 300.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "image": "slides/slide_003.png",
+      "segments": [
+        {
+          "id": "seg_1",
+          "script": "활성화 함수는 신경망에 비선형성을 도입합니다.",
+          "keyword": "활성화 함수",
+          "highlight": {
+            "x_pct": 12,
+            "y_pct": 58,
+            "w_pct": 75,
+            "h_pct": 22
+          },
+          "effect": "highlighter",
+          "audio": "audio/slide_003_seg_01.mp3",
+          "duration_ms": 2500.0,
+          "words": [
+            {
+              "text": "활성화",
+              "offset_ms": 100.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "함수는",
+              "offset_ms": 480.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "신경망에",
+              "offset_ms": 860.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "비선형성을",
+              "offset_ms": 1240.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "도입합니다.",
+              "offset_ms": 1620.0,
+              "duration_ms": 300.0
+            }
+          ]
+        },
+        {
+          "id": "seg_2",
+          "script": "ReLU, Sigmoid, Tanh, Softmax 등이 자주 쓰이며 각각 다른 특성을 가집니다.",
+          "keyword": "활성화 함수",
+          "highlight": {
+            "x_pct": 12,
+            "y_pct": 58,
+            "w_pct": 75,
+            "h_pct": 22
+          },
+          "effect": "highlighter",
+          "audio": "audio/slide_003_seg_02.mp3",
+          "duration_ms": 4780.0,
+          "words": [
+            {
+              "text": "ReLU,",
+              "offset_ms": 100.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "Sigmoid,",
+              "offset_ms": 480.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "Tanh,",
+              "offset_ms": 860.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "Softmax",
+              "offset_ms": 1240.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "등이",
+              "offset_ms": 1620.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "자주",
+              "offset_ms": 2000.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "쓰이며",
+              "offset_ms": 2380.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "각각",
+              "offset_ms": 2760.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "다른",
+              "offset_ms": 3140.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "특성을",
+              "offset_ms": 3520.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "가집니다.",
+              "offset_ms": 3900.0,
+              "duration_ms": 300.0
+            }
+          ]
+        },
+        {
+          "id": "seg_3",
+          "script": "ReLU는 그래디언트 소실 문제를 완화하지만 죽은 ReLU 문제가 있습니다.",
+          "keyword": "활성화 함수",
+          "highlight": {
+            "x_pct": 12,
+            "y_pct": 58,
+            "w_pct": 75,
+            "h_pct": 22
+          },
+          "effect": "highlighter",
+          "audio": "audio/slide_003_seg_03.mp3",
+          "duration_ms": 4020.0,
+          "words": [
+            {
+              "text": "ReLU는",
+              "offset_ms": 100.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "그래디언트",
+              "offset_ms": 480.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "소실",
+              "offset_ms": 860.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "문제를",
+              "offset_ms": 1240.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "완화하지만",
+              "offset_ms": 1620.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "죽은",
+              "offset_ms": 2000.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "ReLU",
+              "offset_ms": 2380.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "문제가",
+              "offset_ms": 2760.0,
+              "duration_ms": 300.0
+            },
+            {
+              "text": "있습니다.",
+              "offset_ms": 3140.0,
+              "duration_ms": 300.0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

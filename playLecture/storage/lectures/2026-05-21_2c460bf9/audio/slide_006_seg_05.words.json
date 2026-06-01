@@ -1,0 +1,92 @@
+[
+  {
+    "text": "마지막으로",
+    "offset_ms": 100.0,
+    "duration_ms": 1025.0
+  },
+  {
+    "text": "최근",
+    "offset_ms": 1125.0,
+    "duration_ms": 410.0
+  },
+  {
+    "text": "트렌드를",
+    "offset_ms": 1535.0,
+    "duration_ms": 820.0
+  },
+  {
+    "text": "언급하고",
+    "offset_ms": 2355.0,
+    "duration_ms": 820.0
+  },
+  {
+    "text": "있습니다.",
+    "offset_ms": 3175.0,
+    "duration_ms": 1025.0
+  },
+  {
+    "text": "자기지도학습(self-supervised)과",
+    "offset_ms": 4150.0,
+    "duration_ms": 3862.5
+  },
+  {
+    "text": "전이학습(transfer",
+    "offset_ms": 8012.5,
+    "duration_ms": 2092.2
+  },
+  {
+    "text": "learning)이",
+    "offset_ms": 10104.7,
+    "duration_ms": 1609.4
+  },
+  {
+    "text": "기존",
+    "offset_ms": 11714.1,
+    "duration_ms": 321.9
+  },
+  {
+    "text": "패러다임의",
+    "offset_ms": 12035.9,
+    "duration_ms": 804.7
+  },
+  {
+    "text": "경계를",
+    "offset_ms": 12840.6,
+    "duration_ms": 482.8
+  },
+  {
+    "text": "허물며",
+    "offset_ms": 13323.4,
+    "duration_ms": 482.8
+  },
+  {
+    "text": "새롭게",
+    "offset_ms": 13806.2,
+    "duration_ms": 482.8
+  },
+  {
+    "text": "재편하고",
+    "offset_ms": 14289.1,
+    "duration_ms": 643.8
+  },
+  {
+    "text": "있다는",
+    "offset_ms": 14932.8,
+    "duration_ms": 482.8
+  },
+  {
+    "text": "점도",
+    "offset_ms": 15415.6,
+    "duration_ms": 321.9
+  },
+  {
+    "text": "주목해야",
+    "offset_ms": 15737.5,
+    "duration_ms": 643.8
+  },
+  {
+    "text": "합니다.",
+    "offset_ms": 16381.2,
+    "duration_ms": 643.8
+  }
+]

@@ -1,0 +1,107 @@
+[
+  {
+    "text": "딥러닝은",
+    "offset_ms": 100.0,
+    "duration_ms": 857.7
+  },
+  {
+    "text": "심층",
+    "offset_ms": 957.7,
+    "duration_ms": 428.8
+  },
+  {
+    "text": "신경망을",
+    "offset_ms": 1386.5,
+    "duration_ms": 857.7
+  },
+  {
+    "text": "기반으로",
+    "offset_ms": 2244.2,
+    "duration_ms": 857.7
+  },
+  {
+    "text": "한",
+    "offset_ms": 3101.9,
+    "duration_ms": 214.4
+  },
+  {
+    "text": "표현",
+    "offset_ms": 3316.3,
+    "duration_ms": 428.8
+  },
+  {
+    "text": "학습",
+    "offset_ms": 3745.2,
+    "duration_ms": 428.8
+  },
+  {
+    "text": "방법론입니다.",
+    "offset_ms": 4174.0,
+    "duration_ms": 1501.0
+  },
+  {
+    "text": "Deep",
+    "offset_ms": 5625.0,
+    "duration_ms": 627.0
+  },
+  {
+    "text": "Neural",
+    "offset_ms": 6252.0,
+    "duration_ms": 940.5
+  },
+  {
+    "text": "Networks를",
+    "offset_ms": 7192.5,
+    "duration_ms": 1410.8
+  },
+  {
+    "text": "활용하여",
+    "offset_ms": 8603.2,
+    "duration_ms": 627.0
+  },
+  {
+    "text": "이미지,",
+    "offset_ms": 9230.2,
+    "duration_ms": 627.0
+  },
+  {
+    "text": "음성,",
+    "offset_ms": 9857.2,
+    "duration_ms": 470.2
+  },
+  {
+    "text": "텍스트",
+    "offset_ms": 10327.5,
+    "duration_ms": 470.2
+  },
+  {
+    "text": "등",
+    "offset_ms": 10797.8,
+    "duration_ms": 156.8
+  },
+  {
+    "text": "다양한",
+    "offset_ms": 10954.5,
+    "duration_ms": 470.2
+  },
+  {
+    "text": "데이터를",
+    "offset_ms": 11424.8,
+    "duration_ms": 627.0
+  },
+  {
+    "text": "처리할",
+    "offset_ms": 12051.8,
+    "duration_ms": 470.2
+  },
+  {
+    "text": "수",
+    "offset_ms": 12522.0,
+    "duration_ms": 156.8
+  },
+  {
+    "text": "있습니다.",
+    "offset_ms": 12678.8,
+    "duration_ms": 783.8
+  }
+]

@@ -1,0 +1,30 @@
+{
+  "slide_index": 6,
+  "title": "감사합니다",
+  "segments": [
+    {
+      "id": "seg_1",
+      "script": "이번 강의의 마지막 슬라이드입니다. '감사합니다'라는 인사와 함께 오늘 강의를 마무리하게 되었습니다. 여러분의 적극적인 참여에 감사드립니다.",
+      "keyword": "감사합니다",
+      "highlight": {
+        "x_pct": 30,
+        "y_pct": 32,
+        "w_pct": 40,
+        "h_pct": 18
+      },
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_2",
+      "script": "이 슬라이드 하단에는 다음 강의에 대한 예고가 담겨 있습니다. 딥러닝의 기본 개념을 토대로 다음 강의에서는 학습 알고리즘을 심화 학습할 예정이니 기대해 주세요.",
+      "keyword": "학습 알고리즘",
+      "highlight": {
+        "x_pct": 15,
+        "y_pct": 56,
+        "w_pct": 70,
+        "h_pct": 8
+      },
+      "effect": "highlighter"
+    }
+  ]
+}

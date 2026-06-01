@@ -1,0 +1,122 @@
+[
+  {
+    "text": "마지막으로",
+    "offset_ms": 100.0,
+    "duration_ms": 1055.1
+  },
+  {
+    "text": "활성화",
+    "offset_ms": 1155.1,
+    "duration_ms": 633.1
+  },
+  {
+    "text": "함수(ReLU,",
+    "offset_ms": 1788.2,
+    "duration_ms": 1688.2
+  },
+  {
+    "text": "Sigmoid",
+    "offset_ms": 3476.5,
+    "duration_ms": 1477.2
+  },
+  {
+    "text": "등)에",
+    "offset_ms": 4953.7,
+    "duration_ms": 633.1
+  },
+  {
+    "text": "대해",
+    "offset_ms": 5586.8,
+    "duration_ms": 422.1
+  },
+  {
+    "text": "살펴봅니다.",
+    "offset_ms": 6008.8,
+    "duration_ms": 1266.2
+  },
+  {
+    "text": "활성화",
+    "offset_ms": 7225.0,
+    "duration_ms": 585.0
+  },
+  {
+    "text": "함수는",
+    "offset_ms": 7810.0,
+    "duration_ms": 585.0
+  },
+  {
+    "text": "신경망에",
+    "offset_ms": 8395.0,
+    "duration_ms": 780.0
+  },
+  {
+    "text": "비선형성을",
+    "offset_ms": 9175.0,
+    "duration_ms": 975.0
+  },
+  {
+    "text": "부여하여",
+    "offset_ms": 10150.0,
+    "duration_ms": 780.0
+  },
+  {
+    "text": "모델의",
+    "offset_ms": 10930.0,
+    "duration_ms": 585.0
+  },
+  {
+    "text": "표현력을",
+    "offset_ms": 11515.0,
+    "duration_ms": 780.0
+  },
+  {
+    "text": "크게",
+    "offset_ms": 12295.0,
+    "duration_ms": 390.0
+  },
+  {
+    "text": "향상시킵니다.",
+    "offset_ms": 12685.0,
+    "duration_ms": 1365.0
+  },
+  {
+    "text": "ReLU와",
+    "offset_ms": 14050.0,
+    "duration_ms": 869.5
+  },
+  {
+    "text": "Sigmoid는",
+    "offset_ms": 14919.5,
+    "duration_ms": 1391.2
+  },
+  {
+    "text": "가장",
+    "offset_ms": 16310.7,
+    "duration_ms": 347.8
+  },
+  {
+    "text": "널리",
+    "offset_ms": 16658.5,
+    "duration_ms": 347.8
+  },
+  {
+    "text": "사용되는",
+    "offset_ms": 17006.2,
+    "duration_ms": 695.6
+  },
+  {
+    "text": "대표적인",
+    "offset_ms": 17701.8,
+    "duration_ms": 695.6
+  },
+  {
+    "text": "활성화",
+    "offset_ms": 18397.4,
+    "duration_ms": 521.7
+  },
+  {
+    "text": "함수입니다.",
+    "offset_ms": 18919.1,
+    "duration_ms": 1043.4
+  }
+]

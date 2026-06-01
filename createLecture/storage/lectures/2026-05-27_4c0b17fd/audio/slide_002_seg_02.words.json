@@ -1,0 +1,107 @@
+[
+  {
+    "text": "1986년",
+    "offset_ms": 100.0,
+    "duration_ms": 825.5
+  },
+  {
+    "text": "Rumelhart는",
+    "offset_ms": 925.5,
+    "duration_ms": 1651.0
+  },
+  {
+    "text": "역전파(Backpropagation)",
+    "offset_ms": 2576.6,
+    "duration_ms": 3302.1
+  },
+  {
+    "text": "알고리즘을",
+    "offset_ms": 5878.6,
+    "duration_ms": 825.5
+  },
+  {
+    "text": "정립하였습니다.",
+    "offset_ms": 6704.2,
+    "duration_ms": 1320.8
+  },
+  {
+    "text": "이",
+    "offset_ms": 7975.0,
+    "duration_ms": 178.1
+  },
+  {
+    "text": "알고리즘은",
+    "offset_ms": 8153.1,
+    "duration_ms": 890.6
+  },
+  {
+    "text": "신경망의",
+    "offset_ms": 9043.8,
+    "duration_ms": 712.5
+  },
+  {
+    "text": "가중치를",
+    "offset_ms": 9756.2,
+    "duration_ms": 712.5
+  },
+  {
+    "text": "효율적으로",
+    "offset_ms": 10468.8,
+    "duration_ms": 890.6
+  },
+  {
+    "text": "학습할",
+    "offset_ms": 11359.4,
+    "duration_ms": 534.4
+  },
+  {
+    "text": "수",
+    "offset_ms": 11893.8,
+    "duration_ms": 178.1
+  },
+  {
+    "text": "있게",
+    "offset_ms": 12071.9,
+    "duration_ms": 356.2
+  },
+  {
+    "text": "해주는",
+    "offset_ms": 12428.1,
+    "duration_ms": 534.4
+  },
+  {
+    "text": "핵심",
+    "offset_ms": 12962.5,
+    "duration_ms": 356.2
+  },
+  {
+    "text": "기술로,",
+    "offset_ms": 13318.8,
+    "duration_ms": 712.5
+  },
+  {
+    "text": "현재까지도",
+    "offset_ms": 14031.2,
+    "duration_ms": 890.6
+  },
+  {
+    "text": "딥러닝",
+    "offset_ms": 14921.9,
+    "duration_ms": 534.4
+  },
+  {
+    "text": "학습의",
+    "offset_ms": 15456.2,
+    "duration_ms": 534.4
+  },
+  {
+    "text": "근간이",
+    "offset_ms": 15990.6,
+    "duration_ms": 534.4
+  },
+  {
+    "text": "됩니다.",
+    "offset_ms": 16525.0,
+    "duration_ms": 712.5
+  }
+]

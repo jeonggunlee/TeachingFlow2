@@ -1,0 +1,122 @@
+[
+  {
+    "text": "네",
+    "offset_ms": 100.0,
+    "duration_ms": 256.0
+  },
+  {
+    "text": "번째는",
+    "offset_ms": 356.0,
+    "duration_ms": 768.1
+  },
+  {
+    "text": "생성형",
+    "offset_ms": 1124.1,
+    "duration_ms": 768.1
+  },
+  {
+    "text": "AI(Generative",
+    "offset_ms": 1892.1,
+    "duration_ms": 3328.2
+  },
+  {
+    "text": "AI)입니다.",
+    "offset_ms": 5220.4,
+    "duration_ms": 1792.1
+  },
+  {
+    "text": "데이터의",
+    "offset_ms": 6962.5,
+    "duration_ms": 748.8
+  },
+  {
+    "text": "분포를",
+    "offset_ms": 7711.3,
+    "duration_ms": 561.6
+  },
+  {
+    "text": "학습하여",
+    "offset_ms": 8273.0,
+    "duration_ms": 748.8
+  },
+  {
+    "text": "새로운",
+    "offset_ms": 9021.8,
+    "duration_ms": 561.6
+  },
+  {
+    "text": "콘텐츠를",
+    "offset_ms": 9583.4,
+    "duration_ms": 748.8
+  },
+  {
+    "text": "생성하는",
+    "offset_ms": 10332.3,
+    "duration_ms": 748.8
+  },
+  {
+    "text": "방식으로,",
+    "offset_ms": 11081.1,
+    "duration_ms": 936.0
+  },
+  {
+    "text": "최근",
+    "offset_ms": 12017.2,
+    "duration_ms": 374.4
+  },
+  {
+    "text": "가장",
+    "offset_ms": 12391.6,
+    "duration_ms": 374.4
+  },
+  {
+    "text": "주목받는",
+    "offset_ms": 12766.0,
+    "duration_ms": 748.8
+  },
+  {
+    "text": "패러다임입니다.",
+    "offset_ms": 13514.8,
+    "duration_ms": 1497.7
+  },
+  {
+    "text": "LLM,",
+    "offset_ms": 15012.5,
+    "duration_ms": 940.0
+  },
+  {
+    "text": "이미지",
+    "offset_ms": 15952.5,
+    "duration_ms": 705.0
+  },
+  {
+    "text": "생성,",
+    "offset_ms": 16657.5,
+    "duration_ms": 705.0
+  },
+  {
+    "text": "음성",
+    "offset_ms": 17362.5,
+    "duration_ms": 470.0
+  },
+  {
+    "text": "생성",
+    "offset_ms": 17832.5,
+    "duration_ms": 470.0
+  },
+  {
+    "text": "등이",
+    "offset_ms": 18302.5,
+    "duration_ms": 470.0
+  },
+  {
+    "text": "여기에",
+    "offset_ms": 18772.5,
+    "duration_ms": 705.0
+  },
+  {
+    "text": "해당합니다.",
+    "offset_ms": 19477.5,
+    "duration_ms": 1410.0
+  }
+]
