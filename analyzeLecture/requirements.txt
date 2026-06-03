@@ -1,7 +1,0 @@
-fastapi
-uvicorn[standard]
-sqlalchemy
-aiosqlite
-python-dotenv
-anthropic
-httpx
