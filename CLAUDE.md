@@ -246,6 +246,35 @@ EDUTECH-3/
 
 ## 5. 실행 방법
 
+### 5-1. 일상 실행 — `scripts/` (권장)
+
+최초 설치(5-2)를 마친 뒤에는 스크립트로 4개 서비스를 한 번에 다룬다.
+venv activate 불필요 — 각 서비스의 `.venv/bin/uvicorn`을 직접 호출한다.
+
+```bash
+./scripts/start.sh              # 4개 전체 기동 + 헬스 체크
+./scripts/start.sh portal       # 특정 서비스만
+./scripts/start.sh --reload     # 코드 변경 자동 반영 (개발용)
+./scripts/stop.sh               # 전체 종료
+./scripts/stop.sh playLecture   # 특정 서비스만
+./scripts/status.sh             # 서비스별 PID · HTTP 상태
+# → 포털에서 시작: http://localhost:8003
+```
+
+| 파일 | 역할 |
+|------|------|
+| `scripts/_common.sh` | 서비스 표(디렉터리:포트) 단일 정의 — **서비스 추가 시 여기만 수정** |
+| `scripts/start.sh` | 의존 순서 기동(portal이 나머지를 프로브하므로 마지막) 후 포트별 curl 검증 |
+| `scripts/stop.sh` | SIGTERM → 10초 대기 → SIGKILL. 포트 점유 PID도 함께 정리 |
+| `scripts/status.sh` | 상태 조회 |
+
+- PID는 `run/`, 로그는 `logs/`에 기록 (둘 다 gitignore).
+- start/stop 모두 멱등적 — 중복 실행해도 안전하다.
+- `.venv` 또는 `.env`가 없는 서비스는 안내 메시지와 함께 건너뛰고 exit 1.
+- analyzeLecture 루트는 302(리디렉션)가 정상 응답이다.
+
+### 5-2. 최초 설치 — 서비스별 수동 절차
+
 ```bash
 # portal (포트 8003) — 시작점
 cd EDUTECH-3/portal
