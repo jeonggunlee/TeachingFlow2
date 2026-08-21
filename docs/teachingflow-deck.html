@@ -1,0 +1,689 @@
+<title>TeachingFlow</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&display=swap">
+
+<style>
+  /* ---------- Tokens : light (bare :root) ---------- */
+  :root{
+    --bg:#eceff0;
+    --surface:#ffffff;
+    --surface-2:#e4eae9;
+    --ink:#0f171b;
+    --ink-soft:#41525b;
+    --muted:#6c7d85;
+    --line:#d2dbdb;
+    --line-soft:#e0e7e6;
+    --accent:#0c9c8b;
+    --c-portal:#c9770a;
+    --c-create:#cf3b37;
+    --c-play:#0c9384;
+    --c-analyze:#5b4bd6;
+    --shadow:0 1px 2px rgba(16,30,36,.05),0 12px 34px -18px rgba(16,30,36,.28);
+    --grid:rgba(16,40,46,.045);
+  }
+  /* system dark (no explicit choice) — beaten by an explicit light choice */
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --bg:#0b1116;
+      --surface:#121b21;
+      --surface-2:#1a252c;
+      --ink:#e9f1f2;
+      --ink-soft:#aabbc2;
+      --muted:#788a92;
+      --line:#22323a;
+      --line-soft:#1a262d;
+      --accent:#2bd0bc;
+      --c-portal:#f2ac3d;
+      --c-create:#f0635e;
+      --c-play:#2ac6b0;
+      --c-analyze:#8b7cf0;
+      --shadow:0 1px 2px rgba(0,0,0,.3),0 18px 44px -20px rgba(0,0,0,.7);
+      --grid:rgba(120,190,200,.05);
+    }
+  }
+  /* explicit dark toggle wins in the other direction */
+  :root[data-theme="dark"]{
+    --bg:#0b1116;
+    --surface:#121b21;
+    --surface-2:#1a252c;
+    --ink:#e9f1f2;
+    --ink-soft:#aabbc2;
+    --muted:#788a92;
+    --line:#22323a;
+    --line-soft:#1a262d;
+    --accent:#2bd0bc;
+    --c-portal:#f2ac3d;
+    --c-create:#f0635e;
+    --c-play:#2ac6b0;
+    --c-analyze:#8b7cf0;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 18px 44px -20px rgba(0,0,0,.7);
+    --grid:rgba(120,190,200,.05);
+  }
+
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:"IBM Plex Sans KR",system-ui,sans-serif;
+    -webkit-font-smoothing:antialiased;
+    overflow:hidden;
+  }
+  .mono{font-family:"IBM Plex Mono",ui-monospace,monospace;font-feature-settings:"tnum"}
+
+  /* ---------- Deck shell ---------- */
+  .deck{position:fixed;inset:0}
+  .progress{
+    position:fixed;top:0;left:0;height:3px;width:0%;
+    background:var(--accent);z-index:40;
+    transition:width .5s cubic-bezier(.22,1,.36,1);
+  }
+
+  .slide{
+    position:absolute;inset:0;
+    display:grid;grid-template-rows:auto 1fr auto;
+    padding:clamp(22px,4.4vw,64px) clamp(22px,6vw,104px);
+    opacity:0;visibility:hidden;
+    transform:translateY(14px);
+    transition:opacity .5s ease,transform .55s cubic-bezier(.22,1,.36,1),visibility .5s;
+    background:
+      linear-gradient(var(--grid) 1px,transparent 1px) 0 0/100% 42px,
+      var(--bg);
+  }
+  .slide.active{opacity:1;visibility:visible;transform:none}
+  .slide.active .rise{animation:rise .6s cubic-bezier(.22,1,.36,1) both}
+  .slide.active .rise:nth-child(2){animation-delay:.05s}
+  .slide.active .rise:nth-child(3){animation-delay:.1s}
+  .slide.active .rise:nth-child(4){animation-delay:.15s}
+  @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+
+  /* ---------- Slide chrome ---------- */
+  .topbar{display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:600;letter-spacing:.02em}
+  .brand .dotmark{width:12px;height:12px;border-radius:50%;
+    background:conic-gradient(from -40deg,var(--c-portal),var(--c-create),var(--c-play),var(--c-analyze),var(--c-portal));}
+  .eyebrow{
+    font-family:"IBM Plex Mono",monospace;font-size:12.5px;font-weight:500;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--muted);
+    display:flex;align-items:center;gap:10px;
+  }
+  .eyebrow .tag{color:var(--accent-local,var(--accent));font-weight:600}
+  .eyebrow .num{color:var(--ink-soft)}
+
+  .body{align-self:center;min-height:0}
+  h1,h2,h3{margin:0;text-wrap:balance;letter-spacing:-.02em}
+  h1{font-size:clamp(38px,7.4vw,92px);font-weight:700;line-height:1.02}
+  h2{font-size:clamp(26px,4.3vw,50px);font-weight:600;line-height:1.08}
+  .lead{
+    font-size:clamp(15px,1.7vw,20px);color:var(--ink-soft);
+    line-height:1.6;font-weight:400;max-width:60ch;
+  }
+
+  .footer{
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+    font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--muted);
+  }
+  .footer .keys{display:flex;gap:6px;align-items:center}
+  kbd{
+    font-family:"IBM Plex Mono",monospace;font-size:11px;
+    border:1px solid var(--line);border-bottom-width:2px;border-radius:5px;
+    padding:1px 6px;color:var(--ink-soft);background:var(--surface);
+  }
+  .count b{color:var(--ink);font-weight:600}
+
+  /* ---------- Reusable bits ---------- */
+  .row{display:flex;gap:14px;flex-wrap:wrap}
+  .stack{display:flex;flex-direction:column;gap:clamp(14px,2.2vw,26px)}
+  .chip{
+    display:inline-flex;align-items:center;gap:7px;
+    font-family:"IBM Plex Mono",monospace;font-size:12.5px;font-weight:500;
+    padding:5px 11px;border-radius:999px;border:1px solid var(--line);
+    background:var(--surface);color:var(--ink-soft);
+  }
+  .chip .sw{width:8px;height:8px;border-radius:50%;background:var(--accent)}
+
+  .cards{display:grid;gap:14px}
+  .card{
+    background:var(--surface);border:1px solid var(--line);border-radius:16px;
+    padding:clamp(16px,2vw,24px);box-shadow:var(--shadow);position:relative;overflow:hidden;
+  }
+  .card .k{
+    font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--muted);display:flex;justify-content:space-between;align-items:center;
+  }
+  .card h3{font-size:clamp(18px,2vw,23px);margin-top:9px}
+  .card p{margin:8px 0 0;color:var(--ink-soft);font-size:14.5px;line-height:1.55}
+  .card .accentbar{position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--c,var(--accent))}
+  .card ul{margin:12px 0 0;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:7px}
+  .card li{position:relative;padding-left:18px;color:var(--ink-soft);font-size:14px;line-height:1.5}
+  .card li::before{content:"";position:absolute;left:2px;top:.55em;width:6px;height:6px;border-radius:50%;background:var(--c,var(--accent))}
+  .port{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--c,var(--accent));font-weight:600}
+
+  /* subsystem coloring */
+  .s-portal{--c:var(--c-portal);--accent-local:var(--c-portal)}
+  .s-create{--c:var(--c-create);--accent-local:var(--c-create)}
+  .s-play{--c:var(--c-play);--accent-local:var(--c-play)}
+  .s-analyze{--c:var(--c-analyze);--accent-local:var(--c-analyze)}
+
+  /* ---------- Title slide ---------- */
+  .title-slide .body{display:flex;flex-direction:column;gap:26px;justify-content:center}
+  .title-slide h1{max-width:15ch}
+  .metarow{display:flex;gap:10px;flex-wrap:wrap;margin-top:4px}
+  .kicker{
+    font-family:"IBM Plex Mono",monospace;letter-spacing:.2em;text-transform:uppercase;
+    font-size:13px;color:var(--accent);font-weight:600;
+  }
+  .flowline{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--muted)}
+  .flowline b{color:var(--ink)}
+  .flowline .ar{color:var(--accent)}
+
+  /* ---------- Overview diagram ---------- */
+  .overview{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(20px,3vw,48px);align-items:center}
+  .diagram{width:100%;height:auto;max-height:62vh}
+  .diagram text{font-family:"IBM Plex Sans KR",sans-serif}
+  .diagram .lbl{font-family:"IBM Plex Mono",monospace}
+  .legend{display:flex;flex-direction:column;gap:12px}
+  .legend .item{display:flex;gap:13px;align-items:flex-start}
+  .legend .swatch{width:14px;height:14px;border-radius:5px;margin-top:3px;flex:none;background:var(--c)}
+  .legend .lt{font-weight:600;font-size:16px}
+  .legend .lt .port{margin-left:8px}
+  .legend .ld{color:var(--muted);font-size:13px;line-height:1.45;margin-top:2px}
+
+  /* ---------- two-col detail ---------- */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,3vw,40px);align-items:start}
+  .panel{background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow)}
+  .panel .head{padding:12px 16px;border-bottom:1px solid var(--line);font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);display:flex;justify-content:space-between}
+  .panel .body-p{padding:6px 0}
+  .kv{display:flex;justify-content:space-between;gap:14px;padding:10px 16px;border-bottom:1px solid var(--line-soft);font-size:14px}
+  .kv:last-child{border-bottom:none}
+  .kv .kk{color:var(--muted)}
+  .kv .vv{color:var(--ink);text-align:right}
+  pre{margin:0;padding:16px 18px;overflow:auto;background:var(--surface);font-family:"IBM Plex Mono",monospace;font-size:13px;line-height:1.65;color:var(--ink-soft)}
+  pre .cm{color:var(--muted)}
+  pre .ky{color:var(--accent)}
+  pre .st{color:var(--c-create)}
+  pre .nm{color:var(--c-analyze)}
+
+  .db-tables{display:flex;flex-wrap:wrap;gap:7px}
+  .tb{font-family:"IBM Plex Mono",monospace;font-size:12px;padding:4px 9px;border-radius:6px;background:var(--surface-2);color:var(--ink-soft);border:1px solid var(--line-soft)}
+
+  .bignum{font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:clamp(30px,4vw,44px);color:var(--c,var(--accent));line-height:1}
+
+  /* connections slide */
+  .conn{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .conn .card .flow{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink);display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px}
+  .conn .arrow{color:var(--accent);font-weight:600}
+
+  /* closing */
+  .closing .body{display:flex;flex-direction:column;gap:24px;justify-content:center}
+  .cta{display:inline-flex;align-items:center;gap:12px;align-self:flex-start;
+    background:var(--ink);color:var(--bg);border-radius:12px;padding:14px 20px;
+    font-family:"IBM Plex Mono",monospace;font-size:15px;font-weight:500;box-shadow:var(--shadow)}
+  .cta .dotmark{width:11px;height:11px;border-radius:50%;
+    background:conic-gradient(from -40deg,var(--c-portal),var(--c-create),var(--c-play),var(--c-analyze),var(--c-portal))}
+
+  /* nav dots */
+  .dots{position:fixed;right:20px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:11px;z-index:30}
+  .dots button{width:9px;height:9px;border-radius:50%;border:0;padding:0;cursor:pointer;background:var(--line);transition:all .3s}
+  .dots button:hover{background:var(--muted)}
+  .dots button.on{background:var(--accent);height:22px;border-radius:6px}
+  .dots button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+  /* click zones */
+  .zone{position:fixed;top:0;bottom:0;width:16%;z-index:20;cursor:pointer;border:0;background:transparent}
+  .zone.left{left:0}.zone.right{right:0}
+  .zone:focus-visible{outline:none}
+
+  /* theme toggle */
+  .themebtn{
+    position:fixed;left:20px;bottom:18px;z-index:35;
+    width:38px;height:38px;border-radius:10px;cursor:pointer;
+    border:1px solid var(--line);background:var(--surface);color:var(--ink-soft);
+    display:grid;place-items:center;font-size:16px;box-shadow:var(--shadow);
+  }
+  .themebtn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+  @media (max-width:820px){
+    .overview,.split,.conn{grid-template-columns:1fr}
+    .cards.c2,.cards.c4{grid-template-columns:1fr 1fr}
+    .dots{display:none}
+    .diagram{max-height:44vh}
+  }
+  @media (max-width:560px){
+    .cards.c2,.cards.c4{grid-template-columns:1fr}
+    .footer .keys{display:none}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:opacity .2s linear!important}
+  }
+</style>
+
+<div class="progress" id="progress"></div>
+<button class="themebtn" id="themebtn" title="테마 전환" aria-label="테마 전환">◐</button>
+
+<main class="deck" id="deck">
+
+  <!-- 1 · Title -->
+  <section class="slide title-slide active">
+    <header class="topbar">
+      <div class="brand"><span class="dotmark"></span> TeachingFlow</div>
+      <div class="eyebrow"><span class="mono">EDUTECH-3</span></div>
+    </header>
+    <div class="body">
+      <div class="kicker rise">AI 강의 사이클</div>
+      <h1 class="rise">만들고, 가르치고,<br>분석하고, 다시 만든다.</h1>
+      <p class="lead rise">PPT 한 장에서 출발해 수강 데이터로 스스로를 개선하는 <b>닫힌 강의 루프</b>.
+        제작·운영·분석을 네 개의 독립 서브시스템이 파일시스템과 API로 이어 하나의 CQI 사이클을 완성합니다.</p>
+      <div class="flowline rise">
+        <b>portal</b><span class="ar">→</span><b>createLecture</b><span class="ar">→</span><b>playLecture</b><span class="ar">→</span><b>analyzeLecture</b><span class="ar">↺</span><b>CQI</b>
+      </div>
+      <div class="metarow rise">
+        <span class="chip"><span class="sw" style="background:var(--c-portal)"></span>FastAPI</span>
+        <span class="chip"><span class="sw" style="background:var(--c-create)"></span>Claude&nbsp;Vision</span>
+        <span class="chip"><span class="sw" style="background:var(--c-play)"></span>Edge&nbsp;TTS</span>
+        <span class="chip"><span class="sw" style="background:var(--c-analyze)"></span>SQLite&nbsp;·&nbsp;SSE</span>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="keys"><kbd>→</kbd><kbd>Space</kbd> 다음 &nbsp;·&nbsp; <kbd>←</kbd> 이전</div>
+      <div class="count"><b>01</b> / 11</div>
+    </footer>
+  </section>
+
+  <!-- 2 · Why -->
+  <section class="slide">
+    <header class="topbar">
+      <div class="eyebrow"><span class="num">00</span> / 문제의식</div>
+      <div class="brand"><span class="dotmark"></span> TeachingFlow</div>
+    </header>
+    <div class="body stack">
+      <h2 class="rise">강의는 '한 번 만들고 끝'이<br>아니다.</h2>
+      <p class="lead rise">대부분의 도구는 이 사이클의 한 토막만 다룹니다 — 슬라이드를 만들거나, 영상을 틀거나, 설문을 돌리거나.
+        정작 <b>"어느 슬라이드에서 학생이 막혔는가"</b>는 다음 학기 강의로 이어지지 않습니다.</p>
+      <div class="cards c4 rise" style="grid-template-columns:repeat(4,1fr)">
+        <div class="card s-create"><span class="accentbar"></span><div class="k">제작</div><h3>create</h3><p>AI가 스크립트와 음성을 만든다</p></div>
+        <div class="card s-play"><span class="accentbar"></span><div class="k">운영</div><h3>play</h3><p>수강생이 듣고 데이터를 남긴다</p></div>
+        <div class="card s-analyze"><span class="accentbar"></span><div class="k">분석</div><h3>analyze</h3><p>혼란 지점을 지수로 추출한다</p></div>
+        <div class="card s-portal"><span class="accentbar"></span><div class="k">개선(CQI)</div><h3>다시 create</h3><p>피드백이 스크립트를 보강한다</p></div>
+      </div>
+      <p class="lead rise" style="color:var(--ink)"><b>TeachingFlow는 이 네 토막을 하나의 루프로 잇습니다.</b></p>
+    </div>
+    <footer class="footer">
+      <div class="brand" style="font-weight:500;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted)">닫힌 개선 루프</div>
+      <div class="count"><b>02</b> / 11</div>
+    </footer>
+  </section>
+
+  <!-- 3 · Overview + diagram -->
+  <section class="slide">
+    <header class="topbar">
+      <div class="eyebrow"><span class="num">01</span> / 전체 구조</div>
+      <div class="brand"><span class="dotmark"></span> TeachingFlow</div>
+    </header>
+    <div class="body overview">
+      <svg class="diagram rise" viewBox="0 0 800 600" role="img" aria-label="portal 허브를 중심으로 create·play·analyze가 CQI 사이클을 도는 다이어그램">
+        <defs>
+          <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="var(--accent)"/>
+          </marker>
+        </defs>
+        <!-- cycle arcs (clockwise) -->
+        <g fill="none" stroke="var(--accent)" stroke-width="2.4" marker-end="url(#ah)" opacity=".9">
+          <path d="M458,160 A170,170 0 0 1 567,350"/>
+          <path d="M509,450 A170,170 0 0 1 291,450"/>
+          <path d="M233,350 A170,170 0 0 1 342,160"/>
+        </g>
+        <!-- spokes from portal hub -->
+        <g stroke="var(--line)" stroke-width="1.6" stroke-dasharray="4 5">
+          <line x1="400" y1="320" x2="400" y2="150"/>
+          <line x1="400" y1="320" x2="547" y2="405"/>
+          <line x1="400" y1="320" x2="253" y2="405"/>
+        </g>
+        <!-- CQI label on the analyze->create arc -->
+        <text x="212" y="270" class="lbl" font-size="15" font-weight="600" fill="var(--accent)" text-anchor="middle">CQI ↺</text>
+
+        <!-- stage nodes -->
+        <g text-anchor="middle">
+          <!-- create (top) -->
+          <circle cx="400" cy="150" r="58" fill="var(--surface)" stroke="var(--c-create)" stroke-width="2.5"/>
+          <text x="400" y="144" font-size="17" font-weight="700" fill="var(--ink)">create</text>
+          <text x="400" y="165" class="lbl" font-size="12" fill="var(--c-create)">:8000</text>
+          <!-- play (bottom-right) -->
+          <circle cx="547" cy="405" r="58" fill="var(--surface)" stroke="var(--c-play)" stroke-width="2.5"/>
+          <text x="547" y="399" font-size="17" font-weight="700" fill="var(--ink)">play</text>
+          <text x="547" y="420" class="lbl" font-size="12" fill="var(--c-play)">:8001</text>
+          <!-- analyze (bottom-left) -->
+          <circle cx="253" cy="405" r="58" fill="var(--surface)" stroke="var(--c-analyze)" stroke-width="2.5"/>
+          <text x="253" y="399" font-size="17" font-weight="700" fill="var(--ink)">analyze</text>
+          <text x="253" y="420" class="lbl" font-size="12" fill="var(--c-analyze)">:8002</text>
+          <!-- portal (hub) -->
+          <circle cx="400" cy="320" r="56" fill="var(--c-portal)"/>
+          <text x="400" y="315" font-size="16" font-weight="700" fill="#fff">portal</text>
+          <text x="400" y="335" class="lbl" font-size="12" fill="#fff" opacity=".92">:8003</text>
+        </g>
+      </svg>
+      <div class="legend">
+        <div class="rise">
+          <h2 style="font-size:clamp(22px,3vw,34px)">네 개의 독립 서브시스템,<br>하나의 사이클</h2>
+        </div>
+        <div class="item s-portal rise"><span class="swatch"></span><div><div class="lt">portal<span class="port">:8003</span></div><div class="ld">과목·주차 관리와 서비스 간 네비게이션의 허브. 상태를 스스로 감지한다.</div></div></div>
+        <div class="item s-create rise"><span class="swatch"></span><div><div class="lt">createLecture<span class="port">:8000</span></div><div class="ld">PPT → Claude Vision → TTS로 강의 파일을 제작한다.</div></div></div>
+        <div class="item s-play rise"><span class="swatch"></span><div><div class="lt">playLecture<span class="port">:8001</span></div><div class="ld">수강생에게 서비스하며 난이도·질문·키워드를 수집한다.</div></div></div>
+        <div class="item s-analyze rise"><span class="swatch"></span><div><div class="lt">analyzeLecture<span class="port">:8002</span></div><div class="ld">혼란도 지수를 산출해 CQI 보고서를 생성한다.</div></div></div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="mono" style="color:var(--muted)">portal = 허브 · 화살표 = CQI 순환</div>
+      <div class="count"><b>03</b> / 11</div>
+    </footer>
+  </section>
+
+  <!-- 4 · portal -->
+  <section class="slide s-portal">
+    <header class="topbar">
+      <div class="eyebrow"><span class="tag">● portal</span> <span class="num">02 / 서브시스템</span></div>
+      <div class="brand"><span class="dotmark"></span> TeachingFlow</div>
+    </header>
+    <div class="body split">
+      <div class="stack">
+        <div class="row rise"><span class="chip"><span class="sw" style="background:var(--c-portal)"></span>포트 8003</span><span class="chip">FastAPI</span><span class="chip">SQLite · async</span></div>
+        <h2 class="rise">사이클의 시작점,<br>과목·주차 관리 허브</h2>
+        <p class="lead rise">교수자는 여기서 과목을 등록하고 주차별 강의를 추가합니다. 각 서비스로의 이동은 모두 포털을 거치며,
+          서비스 직접 링크 대신 <b>흐름 다이어그램</b>이 전체 사이클을 안내합니다.</p>
+        <div class="db-tables rise"><span class="tb">courses</span><span class="tb">weekly_lectures</span></div>
+      </div>
+      <div class="cards rise" style="gap:14px">
+        <div class="card s-portal"><span class="accentbar"></span>
+          <div class="k">상태 감지 <span class="port">course + week</span></div>
+          <p><code class="mono">GET /api/status-week</code> 로 각 서비스를 프로브해 제작·분석 진행 상태를 <b>lecture_id가 아닌 주차 단위</b>로 자동 판정합니다.</p>
+        </div>
+        <div class="card s-portal"><span class="accentbar"></span>
+          <div class="k">오케스트레이션</div>
+          <ul>
+            <li><code class="mono">/api/proxy/analyze-week</code> — 주차별 분석 트리거</li>
+            <li>timeout 5s · 서비스 중단 시 graceful fallback</li>
+            <li>모든 서비스에 "← 포털" 복귀 버튼 (<code class="mono">from</code> 파라미터)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <footer class="footer"><div class="mono" style="color:var(--muted)">진입점 · http://localhost:8003</div><div class="count"><b>04</b> / 11</div></footer>
+  </section>
+
+  <!-- 5 · createLecture -->
+  <section class="slide s-create">
+    <header class="topbar">
+      <div class="eyebrow"><span class="tag">● createLecture</span> <span class="num">03 / 서브시스템</span></div>
+      <div class="brand"><span class="dotmark"></span> TeachingFlow</div>
+    </header>
+    <div class="body split">
+      <div class="stack">
+        <div class="row rise"><span class="chip"><span class="sw" style="background:var(--c-create)"></span>포트 8000</span><span class="chip">Claude Vision</span><span class="chip">Edge TTS</span></div>
+        <h2 class="rise">PPT 한 장이<br>말하는 강의가 되기까지</h2>
+        <p class="lead rise">업로드한 PPT를 LibreOffice가 PNG로 변환하면, Claude Vision이 슬라이드별 스크립트와
+          <b>강조 좌표</b>를 뽑고, Edge TTS가 구간별 MP3와 어절 타이밍을 생성합니다.</p>
+        <div class="card s-create rise"><span class="accentbar"></span>
+          <div class="k">CQI 모드</div>
+          <p>이전 수강생 피드백 텍스트를 붙여넣으면 Claude API가 해당 슬라이드 스크립트를 <b>자동 보강</b>합니다 — 사이클이 닫히는 지점.</p>
+        </div>
+      </div>
+      <div class="panel rise">
+        <div class="head"><span>제작 파이프라인</span><span class="port">from 파라미터 필수</span></div>
+        <div class="body-p">
+          <div class="kv"><span class="kk">1 · 업로드</span><span class="vv mono">PPT → LibreOffice → PNG</span></div>
+          <div class="kv"><span class="kk">2 · 분석</span><span class="vv mono">Claude Vision → 스크립트 + 좌표</span></div>
+          <div class="kv"><span class="kk">3 · 편집</span><span class="vv mono">스크립트 검토 · 강조영역 드래그</span></div>
+          <div class="kv"><span class="kk">4 · 합성</span><span class="vv mono">Edge TTS → MP3 + .words.json</span></div>
+          <div class="kv"><span class="kk">5 · 산출</span><span class="vv mono">storage/lectures/{id}/</span></div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer"><div class="mono" style="color:var(--muted)">포털에서만 진입 · 직접 접속 시 리디렉션</div><div class="count"><b>05</b> / 11</div></footer>
+  </section>
+
+  <!-- 6 · playLecture -->
+  <section class="slide s-play">
+    <header class="topbar">
+      <div class="eyebrow"><span class="tag">● playLecture</span> <span class="num">04 / 서브시스템</span></div>
+      <div class="brand"><span class="dotmark"></span> TeachingFlow</div>
+    </header>
+    <div class="body split">
+      <div class="stack">
+        <div class="row rise"><span class="chip"><span class="sw" style="background:var(--c-play)"></span>포트 8001</span><span class="chip">SQLite</span><span class="chip">sendBeacon</span></div>
+        <h2 class="rise">듣는 순간이<br>데이터가 된다</h2>
+        <p class="lead rise">createLecture의 storage를 <b>파일시스템으로 직접 공유</b> — ZIP 업로드 없이 즉시 서비스됩니다.
+          수강생이 로그인해 강의를 듣는 동안 분석의 원천 데이터가 쌓입니다.</p>
+        <div class="db-tables rise">
+          <span class="tb">users</span><span class="tb">sessions</span><span class="tb">lectures</span><span class="tb">progress</span>
+          <span class="tb">chat_messages</span><span class="tb">difficulty_ratings</span><span class="tb">slide_keywords</span>
+        </div>
+      </div>
+      <div class="cards rise">
+        <div class="card s-play"><span class="accentbar"></span>
+          <div class="k">수집 데이터 <span class="port">슬라이드 단위</span></div>
+          <ul>
+            <li>난이도 평가 — 쉬움(0) / 보통(1) / 어려움(2)</li>
+            <li>채팅 질문 전문</li>
+            <li>키워드 집계 — 한국어 형태소 처리</li>
+            <li>진도율 — beforeunload sendBeacon 저장</li>
+          </ul>
+        </div>
+        <div class="card s-play"><span class="accentbar"></span>
+          <div class="k">Analytics API</div>
+          <p><code class="mono">GET /admin/analytics/{lecture_id}</code> — 슬라이드별 난이도 분포·top-10 키워드·질문을 JSON으로. analyzeLecture의 입력 소스.</p>
+        </div>
+      </div>
+    </div>
+    <footer class="footer"><div class="mono" style="color:var(--muted)">파일시스템 공유 · CREATELECTURE_STORAGE_ROOT</div><div class="count"><b>06</b> / 11</div></footer>
+  </section>
+
+  <!-- 7 · analyzeLecture -->
+  <section class="slide s-analyze">
+    <header class="topbar">
+      <div class="eyebrow"><span class="tag">● analyzeLecture</span> <span class="num">05 / 서브시스템</span></div>
+      <div class="brand"><span class="dotmark"></span> TeachingFlow</div>
+    </header>
+    <div class="body split">
+      <div class="stack">
+        <div class="row rise"><span class="chip"><span class="sw" style="background:var(--c-analyze)"></span>포트 8002</span><span class="chip">claude-sonnet-4-6</span><span class="chip">httpx</span></div>
+        <h2 class="rise">막힌 지점을<br>지수로 바꾼다</h2>
+        <p class="lead rise">포털의 "학습 분석"에서 <code class="mono">/week-analyze</code>로 진입해 course+week 단위로 일괄 분석합니다.
+          Claude가 슬라이드별 <b>혼란도 지수</b>를 산출하고 핵심 미이해 개념을 뽑아 CQI 보고서를 만듭니다.</p>
+        <div class="row rise">
+          <div><div class="bignum" style="--c:var(--c-analyze)">0.82</div><div class="mono" style="font-size:12px;color:var(--muted);margin-top:6px">confusion_score</div></div>
+          <div style="border-left:1px solid var(--line);padding-left:18px"><div class="bignum" style="--c:var(--c-analyze);font-size:22px">add_example</div><div class="mono" style="font-size:12px;color:var(--muted);margin-top:6px">recommended_action</div></div>
+        </div>
+      </div>
+      <div class="panel rise">
+        <div class="head"><span>CQI 보고서 · 슬라이드 항목</span><span class="port">cqi_reports</span></div>
+<pre><span class="cm">// slides[i]</span>
+{
+  <span class="ky">"slide_idx"</span>: <span class="nm">2</span>,
+  <span class="ky">"confusion_score"</span>: <span class="nm">0.82</span>,
+  <span class="ky">"core_concepts"</span>: [<span class="st">"역전파"</span>, <span class="st">"gradient"</span>],
+  <span class="ky">"recommended_action"</span>: <span class="st">"add_example"</span>,
+  <span class="ky">"cqi_instruction"</span>:
+     <span class="st">"역전파의 연산 순서를 단계별로</span>
+<span class="st">      수식 없이 설명하고 예시 추가"</span>,
+  <span class="ky">"difficulty"</span>: { <span class="st">"어려움"</span>: <span class="nm">5</span>, <span class="ky">"total"</span>: <span class="nm">8</span> }
+}</pre>
+      </div>
+    </div>
+    <footer class="footer"><div class="mono" style="color:var(--muted)">lecture_id 없으면 즉시 404 · 조용한 실패 방지</div><div class="count"><b>07</b> / 11</div></footer>
+  </section>
+
+  <!-- 8 · Interfaces -->
+  <section class="slide">
+    <header class="topbar">
+      <div class="eyebrow"><span class="num">06</span> / 시스템 연동</div>
+      <div class="brand"><span class="dotmark"></span> TeachingFlow</div>
+    </header>
+    <div class="body stack">
+      <h2 class="rise">서브시스템은 어떻게<br>맞물리는가</h2>
+      <div class="conn rise">
+        <div class="card s-create"><span class="accentbar" style="background:linear-gradient(var(--c-create),var(--c-play))"></span>
+          <div class="flow">createLecture <span class="arrow">→</span> playLecture</div>
+          <div class="k">파일시스템 공유</div>
+          <p><code class="mono">CREATELECTURE_STORAGE_ROOT</code>로 동일 디렉터리를 참조. DB에 없으면 <code class="mono">GET /api/lectures/{id}</code> 시 자동 임포트.</p>
+        </div>
+        <div class="card s-play"><span class="accentbar" style="background:linear-gradient(var(--c-play),var(--c-analyze))"></span>
+          <div class="flow">playLecture <span class="arrow">→</span> analyzeLecture</div>
+          <div class="k">Analytics API</div>
+          <p><code class="mono">GET /admin/analytics/{id}</code> — HTTP Basic 인증(admin)으로 수강 집계를 넘긴다.</p>
+        </div>
+        <div class="card s-analyze"><span class="accentbar" style="background:linear-gradient(var(--c-analyze),var(--c-create))"></span>
+          <div class="flow">analyzeLecture <span class="arrow">↺</span> createLecture</div>
+          <div class="k">CQI 보고서</div>
+          <p><code class="mono">GET /api/reports/{id}</code> JSON → createLecture의 CQI 피드백 박스에 입력해 스크립트 보강.</p>
+        </div>
+        <div class="card s-portal"><span class="accentbar"></span>
+          <div class="flow">portal <span class="arrow">→</span> 모든 서비스</div>
+          <div class="k">상태 프로브 · 트리거</div>
+          <p><code class="mono">/api/status-week</code>로 존재·보고서 상태 확인, <code class="mono">/api/proxy/analyze-week</code>로 분석 실행.</p>
+        </div>
+      </div>
+    </div>
+    <footer class="footer"><div class="mono" style="color:var(--muted)">파일시스템 · REST · Basic Auth</div><div class="count"><b>08</b> / 11</div></footer>
+  </section>
+
+  <!-- 9 · payoff -->
+  <section class="slide">
+    <header class="topbar">
+      <div class="eyebrow"><span class="num">07</span> / 사이클의 완성</div>
+      <div class="brand"><span class="dotmark"></span> TeachingFlow</div>
+    </header>
+    <div class="body stack">
+      <h2 class="rise">데이터가 다음 강의를<br>고쳐 쓴다</h2>
+      <p class="lead rise">수강생이 남긴 난이도와 질문이 혼란도 지수가 되고, 지수가 개선 지시문이 되어, 다음 제작의 입력으로 되돌아옵니다.
+        분석이 <b>보고서에서 끝나지 않고</b> 실제 스크립트를 바꾸는 것 — 그것이 이 시스템의 핵심입니다.</p>
+      <div class="cards rise" style="grid-template-columns:repeat(3,1fr);gap:0;align-items:stretch">
+        <div class="card s-play" style="border-radius:16px 0 0 16px"><div class="k">playLecture 수집</div><h3>어려움 5 / 8</h3><p>"역전파" 슬라이드 · 질문 다수 · 난이도 상위</p></div>
+        <div class="card s-analyze" style="border-radius:0"><div class="k">analyzeLecture 산출</div><h3>혼란도 0.82</h3><p>핵심 미이해 개념 = 역전파 · 지시: 예시 추가</p></div>
+        <div class="card s-create" style="border-radius:0 16px 16px 0"><div class="k">createLecture 반영</div><h3>스크립트 보강</h3><p>단계별 설명 + 예시로 다음 학기 강의 자동 개선</p></div>
+      </div>
+      <div class="flowline rise" style="justify-content:center;font-size:14px">
+        <b>수강 데이터</b><span class="ar">→</span><b>혼란도 지수</b><span class="ar">→</span><b>개선 지시문</b><span class="ar">↺</span><b>다음 강의</b>
+      </div>
+    </div>
+    <footer class="footer"><div class="mono" style="color:var(--muted)">Continuous Quality Improvement</div><div class="count"><b>09</b> / 11</div></footer>
+  </section>
+
+  <!-- 10 · stack / run -->
+  <section class="slide">
+    <header class="topbar">
+      <div class="eyebrow"><span class="num">08</span> / 스택과 실행</div>
+      <div class="brand"><span class="dotmark"></span> TeachingFlow</div>
+    </header>
+    <div class="body split">
+      <div class="stack">
+        <h2 class="rise">얇은 스택,<br>정직한 구조</h2>
+        <p class="lead rise">4개 서비스 모두 FastAPI. 상태가 필요한 곳은 SQLite(async), AI는 Claude API,
+          음성은 Edge TTS, 프런트는 의존성 없는 바닐라 JS입니다.</p>
+        <div class="row rise">
+          <span class="chip"><span class="sw"></span>FastAPI</span>
+          <span class="chip"><span class="sw"></span>SQLAlchemy async</span>
+          <span class="chip"><span class="sw"></span>Claude API</span>
+          <span class="chip"><span class="sw"></span>Edge TTS</span>
+          <span class="chip"><span class="sw"></span>바닐라 JS</span>
+          <span class="chip"><span class="sw"></span>SSE</span>
+        </div>
+      </div>
+      <div class="panel rise">
+        <div class="head"><span>한 번에 기동 · scripts/</span><span class="port">venv activate 불필요</span></div>
+<pre><span class="cm"># 4개 전체 기동 + 헬스 체크</span>
+<span class="ky">./scripts/start.sh</span>
+<span class="ky">./scripts/start.sh</span> portal       <span class="cm"># 특정 서비스만</span>
+<span class="ky">./scripts/start.sh</span> --reload     <span class="cm"># 개발용</span>
+<span class="ky">./scripts/stop.sh</span>               <span class="cm"># 전체 종료</span>
+<span class="ky">./scripts/status.sh</span>             <span class="cm"># PID · HTTP 상태</span>
+
+<span class="cm"># → 포털에서 시작</span>
+<span class="st">http://localhost:8003</span></pre>
+      </div>
+    </div>
+    <footer class="footer"><div class="mono" style="color:var(--muted)">8000 · 8001 · 8002 · 8003</div><div class="count"><b>10</b> / 11</div></footer>
+  </section>
+
+  <!-- 11 · closing -->
+  <section class="slide closing">
+    <header class="topbar">
+      <div class="brand"><span class="dotmark"></span> TeachingFlow</div>
+      <div class="eyebrow mono">EDUTECH-3</div>
+    </header>
+    <div class="body">
+      <div class="kicker rise">AI 강의 사이클</div>
+      <h1 class="rise">만들고, 가르치고,<br>분석하고, 다시 만든다.</h1>
+      <p class="lead rise">한 번의 제작으로 끝나지 않는 강의. 수강생의 막힘이 다음 강의의 개선이 되는
+        닫힌 루프를 네 개의 작은 서비스가 함께 완성합니다.</p>
+      <a class="cta rise" href="http://localhost:8003"><span class="dotmark"></span>http://localhost:8003 에서 시작</a>
+    </div>
+    <footer class="footer"><div class="mono" style="color:var(--muted)">portal → create → play → analyze ↺ CQI</div><div class="count"><b>11</b> / 11</div></footer>
+  </section>
+
+</main>
+
+<div class="dots" id="dots" role="tablist" aria-label="슬라이드"></div>
+<button class="zone left" id="zleft" aria-label="이전 슬라이드"></button>
+<button class="zone right" id="zright" aria-label="다음 슬라이드"></button>
+
+<script>
+(function(){
+  var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+  var total = slides.length;
+  var i = 0;
+  var progress = document.getElementById('progress');
+  var dotsWrap = document.getElementById('dots');
+
+  slides.forEach(function(_,n){
+    var b = document.createElement('button');
+    b.setAttribute('role','tab');
+    b.setAttribute('aria-label',(n+1)+'번 슬라이드');
+    b.addEventListener('click',function(){go(n)});
+    dotsWrap.appendChild(b);
+  });
+  var dots = Array.prototype.slice.call(dotsWrap.children);
+
+  function render(){
+    slides.forEach(function(s,n){ s.classList.toggle('active', n===i); });
+    dots.forEach(function(d,n){ d.classList.toggle('on', n===i); });
+    progress.style.width = ((i+1)/total*100)+'%';
+  }
+  function go(n){ i = Math.max(0, Math.min(total-1, n)); render(); }
+  function next(){ go(i+1); }
+  function prev(){ go(i-1); }
+
+  document.addEventListener('keydown',function(e){
+    if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' '){ e.preventDefault(); next(); }
+    else if(e.key==='ArrowLeft'||e.key==='PageUp'){ e.preventDefault(); prev(); }
+    else if(e.key==='Home'){ e.preventDefault(); go(0); }
+    else if(e.key==='End'){ e.preventDefault(); go(total-1); }
+  });
+  document.getElementById('zleft').addEventListener('click',prev);
+  document.getElementById('zright').addEventListener('click',next);
+
+  // touch swipe
+  var x0=null;
+  document.addEventListener('touchstart',function(e){ x0=e.touches[0].clientX; },{passive:true});
+  document.addEventListener('touchend',function(e){
+    if(x0===null) return;
+    var dx=e.changedTouches[0].clientX-x0;
+    if(Math.abs(dx)>50){ dx<0?next():prev(); }
+    x0=null;
+  },{passive:true});
+
+  // theme toggle: cycle system -> light -> dark -> system
+  var root=document.documentElement;
+  var tb=document.getElementById('themebtn');
+  var state=0; // 0 system,1 light,2 dark
+  tb.addEventListener('click',function(){
+    state=(state+1)%3;
+    if(state===0) root.removeAttribute('data-theme');
+    else root.setAttribute('data-theme', state===1?'light':'dark');
+    tb.textContent = state===0?'◐':(state===1?'☀':'☾');
+  });
+
+  render();
+})();
+</script>
