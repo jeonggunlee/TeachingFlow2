@@ -41,7 +41,7 @@ CREATE TABLE cqi_reports (
 | GET  | `/api/week-lectures` | createLecture에서 특정 course+week 강의 목록 조회 (분석 상태 포함) |
 | POST | `/api/analyze/{lecture_id}` | 단일 강의 분석 시작 (202 Accepted, 백그라운드 처리) |
 | POST | `/api/analyze-week` | course+week 전체 강의 일괄 분석 시작 |
-| GET  | `/api/reports` | 저장된 CQI 보고서 목록 |
+| GET  | `/api/reports` | 저장된 CQI 보고서 목록 (`?lecture_id=X` 지정 시 해당 강의 이력만, 최신순) |
 | GET  | `/api/reports/{id}` | 보고서 상세 (report_json 포함) |
 | DELETE | `/api/reports/{id}` | 보고서 삭제 |
 
@@ -55,12 +55,17 @@ CREATE TABLE cqi_reports (
     "slide_count": 10,
     "analyze_status": "done",
     "report_id": "ff336de3-...",
-    "report_generated_at": "..."
+    "report_generated_at": "...",
+    "reports": [
+      { "report_id": "ff336de3-...", "generated_at": "...", "status": "done" },
+      { "report_id": "a1b2...",      "generated_at": "...", "status": "done" }
+    ]
   }
 ]
 ```
 - createLecture `/api/lectures?course=X&week=Y` 로 강의 목록 조회
 - 각 강의에 대해 analyzeLecture DB에서 최신 보고서 상태 병합
+- `reports`: 강의별 전체 분석 이력(최신순) — 프론트에서 날짜 선택 드롭다운으로 활용
 
 ### `POST /api/analyze-week?course=X&week=Y` 동작
 1. createLecture에서 course+week 강의 목록 조회
@@ -151,9 +156,12 @@ POST /api/analyze/{lecture_id}
 - 해당 course+week의 강의 목록 + 분석 상태 카드 표시
 - "📊 이 주차 전체 분석 시작" 버튼
 - 분석 진행 중 4초 폴링으로 상태 갱신
+- **분석 이력 날짜 선택**: 여러 번 분석한 강의는 카드에 날짜 드롭다운 표시 → 선택 시 그 시점 보고서로 이동
+- **🔄 다시 분석**: 분석 완료 강의도 최신 운영 데이터로 재분석 (`POST /api/analyze/{lecture_id}`)
 
 ### 보고서 (`report.html`)
 - 상단: "← 포털로 돌아가기" 버튼 (`from` URL 파라미터로 href 설정)
+- **분석 이력 셀렉터**: 같은 강의의 분석이 2건 이상이면 헤더에 날짜 드롭다운 표시 → 다른 날짜 보고서로 전환 (`GET /api/reports?lecture_id=X`)
 - 슬라이드별 카드: confusion_score 히트맵 색상, recommended_action 배지, core_concepts 태그
 - **평균 난이도 막대 그래프**: HTML Canvas (devicePixelRatio 지원)
 - 질문 목록 + 키워드 태그 표시

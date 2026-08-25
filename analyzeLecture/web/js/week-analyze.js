@@ -105,6 +105,19 @@ async function loadLectures() {
   for (const lec of _lectures) {
     const startBtn = document.getElementById(`btn-analyze-${lec.lecture_id}`);
     if (startBtn) startBtn.addEventListener('click', () => startAnalysis(lec.lecture_id));
+
+    const reBtn = document.getElementById(`reanalyze-${lec.lecture_id}`);
+    if (reBtn) reBtn.addEventListener('click', () => startSingleAnalysis(lec.lecture_id));
+
+    // 날짜 선택 → "보고서 보기" 링크 갱신
+    const hist = document.getElementById(`hist-${lec.lecture_id}`);
+    const view = document.getElementById(`view-${lec.lecture_id}`);
+    if (hist && view) {
+      hist.addEventListener('change', () => {
+        const p = new URLSearchParams({ id: hist.value, from: fromUrl });
+        view.href = `/report?${p.toString()}`;
+      });
+    }
   }
 
   // 진행 중인 분석이 있으면 폴링
@@ -130,10 +143,28 @@ function lectureCardHtml(lec) {
   } else if (lec.analyze_status === 'pending' || lec.analyze_status === 'processing') {
     actionHtml = `<span class="spinner"></span>`;
   } else if (lec.analyze_status === 'done') {
-    const rptParams = new URLSearchParams({ id: lec.report_id, from: fromUrl });
+    const doneReports = (lec.reports || []).filter(r => r.status === 'done');
+    const firstId = doneReports.length ? doneReports[0].report_id : lec.report_id;
+    const viewParams = new URLSearchParams({ id: firstId, from: fromUrl });
+
+    const selectHtml = doneReports.length > 1 ? `
+      <select class="report-history-select" id="hist-${esc(lec.lecture_id)}" title="분석 날짜 선택">
+        ${doneReports.map((r, i) =>
+          `<option value="${esc(r.report_id)}">${fmtDate(r.generated_at)}${i === 0 ? '  (최신)' : ''}</option>`
+        ).join('')}
+      </select>` : '';
+
     actionHtml = `
-      <a class="btn-view-report" href="/report?${rptParams.toString()}">📊 보고서 보기</a>`;
+      ${selectHtml}
+      <a class="btn-view-report" id="view-${esc(lec.lecture_id)}" href="/report?${viewParams.toString()}">📊 보고서 보기</a>
+      <button class="btn-reanalyze" id="reanalyze-${esc(lec.lecture_id)}" title="최신 운영 데이터로 다시 분석">🔄 다시 분석</button>`;
   }
+
+  // 분석 이력 요약 (몇 회 분석했는지)
+  const doneCount = (lec.reports || []).filter(r => r.status === 'done').length;
+  const analyzedMeta = lec.report_generated_at
+    ? `<span class="lecture-meta-item">최근 분석: ${fmtDate(lec.report_generated_at)}${doneCount > 1 ? ` · 총 ${doneCount}회` : ''}</span>`
+    : '';
 
   return `
     <div class="lecture-card" id="card-${esc(lec.lecture_id)}">
@@ -143,9 +174,7 @@ function lectureCardHtml(lec) {
           ${statusBadge(lec.analyze_status)}
           <span class="lecture-meta-item">${date}</span>
           <span class="lecture-meta-item">슬라이드 ${lec.slide_count}장</span>
-          ${lec.report_generated_at
-            ? `<span class="lecture-meta-item">분석: ${fmtDate(lec.report_generated_at)}</span>`
-            : ''}
+          ${analyzedMeta}
         </div>
       </div>
       <div class="lecture-card-actions">${actionHtml}</div>
@@ -173,6 +202,28 @@ async function startAnalysis(lectureId) {
   }
 
   await loadLectures();
+}
+
+// ── 단일 강의 다시 분석 ─────────────────────────────────────────────────────────
+async function startSingleAnalysis(lectureId) {
+  const btn = document.getElementById(`reanalyze-${lectureId}`);
+  if (btn) { btn.disabled = true; btn.textContent = '요청 중...'; }
+
+  try {
+    const res = await fetch(`/api/analyze/${encodeURIComponent(lectureId)}`, { method: 'POST' });
+    if (!res.ok) {
+      const data = await res.json().catch(() => ({}));
+      alert(`오류: ${data.detail || res.status}`);
+      if (btn) { btn.disabled = false; btn.textContent = '🔄 다시 분석'; }
+      return;
+    }
+  } catch (err) {
+    alert(`네트워크 오류: ${err.message}`);
+    if (btn) { btn.disabled = false; btn.textContent = '🔄 다시 분석'; }
+    return;
+  }
+
+  await loadLectures();   // pending 상태로 바뀌며 폴링 시작
 }
 
 // ── 전체 분석 ─────────────────────────────────────────────────────────────────

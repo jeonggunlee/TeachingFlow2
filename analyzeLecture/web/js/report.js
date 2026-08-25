@@ -1,11 +1,9 @@
 const _params  = new URLSearchParams(location.search);
 const reportId = _params.get("id") || "";
 
-// 포털 뒤로가기 버튼
-(function() {
-  const from = _params.get('from') || `${location.protocol}//${location.hostname}:8003`;
-  document.getElementById('nav-portal-back').href = from;
-})();
+// 포털 뒤로가기 버튼 / from 파라미터
+const fromParam = _params.get('from') || `${location.protocol}//${location.hostname}:8003`;
+document.getElementById('nav-portal-back').href = fromParam;
 const loadingEl   = document.getElementById("loading");
 const reportBody  = document.getElementById("report-body");
 
@@ -503,6 +501,36 @@ document.getElementById("btn-apply-cqi")?.addEventListener("click", async () => 
   window.location.href = `${base}/?${sp.toString()}`;
 });
 
+// ── 분석 이력 셀렉터 ─────────────────────────────────
+async function loadReportHistory(lectureId) {
+  if (!lectureId) return;
+  const wrap = document.getElementById("report-history-wrap");
+  const sel  = document.getElementById("report-history-select");
+  if (!wrap || !sel) return;
+
+  let reports;
+  try {
+    const res = await fetch(`/api/reports?lecture_id=${encodeURIComponent(lectureId)}`);
+    if (!res.ok) return;
+    reports = (await res.json()).filter(r => r.status === "done");
+  } catch (_) { return; }
+
+  if (reports.length <= 1) return;   // 전환할 다른 날짜가 없으면 숨김 유지
+
+  sel.innerHTML = reports.map((r, i) =>
+    `<option value="${escHtml(r.id)}"${r.id === reportId ? " selected" : ""}>${fmtDate(r.generated_at)}${i === 0 ? "  (최신)" : ""}</option>`
+  ).join("");
+
+  sel.addEventListener("change", () => {
+    if (sel.value && sel.value !== reportId) {
+      const p = new URLSearchParams({ id: sel.value, from: fromParam });
+      location.href = `/report?${p.toString()}`;
+    }
+  });
+
+  wrap.hidden = false;
+}
+
 // ── 초기화 ───────────────────────────────────────────
 
 (async () => {
@@ -525,6 +553,9 @@ document.getElementById("btn-apply-cqi")?.addEventListener("click", async () => 
   document.getElementById("report-date").textContent  = `생성: ${fmtDate(report.generated_at)}`;
   document.getElementById("report-slide-count").textContent =
     `슬라이드 ${report.slides.length}개 분석`;
+
+  // 이 강의의 분석 이력(다른 날짜) 로드 → 셀렉터로 전환 가능
+  loadReportHistory(data.lecture_id);
 
   // hidden 해제를 먼저 해야 캔버스 부모의 clientWidth가 정상으로 잡힘
   loadingEl.hidden  = true;

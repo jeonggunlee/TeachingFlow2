@@ -356,11 +356,12 @@ async def start_analysis(
 
 
 @router.get("/api/reports")
-async def list_reports(db: AsyncSession = Depends(get_db)):
-    """저장된 CQI 보고서 목록."""
-    result = await db.execute(
-        select(CQIReport).order_by(CQIReport.generated_at.desc())
-    )
+async def list_reports(lecture_id: str = None, db: AsyncSession = Depends(get_db)):
+    """저장된 CQI 보고서 목록. lecture_id 지정 시 해당 강의 이력만 (최신순)."""
+    stmt = select(CQIReport).order_by(CQIReport.generated_at.desc())
+    if lecture_id:
+        stmt = stmt.where(CQIReport.lecture_id == lecture_id)
+    result = await db.execute(stmt)
     rows = result.scalars().all()
     return [
         {
@@ -429,18 +430,18 @@ async def get_week_lectures(course: str, week: str, db: AsyncSession = Depends(g
     if not lectures:
         return []
 
-    # DB에서 모든 보고서 조회 (강의별 최신 1건)
+    # DB에서 모든 보고서 조회 → 강의별 이력(최신순)으로 그룹화
     result_rows = await db.execute(select(CQIReport).order_by(CQIReport.generated_at.desc()))
     all_reports = result_rows.scalars().all()
-    latest_report: dict[str, CQIReport] = {}
+    reports_by_lecture: dict[str, list[CQIReport]] = {}
     for r in all_reports:
-        if r.lecture_id not in latest_report:
-            latest_report[r.lecture_id] = r
+        reports_by_lecture.setdefault(r.lecture_id, []).append(r)
 
     result = []
     for lec in lectures:
         lid = lec["lecture_id"]
-        report = latest_report.get(lid)
+        history = reports_by_lecture.get(lid, [])
+        report = history[0] if history else None   # 최신
         result.append({
             "lecture_id":          lid,
             "title":               lec.get("title", lid),
@@ -451,6 +452,15 @@ async def get_week_lectures(course: str, week: str, db: AsyncSession = Depends(g
             "report_id":           report.id if report else None,
             "report_generated_at": report.generated_at if report else None,
             "error_message":       report.error_message if report else None,
+            # 강의별 전체 분석 이력 (최신순) — 날짜 선택용
+            "reports": [
+                {
+                    "report_id":    rr.id,
+                    "generated_at": rr.generated_at,
+                    "status":       rr.status,
+                }
+                for rr in history
+            ],
         })
     return result
 

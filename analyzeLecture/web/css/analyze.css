@@ -75,7 +75,28 @@
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
+  align-items: center;
 }
+
+/* 분석 이력(날짜) 셀렉터 */
+.report-history {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.report-history-caption { color: var(--muted); }
+.report-history-select {
+  background: var(--panel, #1e293b);
+  border: 1px solid #334155;
+  color: #e2e8f0;
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-size: 12.5px;
+  cursor: pointer;
+  transition: border-color .15s;
+}
+.report-history-select:hover { border-color: #475569; }
+.report-history-select:focus { outline: none; border-color: var(--accent, #6366f1); }
 
 /* 혼란도 히트맵 */
 .heatmap-wrap {

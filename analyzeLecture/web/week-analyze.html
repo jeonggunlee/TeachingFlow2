@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>주차별 학습 분석 — HALLYM EDUTECH</title>
   <link rel="stylesheet" href="/css/common.css?v=2" />
-  <link rel="stylesheet" href="/css/analyze.css?v=2" />
+  <link rel="stylesheet" href="/css/analyze.css?v=3" />
   <style>
     /* ── 포털 컨텍스트 바 ─────────────────────────────── */
     .ctx-bar {
@@ -94,7 +94,10 @@
       display: flex;
       gap: 8px;
       align-items: center;
+      justify-content: flex-end;
+      flex-wrap: wrap;
       flex-shrink: 0;
+      max-width: 60%;
     }
 
     .btn-start-analyze {
@@ -129,6 +132,37 @@
       transition: all .15s;
     }
     .btn-view-report:hover { background: #065f46; }
+
+    /* 분석 날짜 선택 드롭다운 */
+    .report-history-select {
+      background: var(--panel);
+      border: 1px solid #334155;
+      color: var(--fg, #e2e8f0);
+      padding: 6px 10px;
+      border-radius: 8px;
+      font-size: 12.5px;
+      cursor: pointer;
+      max-width: 200px;
+      transition: border-color .15s;
+    }
+    .report-history-select:hover  { border-color: #475569; }
+    .report-history-select:focus  { outline: none; border-color: var(--accent, #6366f1); }
+
+    /* 다시 분석 버튼 */
+    .btn-reanalyze {
+      background: transparent;
+      border: 1px solid #475569;
+      color: var(--muted);
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all .15s;
+    }
+    .btn-reanalyze:hover    { border-color: var(--accent, #6366f1); color: var(--fg, #e2e8f0); }
+    .btn-reanalyze:disabled { opacity: 0.45; cursor: not-allowed; }
 
     .btn-retry {
       background: transparent;
@@ -220,6 +254,6 @@
 
 </div>
 
-<script src="/js/week-analyze.js?v=2"></script>
+<script src="/js/week-analyze.js?v=3"></script>
 </body>
 </html>
