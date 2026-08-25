@@ -82,7 +82,7 @@
 4. *(CQI 모드)* 수강생 피드백 텍스트 → Claude API로 스크립트 자동 보강
 5. 스크립트 편집 페이지에서 검토·수정·강조 영역 드래그 지정
 6. Edge TTS로 구간별 MP3 + 어절 타이밍 생성 → `storage/lectures/{id}/` 저장
-7. 강의 플레이어에서 재생·확인·녹화(WebM)
+7. 강의 플레이어에서 재생·확인 (라이브 DOM 슬라이드 + 텍스트 정밀 강조)
 8. playLecture가 같은 storage를 직접 참조 → 즉시 서비스 가능
 
 ---
@@ -224,7 +224,7 @@ EDUTECH-3/
 │   │   └── utils/{sse,storage}.py
 │   ├── web/
 │   │   ├── index.html / scripts.html / player.html / week-lectures.html
-│   │   └── js/{upload,scripts,player,overlay,subtitle,recorder,week-lectures}.js
+│   │   └── js/{upload,scripts,player,slide-stage,overlay,subtitle,week-lectures,evolve}.js
 │   └── storage/lectures/{id}/       ← playLecture가 직접 참조
 ├── playLecture/                     ← 강의 운영 ✅
 │   ├── CLAUDE.md

@@ -1,6 +1,6 @@
 # web/ — 프론트엔드 (정적 HTML/CSS/JS)
 
-> 슬라이드/오디오 동기화 재생 + Canvas 강조 효과 + 실시간 자막 + WebM 영상 녹화 + 스크립트·강조 영역 편집.
+> 라이브 DOM 슬라이드 재생 + 텍스트 정밀 강조 + 실시간 자막 + 스크립트·강조 대상 편집.
 > 전체 시스템 개요는 루트 [`../CLAUDE.md`](../CLAUDE.md), 백엔드는 [`../app/CLAUDE.md`](../app/CLAUDE.md), 입력 데이터 스키마는 [`../storage/CLAUDE.md`](../storage/CLAUDE.md) 참고.
 
 ---
@@ -20,9 +20,9 @@ web/
     ├── upload.js             # 업로드 폼 + EventSource 진행바 + 강의 목록(loadLibrary)
     ├── scripts.js            # 스크립트 편집 + 모달 드래그 + TTS SSE
     ├── player.js             # 메인 컨트롤러, lectureId 모듈 레벨 선언, 편집·내보내기 링크
-    ├── overlay.js            # Canvas 강조 효과 모듈
-    ├── subtitle.js           # 자막 동기화 모듈
-    └── recorder.js           # MediaRecorder 래퍼
+    ├── slide-stage.js        # 라이브 DOM 슬라이드 렌더 + data-ref 강조 (형광펜·밑줄·체크)
+    ├── overlay.js            # Canvas 강조 (레거시 PNG 강의 전용)
+    └── subtitle.js           # 자막 동기화 모듈
 ```
 
 ---
@@ -60,14 +60,14 @@ web/
 ### player.html (재생)
 
 - 상단: 강의 제목 + 슬라이드 번호 카운터
-- 중앙: 슬라이드 이미지(`<img>`) + Canvas 오버레이(`<canvas>`) 겹침
-  - `.slide-canvas { position:absolute; inset:0; width:100%; height:100% }` — slide-area 전체 커버
+- 중앙: 슬라이드 HTML을 라이브 DOM으로 렌더(`#slide-dom`) — 강조는 `[data-ref]` 요소에 직접 적용
+  - 레거시 PNG 강의는 `<img>` + Canvas 오버레이로 자동 분기
 - 하단: 자막 바 (2줄 고정 높이 76px, overflow:hidden)
-- 컨트롤: 🏠 홈 / ◀◀ 이전 / ▶ 재생·일시정지 / ▶▶ 다음 / 시간 표시 / 강조 효과 선택 / ⏺ 녹화 / ✏️ 편집 / ⬇ 내보내기
+- 컨트롤: 🏠 홈 / ◀◀ 이전 / ▶ 재생·일시정지 / ▶▶ 다음 / 시간 표시 / 강조 효과 선택(형광펜·밑줄·체크) / ✏️ 편집 / ⬇ 내보내기
   - "🏠 홈" → `/` (강의 목록으로)
   - "✏️ 편집" → `/scripts?id={id}` (스크립트 편집 페이지)
   - "⬇ 내보내기" → `/api/lectures/{id}/export` (ZIP 다운로드)
-- 스크립트 로드 순서: `subtitle.js` → `overlay.js` → `recorder.js` → `player.js` (defer)
+- 스크립트 로드 순서: `subtitle.js` → `slide-stage.js` → `overlay.js` → `player.js` (defer)
 - `lectureId` 변수: 모듈 레벨에 선언 (`new URLSearchParams(location.search).get("id")`) — 모든 버튼 href에서 공유
 
 ---
@@ -251,25 +251,3 @@ Overlay.resize()                       // ResizeObserver / 이미지 onload 콜�
 
 ---
 
-## 7. 영상 녹화 (`recorder.js`)
-
-### 구현 방식
-
-- **비디오 트랙**: 슬라이드+오버레이를 합성한 마스터 `<canvas>`의 `captureStream(30fps)`
-  - 매 프레임 `requestAnimationFrame`에서 슬라이드 이미지 + Canvas 오버레이 + 자막 합성
-- **오디오 트랙**: Web Audio API
-  ```js
-  const audioCtx = new AudioContext();
-  const dest = audioCtx.createMediaStreamDestination();
-  const src  = audioCtx.createMediaElementSource(audioEl);
-  src.connect(dest);
-  src.connect(audioCtx.destination);   // 모니터링 유지
-  ```
-- `MediaRecorder(stream, { mimeType: "video/webm;codecs=vp9,opus" })`
-- 종료 시: Blob → `URL.createObjectURL` → `<a download="lecture.webm">`
-
-### 주의사항
-
-- `MediaElementAudioSourceNode`는 동일 audio 요소에 1회만 연결 가능 — `AudioContext`를 재사용
-- VP9/Opus WebM은 Chromium 계열 전용 — Safari 미지원, `Recorder.isSupported()`로 감지 후 버튼 비활성화
-- 녹화 중 슬라이드/세그먼트 전환은 마스터 캔버스에 끊김 없이 합성

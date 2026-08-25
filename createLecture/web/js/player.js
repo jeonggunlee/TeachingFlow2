@@ -36,7 +36,6 @@ let _curSeg   = null;     // 현재 세그먼트 (오버레이 트리거용)
 // ── 초기화 ──────────────────────────────────────────────────────
 Subtitle.init(subtitleBar);
 Overlay.init(slideImg, slideCanvas);
-Recorder.init(slideImg, subtitleBar, audio);
 
 (async () => {
   const id = new URLSearchParams(location.search).get("id");
@@ -77,7 +76,6 @@ Recorder.init(slideImg, subtitleBar, audio);
 
   if (lecture.slide_size) {
     Overlay.setNaturalSize(lecture.slide_size.w, lecture.slide_size.h);
-    Recorder.setNaturalSize(lecture.slide_size.w, lecture.slide_size.h);
   }
 
   // HTML 슬라이드면 라이브 DOM으로 렌더 (레거시 PNG 강의는 기존 경로 유지)
@@ -88,16 +86,6 @@ Recorder.init(slideImg, subtitleBar, audio);
     slideDom.hidden = false;
     SlideStage.loadCss(`${base}/${lecture.slide_css || "slides/slide.css"}`);
     SlideStage.init(slideDom, lecture.slide_size || { w: 1920, h: 1080 });
-
-    // 녹화는 슬라이드를 캔버스에 합성하는 방식이라 라이브 DOM 슬라이드에서는
-    // 아직 지원하지 않는다. 오해를 막기 위해 버튼을 명시적으로 비활성화한다.
-    const recBtn = document.getElementById("btn-record");
-    if (recBtn) {
-      recBtn.disabled = true;
-      recBtn.title = "웹 슬라이드 강의는 아직 녹화를 지원하지 않습니다";
-      recBtn.style.opacity = "0.45";
-      recBtn.style.cursor = "not-allowed";
-    }
   }
 
   goSlide(0, 0, false);
@@ -225,27 +213,6 @@ function setupControls() {
   // ── 편집 버튼 ──────────────────────────────────────────────────
   const btnEdit = document.getElementById("btn-edit-scripts");
   if (btnEdit) btnEdit.href = `/scripts?id=${lectureId}`;
-
-  // ── 녹화 버튼 ───────────────────────────────────────────────────
-  const btnRecord = document.getElementById("btn-record");
-  if (btnRecord) {
-    if (!Recorder.isSupported()) {
-      btnRecord.disabled = true;
-      btnRecord.title    = "이 브라우저는 녹화를 지원하지 않습니다 (Chromium 계열 권장)";
-    } else {
-      btnRecord.addEventListener("click", () => {
-        if (Recorder.isRecording()) {
-          Recorder.stop();
-          btnRecord.textContent = "⏺ 녹화";
-          btnRecord.classList.remove("recording");
-        } else {
-          Recorder.start();
-          btnRecord.textContent = "⏹ 녹화 중지";
-          btnRecord.classList.add("recording");
-        }
-      });
-    }
-  }
 }
 
 // ── 유틸 ────────────────────────────────────────────────────────

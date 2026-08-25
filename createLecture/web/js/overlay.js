@@ -9,7 +9,6 @@
  *     ry = (ch - naturalH*scale) / 2
  *   - getBoundingClientRect에 의존하지 않음 → DPR·스크롤·줌에 무관
  *
- * drawOn(ctx, cw, ch): recorder.js에서 마스터 캔버스에 직접 그릴 때 사용
  */
 const Overlay = (() => {
   let _img    = null;
@@ -167,26 +166,6 @@ const Overlay = (() => {
     ctx.restore();
   }
 
-  // ── 외부 캔버스에 현재 상태 그리기 (recorder 전용) ──────────────
-  // 완성된 효과(_drawn)와 진행 중인 애니메이션(_anim)을 cw×ch 기준으로 렌더.
-  function drawOn(ctx, cw, ch) {
-    const nw = _natW || (_img && _img.naturalWidth)  || 0;
-    const nh = _natH || (_img && _img.naturalHeight) || 0;
-    if (!nw || !nh) return;
-
-    for (const d of _drawn) {
-      const r = _toPixels(d.h, cw, ch);
-      if (r.w > 0 && r.h > 0) _drawEffect(ctx, d.type, r, 1);
-    }
-
-    if (_anim && _anim.start !== null) {
-      const dur = _anim.type === "check" ? 400 : 350;
-      const t   = Math.min((performance.now() - _anim.start) / dur, 1);
-      const r   = _toPixels(_anim.h, cw, ch);
-      if (r.w > 0 && r.h > 0) _drawEffect(ctx, _anim.type, r, t);
-    }
-  }
-
   // ── 공용 ────────────────────────────────────────────────────────
   function clear() {
     _cancelAnim();
@@ -202,5 +181,5 @@ const Overlay = (() => {
 
   function _easeOut(t) { return 1 - Math.pow(1 - t, 3); }
 
-  return { init, setNaturalSize, trigger, clear, resize, drawOn };
+  return { init, setNaturalSize, trigger, clear, resize };
 })();

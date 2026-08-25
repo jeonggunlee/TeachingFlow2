@@ -24,7 +24,6 @@ Edge TTS로 음성을 만든 뒤, 웹 브라우저에서 음성 재생 시 해�
 - 음성 재생 중 해당 세그먼트에 강조 효과 표시 (Canvas 오버레이)
 - 음성과 동기화된 실시간 자막 (2줄 고정 높이, 현재 어절 강조)
 - 업로드 처리 중 실시간 SSE 진행바 표시
-- 재생 화면(슬라이드 + 효과 + 자막)을 WebM 영상으로 녹화·다운로드
 - **강의 목록 라이브러리**: 메인 페이지에서 완료된 강의 목록 조회·재생·편집 (course/week 필터 지원)
 - **포털 필수 진입**: 업로드 페이지는 포털에서만 진입 가능 (`from` 파라미터 없으면 포털로 리디렉션)
 - **주차별 강의 목록 페이지** (`/week-lectures`): 특정 교과목·주차의 강의 목록 + 재생·편집 링크
@@ -42,7 +41,6 @@ Edge TTS로 음성을 만든 뒤, 웹 브라우저에서 음성 재생 시 해�
 | Frontend | 바닐라 HTML/CSS/JS (프레임워크 없음) |
 | 강조 효과 | HTML Canvas 오버레이 (object-fit:contain 역산으로 정확한 좌표 계산) |
 | 자막 동기화 | `audio.timeupdate` 이벤트 + 단어 인덱스 계산, 2줄 고정 높이 |
-| 영상 녹화 | `MediaRecorder` API + `canvas.captureStream()` + Web Audio API |
 
 ---
 
@@ -123,8 +121,7 @@ createLecture/
 │       ├── week-lectures.js # /week-lectures 페이지 로직
 │       ├── player.js
 │       ├── overlay.js
-│       ├── subtitle.js
-│       └── recorder.js
+│       └── subtitle.js
 └── storage/
     └── lectures/{lecture_id}/
         ├── prompt.txt / outline.json / design.json

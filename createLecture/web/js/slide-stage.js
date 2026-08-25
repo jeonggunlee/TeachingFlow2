@@ -179,7 +179,7 @@ const SlideStage = (() => {
     return true;
   }
 
-  /** 현재 스테이지 DOM (녹화 등에서 사용) */
+  /** 현재 스테이지 DOM */
   function stageEl() { return _stage; }
   function size()    { return { w: _w, h: _h }; }
 

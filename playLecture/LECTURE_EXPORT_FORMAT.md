@@ -298,7 +298,6 @@ ZIP 파일을 서버가 받아서 DB + 파일 스토리지로 분산 저장하�
 | 재생/일시정지 | 권장 | — |
 | 강의 제목·슬라이드 번호 표시 | 권장 | `title`, `slides[].index` |
 | 세그먼트 스크립트 표시 | 선택 | `segments[].script` |
-| 영상 녹화 | 선택 | MediaRecorder API |
 
 ---
 
@@ -376,6 +375,5 @@ if (slide.segments.length === 0) {
 | `web/js/player.js` | 슬라이드/세그먼트 진행 컨트롤러 |
 | `web/js/overlay.js` | Canvas 강조 효과 (highlighter/check) |
 | `web/js/subtitle.js` | 어절 타이밍 자막 동기화 |
-| `web/js/recorder.js` | MediaRecorder 기반 WebM 녹화 |
 
 새 운영 사이트 구현 시 이 파일들을 참고하거나 그대로 재사용할 수 있다.

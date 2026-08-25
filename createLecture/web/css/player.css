@@ -142,7 +142,6 @@ body { display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
   white-space: nowrap;
 }
 .back-create-btn:hover { color: var(--accent); border-color: var(--accent); }
-.record-btn { color: var(--text); }
 .edit-scripts-btn {
   color: var(--muted);
   text-decoration: none;
@@ -154,16 +153,6 @@ body { display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
   font-size: 13px;
 }
 .export-btn:hover { color: #a855f7; border-color: #a855f7; }
-.record-btn.recording {
-  background: #dc2626;
-  border-color: transparent;
-  color: #fff;
-  animation: pulse-rec 1.5s ease-in-out infinite;
-}
-@keyframes pulse-rec {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0.65; }
-}
 
 /* ── Loading/Error overlay ──────────────────────────── */
 .overlay-msg {
