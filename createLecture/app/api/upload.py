@@ -195,6 +195,7 @@ async def upload_from_prompt(
     cqi: str = Form(""),
     course: str = Form(""),
     week: str = Form(""),
+    week_title: str = Form(""),
 ):
     """교수자 프롬프트로 웹 슬라이드를 생성한 뒤 강의 파이프라인을 실행한다."""
     prompt_clean = (prompt or "").strip()
@@ -218,6 +219,9 @@ async def upload_from_prompt(
         json.dumps({
             "course": course,
             "week": week,
+            # 진화(evolve)가 Claude에게 "이 강의가 무엇에 대한 것인지" 알려줄 때 쓴다.
+            # 없으면 교과목명이 강의 제목 자리에 들어가 엉뚱한 맥락이 전달된다.
+            "week_title": week_title,
             "source_type": "prompt",
             "num_slides_requested": num_slides_val,
         }, ensure_ascii=False),
@@ -290,7 +294,10 @@ async def lecture_status(lecture_id: str):
     base = lecture_dir(lecture_id)
     if not base.exists():
         raise HTTPException(404, "lecture_id not found")
-    slides = sorted((base / "slides").glob("slide_*.png"))
+    # 웹 슬라이드는 .html 로 렌더된다 — .png 만 세면 항상 0이 나온다
+    # (레거시 PNG 강의도 함께 세기 위해 두 확장자를 모두 확인).
+    slides = (sorted((base / "slides").glob("slide_*.html"))
+              or sorted((base / "slides").glob("slide_*.png")))
     vision = sorted((base / "vision").glob("slide_*.json"))
     audio  = sorted((base / "audio").glob("*.mp3"))
     err    = base / "job.err"

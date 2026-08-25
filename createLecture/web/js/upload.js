@@ -403,6 +403,8 @@ promptForm?.addEventListener("submit", async (e) => {
   const _sp = new URLSearchParams(location.search);
   fd.append("course", _sp.get("course") || "");
   fd.append("week",   _sp.get("week")   || "");
+  // 주차 제목도 함께 보관 — CQI 진화 프롬프트가 강의 주제를 알기 위해 사용
+  fd.append("week_title", _sp.get("week_title") || "");
 
   let lectureId;
   try {

@@ -1,7 +1,8 @@
+import secrets
 from urllib.parse import urlparse
 
-from fastapi import APIRouter, Depends, HTTPException, Request
-from pydantic import BaseModel
+from fastapi import APIRouter, Depends, Header, HTTPException, Request
+from pydantic import BaseModel, Field
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 import httpx
@@ -26,7 +27,9 @@ class CourseIn(BaseModel):
     description: str = ""
 
 class WeekIn(BaseModel):
-    week:       int
+    # 주차는 1 이상이어야 한다 — 음수·0 주차가 들어가면 createLecture·analyzeLecture의
+    # course+week 조회가 영원히 비는 유령 주차가 만들어진다.
+    week:       int = Field(ge=1, le=60)
     title:      str = ""
     lecture_id: str = ""
     note:       str = ""
@@ -37,11 +40,39 @@ class LoginIn(BaseModel):
 
 # ── Auth ───────────────────────────────────────────────────────────────────
 
+# 발급된 관리자 세션 토큰 (포털은 단일 프로세스 — 재시작하면 재로그인 필요).
+_SESSIONS: set = set()
+
+
+def require_admin(authorization: str = Header(None)) -> str:
+    """과목·주차 변경과 분석 트리거는 관리자 토큰이 있어야 한다.
+
+    이전에는 로그인 성공 여부를 localStorage 플래그로만 두어, API 자체는
+    누구나 호출할 수 있었다(과목 삭제·유료 분석 트리거 포함).
+    """
+    token = None
+    if authorization and authorization.startswith("Bearer "):
+        token = authorization[7:]
+    if not token or token not in _SESSIONS:
+        raise HTTPException(401, "관리자 로그인이 필요합니다.",
+                            headers={"WWW-Authenticate": "Bearer"})
+    return token
+
+
 @router.post("/api/auth/login")
 async def admin_login(body: LoginIn):
     from ..config import PLAYLECTURE_ADMIN_PASSWORD
-    if body.password != PLAYLECTURE_ADMIN_PASSWORD:
+    if not secrets.compare_digest(body.password, PLAYLECTURE_ADMIN_PASSWORD):
         raise HTTPException(status_code=401, detail="비밀번호가 틀렸습니다")
+    token = secrets.token_urlsafe(32)
+    _SESSIONS.add(token)
+    return {"ok": True, "token": token}
+
+
+@router.post("/api/auth/logout")
+async def admin_logout(authorization: str = Header(None)):
+    if authorization and authorization.startswith("Bearer "):
+        _SESSIONS.discard(authorization[7:])
     return {"ok": True}
 
 
@@ -81,7 +112,8 @@ async def list_courses(db: AsyncSession = Depends(get_db)):
 
 
 @router.post("/api/courses", status_code=201)
-async def create_course(body: CourseIn, db: AsyncSession = Depends(get_db)):
+async def create_course(body: CourseIn, db: AsyncSession = Depends(get_db),
+                        _: str = Depends(require_admin)):
     c = Course(**body.model_dump())
     db.add(c)
     await db.commit()
@@ -90,7 +122,8 @@ async def create_course(body: CourseIn, db: AsyncSession = Depends(get_db)):
 
 
 @router.delete("/api/courses/{course_id}", status_code=204)
-async def delete_course(course_id: str, db: AsyncSession = Depends(get_db)):
+async def delete_course(course_id: str, db: AsyncSession = Depends(get_db),
+                        _: str = Depends(require_admin)):
     c = await db.get(Course, course_id)
     if not c:
         raise HTTPException(404)
@@ -120,9 +153,20 @@ async def list_weeks(course_id: str, db: AsyncSession = Depends(get_db)):
 
 
 @router.post("/api/courses/{course_id}/weeks", status_code=201)
-async def add_week(course_id: str, body: WeekIn, db: AsyncSession = Depends(get_db)):
+async def add_week(course_id: str, body: WeekIn, db: AsyncSession = Depends(get_db),
+                   _: str = Depends(require_admin)):
     if not await db.get(Course, course_id):
         raise HTTPException(404, "과목을 찾을 수 없습니다.")
+
+    # 같은 주차를 두 번 만들면 두 카드가 같은 course+week 상태를 가리켜
+    # 어느 쪽에서 분석을 눌러도 결과가 뒤섞인다.
+    dup = await db.execute(
+        select(WeeklyLecture).where(WeeklyLecture.course_id == course_id,
+                                    WeeklyLecture.week == body.week)
+    )
+    if dup.scalars().first():
+        raise HTTPException(409, f"{body.week}주차는 이미 등록되어 있습니다.")
+
     w = WeeklyLecture(course_id=course_id, **body.model_dump())
     db.add(w)
     await db.commit()
@@ -131,7 +175,8 @@ async def add_week(course_id: str, body: WeekIn, db: AsyncSession = Depends(get_
 
 @router.put("/api/courses/{course_id}/weeks/{week_id}")
 async def update_week(course_id: str, week_id: str, body: WeekIn,
-                      db: AsyncSession = Depends(get_db)):
+                      db: AsyncSession = Depends(get_db),
+                      _: str = Depends(require_admin)):
     w = await db.get(WeeklyLecture, week_id)
     if not w or w.course_id != course_id:
         raise HTTPException(404)
@@ -142,7 +187,8 @@ async def update_week(course_id: str, week_id: str, body: WeekIn,
 
 
 @router.delete("/api/courses/{course_id}/weeks/{week_id}", status_code=204)
-async def delete_week(course_id: str, week_id: str, db: AsyncSession = Depends(get_db)):
+async def delete_week(course_id: str, week_id: str, db: AsyncSession = Depends(get_db),
+                      _: str = Depends(require_admin)):
     w = await db.get(WeeklyLecture, week_id)
     if not w or w.course_id != course_id:
         raise HTTPException(404)
@@ -189,7 +235,7 @@ async def check_status(lecture_id: str):
 # ── Proxies ────────────────────────────────────────────────────────────────
 
 @router.post("/api/proxy/analyze/{lecture_id}", status_code=202)
-async def proxy_analyze(lecture_id: str):
+async def proxy_analyze(lecture_id: str, _: str = Depends(require_admin)):
     """Forward analysis trigger to analyzeLecture service."""
     async with httpx.AsyncClient(timeout=15.0) as client:
         try:
@@ -214,9 +260,11 @@ async def proxy_lectures():
 async def status_week(course: str = "", week: str = ""):
     """course+week 기준으로 createLecture 강의 존재 여부 + analyzeLecture 보고서 상태 확인."""
     result = {
-        "has_lectures":   False,
-        "analyze_status": None,
-        "analyze_id":     None,
+        "has_lectures":    False,
+        "analyze_status":  None,
+        "analyze_id":      None,
+        "analyze_running": False,   # 완료본이 있어도 재분석이 돌고 있는지
+        "report_count":    0,
     }
     async with httpx.AsyncClient(timeout=5.0) as client:
         # createLecture에서 해당 주차 강의 목록 조회
@@ -236,15 +284,36 @@ async def status_week(course: str = "", week: str = ""):
         if not lecture_ids:
             return result
 
-        # analyzeLecture에서 해당 강의들의 최신 보고서 확인
+        # analyzeLecture에서 해당 강의들의 보고서 확인.
+        #
+        # 단순히 generated_at 최대값 하나만 보면, 재분석을 시작한 직후처럼
+        # 최신 보고서가 pending/error 인 경우 **이미 완성된 보고서가 있는데도**
+        # 포털이 "분석 중"·"분석 오류"만 보여주고 보고서 링크가 사라진다.
+        # → 완료본이 하나라도 있으면 done 을 유지하고, 진행 여부는 따로 알린다.
         try:
             r = await client.get(f"{ANALYZELECTURE_URL}/api/reports")
             if r.status_code == 200:
                 matching = [x for x in r.json() if x.get("lecture_id") in lecture_ids]
                 if matching:
-                    latest = max(matching, key=lambda x: x.get("generated_at", ""))
-                    result["analyze_status"] = latest["status"]
-                    result["analyze_id"]     = latest["id"]
+                    by_time = lambda x: x.get("generated_at", "")
+                    done    = [x for x in matching if x.get("status") == "done"]
+                    running = [x for x in matching if x.get("status") in ("pending", "processing")]
+                    errored = [x for x in matching if x.get("status") == "error"]
+
+                    result["analyze_running"] = bool(running)
+                    if done:
+                        latest = max(done, key=by_time)
+                        result["analyze_status"] = "done"
+                        result["analyze_id"]     = latest["id"]
+                    elif running:
+                        latest = max(running, key=by_time)
+                        result["analyze_status"] = latest["status"]
+                        result["analyze_id"]     = latest["id"]
+                    elif errored:
+                        latest = max(errored, key=by_time)
+                        result["analyze_status"] = "error"
+                        result["analyze_id"]     = latest["id"]
+                    result["report_count"] = len(done)
         except Exception:
             pass
 
@@ -252,7 +321,8 @@ async def status_week(course: str = "", week: str = ""):
 
 
 @router.post("/api/proxy/analyze-week", status_code=202)
-async def proxy_analyze_week(course: str = "", week: str = ""):
+async def proxy_analyze_week(course: str = "", week: str = "",
+                             _: str = Depends(require_admin)):
     """course+week 분석 트리거를 analyzeLecture 서비스로 전달."""
     async with httpx.AsyncClient(timeout=15.0) as client:
         try:

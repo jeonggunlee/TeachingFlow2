@@ -62,6 +62,21 @@ async def put_scripts(lecture_id: str, request: Request):
         raise HTTPException(404, "vision data not ready")
 
     slides = payload.get("slides", [])
+
+    # 빈 스크립트는 TTS가 만들 음성이 없어 duration 0짜리 세그먼트가 되고,
+    # 플레이어가 그 구간을 즉시 건너뛴다. 저장 시점에 막는다.
+    blanks = [
+        f"슬라이드 {s.get('index')} · {seg.get('id', '?')}"
+        for s in slides
+        for seg in (s.get("segments") or [])
+        if not (seg.get("script") or "").strip()
+    ]
+    if blanks:
+        raise HTTPException(
+            400, "스크립트가 비어 있는 세그먼트가 있습니다: " + ", ".join(blanks[:5])
+            + (f" 외 {len(blanks) - 5}개" if len(blanks) > 5 else "")
+        )
+
     for slide in slides:
         idx = slide["index"]
         out_path = vision_dir / f"slide_{idx:03d}.json"

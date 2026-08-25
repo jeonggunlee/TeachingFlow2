@@ -7,7 +7,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from ..database import get_db
 from ..models import DifficultyRating, User
 from ..schemas import DifficultyIn
-from .deps import get_current_user
+from .deps import get_current_user, require_slide
 
 router = APIRouter()
 
@@ -81,6 +81,7 @@ async def set_difficulty(
     user: User = Depends(get_current_user),
     db: AsyncSession = Depends(get_db),
 ):
+    await require_slide(db, lecture_id, slide_idx)
     now = datetime.now(timezone.utc).isoformat()
     row = await db.get(DifficultyRating, (user.id, lecture_id, slide_idx))
     if row:

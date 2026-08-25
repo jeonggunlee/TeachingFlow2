@@ -7,6 +7,7 @@ import httpx
 from anthropic import AsyncAnthropic
 from fastapi import APIRouter, BackgroundTasks, Depends, HTTPException, Request
 from sqlalchemy import select
+from sqlalchemy.exc import IntegrityError
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from ..config import (
@@ -21,6 +22,9 @@ from ..models import CQIReport
 
 router = APIRouter()
 _anthropic = AsyncAnthropic(api_key=ANTHROPIC_API_KEY)
+
+# 아직 끝나지 않은 분석 — 중복 실행 판정 기준
+IN_FLIGHT = ("pending", "processing")
 
 
 # ── createLecture / playLecture 헬퍼 ─────────────────
@@ -145,7 +149,8 @@ def _build_prompt(analytics: dict) -> str:
         qs = s.get("questions", [])
         pb = s.get("playback_stats", {}) or {}
 
-        lines.append(f"\n[슬라이드 {idx}]")
+        stitle = (s.get("slide_title") or "").strip()
+        lines.append(f"\n[슬라이드 {idx}]" + (f" 「{stitle}」" if stitle else ""))
         if total > 0:
             lines.append(
                 f"  난이도: 쉬움 {diff.get('쉬움', 0)}명, "
@@ -247,6 +252,9 @@ async def run_analysis(report_id: str):
                 src = analytics_by_idx.get(idx, {})
                 full_report["slides"].append({
                     **slide,
+                    # 슬라이드 제목을 보고서에 남긴다 — CQI 원장이 슬라이드 번호가
+                    # 밀려도 지시문을 올바른 슬라이드에 다시 붙일 수 있는 단서.
+                    "slide_title":    src.get("slide_title", ""),
                     "difficulty":     src.get("difficulty", {}),
                     "keywords":       src.get("keywords",   []),
                     "questions":      src.get("questions",  []),
@@ -259,6 +267,7 @@ async def run_analysis(report_id: str):
                 if idx not in covered_indices:
                     full_report["slides"].append({
                         "slide_idx":          idx,
+                        "slide_title":        src.get("slide_title", ""),
                         "confusion_score":    0.0,
                         "core_concepts":      [],
                         "recommended_action": "no_action",
@@ -321,10 +330,14 @@ async def start_analysis(
     db: AsyncSession = Depends(get_db),
 ):
     """분석 작업 시작 (비동기 백그라운드)."""
-    # 이미 processing 중인 작업 중복 방지
+    # 이미 대기·진행 중인 작업 중복 방지.
+    # pending 도 포함해야 한다 — 보고서는 pending 으로 만들어진 뒤 백그라운드에서
+    # processing 이 되므로, processing 만 보면 연타한 요청이 전부 통과해
+    # 같은 강의에 대해 Claude 호출이 여러 번 일어난다.
     existing = await db.execute(
         select(CQIReport)
-        .where(CQIReport.lecture_id == lecture_id, CQIReport.status == "processing")
+        .where(CQIReport.lecture_id == lecture_id,
+               CQIReport.status.in_(IN_FLIGHT))
     )
     if existing.scalars().first():
         raise HTTPException(409, "이미 분석이 진행 중입니다.")
@@ -335,6 +348,14 @@ async def start_analysis(
         match = next((l for l in lectures if l["id"] == lecture_id), None)
         if match is None:
             raise HTTPException(404, f"playLecture에서 강의를 찾을 수 없습니다: {lecture_id}")
+        # DB 행만 남고 강의 파일이 사라진 강의는 재생도 CQI 반영도 불가능하므로
+        # 실체 없는 보고서를 만들지 않는다.
+        if match.get("files_present") is False:
+            raise HTTPException(
+                404,
+                f"강의 파일이 없어 분석할 수 없습니다: {lecture_id} "
+                "(createLecture에서 삭제된 강의로 보입니다)",
+            )
         title = match["title"]
     except HTTPException:
         raise
@@ -349,7 +370,13 @@ async def start_analysis(
         status        = "pending",
     )
     db.add(report)
-    await db.commit()
+    try:
+        await db.commit()
+    except IntegrityError:
+        # 부분 유니크 인덱스가 잡아낸 동시 요청 — 위 사전 확인을 통과했더라도
+        # 실제로 먼저 커밋된 작업이 있다는 뜻이다.
+        await db.rollback()
+        raise HTTPException(409, "이미 분석이 진행 중입니다.")
 
     background.add_task(run_analysis, report.id)
     return {"report_id": report.id, "status": "pending"}
@@ -486,17 +513,21 @@ async def start_week_analysis(
         lid   = lec["lecture_id"]
         title = lec.get("title", lid)
 
-        # 이미 processing 중인 작업 중복 방지
+        # 이미 대기·진행 중인 작업 중복 방지 (pending 포함 — 위 설명 참조)
         existing = await db.execute(
             select(CQIReport)
-            .where(CQIReport.lecture_id == lid, CQIReport.status == "processing")
+            .where(CQIReport.lecture_id == lid,
+                   CQIReport.status.in_(IN_FLIGHT))
         )
         if existing.scalars().first():
             results.append({"lecture_id": lid, "status": "already_processing"})
             continue
 
-        # playLecture 자동 임포트 트리거
-        await ensure_play_imported(lid)
+        # playLecture 자동 임포트 트리거 — 실패하면 강의 파일이 없다는 뜻이므로
+        # 실체 없는 보고서를 만들지 않고 건너뛴다.
+        if not await ensure_play_imported(lid):
+            results.append({"lecture_id": lid, "status": "missing"})
+            continue
 
         report = CQIReport(
             id=str(uuid.uuid4()),
@@ -506,7 +537,12 @@ async def start_week_analysis(
             status="pending",
         )
         db.add(report)
-        await db.commit()
+        try:
+            await db.commit()
+        except IntegrityError:
+            await db.rollback()
+            results.append({"lecture_id": lid, "status": "already_processing"})
+            continue
 
         background.add_task(run_analysis, report.id)
         results.append({"lecture_id": lid, "report_id": report.id, "status": "pending"})

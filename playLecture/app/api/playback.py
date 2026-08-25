@@ -6,10 +6,12 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from ..database import get_db
 from ..models import Lecture, PlaybackEvent, User
-from ..schemas import PlaybackEventBatchIn, _ALLOWED_EVENT_TYPES
+from ..schemas import PlaybackEventIn
 from .deps import get_current_user
 
 router = APIRouter()
+
+MAX_EVENTS_PER_BATCH = 200
 
 
 @router.post("/api/playback-event")
@@ -32,21 +34,32 @@ async def post_playback_events(
     except (UnicodeDecodeError, json.JSONDecodeError):
         raise HTTPException(400, "invalid JSON")
 
-    try:
-        batch = PlaybackEventBatchIn.model_validate(data)
-    except Exception as e:
-        raise HTTPException(400, f"invalid payload: {e}")
+    if not isinstance(data, dict) or not isinstance(data.get("lecture_id"), str):
+        raise HTTPException(400, "invalid payload: lecture_id required")
+    raw_events = data.get("events")
+    if not isinstance(raw_events, list):
+        raise HTTPException(400, "invalid payload: events must be a list")
+    if len(raw_events) > MAX_EVENTS_PER_BATCH:
+        raise HTTPException(400, f"too many events (max {MAX_EVENTS_PER_BATCH})")
 
-    lecture = await db.get(Lecture, batch.lecture_id)
+    lecture = await db.get(Lecture, data["lecture_id"])
     if not lecture:
         raise HTTPException(404, "lecture not found")
 
+    # 이벤트는 한 건씩 검증한다 — 배치 하나에 이상한 항목이 섞였다고
+    # 정상 이벤트까지 버리면 텔레메트리에 구멍이 생긴다.
+    events, rejected = [], 0
+    for raw in raw_events:
+        try:
+            events.append(PlaybackEventIn.model_validate(raw))
+        except Exception:
+            rejected += 1
+
     now = datetime.now(timezone.utc).isoformat()
     saved = 0
-    for ev in batch.events:
-        if ev.event_type not in _ALLOWED_EVENT_TYPES:
-            continue
+    for ev in events:
         if ev.slide_idx < 0 or ev.slide_idx >= lecture.slide_count:
+            rejected += 1
             continue
         payload_str = None
         if ev.payload:
@@ -55,7 +68,7 @@ async def post_playback_events(
             except (TypeError, ValueError):
                 payload_str = None
         db.add(PlaybackEvent(
-            lecture_id=batch.lecture_id,
+            lecture_id=data["lecture_id"],
             user_id=user.id,
             slide_idx=ev.slide_idx,
             seg_idx=ev.seg_idx,
@@ -67,4 +80,4 @@ async def post_playback_events(
         saved += 1
 
     await db.commit()
-    return {"ok": True, "saved": saved}
+    return {"ok": True, "saved": saved, "rejected": rejected}

@@ -1,6 +1,8 @@
 import json
+import os
 import secrets
 import shutil
+import tempfile
 import zipfile
 from datetime import datetime, timezone
 from pathlib import Path
@@ -15,9 +17,19 @@ from sqlalchemy import delete, func
 from ..config import ADMIN_PASSWORD, CREATELECTURE_STORAGE_ROOT, STORAGE_ROOT
 from ..database import get_db
 from ..models import ChatMessage, DifficultyRating, Lecture, LectureSettings, PlaybackEvent, Progress, QuizResponse, SlideKeyword
+from .lectures import lecture_json_path
 
 router   = APIRouter()
 security = HTTPBasic()
+
+# 강의 삭제 시 함께 지워야 하는 수강 데이터 테이블
+ANALYTICS_MODELS = (DifficultyRating, ChatMessage, SlideKeyword, Progress,
+                    PlaybackEvent, QuizResponse, LectureSettings)
+
+
+async def _purge_lecture_rows(db: AsyncSession, lecture_id: str) -> None:
+    for model in ANALYTICS_MODELS:
+        await db.execute(delete(model).where(model.lecture_id == lecture_id))
 
 
 def require_admin(creds: HTTPBasicCredentials = Depends(security)):
@@ -37,29 +49,35 @@ async def upload_lecture(
     if not (file.filename or "").endswith(".zip"):
         raise HTTPException(400, "ZIP 파일만 업로드 가능합니다.")
 
-    tmp = Path(f"/tmp/{file.filename}")
-    tmp.write_bytes(await file.read())
-
+    # 업로드 파일명은 신뢰할 수 없다 — 경로 구분자가 섞이면 storage 밖에 쓰일 수 있으므로
+    # 파일명을 쓰지 않고 임시 파일에 받는다. 어떤 경로로 빠져나가도 실패하도록.
+    fd, tmp_name = tempfile.mkstemp(suffix=".zip")
+    tmp = Path(tmp_name)
     try:
+        with os.fdopen(fd, "wb") as f:
+            f.write(await file.read())
+
+        try:
+            with zipfile.ZipFile(tmp) as zf:
+                if "lecture.json" not in zf.namelist():
+                    raise HTTPException(400, "lecture.json이 없는 파일입니다.")
+                meta = json.loads(zf.read("lecture.json"))
+        except zipfile.BadZipFile:
+            raise HTTPException(400, "올바른 ZIP 파일이 아닙니다.")
+        except json.JSONDecodeError:
+            raise HTTPException(400, "lecture.json을 읽을 수 없습니다.")
+
+        lecture_id = meta.get("lecture_id")
+        if not lecture_id or lecture_id != Path(str(lecture_id)).name or lecture_id.startswith("."):
+            raise HTTPException(400, "lecture.json의 lecture_id가 없거나 올바르지 않습니다.")
+
+        dest = STORAGE_ROOT / "lectures" / lecture_id
+        if dest.exists():
+            shutil.rmtree(dest)
         with zipfile.ZipFile(tmp) as zf:
-            if "lecture.json" not in zf.namelist():
-                raise HTTPException(400, "lecture.json이 없는 파일입니다.")
-            meta = json.loads(zf.read("lecture.json"))
-    except zipfile.BadZipFile:
+            zf.extractall(dest)
+    finally:
         tmp.unlink(missing_ok=True)
-        raise HTTPException(400, "올바른 ZIP 파일이 아닙니다.")
-
-    lecture_id = meta.get("lecture_id")
-    if not lecture_id:
-        tmp.unlink(missing_ok=True)
-        raise HTTPException(400, "lecture.json에 lecture_id가 없습니다.")
-
-    dest = STORAGE_ROOT / "lectures" / lecture_id
-    if dest.exists():
-        shutil.rmtree(dest)
-    with zipfile.ZipFile(tmp) as zf:
-        zf.extractall(dest)
-    tmp.unlink(missing_ok=True)
 
     slides = meta.get("slides", [])
     duration_ms = sum(
@@ -71,10 +89,7 @@ async def upload_lecture(
     existing = await db.get(Lecture, lecture_id)
     if existing:
         # Cascade-delete all analytics rows before removing the lecture row
-        for model in (DifficultyRating, ChatMessage, SlideKeyword, Progress, PlaybackEvent, QuizResponse):
-            await db.execute(
-                delete(model).where(model.lecture_id == lecture_id)
-            )
+        await _purge_lecture_rows(db, lecture_id)
         await db.delete(existing)
         await db.flush()
 
@@ -108,14 +123,32 @@ async def delete_lecture(
         shutil.rmtree(dest)
 
     # Cascade-delete all analytics rows before removing the lecture row
-    for model in (DifficultyRating, ChatMessage, SlideKeyword, Progress,
-                  PlaybackEvent, QuizResponse, LectureSettings):
-        await db.execute(
-            delete(model).where(model.lecture_id == lecture_id)
-        )
+    await _purge_lecture_rows(db, lecture_id)
     await db.delete(lecture)
     await db.commit()
     return {"ok": True}
+
+
+@router.post("/admin/prune-missing")
+async def prune_missing(
+    db: AsyncSession = Depends(get_db),
+    _: HTTPBasicCredentials = Depends(require_admin),
+):
+    """파일이 사라진 강의(유령 강의)의 DB 행과 수강 데이터를 정리한다.
+
+    createLecture에서 강의 디렉터리를 지워도 playLecture DB 행은 남는다.
+    그대로 두면 분석 대상 목록에 계속 잡히고, 실체 없는 CQI 보고서가 만들어진다.
+    """
+    result = await db.execute(select(Lecture))
+    removed = []
+    for row in result.scalars().all():
+        if lecture_json_path(row.id) is not None:
+            continue
+        await _purge_lecture_rows(db, row.id)
+        await db.delete(row)
+        removed.append({"lecture_id": row.id, "title": row.title})
+    await db.commit()
+    return {"removed": len(removed), "lectures": removed}
 
 
 @router.get("/admin/lectures")
@@ -139,6 +172,8 @@ async def list_all(
             "registered_at": r.registered_at,
             "ai_answer":     bool(s.ai_answer) if s else False,
             "auto_question": bool(s.auto_question) if s else False,
+            # 파일이 실재하는지 — False면 재생·분석이 불가능한 유령 강의
+            "files_present": lecture_json_path(r.id) is not None,
         }
         for (r, s) in result.all()
     ]
@@ -166,8 +201,10 @@ async def get_analytics(
 
     diff_by_slide: dict[int, dict] = {}
     for slide_idx, rating, count in diff_rows:
+        label = {0: "쉬움", 1: "보통", 2: "어려움"}.get(rating)
+        if label is None:
+            continue   # 정의되지 않은 rating 값은 집계에서 제외 (합계 왜곡 방지)
         d = diff_by_slide.setdefault(slide_idx, {"쉬움": 0, "보통": 0, "어려움": 0, "total": 0})
-        label = {0: "쉬움", 1: "보통", 2: "어려움"}.get(rating, "기타")
         d[label] = count
         d["total"] += count
 
@@ -247,24 +284,26 @@ async def get_analytics(
     for slide_idx, ai, n in qz_dist_result.all():
         qz_dist_raw.setdefault(slide_idx, {})[ai] = n
 
-    # lecture.json에서 슬라이드별 옵션 개수 + correct_index 조회 (배경 정보)
+    # lecture.json에서 슬라이드 제목 + 퀴즈 옵션 개수·correct_index 조회 (배경 정보).
+    # 제목은 분석 프롬프트의 근거이자 CQI 원장이 슬라이드를 다시 찾는 단서가 된다.
     quiz_meta_by_slide: dict[int, dict] = {}
-    for src_root in (STORAGE_ROOT, CREATELECTURE_STORAGE_ROOT):
-        lj = src_root / "lectures" / lecture_id / "lecture.json"
-        if lj.exists():
-            try:
-                ljd = json.loads(lj.read_text(encoding="utf-8"))
-                for s in ljd.get("slides", []):
-                    q = s.get("quiz")
-                    if q and q.get("type") == "mcq":
-                        zero_idx = int(s.get("index", 0)) - 1
-                        quiz_meta_by_slide[zero_idx] = {
-                            "n_options":     len(q.get("options", [])),
-                            "correct_index": q.get("correct_index"),
-                        }
-                break
-            except Exception:
-                pass
+    title_by_slide: dict[int, str] = {}
+    lj = lecture_json_path(lecture_id)
+    if lj is not None:
+        try:
+            ljd = json.loads(lj.read_text(encoding="utf-8"))
+            for s in ljd.get("slides", []):
+                zero_idx = int(s.get("index", 0)) - 1
+                if s.get("title"):
+                    title_by_slide[zero_idx] = str(s["title"])
+                q = s.get("quiz")
+                if q and q.get("type") == "mcq":
+                    quiz_meta_by_slide[zero_idx] = {
+                        "n_options":     len(q.get("options", [])),
+                        "correct_index": q.get("correct_index"),
+                    }
+        except Exception:
+            pass
 
     # option_distribution 채우기 (옵션 개수만큼)
     for slide_idx, raw_dist in qz_dist_raw.items():
@@ -284,6 +323,7 @@ async def get_analytics(
     for i in range(lecture.slide_count):
         slides.append({
             "slide_idx":     i,
+            "slide_title":   title_by_slide.get(i, ""),
             "difficulty":    diff_by_slide.get(i, {"쉬움": 0, "보통": 0, "어려움": 0, "total": 0}),
             "keywords":      kw_by_slide.get(i, []),
             "questions":     questions_by_slide.get(i, []),

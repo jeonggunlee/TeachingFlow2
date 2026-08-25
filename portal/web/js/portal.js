@@ -2,10 +2,16 @@
 
 // ── Auth ───────────────────────────────────────────────────────────────────
 
-const AUTH_KEY = 'portal_admin_auth';
+const AUTH_KEY = 'portal_admin_auth';   // 값 = 서버가 발급한 세션 토큰
+
+function authToken() {
+  const t = localStorage.getItem(AUTH_KEY);
+  // 예전 버전은 플래그 '1'만 저장했다 — 토큰이 아니므로 로그인을 다시 받는다.
+  return t && t !== '1' ? t : null;
+}
 
 function isLoggedIn() {
-  return !!localStorage.getItem(AUTH_KEY);
+  return !!authToken();
 }
 
 function showPortal() {
@@ -47,7 +53,8 @@ async function doLogin() {
       body: JSON.stringify({ password: pw }),
     });
     if (r.ok) {
-      localStorage.setItem(AUTH_KEY, '1');
+      const { token } = await r.json();
+      localStorage.setItem(AUTH_KEY, token);
       closeLoginModal();
       showPortal();
       await initPortalContent();
@@ -62,6 +69,12 @@ async function doLogin() {
 }
 
 function doLogout() {
+  const t = authToken();
+  if (t) {
+    fetch('/api/auth/logout', {
+      method: 'POST', headers: { Authorization: `Bearer ${t}` },
+    }).catch(() => {});
+  }
   localStorage.removeItem(AUTH_KEY);
   showPromo();
 }
@@ -93,11 +106,20 @@ let _editingWeekId  = null; // null = new, string = existing id
 
 async function api(method, url, body) {
   const opts = { method, headers: {} };
+  const t = authToken();
+  if (t) opts.headers['Authorization'] = `Bearer ${t}`;
   if (body !== undefined) {
     opts.headers['Content-Type'] = 'application/json';
     opts.body = JSON.stringify(body);
   }
   const r = await fetch(url, opts);
+  // 서버가 재시작되면 발급했던 토큰이 사라진다 — 다시 로그인 받는다.
+  if (r.status === 401) {
+    localStorage.removeItem(AUTH_KEY);
+    showPromo();
+    openLoginModal();
+    throw new Error('관리자 로그인이 필요합니다.');
+  }
   if (r.status === 204) return null;
   const data = await r.json();
   if (!r.ok) throw new Error(data?.detail || r.statusText);
@@ -417,10 +439,14 @@ function stepAnalyzeHtml(w, status) {
   if (ast === 'done') {
     const rptParams = new URLSearchParams({ id: status.analyze_id, from: window.location.origin });
     const rptUrl = `${url}/report?${rptParams.toString()}`;
+    // 재분석이 돌고 있어도 이미 완성된 보고서는 계속 열 수 있어야 한다.
+    const statusLine = status.analyze_running
+      ? '<div class="step-status s-active">✅ 보고서 완성 · ⏳ 재분석 중</div>'
+      : '<div class="step-status s-done">✅ CQI 보고서 완성</div>';
     return `
       <div class="step-card">
         <div class="step-header"><span class="step-icon">📊</span><span class="step-name">학습 분석</span></div>
-        <div class="step-status s-done">✅ CQI 보고서 완성</div>
+        ${statusLine}
         <div class="step-action" style="display:flex;gap:6px;flex-wrap:wrap">
           <a class="step-btn step-btn-report" href="${esc(rptUrl)}">📊 보고서 보기</a>
           <a class="step-btn step-btn-analyze" href="${esc(weekAnalyzeUrl)}" style="font-size:10px;padding:4px 8px">분석 페이지</a>
@@ -472,7 +498,9 @@ async function loadStatus(week) {
     const status = await api('GET', `/api/status-week?${qs.toString()}`);
     _statusMap[week.id] = status;
     refreshWeekCard(week.id);
-    if (status.analyze_status === 'pending' || status.analyze_status === 'processing') {
+    // 완료본이 있어도 재분석이 돌고 있으면 계속 갱신한다.
+    if (status.analyze_running ||
+        status.analyze_status === 'pending' || status.analyze_status === 'processing') {
       setTimeout(() => loadStatus(week), 10_000);
     }
   } catch (e) {

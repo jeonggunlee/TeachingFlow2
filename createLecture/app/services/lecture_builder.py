@@ -127,7 +127,13 @@ def build(lecture_id: str, lecture_dir: Path) -> dict:
             seg["_slide_index"] = idx
             segments.append(_build_segment(seg, audio_dir))
 
-        slide_out = {"index": idx, "segments": segments}
+        # 슬라이드 제목을 함께 남긴다 — 분석(analyzeLecture)이 어떤 슬라이드인지
+        # 알 수 있고, CQI 원장이 슬라이드 번호가 밀려도 지시문을 다시 붙일 수 있다.
+        slide_out = {
+            "index":    idx,
+            "title":    (vdata.get("title") or "").strip(),
+            "segments": segments,
+        }
 
         # HTML 슬라이드 우선, 없으면 레거시 PNG
         if (slides_dir / f"slide_{idx:03d}.html").exists():
@@ -153,10 +159,21 @@ def build(lecture_id: str, lecture_dir: Path) -> dict:
     else:
         final_title = base_title
 
+    # 재빌드(rebuild-json)로 생성일이 오늘로 밀리면 강의 목록의 최신순 정렬과
+    # 분석 이력의 시간축이 흐트러진다 — 최초 생성 시각을 유지한다.
+    out_path = lecture_dir / "lecture.json"
+    created_at = datetime.now(timezone.utc).isoformat()
+    if out_path.exists():
+        try:
+            created_at = (json.loads(out_path.read_text(encoding="utf-8"))
+                          .get("created_at") or created_at)
+        except Exception:
+            pass
+
     lecture = {
         "lecture_id": lecture_id,
         "title": final_title,
-        "created_at": datetime.now(timezone.utc).isoformat(),
+        "created_at": created_at,
         "slide_size": _slide_size(lecture_dir, slides_dir),
         # HTML 슬라이드면 공용 스타일시트 경로를 함께 알려준다
         **({"slide_css": "slides/slide.css"}
@@ -166,6 +183,5 @@ def build(lecture_id: str, lecture_dir: Path) -> dict:
         "slides": slides_out,
     }
 
-    out_path = lecture_dir / "lecture.json"
     out_path.write_text(json.dumps(lecture, ensure_ascii=False, indent=2), encoding="utf-8")
     return lecture

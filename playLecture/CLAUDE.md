@@ -58,6 +58,9 @@ CREATE TABLE chat_messages (
     display_name, message TEXT(max 500), created_at,
     origin TEXT DEFAULT 'student'   -- 'student' | 'ai_student' | 'ai_teacher'
 );                                  -- AI 생성 메시지(ai_*)는 analytics에서 제외
+-- 참고: chat_messages·difficulty_ratings·quiz_responses의 slide_idx 는
+--       저장 시 0 <= slide_idx < lectures.slide_count 로 검증된다
+--       (범위를 벗어난 값은 analytics 집계 범위 밖이라 조용히 유실되기 때문)
 CREATE TABLE lecture_settings (     -- 강의별 운영 설정 (운영자 지정)
     lecture_id TEXT PK,
     ai_answer INTEGER DEFAULT 0,        -- AI 교수 답변 자동 작성
@@ -92,19 +95,20 @@ CREATE TABLE slide_keywords (
 | PUT  | `/api/progress/{lecture_id}` | 진도 저장 |
 | POST | `/api/progress/{lecture_id}` | 진도 저장 (sendBeacon 전용 — PUT과 동일 로직) |
 | GET  | `/api/chat/{lecture_id}/{slide_idx}` | 슬라이드 채팅 조회 (is_teacher·is_ai 플래그 포함) |
-| POST | `/api/chat/{lecture_id}/{slide_idx}` | 채팅 전송 (키워드 자동 추출, ai_answer 켜지면 백그라운드 AI 답변) |
+| POST | `/api/chat/{lecture_id}/{slide_idx}` | 채팅 전송 (키워드 자동 추출, ai_answer 켜지면 백그라운드 AI 답변). `slide_idx`가 강의 범위를 벗어나면 404 |
 | POST | `/api/chat/{lecture_id}/{slide_idx}/auto-question` | 자동 질문 생성 트리거 (슬라이드당 1회, auto_question 켜진 경우) |
 | GET  | `/api/lectures/{lecture_id}/settings` | 강의 운영 설정 조회 (공개, 비밀정보 없음) |
 | GET  | `/api/difficulty/{lecture_id}/{slide_idx}` | 슬라이드 난이도 조회 |
 | GET  | `/api/difficulty/{lecture_id}` | 강의 전체 슬라이드 평균 난이도 |
-| PUT  | `/api/difficulty/{lecture_id}/{slide_idx}` | 난이도 평가 저장/수정 |
+| PUT  | `/api/difficulty/{lecture_id}/{slide_idx}` | 난이도 평가 저장/수정 (범위 밖 `slide_idx`는 404) |
 
 ### 관리자 (HTTP Basic Auth: admin / ADMIN_PASSWORD)
 | 메서드 | 경로 | 설명 |
 |--------|------|------|
 | POST   | `/admin/upload` | ZIP 업로드 → 압축 해제 → DB 등록 |
 | DELETE | `/admin/lectures/{id}` | 강의 + 모든 analytics 데이터 삭제 |
-| GET    | `/admin/lectures` | 전체 강의 목록 |
+| POST   | `/admin/prune-missing` | 파일이 사라진 강의(유령 강의)의 DB 행 + 수강 데이터 일괄 정리 |
+| GET    | `/admin/lectures` | 전체 강의 목록 (`files_present`로 파일 실재 여부 표시) |
 | GET    | `/admin/analytics/{lecture_id}` | analyzeLecture용 통합 분석 데이터 (AI 생성 메시지 제외) |
 | GET    | `/admin/lectures/{lecture_id}/settings` | 강의 운영 설정 조회 |
 | PUT    | `/admin/lectures/{lecture_id}/settings` | 강의 운영 설정 저장 (`ai_answer`, `auto_question`) |
@@ -115,6 +119,7 @@ CREATE TABLE slide_keywords (
   "lecture_id": "...", "title": "...", "slide_count": N,
   "slides": [{
     "slide_idx": 0,
+    "slide_title": "딥러닝의 역사",
     "difficulty": { "쉬움": 2, "보통": 5, "어려움": 3, "total": 10 },
     "keywords":   [{ "keyword": "역전파", "count": 4 }, ...],
     "questions":  [{ "display_name": "홍길동", "message": "...", "created_at": "..." }, ...]

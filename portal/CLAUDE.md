@@ -67,10 +67,18 @@ CREATE TABLE weekly_lectures (
 
 ## 4. REST API
 
-### 설정
+### 인증
 | 메서드 | 경로 | 설명 |
 |--------|------|------|
+| POST | `/api/auth/login` | 비밀번호 확인 → **세션 토큰 발급** |
+| POST | `/api/auth/logout` | 토큰 폐기 |
 | GET | `/api/config` | 각 서비스 URL 반환 (프론트엔드에서 링크 생성에 사용) |
+
+**변경·트리거 엔드포인트는 `Authorization: Bearer {token}` 필수** —
+과목/주차 CRUD, `/api/proxy/analyze`, `/api/proxy/analyze-week`.
+조회 전용(`/api/courses`, `/api/status-week` 등)은 인증 없이 허용한다.
+토큰은 포털 프로세스 메모리에 보관하므로 **서버 재시작 시 재로그인이 필요**하다
+(프론트는 401을 받으면 로그인 모달을 다시 띄운다).
 
 ### 과목 CRUD
 | 메서드 | 경로 | 설명 |
@@ -83,7 +91,7 @@ CREATE TABLE weekly_lectures (
 | 메서드 | 경로 | 설명 |
 |--------|------|------|
 | GET    | `/api/courses/{id}/weeks` | 주차 목록 (week 오름차순) |
-| POST   | `/api/courses/{id}/weeks` | 주차 추가 |
+| POST   | `/api/courses/{id}/weeks` | 주차 추가 (week는 1~60, 같은 주차 중복 시 409) |
 | PUT    | `/api/courses/{id}/weeks/{wid}` | 주차 수정 |
 | DELETE | `/api/courses/{id}/weeks/{wid}` | 주차 삭제 |
 
@@ -99,13 +107,22 @@ CREATE TABLE weekly_lectures (
 {
   "has_lectures": true,
   "analyze_status": "done",
-  "analyze_id": "ff336de3-..."
+  "analyze_id": "ff336de3-...",
+  "analyze_running": true,
+  "report_count": 2
 }
 ```
 - `has_lectures`: createLecture에 해당 course+week 강의 존재 여부
 - `analyze_status`: `null` | `"pending"` | `"processing"` | `"done"` | `"error"`
-- `analyze_id`: 최신 CQI 보고서 ID (done 상태일 때)
+- `analyze_id`: **완료된** 보고서 중 최신 ID (완료본이 없으면 진행/오류 보고서 ID)
+- `analyze_running`: 재분석이 진행 중인지 (완료본이 있어도 별도로 표시)
+- `report_count`: 완료된 보고서 수
 - timeout=5s, 서비스 다운 시 graceful fallback
+
+> **상태 판정 규칙**: 단순히 `generated_at` 최대값 하나만 보면, 재분석을 시작한
+> 직후처럼 최신 보고서가 pending/error 인 경우 **이미 완성된 보고서가 있는데도**
+> "분석 중"·"분석 오류"만 표시되고 보고서 링크가 사라진다.
+> → 완료본이 하나라도 있으면 `done`을 유지하고, 진행 여부는 `analyze_running`으로 알린다.
 
 ---
 
@@ -146,8 +163,10 @@ CREATE TABLE weekly_lectures (
 
 ## 7. 로그인 및 인증
 
-- 비밀번호 기반 단순 관리자 로그인 (모달)
+- 비밀번호 기반 관리자 로그인 (모달) → 서버가 세션 토큰 발급
 - 토큰을 `localStorage`에 저장 (탭 간 공유 — createLecture 새 탭 열어도 유지)
+- 이전에는 로그인 성공을 localStorage 플래그로만 남겨 **API 자체는 무인증**이었다
+  (과목 삭제·유료 분석 트리거 포함). 지금은 서버가 토큰을 검증한다.
 - 로그인 전: 홍보(promo) 섹션 표시
 - 로그인 후: 포털 섹션 표시
 

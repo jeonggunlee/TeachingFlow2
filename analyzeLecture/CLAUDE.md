@@ -26,6 +26,7 @@ CREATE TABLE cqi_reports (
     lecture_title TEXT NOT NULL,
     generated_at  TEXT NOT NULL,       -- ISO 8601
     status        TEXT NOT NULL,       -- pending | processing | done | error
+                                     -- 같은 lecture_id의 pending/processing 은 동시에 1건만 (유니크 인덱스)
     error_message TEXT,
     report_json   TEXT                 -- 완성된 CQI JSON (done 상태에서만 존재)
 );
@@ -71,9 +72,18 @@ CREATE TABLE cqi_reports (
 1. createLecture에서 course+week 강의 목록 조회
 2. 각 강의를 playLecture에 자동 임포트 시도 (`GET /api/lectures/{id}`)
 3. 강의별 CQIReport(status=pending) DB 저장 + BackgroundTask 시작
+   (임포트 실패 = 강의 파일 없음 → `status: "missing"`으로 건너뜀)
+
+**서버 재시작 시**: 남아 있던 pending/processing 보고서는 실행 주체(BackgroundTask)가
+사라진 상태이므로 기동 시 `error`로 정리한다. 그대로 두면 유니크 인덱스를 점유해
+해당 강의의 재분석이 영구히 막힌다.
 
 **`POST /api/analyze/{lecture_id}` 동작:**
-- 이미 `processing` 상태인 보고서가 있으면 409 반환
+- 이미 `pending` 또는 `processing` 상태인 보고서가 있으면 409 반환
+- 동시 요청은 부분 유니크 인덱스 `ux_cqi_reports_in_flight`
+  (`lecture_id` WHERE status IN ('pending','processing'))로 DB가 최종 차단 —
+  사전 조회만으로는 세 요청이 모두 INSERT 전에 조회를 마쳐 통과한다(TOCTOU)
+- playLecture에 `files_present=false`인 강의(파일이 지워진 유령 강의)는 404
 - playLecture `/admin/lectures`에서 강의 존재 확인 → 없으면 404 반환 (조용한 실패 방지)
 - `CQIReport(status=pending)` DB 저장 → BackgroundTask 시작 → `{"report_id": "...", "status": "pending"}` 반환
 
@@ -120,6 +130,7 @@ POST /api/analyze/{lecture_id}
   "slides": [
     {
       "slide_idx": 2,
+      "slide_title": "역전파 알고리즘",
       "confusion_score": 0.78,
       "core_concepts": ["역전파", "gradient 소실"],
       "recommended_action": "add_example",

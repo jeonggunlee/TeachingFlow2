@@ -56,6 +56,7 @@ storage/
   "slides": [
     {
       "index": 1,
+      "title": "딥러닝의 역사",
       "html": "slides/slide_001.html",
       "segments": [
         {

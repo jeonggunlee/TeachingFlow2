@@ -10,7 +10,7 @@ from ..models import ChatMessage, SlideKeyword, User
 from ..schemas import ChatIn
 from ..services import ai_tutor
 from ..utils.keywords import extract_keywords
-from .deps import get_current_user
+from .deps import get_current_user, require_slide
 from .settings import get_settings
 
 router = APIRouter()
@@ -89,6 +89,7 @@ async def post_message(
     user: User = Depends(get_current_user),
     db: AsyncSession = Depends(get_db),
 ):
+    await require_slide(db, lecture_id, slide_idx)
     now = datetime.now(timezone.utc).isoformat()
 
     msg = ChatMessage(
@@ -145,6 +146,8 @@ async def auto_question(
       · 실제 질문이 쌓이면 → 그 수를 넘지 않는 선에서 AI 질문을 추가(최대 AI_QUESTION_CAP개)
     → 실제 학생 질문이 늘수록 그것을 반영해 새 AI 질문이 만들어진다(스팸 방지 상한 존재).
     """
+    await require_slide(db, lecture_id, slide_idx)
+
     settings = await get_settings(db, lecture_id)
     if not (settings and settings.auto_question and ai_tutor.is_enabled()):
         return {"generated": False, "reason": "disabled"}

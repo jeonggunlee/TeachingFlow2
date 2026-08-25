@@ -142,15 +142,15 @@ createLecture/
 
 | 메서드 | 경로 | 설명 |
 |--------|------|------|
-| POST | `/api/upload-prompt` | 프롬프트로 웹 슬라이드 생성, course/week를 meta.json에 저장 |
+| POST | `/api/upload-prompt` | 프롬프트로 웹 슬라이드 생성, course/week/week_title을 meta.json에 저장 |
 | GET  | `/api/jobs/{id}/events` | SSE 진행 스트림 |
 | GET  | `/api/lectures` | 완료 강의 목록 (course=, week= 쿼리 필터 지원) |
 | GET  | `/api/lectures/{id}` | lecture.json 반환 |
 | DELETE | `/api/lectures/{id}` | 강의 디렉터리 삭제 |
 | GET  | `/api/lectures/{id}/scripts` | vision JSON + has_lecture_json 반환 |
-| PUT  | `/api/lectures/{id}/scripts` | 편집된 slides 배열 저장 |
+| PUT  | `/api/lectures/{id}/scripts` | 편집된 slides 배열 저장 (빈 스크립트 세그먼트가 있으면 400) |
 | POST | `/api/lectures/{id}/synthesize` | TTS Phase2 시작 |
-| POST | `/api/lectures/{id}/rebuild-json` | TTS 없이 lecture.json만 재빌드 |
+| POST | `/api/lectures/{id}/rebuild-json` | TTS 없이 lecture.json만 재빌드 (`created_at`은 최초 생성 시각 유지) |
 | GET  | `/api/lectures/{id}/cqi-ledger` | 누적 CQI 지시문 원장 조회 (stats + 반영 프롬프트 미리보기) |
 | POST | `/api/lectures/{id}/cqi-ledger/import` | 분석 보고서 → 지시문 취입 (pending) |
 | POST | `/api/lectures/{id}/cqi-ledger` | 교수자 직접 지시문 추가 |
@@ -189,7 +189,7 @@ createLecture/
 | `from` | 돌아갈 URL (포털 기본값: `http://localhost:8003`) |
 | `course` | 교과목명 |
 | `week` | 주차 번호 |
-| `week_title` | 강의 제목 |
+| `week_title` | 강의 제목 (meta.json에 보관 — CQI 진화 프롬프트가 강의 주제로 사용) |
 
 `from` 없이 업로드 페이지 접근 시 → 포털(`http://localhost:8003`)로 강제 리디렉션.
 

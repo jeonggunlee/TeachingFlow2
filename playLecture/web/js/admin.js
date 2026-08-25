@@ -131,15 +131,30 @@ async function loadLectures() {
     }
 
     lectureList.innerHTML = "";
+
+    // 파일이 사라진 강의(유령)는 재생·분석이 불가능하다 — 한 번에 정리할 수 있게 안내
+    const missing = data.filter((l) => l.files_present === false);
+    if (missing.length) {
+      const bar = document.createElement("div");
+      bar.className = "lecture-list-warning";
+      bar.innerHTML = `
+        <span>⚠️ 강의 파일이 없는 항목 ${missing.length}건 — 수강생 목록에 보이지 않고 분석도 되지 않습니다.</span>
+        <button class="prune-btn">정리하기</button>`;
+      bar.querySelector(".prune-btn").addEventListener("click", pruneMissing);
+      lectureList.appendChild(bar);
+    }
+
     for (const l of data) {
       const mins = Math.floor(l.duration_ms / 60000);
       const secs = Math.floor((l.duration_ms % 60000) / 1000);
 
       const row = document.createElement("div");
-      row.className = "lecture-row";
+      row.className = "lecture-row" + (l.files_present === false ? " lecture-row-missing" : "");
       row.innerHTML = `
-        <span class="lecture-row-title" title="${escHtml(l.title)}">${escHtml(l.title)}</span>
-        <span class="lecture-row-meta">${l.slide_count}슬라이드 · ${mins}분 ${secs}초</span>
+        <span class="lecture-row-title" title="${escHtml(l.title)}">${
+          l.files_present === false ? "⚠️ " : ""}${escHtml(l.title)}</span>
+        <span class="lecture-row-meta">${l.slide_count}슬라이드 · ${mins}분 ${secs}초${
+          l.files_present === false ? " · 파일 없음" : ""}</span>
         <span class="lecture-row-date">${l.registered_at.slice(0, 10)}</span>
         <button class="delete-btn" data-id="${escHtml(l.id)}">삭제</button>
         <div class="lecture-row-settings">
@@ -170,6 +185,20 @@ async function loadLectures() {
     }
   } catch (e) {
     lectureList.innerHTML = `<p class="lecture-list-empty" style="color:var(--error)">로드 실패: ${e.message}</p>`;
+  }
+}
+
+async function pruneMissing() {
+  if (!confirm("강의 파일이 없는 항목과 그 수강 데이터(질문·난이도·진도)를 삭제합니다.\n계속할까요?")) return;
+  try {
+    const res = await fetch("/admin/prune-missing", {
+      method: "POST", headers: { Authorization: authHeader },
+    });
+    const data = await res.json();
+    alert(`${data.removed}건을 정리했습니다.`);
+    loadLectures();
+  } catch (e) {
+    alert("정리 실패: " + e.message);
   }
 }
 

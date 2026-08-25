@@ -1,6 +1,6 @@
 from typing import Optional
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, field_validator
 
 
 class RegisterIn(BaseModel):
@@ -45,6 +45,9 @@ class PlaybackEventIn(BaseModel):
     position_ms: float = 0.0
     payload:     Optional[dict] = None
 
+    # NOTE: @field_validator 로 등록하지 않으면 그냥 안 불리는 죽은 코드가 된다.
+    # (등록 전에는 임의 문자열이 그대로 통과해 라우터가 조용히 버렸다)
+    @field_validator("event_type")
     @classmethod
     def validate_type(cls, value: str) -> str:
         if value not in _ALLOWED_EVENT_TYPES:
@@ -52,6 +55,5 @@ class PlaybackEventIn(BaseModel):
         return value
 
 
-class PlaybackEventBatchIn(BaseModel):
-    lecture_id: str
-    events:     list[PlaybackEventIn] = Field(default_factory=list, max_length=200)
+# 배치 봉투는 api/playback.py 가 직접 검사한다 — 이벤트를 한 건씩 검증해
+# 잘못된 항목 하나 때문에 배치 전체가 버려지지 않도록 하기 위함.

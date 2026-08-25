@@ -199,3 +199,29 @@
 .toggle input:focus-visible + .toggle-track { outline: 2px solid #38bdf8; outline-offset: 2px; }
 .toggle-text { font-size: 12.5px; color: #cbd5e1; }
 .settings-saved { font-size: 11px; color: #10b981; font-weight: 600; }
+
+/* 파일이 사라진 강의(유령 강의) 표시 */
+.lecture-list-warning {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 10px 14px;
+  margin-bottom: 10px;
+  border: 1px solid var(--warning, #d97706);
+  border-radius: 8px;
+  background: rgba(217, 119, 6, .10);
+  font-size: 13px;
+}
+.lecture-list-warning .prune-btn {
+  padding: 5px 12px;
+  border: 1px solid var(--warning, #d97706);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--warning, #d97706);
+  cursor: pointer;
+  font-size: 12px;
+}
+.lecture-list-warning .prune-btn:hover { background: rgba(217, 119, 6, .18); }
+.lecture-row-missing { opacity: .62; }
