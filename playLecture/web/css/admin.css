@@ -149,3 +149,53 @@
   margin-left: auto;
 }
 .btn-logout:hover { border-color: var(--error); color: var(--error); background: transparent; }
+
+/* ── 강의별 운영 설정 (AI 교수 답변 / 자동 질문 생성) ── */
+.lecture-row-settings {
+  flex-basis: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px dashed #1e293b;
+}
+.settings-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .3px;
+  color: #38bdf8;
+}
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+.toggle input { position: absolute; opacity: 0; width: 0; height: 0; }
+.toggle-track {
+  position: relative;
+  width: 38px;
+  height: 20px;
+  border-radius: 999px;
+  background: #334155;
+  transition: background .15s ease;
+  flex-shrink: 0;
+}
+.toggle-track::after {
+  content: "";
+  position: absolute;
+  top: 2px; left: 2px;
+  width: 16px; height: 16px;
+  border-radius: 50%;
+  background: #e2e8f0;
+  transition: transform .15s ease;
+}
+.toggle input:checked + .toggle-track { background: #10b981; }
+.toggle input:checked + .toggle-track::after { transform: translateX(18px); }
+.toggle input:disabled + .toggle-track { opacity: .5; }
+.toggle input:focus-visible + .toggle-track { outline: 2px solid #38bdf8; outline-offset: 2px; }
+.toggle-text { font-size: 12.5px; color: #cbd5e1; }
+.settings-saved { font-size: 11px; color: #10b981; font-weight: 600; }

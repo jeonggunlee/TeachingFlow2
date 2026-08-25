@@ -53,6 +53,20 @@ class ChatMessage(Base):
     display_name = Column(String,  nullable=False)
     message      = Column(String,  nullable=False)
     created_at   = Column(String,  nullable=False)
+    # 메시지 출처: "student"(실수강생) | "ai_student"(AI 자동 질문) | "ai_teacher"(AI 교수 답변)
+    # AI 생성 메시지는 분석(analytics)·키워드 집계에서 제외한다.
+    origin       = Column(String,  nullable=False, default="student")
+
+
+class LectureSettings(Base):
+    """강의별 운영 설정 — 강의 운영자가 강의마다 지정."""
+
+    __tablename__ = "lecture_settings"
+
+    lecture_id    = Column(String,  primary_key=True)
+    ai_answer     = Column(Integer, nullable=False, default=0)  # AI 교수 답변 자동 작성
+    auto_question = Column(Integer, nullable=False, default=0)  # 학생풍 관심 유도 질문 자동 생성
+    updated_at    = Column(String,  nullable=False)
 
 
 class DifficultyRating(Base):

@@ -267,6 +267,22 @@ body { display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
   vertical-align: middle;
 }
 
+.chat-ai-tag {
+  display: inline-block;
+  background: #6366f1;
+  color: #fff;
+  font-size: 9px;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 8px;
+  margin-right: 4px;
+  vertical-align: middle;
+}
+/* AI 자동 생성 학생 질문: 학생 말풍선 유지 + 좌측 보라 강조선 */
+.chat-msg.ai:not(.teacher) .chat-msg-bubble {
+  border-left: 2px solid #6366f1;
+}
+
 .chat-msg-time {
   font-size: 10px;
   color: #475569;

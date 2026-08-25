@@ -41,6 +41,10 @@ let chatPollTimer = null;
 let diffPollTimer = null;
 let _diffData     = [];   // [{ slide_idx, avg, total }, ...]
 
+// ── AI 운영 설정 ─────────────────────────────────────
+let lectureSettings   = { ai_answer: false, auto_question: false };
+const autoQuestedSlides = new Set();   // 슬라이드별 자동 질문 중복 요청 방지
+
 // ── 초기화 ───────────────────────────────────────────
 Subtitle.init(subtitleBar);
 Overlay.init(slideImg, slideCanvas);
@@ -306,6 +310,12 @@ const Telemetry = (() => {
   titleEl.textContent = lecture.title || lectureId;
   loadingEl.classList.add("hidden");
 
+  // AI 운영 설정 로드 (실패해도 재생에는 영향 없음)
+  try {
+    const sres = await Auth.apiFetch(`/api/lectures/${lectureId}/settings`);
+    if (sres && sres.ok) lectureSettings = await sres.json();
+  } catch (_) {}
+
   if (lecture.slide_size) Overlay.setNaturalSize(lecture.slide_size.w, lecture.slide_size.h);
   totalSegs = lecture.slides.reduce((n, s) => n + s.segments.length, 0);
 
@@ -333,6 +343,7 @@ function goSlide(si, segi, autoPlay) {
 
   // 슬라이드 전환 시 채팅·난이도 리로드
   loadChatMessages(slideIdx);
+  maybeAutoQuestion(slideIdx);
   loadDifficulty(slideIdx);
   if (chatBadge) chatBadge.textContent = `슬라이드 ${slideIdx + 1}`;
   renderDiffLiveGraph();   // 현재 슬라이드 강조 업데이트
@@ -585,7 +596,15 @@ async function sendChat() {
   chatInput.focus();
 
   if (res && res.ok) {
-    await loadChatMessages(slideIdx);
+    const si = slideIdx;
+    await loadChatMessages(si);
+    // AI 교수 답변이 켜져 있으면 백그라운드 답변을 재폴링으로 받아온다.
+    if (lectureSettings.ai_answer) schedulePolls(si);
+    // 자동 질문이 켜져 있으면, 방금 올라온 실제 질문을 소스로 새 AI 질문 생성을 다시 시도.
+    if (lectureSettings.auto_question) {
+      autoQuestedSlides.delete(si);
+      maybeAutoQuestion(si);
+    }
   }
 }
 
@@ -594,6 +613,30 @@ async function loadChatMessages(si) {
   if (!res || !res.ok) return;
   const msgs = await res.json();
   renderMessages(msgs);
+}
+
+// AI 답변 생성은 서버 백그라운드로 진행되므로, 전송 직후 잠시간 재폴링해 답변을 받아온다.
+function schedulePolls(si, delays = [1500, 3000, 5000, 8000]) {
+  for (const d of delays) {
+    setTimeout(() => { if (si === slideIdx) loadChatMessages(si); }, d);
+  }
+}
+
+// 자동 질문 생성 설정이 켜져 있으면 슬라이드당 한 번 생성 요청 후 채팅을 갱신한다.
+async function maybeAutoQuestion(si) {
+  if (!lectureSettings.auto_question) return;
+  if (autoQuestedSlides.has(si)) return;
+  autoQuestedSlides.add(si);
+  try {
+    const res = await Auth.apiFetch(`/api/chat/${lectureId}/${si}/auto-question`, { method: "POST" });
+    if (!res || !res.ok) { autoQuestedSlides.delete(si); return; }
+    const data = await res.json();
+    if (data.generated && si === slideIdx) {
+      schedulePolls(si, [500, 1500]);
+    }
+  } catch (_) {
+    autoQuestedSlides.delete(si);
+  }
 }
 
 function renderMessages(msgs) {
@@ -607,13 +650,15 @@ function renderMessages(msgs) {
     const div = document.createElement("div");
     const classes = ["chat-msg", m.is_mine ? "mine" : "theirs"];
     if (m.is_teacher) classes.push("teacher");
+    if (m.is_ai) classes.push("ai");
     div.className = classes.join(" ");
 
     const time = new Date(m.created_at).toLocaleTimeString("ko-KR", { hour: "2-digit", minute: "2-digit" });
     const teacherTag = m.is_teacher ? `<span class="chat-teacher-tag">👨‍🏫 교수</span>` : "";
+    const aiTag      = m.is_ai ? `<span class="chat-ai-tag">AI</span>` : "";
     const nameHtml   = !m.is_mine
-      ? `<span class="chat-msg-name">${teacherTag}${escHtml(m.display_name)}</span>`
-      : (m.is_teacher ? `<span class="chat-msg-name">${teacherTag}</span>` : "");
+      ? `<span class="chat-msg-name">${teacherTag}${aiTag}${escHtml(m.display_name)}</span>`
+      : (m.is_teacher ? `<span class="chat-msg-name">${teacherTag}${aiTag}</span>` : "");
     div.innerHTML = `
       ${nameHtml}
       <div class="chat-msg-bubble">${escHtml(m.message)}</div>

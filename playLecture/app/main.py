@@ -7,7 +7,7 @@ from fastapi.staticfiles import StaticFiles
 
 from .config import CREATELECTURE_STORAGE_ROOT, STORAGE_ROOT
 from .database import init_db
-from .api import admin, auth, chat, difficulty, lectures, playback, progress, quiz
+from .api import admin, auth, chat, difficulty, lectures, playback, progress, quiz, settings
 
 LECTURES_DIR = STORAGE_ROOT / "lectures"
 LECTURES_DIR.mkdir(parents=True, exist_ok=True)
@@ -33,6 +33,7 @@ app.include_router(lectures.router)
 app.include_router(playback.router)
 app.include_router(progress.router)
 app.include_router(quiz.router)
+app.include_router(settings.router)
 
 CL_LECTURES_DIR = CREATELECTURE_STORAGE_ROOT / "lectures"
 

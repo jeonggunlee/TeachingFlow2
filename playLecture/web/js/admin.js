@@ -40,7 +40,7 @@ loginForm?.addEventListener("submit", async (e) => {
     if (res.ok) {
       authHeader = candidate;
       sessionStorage.setItem("admin_auth", authHeader);
-      location.href = `${location.protocol}//${location.hostname}:8003`;
+      showAdminPanel();   // 로그인 후 관리자 패널 표시 (ZIP 업로드 · 강의별 운영 설정)
     } else {
       loginError.textContent = "비밀번호가 틀렸습니다.";
     }
@@ -142,12 +142,55 @@ async function loadLectures() {
         <span class="lecture-row-meta">${l.slide_count}슬라이드 · ${mins}분 ${secs}초</span>
         <span class="lecture-row-date">${l.registered_at.slice(0, 10)}</span>
         <button class="delete-btn" data-id="${escHtml(l.id)}">삭제</button>
+        <div class="lecture-row-settings">
+          <span class="settings-label">🤖 AI 운영</span>
+          <label class="toggle">
+            <input type="checkbox" class="opt-ai-answer" ${l.ai_answer ? "checked" : ""} />
+            <span class="toggle-track"></span>
+            <span class="toggle-text">AI 교수 답변</span>
+          </label>
+          <label class="toggle">
+            <input type="checkbox" class="opt-auto-question" ${l.auto_question ? "checked" : ""} />
+            <span class="toggle-track"></span>
+            <span class="toggle-text">자동 질문 생성</span>
+          </label>
+          <span class="settings-saved" hidden>저장됨 ✓</span>
+        </div>
       `;
       row.querySelector(".delete-btn").addEventListener("click", () => deleteLecture(l.id));
+
+      const aiCb   = row.querySelector(".opt-ai-answer");
+      const autoCb = row.querySelector(".opt-auto-question");
+      const saved  = row.querySelector(".settings-saved");
+      const onToggle = () => saveSettings(l.id, aiCb.checked, autoCb.checked, saved, [aiCb, autoCb]);
+      aiCb.addEventListener("change", onToggle);
+      autoCb.addEventListener("change", onToggle);
+
       lectureList.appendChild(row);
     }
   } catch (e) {
     lectureList.innerHTML = `<p class="lecture-list-empty" style="color:var(--error)">로드 실패: ${e.message}</p>`;
+  }
+}
+
+async function saveSettings(id, aiAnswer, autoQuestion, savedEl, inputs) {
+  inputs.forEach((i) => (i.disabled = true));
+  try {
+    const res = await fetch(`/admin/lectures/${id}/settings`, {
+      method:  "PUT",
+      headers: { Authorization: authHeader, "Content-Type": "application/json" },
+      body:    JSON.stringify({ ai_answer: aiAnswer, auto_question: autoQuestion }),
+    });
+    if (res.ok) {
+      savedEl.hidden = false;
+      setTimeout(() => (savedEl.hidden = true), 1500);
+    } else {
+      alert("설정 저장 실패: " + tryParseDetail(await res.text()));
+    }
+  } catch (e) {
+    alert("설정 저장 중 오류: " + e.message);
+  } finally {
+    inputs.forEach((i) => (i.disabled = false));
   }
 }
 

@@ -14,7 +14,7 @@ from sqlalchemy import delete, func
 
 from ..config import ADMIN_PASSWORD, CREATELECTURE_STORAGE_ROOT, STORAGE_ROOT
 from ..database import get_db
-from ..models import ChatMessage, DifficultyRating, Lecture, PlaybackEvent, Progress, QuizResponse, SlideKeyword
+from ..models import ChatMessage, DifficultyRating, Lecture, LectureSettings, PlaybackEvent, Progress, QuizResponse, SlideKeyword
 
 router   = APIRouter()
 security = HTTPBasic()
@@ -108,7 +108,8 @@ async def delete_lecture(
         shutil.rmtree(dest)
 
     # Cascade-delete all analytics rows before removing the lecture row
-    for model in (DifficultyRating, ChatMessage, SlideKeyword, Progress):
+    for model in (DifficultyRating, ChatMessage, SlideKeyword, Progress,
+                  PlaybackEvent, QuizResponse, LectureSettings):
         await db.execute(
             delete(model).where(model.lecture_id == lecture_id)
         )
@@ -122,8 +123,11 @@ async def list_all(
     db: AsyncSession = Depends(get_db),
     _: HTTPBasicCredentials = Depends(require_admin),
 ):
-    result = await db.execute(select(Lecture).order_by(Lecture.registered_at.desc()))
-    rows = result.scalars().all()
+    result = await db.execute(
+        select(Lecture, LectureSettings)
+        .join(LectureSettings, Lecture.id == LectureSettings.lecture_id, isouter=True)
+        .order_by(Lecture.registered_at.desc())
+    )
     return [
         {
             "id": r.id,
@@ -133,8 +137,10 @@ async def list_all(
             "seg_count": r.seg_count,
             "duration_ms": r.duration_ms,
             "registered_at": r.registered_at,
+            "ai_answer":     bool(s.ai_answer) if s else False,
+            "auto_question": bool(s.auto_question) if s else False,
         }
-        for r in rows
+        for (r, s) in result.all()
     ]
 
 
@@ -180,10 +186,12 @@ async def get_analytics(
             lst.append({"keyword": keyword, "count": count})
 
     # 슬라이드별 질문 전문 (created_at 오름차순)
+    # AI 생성 메시지(ai_student/ai_teacher)는 실제 수강 데이터가 아니므로 분석에서 제외
     chat_result = await db.execute(
         select(ChatMessage.slide_idx, ChatMessage.display_name,
                ChatMessage.message, ChatMessage.created_at)
-        .where(ChatMessage.lecture_id == lecture_id)
+        .where(ChatMessage.lecture_id == lecture_id,
+               ChatMessage.origin == "student")
         .order_by(ChatMessage.slide_idx, ChatMessage.created_at)
     )
     chat_rows = chat_result.all()

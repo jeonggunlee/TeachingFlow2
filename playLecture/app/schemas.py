@@ -24,6 +24,11 @@ class ChatIn(BaseModel):
     message: str = Field(min_length=1, max_length=500)
 
 
+class LectureSettingsIn(BaseModel):
+    ai_answer:     bool
+    auto_question: bool
+
+
 class DifficultyIn(BaseModel):
     rating: int = Field(ge=0, le=2)   # 0=쉬움 1=보통 2=어려움
 

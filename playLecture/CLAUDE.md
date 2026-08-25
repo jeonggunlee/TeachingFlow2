@@ -55,7 +55,14 @@ CREATE TABLE progress (
 );
 CREATE TABLE chat_messages (
     id PK, user_id FK, lecture_id, slide_idx,
-    display_name, message TEXT(max 500), created_at
+    display_name, message TEXT(max 500), created_at,
+    origin TEXT DEFAULT 'student'   -- 'student' | 'ai_student' | 'ai_teacher'
+);                                  -- AI 생성 메시지(ai_*)는 analytics에서 제외
+CREATE TABLE lecture_settings (     -- 강의별 운영 설정 (운영자 지정)
+    lecture_id TEXT PK,
+    ai_answer INTEGER DEFAULT 0,        -- AI 교수 답변 자동 작성
+    auto_question INTEGER DEFAULT 0,    -- 학생풍 관심 유도 질문 자동 생성
+    updated_at
 );
 CREATE TABLE difficulty_ratings (
     user_id TEXT, lecture_id TEXT, slide_idx INTEGER,  -- PK 복합
@@ -84,8 +91,10 @@ CREATE TABLE slide_keywords (
 | GET  | `/api/progress/{lecture_id}` | 내 수강 진도 |
 | PUT  | `/api/progress/{lecture_id}` | 진도 저장 |
 | POST | `/api/progress/{lecture_id}` | 진도 저장 (sendBeacon 전용 — PUT과 동일 로직) |
-| GET  | `/api/chat/{lecture_id}/{slide_idx}` | 슬라이드 채팅 조회 |
-| POST | `/api/chat/{lecture_id}/{slide_idx}` | 채팅 전송 (키워드 자동 추출) |
+| GET  | `/api/chat/{lecture_id}/{slide_idx}` | 슬라이드 채팅 조회 (is_teacher·is_ai 플래그 포함) |
+| POST | `/api/chat/{lecture_id}/{slide_idx}` | 채팅 전송 (키워드 자동 추출, ai_answer 켜지면 백그라운드 AI 답변) |
+| POST | `/api/chat/{lecture_id}/{slide_idx}/auto-question` | 자동 질문 생성 트리거 (슬라이드당 1회, auto_question 켜진 경우) |
+| GET  | `/api/lectures/{lecture_id}/settings` | 강의 운영 설정 조회 (공개, 비밀정보 없음) |
 | GET  | `/api/difficulty/{lecture_id}/{slide_idx}` | 슬라이드 난이도 조회 |
 | GET  | `/api/difficulty/{lecture_id}` | 강의 전체 슬라이드 평균 난이도 |
 | PUT  | `/api/difficulty/{lecture_id}/{slide_idx}` | 난이도 평가 저장/수정 |
@@ -96,7 +105,9 @@ CREATE TABLE slide_keywords (
 | POST   | `/admin/upload` | ZIP 업로드 → 압축 해제 → DB 등록 |
 | DELETE | `/admin/lectures/{id}` | 강의 + 모든 analytics 데이터 삭제 |
 | GET    | `/admin/lectures` | 전체 강의 목록 |
-| GET    | `/admin/analytics/{lecture_id}` | analyzeLecture용 통합 분석 데이터 |
+| GET    | `/admin/analytics/{lecture_id}` | analyzeLecture용 통합 분석 데이터 (AI 생성 메시지 제외) |
+| GET    | `/admin/lectures/{lecture_id}/settings` | 강의 운영 설정 조회 |
+| PUT    | `/admin/lectures/{lecture_id}/settings` | 강의 운영 설정 저장 (`ai_answer`, `auto_question`) |
 
 #### Analytics API 응답 구조
 ```json
@@ -142,6 +153,23 @@ GET /static/{lecture_id}/audio/slide_NNN_seg_MM.words.json
 - **탭 닫기 안전 저장**: `beforeunload` → `navigator.sendBeacon` (POST) + 토큰 쿼리 파라미터
 - **이어보기**: 페이지 로드 후 `GET /api/progress` → 배너 표시 → 클릭 시 해당 위치로 이동
 - **실시간 난이도 그래프**: 30초 폴링으로 `GET /api/difficulty/{lecture_id}` → 현재 슬라이드까지 막대 표시
+
+---
+
+## 6-1. AI 운영 옵션 (강의별)
+
+관리자 페이지(`/admin`)의 강의 목록에서 강의마다 두 토글로 켜고 끈다.
+`app/services/ai_tutor.py`가 `lecture.json`의 슬라이드 스크립트를 컨텍스트로 Claude(`CLAUDE_MODEL`)를 호출한다.
+`ANTHROPIC_API_KEY`가 비어 있으면 두 기능 모두 조용히 비활성화된다(재생은 정상).
+
+| 옵션 | 동작 |
+|------|------|
+| **AI 교수 답변** (`ai_answer`) | 수강생이 채팅 질문을 올리면 백그라운드로 교수 입장 답변을 생성해 `ai_teacher` 메시지로 추가. 플레이어는 전송 직후 몇 초간 재폴링해 답변을 표시. |
+| **자동 질문 생성** (`auto_question`) | 학생이 쓴 것처럼 자연스러운 질문(`ai_student`, 한국식 이름)을 만들고 교수 답변(`ai_teacher`)까지 생성. **실제 수강생 질문을 소스로 활용** — 슬라이드에 쌓인 실제 질문(`origin=student`)을 Claude에 넘겨 가장 자주 나온 궁금증을 학생풍으로 재구성. 실제 질문이 없으면 스크립트 기반으로 seed 1개 생성. 실제 질문이 늘수록 그 수를 넘지 않는 선에서 추가 생성(슬라이드당 최대 `AI_QUESTION_CAP=3`개, 기존 AI 질문과 중복 회피). |
+
+- AI 메시지(`origin` = `ai_student`/`ai_teacher`)는 **키워드 집계·analytics 질문에서 제외** → CQI 분석 오염 방지.
+- 플레이어 표시: `ai_teacher`는 교수 말풍선 + `AI` 뱃지, `ai_student`는 일반 학생 말풍선(보라 강조선) + `AI` 뱃지.
+- 설정은 별도 테이블이라 ZIP 재업로드/삭제와 독립. (강의 삭제 시에는 cascade 정리)
 
 ---
 
@@ -218,6 +246,8 @@ cp .env.example .env
 #   ADMIN_PASSWORD=changeme
 #   SECRET_KEY=랜덤문자열
 #   CREATELECTURE_STORAGE_ROOT=/path/to/createLecture/storage/lectures  # 파일시스템 공유
+#   ANTHROPIC_API_KEY=sk-ant-...   # AI 교수 답변·자동 질문 생성용 (없으면 기능 비활성)
+#   CLAUDE_MODEL=claude-sonnet-4-6 # 선택 (기본값)
 uvicorn app.main:app --host 0.0.0.0 --port 8001 --reload
 # → http://localhost:8001         수강생 강의 목록
 # → http://localhost:8001/admin   관리자
