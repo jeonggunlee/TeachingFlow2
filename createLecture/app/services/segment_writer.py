@@ -8,6 +8,9 @@
 `ref`는 slide_renderer가 각 요소에 부여한 `data-ref` 값과 1:1로 대응한다.
   title   : t, st
   section : no, t
+  venn    : t, v1, v2, v3        flow   : t, f1, f2, ...
+  layers  : t, y1, y2, ...       cycle  : t, c1, c2, ...
+  figure  : t, fig
   bullets : t, b1, b2, ...
   two_col : t, lh, l1.., rh, r1..
   quote   : q, attr
@@ -36,7 +39,8 @@ _SYSTEM = """당신은 대학 강의 스크립트 작가입니다.
 }
 
 규칙:
-- segments는 슬라이드의 주요 텍스트 요소마다 1개씩 (보통 2~5개)
+- segments는 슬라이드의 주요 요소마다 1개씩 (보통 2~5개)
+- 다이어그램 슬라이드는 그림의 각 부분(도형)을 순서대로 짚어가며 설명할 것
 - **ref는 반드시 입력에 주어진 요소 id 중 하나**를 그대로 사용할 것 (새로 만들지 말 것)
 - 요소가 나타나는 순서대로 segments를 배열할 것
 - keyword는 그 요소에서 강조할 핵심어 (해당 요소 텍스트 안에 실제로 있는 표현)
@@ -78,6 +82,22 @@ def _refs_of(slide: dict) -> list:
         add("cap", slide.get("caption"))
     elif layout == "closing":
         add("t", slide.get("title")); add("st", slide.get("subtitle"))
+    elif layout in ("venn", "flow", "layers", "cycle"):
+        # 다이어그램 — 제목 + 각 도형을 개별 강조할 수 있다
+        add("t", slide.get("title"))
+        key, prefix = {
+            "venn":   ("sets",   "v"),
+            "flow":   ("steps",  "f"),
+            "layers": ("layers", "y"),
+            "cycle":  ("steps",  "c"),
+        }[layout]
+        for i, it in enumerate(slide.get(key) or [], 1):
+            name = it.get("name") if isinstance(it, dict) else it
+            note = it.get("note") if isinstance(it, dict) else ""
+            add(f"{prefix}{i}", f"{name}{(' — ' + note) if note else ''}")
+    elif layout == "figure":
+        add("t", slide.get("title"))
+        add("fig", slide.get("caption") or "개념도")
     else:  # bullets
         add("t", slide.get("title"))
         bullets = slide.get("bullets") or ([slide["content"]] if slide.get("content") else [])

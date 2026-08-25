@@ -66,6 +66,15 @@ const SlideStage = (() => {
   transition: transform .3s cubic-bezier(.34,1.56,.64,1);
 }
 .hl-check.on::after { transform: scale(1); }
+/* SVG 도형 강조 — 텍스트가 아니라 그림의 한 부분을 짚을 때 */
+.dg-part { transition: opacity .3s ease; }
+.dg-dim .dg-part { opacity: .28; }
+.dg-dim .dg-part.hl-shape { opacity: 1; }
+.hl-shape { filter: drop-shadow(0 0 10px rgba(14,165,233,.55)); }
+.hl-shape rect, .hl-shape ellipse, .hl-shape circle, .hl-shape path {
+  stroke-width: 6;
+}
+.dg-figure.hl-shape { filter: drop-shadow(0 0 14px rgba(14,165,233,.5)); }
 `;
     document.head.appendChild(st);
   }
@@ -145,6 +154,9 @@ const SlideStage = (() => {
    */
   function _wrapTargets() {
     _stage.querySelectorAll("[data-ref]").forEach((el) => {
+      // SVG 도형은 텍스트 래핑 대상이 아니다 (도형 자체를 강조한다)
+      if (el.ownerSVGElement || el.tagName.toLowerCase() === "svg") return;
+      if (el.classList.contains("dg-figure")) return;
       if (el.querySelector(".hl-ink")) return;
       const span = document.createElement("span");
       span.className = "hl-ink";
@@ -159,6 +171,8 @@ const SlideStage = (() => {
     _stage.querySelectorAll(".hl-ink").forEach((el) => {
       el.classList.remove("on", "hl-marker", "hl-underline", "hl-check");
     });
+    _stage.querySelectorAll(".hl-shape").forEach((el) => el.classList.remove("hl-shape"));
+    _stage.querySelectorAll(".dg-dim").forEach((el) => el.classList.remove("dg-dim"));
   }
 
   /**
@@ -171,7 +185,14 @@ const SlideStage = (() => {
     if (!_stage || !ref || effect === "none") return false;
     const host = _stage.querySelector(`[data-ref="${CSS.escape(ref)}"]`);
     if (!host) return false;
-    const ink = host.querySelector(".hl-ink") || host;
+    // 다이어그램 도형이면 배경 대신 도형을 부각하고 나머지를 흐린다
+    const ink = host.querySelector(".hl-ink");
+    if (!ink) {
+      host.classList.add("hl-shape");
+      const svgRoot = host.ownerSVGElement || host.closest(".dg-wrap");
+      if (svgRoot) svgRoot.classList.add("dg-dim");
+      return true;
+    }
     const cls = EFFECT_CLASS[effect] || EFFECT_CLASS.highlighter;
     ink.classList.add(cls);
     // 다음 프레임에 .on을 붙여 전환 애니메이션이 실제로 재생되게 한다

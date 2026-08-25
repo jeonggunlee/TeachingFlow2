@@ -18,6 +18,7 @@ app/
 │   └── scripts.py            # GET/PUT /scripts, POST /synthesize, POST /rebuild-json
 ├── services/
 │   ├── slide_renderer.py     # 프롬프트 → 아웃라인 → HTML 프래그먼트 (+ data-ref)
+│   ├── slide_diagrams.py     # SVG 다이어그램 (venn·flow·layers·cycle·figure)
 │   ├── segment_writer.py     # 아웃라인 → 요소 id 기반 내레이션 (좌표 추측 없음)
 │   ├── cqi_adapter.py        # Claude API 기반 CQI 스크립트 개선
 │   ├── tts_synthesizer.py    # Edge TTS + SentenceBoundary 어절 분배
@@ -138,7 +139,22 @@ async def render_outline(outline, lecture_dir, *, design=None, ...) -> list[Path
 - **래스터 이미지를 만들지 않는다** — 플레이어가 라이브 DOM으로 렌더
 - `render_outline()`은 Claude 호출 없이 확정된 아웃라인만 렌더 — CQI 진화에서 사용
 
-지원 레이아웃 7종: `title`, `section`, `bullets`, `two_col`, `quote`, `stat`, `closing`
+지원 레이아웃 12종:
+
+| 종류 | 레이아웃 |
+|------|----------|
+| 텍스트 | `title`, `section`, `bullets`, `two_col`, `quote`, `stat`, `closing` |
+| 다이어그램(SVG) | `venn`(포함·교집합), `flow`(순서), `layers`(계층), `cycle`(순환), `figure`(자유 개념도) |
+
+### 다이어그램 (`slide_diagrams.py`)
+
+글머리표로는 전달되지 않는 관계를 SVG로 그린다. 도형마다 `data-ref`가 붙어
+**내레이션이 그림의 특정 부분만 강조**할 수 있다 (예: 신경망에서 은닉층만).
+
+- 색·선은 CSS 클래스(`dg-*`)로 지정 → `design.json` 토큰을 따르므로 진화해도 디자인 유지
+- `figure`는 모델이 직접 그린 SVG를 받는다. `sanitize_svg()`가 `<script>`·
+  `<foreignObject>`·`<image>`·`on*` 핸들러·외부 `href`를 제거하고, 허용 태그
+  목록에 없는 태그가 있으면 통째로 거부한다
 
 ## 6-1. 강조 좌표를 없앤 이유
 

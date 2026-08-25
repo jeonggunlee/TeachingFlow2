@@ -4,7 +4,7 @@ Claude Web 수준 디자인을 목표로 한 화이트 톤 미니멀 슬라이�
 슬라이드는 래스터 이미지가 아니라 HTML로 저장되어 플레이어에서 라이브 DOM으로
 렌더된다. 덕분에 강조 효과를 좌표가 아닌 실제 텍스트 요소에 적용할 수 있다.
 
-레이아웃 종류 (7):
+레이아웃 종류 (12):
   - title     표지 (제목 + 부제 + 액센트 바)
   - section   섹션 구분 (큰 번호 + 섹션 제목)
   - bullets   본문 (제목 + 불릿 리스트)
@@ -12,6 +12,11 @@ Claude Web 수준 디자인을 목표로 한 화이트 톤 미니멀 슬라이�
   - quote     인용 (큰 따옴표 + 본문 + 출처)
   - stat      통계 강조 (큰 수치 + 라벨 + 설명)
   - closing   마무리 (큰 메시지 + 부가)
+  - venn      포함·교집합 관계 (SVG)
+  - flow      순서·절차 (SVG)
+  - layers    계층 구조 (SVG)
+  - cycle     순환 과정 (SVG)
+  - figure    자유 형식 개념도 (모델이 그린 SVG, 위생 처리)
 """
 
 import asyncio
@@ -69,10 +74,40 @@ _SYSTEM = """당신은 대학 강의 슬라이드 디자이너입니다.
 7. {"layout":"closing","title":"마무리 메시지","subtitle":"부가 메시지"}
    → 마지막 슬라이드. subtitle은 선택
 
+── 다이어그램 레이아웃 (개념을 그림으로) ──
+말로 설명하면 장황해지는 관계는 아래 레이아웃으로 그림을 그리세요.
+
+8. {"layout":"venn","title":"...","mode":"nested",
+      "sets":[{"name":"인공지능","note":"가장 넓은 개념"},{"name":"머신러닝"},{"name":"딥러닝"}]}
+   → 포함 관계(A ⊃ B ⊃ C)는 mode:"nested", 교집합은 mode:"overlap". sets는 2~3개
+   → 바깥(넓은 개념)부터 순서대로 나열
+
+9. {"layout":"flow","title":"...",
+      "steps":[{"name":"순전파","note":"예측값 계산"},{"name":"손실 계산"},{"name":"역전파"}]}
+   → 순서·절차·파이프라인. steps 2~5개, name은 짧게(10자 내외)
+
+10. {"layout":"layers","title":"...",
+      "layers":[{"name":"입력층","note":"특징 벡터"},{"name":"은닉층"},{"name":"출력층"}]}
+   → 계층 구조(신경망 층, 스택, 추상화 단계). 위에서 아래로. 2~5개
+
+11. {"layout":"cycle","title":"...",
+      "steps":[{"name":"측정"},{"name":"분석"},{"name":"개선"}]}
+   → 반복되는 순환 과정. steps 3~5개
+
+12. {"layout":"figure","title":"...","caption":"한 줄 설명","svg":"<svg viewBox=\"0 0 1680 700\">...</svg>"}
+   → 위 형식에 맞지 않는 개념도를 직접 그릴 때. 아래 규칙 필수:
+     · viewBox="0 0 1680 700" 좌표계 사용
+     · <script>·<foreignObject>·<image>·외부 링크 금지 (제거됨)
+     · 글자는 <text>로, font-size 24~34, 도형 stroke-width 2~4
+     · 색은 강조색과 회색 계열만 사용해 슬라이드 톤을 해치지 않을 것
+     · 지나치게 복잡하게 그리지 말 것 (도형 15개 이내)
+
 전체 규칙:
 - title 슬라이드는 반드시 정확히 1장(맨 처음)
 - closing 슬라이드는 반드시 정확히 1장(맨 끝)
 - 그 사이는 bullets 위주, section·two_col·quote·stat을 적절히 섞어 리듬 부여
+- **포함·순서·계층·순환 관계가 나오면 글머리표로 나열하지 말고 다이어그램을 쓸 것**
+- 다이어그램은 전체 슬라이드의 1/4 안팎 (예: 8장이면 2장 내외)
 - 같은 레이아웃이 3장 이상 연속되지 않도록 분배
 - 한국어로 작성
 - 슬라이드 수가 지정되면 정확히 그 수, 미지정 시 8~14장 사이에서 내용에 맞게 결정
@@ -309,6 +344,54 @@ _CSS_TMPL = """
   font-size: 128px; font-weight: 800; letter-spacing: -0.025em;
   color: {INK};
 }}
+/* ── 다이어그램 (SVG) ───────────────────────── */
+.lyt-venn, .lyt-flow, .lyt-layers, .lyt-cycle, .lyt-figure {{ gap: 12px; }}
+.lyt-venn .heading, .lyt-flow .heading, .lyt-layers .heading,
+.lyt-cycle .heading, .lyt-figure .heading {{
+  font-size: 58px; font-weight: 800; letter-spacing: -0.015em;
+  color: {INK}; flex-shrink: 0;
+}}
+.lyt-venn .heading::after, .lyt-flow .heading::after, .lyt-layers .heading::after,
+.lyt-cycle .heading::after, .lyt-figure .heading::after {{
+  content: ''; display: block;
+  width: 80px; height: 5px; margin-top: 20px;
+  background: {ACCENT}; border-radius: 3px;
+}}
+.dg-wrap {{
+  flex: 1; min-height: 0; display: flex;
+  align-items: center; justify-content: center;
+}}
+.dg {{ width: 100%; height: 100%; max-height: 100%; overflow: visible; }}
+.dg-figure {{ flex: 1; min-height: 0; display: flex; align-items: center; justify-content: center; }}
+
+/* 도형 */
+.dg-box {{ fill: {PANEL}; stroke: {PANEL_BORDER}; stroke-width: 2; }}
+.dg-layer {{ stroke-width: 2; }}
+.dg-venn-ring {{ fill: none; stroke-width: 4; }}
+.dg-venn-circle {{ fill-opacity: .16; stroke-width: 4; }}
+.dg-badge {{ fill: {ACCENT}; }}
+.dg-badge-num {{ fill: #fff; font-size: 26px; font-weight: 800; }}
+.dg-arrow {{ stroke: {MUTED}; stroke-width: 3.5; fill: none; }}
+.dg-arrowhead {{ fill: {MUTED}; }}
+
+/* 색상 변주 — 집합·층 구분 */
+.dg-c1 {{ stroke: {ACCENT}; fill: {ACCENT}; }}
+.dg-c2 {{ stroke: {INK_SOFT}; fill: {INK_SOFT}; }}
+.dg-c3 {{ stroke: {ACCENT_SOFT}; fill: {ACCENT_SOFT}; }}
+.dg-layer.dg-c1 {{ fill: {ACCENT}; fill-opacity: .14; }}
+.dg-layer.dg-c2 {{ fill: {INK_SOFT}; fill-opacity: .10; }}
+.dg-layer.dg-c3 {{ fill: {ACCENT_SOFT}; fill-opacity: .28; }}
+.dg-venn-ring.dg-c1 {{ fill: {ACCENT}; fill-opacity: .07; }}
+.dg-venn-ring.dg-c2 {{ fill: {INK_SOFT}; fill-opacity: .07; }}
+.dg-venn-ring.dg-c3 {{ fill: {ACCENT_SOFT}; fill-opacity: .22; }}
+
+/* 글자 */
+.dg-label {{ fill: {INK}; font-size: 32px; font-weight: 700; }}
+.dg-sub   {{ fill: {INK_SOFT}; font-size: 24px; font-weight: 400; }}
+.dg-caption {{
+  font-size: 26px; color: {INK_SOFT}; text-align: center; margin-top: 8px;
+}}
+
 .lyt-closing .closing-subtitle {{
   font-size: 40px; color: {INK_SOFT}; max-width: 1400px; line-height: 1.4;
 }}
@@ -430,6 +513,16 @@ def _render_closing(s: dict) -> str:
 """.strip()
 
 
+def _render_diagram(kind):
+    """다이어그램 레이아웃 — 제목 + SVG 그림."""
+    def render(s: dict) -> str:
+        from app.services.slide_diagrams import DIAGRAM_FUNCS
+        title = s.get("title", "")
+        head = f'<h2 class="heading" data-ref="t">{_esc(title)}</h2>' if title else ""
+        return f'{head}<div class="dg-wrap">{DIAGRAM_FUNCS[kind](s)}</div>'
+    return render
+
+
 _LAYOUT_FUNCS = {
     "title":    _render_title,
     "section":  _render_section,
@@ -438,6 +531,12 @@ _LAYOUT_FUNCS = {
     "quote":    _render_quote,
     "stat":     _render_stat,
     "closing":  _render_closing,
+    # ── 다이어그램 (SVG) ──
+    "venn":     _render_diagram("venn"),
+    "flow":     _render_diagram("flow"),
+    "layers":   _render_diagram("layers"),
+    "cycle":    _render_diagram("cycle"),
+    "figure":   _render_diagram("figure"),
 }
 
 

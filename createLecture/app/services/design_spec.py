@@ -46,11 +46,17 @@ DEFAULT_DESIGN = {
         "two_col의 각 컬럼 points는 2~4개",
         "stat의 value는 8자 이내",
         "모든 텍스트는 한국어",
+        "관계(포함·순서·계층·순환)를 설명할 때는 글머리표 대신 다이어그램 레이아웃을 쓴다",
+        "다이어그램은 전체의 1/4 안팎으로 — 너무 많으면 오히려 산만해진다",
     ],
 }
 
 # 허용 레이아웃 (slide_renderer와 동기)
-LAYOUTS = ["title", "section", "bullets", "two_col", "quote", "stat", "closing"]
+LAYOUTS = [
+    "title", "section", "bullets", "two_col", "quote", "stat", "closing",
+    # 다이어그램 (SVG) — 관계를 그림으로 보여준다
+    "venn", "flow", "layers", "cycle", "figure",
+]
 
 
 def _path(lecture_dir: Path) -> Path:
@@ -106,7 +112,7 @@ def rules_prompt(design: dict) -> str:
         "── 디자인 고정 규칙 (반드시 준수, 변경 금지) ──",
         f"테마: {d.get('theme')} — 화이트 배경의 미니멀 학술 슬라이드",
         f"강조색 {pal.get('accent')} / 본문색 {pal.get('ink')} / 배경 {pal.get('bg')}",
-        f"허용 레이아웃은 다음 7종뿐: {', '.join(LAYOUTS)}",
+        f"허용 레이아웃은 다음 {len(LAYOUTS)}종뿐: {', '.join(LAYOUTS)}",
         "이 레이아웃 외의 새 layout 값을 만들어내지 말 것",
         "색상·폰트·여백은 시스템이 고정하므로 JSON에 스타일 필드를 넣지 말 것",
         "",
