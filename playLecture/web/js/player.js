@@ -646,10 +646,23 @@ async function loadChatMessages(si) {
 }
 
 // AI 답변 생성은 서버 백그라운드로 진행되므로, 전송 직후 잠시간 재폴링해 답변을 받아온다.
-function schedulePolls(si, delays = [1500, 3000, 5000, 8000]) {
+// 실측 생성 시간이 10초 안팎이라 폴링 구간이 8초에서 끊기면 30초 주기 폴링까지 기다리게 된다.
+// 여유를 두고 25초까지 훑되, 답변이 도착하면 남은 폴링은 건너뛴다.
+function schedulePolls(si, delays = [1500, 3000, 5000, 8000, 12000, 18000, 25000]) {
+  const seen = aiReplyCount(si);
   for (const d of delays) {
-    setTimeout(() => { if (si === slideIdx) loadChatMessages(si); }, d);
+    setTimeout(async () => {
+      if (si !== slideIdx) return;
+      if (aiReplyCount(si) > seen) return;   // 이미 새 AI 답변이 도착함
+      await loadChatMessages(si);
+    }, d);
   }
+}
+
+// 현재 화면에 렌더된 AI 교수 답변 수 (폴링 조기 종료 판단용)
+function aiReplyCount(si) {
+  if (si !== slideIdx) return 0;
+  return chatMessages.querySelectorAll(".chat-msg.ai.teacher").length;
 }
 
 // 자동 질문 생성 설정이 켜져 있으면 슬라이드당 한 번 생성 요청 후 채팅을 갱신한다.
