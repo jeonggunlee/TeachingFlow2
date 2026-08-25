@@ -16,20 +16,33 @@ _SYSTEM = """당신은 대학 강의 콘텐츠 개선 전문가입니다.
 - 피드백에서 특정 내용 추가 요구 시 script를 확장하거나 세그먼트 추가
 - 피드백에서 특정 내용 삭제·축소 요구 시 script를 축약하거나 세그먼트 삭제
 - 새 segment는 id: "seg_N" (기존 최대 번호 다음), highlight는 전체 슬라이드 영역(x_pct:5, y_pct:5, w_pct:90, h_pct:90)
+- 슬라이드 내용(아웃라인)이 함께 주어지면, **그 슬라이드에 실제로 있는 내용만** 설명할 것
+- 누적 지시가 서로 충돌하면 **최신 지시를 따를 것**
 - 순수 JSON 배열만 출력, 코드블록·설명 일절 금지
 """.strip()
 
 
-async def apply(slides: list, cqi_text: str) -> list:
-    """CQI 피드백을 반영하여 vision 슬라이드 스크립트를 개선한다."""
+async def apply(slides: list, cqi_text: str, outline: list = None) -> list:
+    """CQI 피드백을 반영하여 vision 슬라이드 스크립트를 개선한다.
+
+    outline이 주어지면 각 슬라이드에 실제로 그려진 내용을 컨텍스트로 함께 제공해,
+    슬라이드에 없는 내용을 설명하는 오류를 막는다.
+    """
     client = AsyncAnthropic(api_key=settings.anthropic_api_key)
 
     slides_json = json.dumps(slides, ensure_ascii=False, indent=2)
-    user_msg = (
-        f"현재 강의 슬라이드 스크립트 (JSON 배열):\n{slides_json}\n\n"
-        f"CQI 피드백:\n{cqi_text}\n\n"
-        "위 CQI 피드백을 반영하여 개선된 슬라이드 스크립트 JSON 배열을 출력하세요."
-    )
+
+    parts = []
+    if outline:
+        parts.append(
+            "현재 강의의 페이지별 슬라이드 내용 (참고용, 이 내용에 근거해 설명할 것):\n"
+            + json.dumps(outline, ensure_ascii=False, indent=2)
+            + "\n"
+        )
+    parts.append(f"현재 강의 슬라이드 스크립트 (JSON 배열):\n{slides_json}\n")
+    parts.append(f"CQI 피드백:\n{cqi_text}\n")
+    parts.append("위 CQI 피드백을 반영하여 개선된 슬라이드 스크립트 JSON 배열을 출력하세요.")
+    user_msg = "\n".join(parts)
 
     msg = await client.messages.create(
         model=settings.claude_model,

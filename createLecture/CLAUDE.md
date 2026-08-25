@@ -151,6 +151,13 @@ createLecture/
 | PUT  | `/api/lectures/{id}/scripts` | 편집된 slides 배열 저장 |
 | POST | `/api/lectures/{id}/synthesize` | TTS Phase2 시작 |
 | POST | `/api/lectures/{id}/rebuild-json` | TTS 없이 lecture.json만 재빌드 |
+| GET  | `/api/lectures/{id}/cqi-ledger` | 누적 CQI 지시문 원장 조회 (stats + 반영 프롬프트 미리보기) |
+| POST | `/api/lectures/{id}/cqi-ledger/import` | 분석 보고서 → 지시문 취입 (pending) |
+| POST | `/api/lectures/{id}/cqi-ledger` | 교수자 직접 지시문 추가 |
+| PATCH | `/api/lectures/{id}/cqi-ledger/{entry_id}` | 승인·폐기·문구수정·대체 표시 |
+| GET  | `/api/lectures/{id}/lineage` | 강의 계보(버전 목록) |
+| POST | `/api/lectures/{id}/evolve` | 승인된 누적 CQI로 **새 버전** 생성 (202) |
+| GET  | `/evolve` | evolve.html (CQI 진화 관리 페이지) |
 | GET  | `/` | index.html (업로드 페이지) |
 | GET  | `/scripts` | scripts.html |
 | GET  | `/player` | player.html |
@@ -185,6 +192,59 @@ createLecture/
 | `week_title` | 강의 제목 |
 
 `from` 없이 업로드 페이지 접근 시 → 포털(`http://localhost:8003`)로 강제 리디렉션.
+
+---
+
+## 6-1. CQI 진화 — 누적 개선 사이클
+
+> 강의가 운영·분석을 거치며 **버전으로 진화**한다. `/evolve?id={lecture_id}`에서 관리.
+
+### 설계 원칙
+
+| 항목 | 규칙 |
+|------|------|
+| **페이지별 내용 보존** | `outline.json`에 슬라이드별 내용 스펙을 보관하고 진화·CQI 프롬프트에 항상 함께 전달. PPT로 만든 강의는 `slide_spec.ensure()`가 슬라이드 이미지에서 Vision으로 역추출(부모에 캐시). |
+| **디자인 고정** | `design.json`(색·폰트·레이아웃 규칙)을 버전 간 그대로 승계. 진화 시 슬라이드를 **웹 슬라이드로 재렌더**해도 시각 디자인이 유지된다. |
+| **누적** | `cqi_ledger.json`에 지시문이 쌓이고 새 버전으로 승계. 이미 반영된 항목도 `applied_in_cycle` 기록과 함께 계속 컨텍스트로 제공(결과 유지). |
+| **승인제** | 분석 보고서에서 온 지시는 `pending` — **교수자 승인 후에만** 반영. 승인된 지시가 없으면 진화 요청은 400. |
+| **충돌 해소** | 지시를 시간순으로 제시하고 "충돌 시 최신 우선"을 명시. 명시적 대체는 `supersede`로 이전 항목을 `superseded` 처리. |
+| **버전 관리** | 진화 결과는 **새 `lecture_id`**. `meta.json`에 `lineage_id`·`version`·`parent_lecture_id` 기록 → 과거 버전과 그 분석 데이터가 그대로 보존된다. |
+| **slide_idx 드리프트** | 지시문에 `slide_ref`(idx + 제목 + 핵심개념)를 함께 저장해 슬라이드가 추가·삭제돼도 올바른 슬라이드에 다시 붙는다. |
+
+### 진화 파이프라인 (`api/evolve.py` → `_run_evolution`)
+
+```
+POST /api/lectures/{parent}/evolve   → 새 lecture_id 생성 + design/ledger 승계 (202)
+  │
+  └─ BackgroundTask
+       ① 3~15%  부모의 슬라이드 스펙 확보 (없으면 Vision 역추출 → 부모에 캐시)
+       ② 15~35% 누적 CQI로 아웃라인 진화     (cqi_evolver.evolve_outline)
+       ③ 35~55% 같은 디자인으로 슬라이드 재렌더 (slide_renderer.render_outline)
+       ④ 55~78% 새 슬라이드 Vision 재분석      (내레이션·강조 좌표 새로 생성)
+       ⑤ 78~92% 내레이션에 누적 CQI 반영       (cqi_adapter.apply, outline 컨텍스트 포함)
+       ⑥ scripts_ready → 기존 편집·TTS 단계로 합류
+```
+
+### 관련 파일
+
+| 파일 | 역할 |
+|------|------|
+| `services/design_spec.py` | 디자인 고정 스펙 로드·저장·승계, Claude용 디자인 규칙 프롬프트 |
+| `services/slide_spec.py` | 슬라이드 PNG → 아웃라인 스펙 역추출 (PPT 강의의 진화 진입점) |
+| `services/cqi_ledger.py` | 누적 원장 (취입·승인·폐기·대체·승계·프롬프트 변환) |
+| `services/cqi_evolver.py` | 현재 아웃라인 + 누적 지시 → 진화된 아웃라인 |
+| `api/evolve.py` | 원장 API + 계보 API + 진화 파이프라인 |
+| `web/evolve.html`, `web/js/evolve.js` | 진화 관리 UI (계보·취입·승인·진화 실행) |
+
+### 저장 파일 (강의 디렉터리)
+
+```
+{lecture_id}/
+├── outline.json       ← 페이지별 슬라이드 내용 스펙 (진화의 입력)
+├── design.json        ← 시각 디자인 고정 (버전 간 승계)
+├── cqi_ledger.json    ← 누적 CQI 지시문 원장 (버전 간 승계)
+└── meta.json          ← lineage_id / version / parent_lecture_id 포함
+```
 
 ---
 

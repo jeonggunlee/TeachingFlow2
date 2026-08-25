@@ -85,7 +85,9 @@ async def _run_pipeline_phase1(pptx_path: Path, base: Path, lecture_id: str, cqi
         await step("cqi", "CQI 피드백 반영 중...", lo_c)
         try:
             from app.services.cqi_adapter import apply as apply_cqi
-            improved = await apply_cqi(vision, cqi_text)
+            from app.services.slide_spec import load as load_outline
+            # 슬라이드에 실제로 그려진 내용을 함께 전달 (프롬프트 모드는 outline.json 보유)
+            improved = await apply_cqi(vision, cqi_text, outline=load_outline(base))
             # 개선된 결과를 vision JSON 파일에 다시 저장
             vision_dir = base / "vision"
             for slide_data in improved:

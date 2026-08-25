@@ -76,6 +76,7 @@ async function loadLectures() {
           <div class="lecture-actions">
             <a class="btn-play" href="${playUrl}">▶ 재생</a>
             <a class="btn-edit" href="/scripts?id=${lec.lecture_id}&${ctxParams.toString()}">✏️ 편집</a>
+            <a class="btn-edit" href="/evolve?id=${lec.lecture_id}&${ctxParams.toString()}" title="누적 CQI를 반영해 새 버전 만들기">🧬 CQI 진화</a>
           </div>
         </div>`;
     }).join('');

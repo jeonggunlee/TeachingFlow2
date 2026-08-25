@@ -80,13 +80,19 @@ _SYSTEM = """당신은 대학 강의 슬라이드 디자이너입니다.
 
 
 # ── Claude API: 아웃라인 추출 ────────────────────────────────────────
-async def _outline(prompt: str, num_slides: Optional[int]) -> list:
+async def _outline(prompt: str, num_slides: Optional[int],
+                   design: Optional[dict] = None) -> list:
     if not settings.anthropic_api_key:
         raise RuntimeError("ANTHROPIC_API_KEY 가 설정되지 않았습니다 (.env 확인)")
 
     client = AsyncAnthropic(api_key=settings.anthropic_api_key)
 
-    lines = ["교수자 강의 프롬프트:", prompt.strip()]
+    lines = []
+    if design:
+        # 디자인 고정 규칙을 앞세워 버전 간 시각 일관성 유지
+        from app.services.design_spec import rules_prompt
+        lines += [rules_prompt(design), ""]
+    lines += ["교수자 강의 프롬프트:", prompt.strip()]
     if num_slides and num_slides > 0:
         lines.append("")
         lines.append(f"슬라이드 수: 표지·마무리 포함 정확히 {num_slides}장.")
@@ -119,14 +125,42 @@ def _esc(s) -> str:
     return html.escape(str(s) if s is not None else "")
 
 
-_BASE_CSS = f"""
+def _css(design: Optional[dict] = None) -> str:
+    """디자인 스펙으로 슬라이드 CSS를 만든다.
+
+    design 이 None 이면 모듈 기본 토큰을 사용한다. 강의가 여러 버전으로 진화해도
+    같은 design.json 을 넘기므로 시각 디자인이 그대로 유지된다.
+    """
+    d = design or {}
+    pal = d.get("palette", {})
+    accent       = pal.get("accent",       ACCENT)
+    accent_soft  = pal.get("accent_soft",  ACCENT_SOFT)
+    ink          = pal.get("ink",          INK)
+    ink_soft     = pal.get("ink_soft",     INK_SOFT)
+    muted        = pal.get("muted",        MUTED)
+    panel        = pal.get("panel",        PANEL)
+    panel_border = pal.get("panel_border", PANEL_BORDER)
+    bg           = pal.get("bg",           "#ffffff")
+    slide_w      = d.get("slide_w", SLIDE_W)
+    slide_h      = d.get("slide_h", SLIDE_H)
+    font_stack   = d.get("font_stack") or (
+        "'Pretendard Variable', 'Pretendard', 'Noto Sans KR', "
+        "'Noto Sans CJK KR', 'Apple SD Gothic Neo', 'Malgun Gothic', "
+        "system-ui, -apple-system, BlinkMacSystemFont, sans-serif"
+    )
+    return _CSS_TMPL.format(
+        SLIDE_W=slide_w, SLIDE_H=slide_h, FONT_STACK=font_stack, BG=bg,
+        ACCENT=accent, ACCENT_SOFT=accent_soft, INK=ink, INK_SOFT=ink_soft,
+        MUTED=muted, PANEL=panel, PANEL_BORDER=panel_border,
+    )
+
+
+_CSS_TMPL = """
 * {{ box-sizing: border-box; margin: 0; padding: 0; }}
 html, body {{
   width: {SLIDE_W}px; height: {SLIDE_H}px;
-  font-family: 'Pretendard Variable', 'Pretendard', 'Noto Sans KR',
-               'Noto Sans CJK KR', 'Apple SD Gothic Neo', 'Malgun Gothic',
-               system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  color: {INK}; background: #ffffff; overflow: hidden;
+  font-family: {FONT_STACK};
+  color: {INK}; background: {BG}; overflow: hidden;
   -webkit-font-smoothing: antialiased;
   text-rendering: geometricPrecision;
   font-feature-settings: 'kern', 'ss01';
@@ -282,13 +316,14 @@ html, body {{
 """.strip()
 
 
-def _render_html(slide: dict, idx: int, total: int, brand: str = "") -> str:
+def _render_html(slide: dict, idx: int, total: int, brand: str = "",
+                 design: Optional[dict] = None) -> str:
     layout = _normalize_layout(slide.get("layout"))
     body = _LAYOUT_FUNCS[layout](slide)
     page_no = f"{idx + 1:02d} / {total:02d}"
     brand_html = f'<span class="brand">{_esc(brand)}</span>' if brand else ""
     return f"""<!DOCTYPE html>
-<html lang="ko"><head><meta charset="UTF-8"><style>{_BASE_CSS}</style></head>
+<html lang="ko"><head><meta charset="UTF-8"><style>{_css(design)}</style></head>
 <body><div class="slide lyt-{_esc(layout)}">
 {body}
 {brand_html}<span class="slide-num">{_esc(page_no)}</span>
@@ -404,10 +439,14 @@ async def _render_pngs(
     slides_dir: Path,
     brand: str = "",
     on_progress=None,
+    design: Optional[dict] = None,
 ) -> list:
     slides_dir.mkdir(parents=True, exist_ok=True)
     total = len(outline)
     paths: list = []
+    d = design or {}
+    vw = d.get("slide_w", SLIDE_W)
+    vh = d.get("slide_h", SLIDE_H)
 
     async with async_playwright() as pw:
         browser = await pw.chromium.launch(
@@ -415,12 +454,12 @@ async def _render_pngs(
         )
         try:
             context = await browser.new_context(
-                viewport={"width": SLIDE_W, "height": SLIDE_H},
+                viewport={"width": vw, "height": vh},
                 device_scale_factor=1,
             )
             page = await context.new_page()
             for idx, slide in enumerate(outline):
-                html_str = _render_html(slide, idx, total, brand=brand)
+                html_str = _render_html(slide, idx, total, brand=brand, design=design)
                 await page.set_content(html_str, wait_until="load")
                 # 시스템 폰트가 lazy하게 적용되는 경우 대비
                 try:
@@ -443,20 +482,50 @@ async def generate(
     lecture_dir: Path,
     *,
     num_slides: Optional[int] = None,
-    brand: str = "HALLYM EDUTECH",
+    brand: Optional[str] = None,
     on_progress=None,
+    design: Optional[dict] = None,
 ) -> list:
     """프롬프트 → 슬라이드 아웃라인 → HTML+CSS → PNG.
 
     slides_dir(`{lecture_dir}/slides/`)에 slide_NNN.png를 생성한다.
-    프롬프트 원문은 `prompt.txt`, 아웃라인 JSON은 `outline.json`으로 함께 보관.
+    프롬프트 원문은 `prompt.txt`, 아웃라인 JSON은 `outline.json`,
+    시각 디자인 스펙은 `design.json`으로 함께 보관한다(이후 버전이 그대로 승계).
     """
-    outline = await _outline(prompt, num_slides)
+    from app.services import design_spec
+
+    design = design_spec.save(lecture_dir, design or design_spec.load(lecture_dir))
+    outline = await _outline(prompt, num_slides, design=design)
 
     (lecture_dir / "prompt.txt").write_text(prompt, encoding="utf-8")
     (lecture_dir / "outline.json").write_text(
         json.dumps(outline, ensure_ascii=False, indent=2), encoding="utf-8",
     )
 
+    return await render_outline(
+        outline, lecture_dir, brand=brand, on_progress=on_progress, design=design,
+    )
+
+
+async def render_outline(
+    outline: list,
+    lecture_dir: Path,
+    *,
+    brand: Optional[str] = None,
+    on_progress=None,
+    design: Optional[dict] = None,
+) -> list:
+    """이미 확정된 아웃라인을 PNG로 렌더한다 (Claude 호출 없음).
+
+    CQI 진화로 새로 만들어진 아웃라인을 같은 디자인으로 렌더할 때 사용.
+    """
+    from app.services import design_spec
+
+    design = design or design_spec.load(lecture_dir)
+    if brand is None:
+        brand = design.get("brand", "HALLYM EDUTECH")
+
     slides_dir = lecture_dir / "slides"
-    return await _render_pngs(outline, slides_dir, brand=brand, on_progress=on_progress)
+    return await _render_pngs(
+        outline, slides_dir, brand=brand, on_progress=on_progress, design=design,
+    )

@@ -7,6 +7,7 @@ from fastapi.staticfiles import StaticFiles
 _NO_CACHE = {"Cache-Control": "no-cache, no-store, must-revalidate", "Pragma": "no-cache"}
 
 from app.api.cqi import router as cqi_router
+from app.api.evolve import router as evolve_router
 from app.api.jobs import router as jobs_router
 from app.api.lectures import router as lectures_router
 from app.api.scripts import router as scripts_router
@@ -22,6 +23,7 @@ app.include_router(jobs_router)
 app.include_router(lectures_router)
 app.include_router(scripts_router)
 app.include_router(cqi_router)
+app.include_router(evolve_router)
 
 (settings.storage_root / "lectures").mkdir(parents=True, exist_ok=True)
 app.mount(
@@ -64,6 +66,11 @@ def scripts_page() -> FileResponse:
 @app.get("/week-lectures")
 def week_lectures_page() -> FileResponse:
     return FileResponse(WEB_DIR / "week-lectures.html", headers=_NO_CACHE)
+
+
+@app.get("/evolve")
+def evolve_page() -> FileResponse:
+    return FileResponse(WEB_DIR / "evolve.html", headers=_NO_CACHE)
 
 
 @app.get("/healthz")
