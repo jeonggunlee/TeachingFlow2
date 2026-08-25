@@ -20,13 +20,18 @@ async def get_scripts(lecture_id: str):
     for vpath in sorted(vision_dir.glob("slide_*.json")):
         data = json.loads(vpath.read_text(encoding="utf-8"))
         idx = data.get("slide_index", int(vpath.stem.split("_")[-1]))
-        slides.append({
+        slide_entry = {
             "index": idx,
-            "image": f"slides/slide_{idx:03d}.png",
             "title": data.get("title", ""),
             "segments": data.get("segments", []),
             "quiz": data.get("quiz"),     # 체크포인트 퀴즈(선택) — 편집기로 전달
-        })
+        }
+        # HTML 슬라이드 우선, 없으면 레거시 PNG
+        if (base / "slides" / f"slide_{idx:03d}.html").exists():
+            slide_entry["html"] = f"slides/slide_{idx:03d}.html"
+        if (base / "slides" / f"slide_{idx:03d}.png").exists():
+            slide_entry["image"] = f"slides/slide_{idx:03d}.png"
+        slides.append(slide_entry)
 
     slides.sort(key=lambda s: s["index"])
 
@@ -38,6 +43,8 @@ async def get_scripts(lecture_id: str):
 
     return JSONResponse({
         "lecture_id": lecture_id,
+        "slide_css": ("slides/slide.css"
+                      if (base / "slides" / "slide.css").exists() else None),
         "cqi": cqi_text,
         "has_lecture_json": (base / "lecture.json").exists(),
         "course": meta.get("course", ""),

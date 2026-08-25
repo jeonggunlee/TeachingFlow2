@@ -162,8 +162,8 @@ _PROG = {
 async def _run_evolution(parent_id: str, new_id: str) -> None:
     """부모 버전 → 진화된 새 버전 생성 파이프라인."""
     from app.services.cqi_evolver import evolve_outline
+    from app.services.segment_writer import write_all as write_segments
     from app.services.slide_renderer import render_outline
-    from app.services.vision_analyzer import analyze_all as analyze_slides
 
     parent = lecture_dir(parent_id)
     base   = lecture_dir(new_id)
@@ -239,18 +239,16 @@ async def _run_evolution(parent_id: str, new_id: str) -> None:
             evolved, base, design=design, on_progress=on_render,
         )
 
-        # ── 4. Vision 재분석 (새 슬라이드에 맞는 내레이션·강조 좌표) ──
-        await step("vision", f"새 슬라이드 AI 분석 중 ({len(slide_paths)}장)...")
+        # ── 4. 새 슬라이드에 맞는 내레이션 재작성 (요소 id 기반) ──────
+        await step("vision", f"새 슬라이드 내레이션 작성 중 ({len(slide_paths)}장)...")
         lo_v, hi_v = _PROG["vision"]
-        seen = [0]
 
-        async def on_slide(idx):
-            seen[0] += 1
-            pct = int(lo_v + (seen[0] / max(len(slide_paths), 1)) * (hi_v - lo_v))
-            await push("progress", label=f"슬라이드 분석 중 ({seen[0]}/{len(slide_paths)})...",
+        async def on_slide(done, total):
+            pct = int(lo_v + (done / max(total, 1)) * (hi_v - lo_v))
+            await push("progress", label=f"내레이션 작성 중 ({done}/{total})...",
                        progress=pct)
 
-        vision = await analyze_slides(slide_paths, base, force=True, on_progress=on_slide)
+        vision = await write_segments(evolved, base, on_progress=on_slide)
 
         # ── 5. 내레이션에 누적 CQI 반영 ──────────────────────────────
         await step("cqi", "누적 CQI를 강의 설명에 반영 중...")
@@ -264,7 +262,7 @@ async def _run_evolution(parent_id: str, new_id: str) -> None:
                     json.dumps(sd, ensure_ascii=False, indent=2), encoding="utf-8",
                 )
         except Exception as e:
-            # 내레이션 보강 실패는 치명적이지 않음 — Vision 결과로 계속 진행
+            # 내레이션 보강 실패는 치명적이지 않음 — 원본 내레이션으로 계속 진행
             err.write_text(f"apply_cqi(non-fatal): {e}\n", encoding="utf-8")
 
         (base / "cqi.txt").write_text(instructions, encoding="utf-8")

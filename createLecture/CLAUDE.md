@@ -1,6 +1,6 @@
 # HALLYM EDUTECH — AI 기반 강의 생성 (Lecture Creation) 웹 시스템
 
-> 프롬프트 → 웹 슬라이드 렌더 → AI 분석 → TTS 음성 생성 → 웹 재생 + 강조 효과 + 자막 + 영상 녹화
+> 프롬프트 → 웹 슬라이드(HTML) → 내레이션 생성 → TTS → 라이브 DOM 재생 + 텍스트 정밀 강조 + 자막
 
 > **Status:** ✅ **구현 완료** — CQI 피드백 기반 스크립트 자동 개선 + TTS 전 스크립트 편집 + 마우스 드래그 강조 영역 지정 + TTS 후 재편집 지원 + 포털 연동.
 
@@ -14,7 +14,7 @@ Edge TTS로 음성을 만든 뒤, 웹 브라우저에서 음성 재생 시 해�
 강조 효과를 표시하는 강의 생성 웹입니다.
 
 **핵심 기능:**
-- Claude Vision API로 슬라이드 구간별 스크립트 + 위치(%) 자동 추출
+- 아웃라인 요소별 내레이션 자동 생성 — 강조는 좌표가 아닌 `data-ref`로 지정되어 문장에 정확히 붙음
 - **CQI 피드백 입력**: 이전 강의 수강생 피드백을 Claude API로 분석해 스크립트 자동 개선
 - **스크립트 편집 단계**: Vision 분석 완료 후 TTS 전 사용자가 세그먼트별 스크립트·키워드 검토·수정
 - **마우스 드래그 강조 영역 지정**: 슬라이드 이미지 위에서 드래그로 강조 영역을 직관적으로 지정 (모달 UI)
@@ -56,8 +56,8 @@ Edge TTS로 음성을 만든 뒤, 웹 브라우저에서 음성 재생 시 해�
    │  강의 프롬프트 + (선택) CQI 피드백 텍스트
    ▼
 [FastAPI Backend — Phase 1]
-   │  ① 프롬프트 → 아웃라인 설계(Claude) → HTML+CSS → PNG (Playwright, 1920×1080)
-   │  ② 슬라이드별 Claude Vision 호출 → segments JSON
+   │  ① 프롬프트 → 아웃라인 설계(Claude) → HTML 프래그먼트 (data-ref 부여)
+   │  ② 아웃라인 요소별 내레이션 생성 → segments JSON (ref 포함)
    │  ③ meta.json 저장 (course, week 컨텍스트)
    │  ④ (CQI 있을 때) Claude API로 스크립트 개선
    │  ⑤ SSE: scripts_ready → /scripts 페이지로 이동
@@ -75,7 +75,8 @@ Edge TTS로 음성을 만든 뒤, 웹 브라우저에서 음성 재생 시 해�
 ```
 
 핵심 컴포넌트:
-- **Renderer** (`slide_renderer.py`): 프롬프트 → 아웃라인 → HTML+CSS → PNG (디자인 스펙 적용)
+- **Renderer** (`slide_renderer.py`): 프롬프트 → 아웃라인 → HTML 프래그먼트 + 공용 CSS (디자인 스펙 적용)
+- **Segment Writer** (`segment_writer.py`): 아웃라인 요소별 내레이션 (강조 대상을 `ref`로 지정)
 - **Analyzer** (`vision_analyzer.py`): Claude Vision 호출, 슬라이드별 병렬 처리
 - **CQI Adapter** (`cqi_adapter.py`): Claude API로 수강생 피드백 반영 스크립트 개선
 - **Synthesizer** (`tts_synthesizer.py`): Edge TTS 호출 / SentenceBoundary 어절 분배

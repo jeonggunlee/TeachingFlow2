@@ -56,6 +56,9 @@ async function loadScripts() {
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = await res.json();
     slides = data.slides || [];
+    // HTML 슬라이드면 라이브 DOM 편집 모드 (좌표 드래그 대신 요소 클릭 선택)
+    htmlMode = slides.some((sl) => sl.html);
+    slideCssUrl = data.slide_css || "slides/slide.css";
     const contextParts = [];
     if (data.course) contextParts.push(data.course);
     if (data.week)   contextParts.push(`${data.week}주차`);
@@ -99,12 +102,36 @@ function buildThumbs() {
     const item = document.createElement("div");
     item.className = "slide-thumb-item" + (i === currentIdx ? " active" : "");
     item.dataset.idx = i;
-    item.innerHTML = `
-      <img src="/static/lectures/${lectureId}/${sl.image}" alt="슬라이드 ${sl.index}" loading="lazy" />
-      <span class="thumb-num">${sl.index}</span>`;
+    if (htmlMode) {
+      item.innerHTML = `<div class="thumb-dom"></div><span class="thumb-num">${sl.index}</span>`;
+      renderThumbDom(item.querySelector(".thumb-dom"), sl);
+    } else {
+      item.innerHTML = `
+        <img src="/static/lectures/${lectureId}/${sl.image}" alt="슬라이드 ${sl.index}" loading="lazy" />
+        <span class="thumb-num">${sl.index}</span>`;
+    }
     item.addEventListener("click", () => { saveCurrentToState(); renderSlide(i); });
     slideThumbs.appendChild(item);
   });
+}
+
+/** 썸네일 칸에 슬라이드 HTML을 축소 렌더 */
+async function renderThumbDom(box, sl) {
+  if (!box || !sl.html) return;
+  try {
+    const res = await fetch(`/static/lectures/${lectureId}/${sl.html}`, { cache: "no-cache" });
+    if (!res.ok) return;
+    const inner = document.createElement("div");
+    inner.style.cssText = "transform-origin:top left;position:absolute;top:0;left:0;";
+    inner.innerHTML = await res.text();
+    box.appendChild(inner);
+    const fit = () => {
+      const w = box.clientWidth, h = box.clientHeight;
+      if (w && h) inner.style.transform = `scale(${Math.min(w / 1920, h / 1080)})`;
+    };
+    fit();
+    new ResizeObserver(fit).observe(box);
+  } catch (_) { /* 썸네일 실패는 무시 */ }
 }
 
 function updateThumbActive() {
@@ -125,9 +152,11 @@ function renderSlide(idx) {
       <input id="slide-title" class="title-input" type="text" value="${esc(sl.title)}" />
     </div>
     <div class="slide-preview-wrap" id="slide-preview-wrap">
-      <canvas id="preview-canvas" class="preview-canvas"></canvas>
-      <img id="preview-img" src="/static/lectures/${lectureId}/${sl.image}"
-           alt="슬라이드 ${sl.index}" class="preview-img" />
+      ${htmlMode
+        ? `<div id="preview-dom" class="preview-dom"></div>`
+        : `<canvas id="preview-canvas" class="preview-canvas"></canvas>
+           <img id="preview-img" src="/static/lectures/${lectureId}/${sl.image}"
+                alt="슬라이드 ${sl.index}" class="preview-img" />`}
     </div>
     <div class="segments-section">
       <div class="segments-header">
@@ -137,6 +166,16 @@ function renderSlide(idx) {
       <div id="segments-list"></div>
     </div>
     <div class="quiz-section" id="quiz-section"></div>`;
+
+  if (htmlMode) {
+    initHtmlPreview(sl);
+    renderSegments(sl.segments);
+    document.getElementById("btn-add-seg").addEventListener("click", () => {
+      insertSegmentAt(slides[currentIdx].segments.length);
+    });
+    renderQuizSection(sl);
+    return;
+  }
 
   // 미리보기 캔버스 초기화
   const previewImg    = document.getElementById("preview-img");
@@ -178,6 +217,68 @@ function renderSlide(idx) {
   });
 
   renderQuizSection(sl);
+}
+
+// ── HTML 슬라이드 미리보기 + 강조 대상 선택 ────────────────────────
+const REF_LABEL = {
+  t: "제목", st: "부제", no: "섹션 번호", q: "인용문", attr: "출처",
+  val: "수치", lbl: "라벨", cap: "설명", lh: "왼쪽 제목", rh: "오른쪽 제목",
+};
+function refLabel(ref) {
+  if (!ref) return "강조 대상 없음 — 선택해주세요";
+  if (REF_LABEL[ref]) return `강조 대상: ${REF_LABEL[ref]}`;
+  const m = /^([blr])(\d+)$/.exec(ref);
+  if (m) {
+    const side = { b: "항목", l: "왼쪽 항목", r: "오른쪽 항목" }[m[1]];
+    return `강조 대상: ${side} ${m[2]}`;
+  }
+  return `강조 대상: ${ref}`;
+}
+
+function initHtmlPreview(sl) {
+  const host = document.getElementById("preview-dom");
+  if (!host || !sl.html) return;
+  document.getElementById("slide-preview-wrap")?.classList.add("html-mode");
+  SlideStage.loadCss(`/static/lectures/${lectureId}/${slideCssUrl || "slides/slide.css"}`);
+  SlideStage.init(host, { w: 1920, h: 1080 });
+  SlideStage.show(`/static/lectures/${lectureId}/${sl.html}`).then(() => {
+    const stage = SlideStage.stageEl();
+    if (!stage) return;
+    stage.querySelectorAll("[data-ref]").forEach((el) => {
+      el.style.cursor = "pointer";
+      el.title = "클릭하면 이 문장이 강조 대상이 됩니다";
+      el.addEventListener("click", () => onPickRef(el.dataset.ref));
+    });
+  });
+}
+
+/** 강조 대상 선택 모드 시작 */
+function startPick(si) {
+  pickingSeg = si;
+  const host = document.getElementById("preview-dom");
+  if (host) {
+    host.classList.add("picking");
+    host.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  }
+  const seg = slides[currentIdx].segments[si];
+  if (seg && seg.ref) SlideStage.highlight(seg.ref, "highlighter");
+}
+
+/** 미리보기에서 요소를 클릭했을 때 */
+function onPickRef(ref) {
+  const sl = slides[currentIdx];
+  if (pickingSeg === null) {
+    // 선택 모드가 아니면 해당 ref를 쓰는 세그먼트를 강조해 보여준다
+    SlideStage.highlight(ref, "highlighter");
+    return;
+  }
+  saveCurrentToState();
+  sl.segments[pickingSeg].ref = ref;
+  setDirty();
+  pickingSeg = null;
+  document.getElementById("preview-dom")?.classList.remove("picking");
+  renderSlide(currentIdx);
+  setTimeout(() => SlideStage.highlight(ref, "highlighter"), 350);
 }
 
 // 새 세그먼트를 지정 위치에 삽입 (insertPos = 0..length)
@@ -248,6 +349,11 @@ function renderSegments(segs) {
           <label class="field-label-sm">키워드</label>
           <input class="keyword-input" type="text" value="${esc(seg.keyword || "")}" data-field="keyword" />
         </div>
+        ${htmlMode ? `
+        <button class="btn-pick-ref" data-si="${si}" style="--seg-color:${color}"
+                title="미리보기에서 강조할 문장을 클릭해 지정합니다">
+          🖱 강조 대상 선택
+        </button>` : `
         <label class="seg-hl-toggle" title="강조 영역 사용 여부 — 끄면 재생 시 형광펜·체크 효과가 나타나지 않습니다">
           <input type="checkbox" class="hl-toggle-input" ${hlOn ? "checked" : ""} />
           <span>강조 영역</span>
@@ -256,17 +362,21 @@ function renderSegments(segs) {
                 ${hlOn ? "" : "disabled"}
                 title="슬라이드에서 마우스 드래그로 강조 영역 직접 지정">
           ✎ 영역 지정
-        </button>
+        </button>`}
         <button class="btn-del-seg" title="세그먼트 삭제">✕</button>
       </div>
       <label class="field-label-sm">스크립트</label>
       <textarea class="script-textarea" rows="4" data-field="script">${esc(seg.script || "")}</textarea>
       <div class="hl-info" id="hl-info-${si}">
-        <span class="hl-dot" style="background:${hlOn ? color : '#475569'}"></span>
-        <span class="hl-coords">${fmtHl(h)}</span>
+        <span class="hl-dot" style="background:${(htmlMode ? seg.ref : hlOn) ? color : '#475569'}"></span>
+        <span class="hl-coords">${htmlMode ? refLabel(seg.ref) : fmtHl(h)}</span>
       </div>`;
 
-    card.querySelector(".btn-draw-hl").addEventListener("click", () => openDrawModal(si));
+    if (htmlMode) {
+      card.querySelector(".btn-pick-ref").addEventListener("click", () => startPick(si));
+    } else {
+      card.querySelector(".btn-draw-hl").addEventListener("click", () => openDrawModal(si));
+    }
     card.querySelector(".btn-del-seg").addEventListener("click", () => {
       saveCurrentToState();
       slides[currentIdx].segments.splice(si, 1);
@@ -279,7 +389,7 @@ function renderSegments(segs) {
         moveSegment(si, dir === "up" ? si - 1 : si + 1);
       });
     });
-    card.querySelector(".hl-toggle-input").addEventListener("change", (e) => {
+    card.querySelector(".hl-toggle-input")?.addEventListener("change", (e) => {
       saveCurrentToState();
       const cur = slides[currentIdx];
       if (e.target.checked) {

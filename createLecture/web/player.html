@@ -29,6 +29,7 @@
 
   <!-- 슬라이드 + 캔버스 오버레이 -->
   <div class="slide-area">
+    <div id="slide-dom" class="slide-dom" hidden></div>
     <img id="slide-img" class="slide-img" src="" alt="slide" />
     <canvas id="slide-canvas" class="slide-canvas"></canvas>
   </div>
@@ -49,6 +50,7 @@
       강조 효과
       <select id="effect-select">
         <option value="highlighter">형광펜</option>
+        <option value="underline">밑줄</option>
         <option value="check">체크</option>
         <option value="none">없음</option>
       </select>
@@ -60,6 +62,7 @@
 </div>
 
 <script src="/js/subtitle.js" defer></script>
+<script src="/js/slide-stage.js"></script>
 <script src="/js/overlay.js"  defer></script>
 <script src="/js/recorder.js" defer></script>
 <script src="/js/player.js?v=2"   defer></script>

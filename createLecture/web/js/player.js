@@ -11,6 +11,9 @@ const titleEl     = document.getElementById("lecture-title");
 const counterEl   = document.getElementById("slide-counter");
 const slideImg    = document.getElementById("slide-img");
 const slideCanvas = document.getElementById("slide-canvas");
+const slideDom    = document.getElementById("slide-dom");
+// HTML 슬라이드(라이브 DOM) 모드 여부 — 좌표 없이 텍스트에 직접 강조한다
+let htmlMode = false;
 const subtitleBar = document.getElementById("subtitle-bar");
 const btnPlay     = document.getElementById("btn-play");
 const btnPrev     = document.getElementById("btn-prev");
@@ -77,6 +80,26 @@ Recorder.init(slideImg, subtitleBar, audio);
     Recorder.setNaturalSize(lecture.slide_size.w, lecture.slide_size.h);
   }
 
+  // HTML 슬라이드면 라이브 DOM으로 렌더 (레거시 PNG 강의는 기존 경로 유지)
+  htmlMode = !!(lecture.slides || []).some((s) => s.html);
+  if (htmlMode) {
+    slideImg.hidden = true;
+    slideCanvas.hidden = true;
+    slideDom.hidden = false;
+    SlideStage.loadCss(`${base}/${lecture.slide_css || "slides/slide.css"}`);
+    SlideStage.init(slideDom, lecture.slide_size || { w: 1920, h: 1080 });
+
+    // 녹화는 슬라이드를 캔버스에 합성하는 방식이라 라이브 DOM 슬라이드에서는
+    // 아직 지원하지 않는다. 오해를 막기 위해 버튼을 명시적으로 비활성화한다.
+    const recBtn = document.getElementById("btn-record");
+    if (recBtn) {
+      recBtn.disabled = true;
+      recBtn.title = "웹 슬라이드 강의는 아직 녹화를 지원하지 않습니다";
+      recBtn.style.opacity = "0.45";
+      recBtn.style.cursor = "not-allowed";
+    }
+  }
+
   goSlide(0, 0, false);
   setupControls();
 })();
@@ -88,14 +111,31 @@ function goSlide(si, segi, autoPlay) {
   segIdx   = Math.max(0, segi);
 
   const slide = lecture.slides[slideIdx];
-
-  // 슬라이드 이미지 교체
-  slideImg.src = `${base}/${slide.image}`;
   counterEl.textContent = `${slideIdx + 1} / ${lecture.slides.length}`;
 
-  Overlay.clear();
+  if (htmlMode) {
+    // 프래그먼트를 주입한 뒤 세그먼트를 시작 (강조 대상이 DOM에 있어야 하므로)
+    SlideStage.show(`${base}/${slide.html}`).then(() => {
+      loadSegment(slide.segments[segIdx], autoPlay);
+    });
+    return;
+  }
 
+  slideImg.src = `${base}/${slide.image}`;
+  Overlay.clear();
   loadSegment(slide.segments[segIdx], autoPlay);
+}
+
+/** 현재 선택된 효과로 세그먼트를 강조한다 (HTML 모드는 DOM, 레거시는 Canvas). */
+function applyHighlight(seg) {
+  if (!seg) return;
+  const effect = effectSel.value;
+  if (htmlMode) {
+    SlideStage.highlight(seg.ref, effect);
+  } else {
+    Overlay.clear();
+    Overlay.trigger(seg, effect);
+  }
 }
 
 function loadSegment(seg, autoPlay) {
@@ -112,7 +152,7 @@ function loadSegment(seg, autoPlay) {
     audio.play().catch(() => {});
     playing = true;
     btnPlay.textContent = "⏸ 일시정지";
-    Overlay.trigger(seg, effectSel.value);
+    applyHighlight(seg);
   }
 }
 
@@ -155,7 +195,7 @@ function setupControls() {
   btnPlay.addEventListener("click", () => {
     if (audio.paused) {
       audio.play().catch(() => {});
-      if (_curSeg) Overlay.trigger(_curSeg, effectSel.value);
+      if (_curSeg) applyHighlight(_curSeg);
     } else {
       audio.pause();
     }
@@ -174,8 +214,7 @@ function setupControls() {
   effectSel.addEventListener("change", () => {
     const seg = lecture.slides[slideIdx]?.segments[segIdx];
     if (seg) {
-      Overlay.clear();
-      Overlay.trigger(seg, effectSel.value);
+      applyHighlight(seg);
     }
   });
 

@@ -42,10 +42,22 @@ def _normalize_quiz(raw):
     return out
 
 
-def _slide_size(slides_dir: Path) -> dict:
+def _slide_size(lecture_dir: Path, slides_dir: Path) -> dict:
+    """슬라이드 스테이지 크기.
+
+    HTML 슬라이드는 design.json의 논리 크기가 기준이고, 레거시 PNG 강의는
+    이미지 실제 픽셀 크기를 쓴다(강조 좌표 계산 기준).
+    """
+    design_path = lecture_dir / "design.json"
+    if design_path.exists():
+        try:
+            d = json.loads(design_path.read_text(encoding="utf-8"))
+            return {"w": int(d.get("slide_w", 1920)), "h": int(d.get("slide_h", 1080))}
+        except Exception:
+            pass
     first = next(iter(sorted(slides_dir.glob("slide_*.png"))), None)
     if not first:
-        return {"w": 1280, "h": 720}
+        return {"w": 1920, "h": 1080}
     w, h = Image.open(first).size
     return {"w": w, "h": h}
 
@@ -80,6 +92,8 @@ def _build_segment(seg: dict, audio_dir: Path) -> dict:
         "id": seg["id"],
         "script": seg.get("script", ""),
         "keyword": seg.get("keyword", ""),
+        # ref: 강조할 텍스트 요소 id (HTML 슬라이드). 좌표 추측 없이 DOM에 직접 적용.
+        "ref": seg.get("ref"),
         "highlight": hl,
         "effect": seg.get("effect", "highlighter"),
         "audio": f"audio/{mp3_name}",
@@ -113,11 +127,13 @@ def build(lecture_id: str, lecture_dir: Path) -> dict:
             seg["_slide_index"] = idx
             segments.append(_build_segment(seg, audio_dir))
 
-        slide_out = {
-            "index": idx,
-            "image": f"slides/slide_{idx:03d}.png",
-            "segments": segments,
-        }
+        slide_out = {"index": idx, "segments": segments}
+
+        # HTML 슬라이드 우선, 없으면 레거시 PNG
+        if (slides_dir / f"slide_{idx:03d}.html").exists():
+            slide_out["html"] = f"slides/slide_{idx:03d}.html"
+        if (slides_dir / f"slide_{idx:03d}.png").exists():
+            slide_out["image"] = f"slides/slide_{idx:03d}.png"
 
         # 체크포인트 퀴즈(선택) — vision JSON에 있으면 lecture.json으로 보존
         quiz = _normalize_quiz(vdata.get("quiz"))
@@ -141,7 +157,10 @@ def build(lecture_id: str, lecture_dir: Path) -> dict:
         "lecture_id": lecture_id,
         "title": final_title,
         "created_at": datetime.now(timezone.utc).isoformat(),
-        "slide_size": _slide_size(slides_dir),
+        "slide_size": _slide_size(lecture_dir, slides_dir),
+        # HTML 슬라이드면 공용 스타일시트 경로를 함께 알려준다
+        **({"slide_css": "slides/slide.css"}
+           if (slides_dir / "slide.css").exists() else {}),
         "slide_count": len(slides_out),
         "segment_count": sum(len(s["segments"]) for s in slides_out),
         "slides": slides_out,

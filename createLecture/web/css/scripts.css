@@ -673,3 +673,48 @@ body { display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
 .quiz-status-pending { color: #93c5fd; }
 .quiz-status-ok      { color: #4ade80; }
 .quiz-status-err     { color: #f87171; }
+
+
+/* ── HTML 슬라이드(라이브 DOM) 편집 모드 ───────────────────────── */
+.thumb-dom {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 4px;
+}
+.preview-dom {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+/* 문장을 눌러 강조 대상을 고르므로 미리보기를 크게 잡는다 */
+.slide-preview-wrap.html-mode {
+  width: 72%;
+  max-width: 900px;
+}
+/* 강조 대상 선택 중 — 클릭 가능한 요소를 시각적으로 안내 */
+.preview-dom.picking [data-ref] {
+  outline: 2px dashed rgba(56,189,248,.75);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+.preview-dom.picking [data-ref]:hover {
+  outline-color: #38bdf8;
+  background: rgba(56,189,248,.12);
+}
+.btn-pick-ref {
+  background: transparent;
+  border: 1px solid var(--seg-color, #334155);
+  color: var(--seg-color, #94a3b8);
+  padding: 5px 12px;
+  border-radius: 7px;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all .15s;
+}
+.btn-pick-ref:hover { background: rgba(56,189,248,.12); }

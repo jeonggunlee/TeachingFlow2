@@ -7,6 +7,8 @@ const titleEl      = document.getElementById("lecture-title");
 const counterEl    = document.getElementById("slide-counter");
 const slideImg     = document.getElementById("slide-img");
 const slideCanvas  = document.getElementById("slide-canvas");
+const slideDom     = document.getElementById("slide-dom");
+let htmlMode = false;   // HTML 슬라이드(라이브 DOM) 여부
 const subtitleBar  = document.getElementById("subtitle-bar");
 const btnPlay      = document.getElementById("btn-play");
 const btnPrev      = document.getElementById("btn-prev");
@@ -317,6 +319,16 @@ const Telemetry = (() => {
   } catch (_) {}
 
   if (lecture.slide_size) Overlay.setNaturalSize(lecture.slide_size.w, lecture.slide_size.h);
+
+  // HTML 슬라이드면 라이브 DOM 렌더 — 강조가 좌표가 아닌 실제 텍스트에 붙는다
+  htmlMode = !!(lecture.slides || []).some((s) => s.html);
+  if (htmlMode) {
+    slideImg.hidden = true;
+    slideCanvas.hidden = true;
+    slideDom.hidden = false;
+    SlideStage.loadCss(`${base}/${lecture.slide_css || "slides/slide.css"}`);
+    SlideStage.init(slideDom, lecture.slide_size || { w: 1920, h: 1080 });
+  }
   totalSegs = lecture.slides.reduce((n, s) => n + s.segments.length, 0);
 
   goSlide(0, 0, false);
@@ -334,11 +346,17 @@ function goSlide(si, segi, autoPlay) {
   segIdx   = Math.max(0, segi);
 
   const slide = lecture.slides[slideIdx];
-  slideImg.src = `${base}/${slide.image}`;
   counterEl.textContent = `${slideIdx + 1} / ${lecture.slides.length}`;
 
-  Overlay.clear();
-  loadSegment(slide.segments[segIdx], autoPlay);
+  if (htmlMode) {
+    SlideStage.show(`${base}/${slide.html}`).then(() => {
+      loadSegment(slide.segments[segIdx], autoPlay);
+    });
+  } else {
+    slideImg.src = `${base}/${slide.image}`;
+    Overlay.clear();
+    loadSegment(slide.segments[segIdx], autoPlay);
+  }
   updateProgressIndicator();
 
   // 슬라이드 전환 시 채팅·난이도 리로드
@@ -347,6 +365,18 @@ function goSlide(si, segi, autoPlay) {
   loadDifficulty(slideIdx);
   if (chatBadge) chatBadge.textContent = `슬라이드 ${slideIdx + 1}`;
   renderDiffLiveGraph();   // 현재 슬라이드 강조 업데이트
+}
+
+/** 현재 효과로 세그먼트를 강조 (HTML 모드는 DOM, 레거시는 Canvas). */
+function applyHighlight(seg) {
+  if (!seg) return;
+  const effect = effectSel.value;
+  if (htmlMode) {
+    SlideStage.highlight(seg.ref, effect);
+  } else {
+    Overlay.clear();
+    Overlay.trigger(seg, effect);
+  }
 }
 
 function loadSegment(seg, autoPlay) {
@@ -362,7 +392,7 @@ function loadSegment(seg, autoPlay) {
     audio.play().catch(() => {});
     playing = true;
     btnPlay.textContent = "⏸ 일시정지";
-    Overlay.trigger(seg, effectSel.value);
+    applyHighlight(seg);
   }
 }
 
@@ -441,7 +471,7 @@ function setupControls() {
   btnPlay.addEventListener("click", () => {
     if (audio.paused) {
       audio.play().catch(() => {});
-      if (_curSeg) Overlay.trigger(_curSeg, effectSel.value);
+      if (_curSeg) applyHighlight(_curSeg);
     } else {
       Telemetry.recordUserPause(audio.currentTime);
       audio.pause();
@@ -453,7 +483,7 @@ function setupControls() {
     goSlide(next, 0, playing);
   });
   effectSel.addEventListener("change", () => {
-    if (_curSeg) { Overlay.clear(); Overlay.trigger(_curSeg, effectSel.value); }
+    if (_curSeg) applyHighlight(_curSeg);
   });
   if (speedSel) {
     speedSel.addEventListener("change", () => {

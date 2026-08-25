@@ -56,10 +56,11 @@ storage/
   "slides": [
     {
       "index": 1,
-      "image": "slides/slide_001.png",
+      "html": "slides/slide_001.html",
       "segments": [
         {
           "id": "seg_1",
+          "ref": "b2",
           "script": "이 슬라이드는 ...",
           "keyword": "LECTURE 01",
           "highlight": { "x_pct": 5.0, "y_pct": 4.0, "w_pct": 45.0, "h_pct": 8.0 },

@@ -17,8 +17,8 @@ app/
 │   ├── lectures.py           # GET /api/lectures (목록), /{id} (상세), /{id}/export (ZIP)
 │   └── scripts.py            # GET/PUT /scripts, POST /synthesize, POST /rebuild-json
 ├── services/
-│   ├── slide_renderer.py     # 프롬프트 → 아웃라인 → HTML+CSS → PNG (Playwright)
-│   ├── vision_analyzer.py    # Claude Vision 호출 (asyncio.Semaphore 병렬)
+│   ├── slide_renderer.py     # 프롬프트 → 아웃라인 → HTML 프래그먼트 (+ data-ref)
+│   ├── segment_writer.py     # 아웃라인 → 요소 id 기반 내레이션 (좌표 추측 없음)
 │   ├── cqi_adapter.py        # Claude API 기반 CQI 스크립트 개선
 │   ├── tts_synthesizer.py    # Edge TTS + SentenceBoundary 어절 분배
 │   └── lecture_builder.py    # lecture.json 조립
@@ -78,7 +78,7 @@ MAX_UPLOAD_MB=80
 | `PUT` | `/api/lectures/{lecture_id}/scripts` | 편집된 slides 배열을 vision JSON 파일에 저장 |
 | `POST` | `/api/lectures/{lecture_id}/synthesize` | Phase2(TTS+빌드) 백그라운드 시작, SSE 큐 재초기화 |
 | `POST` | `/api/lectures/{lecture_id}/rebuild-json` | TTS 없이 lecture.json만 재빌드 (강조 위치 변경 시) |
-| `GET` | `/static/lectures/{id}/slides/...` | 슬라이드 PNG 정적 서빙 |
+| `GET` | `/static/lectures/{id}/slides/...` | 슬라이드 HTML·CSS 정적 서빙 |
 | `GET` | `/static/lectures/{id}/audio/...` | 오디오 MP3 정적 서빙 |
 | `GET` | `/` | `web/index.html` 반환 |
 | `GET` | `/player` | `web/player.html` 반환 |
@@ -133,13 +133,30 @@ async def render_outline(outline, lecture_dir, *, design=None, ...) -> list[Path
 
 - `_outline()`: Claude가 프롬프트 → 슬라이드 아웃라인 JSON 설계 (디자인 규칙 주입)
 - `_css(design)`: `design.json` 스펙으로 CSS 생성 → 버전이 바뀌어도 시각 디자인 유지
-- `_render_pngs()`: Playwright(Chromium)로 HTML → PNG 1920×1080 스크린샷
-- 산출물: `slides/slide_NNN.png` + `prompt.txt` + `outline.json` + `design.json`
+- `_render_fragment()`: 각 텍스트 요소에 `data-ref`를 붙인 HTML 프래그먼트 생성
+- 산출물: `slides/slide_NNN.html` + `slides/slide.css` + `prompt.txt` + `outline.json` + `design.json`
+- **래스터 이미지를 만들지 않는다** — 플레이어가 라이브 DOM으로 렌더
 - `render_outline()`은 Claude 호출 없이 확정된 아웃라인만 렌더 — CQI 진화에서 사용
 
 지원 레이아웃 7종: `title`, `section`, `bullets`, `two_col`, `quote`, `stat`, `closing`
 
-## 7. Claude Vision 분석 (`vision_analyzer.py`)
+## 6-1. 강조 좌표를 없앤 이유
+
+이전에는 슬라이드를 PNG로 만든 뒤 Vision이 `x_pct/y_pct/w_pct/h_pct`를 **추측**했고,
+그 결과 형광펜이 문장에서 벗어났다. 지금은 슬라이드를 우리가 만들므로
+각 요소에 `data-ref`를 부여하고, 세그먼트가 그 id를 가리킨다.
+플레이어는 `[data-ref="b2"]`에 클래스를 붙이기만 하므로 **좌표가 존재하지 않고**,
+폰트·줄바꿈이 달라져도 강조는 항상 글자에 정확히 붙는다.
+
+| ref | 대상 |
+|-----|------|
+| `t` / `st` / `no` | 제목 / 부제 / 섹션 번호 |
+| `b1`, `b2`, … | bullets 항목 |
+| `lh`,`l1`.. / `rh`,`r1`.. | two_col 좌/우 |
+| `q` / `attr` | 인용문 / 출처 |
+| `val` / `lbl` / `cap` | stat 수치 / 라벨 / 설명 |
+
+## 7. 내레이션 작성 (`segment_writer.py`)
 
 ### 함수 시그니처
 
@@ -259,8 +276,9 @@ async def synthesize_all(
 {title}_{lecture_id}.zip
 ├── lecture.json          ← 상대 경로(slides/, audio/) 기반 — 어디서든 정적 서빙 가능
 ├── slides/
-│   ├── slide_001.png
-│   └── slide_NNN.png
+│   ├── slide_001.html
+│   ├── slide_NNN.html
+│   └── slide.css
 └── audio/
     ├── slide_001_seg_01.mp3
     ├── slide_001_seg_01.words.json

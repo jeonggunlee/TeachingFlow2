@@ -16,8 +16,9 @@ from fastapi.responses import JSONResponse
 
 from app.config import settings
 from app.services.lecture_builder import build as build_lecture
+from app.services.segment_writer import write_all as write_segments
+from app.services.slide_spec import load as load_outline
 from app.services.tts_synthesizer import synthesize_all
-from app.services.vision_analyzer import analyze_all as analyze_slides
 from app.utils import sse
 from app.utils.storage import ensure_lecture_dirs, lecture_dir, lecture_id_from_path, new_lecture_id
 
@@ -37,36 +38,33 @@ _PROG_P2 = {
 
 
 async def _run_pipeline_phase1(base: Path, lecture_id: str, cqi_text: str = "") -> None:
-    """Phase 1 후반: 렌더된 슬라이드 → Vision 분석 → (CQI 적용) → scripts_ready."""
+    """Phase 1 후반: 아웃라인 → 내레이션 작성 → (CQI 적용) → scripts_ready."""
     err_path = base / "job.err"
 
     async def progress(label: str, pct: int):
         await sse.push(lecture_id, "progress", label=label, progress=pct)
 
-    slides = sorted((base / "slides").glob("slide_*.png"))
-    if not slides:
-        await sse.push(lecture_id, "job_error", message="생성된 슬라이드가 없습니다.")
+    outline = load_outline(base)
+    if not outline:
+        await sse.push(lecture_id, "job_error", message="슬라이드 아웃라인이 없습니다.")
         return
 
-    n_slides = len(slides)
+    n_slides = len(outline)
     lo, hi = _PROG_P1["analyze"]
 
-    # ── Vision 분석 ─────────────────────────────────────────────────
+    # ── 내레이션 작성 (요소 id 기반 — 좌표 추측 없음) ────────────────
     await sse.push(lecture_id, "step",
-                   label=f"AI 슬라이드 분석 시작 ({n_slides}장)...", progress=lo)
+                   label=f"강의 내레이션 작성 중 ({n_slides}장)...", progress=lo)
 
-    completed = [0]
-
-    async def on_slide_done(idx: int):
-        completed[0] += 1
-        pct = int(lo + (completed[0] / n_slides) * (hi - lo))
-        await progress(f"슬라이드 분석 중 ({completed[0]}/{n_slides})...", pct)
+    async def on_slide_done(done: int, total: int):
+        pct = int(lo + (done / max(total, 1)) * (hi - lo))
+        await progress(f"내레이션 작성 중 ({done}/{total})...", pct)
 
     try:
-        vision = await analyze_slides(slides, base, on_progress=on_slide_done)
+        vision = await write_segments(outline, base, on_progress=on_slide_done)
     except Exception as e:
-        err_path.write_text(f"analyze_slides: {e}\n", encoding="utf-8")
-        await sse.push(lecture_id, "job_error", message=f"슬라이드 분석 오류: {e}")
+        err_path.write_text(f"write_segments: {e}\n", encoding="utf-8")
+        await sse.push(lecture_id, "job_error", message=f"내레이션 작성 오류: {e}")
         return
 
     # ── CQI 적용 (선택) ──────────────────────────────────────────────
@@ -77,9 +75,8 @@ async def _run_pipeline_phase1(base: Path, lecture_id: str, cqi_text: str = "") 
         await sse.push(lecture_id, "step", label="CQI 피드백 반영 중...", progress=lo_c)
         try:
             from app.services.cqi_adapter import apply as apply_cqi
-            from app.services.slide_spec import load as load_outline
             # 슬라이드에 실제로 그려진 내용을 함께 전달
-            improved = await apply_cqi(vision, cqi_text, outline=load_outline(base))
+            improved = await apply_cqi(vision, cqi_text, outline=outline)
             vision_dir = base / "vision"
             for slide_data in improved:
                 idx = slide_data.get("slide_index", 0)

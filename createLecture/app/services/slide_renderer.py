@@ -1,7 +1,8 @@
-"""프롬프트 → 슬라이드 아웃라인(Claude API) → HTML+CSS → PNG (Playwright).
+"""프롬프트 → 슬라이드 아웃라인(Claude API) → HTML 프래그먼트.
 
 Claude Web 수준 디자인을 목표로 한 화이트 톤 미니멀 슬라이드 렌더러.
-.pptx 파일을 만들지 않고 슬라이드 이미지를 직접 생성한다.
+슬라이드는 래스터 이미지가 아니라 HTML로 저장되어 플레이어에서 라이브 DOM으로
+렌더된다. 덕분에 강조 효과를 좌표가 아닌 실제 텍스트 요소에 적용할 수 있다.
 
 레이아웃 종류 (7):
   - title     표지 (제목 + 부제 + 액센트 바)
@@ -21,7 +22,6 @@ from pathlib import Path
 from typing import Optional
 
 from anthropic import AsyncAnthropic
-from playwright.async_api import async_playwright
 
 from app.config import settings
 
@@ -155,20 +155,19 @@ def _css(design: Optional[dict] = None) -> str:
     )
 
 
+# 이 스타일시트는 플레이어 페이지에도 함께 로드되므로 모든 규칙을
+# .slide 안으로 한정한다 (호스트 페이지 레이아웃 오염 방지).
 _CSS_TMPL = """
-* {{ box-sizing: border-box; margin: 0; padding: 0; }}
-html, body {{
+.slide, .slide * {{ box-sizing: border-box; margin: 0; padding: 0; }}
+.slide {{
   width: {SLIDE_W}px; height: {SLIDE_H}px;
+  padding: 96px 120px;
+  position: relative; display: flex; flex-direction: column;
   font-family: {FONT_STACK};
   color: {INK}; background: {BG}; overflow: hidden;
   -webkit-font-smoothing: antialiased;
   text-rendering: geometricPrecision;
   font-feature-settings: 'kern', 'ss01';
-}}
-.slide {{
-  width: 100%; height: 100%;
-  padding: 96px 120px;
-  position: relative; display: flex; flex-direction: column;
 }}
 .slide-num {{
   position: absolute; right: 64px; bottom: 48px;
@@ -316,33 +315,44 @@ html, body {{
 """.strip()
 
 
-def _render_html(slide: dict, idx: int, total: int, brand: str = "",
-                 design: Optional[dict] = None) -> str:
+def _render_fragment(slide: dict, idx: int, total: int, brand: str = "") -> str:
+    """슬라이드 1장의 HTML 프래그먼트 (스타일 없이 구조만).
+
+    플레이어가 이 조각을 그대로 주입해 **라이브 DOM**으로 렌더한다.
+    각 텍스트 요소에는 data-ref가 붙어 있어, 강조 효과를 좌표가 아니라
+    실제 DOM 요소에 직접 적용할 수 있다 (폰트·줄바꿈이 달라져도 안 어긋남).
+    """
     layout = _normalize_layout(slide.get("layout"))
     body = _LAYOUT_FUNCS[layout](slide)
     page_no = f"{idx + 1:02d} / {total:02d}"
     brand_html = f'<span class="brand">{_esc(brand)}</span>' if brand else ""
-    return f"""<!DOCTYPE html>
-<html lang="ko"><head><meta charset="UTF-8"><style>{_css(design)}</style></head>
-<body><div class="slide lyt-{_esc(layout)}">
+    return f"""<div class="slide lyt-{_esc(layout)}">
 {body}
 {brand_html}<span class="slide-num">{_esc(page_no)}</span>
-</div></body></html>"""
+</div>"""
+
+
+def _render_html(slide: dict, idx: int, total: int, brand: str = "",
+                 design: Optional[dict] = None) -> str:
+    """미리보기·검증용 단독 HTML 문서."""
+    return f"""<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8"><style>{_css(design)}</style></head>
+<body>{_render_fragment(slide, idx, total, brand)}</body></html>"""
 
 
 def _render_title(s: dict) -> str:
     return f"""
 <div class="accent-bar"></div>
-<h1 class="title">{_esc(s.get("title", "강의 제목"))}</h1>
-<p class="subtitle">{_esc(s.get("subtitle", ""))}</p>
+<h1 class="title" data-ref="t">{_esc(s.get("title", "강의 제목"))}</h1>
+<p class="subtitle" data-ref="st">{_esc(s.get("subtitle", ""))}</p>
 """.strip()
 
 
 def _render_section(s: dict) -> str:
     no = s.get("section_no") or s.get("no") or ""
     return f"""
-<div class="section-no">{_esc(no)}</div>
-<div class="section-title">{_esc(s.get("title", ""))}</div>
+<div class="section-no" data-ref="no">{_esc(no)}</div>
+<div class="section-title" data-ref="t">{_esc(s.get("title", ""))}</div>
 """.strip()
 
 
@@ -350,9 +360,11 @@ def _render_bullets(s: dict) -> str:
     bullets = s.get("bullets") or []
     if not bullets and s.get("content"):
         bullets = [str(s["content"])]
-    li_html = "\n".join(f"  <li>{_esc(b)}</li>" for b in bullets)
+    li_html = "\n".join(
+        f'  <li data-ref="b{i}">{_esc(b)}</li>' for i, b in enumerate(bullets, 1)
+    )
     return f"""
-<h2 class="heading">{_esc(s.get("title", ""))}</h2>
+<h2 class="heading" data-ref="t">{_esc(s.get("title", ""))}</h2>
 <ul class="bullets">
 {li_html}
 </ul>
@@ -363,50 +375,57 @@ def _render_two_col(s: dict) -> str:
     L = s.get("left") or {}
     R = s.get("right") or {}
 
-    def col(c):
-        pts = "\n".join(f"      <li>{_esc(p)}</li>" for p in (c.get("points") or []))
+    def col(c, side):
+        pts = "\n".join(
+            f'      <li data-ref="{side}{i}">{_esc(p)}</li>'
+            for i, p in enumerate(c.get("points") or [], 1)
+        )
         return f"""<div class="col">
-    <h3>{_esc(c.get("heading", ""))}</h3>
+    <h3 data-ref="{side}h">{_esc(c.get("heading", ""))}</h3>
     <ul>
 {pts}
     </ul>
   </div>"""
 
     return f"""
-<h2 class="heading">{_esc(s.get("title", ""))}</h2>
+<h2 class="heading" data-ref="t">{_esc(s.get("title", ""))}</h2>
 <div class="cols">
-  {col(L)}
-  {col(R)}
+  {col(L, "l")}
+  {col(R, "r")}
 </div>
 """.strip()
 
 
 def _render_quote(s: dict) -> str:
     attr = s.get("attribution") or ""
-    attr_html = f'<p class="attribution">{_esc(attr)}</p>' if attr else ""
+    attr_html = f'<p class="attribution" data-ref="attr">{_esc(attr)}</p>' if attr else ""
     return f"""
 <div class="quote-mark">&ldquo;</div>
-<p class="quote-text">{_esc(s.get("quote", ""))}</p>
+<p class="quote-text" data-ref="q">{_esc(s.get("quote", ""))}</p>
 {attr_html}
 """.strip()
 
 
 def _render_stat(s: dict) -> str:
     caption = s.get("caption") or ""
-    caption_html = f'<p class="stat-caption">{_esc(caption)}</p>' if caption else ""
+    caption_html = (
+        f'<p class="stat-caption" data-ref="cap">{_esc(caption)}</p>' if caption else ""
+    )
     return f"""
-<div class="stat-value">{_esc(s.get("value", ""))}</div>
-<div class="stat-label">{_esc(s.get("label", ""))}</div>
+<div class="stat-value" data-ref="val">{_esc(s.get("value", ""))}</div>
+<div class="stat-label" data-ref="lbl">{_esc(s.get("label", ""))}</div>
 {caption_html}
 """.strip()
 
 
 def _render_closing(s: dict) -> str:
     sub = s.get("subtitle") or ""
-    sub_html = f'<p class="closing-subtitle">{_esc(sub)}</p>' if sub else ""
+    sub_html = (
+        f'<p class="closing-subtitle" data-ref="st">{_esc(sub)}</p>' if sub else ""
+    )
     return f"""
 <div class="accent-bar"></div>
-<h1 class="closing-title">{_esc(s.get("title", "감사합니다"))}</h1>
+<h1 class="closing-title" data-ref="t">{_esc(s.get("title", "감사합니다"))}</h1>
 {sub_html}
 """.strip()
 
@@ -433,46 +452,41 @@ def _normalize_layout(name) -> str:
     return "bullets"
 
 
-# ── Playwright 렌더링 ────────────────────────────────────────────────
-async def _render_pngs(
+# ── HTML 프래그먼트 출력 ─────────────────────────────────────────────
+SLIDE_CSS_NAME = "slide.css"
+
+
+async def _write_slides(
     outline: list,
     slides_dir: Path,
     brand: str = "",
     on_progress=None,
     design: Optional[dict] = None,
 ) -> list:
+    """슬라이드를 HTML 프래그먼트로 저장한다 (래스터 이미지 생성 없음).
+
+    플레이어가 프래그먼트를 라이브 DOM으로 렌더하므로, 강조 효과를 좌표가 아닌
+    실제 텍스트 요소에 적용할 수 있고 확대해도 선명하다.
+    공용 스타일은 `slides/slide.css` 한 벌로 저장된다.
+    """
     slides_dir.mkdir(parents=True, exist_ok=True)
+    (slides_dir / SLIDE_CSS_NAME).write_text(_css(design), encoding="utf-8")
+
     total = len(outline)
     paths: list = []
-    d = design or {}
-    vw = d.get("slide_w", SLIDE_W)
-    vh = d.get("slide_h", SLIDE_H)
-
-    async with async_playwright() as pw:
-        browser = await pw.chromium.launch(
-            args=["--no-sandbox", "--disable-dev-shm-usage", "--font-render-hinting=none"],
+    for idx, slide in enumerate(outline):
+        out_path = slides_dir / f"slide_{idx + 1:03d}.html"
+        out_path.write_text(
+            _render_fragment(slide, idx, total, brand=brand), encoding="utf-8",
         )
-        try:
-            context = await browser.new_context(
-                viewport={"width": vw, "height": vh},
-                device_scale_factor=1,
-            )
-            page = await context.new_page()
-            for idx, slide in enumerate(outline):
-                html_str = _render_html(slide, idx, total, brand=brand, design=design)
-                await page.set_content(html_str, wait_until="load")
-                # 시스템 폰트가 lazy하게 적용되는 경우 대비
-                try:
-                    await page.evaluate("document.fonts && document.fonts.ready")
-                except Exception:
-                    pass
-                out_path = slides_dir / f"slide_{idx + 1:03d}.png"
-                await page.screenshot(path=str(out_path), full_page=False, omit_background=False)
-                paths.append(out_path)
-                if on_progress:
-                    await on_progress(idx + 1, total)
-        finally:
-            await browser.close()
+        paths.append(out_path)
+        if on_progress:
+            await on_progress(idx + 1, total)
+
+    # 이전 버전이 남긴 PNG 정리 (진화로 장수가 줄어드는 경우 포함)
+    for stale in slides_dir.glob("slide_*.png"):
+        stale.unlink(missing_ok=True)
+
     return paths
 
 
@@ -486,9 +500,9 @@ async def generate(
     on_progress=None,
     design: Optional[dict] = None,
 ) -> list:
-    """프롬프트 → 슬라이드 아웃라인 → HTML+CSS → PNG.
+    """프롬프트 → 슬라이드 아웃라인 → HTML 프래그먼트.
 
-    slides_dir(`{lecture_dir}/slides/`)에 slide_NNN.png를 생성한다.
+    slides_dir(`{lecture_dir}/slides/`)에 slide_NNN.html + slide.css를 생성한다.
     프롬프트 원문은 `prompt.txt`, 아웃라인 JSON은 `outline.json`,
     시각 디자인 스펙은 `design.json`으로 함께 보관한다(이후 버전이 그대로 승계).
     """
@@ -515,7 +529,7 @@ async def render_outline(
     on_progress=None,
     design: Optional[dict] = None,
 ) -> list:
-    """이미 확정된 아웃라인을 PNG로 렌더한다 (Claude 호출 없음).
+    """이미 확정된 아웃라인을 HTML로 출력한다 (Claude 호출 없음).
 
     CQI 진화로 새로 만들어진 아웃라인을 같은 디자인으로 렌더할 때 사용.
     """
@@ -526,6 +540,6 @@ async def render_outline(
         brand = design.get("brand", "HALLYM EDUTECH")
 
     slides_dir = lecture_dir / "slides"
-    return await _render_pngs(
+    return await _write_slides(
         outline, slides_dir, brand=brand, on_progress=on_progress, design=design,
     )
