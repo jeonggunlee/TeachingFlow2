@@ -1,6 +1,6 @@
 # TeachingFlow — AI 강의 제작·운영·분석 시스템
 
-> PPT를 입력하면 AI가 슬라이드별 스크립트와 음성을 생성하고, 수강생의 학습 데이터를 수집·분석해 다음 학기 강의 개선(CQI)으로 자동 환류하는 4-서비스 FastAPI 플랫폼.
+> 강의 프롬프트를 입력하면 AI가 웹 슬라이드·스크립트·음성을 생성하고, 수강생의 학습 데이터를 수집·분석해 다음 학기 강의 개선(CQI)으로 자동 환류하는 4-서비스 FastAPI 플랫폼.
 
 ---
 
@@ -19,7 +19,7 @@
 | 서비스 | 포트 | 역할 | 상세 |
 |---|---|---|---|
 | **portal** | 8003 | 과목·주차 관리, 전체 흐름 진입점 | [portal/CLAUDE.md](portal/CLAUDE.md) |
-| **createLecture** | 8000 | PPT → AI 스크립트 → TTS → 강의 파일 생성 | [createLecture/CLAUDE.md](createLecture/CLAUDE.md) |
+| **createLecture** | 8000 | 프롬프트 → 웹 슬라이드 → AI 스크립트 → TTS → 강의 파일 생성 | [createLecture/CLAUDE.md](createLecture/CLAUDE.md) |
 | **playLecture** | 8001 | 수강생 강의 재생, 학습 데이터 수집 | [playLecture/CLAUDE.md](playLecture/CLAUDE.md) |
 | **analyzeLecture** | 8002 | 혼란도 분석 → CQI 보고서 생성 | [analyzeLecture/CLAUDE.md](analyzeLecture/CLAUDE.md) |
 
@@ -32,7 +32,7 @@
    │
    ├─ portal (8003)           ← 시작점: 과목·주차 관리
    │
-   ├─ createLecture (8000)    ← PPT 업로드 → Claude Vision 분석 → TTS
+   ├─ createLecture (8000)    ← 프롬프트 → 웹 슬라이드 → Claude Vision 분석 → TTS
    │   ※ CQI 모드: 이전 학기 수강생 피드백으로 스크립트 자동 보강
    │
    ├─ playLecture (8001)      ← 수강생 강의 재생
@@ -56,7 +56,8 @@
 
 ```bash
 # createLecture 의존성 (1회)
-sudo apt-get install -y libreoffice poppler-utils fonts-noto-cjk
+sudo apt-get install -y fonts-noto-cjk
+# createLecture 가상환경에서: python -m playwright install chromium
 ```
 
 ### 2. 4개 서비스 실행
@@ -117,7 +118,7 @@ TeachingFlow/
 | Backend | FastAPI + uvicorn + SQLAlchemy async + SQLite |
 | AI 분석 | Claude API (`claude-sonnet-4-6`, Vision 포함) |
 | TTS | Edge TTS (`ko-KR-InJoonNeural`) |
-| PPT 변환 | LibreOffice (headless) + pdf2image |
+| 슬라이드 렌더 | Claude(아웃라인 설계) + HTML/CSS + Playwright(Chromium) |
 | Frontend | 바닐라 HTML/CSS/JavaScript (프레임워크 없음) |
 | 실시간 진행 | Server-Sent Events (SSE) |
 | 키워드 추출 | 한국어 조사·어미 최장 일치 + 영어 정규화 |

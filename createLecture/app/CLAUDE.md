@@ -1,6 +1,6 @@
 # app/ — 백엔드 (FastAPI)
 
-> PPT 업로드 → 이미지 변환 → Claude Vision 분석 → (CQI 적용) → 스크립트 편집 대기 → Edge TTS 합성 → `lecture.json` 빌드 + SSE 진행 스트림.
+> 프롬프트 → 웹 슬라이드 렌더 → Claude Vision 분석 → (CQI 적용) → 스크립트 편집 대기 → Edge TTS 합성 → `lecture.json` 빌드 + SSE 진행 스트림.
 > 전체 시스템 개요는 루트 [`../CLAUDE.md`](../CLAUDE.md), 산출물 스키마는 [`../storage/CLAUDE.md`](../storage/CLAUDE.md), 프론트엔드는 [`../web/CLAUDE.md`](../web/CLAUDE.md) 참고.
 
 ---
@@ -12,12 +12,12 @@ app/
 ├── main.py                   # FastAPI 진입점, 라우터 등록, 정적 마운트
 ├── config.py                 # 환경 설정 (Pydantic Settings)
 ├── api/
-│   ├── upload.py             # POST /api/upload + _run_pipeline_phase1 (BackgroundTask)
+│   ├── upload.py             # POST /api/upload-prompt + 파이프라인 (BackgroundTask)
 │   ├── jobs.py               # GET /api/jobs/{id}/events  (SSE 스트리밍)
 │   ├── lectures.py           # GET /api/lectures (목록), /{id} (상세), /{id}/export (ZIP)
 │   └── scripts.py            # GET/PUT /scripts, POST /synthesize, POST /rebuild-json
 ├── services/
-│   ├── ppt_to_images.py      # LibreOffice headless + pdf2image
+│   ├── slide_renderer.py     # 프롬프트 → 아웃라인 → HTML+CSS → PNG (Playwright)
 │   ├── vision_analyzer.py    # Claude Vision 호출 (asyncio.Semaphore 병렬)
 │   ├── cqi_adapter.py        # Claude API 기반 CQI 스크립트 개선
 │   ├── tts_synthesizer.py    # Edge TTS + SentenceBoundary 어절 분배
@@ -43,13 +43,12 @@ pydantic>=2
 pydantic-settings
 anthropic>=0.40         # cache_control(prompt caching) 지원
 edge-tts                # 7.x — 한국어 WordBoundary 미제공, SentenceBoundary 사용
-pdf2image
 Pillow
-aiofiles
 python-dotenv
+playwright              # 웹 슬라이드 렌더 (Chromium)
 ```
 
-시스템 패키지: `libreoffice`, `poppler-utils`, `fonts-noto-cjk`.
+시스템 패키지: `fonts-noto-cjk` (+ `python -m playwright install chromium`).
 
 ---
 
@@ -69,7 +68,7 @@ MAX_UPLOAD_MB=80
 
 | 메서드 | 경로 | 설명 |
 |--------|------|------|
-| `POST` | `/api/upload` | PPT 업로드, `lecture_id` 반환, Phase1 백그라운드 시작 |
+| `POST` | `/api/upload-prompt` | 프롬프트로 웹 슬라이드 생성, `lecture_id` 반환, Phase1 백그라운드 시작 |
 | `GET` | `/api/jobs/{lecture_id}/events` | SSE: `step` / `progress` / `scripts_ready` / `done` / `job_error` 스트림 |
 | `GET` | `/api/lectures` | 완료된 강의 목록 반환 (lecture.json 보유, 최신순) |
 | `GET` | `/api/lectures/{lecture_id}` | `lecture.json` 반환 (플레이어용) |
@@ -91,15 +90,15 @@ MAX_UPLOAD_MB=80
 
 ### Phase 1 (`upload.py` → `_run_pipeline_phase1`)
 
-`POST /api/upload` 응답 반환 직전 `sse.init(lecture_id)`, 이후 BackgroundTask로 실행.
+`POST /api/upload-prompt` 응답 반환 직전 `sse.init(lecture_id)`, 이후 BackgroundTask로 실행.
 
 ```
 단계              진행률     SSE 이벤트
 ─────────────────────────────────────────────────────────────────
-① PPT → 이미지    5 %       step "PPT → 슬라이드 이미지 변환 중..."
-② Vision 분석    20~65 %   step + 슬라이드마다 progress
-③ CQI 적용       65~78 %   step "CQI 피드백 반영 중..." (cqi 텍스트 있을 때만)
-④ scripts_ready  80 %      scripts_ready { lecture_id }  ← 종단 이벤트, 큐 삭제
+① 슬라이드 렌더   0~22 %   step "프롬프트로 슬라이드 디자인 중..." + 슬라이드마다 progress
+② Vision 분석    22~68 %   step + 슬라이드마다 progress
+③ CQI 적용       68~80 %   step "CQI 피드백 반영 중..." (cqi 텍스트 있을 때만)
+④ scripts_ready  85 %      scripts_ready { lecture_id }  ← 종단 이벤트, 큐 삭제
 오류 발생 시                job_error { message }
 ```
 
@@ -124,18 +123,21 @@ MAX_UPLOAD_MB=80
 
 ---
 
-## 6. PPT → 슬라이드 이미지 (`ppt_to_images.py`)
+## 6. 웹 슬라이드 렌더 (`slide_renderer.py`)
 
 ```python
-async def convert(pptx_path: Path, lecture_dir: Path, dpi=150, force=False) -> list[Path]:
+async def generate(prompt, lecture_dir, *, num_slides=None, brand=None,
+                   on_progress=None, design=None) -> list[Path]
+async def render_outline(outline, lecture_dir, *, design=None, ...) -> list[Path]
 ```
 
-- `_resolve_soffice()`: `soffice` → `libreoffice` 순서로 바이너리 탐색
-- LibreOffice headless로 PDF 변환 후 `pdf2image`로 PNG 추출 (DPI 150)
-- 출력: `slides/slide_001.png` … `slide_NNN.png` (1500×844 px, 16:9 기준)
-- `force=False`이면 `slides/`에 PNG가 있을 경우 변환 생략
+- `_outline()`: Claude가 프롬프트 → 슬라이드 아웃라인 JSON 설계 (디자인 규칙 주입)
+- `_css(design)`: `design.json` 스펙으로 CSS 생성 → 버전이 바뀌어도 시각 디자인 유지
+- `_render_pngs()`: Playwright(Chromium)로 HTML → PNG 1920×1080 스크린샷
+- 산출물: `slides/slide_NNN.png` + `prompt.txt` + `outline.json` + `design.json`
+- `render_outline()`은 Claude 호출 없이 확정된 아웃라인만 렌더 — CQI 진화에서 사용
 
----
+지원 레이아웃 7종: `title`, `section`, `bullets`, `two_col`, `quote`, `stat`, `closing`
 
 ## 7. Claude Vision 분석 (`vision_analyzer.py`)
 
@@ -334,6 +336,7 @@ async def stream(lecture_id: str) -> AsyncGenerator[str, None]:
 ## 13. 운영 메모
 
 - **에러 처리**: 각 파이프라인 단계 예외 → `job.err` 기록 + `job_error` SSE → 후속 단계 중단
-- **비용 절감**: Claude system 프롬프트에 `cache_control` 적용, 동일 PPT 재처리 시 vision 캐시 활용
-- **재처리**: `slides/`, `vision/`, `audio/` 디렉터리 삭제 후 재업로드하면 해당 단계부터 재실행
+- **비용 절감**: Claude system 프롬프트에 `cache_control` 적용, 재처리 시 vision 캐시 활용
+- **재처리**: `slides/`, `vision/`, `audio/` 디렉터리 삭제 후 재생성하면 해당 단계부터 재실행
+- **CQI 반영 분할**: `cqi_adapter.apply()`는 슬라이드를 5장씩 나눠 호출 — 응답 JSON이 max_tokens에서 잘리는 것을 방지 (한 묶음 실패 시 그 묶음만 원본 유지)
 - **Python 3.9 호환**: 타입 힌트에 `int | None` 대신 `Optional[int]` 사용 (union 문법 3.10+)

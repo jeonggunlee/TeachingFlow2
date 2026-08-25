@@ -16,7 +16,7 @@
    │   TeachingFlow 흐름 다이어그램 (시각 전용)
    │
    ├─ createLecture (포트 8000)          ← 강의 제작
-   │   PPT 업로드 → Claude Vision 분석 → TTS 음성 생성
+   │   강의 프롬프트 → 웹 슬라이드 생성 → Claude Vision 분석 → TTS 음성 생성
    │   → 스크립트 편집 → 강조 효과 지정
    │   → lecture.json + 슬라이드·오디오 파일 생성
    │   ※ CQI 모드: 이전 수강생 피드백 텍스트 → 스크립트 자동 보강
@@ -69,7 +69,7 @@
 
 | 항목 | 내용 |
 |------|------|
-| 역할 | PPT → AI 분석 → TTS → 강의 파일 생성 |
+| 역할 | 프롬프트 → 웹 슬라이드 → AI 분석 → TTS → 강의 파일 생성 |
 | 스택 | FastAPI + Claude API (Vision) + Edge TTS + 바닐라 JS |
 | 포트 | 8000 |
 | 진입 | 포털에서 `from` 파라미터 포함 URL로만 접근 가능 |
@@ -77,7 +77,7 @@
 
 **핵심 흐름:**
 1. 포털에서 컨텍스트(course, week, week_title) 포함 URL로 진입
-2. PPT 업로드 → LibreOffice로 PNG 변환
+2. 강의 프롬프트 입력 → Claude가 아웃라인 설계 → HTML+CSS 웹 슬라이드 렌더(PNG)
 3. Claude Vision API로 슬라이드별 스크립트 + 강조 좌표 추출
 4. *(CQI 모드)* 수강생 피드백 텍스트 → Claude API로 스크립트 자동 보강
 5. 스크립트 편집 페이지에서 검토·수정·강조 영역 드래그 지정
@@ -219,7 +219,8 @@ EDUTECH-3/
 │   ├── CLAUDE.md
 │   ├── app/
 │   │   ├── api/{upload,jobs,lectures,scripts}.py
-│   │   ├── services/{ppt_to_images,vision_analyzer,cqi_adapter,tts_synthesizer,lecture_builder}.py
+│   │   ├── services/{slide_renderer,vision_analyzer,cqi_adapter,tts_synthesizer,lecture_builder}.py
+│   │   ├── services/{design_spec,slide_spec,cqi_ledger,cqi_evolver}.py   # CQI 진화
 │   │   └── utils/{sse,storage}.py
 │   ├── web/
 │   │   ├── index.html / scripts.html / player.html / week-lectures.html

@@ -22,36 +22,17 @@ _SYSTEM = """당신은 대학 강의 콘텐츠 개선 전문가입니다.
 """.strip()
 
 
-async def apply(slides: list, cqi_text: str, outline: list = None) -> list:
-    """CQI 피드백을 반영하여 vision 슬라이드 스크립트를 개선한다.
+MAX_TOKENS  = 16000
+CHUNK_SIZE  = 5      # 한 번에 개선할 슬라이드 수 — 응답 잘림 방지
 
-    outline이 주어지면 각 슬라이드에 실제로 그려진 내용을 컨텍스트로 함께 제공해,
-    슬라이드에 없는 내용을 설명하는 오류를 막는다.
-    """
-    client = AsyncAnthropic(api_key=settings.anthropic_api_key)
 
-    slides_json = json.dumps(slides, ensure_ascii=False, indent=2)
-
-    parts = []
-    if outline:
-        parts.append(
-            "현재 강의의 페이지별 슬라이드 내용 (참고용, 이 내용에 근거해 설명할 것):\n"
-            + json.dumps(outline, ensure_ascii=False, indent=2)
-            + "\n"
-        )
-    parts.append(f"현재 강의 슬라이드 스크립트 (JSON 배열):\n{slides_json}\n")
-    parts.append(f"CQI 피드백:\n{cqi_text}\n")
-    parts.append("위 CQI 피드백을 반영하여 개선된 슬라이드 스크립트 JSON 배열을 출력하세요.")
-    user_msg = "\n".join(parts)
-
-    msg = await client.messages.create(
-        model=settings.claude_model,
-        max_tokens=8000,
-        system=[{"type": "text", "text": _SYSTEM, "cache_control": {"type": "ephemeral"}}],
-        messages=[{"role": "user", "content": user_msg}],
-    )
-
-    raw = msg.content[0].text.strip()
+def _parse(raw: str) -> list:
+    raw = raw.strip()
+    if "```" in raw:
+        raw = raw.split("```")[1]
+        if raw.startswith("json"):
+            raw = raw[4:]
+        raw = raw.strip()
     try:
         return json.loads(raw)
     except json.JSONDecodeError:
@@ -59,3 +40,72 @@ async def apply(slides: list, cqi_text: str, outline: list = None) -> list:
         if m:
             return json.loads(m.group())
         raise ValueError(f"CQI 응답에서 JSON 배열 추출 실패: {raw[:300]!r}")
+
+
+async def _apply_chunk(client, chunk: list, cqi_text: str, outline: list) -> list:
+    """슬라이드 묶음 하나에 CQI를 반영한다."""
+    idxs = {s.get("slide_index") for s in chunk}
+
+    parts = []
+    if outline:
+        # 이 묶음에 해당하는 슬라이드 내용만 전달 (토큰 절약)
+        rel = [o for i, o in enumerate(outline, 1) if i in idxs] or outline
+        parts.append(
+            "이 슬라이드들에 실제로 그려진 내용 (이 내용에 근거해 설명할 것):\n"
+            + json.dumps(rel, ensure_ascii=False, indent=2) + "\n"
+        )
+    parts.append(
+        "개선할 슬라이드 스크립트 (JSON 배열):\n"
+        + json.dumps(chunk, ensure_ascii=False, indent=2) + "\n"
+    )
+    parts.append(f"CQI 피드백:\n{cqi_text}\n")
+    parts.append(
+        f"위 CQI 피드백을 반영해, 입력과 같은 {len(chunk)}개 슬라이드의 "
+        "개선된 JSON 배열만 출력하세요."
+    )
+
+    msg = await client.messages.create(
+        model=settings.claude_model,
+        max_tokens=MAX_TOKENS,
+        system=[{"type": "text", "text": _SYSTEM, "cache_control": {"type": "ephemeral"}}],
+        messages=[{"role": "user", "content": "\n".join(parts)}],
+    )
+
+    if getattr(msg, "stop_reason", None) == "max_tokens":
+        raise ValueError(
+            f"응답이 max_tokens({MAX_TOKENS})에서 잘렸습니다 "
+            f"— 슬라이드 {sorted(i for i in idxs if i is not None)}"
+        )
+
+    return _parse(msg.content[0].text)
+
+
+async def apply(slides: list, cqi_text: str, outline: list = None) -> list:
+    """CQI 피드백을 반영하여 vision 슬라이드 스크립트를 개선한다.
+
+    outline이 주어지면 각 슬라이드에 실제로 그려진 내용을 컨텍스트로 함께 제공해,
+    슬라이드에 없는 내용을 설명하는 오류를 막는다.
+
+    슬라이드가 많으면 응답 JSON이 max_tokens에서 잘리므로 CHUNK_SIZE 단위로
+    나눠 호출한다. 한 묶음이 실패해도 그 묶음만 원본을 유지하고 나머지는 반영한다.
+    """
+    client = AsyncAnthropic(api_key=settings.anthropic_api_key)
+
+    chunks = [slides[i:i + CHUNK_SIZE] for i in range(0, len(slides), CHUNK_SIZE)]
+    out, failures = [], []
+
+    for chunk in chunks:
+        try:
+            improved = await _apply_chunk(client, chunk, cqi_text, outline)
+            # 응답 개수가 안 맞으면 slide_index로 맞춰 병합 (누락분은 원본 유지)
+            by_idx = {s.get("slide_index"): s for s in improved
+                      if isinstance(s, dict) and s.get("slide_index") is not None}
+            out.extend(by_idx.get(src.get("slide_index"), src) for src in chunk)
+        except Exception as e:
+            failures.append(str(e))
+            out.extend(chunk)   # 이 묶음은 원본 유지
+
+    if failures and len(failures) == len(chunks):
+        raise ValueError("CQI 반영 실패: " + "; ".join(failures[:3]))
+
+    return out

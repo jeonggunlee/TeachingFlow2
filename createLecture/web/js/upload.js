@@ -31,10 +31,6 @@ const PORTAL_URL = `${location.protocol}//${location.hostname}:8003`;
   }
 })();
 
-const form          = document.getElementById("upload-form");
-const fileInput     = document.getElementById("file");
-const fileNameEl    = document.getElementById("file-name");
-const submitBtn     = document.getElementById("submit");
 const statusEl      = document.getElementById("status");
 const progressWrap  = document.getElementById("progress-wrap");
 const progressLabel = document.getElementById("progress-label");
@@ -46,10 +42,6 @@ const promptForm   = document.getElementById("prompt-form");
 const promptText   = document.getElementById("prompt-text");
 const promptNum    = document.getElementById("prompt-num");
 const promptSubmit = document.getElementById("prompt-submit");
-const tabFile      = document.getElementById("tab-file");
-const tabPrompt    = document.getElementById("tab-prompt");
-const panelFile    = document.getElementById("panel-file");
-const panelPrompt  = document.getElementById("panel-prompt");
 
 // 프롬프트 파일 업로드 요소
 const promptFileInput  = document.getElementById("prompt-file");
@@ -63,34 +55,6 @@ const cqiFileInput    = document.getElementById("cqi-file");
 const cqiFileLabel    = document.getElementById("cqi-file")?.closest(".prompt-file-label");
 const cqiFileNameEl   = document.getElementById("cqi-file-name");
 const cqiFileClear    = document.getElementById("cqi-file-clear");
-
-// ── 모드 탭 전환 ─────────────────────────────────────────────────────
-function setMode(mode) {
-  const isFile = mode === "file";
-  tabFile.classList.toggle("active", isFile);
-  tabPrompt.classList.toggle("active", !isFile);
-  tabFile.setAttribute("aria-selected", isFile ? "true" : "false");
-  tabPrompt.setAttribute("aria-selected", isFile ? "false" : "true");
-  panelFile.hidden   = !isFile;
-  panelPrompt.hidden = isFile;
-
-  // 사이드바 최근 항목 패널도 모드에 맞게 토글 + 처음 활성화 시 로드
-  const recentPpt = document.getElementById("recent-ppt");
-  const recentPrompt = document.getElementById("recent-prompt");
-  if (recentPpt && recentPrompt) {
-    recentPpt.hidden = !isFile;
-    recentPrompt.hidden = isFile;
-    if (isFile) loadRecentPpt();
-    else        loadRecentPrompts();
-  }
-}
-tabFile.addEventListener("click",   () => setMode("file"));
-tabPrompt.addEventListener("click", () => setMode("prompt"));
-
-fileInput.addEventListener("change", () => {
-  const f = fileInput.files?.[0];
-  fileNameEl.textContent = f ? f.name : "PPT 파일 선택 (.ppt, .pptx)";
-});
 
 // ── 프롬프트 .txt 파일 → textarea 로드 ─────────────────────────────
 const MAX_PROMPT_FILE_BYTES = 1024 * 1024;  // 1 MB
@@ -412,52 +376,14 @@ cqiModal?.addEventListener("click", (e) => {
       cqiTextEl.style.transition = "box-shadow .4s";
       cqiTextEl.style.boxShadow = "0 0 0 3px rgba(56,189,248,.5)";
       setTimeout(() => { cqiTextEl.style.boxShadow = ""; }, 1200);
-      showStatus("✅ 학습 분석 보고서를 자동으로 불러왔습니다. 검토 후 PPT를 업로드하세요.", "ok");
+      showStatus("✅ 학습 분석 보고서를 자동으로 불러왔습니다. 검토 후 강의 프롬프트를 작성하세요.", "ok");
     } catch (e) {
       console.warn("CQI deep-link 자동 적용 실패:", e);
     }
   }, 200);
 })();
 
-// ── 모드 1: PPT 파일 업로드 ─────────────────────────────────────────
-form.addEventListener("submit", async (e) => {
-  e.preventDefault();
-  const f = fileInput.files?.[0];
-  if (!f) return;
-
-  submitBtn.disabled = true;
-  statusEl.hidden = true;
-  setProgress(2, "파일 업로드 중...");
-
-  const fd = new FormData();
-  fd.append("file", f);
-  fd.append("cqi", document.getElementById("cqi-text")?.value || "");
-  // 포털 컨텍스트 (교과목명·주차번호) 전달
-  const _sp = new URLSearchParams(location.search);
-  fd.append("course", _sp.get("course") || "");
-  fd.append("week",   _sp.get("week")   || "");
-
-  let lectureId;
-  try {
-    const res  = await fetch("/api/upload", { method: "POST", body: fd });
-    const data = await res.json().catch(() => ({}));
-    if (!res.ok) {
-      showError(`업로드 오류 ${res.status}: ${data.detail ?? "알 수 없는 오류"}`);
-      submitBtn.disabled = false;
-      return;
-    }
-    lectureId = data.lecture_id;
-  } catch (err) {
-    showError(`네트워크 오류: ${err.message}`);
-    submitBtn.disabled = false;
-    return;
-  }
-
-  showStatus(`업로드 완료 (lecture_id: ${lectureId}). 처리 중...`, "ok");
-  listenSSE(lectureId, submitBtn);
-});
-
-// ── 모드 2: 프롬프트로 PPT 자동 생성 ────────────────────────────────
+// ── 프롬프트로 웹 슬라이드 생성 ────────────────────────────────
 promptForm?.addEventListener("submit", async (e) => {
   e.preventDefault();
   const text = (promptText.value || "").trim();
@@ -494,7 +420,7 @@ promptForm?.addEventListener("submit", async (e) => {
     return;
   }
 
-  showStatus(`프롬프트 접수 완료 (lecture_id: ${lectureId}). AI가 PPT를 자동 생성합니다...`, "ok");
+  showStatus(`프롬프트 접수 완료 (lecture_id: ${lectureId}). AI가 웹 슬라이드를 생성합니다...`, "ok");
   listenSSE(lectureId, promptSubmit);
 });
 
@@ -589,8 +515,8 @@ async function loadLibrary() {
 
     if (!Array.isArray(lectures) || lectures.length === 0) {
       const emptyMsg = (course && week)
-        ? `${course} ${week}주차 강의가 아직 없습니다. 위에서 PPT를 업로드하세요.`
-        : "아직 생성된 강의가 없습니다. 위에서 PPT를 업로드하세요.";
+        ? `${course} ${week}주차 강의가 아직 없습니다. 위에서 프롬프트로 강의를 만들어보세요.`
+        : "아직 생성된 강의가 없습니다. 위에서 프롬프트로 강의를 만들어보세요.";
       listEl.innerHTML = `<p class="lib-empty">${esc(emptyMsg)}</p>`;
       return;
     }
@@ -626,7 +552,7 @@ async function loadLibrary() {
 document.getElementById("btn-lib-refresh")?.addEventListener("click", loadLibrary);
 loadLibrary();
 
-// ── 최근 업로드 PPT / 프롬프트 ────────────────────────────────────────
+// ── 최근 프롬프트 ────────────────────────────────────────
 function fmtDate(epochSec) {
   if (!epochSec) return "";
   const d = new Date(epochSec * 1000);
@@ -641,48 +567,12 @@ function fmtSize(bytes) {
   return `${(bytes/(1024*1024)).toFixed(1)} MB`;
 }
 
-async function loadRecentPpt() {
-  const listEl = document.getElementById("recent-ppt-list");
-  if (!listEl) return;
-  listEl.innerHTML = '<p class="lib-empty">로딩 중...</p>';
-  try {
-    const res = await fetch("/api/recent-uploads?type=ppt&limit=10");
-    const items = await res.json();
-    if (!Array.isArray(items) || items.length === 0) {
-      listEl.innerHTML = '<p class="lib-empty">최근 업로드한 PPT가 없습니다.</p>';
-      return;
-    }
-    listEl.innerHTML = items.map(it => {
-      const ctx = (it.course && it.week)
-        ? `<span class="recent-card-chip">${esc(it.course)} · ${esc(it.week)}주차</span>`
-        : "";
-      return `
-        <div class="recent-card" data-source-id="${esc(it.lecture_id)}"
-             data-filename="${esc(it.original_filename)}">
-          <div class="recent-card-title" title="${esc(it.original_filename)}">📂 ${esc(it.original_filename)}</div>
-          <div class="recent-card-meta">
-            ${ctx}
-            <span>${fmtDate(it.created_at)}</span>
-            <span>${fmtSize(it.size_bytes)}</span>
-          </div>
-          <span class="recent-card-hint">↻ 이 PPT로 새 강의 만들기</span>
-        </div>`;
-    }).join("");
-    // 클릭 핸들러
-    listEl.querySelectorAll(".recent-card").forEach(card => {
-      card.addEventListener("click", () => reusePpt(card.dataset.sourceId, card.dataset.filename));
-    });
-  } catch (err) {
-    listEl.innerHTML = `<p class="lib-empty" style="color:var(--error)">목록 로드 오류: ${err.message}</p>`;
-  }
-}
-
 async function loadRecentPrompts() {
   const listEl = document.getElementById("recent-prompt-list");
   if (!listEl) return;
   listEl.innerHTML = '<p class="lib-empty">로딩 중...</p>';
   try {
-    const res = await fetch("/api/recent-uploads?type=prompt&limit=10");
+    const res = await fetch("/api/recent-uploads?limit=10");
     const items = await res.json();
     if (!Array.isArray(items) || items.length === 0) {
       listEl.innerHTML = '<p class="lib-empty">최근 입력한 프롬프트가 없습니다.</p>';
@@ -716,40 +606,6 @@ async function loadRecentPrompts() {
   }
 }
 
-async function reusePpt(sourceId, filename) {
-  if (!confirm(`"${filename}" 으로 새 강의를 생성합니다.\n현재 교과목·주차 컨텍스트로 등록됩니다. 계속하시겠습니까?`)) return;
-
-  submitBtn.disabled = true;
-  statusEl.hidden = true;
-  setProgress(2, "원본 PPT 복사 중...");
-
-  const fd = new FormData();
-  fd.append("source_lecture_id", sourceId);
-  fd.append("cqi", document.getElementById("cqi-text")?.value || "");
-  const _sp = new URLSearchParams(location.search);
-  fd.append("course", _sp.get("course") || "");
-  fd.append("week",   _sp.get("week")   || "");
-
-  let lectureId;
-  try {
-    const res  = await fetch("/api/upload-from-source", { method: "POST", body: fd });
-    const data = await res.json().catch(() => ({}));
-    if (!res.ok) {
-      showError(`요청 오류 ${res.status}: ${data.detail ?? "알 수 없는 오류"}`);
-      submitBtn.disabled = false;
-      return;
-    }
-    lectureId = data.lecture_id;
-  } catch (err) {
-    showError(`네트워크 오류: ${err.message}`);
-    submitBtn.disabled = false;
-    return;
-  }
-
-  showStatus(`복사 완료 (lecture_id: ${lectureId}). 처리 중...`, "ok");
-  listenSSE(lectureId, submitBtn);
-}
-
 function loadPromptIntoForm(item) {
   if (!item || !promptText) return;
   promptText.value = (item.prompt_text || "").trim();
@@ -762,12 +618,10 @@ function loadPromptIntoForm(item) {
   setTimeout(() => { promptText.style.boxShadow = ""; }, 800);
 }
 
-document.getElementById("btn-recent-ppt-refresh")?.addEventListener("click", loadRecentPpt);
 document.getElementById("btn-recent-prompt-refresh")?.addEventListener("click", loadRecentPrompts);
 
-// 초기 모드(PPT)에 맞춰 한 번 로드
-loadRecentPpt();
-document.getElementById("recent-ppt").hidden = false;
+// 최근 프롬프트 목록 초기 로드
+loadRecentPrompts();
 
 // ── 강의 삭제 ────────────────────────────────────────────────────────
 async function deleteLecture(lectureId, title) {
@@ -794,8 +648,8 @@ async function deleteLecture(lectureId, title) {
       const c = _sp.get("course") || "";
       const w = _sp.get("week")   || "";
       const emptyMsg = (c && w)
-        ? `${c} ${w}주차 강의가 아직 없습니다. 위에서 PPT를 업로드하세요.`
-        : "아직 생성된 강의가 없습니다. 위에서 PPT를 업로드하세요.";
+        ? `${c} ${w}주차 강의가 아직 없습니다. 위에서 프롬프트로 강의를 만들어보세요.`
+        : "아직 생성된 강의가 없습니다. 위에서 프롬프트로 강의를 만들어보세요.";
       listEl.innerHTML = `<p class="lib-empty">${esc(emptyMsg)}</p>`;
     }
   } catch (err) {

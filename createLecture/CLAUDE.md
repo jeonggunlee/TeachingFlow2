@@ -1,6 +1,6 @@
 # HALLYM EDUTECH — AI 기반 강의 생성 (Lecture Creation) 웹 시스템
 
-> PPT → 슬라이드 이미지 → AI 분석 → TTS 음성 생성 → 웹 재생 + 강조 효과 + 자막 + 영상 녹화
+> 프롬프트 → 웹 슬라이드 렌더 → AI 분석 → TTS 음성 생성 → 웹 재생 + 강조 효과 + 자막 + 영상 녹화
 
 > **Status:** ✅ **구현 완료** — CQI 피드백 기반 스크립트 자동 개선 + TTS 전 스크립트 편집 + 마우스 드래그 강조 영역 지정 + TTS 후 재편집 지원 + 포털 연동.
 
@@ -8,7 +8,8 @@
 
 ## 1. 개요
 
-PPT를 입력 받아 슬라이드 페이지 이미지를 생성한 후, 페이지별로 Claude Vision API로 분석하여 강의 스크립트를 생성하고,
+교수자 프롬프트를 입력 받아 Claude가 슬라이드 구조를 설계하고 HTML+CSS로 웹 슬라이드를 렌더한 뒤,
+페이지별로 Claude Vision API로 분석하여 강의 스크립트를 생성하고,
 Edge TTS로 음성을 만든 뒤, 웹 브라우저에서 음성 재생 시 해당 슬라이드 **음성 설명 영역**에
 강조 효과를 표시하는 강의 생성 웹입니다.
 
@@ -52,10 +53,10 @@ Edge TTS로 음성을 만든 뒤, 웹 브라우저에서 음성 재생 시 해�
    │  교과목·주차 컨텍스트 포함 URL로 이동 (?from=&course=&week=&week_title=)
    ▼
 [createLecture 업로드 페이지 (/)]  ← from 파라미터 없으면 포털로 리디렉션
-   │  PPT 업로드 + (선택) CQI 피드백 텍스트
+   │  강의 프롬프트 + (선택) CQI 피드백 텍스트
    ▼
 [FastAPI Backend — Phase 1]
-   │  ① PPT → PDF (LibreOffice headless) → PNG (pdf2image, 150 DPI)
+   │  ① 프롬프트 → 아웃라인 설계(Claude) → HTML+CSS → PNG (Playwright, 1920×1080)
    │  ② 슬라이드별 Claude Vision 호출 → segments JSON
    │  ③ meta.json 저장 (course, week 컨텍스트)
    │  ④ (CQI 있을 때) Claude API로 스크립트 개선
@@ -74,7 +75,7 @@ Edge TTS로 음성을 만든 뒤, 웹 브라우저에서 음성 재생 시 해�
 ```
 
 핵심 컴포넌트:
-- **Ingestor** (`ppt_to_images.py`): PPT → PDF → PNG 변환
+- **Renderer** (`slide_renderer.py`): 프롬프트 → 아웃라인 → HTML+CSS → PNG (디자인 스펙 적용)
 - **Analyzer** (`vision_analyzer.py`): Claude Vision 호출, 슬라이드별 병렬 처리
 - **CQI Adapter** (`cqi_adapter.py`): Claude API로 수강생 피드백 반영 스크립트 개선
 - **Synthesizer** (`tts_synthesizer.py`): Edge TTS 호출 / SentenceBoundary 어절 분배
@@ -99,7 +100,6 @@ createLecture/
 │   │   ├── lectures.py    # GET /api/lectures?course=&week= (필터), GET/{id}, DELETE/{id}
 │   │   └── scripts.py     # GET/PUT /scripts, POST /synthesize, POST /rebuild-json
 │   ├── services/
-│   │   ├── ppt_to_images.py
 │   │   ├── vision_analyzer.py
 │   │   ├── cqi_adapter.py
 │   │   ├── tts_synthesizer.py
@@ -126,7 +126,7 @@ createLecture/
 │       └── recorder.js
 └── storage/
     └── lectures/{lecture_id}/
-        ├── source.pptx / source.pdf
+        ├── prompt.txt / outline.json / design.json
         ├── slides/
         ├── vision/
         ├── audio/
@@ -142,7 +142,7 @@ createLecture/
 
 | 메서드 | 경로 | 설명 |
 |--------|------|------|
-| POST | `/api/upload` | PPT 업로드, course/week를 meta.json에 저장 |
+| POST | `/api/upload-prompt` | 프롬프트로 웹 슬라이드 생성, course/week를 meta.json에 저장 |
 | GET  | `/api/jobs/{id}/events` | SSE 진행 스트림 |
 | GET  | `/api/lectures` | 완료 강의 목록 (course=, week= 쿼리 필터 지원) |
 | GET  | `/api/lectures/{id}` | lecture.json 반환 |
@@ -203,7 +203,7 @@ createLecture/
 
 | 항목 | 규칙 |
 |------|------|
-| **페이지별 내용 보존** | `outline.json`에 슬라이드별 내용 스펙을 보관하고 진화·CQI 프롬프트에 항상 함께 전달. PPT로 만든 강의는 `slide_spec.ensure()`가 슬라이드 이미지에서 Vision으로 역추출(부모에 캐시). |
+| **페이지별 내용 보존** | `outline.json`에 슬라이드별 내용 스펙을 보관하고 진화·CQI 프롬프트에 항상 함께 전달. 웹 슬라이드는 생성 시점부터 스펙을 갖는다. (구버전 PPT 강의는 `slide_spec.ensure()`가 Vision으로 역추출 — 레거시 호환) |
 | **디자인 고정** | `design.json`(색·폰트·레이아웃 규칙)을 버전 간 그대로 승계. 진화 시 슬라이드를 **웹 슬라이드로 재렌더**해도 시각 디자인이 유지된다. |
 | **누적** | `cqi_ledger.json`에 지시문이 쌓이고 새 버전으로 승계. 이미 반영된 항목도 `applied_in_cycle` 기록과 함께 계속 컨텍스트로 제공(결과 유지). |
 | **승인제** | 분석 보고서에서 온 지시는 `pending` — **교수자 승인 후에만** 반영. 승인된 지시가 없으면 진화 요청은 400. |
@@ -230,7 +230,7 @@ POST /api/lectures/{parent}/evolve   → 새 lecture_id 생성 + design/ledger �
 | 파일 | 역할 |
 |------|------|
 | `services/design_spec.py` | 디자인 고정 스펙 로드·저장·승계, Claude용 디자인 규칙 프롬프트 |
-| `services/slide_spec.py` | 슬라이드 PNG → 아웃라인 스펙 역추출 (PPT 강의의 진화 진입점) |
+| `services/slide_spec.py` | 슬라이드 PNG → 아웃라인 스펙 역추출 (레거시 PPT 강의 마이그레이션 전용) |
 | `services/cqi_ledger.py` | 누적 원장 (취입·승인·폐기·대체·승계·프롬프트 변환) |
 | `services/cqi_evolver.py` | 현재 아웃라인 + 누적 지시 → 진화된 아웃라인 |
 | `api/evolve.py` | 원장 API + 계보 API + 진화 파이프라인 |
@@ -261,7 +261,8 @@ ZIP 내보내기 없이 **파일시스템 직접 공유** 방식:
 
 ```bash
 # 시스템 패키지 (최초 1회)
-sudo apt-get install -y libreoffice poppler-utils fonts-noto-cjk
+sudo apt-get install -y fonts-noto-cjk
+python -m playwright install chromium
 
 cd EDUTECH-3/createLecture
 python -m venv .venv && source .venv/bin/activate

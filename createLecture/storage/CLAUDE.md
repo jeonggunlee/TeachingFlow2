@@ -10,10 +10,12 @@
 storage/
 └── lectures/
     └── {lecture_id}/             # YYYY-MM-DD_<uuid8>, 예: 2026-05-21_77c15663
-        ├── source.pptx           # 원본 업로드 파일
-        ├── source.pdf            # LibreOffice 변환 중간물 (캐시)
+        ├── prompt.txt            # 교수자 강의 프롬프트 원문
+        ├── outline.json          # 페이지별 슬라이드 내용 스펙 (CQI 진화의 입력)
+        ├── design.json           # 시각 디자인 고정 스펙 (버전 간 승계)
+        ├── cqi_ledger.json       # 누적 CQI 지시문 원장 (버전 간 승계)
         ├── slides/
-        │   ├── slide_001.png     # 150 DPI PNG (1500×844 px — 16:9 기준)
+        │   ├── slide_001.png     # 웹 슬라이드 렌더 PNG (1920×1080 px — 16:9)
         │   └── slide_NNN.png
         ├── vision/               # Claude Vision 분석 결과 (캐시)
         │   ├── slide_001.json    # CQI 적용·스크립트 편집 시 덮어쓰기

@@ -5,8 +5,6 @@ pydantic>=2
 pydantic-settings
 anthropic>=0.40
 edge-tts
-pdf2image
 Pillow
-aiofiles
 python-dotenv
 playwright

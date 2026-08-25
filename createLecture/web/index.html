@@ -402,38 +402,18 @@
       </div>
 
       <h1>AI 기반 강의 생성</h1>
-      <p class="subtitle">PPT 업로드 또는 강의 내용 프롬프트만으로 슬라이드 분석·음성 합성을 거쳐 강의로 변환됩니다.</p>
+      <p class="subtitle">강의 내용 프롬프트만으로 웹 슬라이드 설계·분석·음성 합성을 거쳐 강의가 만들어집니다.</p>
 
-      <!-- 모드 선택 탭 -->
-      <div class="mode-tabs" role="tablist">
-        <button type="button" id="tab-file" class="mode-tab active" role="tab" aria-selected="true">
-          📂 PPT 파일 업로드
-        </button>
-        <button type="button" id="tab-prompt" class="mode-tab" role="tab" aria-selected="false">
-          ✨ 프롬프트로 자동 생성
-        </button>
-      </div>
-
-      <!-- 모드 1: PPT 업로드 -->
-      <div id="panel-file" class="mode-panel">
-        <form id="upload-form" class="card">
-          <label for="file" class="file-label">
-            <span id="file-name">PPT 파일 선택 (.ppt, .pptx)</span>
-            <input id="file" type="file" name="file" accept=".ppt,.pptx" required hidden />
-          </label>
-          <button id="submit" type="submit">업로드</button>
-        </form>
-      </div>
-
-      <!-- 모드 2: 프롬프트로 자동 생성 -->
-      <div id="panel-prompt" class="mode-panel" hidden>
+      <!-- 프롬프트로 웹 슬라이드 생성 -->
+      <div id="panel-prompt" class="mode-panel">
         <form id="prompt-form" class="card prompt-card">
           <div class="prompt-header">
             <label for="prompt-text" class="prompt-label">강의 내용 프롬프트</label>
             <span class="prompt-hint">
               강의 주제·핵심 개념·다루고 싶은 세부 내용을 자유롭게 작성하세요.
-              AI가 슬라이드 구조와 디자인을 자동 설계하여 화이트 톤 미니멀 슬라이드를
-              직접 렌더링(HTML+CSS → PNG)한 뒤, Vision 분석 → TTS로 강의를 만듭니다.
+              AI가 슬라이드 구조를 설계해 화이트 톤 미니멀 웹 슬라이드로 렌더링한 뒤,
+              Vision 분석 → TTS로 강의를 만듭니다. 슬라이드는 구조화된 스펙으로
+              보관되어, 이후 학습 분석 결과(CQI)로 슬라이드까지 진화시킬 수 있습니다.
             </span>
           </div>
 
@@ -455,7 +435,7 @@
               <input id="prompt-num" type="number" min="3" max="30" class="prompt-num-input" placeholder="자동" />
               <span class="prompt-num-hint">비워두면 8~14장 자동</span>
             </div>
-            <button id="prompt-submit" type="submit" class="prompt-submit">PPT 생성 후 강의 만들기</button>
+            <button id="prompt-submit" type="submit" class="prompt-submit">웹 슬라이드 생성 후 강의 만들기</button>
           </div>
         </form>
       </div>
@@ -510,19 +490,8 @@
         <p class="lib-empty">로딩 중...</p>
       </div>
 
-      <!-- 최근 업로드 PPT (PPT 탭 활성 시 표시) -->
-      <div class="recent-section" id="recent-ppt" hidden>
-        <div class="lib-sidebar-header recent-header">
-          <span class="lib-sidebar-title">📂 최근 업로드 PPT</span>
-          <button class="lib-refresh" id="btn-recent-ppt-refresh" title="목록 새로고침">↻</button>
-        </div>
-        <div class="lib-sidebar-list recent-list" id="recent-ppt-list">
-          <p class="lib-empty">로딩 중...</p>
-        </div>
-      </div>
-
-      <!-- 최근 프롬프트 (프롬프트 탭 활성 시 표시) -->
-      <div class="recent-section" id="recent-prompt" hidden>
+      <!-- 최근 프롬프트 -->
+      <div class="recent-section" id="recent-prompt">
         <div class="lib-sidebar-header recent-header">
           <span class="lib-sidebar-title">✨ 최근 프롬프트</span>
           <button class="lib-refresh" id="btn-recent-prompt-refresh" title="목록 새로고침">↻</button>

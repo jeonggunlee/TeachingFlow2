@@ -17,6 +17,8 @@ from anthropic import AsyncAnthropic
 from app.config import settings
 from app.services.design_spec import LAYOUTS, rules_prompt
 
+MAX_TOKENS = 16000
+
 _SYSTEM = """당신은 대학 강의 슬라이드를 개선하는 교육 콘텐츠 설계자입니다.
 현재 강의의 페이지별 슬라이드 내용과, 실제 수강생 데이터에서 도출된 누적 CQI 개선 지시를 받아
 **슬라이드 구성을 개선한 새 버전**을 만듭니다.
@@ -123,9 +125,14 @@ async def evolve_outline(
 
     msg = await client.messages.create(
         model=settings.claude_model,
-        max_tokens=8000,
+        max_tokens=MAX_TOKENS,
         system=[{"type": "text", "text": _SYSTEM,
                  "cache_control": {"type": "ephemeral"}}],
         messages=[{"role": "user", "content": "\n".join(parts)}],
     )
+    if getattr(msg, "stop_reason", None) == "max_tokens":
+        raise ValueError(
+            f"진화 응답이 max_tokens({MAX_TOKENS})에서 잘렸습니다. "
+            "지시문을 줄이거나 슬라이드 수를 조정해 다시 시도하세요."
+        )
     return _sanitize(_parse_array(msg.content[0].text))

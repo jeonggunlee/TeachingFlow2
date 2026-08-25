@@ -11,7 +11,6 @@ class Settings(BaseSettings):
     claude_model: str = "claude-sonnet-4-6"
     tts_voice: str = "ko-KR-InJoonNeural"
     storage_root: Path = Path("./storage")
-    max_upload_mb: int = 80
     analyzelecture_url: str = "http://localhost:8002"
 
 
