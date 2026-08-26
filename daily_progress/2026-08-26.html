@@ -1,0 +1,628 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>2026-08-26 작업 일지 · TeachingFlow</title>
+  <link rel="stylesheet" href="css/log.css" />
+</head>
+<body>
+<div class="wrap">
+
+  <a class="backlink" href="index.html">← 작업 일지 목차</a>
+
+  <header class="masthead">
+    <p class="eyebrow">2026년 8월 26일 · 커밋 12건</p>
+    <h1>AI 교수 도입, 웹 슬라이드 전환,<br />그리고 전 구간 논리 점검</h1>
+    <p class="lede">
+      기능을 얹는 작업(AI 교수·CQI 진화)과 기반을 갈아엎는 작업(PPT → 웹 슬라이드),
+      그리고 쌓인 빚을 걷어내는 작업(논리 오류 13건 · 유령 데이터 정리)이 하루에 겹쳤습니다.
+    </p>
+    <ul class="stats">
+      <li>커밋 <b>12</b>건</li>
+      <li>논리 오류 수정 <b>13</b>건</li>
+      <li>검증 항목 <b>22</b>개 통과</li>
+      <li>정리한 유령 데이터 <b>139</b>행 · <b>138</b>파일</li>
+    </ul>
+  </header>
+
+  <nav class="toc">
+    <h2>목차</h2>
+    <ol>
+      <li><a href="#s1">강의별 AI 교수 답변 · 자동 질문 생성</a></li>
+      <li><a href="#s2">분석 이력을 날짜별로 선택해 조회</a></li>
+      <li><a href="#s3">CQI 누적 진화 — 계보 · 디자인 고정 · 승인제</a></li>
+      <li><a href="#s4">PPT 경로 제거, 웹 슬라이드 전용으로</a></li>
+      <li><a href="#s5">형광펜이 문장에서 벗어나던 문제 — 좌표를 없애다</a></li>
+      <li><a href="#s6">의미를 잃은 녹화 버튼 제거</a></li>
+      <li><a href="#s7">SVG 다이어그램 5종 — 개념을 그림으로</a></li>
+      <li><a href="#s8">AI 답변이 30초 늦게 보이던 문제</a></li>
+      <li><a href="#s9">전 구간 논리 점검 — 오류 13건</a></li>
+      <li><a href="#s10">유령 강의 데이터 · 저장소 정리</a></li>
+      <li><a href="#verify">검증 방법</a></li>
+      <li><a href="#next">남은 과제</a></li>
+    </ol>
+  </nav>
+
+  <!-- ─────────────────────────────────────────────── -->
+  <section class="item" id="s1">
+    <div class="item-head">
+      <span class="item-num">01</span>
+      <h2>강의별 AI 교수 답변 · 자동 질문 생성</h2>
+      <span class="commit">251190b</span>
+    </div>
+
+    <p>
+      강의를 운영할 때 채팅창이 비어 있으면 아무도 먼저 입을 떼지 않습니다.
+      강의마다 운영자가 켜고 끌 수 있는 토글 두 개를 만들었습니다.
+    </p>
+
+    <div class="table-scroll">
+      <table>
+        <tr><th>옵션</th><th>동작</th></tr>
+        <tr>
+          <td><b>AI 교수 답변</b><br /><code>ai_answer</code></td>
+          <td>수강생이 질문을 올리면 백그라운드로 교수 입장의 답변을 생성해 붙입니다.
+              해당 슬라이드의 내레이션을 컨텍스트로 넘기므로 강의 내용에 근거해 답합니다.</td>
+        </tr>
+        <tr>
+          <td><b>자동 질문 생성</b><br /><code>auto_question</code></td>
+          <td>학생이 쓴 것처럼 자연스러운 질문(한국식 이름)을 만들고 교수 답변까지 함께 답니다.
+              <b>실제 수강생 질문을 소스로 활용</b>해 가장 자주 나온 궁금증을 학생풍으로 재구성합니다.</td>
+        </tr>
+      </table>
+    </div>
+
+    <h3>스팸이 되지 않게 하는 규칙</h3>
+    <p>AI가 질문을 무한정 만들어내면 채팅창이 가짜 대화로 뒤덮입니다. 슬라이드당 상한을 둡니다.</p>
+<pre><code>allowed = (aq == 0) or (aq &lt; AI_QUESTION_CAP and aq &lt; rq)
+#  aq = 이미 만든 AI 질문 수,  rq = 실제 수강생 질문 수,  CAP = 3
+#  → 마중물 1개는 허용, 그 뒤로는 실제 질문 수를 절대 넘지 않는다</code></pre>
+
+    <div class="callout trap">
+      <span class="label">놓치기 쉬운 함정</span>
+      <p>
+        AI가 만든 질문·답변이 그대로 학습 분석에 섞이면 CQI 보고서가 오염됩니다.
+        <code>chat_messages.origin</code> 컬럼(<code>student</code> / <code>ai_student</code> /
+        <code>ai_teacher</code>)을 두고, analytics 집계와 키워드 추출에서
+        <code>origin = 'student'</code> 만 세도록 했습니다.
+      </p>
+    </div>
+
+    <p>
+      설정은 <code>lecture_settings</code> 테이블에 따로 두어 ZIP 재업로드나 강의 재생성과
+      독립적으로 유지됩니다. 서비스 로직은 <code>app/services/ai_tutor.py</code>에 모았고,
+      <code>ANTHROPIC_API_KEY</code>가 없으면 두 기능 모두 조용히 꺼집니다(재생은 정상).
+    </p>
+  </section>
+
+  <!-- ─────────────────────────────────────────────── -->
+  <section class="item" id="s2">
+    <div class="item-head">
+      <span class="item-num">02</span>
+      <h2>분석 이력을 날짜별로 선택해 조회</h2>
+      <span class="commit">1be4fcf</span>
+    </div>
+    <p>
+      같은 강의를 여러 번 분석하면 보고서가 쌓이는데, 화면은 그중 하나만 보여주면서
+      어느 시점 것인지 알 수 없었습니다. 강의별 분석 이력을 최신순으로 내려주고
+      드롭다운으로 시점을 고를 수 있게 했습니다.
+    </p>
+    <ul>
+      <li><code>GET /api/reports?lecture_id=X</code> — 해당 강의 이력만 최신순</li>
+      <li><code>GET /api/week-lectures</code> 응답에 강의별 <code>reports[]</code> 추가</li>
+      <li>주차 분석 페이지에 날짜 <code>&lt;select&gt;</code> + <b>🔄 다시 분석</b> 버튼</li>
+      <li>보고서 페이지 헤더에도 같은 이력 셀렉터</li>
+    </ul>
+  </section>
+
+  <!-- ─────────────────────────────────────────────── -->
+  <section class="item" id="s3">
+    <div class="item-head">
+      <span class="item-num">03</span>
+      <h2>CQI 누적 진화 — 계보 · 디자인 고정 · 승인제</h2>
+      <span class="commit">a288849</span>
+    </div>
+
+    <p>
+      "강의가 CQI로 개선되며 진화한다"는 아이디어를 실제로 돌아가게 만들려면
+      네 가지가 동시에 필요했습니다.
+    </p>
+
+    <div class="table-scroll">
+      <table>
+        <tr><th>필요한 것</th><th>어떻게 해결했나</th></tr>
+        <tr>
+          <td><b>페이지별 내용 보존</b></td>
+          <td><code>outline.json</code>에 슬라이드별 내용 스펙을 보관하고, 진화·CQI 프롬프트에
+              항상 함께 전달. 슬라이드가 생성 시점부터 스펙을 갖는다.</td>
+        </tr>
+        <tr>
+          <td><b>디자인이 흔들리지 않을 것</b></td>
+          <td><code>design.json</code>(색·폰트·레이아웃 규칙)을 버전 간 그대로 승계.
+              재렌더해도 시각이 유지된다.</td>
+        </tr>
+        <tr>
+          <td><b>지시가 누적될 것</b></td>
+          <td><code>cqi_ledger.json</code> 원장에 지시문이 쌓이고 자식 버전으로 승계.
+              이미 반영된 항목도 <code>applied_in_cycle</code> 기록과 함께 계속 컨텍스트로 제공.</td>
+        </tr>
+        <tr>
+          <td><b>새 요구가 옛 요구를 이길 것</b></td>
+          <td>지시를 시간순으로 나열하고 <b>"충돌 시 최신 우선"</b>을 프롬프트에 명시.
+              명시적 대체는 <code>supersede</code>로 이전 항목을 <code>superseded</code> 처리.</td>
+        </tr>
+      </table>
+    </div>
+
+    <h3>교수자 승인 없이는 반영되지 않는다</h3>
+    <p>
+      분석 보고서에서 들어온 지시는 <code>pending</code> 상태로만 취입됩니다.
+      교수자가 검토·수정·승인한 항목만 진화에 쓰이고, 승인된 지시가 하나도 없으면
+      진화 요청은 400으로 거절합니다.
+    </p>
+
+    <h3>버전은 새 강의로 갈라진다</h3>
+<pre><code>v1 (root)  lineage_id = 자기 lecture_id,  version 1,  parent 없음
+   └─ v2   lineage_id = v1의 것,          version 2,  parent = v1
+      └─ v3 ...</code></pre>
+    <p>
+      진화 결과는 <b>새 <code>lecture_id</code></b>를 받습니다. 과거 버전과 그 버전이 모은
+      수강 데이터가 그대로 보존되므로, 개선 전후를 나란히 비교할 수 있습니다.
+    </p>
+
+    <div class="callout why">
+      <span class="label">왜 course+week가 아니라 lineage인가</span>
+      <p>
+        "딥러닝 기초 1주차"에 이미 서로 다른 강의가 여러 개 존재했습니다.
+        주차를 키로 삼으면 남의 강의의 CQI가 섞입니다. 그래서 누적의 단위를
+        <b>계보(lineage)</b>로 잡았습니다.
+      </p>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────────────────────── -->
+  <section class="item" id="s4">
+    <div class="item-head">
+      <span class="item-num">04</span>
+      <h2>PPT 경로 제거, 웹 슬라이드 전용으로</h2>
+      <span class="commit">2fa5a55</span>
+    </div>
+    <p>
+      PPT 업로드와 프롬프트 생성 두 갈래를 유지하면 CQI 진화가 반쪽이 됩니다.
+      PPT는 우리가 내용을 모르는 불투명한 입력이라, 슬라이드 자체를 개선할 수 없기 때문입니다.
+      웹 슬라이드로 일원화했습니다.
+    </p>
+    <ul>
+      <li><code>app/services/ppt_to_images.py</code> 삭제, 업로드 엔드포인트는
+          <code>POST /api/upload-prompt</code> 하나만 남김</li>
+      <li>슬라이드는 항상 <code>outline.json</code>(구조화된 스펙)에서 렌더 —
+          그래서 CQI로 슬라이드 <b>구성 자체</b>를 바꿀 수 있다</li>
+      <li>구버전 PPT 강의를 위해 <code>slide_spec.ensure()</code>가 Vision으로 아웃라인을
+          역추출하는 레거시 호환 경로만 남김</li>
+    </ul>
+  </section>
+
+  <!-- ─────────────────────────────────────────────── -->
+  <section class="item" id="s5">
+    <div class="item-head">
+      <span class="item-num">05</span>
+      <h2>형광펜이 문장에서 벗어나던 문제 — 좌표를 없애다</h2>
+      <span class="commit">cff92dd</span>
+    </div>
+
+    <p>오늘 작업 중 가장 근본적인 전환입니다. 증상은 "형광펜 위치가 문장에서 벗어난다"였습니다.</p>
+
+    <div class="callout trap">
+      <span class="label">진짜 원인</span>
+      <p>
+        SVG를 쓰냐 마냐의 문제가 아니었습니다. <b>정보가 왕복하며 사라지는 구조</b>가 원인이었습니다.
+        우리가 HTML로 슬라이드를 만들면서 글자의 정확한 위치를 이미 알고 있었는데,
+        그것을 PNG로 굽는 순간 <b>레이아웃 기하 정보를 통째로 버렸고</b>,
+        그 다음 Vision API에게 그림을 보여주며 좌표를 <b>다시 추측</b>하게 시켰습니다.
+        추측이 빗나가는 건 당연했습니다.
+      </p>
+    </div>
+
+    <h3>해법: 좌표를 만들지 않는다</h3>
+    <p>
+      슬라이드를 PNG가 아니라 <b>라이브 DOM</b>으로 재생합니다. 렌더링할 때 모든 텍스트 요소에
+      <code>data-ref</code>를 붙이고, 내레이션 세그먼트는 좌표 대신 그 <b>요소 id</b>를 가리킵니다.
+      플레이어는 <code>[data-ref="b2"]</code>에 클래스를 붙이기만 하면 됩니다.
+    </p>
+
+    <div class="ba before-after">
+      <div>
+        <h4>이전</h4>
+<pre><code>"highlight": {
+  "x_pct": 5.0,  "y_pct": 4.0,
+  "w_pct": 45.0, "h_pct": 8.0
+}
+→ Vision이 추측한 값
+→ 폰트·줄바꿈 바뀌면 어긋남</code></pre>
+      </div>
+      <div>
+        <h4>이후</h4>
+<pre><code>"ref": "b2"
+
+→ 우리가 부여한 요소 id
+→ 좌표가 존재하지 않으므로
+   어긋날 여지 자체가 없음</code></pre>
+      </div>
+    </div>
+
+    <h3>따라온 변화</h3>
+    <ul>
+      <li><code>vision_analyzer.py</code>(좌표 추측) → <code>segment_writer.py</code>(요소 id 지정)로 교체</li>
+      <li>슬라이드 산출물이 <code>slide_NNN.png</code> → <code>slide_NNN.html</code> + 공용 <code>slide.css</code></li>
+      <li>공용 스테이지 모듈 <code>slide-stage.js</code>를 만들어 createLecture·playLecture가 같은 렌더링 사용</li>
+      <li>강조 효과는 CSS로 — 형광펜(<code>hl-marker</code>), 밑줄(<code>hl-underline</code>), 체크(<code>hl-check</code>).
+          여러 줄에 걸친 문장도 <code>box-decoration-break: clone</code>으로 줄마다 정확히 칠해짐</li>
+      <li><code>lecture.json</code>은 <code>html</code>과 <code>image</code>를 모두 담아 구버전 강의도 그대로 재생</li>
+    </ul>
+  </section>
+
+  <!-- ─────────────────────────────────────────────── -->
+  <section class="item" id="s6">
+    <div class="item-head">
+      <span class="item-num">06</span>
+      <h2>의미를 잃은 녹화 버튼 제거</h2>
+      <span class="commit">3950330</span>
+    </div>
+    <p>
+      녹화 기능은 슬라이드가 <code>&lt;canvas&gt;</code>에 그려진 이미지라는 전제 위에 있었습니다.
+      라이브 DOM으로 바꾸면서 그 전제가 사라져 버튼이 아무 일도 하지 않게 됐습니다.
+      동작하지 않는 버튼을 남겨두면 쓰는 사람을 속이는 것이라 <code>recorder.js</code>와 함께 걷어냈습니다.
+    </p>
+  </section>
+
+  <!-- ─────────────────────────────────────────────── -->
+  <section class="item" id="s7">
+    <div class="item-head">
+      <span class="item-num">07</span>
+      <h2>SVG 다이어그램 5종 — 개념을 그림으로</h2>
+      <span class="commit">247b3db</span>
+    </div>
+
+    <p>
+      CQI가 "벤 다이어그램으로 시각화하라"고 지시해도 결과물은 글머리표 텍스트였습니다.
+      관계를 그릴 수단이 없었기 때문입니다. 레이아웃을 7종에서 12종으로 늘렸습니다.
+    </p>
+
+    <div class="table-scroll">
+      <table>
+        <tr><th>레이아웃</th><th>용도</th><th>실제 생성 예</th></tr>
+        <tr><td><code>venn</code></td><td>포함 관계 · 교집합</td><td>인공지능 ⊃ 머신러닝 ⊃ 딥러닝</td></tr>
+        <tr><td><code>flow</code></td><td>순서 · 절차</td><td>순전파 → 손실 계산 → 역전파 → 가중치 갱신</td></tr>
+        <tr><td><code>layers</code></td><td>계층 구조</td><td>입력층 / 은닉층 / 출력층</td></tr>
+        <tr><td><code>cycle</code></td><td>순환 과정</td><td>CQI 개선 루프</td></tr>
+        <tr><td><code>figure</code></td><td>자유 개념도</td><td>모델이 직접 그린 SVG</td></tr>
+      </table>
+    </div>
+
+    <h3>도형마다 따로 강조된다</h3>
+    <p>
+      <code>data-ref</code>를 텍스트뿐 아니라 <b>도형에도</b> 부여했습니다.
+      덕분에 내레이션이 그림을 한 부분씩 짚어갑니다. 실제 생성된 스크립트가 그 증거입니다.
+    </p>
+<pre><code>v1  "먼저 가장 바깥쪽 원, 인공지능을 보겠습니다…"
+v2  "그 안쪽에 머신러닝이 포함됩니다…"
+v3  "가장 안쪽 원이 바로 딥러닝입니다…"</code></pre>
+    <p>강조된 도형만 선명해지고 나머지는 <code>dg-dim</code>으로 흐려집니다.</p>
+
+    <div class="callout trap">
+      <span class="label">보안 — figure는 모델이 만든 SVG다</span>
+      <p>
+        <code>sanitize_svg()</code>가 <code>&lt;script&gt;</code> · <code>&lt;foreignObject&gt;</code> ·
+        <code>&lt;iframe&gt;</code> · <code>&lt;image&gt;</code> · <code>on*</code> 핸들러 · 외부
+        <code>href</code>를 제거하고, 허용 태그 목록 밖의 태그가 있으면 통째로 거부합니다.
+        주입 시나리오 7종을 만들어 전부 차단되는 것을 확인했습니다.
+      </p>
+    </div>
+
+    <p>
+      도형의 색·선은 CSS 클래스(<code>dg-*</code>)로 지정해 <code>design.json</code> 토큰을 따릅니다.
+      강의가 CQI로 진화해도 다이어그램 디자인이 함께 유지됩니다.
+    </p>
+  </section>
+
+  <!-- ─────────────────────────────────────────────── -->
+  <section class="item" id="s8">
+    <div class="item-head">
+      <span class="item-num">08</span>
+      <h2>AI 답변이 30초 늦게 보이던 문제</h2>
+      <span class="commit">a1a17a9</span>
+    </div>
+
+    <p>
+      기능이 잘 도는지 확인해 달라는 요청으로 시작했는데, 동작 자체는 정상이었고
+      대신 <b>타이밍이 어긋나 있었습니다</b>.
+    </p>
+
+    <div class="ba before-after">
+      <div>
+        <h4>이전 — 폴링 구간</h4>
+<pre><code>[1.5, 3, 5, 8]초</code></pre>
+        <p style="margin:8px 0 0;font-size:13.5px">
+          실측 생성 시간은 <b>5.3 / 6.2 / 7.4 / 8.5 / 9.5초</b>.
+          8초를 넘기면 다음 조회는 30초 주기 폴링이라
+          답변이 준비돼 있는데도 학생은 기다립니다.
+        </p>
+      </div>
+      <div>
+        <h4>이후</h4>
+<pre><code>[1.5, 3, 5, 8, 12, 18, 25]초
++ 답변이 그려지면 남은 폴링 생략</code></pre>
+        <p style="margin:8px 0 0;font-size:13.5px">
+          단순히 늘리기만 하면 1.5초에 답이 와도 25초까지 계속 조회하므로,
+          조기 종료를 함께 넣었습니다.
+        </p>
+      </div>
+    </div>
+
+    <div class="callout result">
+      <span class="label">브라우저 실측</span>
+      <p>
+        답변 미도착 상황에서 7회 전부 발생(<code>+1.5 +3 +5 +8 +12 +18 +25</code>),
+        실제 질문에서는 8.5초에 답변이 뜨고 <b>12·18·25초 폴링은 건너뜀</b>을 확인했습니다.
+        <code>player.js?v=10 → v11</code>로 캐시 버스터도 올렸습니다 — 올리지 않으면
+        이미 접속했던 학생 브라우저가 옛 파일을 계속 씁니다.
+      </p>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────────────────────── -->
+  <section class="item" id="s9">
+    <div class="item-head">
+      <span class="item-num">09</span>
+      <h2>전 구간 논리 점검 — 오류 13건</h2>
+      <span class="commit">72d7204</span>
+    </div>
+
+    <p>
+      제작 → 운영 → 분석 → CQI 흐름을 코드 정독과 실행 테스트로 훑었습니다.
+      찾은 것을 전부 고쳤고, 각 항목마다 재현 테스트를 만들어 확인했습니다.
+      (커밋 제목은 12건이지만, 주차 입력 검증을 나중에 더해 최종 13건입니다.)
+    </p>
+
+    <div class="table-scroll">
+      <table>
+        <tr><th>#</th><th>심각도</th><th>문제</th><th>수정</th></tr>
+        <tr>
+          <td>1</td><td class="sev sev-high">높음</td>
+          <td><b>유령 강의</b> — createLecture에서 강의를 지워도 playLecture DB 행이 남아,
+              수강생 목록에 뜨지만 열면 404. 그런데 <b>분석은 정상적으로 돌아</b>
+              실체 없는 CQI 보고서가 만들어졌다.</td>
+          <td>목록에서 제외 · <code>files_present</code> 표시 ·
+              <code>POST /admin/prune-missing</code> 정리 경로 · 분석 거절</td>
+        </tr>
+        <tr>
+          <td>2</td><td class="sev sev-high">높음</td>
+          <td><b>범위 밖 slide_idx</b> — 23장 강의의 슬라이드 523에 채팅·난이도를 넣으면
+              HTTP 200으로 저장되지만, analytics는 <code>range(slide_count)</code>만 돌아
+              그 데이터가 통째로 사라진다.</td>
+          <td>저장 시점에 404 (<code>require_slide</code>)</td>
+        </tr>
+        <tr>
+          <td>3</td><td class="sev sev-high">높음</td>
+          <td><b>낡은 slide_count</b> — lecture.json이 다시 빌드돼 장수가 늘어도 DB는 옛 값 유지 →
+              새 슬라이드 데이터가 2번과 같은 방식으로 유실.</td>
+          <td>조회 시 자동 갱신</td>
+        </tr>
+        <tr>
+          <td>4</td><td class="sev sev-mid">중간</td>
+          <td><b>죽은 검증기</b> — <code>validate_type</code>이 <code>@field_validator</code>로
+              등록되지 않아 임의 <code>event_type</code>이 통과하고 라우터가 조용히 버렸다.</td>
+          <td>검증기 등록 + 배치를 한 건씩 검증(정상 이벤트까지 버려지지 않게)</td>
+        </tr>
+        <tr>
+          <td>5</td><td class="sev sev-high">높음</td>
+          <td><b>키워드 추출기가 핵심 용어를 파괴</b> — 조사와 같은 글자로 끝나는 2음절 용어가
+              어근 1글자가 되어 사라졌다. 영문 <code>{3,}</code>이라 <code>AI</code>·<code>ML</code>은
+              아예 안 잡히고, 대신 <code>교수님</code>·<code>부탁드립니다</code>가 상위를 차지했다.</td>
+          <td>어근 규칙 재설계 · 2글자 약어 화이트리스트 · 호칭/요청 표현 제거</td>
+        </tr>
+        <tr>
+          <td>6</td><td class="sev sev-high">높음</td>
+          <td><b>CQI 드리프트 방지가 항상 빈 값</b> — 원장이 <code>slide_ref.title</code>로 슬라이드
+              밀림을 막게 설계됐는데, 분석 보고서에 <code>slide_title</code> 키가 아예 없었다.</td>
+          <td>lecture.json → analytics → 프롬프트 → 보고서 → 원장까지 제목 연결</td>
+        </tr>
+        <tr>
+          <td>7</td><td class="sev sev-high">높음</td>
+          <td><b>중복 분석 레이스</b> — 가드가 <code>processing</code>만 검사했는데 보고서는
+              <code>pending</code>으로 생성된다. 동시 3건 → 3건 전부 수락, Claude 3회 호출.</td>
+          <td>부분 유니크 인덱스로 DB가 차단 + 재시작 시 중단 작업 복구</td>
+        </tr>
+        <tr>
+          <td>8</td><td class="sev sev-mid">중간</td>
+          <td><b>포털이 완성된 보고서를 감춤</b> — <code>max(generated_at)</code> 하나로 판정해,
+              재분석을 시작하면 완료본이 있어도 "분석 중"만 뜨고 보고서 링크가 사라졌다.</td>
+          <td>완료본 우선 + <code>analyze_running</code> 별도 표시</td>
+        </tr>
+        <tr>
+          <td>9</td><td class="sev sev-high">높음</td>
+          <td><b>포털 로그인이 장식</b> — 성공 여부를 localStorage 플래그로만 남겨,
+              과목 삭제·유료 분석 트리거 API가 무인증이었다.</td>
+          <td>서버 발급 토큰 검증(조회는 공개 유지)</td>
+        </tr>
+        <tr>
+          <td>10</td><td class="sev sev-mid">중간</td>
+          <td><b>업로드 파일명이 그대로 경로에</b> — <code>Path(f"/tmp/{filename}")</code>.
+              storage 밖에 파일이 실제로 쓰이는 것을 실증했다(관리자 인증 필요).</td>
+          <td>임시 파일 사용 + <code>finally</code> 정리</td>
+        </tr>
+        <tr>
+          <td>11</td><td class="sev sev-mid">중간</td>
+          <td><b>주차 입력 무검증</b> — 0주차·음수 주차·중복 주차가 모두 통과.
+              중복 주차는 두 카드가 같은 상태를 가리켜 분석 결과가 뒤섞인다.</td>
+          <td>1~60 범위 + 중복 시 409</td>
+        </tr>
+        <tr>
+          <td>12</td><td class="sev sev-low">낮음</td>
+          <td><b>/status가 항상 0</b> — 웹 슬라이드로 전환했는데
+              <code>slides/*.png</code>를 세고 있었다.</td>
+          <td>.html 우선 집계</td>
+        </tr>
+        <tr>
+          <td>13</td><td class="sev sev-low">낮음</td>
+          <td><b>rebuild-json이 생성일을 덮어씀</b> — 강조 위치만 바꿔도 <code>created_at</code>이
+              오늘이 되어 목록 정렬과 분석 시간축이 흐트러졌다.</td>
+          <td>최초 생성 시각 유지</td>
+        </tr>
+      </table>
+    </div>
+
+    <h3>키워드 추출 — 고치기 전과 후</h3>
+    <div class="ba before-after">
+      <div>
+        <h4>이전</h4>
+<pre><code>속도 → ''    순서 → ''
+텐서 → ''    경로 → ''
+
+"AI와 ML의 차이가 뭔가요?"
+  → ['차이', '뭔가요']
+
+"교수님, 이 부분 설명 부탁드립니다"
+  → ['교수님','부분','부탁드립니다']</code></pre>
+      </div>
+      <div>
+        <h4>이후</h4>
+<pre><code>속도 → '속도'    순서 → '순서'
+텐서 → '텐서'    경로 → '경로'
+
+"AI와 ML의 차이가 뭔가요?"
+  → ['ai', 'ml', '차이']
+
+"교수님, 이 부분 설명 부탁드립니다"
+  → []</code></pre>
+      </div>
+    </div>
+    <div class="callout why">
+      <span class="label">더 나빴던 점</span>
+      <p>
+        <code>텐서</code>는 사라지는데 <code>텐서의</code>는 <code>텐서</code>로 살아남았습니다.
+        <b>같은 개념이 문장 형태에 따라 집계되거나 사라진</b> 것이라, 단순 누락보다
+        분석 결과를 더 크게 왜곡했습니다.
+      </p>
+    </div>
+
+    <h3>레이스 컨디션은 코드로 못 막는다</h3>
+    <p>
+      중복 분석 가드에 <code>pending</code>을 추가해도 <b>여전히 뚫렸습니다</b>.
+      동시 요청 셋이 모두 INSERT 전에 조회를 마치기 때문입니다(TOCTOU).
+      결국 DB 제약으로 내려야 했습니다.
+    </p>
+<pre><code>CREATE UNIQUE INDEX ux_cqi_reports_in_flight
+ON cqi_reports (lecture_id)
+WHERE status IN ('pending', 'processing');</code></pre>
+    <div class="callout result">
+      <span class="label">검증</span>
+      <p>6-way 동시 요청 × 3회 — 매번 <code>[202, 409, 409, 409, 409, 409]</code>.</p>
+    </div>
+    <div class="callout trap">
+      <span class="label">인덱스가 만든 새 위험</span>
+      <p>
+        서버가 죽으면 <code>BackgroundTask</code>도 사라지는데, 남은
+        <code>processing</code> 행이 인덱스를 영원히 점유해 그 강의의 재분석이 막힙니다.
+        기동 시 중단된 작업을 <code>error</code>로 정리하는 복구 로직을 함께 넣었습니다.
+      </p>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────────────────────── -->
+  <section class="item" id="s10">
+    <div class="item-head">
+      <span class="item-num">10</span>
+      <h2>유령 강의 데이터 · 저장소 정리</h2>
+      <span class="commit">11b0186</span>
+      <span class="commit">5fbe23d</span>
+    </div>
+
+    <p>점검에서 드러난 유령 강의 7건과 그에 딸린 데이터를 정리했습니다. DB는 사전에 백업했습니다.</p>
+
+    <div class="table-scroll">
+      <table>
+        <tr><th>대상</th><th>건수</th></tr>
+        <tr><td>강의 행</td><td>7</td></tr>
+        <tr><td>채팅 메시지</td><td>31</td></tr>
+        <tr><td>난이도 평가</td><td>41</td></tr>
+        <tr><td>키워드</td><td>54</td></tr>
+        <tr><td>진도 / 재생이벤트 / 퀴즈 / 설정</td><td>5 / 5 / 2 / 1</td></tr>
+        <tr><td>CQI 보고서</td><td>10</td></tr>
+        <tr><td>저장소에 남아 있던 강의 파일</td><td>138</td></tr>
+      </table>
+    </div>
+
+    <p>
+      더불어 기존 강의 <code>lecture.json</code>에 슬라이드 제목을 소급 보강했습니다
+      (6번 수정이 예전 강의에도 효력을 갖도록). <code>vision/</code>에서 제목만 읽어 채웠고
+      다른 필드는 건드리지 않았습니다.
+    </p>
+  </section>
+
+  <!-- ─────────────────────────────────────────────── -->
+  <section class="item" id="verify">
+    <div class="item-head">
+      <span class="item-num">✓</span>
+      <h2>검증 방법</h2>
+    </div>
+
+    <p>"고쳤다"고 말하려면 <b>고치기 전에 실제로 깨지는 것</b>을 먼저 보여야 합니다. 그 순서로 진행했습니다.</p>
+
+    <ol>
+      <li><b>교차 서비스 감사</b> — 강의별로 createLecture의 lecture.json · playLecture DB ·
+          analytics 집계의 장수/세그먼트 수를 대조. 여기서 유령 강의 7건이 드러났습니다.</li>
+      <li><b>실행 프로브</b> — 돌아가는 서버에 실제 HTTP 요청을 보내 각 오류를 재현.
+          범위 밖 slide_idx, 잘못된 event_type, 동시 분석, 파일명 경로 주입 등.</li>
+      <li><b>브라우저 테스트</b> — Playwright로 플레이어 렌더·강조·폴링 타이밍과
+          포털 로그인·과목 표시를 실제 브라우저에서 확인.</li>
+      <li><b>회귀 테스트</b> — 수정 후 22개 항목을 한 번에 돌려 전부 통과 확인.</li>
+      <li><b>기존 기능 재확인</b> — AI 채팅이 이번 수정으로 깨지지 않았는지 종단 테스트.</li>
+    </ol>
+
+    <div class="callout result">
+      <span class="label">테스트 데이터 처리</span>
+      <p>
+        검증 과정에서 만든 계정 · 메시지 · 보고서는 전부 삭제하고 최종 DB 상태를 직접 확인했습니다.
+        실제 수강 데이터는 검증 전후가 동일합니다.
+      </p>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────────────────────── -->
+  <section class="item" id="next">
+    <div class="item-head">
+      <span class="item-num">→</span>
+      <h2>남은 과제</h2>
+    </div>
+    <ul>
+      <li>
+        <b>강의 산출물의 저장소 정책</b> — 미추적 강의 5건이 남아 있습니다.
+        그중 하나는 mp3 포함 12MB라, git에 담을지 별도 저장소로 뺄지 결정이 필요합니다.
+      </li>
+      <li>
+        <b>포털 토큰이 프로세스 메모리에 있음</b> — 서버를 재시작하면 재로그인해야 합니다.
+        단일 운영자 환경에서는 문제없지만, 다중 워커로 가면 공유 저장소가 필요합니다.
+      </li>
+      <li>
+        <b>실사 이미지</b> — 다이어그램은 SVG 개념도로 해결했지만, 사진 같은 이미지가 필요하면
+        이미지 생성/검색 API 연동을 따로 검토해야 합니다.
+      </li>
+      <li>
+        <b>퀴즈·시험 연동 확장</b> — 체크포인트 퀴즈는 붙었고, 시험 결과 연동은 미구현입니다.
+      </li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>
+      커밋 범위 <code>251190b … 5fbe23d</code> ·
+      저장소 <a href="https://github.com/jeonggunlee/TeachingFlow2">jeonggunlee/TeachingFlow2</a>
+    </p>
+    <p><a href="index.html">← 작업 일지 목차</a></p>
+  </footer>
+
+</div>
+</body>
+</html>
