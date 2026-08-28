@@ -21,6 +21,7 @@ web/
     ├── scripts.js            # 스크립트 편집 + 모달 드래그 + TTS SSE
     ├── player.js             # 메인 컨트롤러, lectureId 모듈 레벨 선언, 편집·내보내기 링크
     ├── slide-stage.js        # 라이브 DOM 슬라이드 렌더 + data-ref 강조 (형광펜·밑줄·체크)
+    │                         #  + figure 다이어그램 viewBox 자동 맞춤(_fitFigures)
     ├── overlay.js            # Canvas 강조 (레거시 PNG 강의 전용)
     └── subtitle.js           # 자막 동기화 모듈
 ```

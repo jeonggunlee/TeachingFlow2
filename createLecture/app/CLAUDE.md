@@ -21,6 +21,7 @@ app/
 │   ├── slide_diagrams.py     # SVG 다이어그램 (venn·flow·layers·cycle·figure)
 │   ├── segment_writer.py     # 아웃라인 → 요소 id 기반 내레이션 (좌표 추측 없음)
 │   ├── cqi_adapter.py        # Claude API 기반 CQI 스크립트 개선
+│   ├── tts_text.py           # 수식·기호 → 낭독형 (display/spoken 분리)
 │   ├── tts_synthesizer.py    # Edge TTS + SentenceBoundary 어절 분배
 │   └── lecture_builder.py    # lecture.json 조립
 └── utils/
@@ -152,6 +153,15 @@ async def render_outline(outline, lecture_dir, *, design=None, ...) -> list[Path
 **내레이션이 그림의 특정 부분만 강조**할 수 있다 (예: 신경망에서 은닉층만).
 
 - 색·선은 CSS 클래스(`dg-*`)로 지정 → `design.json` 토큰을 따르므로 진화해도 디자인 유지
+- 작도 규칙은 `design_spec.DIAGRAM_RULES` **한 곳**에 있고 `rules_prompt()`가 주입한다.
+  최초 생성(`slide_renderer._outline`)과 CQI 진화(`cqi_evolver.evolve_outline`) 모두
+  같은 함수를 쓰므로 **어느 경로로 만들어도 같은 규칙이 적용된다**
+- **그림은 크게 그린다.** `.dg-wrap`은 `flex-direction: column` — figure 레이아웃만
+  그림과 캡션 두 요소를 담기 때문에, row로 두면 둘이 나란히 놓여 그림이
+  절반 이하(측정값 19~23%)로 줄어든다
+- 모델이 캔버스 한쪽에만 작게 그려 보내면 `slide-stage.js`의 `_fitFigures()`가
+  **재생 시점에 viewBox를 그림 크기에 맞춰 좁힌다** (배경 사각형은 제외).
+  좁힌 SVG는 `overflow: hidden` — 그러지 않으면 확대된 배경이 제목을 덮는다
 - `figure`는 모델이 직접 그린 SVG를 받는다. `sanitize_svg()`가 `<script>`·
   `<foreignObject>`·`<image>`·`on*` 핸들러·외부 `href`를 제거하고, 허용 태그
   목록에 없는 태그가 있으면 통째로 거부한다
@@ -248,6 +258,28 @@ async def synthesize_all(
   - Edge TTS 7.x 한국어는 WordBoundary 미제공 → SentenceBoundary 기반 분배
 - 타이밍 결과는 `slide_NNN_seg_MM.words.json`에 캐시
 - 세그먼트 완료마다 `on_progress()` 호출 → SSE progress 이벤트 발행
+
+### 수식 낭독 (`tts_text.py`)
+
+edge-tts 한국어 음성은 **아래첨자·위첨자·`=`·`→`·`…`를 소리 없이 통째로 건너뛴다**(실측 확인).
+`h₂ = f(W₂h₁ + b₂)`의 발음 길이가 `h = f(Wh + b)`와 같아, 첨자와 등호가 사라진 채 읽혔다.
+괄호는 반대로 "괄호 열고 … 괄호 닫고"로 낭독해 `역전파(Backpropagation)`가 장황해졌다.
+
+그래서 **화면 문장(display)과 낭독 문장(spoken)을 분리**한다.
+
+```
+display  두 번째 은닉층은 h₂ = f(W₂h₁ + b₂)입니다.
+spoken   두 번째 은닉층은 h2 이퀄 f W2 h1 더하기 b2 입니다.
+```
+
+- `prepare(text) → (display 어절, 어절별 spoken 어절, spoken 문장)`
+- TTS에는 spoken을 보내고, `_regroup()`이 타이밍을 display 어절 단위로 되접는다
+  → **자막에는 원본 첨자가 그대로 보인다**
+- 어절 수가 어긋나면 `_spread()`가 발음 글자 수 비례로 분배 (자막 밀림 방지)
+- 낭독 방식은 `tts_text._SYMBOLS` 표 한 곳에서 바꾼다
+- **모든 합성 경로가 이 변환을 거친다** — `_synthesize()`가 유일한 edge-tts 호출 지점이다.
+  또 `_cached_words()`가 캐시된 자막 어절을 현재 스크립트와 대조해, 스크립트를 고쳤거나
+  낭독 규칙이 바뀌면 `force=False`여도 캐시를 버리고 다시 합성한다
 
 ### words 배열 구조
 

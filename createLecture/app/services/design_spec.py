@@ -59,6 +59,20 @@ LAYOUTS = [
 ]
 
 
+# 다이어그램 작도 규칙 — 최초 생성과 CQI 진화 **양쪽 프롬프트에 항상 주입**된다.
+# 여기 한 곳만 고치면 모든 슬라이드 생성 경로에 반영된다.
+DIAGRAM_RULES = """── 다이어그램 작도 규칙 (venn·flow·layers·cycle·figure 공통) ──
+- 관계(포함·순서·계층·순환)가 나오면 글머리표로 나열하지 말고 다이어그램을 쓸 것
+- figure(직접 그린 SVG)는 다음을 반드시 지킬 것:
+  · viewBox="0 0 1680 700" 좌표계를 쓸 것
+  · **캔버스를 꽉 채울 것** — 도형이 x 40~1640, y 40~660 범위에 고르게 퍼지게 하고
+    가운데에 작게 모아 그리지 말 것 (강의실 뒷자리에서도 보여야 한다)
+  · 글자는 <text>로, font-size는 최소 30, 핵심 라벨은 36~48
+  · 도형 stroke-width 3~5, 원은 반지름 70 이상, 사각형은 높이 120 이상
+  · <script>·<foreignObject>·<image>·외부 링크 금지 (시스템이 제거한다)
+  · 색은 강조색과 회색 계열만 사용할 것
+  · 도형 15개 이내로, 지나치게 복잡하게 그리지 말 것"""
+
 def _path(lecture_dir: Path) -> Path:
     return Path(lecture_dir) / DESIGN_FILE
 
@@ -119,4 +133,5 @@ def rules_prompt(design: dict) -> str:
         "구조 규칙:",
     ]
     lines += [f"- {r}" for r in d.get("layout_rules", [])]
+    lines += ["", DIAGRAM_RULES]
     return "\n".join(lines)

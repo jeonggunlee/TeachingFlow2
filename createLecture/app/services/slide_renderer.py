@@ -95,12 +95,8 @@ _SYSTEM = """당신은 대학 강의 슬라이드 디자이너입니다.
    → 반복되는 순환 과정. steps 3~5개
 
 12. {"layout":"figure","title":"...","caption":"한 줄 설명","svg":"<svg viewBox=\"0 0 1680 700\">...</svg>"}
-   → 위 형식에 맞지 않는 개념도를 직접 그릴 때. 아래 규칙 필수:
-     · viewBox="0 0 1680 700" 좌표계 사용
-     · <script>·<foreignObject>·<image>·외부 링크 금지 (제거됨)
-     · 글자는 <text>로, font-size 24~34, 도형 stroke-width 2~4
-     · 색은 강조색과 회색 계열만 사용해 슬라이드 톤을 해치지 않을 것
-     · 지나치게 복잡하게 그리지 말 것 (도형 15개 이내)
+   → 위 형식에 맞지 않는 개념도를 직접 그릴 때.
+     작도 규칙은 사용자 메시지의 '다이어그램 작도 규칙'을 그대로 따를 것 (필수)
 
 전체 규칙:
 - title 슬라이드는 반드시 정확히 1장(맨 처음)
@@ -122,11 +118,10 @@ async def _outline(prompt: str, num_slides: Optional[int],
 
     client = AsyncAnthropic(api_key=settings.anthropic_api_key)
 
-    lines = []
-    if design:
-        # 디자인 고정 규칙을 앞세워 버전 간 시각 일관성 유지
-        from app.services.design_spec import rules_prompt
-        lines += [rules_prompt(design), ""]
+    # 디자인 고정 규칙 + 다이어그램 작도 규칙은 design 유무와 무관하게 항상 주입한다.
+    # (design이 없으면 rules_prompt가 기본 디자인으로 채운다)
+    from app.services.design_spec import rules_prompt
+    lines = [rules_prompt(design), ""]
     lines += ["교수자 강의 프롬프트:", prompt.strip()]
     if num_slides and num_slides > 0:
         lines.append("")
@@ -358,11 +353,16 @@ _CSS_TMPL = """
   background: {ACCENT}; border-radius: 3px;
 }}
 .dg-wrap {{
-  flex: 1; min-height: 0; display: flex;
+  flex: 1; min-height: 0; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 14px;
+}}
+.dg {{ width: 100%; height: 100%; max-height: 100%; overflow: visible; display: block; }}
+/* figure 레이아웃만 .dg-wrap 안에 그림+캡션 두 개가 들어간다.
+   flex-direction 이 row 면 둘이 나란히 놓여 그림이 절반 이하로 줄어든다. */
+.dg-figure {{
+  flex: 1; width: 100%; min-height: 0; display: flex;
   align-items: center; justify-content: center;
 }}
-.dg {{ width: 100%; height: 100%; max-height: 100%; overflow: visible; }}
-.dg-figure {{ flex: 1; min-height: 0; display: flex; align-items: center; justify-content: center; }}
 
 /* 도형 */
 .dg-box {{ fill: {PANEL}; stroke: {PANEL_BORDER}; stroke-width: 2; }}

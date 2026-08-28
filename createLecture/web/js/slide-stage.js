@@ -141,11 +141,53 @@ const SlideStage = (() => {
       if (!res.ok) return false;
       _stage.innerHTML = await res.text();
       _wrapTargets();
+      _fitFigures();
       resize();
       return true;
     } catch (_) {
       return false;
     }
+  }
+
+  /**
+   * figure 다이어그램의 viewBox를 실제 그림 영역에 맞춘다.
+   *
+   * 모델이 1680×700 캔버스 한쪽에만 작게 그려 보내는 경우가 있는데,
+   * 그대로 두면 빈 여백까지 함께 축소돼 글자가 읽히지 않는다.
+   * 배경으로 깔린 전면 사각형(캔버스의 95% 이상)은 빼고 나머지 요소의
+   * 경계만 합쳐서, 그림이 차지하는 만큼만 남긴다.
+   * 이미 캔버스를 잘 채우고 있으면(80% 이상) 손대지 않는다.
+   */
+  function _fitFigures() {
+    _stage.querySelectorAll(".dg-figure > svg.dg").forEach((svg) => {
+      if (svg.dataset.fitted) return;
+      svg.dataset.fitted = "1";
+      const vb = svg.viewBox.baseVal;
+      if (!vb || !vb.width || !vb.height) return;
+      const area = vb.width * vb.height;
+
+      let x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity;
+      for (const el of svg.children) {
+        let b;
+        try { b = el.getBBox(); } catch (_) { continue; }
+        if (!b || b.width <= 0 || b.height <= 0) continue;
+        if (b.width * b.height > area * 0.95) continue;   // 배경 사각형
+        x0 = Math.min(x0, b.x);              y0 = Math.min(y0, b.y);
+        x1 = Math.max(x1, b.x + b.width);    y1 = Math.max(y1, b.y + b.height);
+      }
+      if (!isFinite(x0) || x1 <= x0 || y1 <= y0) return;
+      if ((x1 - x0) * (y1 - y0) > area * 0.8) return;     // 이미 충분히 큼
+
+      const pad = Math.max(vb.width, vb.height) * 0.025;
+      const nx = Math.max(vb.x, x0 - pad);
+      const ny = Math.max(vb.y, y0 - pad);
+      const nw = Math.min(vb.width  - (nx - vb.x), x1 - x0 + pad * 2);
+      const nh = Math.min(vb.height - (ny - vb.y), y1 - y0 + pad * 2);
+      svg.setAttribute("viewBox", `${nx.toFixed(1)} ${ny.toFixed(1)} ${nw.toFixed(1)} ${nh.toFixed(1)}`);
+      // .dg 는 overflow:visible 이라, viewBox를 좁히면 배경 사각형이 확대되어
+      // SVG 밖으로 번져 제목까지 덮는다. 다시 그린 그림만 잘라 둔다.
+      svg.style.overflow = "hidden";
+    });
   }
 
   /**

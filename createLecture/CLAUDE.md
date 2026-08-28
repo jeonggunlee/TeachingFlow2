@@ -80,6 +80,9 @@ Edge TTS로 음성을 만든 뒤, 웹 브라우저에서 음성 재생 시 해�
 - **Analyzer** (`vision_analyzer.py`): Claude Vision 호출, 슬라이드별 병렬 처리
 - **CQI Adapter** (`cqi_adapter.py`): Claude API로 수강생 피드백 반영 스크립트 개선
 - **Synthesizer** (`tts_synthesizer.py`): Edge TTS 호출 / SentenceBoundary 어절 분배
+- **TTS 텍스트 정규화** (`tts_text.py`): 수식 기호를 낭독형으로 — 첨자·등호·화살표는
+  edge-tts가 무음 처리하므로 `h₂ = f(W₂h₁ + b₂)` → `h2 이퀄 f W2 h1 더하기 b2`로 바꿔 읽히게 하고,
+  자막에는 원본을 그대로 남긴다
 - **SSE** (`utils/sse.py` + `api/jobs.py`): asyncio.Queue 기반 실시간 진행 스트림
 - **Library** (`lectures.py`): 완료 강의 목록 API (course/week 필터 지원)
 
