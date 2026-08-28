@@ -4,6 +4,9 @@
 
 const AUTH_KEY = 'portal_admin_auth';   // 값 = 서버가 발급한 세션 토큰
 
+// 401로 중단된 모달 id — 로그인 뒤 입력값을 살린 채 그대로 되살린다
+let _interruptedModal = null;
+
 function authToken() {
   const t = localStorage.getItem(AUTH_KEY);
   // 예전 버전은 플래그 '1'만 저장했다 — 토큰이 아니므로 로그인을 다시 받는다.
@@ -41,6 +44,20 @@ function closeLoginModal() {
   document.getElementById('login-modal').hidden = true;
 }
 
+/**
+ * 401을 만났을 때 호출한다.
+ * 과목·주차 모달이 열려 있으면 로그인 창이 그 **뒤에** 뜨면서 보이지 않는다.
+ * 실제로 이것 때문에 "저장이 안 된다"는 상태에 갇혔다 — 먼저 감추고 띄운다.
+ */
+function requireLogin() {
+  _interruptedModal = null;
+  for (const id of ['course-modal', 'week-modal']) {
+    const el = document.getElementById(id);
+    if (el && !el.hidden) { el.hidden = true; _interruptedModal = id; }
+  }
+  openLoginModal();
+}
+
 async function doLogin() {
   const pw  = document.getElementById('login-password').value;
   const btn = document.getElementById('btn-do-login');
@@ -58,6 +75,11 @@ async function doLogin() {
       closeLoginModal();
       showPortal();
       await initPortalContent();
+      if (_interruptedModal) {
+        // 열기 함수는 입력을 비우므로, 적어 둔 값을 살리려면 그대로 다시 보인다
+        document.getElementById(_interruptedModal).hidden = false;
+        _interruptedModal = null;
+      }
     } else {
       document.getElementById('login-error').textContent = '비밀번호가 틀렸습니다.';
     }
@@ -117,8 +139,8 @@ async function api(method, url, body) {
   if (r.status === 401) {
     localStorage.removeItem(AUTH_KEY);
     showPromo();
-    openLoginModal();
-    throw new Error('관리자 로그인이 필요합니다.');
+    requireLogin();
+    throw new Error('로그인이 풀렸습니다. 다시 로그인하면 입력하던 내용이 그대로 남아 있습니다.');
   }
   if (r.status === 204) return null;
   const data = await r.json();

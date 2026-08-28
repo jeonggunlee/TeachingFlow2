@@ -1,4 +1,7 @@
+import hashlib
+import hmac
 import secrets
+import time
 from urllib.parse import urlparse
 
 from fastapi import APIRouter, Depends, Header, HTTPException, Request
@@ -41,7 +44,38 @@ class LoginIn(BaseModel):
 # ── Auth ───────────────────────────────────────────────────────────────────
 
 # 발급된 관리자 세션 토큰 (포털은 단일 프로세스 — 재시작하면 재로그인 필요).
-_SESSIONS: set = set()
+_TOKEN_TTL = 14 * 24 * 3600      # 2주
+_REVOKED: set = set()            # 로그아웃 즉시 무효화 (재시작하면 비워진다)
+
+
+def _sign(payload: str) -> str:
+    from ..config import PLAYLECTURE_ADMIN_PASSWORD
+    key = f"portal-admin:{PLAYLECTURE_ADMIN_PASSWORD}".encode()
+    return hmac.new(key, payload.encode(), hashlib.sha256).hexdigest()
+
+
+def _issue_token() -> str:
+    payload = f"{int(time.time()) + _TOKEN_TTL}.{secrets.token_urlsafe(12)}"
+    return f"{payload}.{_sign(payload)}"
+
+
+def _valid_token(token: str) -> bool:
+    """서버가 서명했고 아직 만료되지 않은 토큰인지 확인한다.
+
+    예전에는 발급한 토큰을 메모리 집합에 담아 두어, 포털을 재시작할 때마다
+    교수자가 조용히 로그아웃됐다(과목 추가가 401로 막히는 원인이었다).
+    서명 방식이라 재시작해도 유지되고, 관리자 비밀번호를 바꾸면
+    기존 토큰이 한 번에 무효가 된다.
+    """
+    if not token or token in _REVOKED:
+        return False
+    exp, _, rest = token.partition(".")
+    nonce, _, sig = rest.partition(".")
+    if not sig or not exp.isdigit():
+        return False
+    if int(exp) < time.time():
+        return False
+    return hmac.compare_digest(sig, _sign(f"{exp}.{nonce}"))
 
 
 def require_admin(authorization: str = Header(None)) -> str:
@@ -53,7 +87,7 @@ def require_admin(authorization: str = Header(None)) -> str:
     token = None
     if authorization and authorization.startswith("Bearer "):
         token = authorization[7:]
-    if not token or token not in _SESSIONS:
+    if not _valid_token(token):
         raise HTTPException(401, "관리자 로그인이 필요합니다.",
                             headers={"WWW-Authenticate": "Bearer"})
     return token
@@ -64,15 +98,13 @@ async def admin_login(body: LoginIn):
     from ..config import PLAYLECTURE_ADMIN_PASSWORD
     if not secrets.compare_digest(body.password, PLAYLECTURE_ADMIN_PASSWORD):
         raise HTTPException(status_code=401, detail="비밀번호가 틀렸습니다")
-    token = secrets.token_urlsafe(32)
-    _SESSIONS.add(token)
-    return {"ok": True, "token": token}
+    return {"ok": True, "token": _issue_token()}
 
 
 @router.post("/api/auth/logout")
 async def admin_logout(authorization: str = Header(None)):
     if authorization and authorization.startswith("Bearer "):
-        _SESSIONS.discard(authorization[7:])
+        _REVOKED.add(authorization[7:])
     return {"ok": True}
 
 
