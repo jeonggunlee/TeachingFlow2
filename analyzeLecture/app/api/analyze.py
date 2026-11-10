@@ -17,6 +17,7 @@ from ..config import (
     PLAYLECTURE_ADMIN_PASSWORD,
     PLAYLECTURE_URL,
 )
+from ..auth import require_admin
 from ..database import get_db
 from ..models import CQIReport
 
@@ -223,11 +224,19 @@ async def run_analysis(report_id: str):
             analytics = await fetch_analytics(report.lecture_id)
             prompt    = _build_prompt(analytics)
 
+            # 슬라이드 20장 이상이면 응답 JSON 이 4096 토큰을 넘어 중간에 잘렸다
+            # ("Unterminated string" 파싱 오류, 2026-11-10 실측 — 질문 200여 건이 쌓인 주차).
+            # 한도를 넉넉히 두고, 그래도 잘리면 파싱 오류 대신 원인을 그대로 남긴다.
             message = await _anthropic.messages.create(
                 model=CLAUDE_MODEL,
-                max_tokens=4096,
+                max_tokens=16384,
                 messages=[{"role": "user", "content": prompt}],
             )
+            if message.stop_reason == "max_tokens":
+                raise RuntimeError(
+                    "Claude 응답이 max_tokens(16384)에서 잘렸습니다 — 슬라이드 수가 너무 많거나 "
+                    "지시문이 길어졌습니다. 슬라이드를 나눠 분석하도록 _build_prompt/run_analysis 를 확장하세요."
+                )
             raw = message.content[0].text.strip()
 
             # JSON 블록만 추출
@@ -328,6 +337,7 @@ async def start_analysis(
     lecture_id: str,
     background: BackgroundTasks,
     db: AsyncSession = Depends(get_db),
+    _: str = Depends(require_admin),
 ):
     """분석 작업 시작 (비동기 백그라운드)."""
     # 이미 대기·진행 중인 작업 중복 방지.
@@ -436,7 +446,8 @@ async def get_report(report_id: str, db: AsyncSession = Depends(get_db)):
 
 
 @router.delete("/api/reports/{report_id}", status_code=204)
-async def delete_report(report_id: str, db: AsyncSession = Depends(get_db)):
+async def delete_report(report_id: str, db: AsyncSession = Depends(get_db),
+                        _: str = Depends(require_admin)):
     report = await db.get(CQIReport, report_id)
     if not report:
         raise HTTPException(404, "보고서를 찾을 수 없습니다.")
@@ -498,6 +509,7 @@ async def start_week_analysis(
     week: str,
     background: BackgroundTasks,
     db: AsyncSession = Depends(get_db),
+    _: str = Depends(require_admin),
 ):
     """course+week에 속한 모든 강의에 대해 분석 시작."""
     try:
