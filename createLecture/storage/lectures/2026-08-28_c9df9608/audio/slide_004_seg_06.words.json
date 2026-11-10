@@ -1,0 +1,112 @@
+[
+  {
+    "text": "MLP에서",
+    "offset_ms": 50.0,
+    "duration_ms": 819.4
+  },
+  {
+    "text": "핵심적인",
+    "offset_ms": 869.4,
+    "duration_ms": 655.6
+  },
+  {
+    "text": "변화는",
+    "offset_ms": 1525.0,
+    "duration_ms": 491.7
+  },
+  {
+    "text": "입력층과",
+    "offset_ms": 2016.7,
+    "duration_ms": 655.6
+  },
+  {
+    "text": "출력층",
+    "offset_ms": 2672.2,
+    "duration_ms": 491.7
+  },
+  {
+    "text": "사이에",
+    "offset_ms": 3163.9,
+    "duration_ms": 491.7
+  },
+  {
+    "text": "은닉층(Hidden",
+    "offset_ms": 3655.6,
+    "duration_ms": 1475.0
+  },
+  {
+    "text": "Layer)을",
+    "offset_ms": 5130.6,
+    "duration_ms": 983.3
+  },
+  {
+    "text": "도입한",
+    "offset_ms": 6113.9,
+    "duration_ms": 491.7
+  },
+  {
+    "text": "것입니다.",
+    "offset_ms": 6605.6,
+    "duration_ms": 819.4
+  },
+  {
+    "text": "은닉층이",
+    "offset_ms": 7425.0,
+    "duration_ms": 765.0
+  },
+  {
+    "text": "추가됨으로써",
+    "offset_ms": 8190.0,
+    "duration_ms": 1147.5
+  },
+  {
+    "text": "모델은",
+    "offset_ms": 9337.5,
+    "duration_ms": 573.8
+  },
+  {
+    "text": "데이터의",
+    "offset_ms": 9911.2,
+    "duration_ms": 765.0
+  },
+  {
+    "text": "훨씬",
+    "offset_ms": 10676.2,
+    "duration_ms": 382.5
+  },
+  {
+    "text": "복잡하고",
+    "offset_ms": 11058.8,
+    "duration_ms": 765.0
+  },
+  {
+    "text": "추상적인",
+    "offset_ms": 11823.8,
+    "duration_ms": 765.0
+  },
+  {
+    "text": "패턴을",
+    "offset_ms": 12588.8,
+    "duration_ms": 573.8
+  },
+  {
+    "text": "표현할",
+    "offset_ms": 13162.5,
+    "duration_ms": 573.8
+  },
+  {
+    "text": "수",
+    "offset_ms": 13736.2,
+    "duration_ms": 191.2
+  },
+  {
+    "text": "있게",
+    "offset_ms": 13927.5,
+    "duration_ms": 382.5
+  },
+  {
+    "text": "됩니다.",
+    "offset_ms": 14310.0,
+    "duration_ms": 765.0
+  }
+]

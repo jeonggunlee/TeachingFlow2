@@ -1,0 +1,41 @@
+{
+  "slide_index": 20,
+  "title": "딥러닝 학습의 전체 흐름",
+  "segments": [
+    {
+      "id": "seg_1",
+      "ref": "f1",
+      "keyword": "입력 (Input)",
+      "script": "딥러닝 학습은 먼저 데이터 x를 네트워크에 투입하는 것으로 시작합니다. 이 입력 데이터는 이미지, 텍스트, 수치 등 다양한 형태가 될 수 있으며, 이후 모든 연산의 출발점이 됩니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_2",
+      "ref": "f2",
+      "keyword": "순전파",
+      "script": "입력된 데이터는 순전파 과정을 거쳐 각 Layer를 통과하며 변환됩니다. 앞 슬라이드에서 살펴본 가중합과 활성화 함수가 반복적으로 적용되어 최종적으로 예측값 ŷ이 생성됩니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_3",
+      "ref": "f3",
+      "keyword": "Loss 계산",
+      "script": "예측값 ŷ이 나왔다면, 이를 실제 정답 y와 비교하여 Loss L(y, ŷ)를 산출합니다. 이 Loss 값이 클수록 모델의 예측이 정답과 멀리 떨어져 있다는 것을 의미하며, 학습의 목표는 이 값을 줄이는 것입니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_4",
+      "ref": "f4",
+      "keyword": "역전파",
+      "script": "Loss가 계산되면 역전파 알고리즘을 통해 출력층에서 입력층 방향으로 거슬러 올라가며 각 Weight의 Gradient를 계산합니다. 이 과정에서 연쇄 법칙(Chain Rule)이 적용되어 각 가중치가 Loss에 얼마나 기여했는지를 파악합니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_5",
+      "ref": "f5",
+      "keyword": "Weight 갱신",
+      "script": "마지막으로 계산된 Gradient를 바탕으로 w ← w − η·∇L 공식에 따라 Weight를 갱신합니다. 여기서 η는 학습률(Learning Rate)로, 한 번에 얼마나 크게 가중치를 수정할지를 결정하며, 이 다섯 단계가 수없이 반복되면서 모델이 점점 더 정확해집니다.",
+      "effect": "highlighter"
+    }
+  ]
+}

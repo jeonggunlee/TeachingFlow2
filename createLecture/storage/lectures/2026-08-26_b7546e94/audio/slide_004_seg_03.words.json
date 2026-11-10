@@ -1,0 +1,167 @@
+[
+  {
+    "text": "이",
+    "offset_ms": 50.0,
+    "duration_ms": 205.4
+  },
+  {
+    "text": "한계를",
+    "offset_ms": 255.4,
+    "duration_ms": 616.1
+  },
+  {
+    "text": "극복하기",
+    "offset_ms": 871.4,
+    "duration_ms": 821.4
+  },
+  {
+    "text": "위해",
+    "offset_ms": 1692.9,
+    "duration_ms": 410.7
+  },
+  {
+    "text": "은닉층을",
+    "offset_ms": 2103.6,
+    "duration_ms": 821.4
+  },
+  {
+    "text": "추가한",
+    "offset_ms": 2925.0,
+    "duration_ms": 616.1
+  },
+  {
+    "text": "다층",
+    "offset_ms": 3541.1,
+    "duration_ms": 410.7
+  },
+  {
+    "text": "신경망,",
+    "offset_ms": 3951.8,
+    "duration_ms": 821.4
+  },
+  {
+    "text": "즉",
+    "offset_ms": 4773.2,
+    "duration_ms": 205.4
+  },
+  {
+    "text": "MLP가",
+    "offset_ms": 4978.6,
+    "duration_ms": 821.4
+  },
+  {
+    "text": "등장했습니다.",
+    "offset_ms": 5800.0,
+    "duration_ms": 1437.5
+  },
+  {
+    "text": "특히",
+    "offset_ms": 7237.5,
+    "duration_ms": 316.5
+  },
+  {
+    "text": "역전파(Backpropagation)",
+    "offset_ms": 7554.0,
+    "duration_ms": 2848.7
+  },
+  {
+    "text": "알고리즘이",
+    "offset_ms": 10402.7,
+    "duration_ms": 791.3
+  },
+  {
+    "text": "도입되면서",
+    "offset_ms": 11194.0,
+    "duration_ms": 791.3
+  },
+  {
+    "text": "다층",
+    "offset_ms": 11985.3,
+    "duration_ms": 316.5
+  },
+  {
+    "text": "구조의",
+    "offset_ms": 12301.8,
+    "duration_ms": 474.8
+  },
+  {
+    "text": "가중치를",
+    "offset_ms": 12776.6,
+    "duration_ms": 633.0
+  },
+  {
+    "text": "효율적으로",
+    "offset_ms": 13409.6,
+    "duration_ms": 791.3
+  },
+  {
+    "text": "학습할",
+    "offset_ms": 14200.9,
+    "duration_ms": 474.8
+  },
+  {
+    "text": "수",
+    "offset_ms": 14675.7,
+    "duration_ms": 158.3
+  },
+  {
+    "text": "있게",
+    "offset_ms": 14833.9,
+    "duration_ms": 316.5
+  },
+  {
+    "text": "되었습니다.",
+    "offset_ms": 15150.4,
+    "duration_ms": 949.6
+  },
+  {
+    "text": "이",
+    "offset_ms": 16100.0,
+    "duration_ms": 206.8
+  },
+  {
+    "text": "시기는",
+    "offset_ms": 16306.8,
+    "duration_ms": 620.3
+  },
+  {
+    "text": "신경망",
+    "offset_ms": 16927.1,
+    "duration_ms": 620.3
+  },
+  {
+    "text": "연구의",
+    "offset_ms": 17547.4,
+    "duration_ms": 620.3
+  },
+  {
+    "text": "첫",
+    "offset_ms": 18167.7,
+    "duration_ms": 206.8
+  },
+  {
+    "text": "번째",
+    "offset_ms": 18374.5,
+    "duration_ms": 413.5
+  },
+  {
+    "text": "부흥기라",
+    "offset_ms": 18788.0,
+    "duration_ms": 827.1
+  },
+  {
+    "text": "할",
+    "offset_ms": 19615.1,
+    "duration_ms": 206.8
+  },
+  {
+    "text": "수",
+    "offset_ms": 19821.9,
+    "duration_ms": 206.8
+  },
+  {
+    "text": "있습니다.",
+    "offset_ms": 20028.6,
+    "duration_ms": 1033.9
+  }
+]

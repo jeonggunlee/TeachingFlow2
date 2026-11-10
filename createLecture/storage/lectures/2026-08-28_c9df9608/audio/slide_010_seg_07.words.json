@@ -1,0 +1,107 @@
+[
+  {
+    "text": "대표적인",
+    "offset_ms": 50.0,
+    "duration_ms": 805.3
+  },
+  {
+    "text": "예로",
+    "offset_ms": 855.3,
+    "duration_ms": 402.6
+  },
+  {
+    "text": "이미지",
+    "offset_ms": 1257.9,
+    "duration_ms": 603.9
+  },
+  {
+    "text": "인식을",
+    "offset_ms": 1861.8,
+    "duration_ms": 603.9
+  },
+  {
+    "text": "들",
+    "offset_ms": 2465.8,
+    "duration_ms": 201.3
+  },
+  {
+    "text": "수",
+    "offset_ms": 2667.1,
+    "duration_ms": 201.3
+  },
+  {
+    "text": "있습니다.",
+    "offset_ms": 2868.4,
+    "duration_ms": 1006.6
+  },
+  {
+    "text": "딥러닝은",
+    "offset_ms": 3875.0,
+    "duration_ms": 628.6
+  },
+  {
+    "text": "픽셀(Pixel)",
+    "offset_ms": 4503.6,
+    "duration_ms": 1100.0
+  },
+  {
+    "text": "수준에서",
+    "offset_ms": 5603.6,
+    "duration_ms": 628.6
+  },
+  {
+    "text": "시작해",
+    "offset_ms": 6232.1,
+    "duration_ms": 471.4
+  },
+  {
+    "text": "엣지(Edge),",
+    "offset_ms": 6703.6,
+    "duration_ms": 1100.0
+  },
+  {
+    "text": "형태(Shape),",
+    "offset_ms": 7803.6,
+    "duration_ms": 1257.2
+  },
+  {
+    "text": "최종적으로",
+    "offset_ms": 9060.7,
+    "duration_ms": 785.7
+  },
+  {
+    "text": "객체(Object)까지",
+    "offset_ms": 9846.4,
+    "duration_ms": 1571.5
+  },
+  {
+    "text": "단계적으로",
+    "offset_ms": 11417.9,
+    "duration_ms": 785.7
+  },
+  {
+    "text": "추상화된",
+    "offset_ms": 12203.6,
+    "duration_ms": 628.6
+  },
+  {
+    "text": "표현을",
+    "offset_ms": 12832.1,
+    "duration_ms": 471.4
+  },
+  {
+    "text": "스스로",
+    "offset_ms": 13303.6,
+    "duration_ms": 471.4
+  },
+  {
+    "text": "만들어",
+    "offset_ms": 13775.0,
+    "duration_ms": 471.4
+  },
+  {
+    "text": "냅니다.",
+    "offset_ms": 14246.4,
+    "duration_ms": 628.6
+  }
+]

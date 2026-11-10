@@ -1,0 +1,54 @@
+{
+  "slide_index": 7,
+  "title": "활성화 함수와 ReLU",
+  "segments": [
+    {
+      "id": "seg_1",
+      "script": "활성화 함수는 노드의 출력에 비선형성을 부여하는 역할을 합니다. 이를 통해 신경망이 단순한 선형 관계를 넘어 복잡한 패턴을 학습할 수 있게 됩니다.",
+      "keyword": "비선형성",
+      "highlight": {
+        "x_pct": 5,
+        "y_pct": 18,
+        "w_pct": 85,
+        "h_pct": 10
+      },
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_2",
+      "script": "ReLU는 Rectified Linear Unit의 약자로, 현재 가장 널리 사용되는 활성화 함수입니다. 수식은 f(x) = max(0, x)로, 음수 입력은 0으로 처리하고 양수 입력은 그대로 출력합니다.",
+      "keyword": "ReLU",
+      "highlight": {
+        "x_pct": 5,
+        "y_pct": 28,
+        "w_pct": 85,
+        "h_pct": 20
+      },
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_3",
+      "script": "직관적으로 ReLU는 신호가 충분히 강할 때만 다음 층으로 전달합니다. 불필요한 음수 신호를 차단함으로써 네트워크의 효율성을 높이는 역할을 합니다.",
+      "keyword": "음수 신호 차단",
+      "highlight": {
+        "x_pct": 5,
+        "y_pct": 48,
+        "w_pct": 85,
+        "h_pct": 10
+      },
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_4",
+      "script": "ReLU의 가장 큰 장점은 계산이 단순하다는 점과, 기울기 소실 문제를 완화한다는 점입니다. 이 덕분에 깊은 신경망 학습에 매우 유리한 함수로 평가받고 있습니다.",
+      "keyword": "기울기 소실",
+      "highlight": {
+        "x_pct": 5,
+        "y_pct": 58,
+        "w_pct": 85,
+        "h_pct": 10
+      },
+      "effect": "highlighter"
+    }
+  ]
+}

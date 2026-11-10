@@ -1,0 +1,27 @@
+{
+  "slide_index": 6,
+  "title": "2012년",
+  "segments": [
+    {
+      "id": "seg_1",
+      "ref": "val",
+      "keyword": "2012년",
+      "script": "자, 이제 인공신경망 발전의 흐름에서 결정적인 전환점이 된 해를 짚어보겠습니다. 바로 2012년입니다. 이 한 해가 딥러닝의 역사를 완전히 바꿔놓았다고 해도 과언이 아닙니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_2",
+      "ref": "lbl",
+      "keyword": "딥러닝 부흥의 원년",
+      "script": "2012년은 흔히 '딥러닝 부흥의 원년'으로 불립니다. 수십 년간 이론적으로만 논의되던 딥러닝이 실제 세계에서 그 위력을 증명한 해이기 때문입니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_3",
+      "ref": "cap",
+      "keyword": "AlexNet, ImageNet",
+      "script": "그 주인공은 바로 AlexNet입니다. AlexNet은 ImageNet 대규모 이미지 인식 대회에서 기존 방법들을 압도적인 차이로 제치며 1위를 차지했습니다. 이 사건을 계기로 학계와 산업계 모두 딥러닝에 폭발적인 관심을 갖기 시작했고, 본격적인 딥러닝 시대의 막이 올랐습니다.",
+      "effect": "highlighter"
+    }
+  ]
+}

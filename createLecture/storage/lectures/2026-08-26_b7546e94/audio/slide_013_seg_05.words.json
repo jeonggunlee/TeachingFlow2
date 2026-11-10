@@ -1,0 +1,82 @@
+[
+  {
+    "text": "축삭돌기인",
+    "offset_ms": 50.0,
+    "duration_ms": 941.2
+  },
+  {
+    "text": "Axon은",
+    "offset_ms": 991.2,
+    "duration_ms": 941.2
+  },
+  {
+    "text": "처리된",
+    "offset_ms": 1932.4,
+    "duration_ms": 564.7
+  },
+  {
+    "text": "신호를",
+    "offset_ms": 2497.1,
+    "duration_ms": 564.7
+  },
+  {
+    "text": "다음",
+    "offset_ms": 3061.8,
+    "duration_ms": 376.5
+  },
+  {
+    "text": "뉴런으로",
+    "offset_ms": 3438.2,
+    "duration_ms": 752.9
+  },
+  {
+    "text": "내보내는",
+    "offset_ms": 4191.2,
+    "duration_ms": 752.9
+  },
+  {
+    "text": "출력",
+    "offset_ms": 4944.1,
+    "duration_ms": 376.5
+  },
+  {
+    "text": "경로입니다.",
+    "offset_ms": 5320.6,
+    "duration_ms": 1129.4
+  },
+  {
+    "text": "이처럼",
+    "offset_ms": 6450.0,
+    "duration_ms": 612.5
+  },
+  {
+    "text": "수신→조절→통합→출력의",
+    "offset_ms": 7062.5,
+    "duration_ms": 3062.3
+  },
+  {
+    "text": "흐름이",
+    "offset_ms": 10125.0,
+    "duration_ms": 612.5
+  },
+  {
+    "text": "생물학적",
+    "offset_ms": 10737.5,
+    "duration_ms": 816.7
+  },
+  {
+    "text": "뉴런의",
+    "offset_ms": 11554.2,
+    "duration_ms": 612.5
+  },
+  {
+    "text": "작동",
+    "offset_ms": 12166.7,
+    "duration_ms": 408.3
+  },
+  {
+    "text": "방식입니다.",
+    "offset_ms": 12575.0,
+    "duration_ms": 1225.0
+  }
+]

@@ -1,0 +1,121 @@
+[
+  {
+    "layout": "title",
+    "title": "오디세이 세미나 3 : 취업 가이드",
+    "subtitle": "수업 오리엔테이션 · 이정근 교수 · 한림대학교 소프트웨어학부 · 1학점"
+  },
+  {
+    "layout": "bullets",
+    "title": "수업 개요",
+    "bullets": [
+      "3학년 학생의 취업 준비도 체크 및 목표 수립 지원",
+      "취업준비 기본 교육 + 입사지원서 작성 실습",
+      "포트폴리오(취업활동계획서·이력서·자기소개서) 기반 상담 내실화",
+      "지도교수 면담을 통한 개별 진로 상담 진행"
+    ]
+  },
+  {
+    "layout": "stat",
+    "value": "5가지",
+    "label": "Pass를 위해 반드시 완수해야 할 필수 항목 수",
+    "caption": "아래 5개 항목을 모두 완수해야 Pass 판정을 받을 수 있습니다."
+  },
+  {
+    "layout": "section",
+    "section_no": "01",
+    "title": "지도교수 면담"
+  },
+  {
+    "layout": "bullets",
+    "title": "① 지도교수 면담 1회 [필수]",
+    "bullets": [
+      "이메일로 사전 예약 후 교수 연구실 방문 면담 진행",
+      "학생정보시스템에서 본인 지도교수 확인 가능",
+      "면담 서식 문서를 프린트하여 지참",
+      "면담 후 내용 기재 + 지도교수 서명 → 사진 촬영",
+      "스마트 리드 과제란에 사진 파일 제출"
+    ]
+  },
+  {
+    "layout": "section",
+    "section_no": "02",
+    "title": "진로취업 교육 수강"
+  },
+  {
+    "layout": "flow",
+    "title": "② 진로취업 교육 — 동영상 강의 5강 수강 [필수]",
+    "steps": [
+      {
+        "name": "1강",
+        "note": "직무 중심 채용 트렌드 이해"
+      },
+      {
+        "name": "2강",
+        "note": "E-DISC 검사 활용 직무매칭"
+      },
+      {
+        "name": "3강",
+        "note": "경험리스트 작성법"
+      },
+      {
+        "name": "4강 (택 1)",
+        "note": "입사지원서 작성법 또는 학업계획서 작성법"
+      },
+      {
+        "name": "5강",
+        "note": "면접 준비 전략"
+      }
+    ]
+  },
+  {
+    "layout": "section",
+    "section_no": "03",
+    "title": "중간고사 대체 과제 · 코딩 테스트 · 학기말 설문"
+  },
+  {
+    "layout": "bullets",
+    "title": "③ 중간고사 대체 필수 과제 입력 [필수]",
+    "bullets": [
+      "제출 항목 : 취업활동계획서 + 자기소개서",
+      "제출 기한 내 미제출 시 중간고사 점수 0점 처리",
+      "평가 기준 : 성실도·작성 분량·표절 여부 종합 평가",
+      "구체적 작성 및 평가 기준은 9월 중 별도 안내 예정"
+    ]
+  },
+  {
+    "layout": "two_col",
+    "title": "④ 코딩 테스트 참여  ·  ⑤ 학기말 설문 참여 [필수]",
+    "left": {
+      "heading": "④ 코딩 테스트",
+      "points": [
+        "소프트웨어 중심대학 사업단 주관 일괄 진행",
+        "사업단이 안내하는 일정에 맞춰 참여",
+        "별도 공지 확인 후 빠짐없이 응시"
+      ]
+    },
+    "right": {
+      "heading": "⑤ 학기말 설문",
+      "points": [
+        "학기 말 지정 설문에 응답 완료",
+        "미참여 시 Pass 요건 미충족 처리",
+        "공지 일정 놓치지 않도록 주의"
+      ]
+    }
+  },
+  {
+    "layout": "figure",
+    "title": "Pass 체크리스트 — 5개 항목 모두 완수",
+    "caption": "다섯 항목을 빠짐없이 완수해야 최종 Pass 판정을 받습니다.",
+    "svg": "<svg viewBox=\"0 0 1680 700\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"arr\" markerWidth=\"10\" markerHeight=\"7\" refX=\"10\" refY=\"3.5\" orient=\"auto\"><polygon points=\"0 0,10 3.5,0 7\" fill=\"#0ea5e9\"/></marker></defs><!-- 배경 띠 --><rect x=\"40\" y=\"40\" width=\"1600\" height=\"80\" rx=\"12\" fill=\"#f0f9ff\"/><text x=\"840\" y=\"93\" text-anchor=\"middle\" font-size=\"36\" font-weight=\"700\" fill=\"#0ea5e9\">오디세이 세미나 3 — Pass 체크리스트</text><!-- 항목 1 --><rect x=\"60\" y=\"160\" width=\"290\" height=\"480\" rx=\"16\" fill=\"#ffffff\" stroke=\"#0ea5e9\" stroke-width=\"4\"/><rect x=\"60\" y=\"160\" width=\"290\" height=\"60\" rx=\"16\" fill=\"#0ea5e9\"/><rect x=\"60\" y=\"195\" width=\"290\" height=\"25\" fill=\"#0ea5e9\"/><text x=\"205\" y=\"200\" text-anchor=\"middle\" font-size=\"32\" font-weight=\"700\" fill=\"#ffffff\">①</text><text x=\"205\" y=\"238\" text-anchor=\"middle\" font-size=\"28\" font-weight=\"700\" fill=\"#ffffff\">지도교수 면담</text><text x=\"205\" y=\"300\" text-anchor=\"middle\" font-size=\"26\" fill=\"#0f172a\">이메일 사전 예약</text><text x=\"205\" y=\"340\" text-anchor=\"middle\" font-size=\"26\" fill=\"#0f172a\">면담 서식 지참</text><text x=\"205\" y=\"380\" text-anchor=\"middle\" font-size=\"26\" fill=\"#0f172a\">서명 후 사진 촬영</text><text x=\"205\" y=\"420\" text-anchor=\"middle\" font-size=\"26\" fill=\"#0f172a\">스마트 리드 제출</text><!-- 항목 2 --><rect x=\"390\" y=\"160\" width=\"290\" height=\"480\" rx=\"16\" fill=\"#ffffff\" stroke=\"#0ea5e9\" stroke-width=\"4\"/><rect x=\"390\" y=\"160\" width=\"290\" height=\"60\" rx=\"16\" fill=\"#0ea5e9\"/><rect x=\"390\" y=\"195\" width=\"290\" height=\"25\" fill=\"#0ea5e9\"/><text x=\"535\" y=\"200\" text-anchor=\"middle\" font-size=\"32\" font-weight=\"700\" fill=\"#ffffff\">②</text><text x=\"535\" y=\"238\" text-anchor=\"middle\" font-size=\"28\" font-weight=\"700\" fill=\"#ffffff\">취업 교육 수강</text><text x=\"535\" y=\"300\" text-anchor=\"middle\" font-size=\"26\" fill=\"#0f172a\">동영상 강의 5강</text><text x=\"535\" y=\"340\" text-anchor=\"middle\" font-size=\"26\" fill=\"#0f172a\">4강은 택 1 선택</text><text x=\"535\" y=\"380\" text-anchor=\"middle\" font-size=\"26\" fill=\"#0f172a\">채용트렌드·DISC·</text><text x=\"535\" y=\"415\" text-anchor=\"middle\" font-size=\"26\" fill=\"#0f172a\">경험리스트·면접</text><!-- 항목 3 --><rect x=\"720\" y=\"160\" width=\"290\" height=\"480\" rx=\"16\" fill=\"#ffffff\" stroke=\"#0ea5e9\" stroke-width=\"4\"/><rect x=\"720\" y=\"160\" width=\"290\" height=\"60\" rx=\"16\" fill=\"#0ea5e9\"/><rect x=\"720\" y=\"195\" width=\"290\" height=\"25\" fill=\"#0ea5e9\"/><text x=\"865\" y=\"200\" text-anchor=\"middle\" font-size=\"32\" font-weight=\"700\" fill=\"#ffffff\">③</text><text x=\"865\" y=\"238\" text-anchor=\"middle\" font-size=\"28\" font-weight=\"700\" fill=\"#ffffff\">중간고사 과제</text><text x=\"865\" y=\"300\" text-anchor=\"middle\" font-size=\"26\" fill=\"#0f172a\">취업활동계획서</text><text x=\"865\" y=\"340\" text-anchor=\"middle\" font-size=\"26\" fill=\"#0f172a\">자기소개서 입력</text><text x=\"865\" y=\"380\" text-anchor=\"middle\" font-size=\"26\" fill=\"#0f172a\">기한 내 미제출 시</text><text x=\"865\" y=\"415\" text-anchor=\"middle\" font-size=\"26\" fill=\"#e11d48\">중간 점수 0점</text><!-- 항목 4 --><rect x=\"1050\" y=\"160\" width=\"270\" height=\"480\" rx=\"16\" fill=\"#ffffff\" stroke=\"#0ea5e9\" stroke-width=\"4\"/><rect x=\"1050\" y=\"160\" width=\"270\" height=\"60\" rx=\"16\" fill=\"#0ea5e9\"/><rect x=\"1050\" y=\"195\" width=\"270\" height=\"25\" fill=\"#0ea5e9\"/><text x=\"1185\" y=\"200\" text-anchor=\"middle\" font-size=\"32\" font-weight=\"700\" fill=\"#ffffff\">④</text><text x=\"1185\" y=\"238\" text-anchor=\"middle\" font-size=\"28\" font-weight=\"700\" fill=\"#ffffff\">코딩 테스트</text><text x=\"1185\" y=\"300\" text-anchor=\"middle\" font-size=\"26\" fill=\"#0f172a\">사업단 일괄 진행</text><text x=\"1185\" y=\"340\" text-anchor=\"middle\" font-size=\"26\" fill=\"#0f172a\">안내 일정 확인</text><text x=\"1185\" y=\"380\" text-anchor=\"middle\" font-size=\"26\" fill=\"#0f172a\">빠짐없이 응시</text><!-- 항목 5 --><rect x=\"1360\" y=\"160\" width=\"270\" height=\"480\" rx=\"16\" fill=\"#ffffff\" stroke=\"#0ea5e9\" stroke-width=\"4\"/><rect x=\"1360\" y=\"160\" width=\"270\" height=\"60\" rx=\"16\" fill=\"#0ea5e9\"/><rect x=\"1360\" y=\"195\" width=\"270\" height=\"25\" fill=\"#0ea5e9\"/><text x=\"1495\" y=\"200\" text-anchor=\"middle\" font-size=\"32\" font-weight=\"700\" fill=\"#ffffff\">⑤</text><text x=\"1495\" y=\"238\" text-anchor=\"middle\" font-size=\"28\" font-weight=\"700\" fill=\"#ffffff\">학기말 설문</text><text x=\"1495\" y=\"300\" text-anchor=\"middle\" font-size=\"26\" fill=\"#0f172a\">학기 말 설문 응답</text><text x=\"1495\" y=\"340\" text-anchor=\"middle\" font-size=\"26\" fill=\"#0f172a\">공지 일정 확인</text><text x=\"1495\" y=\"380\" text-anchor=\"middle\" font-size=\"26\" fill=\"#0f172a\">미참여 시 미수료</text><!-- 하단 PASS 배너 --><rect x=\"60\" y=\"660\" width=\"1570\" height=\"10\" rx=\"5\" fill=\"#0ea5e9\"/></svg>"
+  },
+  {
+    "layout": "quote",
+    "quote": "5가지를 모두 완수한 학생에게만 Pass가 주어집니다. 하나라도 빠지면 Fail입니다.",
+    "attribution": "오디세이 세미나 3 운영 안내"
+  },
+  {
+    "layout": "closing",
+    "title": "함께 준비하는 취업, 한 학기가 여러분의 미래를 바꿉니다.",
+    "subtitle": "궁금한 사항은 이정근 교수 이메일 또는 스마트 리드 메시지로 문의하세요."
+  }
+]

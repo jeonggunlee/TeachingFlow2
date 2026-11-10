@@ -1,0 +1,92 @@
+[
+  {
+    "text": "Loss를",
+    "offset_ms": 100.0,
+    "duration_ms": 865.6
+  },
+  {
+    "text": "계산했다면",
+    "offset_ms": 965.6,
+    "duration_ms": 865.6
+  },
+  {
+    "text": "이제",
+    "offset_ms": 1831.2,
+    "duration_ms": 346.2
+  },
+  {
+    "text": "이를",
+    "offset_ms": 2177.5,
+    "duration_ms": 346.2
+  },
+  {
+    "text": "줄이기",
+    "offset_ms": 2523.8,
+    "duration_ms": 519.4
+  },
+  {
+    "text": "위해",
+    "offset_ms": 3043.1,
+    "duration_ms": 346.2
+  },
+  {
+    "text": "Weight를",
+    "offset_ms": 3389.4,
+    "duration_ms": 1211.9
+  },
+  {
+    "text": "어떻게",
+    "offset_ms": 4601.2,
+    "duration_ms": 519.4
+  },
+  {
+    "text": "갱신할지가",
+    "offset_ms": 5120.6,
+    "duration_ms": 865.6
+  },
+  {
+    "text": "핵심입니다.",
+    "offset_ms": 5986.2,
+    "duration_ms": 1038.8
+  },
+  {
+    "text": "이를",
+    "offset_ms": 6975.0,
+    "duration_ms": 362.5
+  },
+  {
+    "text": "담당하는",
+    "offset_ms": 7337.5,
+    "duration_ms": 725.0
+  },
+  {
+    "text": "알고리즘이",
+    "offset_ms": 8062.5,
+    "duration_ms": 906.2
+  },
+  {
+    "text": "바로",
+    "offset_ms": 8968.8,
+    "duration_ms": 362.5
+  },
+  {
+    "text": "Gradient",
+    "offset_ms": 9331.2,
+    "duration_ms": 1450.0
+  },
+  {
+    "text": "Descent,",
+    "offset_ms": 10781.2,
+    "duration_ms": 1450.0
+  },
+  {
+    "text": "경사",
+    "offset_ms": 12231.2,
+    "duration_ms": 362.5
+  },
+  {
+    "text": "하강법입니다.",
+    "offset_ms": 12593.8,
+    "duration_ms": 1268.8
+  }
+]

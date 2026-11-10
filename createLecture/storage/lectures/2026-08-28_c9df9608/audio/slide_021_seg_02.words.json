@@ -1,0 +1,277 @@
+[
+  {
+    "text": "오늘",
+    "offset_ms": 50.0,
+    "duration_ms": 400.0
+  },
+  {
+    "text": "강의는",
+    "offset_ms": 450.0,
+    "duration_ms": 600.0
+  },
+  {
+    "text": "크게",
+    "offset_ms": 1050.0,
+    "duration_ms": 400.0
+  },
+  {
+    "text": "네",
+    "offset_ms": 1450.0,
+    "duration_ms": 200.0
+  },
+  {
+    "text": "가지",
+    "offset_ms": 1650.0,
+    "duration_ms": 400.0
+  },
+  {
+    "text": "기둥으로",
+    "offset_ms": 2050.0,
+    "duration_ms": 800.0
+  },
+  {
+    "text": "구성되었습니다.",
+    "offset_ms": 2850.0,
+    "duration_ms": 1600.0
+  },
+  {
+    "text": "딥러닝이",
+    "offset_ms": 4450.0,
+    "duration_ms": 638.8
+  },
+  {
+    "text": "어떻게",
+    "offset_ms": 5088.8,
+    "duration_ms": 479.1
+  },
+  {
+    "text": "탄생하고",
+    "offset_ms": 5567.9,
+    "duration_ms": 638.8
+  },
+  {
+    "text": "발전해",
+    "offset_ms": 6206.7,
+    "duration_ms": 479.1
+  },
+  {
+    "text": "왔는지의",
+    "offset_ms": 6685.7,
+    "duration_ms": 638.8
+  },
+  {
+    "text": "'역사',",
+    "offset_ms": 7324.5,
+    "duration_ms": 798.5
+  },
+  {
+    "text": "인공지능·머신러닝과의",
+    "offset_ms": 8123.0,
+    "duration_ms": 1756.7
+  },
+  {
+    "text": "관계",
+    "offset_ms": 9879.7,
+    "duration_ms": 319.4
+  },
+  {
+    "text": "속에서",
+    "offset_ms": 10199.1,
+    "duration_ms": 479.1
+  },
+  {
+    "text": "딥러닝이",
+    "offset_ms": 10678.2,
+    "duration_ms": 638.8
+  },
+  {
+    "text": "무엇인지를",
+    "offset_ms": 11316.9,
+    "duration_ms": 798.5
+  },
+  {
+    "text": "다룬",
+    "offset_ms": 12115.4,
+    "duration_ms": 319.4
+  },
+  {
+    "text": "'정의',",
+    "offset_ms": 12434.8,
+    "duration_ms": 798.5
+  },
+  {
+    "text": "뉴런과",
+    "offset_ms": 13233.3,
+    "duration_ms": 479.1
+  },
+  {
+    "text": "레이어로",
+    "offset_ms": 13712.4,
+    "duration_ms": 638.8
+  },
+  {
+    "text": "이루어진",
+    "offset_ms": 14351.2,
+    "duration_ms": 638.8
+  },
+  {
+    "text": "'신경망",
+    "offset_ms": 14990.0,
+    "duration_ms": 638.8
+  },
+  {
+    "text": "구조',",
+    "offset_ms": 15628.7,
+    "duration_ms": 638.8
+  },
+  {
+    "text": "그리고",
+    "offset_ms": 16267.5,
+    "duration_ms": 479.1
+  },
+  {
+    "text": "가중합과",
+    "offset_ms": 16746.6,
+    "duration_ms": 638.8
+  },
+  {
+    "text": "활성화",
+    "offset_ms": 17385.4,
+    "duration_ms": 479.1
+  },
+  {
+    "text": "함수로",
+    "offset_ms": 17864.5,
+    "duration_ms": 479.1
+  },
+  {
+    "text": "표현되는",
+    "offset_ms": 18343.6,
+    "duration_ms": 638.8
+  },
+  {
+    "text": "'수학적",
+    "offset_ms": 18982.4,
+    "duration_ms": 638.8
+  },
+  {
+    "text": "표현'이",
+    "offset_ms": 19621.1,
+    "duration_ms": 638.8
+  },
+  {
+    "text": "바로",
+    "offset_ms": 20259.9,
+    "duration_ms": 319.4
+  },
+  {
+    "text": "그것입니다.",
+    "offset_ms": 20579.3,
+    "duration_ms": 958.2
+  },
+  {
+    "text": "이",
+    "offset_ms": 21537.5,
+    "duration_ms": 178.4
+  },
+  {
+    "text": "네",
+    "offset_ms": 21715.9,
+    "duration_ms": 178.4
+  },
+  {
+    "text": "기둥을",
+    "offset_ms": 21894.2,
+    "duration_ms": 535.1
+  },
+  {
+    "text": "단단히",
+    "offset_ms": 22429.3,
+    "duration_ms": 535.1
+  },
+  {
+    "text": "이해한다면,",
+    "offset_ms": 22964.4,
+    "duration_ms": 1070.2
+  },
+  {
+    "text": "앞으로",
+    "offset_ms": 24034.6,
+    "duration_ms": 535.1
+  },
+  {
+    "text": "어떤",
+    "offset_ms": 24569.7,
+    "duration_ms": 356.7
+  },
+  {
+    "text": "딥러닝",
+    "offset_ms": 24926.4,
+    "duration_ms": 535.1
+  },
+  {
+    "text": "모델을",
+    "offset_ms": 25461.5,
+    "duration_ms": 535.1
+  },
+  {
+    "text": "마주하더라도",
+    "offset_ms": 25996.6,
+    "duration_ms": 1070.2
+  },
+  {
+    "text": "그",
+    "offset_ms": 27066.8,
+    "duration_ms": 178.4
+  },
+  {
+    "text": "원리를",
+    "offset_ms": 27245.2,
+    "duration_ms": 535.1
+  },
+  {
+    "text": "꿰뚫어",
+    "offset_ms": 27780.3,
+    "duration_ms": 535.1
+  },
+  {
+    "text": "볼",
+    "offset_ms": 28315.4,
+    "duration_ms": 178.4
+  },
+  {
+    "text": "수",
+    "offset_ms": 28493.7,
+    "duration_ms": 178.4
+  },
+  {
+    "text": "있는",
+    "offset_ms": 28672.1,
+    "duration_ms": 356.7
+  },
+  {
+    "text": "눈을",
+    "offset_ms": 29028.8,
+    "duration_ms": 356.7
+  },
+  {
+    "text": "갖게",
+    "offset_ms": 29385.6,
+    "duration_ms": 356.7
+  },
+  {
+    "text": "될",
+    "offset_ms": 29742.3,
+    "duration_ms": 178.4
+  },
+  {
+    "text": "것입니다.",
+    "offset_ms": 29920.7,
+    "duration_ms": 891.8
+  },
+  {
+    "text": "수고하셨습니다.",
+    "offset_ms": 30812.5,
+    "duration_ms": 1950.0
+  }
+]

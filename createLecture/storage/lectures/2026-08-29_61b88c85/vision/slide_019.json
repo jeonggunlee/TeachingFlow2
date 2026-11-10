@@ -1,0 +1,34 @@
+{
+  "slide_index": 19,
+  "title": "Loss Function과 학습 목표",
+  "segments": [
+    {
+      "id": "seg_1",
+      "ref": "b1",
+      "keyword": "θ는 모든 Weight와 Bias의 집합",
+      "script": "앞서 각 층의 수식을 살펴봤는데, 이를 전체 신경망 관점에서 보면 ŷ = F(x; θ)로 표현할 수 있습니다. 여기서 θ는 네트워크 안에 존재하는 모든 Weight와 Bias를 하나로 묶은 파라미터 집합입니다. 결국 딥러닝의 학습이란 이 θ를 어떻게 조정하느냐의 문제입니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_2",
+      "ref": "b2",
+      "keyword": "Loss Function",
+      "script": "그렇다면 θ를 얼마나 잘 조정했는지 어떻게 판단할까요? 이때 등장하는 것이 바로 Loss Function입니다. Loss Function은 모델이 예측한 값 ŷ와 실제 정답 y 사이의 차이를 하나의 숫자로 측정해 줍니다. 이 값이 작을수록 모델이 정답에 가까워졌다는 의미입니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_3",
+      "ref": "b3",
+      "keyword": "MSE (Mean Squared Error)",
+      "script": "연속적인 수치를 예측하는 회귀 문제에서는 MSE, 즉 평균 제곱 오차를 Loss Function으로 주로 사용합니다. 예측값과 실제값의 차이를 제곱하여 평균을 낸 값으로, 오차가 클수록 패널티가 급격히 커지는 특성이 있습니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_4",
+      "ref": "b4",
+      "keyword": "Cross Entropy Loss",
+      "script": "반면 클래스를 구분하는 분류 문제에서는 Cross Entropy Loss를 사용합니다. 이 함수는 모델이 정답 클래스에 얼마나 높은 확률을 부여했는지를 기준으로 손실을 계산합니다. 다음 슬라이드에서는 이 Loss를 최소화하는 학습 전체 흐름을 살펴보겠습니다.",
+      "effect": "highlighter"
+    }
+  ]
+}

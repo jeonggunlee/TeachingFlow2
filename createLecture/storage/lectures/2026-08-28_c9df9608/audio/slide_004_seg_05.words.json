@@ -1,0 +1,117 @@
+[
+  {
+    "text": "이",
+    "offset_ms": 50.0,
+    "duration_ms": 159.6
+  },
+  {
+    "text": "한계를",
+    "offset_ms": 209.6,
+    "duration_ms": 478.8
+  },
+  {
+    "text": "극복하기",
+    "offset_ms": 688.5,
+    "duration_ms": 638.5
+  },
+  {
+    "text": "위해",
+    "offset_ms": 1326.9,
+    "duration_ms": 319.2
+  },
+  {
+    "text": "등장한",
+    "offset_ms": 1646.2,
+    "duration_ms": 478.8
+  },
+  {
+    "text": "것이",
+    "offset_ms": 2125.0,
+    "duration_ms": 319.2
+  },
+  {
+    "text": "바로",
+    "offset_ms": 2444.2,
+    "duration_ms": 319.2
+  },
+  {
+    "text": "다층",
+    "offset_ms": 2763.5,
+    "duration_ms": 319.2
+  },
+  {
+    "text": "신경망,",
+    "offset_ms": 3082.7,
+    "duration_ms": 638.5
+  },
+  {
+    "text": "즉",
+    "offset_ms": 3721.2,
+    "duration_ms": 159.6
+  },
+  {
+    "text": "MLP(Multi-Layer",
+    "offset_ms": 3880.8,
+    "duration_ms": 2234.6
+  },
+  {
+    "text": "Perceptron)입니다.",
+    "offset_ms": 6115.4,
+    "duration_ms": 2234.7
+  },
+  {
+    "text": "퍼셉트론을",
+    "offset_ms": 8350.0,
+    "duration_ms": 995.7
+  },
+  {
+    "text": "여러",
+    "offset_ms": 9345.7,
+    "duration_ms": 398.3
+  },
+  {
+    "text": "층으로",
+    "offset_ms": 9744.0,
+    "duration_ms": 597.4
+  },
+  {
+    "text": "쌓아",
+    "offset_ms": 10341.4,
+    "duration_ms": 398.3
+  },
+  {
+    "text": "훨씬",
+    "offset_ms": 10739.7,
+    "duration_ms": 398.3
+  },
+  {
+    "text": "복잡한",
+    "offset_ms": 11137.9,
+    "duration_ms": 597.4
+  },
+  {
+    "text": "문제를",
+    "offset_ms": 11735.3,
+    "duration_ms": 597.4
+  },
+  {
+    "text": "다룰",
+    "offset_ms": 12332.8,
+    "duration_ms": 398.3
+  },
+  {
+    "text": "수",
+    "offset_ms": 12731.0,
+    "duration_ms": 199.1
+  },
+  {
+    "text": "있게",
+    "offset_ms": 12930.2,
+    "duration_ms": 398.3
+  },
+  {
+    "text": "됩니다.",
+    "offset_ms": 13328.4,
+    "duration_ms": 796.6
+  }
+]

@@ -1,0 +1,65 @@
+[
+  {
+    "layout": "title",
+    "title": "딥러닝 기초",
+    "subtitle": "역사 · 정의 · 인공신경망 구조와 수학적 표현"
+  },
+  {
+    "layout": "bullets",
+    "title": "딥러닝의 역사",
+    "bullets": [
+      "1943년 McCulloch & Pitts — 최초의 인공 뉴런 모델 제안",
+      "1986년 Rumelhart — 역전파(Backpropagation) 알고리즘 확립",
+      "2006년 Hinton — 심층 신뢰 신경망으로 딥러닝 부흥 시작",
+      "2012년 AlexNet — ImageNet 대회에서 오류율 대폭 감소, 딥러닝 주류화",
+      "2017년 이후 Transformer · GPT 등 대규모 모델로 AI 패러다임 전환"
+    ]
+  },
+  {
+    "layout": "quote",
+    "quote": "딥러닝은 데이터로부터 다층 표현(representation)을 자동으로 학습하는 머신러닝의 한 분야다.",
+    "attribution": "LeCun, Bengio & Hinton, Nature (2015)"
+  },
+  {
+    "layout": "venn",
+    "title": "인공지능 · 머신러닝 · 딥러닝의 관계",
+    "mode": "nested",
+    "sets": [
+      {
+        "name": "인공지능",
+        "note": "지능적 행동을 수행하는 시스템 전반"
+      },
+      {
+        "name": "머신러닝",
+        "note": "데이터로부터 규칙을 학습"
+      },
+      {
+        "name": "딥러닝",
+        "note": "다층 신경망 기반 표현 학습"
+      }
+    ]
+  },
+  {
+    "layout": "layers",
+    "title": "인공신경망의 구조와 수학적 표현",
+    "layers": [
+      {
+        "name": "입력층 (Input Layer)",
+        "note": "특징 벡터 x ∈ ℝⁿ 를 받아들이는 층"
+      },
+      {
+        "name": "은닉층 (Hidden Layer)",
+        "note": "z = Wx + b,  a = σ(z) — 비선형 변환 반복"
+      },
+      {
+        "name": "출력층 (Output Layer)",
+        "note": "ŷ = softmax(z) 등으로 최종 예측값 산출"
+      }
+    ]
+  },
+  {
+    "layout": "closing",
+    "title": "핵심 정리",
+    "subtitle": "딥러닝은 다층 신경망을 통해 데이터의 계층적 표현을 학습하며, 역전파로 가중치를 최적화한다."
+  }
+]

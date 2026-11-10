@@ -1,0 +1,41 @@
+{
+  "slide_index": 6,
+  "title": "딥러닝 역사의 흐름",
+  "segments": [
+    {
+      "id": "seg_1",
+      "ref": "f1",
+      "keyword": "인공 뉴런 — McCulloch–Pitts (1943)",
+      "script": "딥러닝의 역사는 1943년 McCulloch와 Pitts가 제안한 인공 뉴런 모델에서 시작됩니다. 이 모델은 생물학적 뉴런의 동작 방식을 수학적으로 단순화한 최초의 시도로, 이후 모든 신경망 연구의 출발점이 되었습니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_2",
+      "ref": "f2",
+      "keyword": "퍼셉트론 — Rosenblatt (1957)",
+      "script": "1957년 Rosenblatt는 퍼셉트론을 제안하며 인공 뉴런에 학습 능력을 부여했습니다. 퍼셉트론은 입력에 가중치를 곱하고 합산하는 방식으로 간단한 분류 문제를 풀 수 있었으나, 선형적으로 분리되지 않는 문제는 해결하지 못한다는 한계가 있었습니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_3",
+      "ref": "f3",
+      "keyword": "MLP + 역전파 — Rumelhart (1986)",
+      "script": "1986년 Rumelhart는 다층 퍼셉트론, 즉 MLP와 함께 역전파 알고리즘을 제시하며 퍼셉트론의 한계를 극복했습니다. 역전파는 출력 오차를 네트워크 뒤쪽으로 전파하여 가중치를 효율적으로 갱신하는 방법으로, 딥러닝 학습의 핵심 원리로 지금도 사용됩니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_4",
+      "ref": "f4",
+      "keyword": "AlexNet — ImageNet (2012)",
+      "script": "2012년 AlexNet이 ImageNet 대회에서 압도적인 성능을 보이며 딥러닝의 실용적 가능성을 세상에 증명했습니다. GPU를 활용한 대규모 학습과 대용량 데이터의 결합이 이 도약을 이끈 핵심 요인이었습니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_5",
+      "ref": "f5",
+      "keyword": "Transformer·LLM — BERT·GPT·생성형 AI",
+      "script": "현재는 Transformer 아키텍처를 기반으로 한 BERT, GPT와 같은 거대 언어 모델, 즉 LLM이 자연어 처리와 생성형 AI 분야를 선도하고 있습니다. 이처럼 딥러닝의 역사는 단순한 뉴런 모델에서 출발해 인류의 언어와 창작 영역까지 확장되어 왔습니다.",
+      "effect": "highlighter"
+    }
+  ]
+}

@@ -1,0 +1,167 @@
+[
+  {
+    "text": "이번",
+    "offset_ms": 100.0,
+    "duration_ms": 434.4
+  },
+  {
+    "text": "섹션에서는",
+    "offset_ms": 534.4,
+    "duration_ms": 1085.9
+  },
+  {
+    "text": "인공신경망의",
+    "offset_ms": 1620.3,
+    "duration_ms": 1303.1
+  },
+  {
+    "text": "수학적",
+    "offset_ms": 2923.4,
+    "duration_ms": 651.6
+  },
+  {
+    "text": "표현을",
+    "offset_ms": 3575.0,
+    "duration_ms": 651.6
+  },
+  {
+    "text": "다룹니다.",
+    "offset_ms": 4226.6,
+    "duration_ms": 1085.9
+  },
+  {
+    "text": "앞서",
+    "offset_ms": 5262.5,
+    "duration_ms": 401.5
+  },
+  {
+    "text": "직관적으로",
+    "offset_ms": 5664.0,
+    "duration_ms": 1003.7
+  },
+  {
+    "text": "이해했던",
+    "offset_ms": 6667.6,
+    "duration_ms": 802.9
+  },
+  {
+    "text": "뉴런,",
+    "offset_ms": 7470.6,
+    "duration_ms": 602.2
+  },
+  {
+    "text": "가중치,",
+    "offset_ms": 8072.8,
+    "duration_ms": 802.9
+  },
+  {
+    "text": "활성화",
+    "offset_ms": 8875.7,
+    "duration_ms": 602.2
+  },
+  {
+    "text": "함수의",
+    "offset_ms": 9477.9,
+    "duration_ms": 602.2
+  },
+  {
+    "text": "개념을",
+    "offset_ms": 10080.1,
+    "duration_ms": 602.2
+  },
+  {
+    "text": "이제",
+    "offset_ms": 10682.4,
+    "duration_ms": 401.5
+  },
+  {
+    "text": "수식으로",
+    "offset_ms": 11083.8,
+    "duration_ms": 802.9
+  },
+  {
+    "text": "정밀하게",
+    "offset_ms": 11886.8,
+    "duration_ms": 802.9
+  },
+  {
+    "text": "표현하는",
+    "offset_ms": 12689.7,
+    "duration_ms": 802.9
+  },
+  {
+    "text": "방법을",
+    "offset_ms": 13492.6,
+    "duration_ms": 602.2
+  },
+  {
+    "text": "배우게",
+    "offset_ms": 14094.9,
+    "duration_ms": 602.2
+  },
+  {
+    "text": "됩니다.",
+    "offset_ms": 14697.1,
+    "duration_ms": 802.9
+  },
+  {
+    "text": "수식을",
+    "offset_ms": 15500.0,
+    "duration_ms": 593.1
+  },
+  {
+    "text": "통해",
+    "offset_ms": 16093.1,
+    "duration_ms": 395.4
+  },
+  {
+    "text": "신경망이",
+    "offset_ms": 16488.5,
+    "duration_ms": 790.8
+  },
+  {
+    "text": "실제로",
+    "offset_ms": 17279.3,
+    "duration_ms": 593.1
+  },
+  {
+    "text": "어떻게",
+    "offset_ms": 17872.4,
+    "duration_ms": 593.1
+  },
+  {
+    "text": "계산을",
+    "offset_ms": 18465.5,
+    "duration_ms": 593.1
+  },
+  {
+    "text": "수행하는지",
+    "offset_ms": 19058.6,
+    "duration_ms": 988.5
+  },
+  {
+    "text": "명확하게",
+    "offset_ms": 20047.0,
+    "duration_ms": 790.8
+  },
+  {
+    "text": "이해할",
+    "offset_ms": 20837.8,
+    "duration_ms": 593.1
+  },
+  {
+    "text": "수",
+    "offset_ms": 21430.9,
+    "duration_ms": 197.7
+  },
+  {
+    "text": "있을",
+    "offset_ms": 21628.6,
+    "duration_ms": 395.4
+  },
+  {
+    "text": "것입니다.",
+    "offset_ms": 22024.0,
+    "duration_ms": 988.5
+  }
+]

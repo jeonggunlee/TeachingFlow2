@@ -1,0 +1,34 @@
+{
+  "slide_index": 18,
+  "title": "뉴런과 Layer의 수식 표현",
+  "segments": [
+    {
+      "id": "seg_1",
+      "ref": "b1",
+      "keyword": "단일 뉴런",
+      "script": "먼저 단일 뉴런의 수식부터 살펴보겠습니다. 각 입력값 x에 가중치 w를 곱하고 편향 b를 더한 값이 z이며, 이 z에 활성화 함수 f를 적용한 결과가 최종 출력 y가 됩니다. 앞서 배운 뉴런의 동작 원리가 수식으로 정확하게 표현된 것입니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_2",
+      "ref": "b2",
+      "keyword": "벡터 표현",
+      "script": "입력이 여러 개일 때 하나하나 나열하면 수식이 길어지므로, 벡터 표현을 활용합니다. w의 전치 벡터와 x의 내적으로 z를 간결하게 쓸 수 있으며, 이를 통해 수식이 훨씬 간결하고 계산하기 쉬워집니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_3",
+      "ref": "b3",
+      "keyword": "Layer 단위",
+      "script": "뉴런 하나가 아니라 하나의 Layer 전체를 표현할 때는 Weight 행렬 W를 사용합니다. z = Wx + b로 Layer 내 모든 뉴런의 계산을 한 번에 표현할 수 있으며, 여기서 W의 각 행이 개별 뉴런의 가중치 벡터에 해당합니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_4",
+      "ref": "b4",
+      "keyword": "다층 신경망",
+      "script": "이제 이 표현을 여러 Layer에 걸쳐 반복 적용하면 다층 신경망의 전체 수식이 완성됩니다. 첫 번째 Layer의 출력 h₁이 다음 Layer의 입력으로 들어가고, 이 과정이 순서대로 쌓이면서 최종 예측값 ŷ이 만들어집니다. 이것이 바로 다음에 살펴볼 순전파, 즉 Forward Propagation의 수학적 본질입니다.",
+      "effect": "highlighter"
+    }
+  ]
+}

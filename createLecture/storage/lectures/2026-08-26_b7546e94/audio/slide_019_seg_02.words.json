@@ -1,0 +1,157 @@
+[
+  {
+    "text": "첫",
+    "offset_ms": 50.0,
+    "duration_ms": 240.3
+  },
+  {
+    "text": "번째",
+    "offset_ms": 290.3,
+    "duration_ms": 480.6
+  },
+  {
+    "text": "은닉층은",
+    "offset_ms": 770.8,
+    "duration_ms": 961.1
+  },
+  {
+    "text": "h₁",
+    "offset_ms": 1731.9,
+    "duration_ms": 480.6
+  },
+  {
+    "text": "=",
+    "offset_ms": 2212.5,
+    "duration_ms": 480.6
+  },
+  {
+    "text": "f(W₁x",
+    "offset_ms": 2693.1,
+    "duration_ms": 961.2
+  },
+  {
+    "text": "+",
+    "offset_ms": 3654.2,
+    "duration_ms": 720.8
+  },
+  {
+    "text": "b₁)로",
+    "offset_ms": 4375.0,
+    "duration_ms": 720.9
+  },
+  {
+    "text": "표현됩니다.",
+    "offset_ms": 5095.8,
+    "duration_ms": 1441.7
+  },
+  {
+    "text": "입력",
+    "offset_ms": 6537.5,
+    "duration_ms": 358.3
+  },
+  {
+    "text": "벡터",
+    "offset_ms": 6895.8,
+    "duration_ms": 358.3
+  },
+  {
+    "text": "x에",
+    "offset_ms": 7254.2,
+    "duration_ms": 358.3
+  },
+  {
+    "text": "Weight",
+    "offset_ms": 7612.5,
+    "duration_ms": 1075.0
+  },
+  {
+    "text": "Matrix",
+    "offset_ms": 8687.5,
+    "duration_ms": 1075.0
+  },
+  {
+    "text": "W₁을",
+    "offset_ms": 9762.5,
+    "duration_ms": 537.5
+  },
+  {
+    "text": "곱하고",
+    "offset_ms": 10300.0,
+    "duration_ms": 537.5
+  },
+  {
+    "text": "편향",
+    "offset_ms": 10837.5,
+    "duration_ms": 358.3
+  },
+  {
+    "text": "b₁을",
+    "offset_ms": 11195.8,
+    "duration_ms": 537.5
+  },
+  {
+    "text": "더한",
+    "offset_ms": 11733.3,
+    "duration_ms": 358.3
+  },
+  {
+    "text": "뒤,",
+    "offset_ms": 12091.7,
+    "duration_ms": 358.3
+  },
+  {
+    "text": "활성화",
+    "offset_ms": 12450.0,
+    "duration_ms": 537.5
+  },
+  {
+    "text": "함수",
+    "offset_ms": 12987.5,
+    "duration_ms": 358.3
+  },
+  {
+    "text": "f를",
+    "offset_ms": 13345.8,
+    "duration_ms": 358.3
+  },
+  {
+    "text": "적용해",
+    "offset_ms": 13704.2,
+    "duration_ms": 537.5
+  },
+  {
+    "text": "첫",
+    "offset_ms": 14241.7,
+    "duration_ms": 179.2
+  },
+  {
+    "text": "번째",
+    "offset_ms": 14420.8,
+    "duration_ms": 358.3
+  },
+  {
+    "text": "은닉",
+    "offset_ms": 14779.2,
+    "duration_ms": 358.3
+  },
+  {
+    "text": "표현",
+    "offset_ms": 15137.5,
+    "duration_ms": 358.3
+  },
+  {
+    "text": "h₁을",
+    "offset_ms": 15495.8,
+    "duration_ms": 537.5
+  },
+  {
+    "text": "만들어",
+    "offset_ms": 16033.3,
+    "duration_ms": 537.5
+  },
+  {
+    "text": "냅니다.",
+    "offset_ms": 16570.8,
+    "duration_ms": 716.7
+  }
+]

@@ -1,0 +1,142 @@
+[
+  {
+    "text": "앞서",
+    "offset_ms": 50.0,
+    "duration_ms": 348.8
+  },
+  {
+    "text": "인공신경망의",
+    "offset_ms": 398.8,
+    "duration_ms": 1046.4
+  },
+  {
+    "text": "구조를",
+    "offset_ms": 1445.2,
+    "duration_ms": 523.2
+  },
+  {
+    "text": "개념적으로",
+    "offset_ms": 1968.3,
+    "duration_ms": 872.0
+  },
+  {
+    "text": "살펴보았다면,",
+    "offset_ms": 2840.3,
+    "duration_ms": 1220.8
+  },
+  {
+    "text": "이번",
+    "offset_ms": 4061.1,
+    "duration_ms": 348.8
+  },
+  {
+    "text": "슬라이드에서는",
+    "offset_ms": 4409.9,
+    "duration_ms": 1220.8
+  },
+  {
+    "text": "하나의",
+    "offset_ms": 5630.6,
+    "duration_ms": 523.2
+  },
+  {
+    "text": "인공",
+    "offset_ms": 6153.8,
+    "duration_ms": 348.8
+  },
+  {
+    "text": "뉴런이",
+    "offset_ms": 6502.6,
+    "duration_ms": 523.2
+  },
+  {
+    "text": "실제로",
+    "offset_ms": 7025.8,
+    "duration_ms": 523.2
+  },
+  {
+    "text": "어떻게",
+    "offset_ms": 7549.0,
+    "duration_ms": 523.2
+  },
+  {
+    "text": "수학적으로",
+    "offset_ms": 8072.2,
+    "duration_ms": 872.0
+  },
+  {
+    "text": "표현되는지를",
+    "offset_ms": 8944.2,
+    "duration_ms": 1046.4
+  },
+  {
+    "text": "다룹니다.",
+    "offset_ms": 9990.5,
+    "duration_ms": 872.0
+  },
+  {
+    "text": "뉴런",
+    "offset_ms": 10862.5,
+    "duration_ms": 390.2
+  },
+  {
+    "text": "하나의",
+    "offset_ms": 11252.7,
+    "duration_ms": 585.4
+  },
+  {
+    "text": "동작을",
+    "offset_ms": 11838.1,
+    "duration_ms": 585.4
+  },
+  {
+    "text": "수식으로",
+    "offset_ms": 12423.5,
+    "duration_ms": 780.5
+  },
+  {
+    "text": "명확히",
+    "offset_ms": 13204.0,
+    "duration_ms": 585.4
+  },
+  {
+    "text": "이해하는",
+    "offset_ms": 13789.3,
+    "duration_ms": 780.5
+  },
+  {
+    "text": "것이",
+    "offset_ms": 14569.8,
+    "duration_ms": 390.2
+  },
+  {
+    "text": "다층",
+    "offset_ms": 14960.1,
+    "duration_ms": 390.2
+  },
+  {
+    "text": "신경망",
+    "offset_ms": 15350.3,
+    "duration_ms": 585.4
+  },
+  {
+    "text": "전체를",
+    "offset_ms": 15935.7,
+    "duration_ms": 585.4
+  },
+  {
+    "text": "이해하는",
+    "offset_ms": 16521.0,
+    "duration_ms": 780.5
+  },
+  {
+    "text": "출발점이",
+    "offset_ms": 17301.5,
+    "duration_ms": 780.5
+  },
+  {
+    "text": "됩니다.",
+    "offset_ms": 18082.0,
+    "duration_ms": 780.5
+  }
+]

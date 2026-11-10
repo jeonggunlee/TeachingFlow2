@@ -1,0 +1,48 @@
+{
+  "slide_index": 10,
+  "title": "전통적 프로그래밍 vs. 머신러닝 vs. 딥러닝",
+  "segments": [
+    {
+      "id": "seg_1",
+      "ref": "l1",
+      "keyword": "Data + Rules → Output",
+      "script": "전통적 프로그래밍 방식은 'Data + Rules → Output', 즉 사람이 규칙을 직접 작성하고 데이터를 넣으면 결과가 나오는 구조입니다. 모든 판단 기준을 개발자가 명시적으로 코드로 정의해야 한다는 점이 핵심입니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_2",
+      "ref": "l2",
+      "keyword": "Data + Output → Model",
+      "script": "머신러닝은 이와 반대로 'Data + Output → Model'의 방향으로 동작합니다. 정답 데이터를 함께 제공하면 컴퓨터가 스스로 패턴을 찾아 모델을 만들어내는 것이죠.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_3",
+      "ref": "l3",
+      "keyword": "Feature를 직접 설계",
+      "script": "다만 전통적인 머신러닝에서는 어떤 특징(Feature)을 모델에 입력할지를 여전히 사람이 직접 설계해야 합니다. 이 과정을 Feature Engineering이라고 하며, 도메인 전문 지식과 많은 수작업이 필요합니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_4",
+      "ref": "r1",
+      "keyword": "특징 추출과 판단을 동시에 학습",
+      "script": "딥러닝은 여기서 한 단계 더 나아가, 특징을 추출하는 과정과 최종 판단을 내리는 과정을 동시에 학습합니다. 별도의 Feature Engineering 없이 원본 데이터만 넣어도 스스로 유용한 표현을 찾아냅니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_5",
+      "ref": "r2",
+      "keyword": "Representation Learning",
+      "script": "이를 Representation Learning, 즉 표현 학습이라고 부릅니다. 데이터 속에 숨겨진 의미 있는 표현을 자동으로 학습한다는 뜻으로, 딥러닝의 가장 핵심적인 특성입니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_6",
+      "ref": "r3",
+      "keyword": "계층적 학습",
+      "script": "예를 들어 이미지를 인식할 때, 딥러닝은 Pixel에서 시작해 Edge, Shape, Object 순으로 점점 더 추상적인 개념을 계층적으로 학습합니다. 이처럼 계층 구조를 통해 복잡한 패턴을 단계적으로 이해하는 것이 딥러닝의 강점입니다.",
+      "effect": "highlighter"
+    }
+  ]
+}

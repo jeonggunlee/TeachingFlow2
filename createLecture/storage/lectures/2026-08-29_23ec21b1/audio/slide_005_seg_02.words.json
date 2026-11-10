@@ -1,0 +1,127 @@
+[
+  {
+    "text": "첫",
+    "offset_ms": 50.0,
+    "duration_ms": 213.1
+  },
+  {
+    "text": "번째",
+    "offset_ms": 263.1,
+    "duration_ms": 426.2
+  },
+  {
+    "text": "필수",
+    "offset_ms": 689.4,
+    "duration_ms": 426.2
+  },
+  {
+    "text": "항목은",
+    "offset_ms": 1115.6,
+    "duration_ms": 639.4
+  },
+  {
+    "text": "바로",
+    "offset_ms": 1755.0,
+    "duration_ms": 426.2
+  },
+  {
+    "text": "지도교수",
+    "offset_ms": 2181.2,
+    "duration_ms": 852.5
+  },
+  {
+    "text": "면담입니다.",
+    "offset_ms": 3033.8,
+    "duration_ms": 1278.8
+  },
+  {
+    "text": "이",
+    "offset_ms": 4312.5,
+    "duration_ms": 172.4
+  },
+  {
+    "text": "항목은",
+    "offset_ms": 4484.9,
+    "duration_ms": 517.1
+  },
+  {
+    "text": "Pass",
+    "offset_ms": 5002.0,
+    "duration_ms": 689.5
+  },
+  {
+    "text": "조건",
+    "offset_ms": 5691.4,
+    "duration_ms": 344.7
+  },
+  {
+    "text": "중",
+    "offset_ms": 6036.2,
+    "duration_ms": 172.4
+  },
+  {
+    "text": "가장",
+    "offset_ms": 6208.6,
+    "duration_ms": 344.7
+  },
+  {
+    "text": "먼저",
+    "offset_ms": 6553.3,
+    "duration_ms": 344.7
+  },
+  {
+    "text": "챙겨야",
+    "offset_ms": 6898.0,
+    "duration_ms": 517.1
+  },
+  {
+    "text": "할",
+    "offset_ms": 7415.1,
+    "duration_ms": 172.4
+  },
+  {
+    "text": "사항으로,",
+    "offset_ms": 7587.5,
+    "duration_ms": 861.8
+  },
+  {
+    "text": "다음",
+    "offset_ms": 8449.3,
+    "duration_ms": 344.7
+  },
+  {
+    "text": "슬라이드에서",
+    "offset_ms": 8794.1,
+    "duration_ms": 1034.2
+  },
+  {
+    "text": "구체적인",
+    "offset_ms": 9828.3,
+    "duration_ms": 689.5
+  },
+  {
+    "text": "방법과",
+    "offset_ms": 10517.8,
+    "duration_ms": 517.1
+  },
+  {
+    "text": "주의사항을",
+    "offset_ms": 11034.9,
+    "duration_ms": 861.8
+  },
+  {
+    "text": "자세히",
+    "offset_ms": 11896.7,
+    "duration_ms": 517.1
+  },
+  {
+    "text": "안내해",
+    "offset_ms": 12413.8,
+    "duration_ms": 517.1
+  },
+  {
+    "text": "드리겠습니다.",
+    "offset_ms": 12930.9,
+    "duration_ms": 1206.6
+  }
+]

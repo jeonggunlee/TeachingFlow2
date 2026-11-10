@@ -1,0 +1,135 @@
+[
+  {
+    "layout": "title",
+    "title": "오디세이 세미나 3",
+    "subtitle": "전공 진로 및 취업 가이드 — 수업 오리엔테이션 | 이정근 교수 · 한림대학교 소프트웨어학부"
+  },
+  {
+    "layout": "bullets",
+    "title": "수업 기본 정보",
+    "bullets": [
+      "과목명: 오디세이 세미나 3 — 전공 진로 및 취업 가이드",
+      "담당 교수: 이정근 / 소속: 한림대학교 소프트웨어학부",
+      "이수 학점: 1학점 / 대상: 소프트웨어학부 3학년",
+      "평가 방식: Pass / Fail — 5가지 필수 항목 전부 완수 시 Pass"
+    ]
+  },
+  {
+    "layout": "bullets",
+    "title": "수업 목표",
+    "bullets": [
+      "전공 수강 및 진로 선택에 필요한 정보·지식을 체계적으로 전달",
+      "교양 과목 선택, 장·단기 현장실습 활용 방안 안내",
+      "취업준비 기본 교육 및 입사지원서 작성 실습으로 준비도 점검",
+      "포트폴리오(취업활동계획서·이력서·자기소개서) 기반 진로 상담 내실화"
+    ]
+  },
+  {
+    "layout": "stat",
+    "value": "5가지",
+    "label": "Pass를 위한 필수 완수 항목",
+    "caption": "다섯 항목을 모두 완수해야 Pass — 하나라도 빠지면 Fail 처리됩니다."
+  },
+  {
+    "layout": "section",
+    "section_no": "01",
+    "title": "필수 항목 상세 안내"
+  },
+  {
+    "layout": "bullets",
+    "title": "① 지도교수 면담 1회 [필수]",
+    "bullets": [
+      "이메일로 면담 예약 후 방문 — 학생정보시스템에서 지도교수 확인",
+      "면담 서식 문서를 프린트하여 지참, 면담 내용 기록 후 교수 사인 획득",
+      "서식 사진을 찍어 스마트 리드 과제란에 제출"
+    ]
+  },
+  {
+    "layout": "flow",
+    "title": "지도교수 면담 절차",
+    "steps": [
+      {
+        "name": "지도교수 확인",
+        "note": "학생정보시스템 조회"
+      },
+      {
+        "name": "이메일 예약",
+        "note": "면담 일정 조율"
+      },
+      {
+        "name": "서식 출력 후 방문",
+        "note": "면담 내용 기록"
+      },
+      {
+        "name": "교수 사인 수령",
+        "note": "서식 사진 촬영"
+      },
+      {
+        "name": "스마트 리드 제출",
+        "note": "과제란에 사진 업로드"
+      }
+    ]
+  },
+  {
+    "layout": "bullets",
+    "title": "② 진로취업 교육 수강 [필수]",
+    "bullets": [
+      "강의 1: 직무 중심 채용 트렌드 이해",
+      "강의 2: E-DISC 검사 활용 직무매칭",
+      "강의 3: 경험리스트 작성법",
+      "강의 4 (택 1): 입사지원서 작성법 OR 학업계획서 작성법 및 준비 방법",
+      "강의 5: 면접 준비 전략"
+    ]
+  },
+  {
+    "layout": "bullets",
+    "title": "③ 중간고사 대체 과제 [필수]",
+    "bullets": [
+      "제출 과제: 취업활동계획서 + 자기소개서 (스마트 리드 입력)",
+      "제출기한 내 미제출 시 중간고사 점수 0점 처리",
+      "평가 기준: 성실도·작성 분량·표절 여부 등 종합 평가",
+      "세부 작성 기준 및 평가 지침은 9월 중 별도 안내 예정"
+    ]
+  },
+  {
+    "layout": "two_col",
+    "title": "④ 코딩 테스트 & ⑤ 학기말 설문 [필수]",
+    "left": {
+      "heading": "④ 코딩 테스트 참여",
+      "points": [
+        "소프트웨어 중심대학 사업단 주관·일괄 진행",
+        "추후 사업단에서 별도 일정 안내",
+        "안내 일정에 맞춰 반드시 참여"
+      ]
+    },
+    "right": {
+      "heading": "⑤ 학기말 설문 참여",
+      "points": [
+        "학기 말에 온라인 설문 응답",
+        "설문 링크는 학기 말 별도 안내",
+        "미참여 시 Pass 요건 미충족"
+      ]
+    }
+  },
+  {
+    "layout": "section",
+    "section_no": "02",
+    "title": "Pass 체크리스트 총정리"
+  },
+  {
+    "layout": "figure",
+    "title": "Pass 완수 체크리스트",
+    "caption": "5가지 항목 모두 완수 시 Pass — 하나라도 미완수 시 Fail",
+    "svg": "<svg viewBox=\"0 0 1680 700\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"40\" y=\"40\" width=\"1600\" height=\"620\" rx=\"18\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"3\"/><text x=\"840\" y=\"100\" text-anchor=\"middle\" font-size=\"42\" font-weight=\"bold\" fill=\"#0f172a\">Pass 완수 체크리스트</text><rect x=\"80\" y=\"130\" width=\"1520\" height=\"96\" rx=\"12\" fill=\"#e0f2fe\" stroke=\"#0ea5e9\" stroke-width=\"4\"/><text x=\"140\" y=\"190\" font-size=\"38\" font-weight=\"bold\" fill=\"#0ea5e9\">①</text><text x=\"210\" y=\"190\" font-size=\"36\" fill=\"#0f172a\">지도교수 면담 1회</text><text x=\"900\" y=\"190\" font-size=\"32\" fill=\"#475569\">→ 서식 사진을 스마트 리드 과제란에 제출</text><rect x=\"80\" y=\"240\" width=\"1520\" height=\"96\" rx=\"12\" fill=\"#f0f9ff\" stroke=\"#bae6fd\" stroke-width=\"3\"/><text x=\"140\" y=\"300\" font-size=\"38\" font-weight=\"bold\" fill=\"#0ea5e9\">②</text><text x=\"210\" y=\"300\" font-size=\"36\" fill=\"#0f172a\">진로취업 교육 수강</text><text x=\"900\" y=\"300\" font-size=\"32\" fill=\"#475569\">→ 동영상 강의 5개 수강 (4강은 택 1)</text><rect x=\"80\" y=\"350\" width=\"1520\" height=\"96\" rx=\"12\" fill=\"#e0f2fe\" stroke=\"#0ea5e9\" stroke-width=\"4\"/><text x=\"140\" y=\"410\" font-size=\"38\" font-weight=\"bold\" fill=\"#0ea5e9\">③</text><text x=\"210\" y=\"410\" font-size=\"36\" fill=\"#0f172a\">중간고사 대체 과제</text><text x=\"900\" y=\"410\" font-size=\"32\" fill=\"#475569\">→ 취업활동계획서·자기소개서 스마트 리드 입력</text><rect x=\"80\" y=\"460\" width=\"1520\" height=\"96\" rx=\"12\" fill=\"#f0f9ff\" stroke=\"#bae6fd\" stroke-width=\"3\"/><text x=\"140\" y=\"520\" font-size=\"38\" font-weight=\"bold\" fill=\"#0ea5e9\">④</text><text x=\"210\" y=\"520\" font-size=\"36\" fill=\"#0f172a\">코딩 테스트 참여</text><text x=\"900\" y=\"520\" font-size=\"32\" fill=\"#475569\">→ 사업단 안내 일정에 맞춰 참여</text><rect x=\"80\" y=\"570\" width=\"1520\" height=\"96\" rx=\"12\" fill=\"#e0f2fe\" stroke=\"#0ea5e9\" stroke-width=\"4\"/><text x=\"140\" y=\"630\" font-size=\"38\" font-weight=\"bold\" fill=\"#0ea5e9\">⑤</text><text x=\"210\" y=\"630\" font-size=\"36\" fill=\"#0f172a\">학기말 설문 참여</text><text x=\"900\" y=\"630\" font-size=\"32\" fill=\"#475569\">→ 학기 말 설문 응답 완료</text></svg>"
+  },
+  {
+    "layout": "quote",
+    "quote": "다섯 항목을 모두 완수해야 Pass입니다. 하나라도 빠지면 Fail 처리됩니다.",
+    "attribution": "오디세이 세미나 3 수업 운영 원칙"
+  },
+  {
+    "layout": "closing",
+    "title": "지금 바로 시작하세요!",
+    "subtitle": "지도교수 확인 → 이메일 면담 예약 → 동영상 강의 수강 순서로 첫 발을 내딛으세요."
+  }
+]

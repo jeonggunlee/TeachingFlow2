@@ -1,0 +1,207 @@
+.slide, .slide * { box-sizing: border-box; margin: 0; padding: 0; }
+.slide {
+  width: 1920px; height: 1080px;
+  padding: 96px 120px;
+  position: relative; display: flex; flex-direction: column;
+  font-family: 'Pretendard Variable', 'Pretendard', 'Noto Sans KR', 'Noto Sans CJK KR', 'Apple SD Gothic Neo', 'Malgun Gothic', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #0f172a; background: #ffffff; overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+  font-feature-settings: 'kern', 'ss01';
+}
+.slide-num {
+  position: absolute; right: 64px; bottom: 48px;
+  font-size: 22px; color: #94a3b8; font-weight: 500;
+  letter-spacing: 0.08em; font-variant-numeric: tabular-nums;
+}
+.brand {
+  position: absolute; left: 64px; bottom: 48px;
+  font-size: 18px; color: #94a3b8; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+}
+.accent-bar {
+  width: 110px; height: 7px;
+  background: #0ea5e9; border-radius: 4px;
+}
+
+/* ── Layout: title ───────────────────────────── */
+.lyt-title { justify-content: center; align-items: flex-start; gap: 44px; }
+.lyt-title .accent-bar { width: 160px; height: 9px; }
+.lyt-title .title {
+  font-size: 116px; font-weight: 800; letter-spacing: -0.025em;
+  line-height: 1.1; color: #0f172a; max-width: 1500px;
+}
+.lyt-title .subtitle {
+  font-size: 44px; font-weight: 400; color: #475569;
+  line-height: 1.4; max-width: 1500px;
+}
+
+/* ── Layout: section ─────────────────────────── */
+.lyt-section { justify-content: center; gap: 24px; }
+.lyt-section .section-no {
+  font-size: 220px; font-weight: 900; line-height: 0.95;
+  color: #0ea5e9; letter-spacing: -0.05em;
+}
+.lyt-section .section-title {
+  font-size: 88px; font-weight: 700;
+  color: #0f172a; letter-spacing: -0.02em;
+}
+
+/* ── Layout: bullets ─────────────────────────── */
+.lyt-bullets .heading {
+  font-size: 64px; font-weight: 800; letter-spacing: -0.015em;
+  line-height: 1.2; color: #0f172a;
+}
+.lyt-bullets .heading::after {
+  content: ''; display: block;
+  width: 80px; height: 5px; margin-top: 26px;
+  background: #0ea5e9; border-radius: 3px;
+}
+.lyt-bullets .bullets {
+  margin-top: 60px; display: flex; flex-direction: column; gap: 32px;
+}
+.lyt-bullets .bullets li {
+  list-style: none; font-size: 38px; line-height: 1.45; font-weight: 500;
+  color: #0f172a; padding-left: 56px; position: relative; max-width: 1500px;
+}
+.lyt-bullets .bullets li::before {
+  content: ''; position: absolute; left: 0; top: 20px;
+  width: 18px; height: 18px; border-radius: 5px;
+  background: #0ea5e9;
+}
+
+/* ── Layout: two_col ─────────────────────────── */
+.lyt-two_col .heading {
+  font-size: 60px; font-weight: 800; letter-spacing: -0.015em;
+  color: #0f172a;
+}
+.lyt-two_col .heading::after {
+  content: ''; display: block;
+  width: 80px; height: 5px; margin-top: 22px;
+  background: #0ea5e9; border-radius: 3px;
+}
+.lyt-two_col .cols {
+  margin-top: 56px; display: grid; grid-template-columns: 1fr 1fr;
+  gap: 56px; flex: 1; min-height: 0;
+}
+.lyt-two_col .col {
+  background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 28px;
+  padding: 48px; display: flex; flex-direction: column; gap: 26px;
+}
+.lyt-two_col .col h3 {
+  font-size: 40px; font-weight: 700; color: #0f172a;
+  padding-bottom: 18px; border-bottom: 4px solid #0ea5e9;
+}
+.lyt-two_col .col ul { display: flex; flex-direction: column; gap: 20px; }
+.lyt-two_col .col li {
+  list-style: none; font-size: 30px; line-height: 1.5;
+  padding-left: 32px; position: relative; color: #475569;
+}
+.lyt-two_col .col li::before {
+  content: '—'; position: absolute; left: 0; top: 0;
+  color: #0ea5e9; font-weight: 700;
+}
+
+/* ── Layout: quote ───────────────────────────── */
+.lyt-quote {
+  justify-content: center; align-items: center; text-align: center;
+  gap: 36px; padding: 96px 200px;
+}
+.lyt-quote .quote-mark {
+  font-size: 240px; font-weight: 900; line-height: 0.5;
+  color: #bae6fd; height: 100px;
+  font-family: Georgia, serif;
+}
+.lyt-quote .quote-text {
+  font-size: 58px; font-weight: 500; line-height: 1.4;
+  color: #0f172a; max-width: 1500px;
+}
+.lyt-quote .attribution {
+  font-size: 32px; color: #475569; margin-top: 12px;
+}
+.lyt-quote .attribution::before { content: '— '; color: #0ea5e9; font-weight: 700; }
+
+/* ── Layout: stat ────────────────────────────── */
+.lyt-stat {
+  justify-content: center; align-items: center; text-align: center;
+  gap: 28px;
+}
+.lyt-stat .stat-value {
+  font-size: 320px; font-weight: 900; line-height: 0.95;
+  color: #0ea5e9; letter-spacing: -0.045em;
+  font-variant-numeric: tabular-nums;
+}
+.lyt-stat .stat-label {
+  font-size: 60px; font-weight: 800; color: #0f172a;
+  letter-spacing: -0.015em; margin-top: 8px;
+}
+.lyt-stat .stat-caption {
+  font-size: 32px; color: #475569; max-width: 1300px;
+  line-height: 1.5;
+}
+
+/* ── Layout: closing ─────────────────────────── */
+.lyt-closing {
+  justify-content: center; align-items: center; text-align: center; gap: 36px;
+}
+.lyt-closing .accent-bar { width: 220px; height: 9px; }
+.lyt-closing .closing-title {
+  font-size: 128px; font-weight: 800; letter-spacing: -0.025em;
+  color: #0f172a;
+}
+/* ── 다이어그램 (SVG) ───────────────────────── */
+.lyt-venn, .lyt-flow, .lyt-layers, .lyt-cycle, .lyt-figure { gap: 12px; }
+.lyt-venn .heading, .lyt-flow .heading, .lyt-layers .heading,
+.lyt-cycle .heading, .lyt-figure .heading {
+  font-size: 58px; font-weight: 800; letter-spacing: -0.015em;
+  color: #0f172a; flex-shrink: 0;
+}
+.lyt-venn .heading::after, .lyt-flow .heading::after, .lyt-layers .heading::after,
+.lyt-cycle .heading::after, .lyt-figure .heading::after {
+  content: ''; display: block;
+  width: 80px; height: 5px; margin-top: 20px;
+  background: #0ea5e9; border-radius: 3px;
+}
+.dg-wrap {
+  flex: 1; min-height: 0; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 14px;
+}
+.dg { width: 100%; height: 100%; max-height: 100%; overflow: visible; display: block; }
+/* figure 레이아웃만 .dg-wrap 안에 그림+캡션 두 개가 들어간다.
+   flex-direction 이 row 면 둘이 나란히 놓여 그림이 절반 이하로 줄어든다. */
+.dg-figure {
+  flex: 1; width: 100%; min-height: 0; display: flex;
+  align-items: center; justify-content: center;
+}
+
+/* 도형 */
+.dg-box { fill: #f8fafc; stroke: #e2e8f0; stroke-width: 2; }
+.dg-layer { stroke-width: 2; }
+.dg-venn-ring { fill: none; stroke-width: 4; }
+.dg-venn-circle { fill-opacity: .16; stroke-width: 4; }
+.dg-badge { fill: #0ea5e9; }
+.dg-badge-num { fill: #fff; font-size: 26px; font-weight: 800; }
+.dg-arrow { stroke: #94a3b8; stroke-width: 3.5; fill: none; }
+.dg-arrowhead { fill: #94a3b8; }
+
+/* 색상 변주 — 집합·층 구분 */
+.dg-c1 { stroke: #0ea5e9; fill: #0ea5e9; }
+.dg-c2 { stroke: #475569; fill: #475569; }
+.dg-c3 { stroke: #bae6fd; fill: #bae6fd; }
+.dg-layer.dg-c1 { fill: #0ea5e9; fill-opacity: .14; }
+.dg-layer.dg-c2 { fill: #475569; fill-opacity: .10; }
+.dg-layer.dg-c3 { fill: #bae6fd; fill-opacity: .28; }
+.dg-venn-ring.dg-c1 { fill: #0ea5e9; fill-opacity: .07; }
+.dg-venn-ring.dg-c2 { fill: #475569; fill-opacity: .07; }
+.dg-venn-ring.dg-c3 { fill: #bae6fd; fill-opacity: .22; }
+
+/* 글자 */
+.dg-label { fill: #0f172a; font-size: 32px; font-weight: 700; }
+.dg-sub   { fill: #475569; font-size: 24px; font-weight: 400; }
+.dg-caption {
+  font-size: 26px; color: #475569; text-align: center; margin-top: 8px;
+}
+
+.lyt-closing .closing-subtitle {
+  font-size: 40px; color: #475569; max-width: 1400px; line-height: 1.4;
+}

@@ -1,0 +1,182 @@
+[
+  {
+    "text": "가장",
+    "offset_ms": 100.0,
+    "duration_ms": 506.7
+  },
+  {
+    "text": "안쪽",
+    "offset_ms": 606.7,
+    "duration_ms": 506.7
+  },
+  {
+    "text": "원이",
+    "offset_ms": 1113.3,
+    "duration_ms": 506.7
+  },
+  {
+    "text": "바로",
+    "offset_ms": 1620.0,
+    "duration_ms": 506.7
+  },
+  {
+    "text": "딥러닝입니다.",
+    "offset_ms": 2126.7,
+    "duration_ms": 1773.3
+  },
+  {
+    "text": "딥러닝은",
+    "offset_ms": 3850.0,
+    "duration_ms": 715.9
+  },
+  {
+    "text": "머신러닝의",
+    "offset_ms": 4565.9,
+    "duration_ms": 894.9
+  },
+  {
+    "text": "한",
+    "offset_ms": 5460.8,
+    "duration_ms": 179.0
+  },
+  {
+    "text": "갈래로,",
+    "offset_ms": 5639.8,
+    "duration_ms": 715.9
+  },
+  {
+    "text": "여러",
+    "offset_ms": 6355.7,
+    "duration_ms": 358.0
+  },
+  {
+    "text": "층으로",
+    "offset_ms": 6713.6,
+    "duration_ms": 536.9
+  },
+  {
+    "text": "쌓인",
+    "offset_ms": 7250.6,
+    "duration_ms": 358.0
+  },
+  {
+    "text": "인공신경망을",
+    "offset_ms": 7608.5,
+    "duration_ms": 1073.9
+  },
+  {
+    "text": "활용해",
+    "offset_ms": 8682.4,
+    "duration_ms": 536.9
+  },
+  {
+    "text": "데이터를",
+    "offset_ms": 9219.3,
+    "duration_ms": 715.9
+  },
+  {
+    "text": "학습하는",
+    "offset_ms": 9935.2,
+    "duration_ms": 715.9
+  },
+  {
+    "text": "방식입니다.",
+    "offset_ms": 10651.1,
+    "duration_ms": 1073.9
+  },
+  {
+    "text": "세",
+    "offset_ms": 11725.0,
+    "duration_ms": 173.8
+  },
+  {
+    "text": "개념이",
+    "offset_ms": 11898.8,
+    "duration_ms": 521.5
+  },
+  {
+    "text": "순서대로",
+    "offset_ms": 12420.4,
+    "duration_ms": 695.4
+  },
+  {
+    "text": "포함",
+    "offset_ms": 13115.7,
+    "duration_ms": 347.7
+  },
+  {
+    "text": "관계를",
+    "offset_ms": 13463.4,
+    "duration_ms": 521.5
+  },
+  {
+    "text": "이루고",
+    "offset_ms": 13985.0,
+    "duration_ms": 521.5
+  },
+  {
+    "text": "있다는",
+    "offset_ms": 14506.5,
+    "duration_ms": 521.5
+  },
+  {
+    "text": "점을",
+    "offset_ms": 15028.0,
+    "duration_ms": 347.7
+  },
+  {
+    "text": "기억해",
+    "offset_ms": 15375.7,
+    "duration_ms": 521.5
+  },
+  {
+    "text": "두시면,",
+    "offset_ms": 15897.2,
+    "duration_ms": 695.4
+  },
+  {
+    "text": "앞으로",
+    "offset_ms": 16592.6,
+    "duration_ms": 521.5
+  },
+  {
+    "text": "딥러닝의",
+    "offset_ms": 17114.1,
+    "duration_ms": 695.4
+  },
+  {
+    "text": "정의와",
+    "offset_ms": 17809.5,
+    "duration_ms": 521.5
+  },
+  {
+    "text": "구조를",
+    "offset_ms": 18331.0,
+    "duration_ms": 521.5
+  },
+  {
+    "text": "이해하는",
+    "offset_ms": 18852.5,
+    "duration_ms": 695.4
+  },
+  {
+    "text": "데",
+    "offset_ms": 19547.9,
+    "duration_ms": 173.8
+  },
+  {
+    "text": "큰",
+    "offset_ms": 19721.8,
+    "duration_ms": 173.8
+  },
+  {
+    "text": "도움이",
+    "offset_ms": 19895.6,
+    "duration_ms": 521.5
+  },
+  {
+    "text": "됩니다.",
+    "offset_ms": 20417.1,
+    "duration_ms": 695.4
+  }
+]

@@ -1,0 +1,152 @@
+[
+  {
+    "text": "인공신경망의",
+    "offset_ms": 100.0,
+    "duration_ms": 1157.9
+  },
+  {
+    "text": "구조란",
+    "offset_ms": 1257.9,
+    "duration_ms": 579.0
+  },
+  {
+    "text": "무엇인지,",
+    "offset_ms": 1836.9,
+    "duration_ms": 964.9
+  },
+  {
+    "text": "어떤",
+    "offset_ms": 2801.8,
+    "duration_ms": 386.0
+  },
+  {
+    "text": "요소들로",
+    "offset_ms": 3187.8,
+    "duration_ms": 772.0
+  },
+  {
+    "text": "이루어져",
+    "offset_ms": 3959.8,
+    "duration_ms": 772.0
+  },
+  {
+    "text": "있는지를",
+    "offset_ms": 4731.7,
+    "duration_ms": 772.0
+  },
+  {
+    "text": "단계적으로",
+    "offset_ms": 5503.7,
+    "duration_ms": 964.9
+  },
+  {
+    "text": "살펴볼",
+    "offset_ms": 6468.6,
+    "duration_ms": 579.0
+  },
+  {
+    "text": "것입니다.",
+    "offset_ms": 7047.6,
+    "duration_ms": 964.9
+  },
+  {
+    "text": "생물학적",
+    "offset_ms": 7962.5,
+    "duration_ms": 695.7
+  },
+  {
+    "text": "뉴런에서",
+    "offset_ms": 8658.2,
+    "duration_ms": 695.7
+  },
+  {
+    "text": "출발해",
+    "offset_ms": 9353.8,
+    "duration_ms": 521.7
+  },
+  {
+    "text": "수학적",
+    "offset_ms": 9875.5,
+    "duration_ms": 521.7
+  },
+  {
+    "text": "모델로",
+    "offset_ms": 10397.3,
+    "duration_ms": 521.7
+  },
+  {
+    "text": "어떻게",
+    "offset_ms": 10919.0,
+    "duration_ms": 521.7
+  },
+  {
+    "text": "추상화되는지,",
+    "offset_ms": 11440.8,
+    "duration_ms": 1217.4
+  },
+  {
+    "text": "그리고",
+    "offset_ms": 12658.2,
+    "duration_ms": 521.7
+  },
+  {
+    "text": "뉴런들이",
+    "offset_ms": 13179.9,
+    "duration_ms": 695.7
+  },
+  {
+    "text": "층을",
+    "offset_ms": 13875.5,
+    "duration_ms": 347.8
+  },
+  {
+    "text": "이루어",
+    "offset_ms": 14223.4,
+    "duration_ms": 521.7
+  },
+  {
+    "text": "어떤",
+    "offset_ms": 14745.1,
+    "duration_ms": 347.8
+  },
+  {
+    "text": "방식으로",
+    "offset_ms": 15092.9,
+    "duration_ms": 695.7
+  },
+  {
+    "text": "연결되는지를",
+    "offset_ms": 15788.6,
+    "duration_ms": 1043.5
+  },
+  {
+    "text": "이해하는",
+    "offset_ms": 16832.1,
+    "duration_ms": 695.7
+  },
+  {
+    "text": "것이",
+    "offset_ms": 17527.7,
+    "duration_ms": 347.8
+  },
+  {
+    "text": "이",
+    "offset_ms": 17875.5,
+    "duration_ms": 173.9
+  },
+  {
+    "text": "섹션의",
+    "offset_ms": 18049.5,
+    "duration_ms": 521.7
+  },
+  {
+    "text": "핵심",
+    "offset_ms": 18571.2,
+    "duration_ms": 347.8
+  },
+  {
+    "text": "목표입니다.",
+    "offset_ms": 18919.0,
+    "duration_ms": 1043.5
+  }
+]

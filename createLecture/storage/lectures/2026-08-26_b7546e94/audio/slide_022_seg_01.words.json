@@ -1,0 +1,172 @@
+[
+  {
+    "text": "지금까지",
+    "offset_ms": 100.0,
+    "duration_ms": 832.7
+  },
+  {
+    "text": "배운",
+    "offset_ms": 932.7,
+    "duration_ms": 416.3
+  },
+  {
+    "text": "내용을",
+    "offset_ms": 1349.0,
+    "duration_ms": 624.5
+  },
+  {
+    "text": "단",
+    "offset_ms": 1973.6,
+    "duration_ms": 208.2
+  },
+  {
+    "text": "두",
+    "offset_ms": 2181.7,
+    "duration_ms": 208.2
+  },
+  {
+    "text": "줄의",
+    "offset_ms": 2389.9,
+    "duration_ms": 416.3
+  },
+  {
+    "text": "등식으로",
+    "offset_ms": 2806.3,
+    "duration_ms": 832.7
+  },
+  {
+    "text": "정리해",
+    "offset_ms": 3638.9,
+    "duration_ms": 624.5
+  },
+  {
+    "text": "보겠습니다.",
+    "offset_ms": 4263.5,
+    "duration_ms": 1249.0
+  },
+  {
+    "text": "먼저",
+    "offset_ms": 5462.5,
+    "duration_ms": 301.1
+  },
+  {
+    "text": "인공신경망은",
+    "offset_ms": 5763.6,
+    "duration_ms": 903.3
+  },
+  {
+    "text": "결국",
+    "offset_ms": 6666.9,
+    "duration_ms": 301.1
+  },
+  {
+    "text": "가중합,",
+    "offset_ms": 6968.0,
+    "duration_ms": 602.2
+  },
+  {
+    "text": "즉",
+    "offset_ms": 7570.2,
+    "duration_ms": 150.6
+  },
+  {
+    "text": "Weighted",
+    "offset_ms": 7720.8,
+    "duration_ms": 1204.4
+  },
+  {
+    "text": "Sum과",
+    "offset_ms": 8925.2,
+    "duration_ms": 602.2
+  },
+  {
+    "text": "활성화",
+    "offset_ms": 9527.4,
+    "duration_ms": 451.7
+  },
+  {
+    "text": "함수,",
+    "offset_ms": 9979.0,
+    "duration_ms": 451.7
+  },
+  {
+    "text": "Activation",
+    "offset_ms": 10430.7,
+    "duration_ms": 1505.5
+  },
+  {
+    "text": "Function의",
+    "offset_ms": 11936.2,
+    "duration_ms": 1355.0
+  },
+  {
+    "text": "조합이라는",
+    "offset_ms": 13291.2,
+    "duration_ms": 752.8
+  },
+  {
+    "text": "것을",
+    "offset_ms": 14043.9,
+    "duration_ms": 301.1
+  },
+  {
+    "text": "기억하셔야",
+    "offset_ms": 14345.0,
+    "duration_ms": 752.8
+  },
+  {
+    "text": "합니다.",
+    "offset_ms": 15097.8,
+    "duration_ms": 602.2
+  },
+  {
+    "text": "이",
+    "offset_ms": 15700.0,
+    "duration_ms": 198.9
+  },
+  {
+    "text": "두",
+    "offset_ms": 15898.9,
+    "duration_ms": 198.9
+  },
+  {
+    "text": "가지",
+    "offset_ms": 16097.7,
+    "duration_ms": 397.7
+  },
+  {
+    "text": "연산이",
+    "offset_ms": 16495.5,
+    "duration_ms": 596.6
+  },
+  {
+    "text": "반복적으로",
+    "offset_ms": 17092.0,
+    "duration_ms": 994.3
+  },
+  {
+    "text": "쌓이면서",
+    "offset_ms": 18086.4,
+    "duration_ms": 795.5
+  },
+  {
+    "text": "신경망의",
+    "offset_ms": 18881.8,
+    "duration_ms": 795.5
+  },
+  {
+    "text": "모든",
+    "offset_ms": 19677.3,
+    "duration_ms": 397.7
+  },
+  {
+    "text": "표현력이",
+    "offset_ms": 20075.0,
+    "duration_ms": 795.5
+  },
+  {
+    "text": "만들어집니다.",
+    "offset_ms": 20870.5,
+    "duration_ms": 1392.0
+  }
+]

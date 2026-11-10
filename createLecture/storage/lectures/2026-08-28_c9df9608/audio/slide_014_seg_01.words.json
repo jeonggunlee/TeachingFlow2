@@ -1,0 +1,157 @@
+[
+  {
+    "text": "먼저",
+    "offset_ms": 50.0,
+    "duration_ms": 390.6
+  },
+  {
+    "text": "Weight,",
+    "offset_ms": 440.6,
+    "duration_ms": 1367.2
+  },
+  {
+    "text": "즉",
+    "offset_ms": 1807.8,
+    "duration_ms": 195.3
+  },
+  {
+    "text": "가중치에",
+    "offset_ms": 2003.1,
+    "duration_ms": 781.2
+  },
+  {
+    "text": "대해",
+    "offset_ms": 2784.4,
+    "duration_ms": 390.6
+  },
+  {
+    "text": "살펴보겠습니다.",
+    "offset_ms": 3175.0,
+    "duration_ms": 1562.5
+  },
+  {
+    "text": "Weight는",
+    "offset_ms": 4737.5,
+    "duration_ms": 1269.9
+  },
+  {
+    "text": "각",
+    "offset_ms": 6007.4,
+    "duration_ms": 181.4
+  },
+  {
+    "text": "입력",
+    "offset_ms": 6188.9,
+    "duration_ms": 362.8
+  },
+  {
+    "text": "신호가",
+    "offset_ms": 6551.7,
+    "duration_ms": 544.3
+  },
+  {
+    "text": "출력에",
+    "offset_ms": 7095.9,
+    "duration_ms": 544.3
+  },
+  {
+    "text": "얼마나",
+    "offset_ms": 7640.2,
+    "duration_ms": 544.3
+  },
+  {
+    "text": "큰",
+    "offset_ms": 8184.5,
+    "duration_ms": 181.4
+  },
+  {
+    "text": "영향을",
+    "offset_ms": 8365.9,
+    "duration_ms": 544.3
+  },
+  {
+    "text": "미치는지를",
+    "offset_ms": 8910.1,
+    "duration_ms": 907.1
+  },
+  {
+    "text": "결정하는",
+    "offset_ms": 9817.2,
+    "duration_ms": 725.7
+  },
+  {
+    "text": "값입니다.",
+    "offset_ms": 10542.9,
+    "duration_ms": 907.1
+  },
+  {
+    "text": "앞",
+    "offset_ms": 11450.0,
+    "duration_ms": 178.2
+  },
+  {
+    "text": "슬라이드에서",
+    "offset_ms": 11628.2,
+    "duration_ms": 1069.5
+  },
+  {
+    "text": "본",
+    "offset_ms": 12697.8,
+    "duration_ms": 178.2
+  },
+  {
+    "text": "시냅스의",
+    "offset_ms": 12876.0,
+    "duration_ms": 713.0
+  },
+  {
+    "text": "강도에",
+    "offset_ms": 13589.0,
+    "duration_ms": 534.8
+  },
+  {
+    "text": "해당하며,",
+    "offset_ms": 14123.8,
+    "duration_ms": 891.2
+  },
+  {
+    "text": "학습",
+    "offset_ms": 15015.0,
+    "duration_ms": 356.5
+  },
+  {
+    "text": "과정을",
+    "offset_ms": 15371.5,
+    "duration_ms": 534.8
+  },
+  {
+    "text": "통해",
+    "offset_ms": 15906.2,
+    "duration_ms": 356.5
+  },
+  {
+    "text": "데이터로부터",
+    "offset_ms": 16262.8,
+    "duration_ms": 1069.5
+  },
+  {
+    "text": "자동으로",
+    "offset_ms": 17332.2,
+    "duration_ms": 713.0
+  },
+  {
+    "text": "조정된다는",
+    "offset_ms": 18045.2,
+    "duration_ms": 891.2
+  },
+  {
+    "text": "점이",
+    "offset_ms": 18936.5,
+    "duration_ms": 356.5
+  },
+  {
+    "text": "핵심입니다.",
+    "offset_ms": 19293.0,
+    "duration_ms": 1069.5
+  }
+]

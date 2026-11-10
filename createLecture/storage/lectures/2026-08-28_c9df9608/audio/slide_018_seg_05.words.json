@@ -1,0 +1,197 @@
+[
+  {
+    "text": "모델의",
+    "offset_ms": 50.0,
+    "duration_ms": 643.9
+  },
+  {
+    "text": "예측값",
+    "offset_ms": 693.9,
+    "duration_ms": 643.9
+  },
+  {
+    "text": "ŷ가",
+    "offset_ms": 1337.8,
+    "duration_ms": 643.9
+  },
+  {
+    "text": "실제",
+    "offset_ms": 1981.7,
+    "duration_ms": 429.3
+  },
+  {
+    "text": "정답",
+    "offset_ms": 2411.0,
+    "duration_ms": 429.3
+  },
+  {
+    "text": "y와",
+    "offset_ms": 2840.2,
+    "duration_ms": 429.3
+  },
+  {
+    "text": "얼마나",
+    "offset_ms": 3269.5,
+    "duration_ms": 643.9
+  },
+  {
+    "text": "다른지를",
+    "offset_ms": 3913.4,
+    "duration_ms": 858.5
+  },
+  {
+    "text": "측정하는",
+    "offset_ms": 4772.0,
+    "duration_ms": 858.5
+  },
+  {
+    "text": "것이",
+    "offset_ms": 5630.5,
+    "duration_ms": 429.3
+  },
+  {
+    "text": "손실",
+    "offset_ms": 6059.8,
+    "duration_ms": 429.3
+  },
+  {
+    "text": "함수",
+    "offset_ms": 6489.0,
+    "duration_ms": 429.3
+  },
+  {
+    "text": "L(y,",
+    "offset_ms": 6918.3,
+    "duration_ms": 643.9
+  },
+  {
+    "text": "ŷ)입니다.",
+    "offset_ms": 7562.2,
+    "duration_ms": 1287.7
+  },
+  {
+    "text": "회귀",
+    "offset_ms": 8850.0,
+    "duration_ms": 329.5
+  },
+  {
+    "text": "문제에는",
+    "offset_ms": 9179.5,
+    "duration_ms": 659.1
+  },
+  {
+    "text": "MSE,",
+    "offset_ms": 9838.6,
+    "duration_ms": 659.1
+  },
+  {
+    "text": "분류",
+    "offset_ms": 10497.7,
+    "duration_ms": 329.5
+  },
+  {
+    "text": "문제에는",
+    "offset_ms": 10827.3,
+    "duration_ms": 659.1
+  },
+  {
+    "text": "Cross",
+    "offset_ms": 11486.4,
+    "duration_ms": 823.9
+  },
+  {
+    "text": "Entropy를",
+    "offset_ms": 12310.2,
+    "duration_ms": 1318.2
+  },
+  {
+    "text": "주로",
+    "offset_ms": 13628.4,
+    "duration_ms": 329.5
+  },
+  {
+    "text": "사용하며,",
+    "offset_ms": 13958.0,
+    "duration_ms": 823.9
+  },
+  {
+    "text": "이",
+    "offset_ms": 14781.8,
+    "duration_ms": 164.8
+  },
+  {
+    "text": "손실을",
+    "offset_ms": 14946.6,
+    "duration_ms": 494.3
+  },
+  {
+    "text": "줄이는",
+    "offset_ms": 15440.9,
+    "duration_ms": 494.3
+  },
+  {
+    "text": "방향으로",
+    "offset_ms": 15935.2,
+    "duration_ms": 659.1
+  },
+  {
+    "text": "θ를",
+    "offset_ms": 16594.3,
+    "duration_ms": 329.5
+  },
+  {
+    "text": "업데이트하는",
+    "offset_ms": 16923.9,
+    "duration_ms": 988.6
+  },
+  {
+    "text": "과정이",
+    "offset_ms": 17912.5,
+    "duration_ms": 494.3
+  },
+  {
+    "text": "바로",
+    "offset_ms": 18406.8,
+    "duration_ms": 329.5
+  },
+  {
+    "text": "다음",
+    "offset_ms": 18736.4,
+    "duration_ms": 329.5
+  },
+  {
+    "text": "슬라이드에서",
+    "offset_ms": 19065.9,
+    "duration_ms": 988.6
+  },
+  {
+    "text": "다룰",
+    "offset_ms": 20054.5,
+    "duration_ms": 329.5
+  },
+  {
+    "text": "딥러닝",
+    "offset_ms": 20384.1,
+    "duration_ms": 494.3
+  },
+  {
+    "text": "학습의",
+    "offset_ms": 20878.4,
+    "duration_ms": 494.3
+  },
+  {
+    "text": "전체",
+    "offset_ms": 21372.7,
+    "duration_ms": 329.5
+  },
+  {
+    "text": "흐름으로",
+    "offset_ms": 21702.3,
+    "duration_ms": 659.1
+  },
+  {
+    "text": "이어집니다.",
+    "offset_ms": 22361.4,
+    "duration_ms": 988.6
+  }
+]

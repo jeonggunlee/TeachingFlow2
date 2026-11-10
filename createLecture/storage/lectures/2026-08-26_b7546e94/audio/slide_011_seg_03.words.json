@@ -1,0 +1,222 @@
+[
+  {
+    "text": "나아가",
+    "offset_ms": 50.0,
+    "duration_ms": 493.0
+  },
+  {
+    "text": "픽셀",
+    "offset_ms": 543.0,
+    "duration_ms": 328.7
+  },
+  {
+    "text": "단위로",
+    "offset_ms": 871.6,
+    "duration_ms": 493.0
+  },
+  {
+    "text": "객체를",
+    "offset_ms": 1364.6,
+    "duration_ms": 493.0
+  },
+  {
+    "text": "구분하는",
+    "offset_ms": 1857.6,
+    "duration_ms": 657.3
+  },
+  {
+    "text": "분할(Segmentation),",
+    "offset_ms": 2514.9,
+    "duration_ms": 2464.9
+  },
+  {
+    "text": "번역·요약·질의응답을",
+    "offset_ms": 4979.8,
+    "duration_ms": 1807.6
+  },
+  {
+    "text": "다루는",
+    "offset_ms": 6787.4,
+    "duration_ms": 493.0
+  },
+  {
+    "text": "자연어",
+    "offset_ms": 7280.3,
+    "duration_ms": 493.0
+  },
+  {
+    "text": "처리(NLP),",
+    "offset_ms": 7773.3,
+    "duration_ms": 986.0
+  },
+  {
+    "text": "그리고",
+    "offset_ms": 8759.3,
+    "duration_ms": 493.0
+  },
+  {
+    "text": "최근",
+    "offset_ms": 9252.2,
+    "duration_ms": 328.7
+  },
+  {
+    "text": "주목받고",
+    "offset_ms": 9580.9,
+    "duration_ms": 657.3
+  },
+  {
+    "text": "있는",
+    "offset_ms": 10238.2,
+    "duration_ms": 328.7
+  },
+  {
+    "text": "생성형",
+    "offset_ms": 10566.9,
+    "duration_ms": 493.0
+  },
+  {
+    "text": "AI까지",
+    "offset_ms": 11059.8,
+    "duration_ms": 657.3
+  },
+  {
+    "text": "딥러닝의",
+    "offset_ms": 11717.1,
+    "duration_ms": 657.3
+  },
+  {
+    "text": "응용",
+    "offset_ms": 12374.4,
+    "duration_ms": 328.7
+  },
+  {
+    "text": "범위는",
+    "offset_ms": 12703.1,
+    "duration_ms": 493.0
+  },
+  {
+    "text": "매우",
+    "offset_ms": 13196.1,
+    "duration_ms": 328.7
+  },
+  {
+    "text": "광범위합니다.",
+    "offset_ms": 13524.7,
+    "duration_ms": 1150.3
+  },
+  {
+    "text": "이처럼",
+    "offset_ms": 14675.0,
+    "duration_ms": 563.3
+  },
+  {
+    "text": "딥러닝은",
+    "offset_ms": 15238.3,
+    "duration_ms": 751.1
+  },
+  {
+    "text": "단일",
+    "offset_ms": 15989.4,
+    "duration_ms": 375.6
+  },
+  {
+    "text": "기술임에도",
+    "offset_ms": 16365.0,
+    "duration_ms": 938.9
+  },
+  {
+    "text": "불구하고",
+    "offset_ms": 17303.9,
+    "duration_ms": 751.1
+  },
+  {
+    "text": "다양한",
+    "offset_ms": 18055.0,
+    "duration_ms": 563.3
+  },
+  {
+    "text": "도메인을",
+    "offset_ms": 18618.3,
+    "duration_ms": 751.1
+  },
+  {
+    "text": "아우르는",
+    "offset_ms": 19369.4,
+    "duration_ms": 751.1
+  },
+  {
+    "text": "강력한",
+    "offset_ms": 20120.6,
+    "duration_ms": 563.3
+  },
+  {
+    "text": "범용",
+    "offset_ms": 20683.9,
+    "duration_ms": 375.6
+  },
+  {
+    "text": "도구로",
+    "offset_ms": 21059.4,
+    "duration_ms": 563.3
+  },
+  {
+    "text": "자리",
+    "offset_ms": 21622.8,
+    "duration_ms": 375.6
+  },
+  {
+    "text": "잡았습니다.",
+    "offset_ms": 21998.3,
+    "duration_ms": 1126.7
+  },
+  {
+    "text": "다음",
+    "offset_ms": 23125.0,
+    "duration_ms": 389.0
+  },
+  {
+    "text": "섹션부터는",
+    "offset_ms": 23514.0,
+    "duration_ms": 972.4
+  },
+  {
+    "text": "이",
+    "offset_ms": 24486.4,
+    "duration_ms": 194.5
+  },
+  {
+    "text": "구성",
+    "offset_ms": 24680.9,
+    "duration_ms": 389.0
+  },
+  {
+    "text": "요소들",
+    "offset_ms": 25069.9,
+    "duration_ms": 583.5
+  },
+  {
+    "text": "중",
+    "offset_ms": 25653.3,
+    "duration_ms": 194.5
+  },
+  {
+    "text": "신경망의",
+    "offset_ms": 25847.8,
+    "duration_ms": 777.9
+  },
+  {
+    "text": "구조를",
+    "offset_ms": 26625.7,
+    "duration_ms": 583.5
+  },
+  {
+    "text": "본격적으로",
+    "offset_ms": 27209.2,
+    "duration_ms": 972.4
+  },
+  {
+    "text": "살펴보겠습니다.",
+    "offset_ms": 28181.6,
+    "duration_ms": 1555.9
+  }
+]

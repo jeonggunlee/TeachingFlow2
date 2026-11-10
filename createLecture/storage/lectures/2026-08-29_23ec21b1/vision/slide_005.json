@@ -1,0 +1,20 @@
+{
+  "slide_index": 5,
+  "title": "필수 항목 1 — 지도교수 면담",
+  "segments": [
+    {
+      "id": "seg_1",
+      "ref": "no",
+      "keyword": "01",
+      "script": "이제부터 다섯 가지 필수 항목을 하나씩 살펴보겠습니다. ",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_2",
+      "ref": "t",
+      "keyword": "지도교수 면담",
+      "script": "첫 번째 필수 항목은 바로 지도교수 면담입니다. 이 항목은 Pass 조건 중 가장 먼저 챙겨야 할 사항으로, 다음 슬라이드에서 구체적인 방법과 주의사항을 자세히 안내해 드리겠습니다.",
+      "effect": "highlighter"
+    }
+  ]
+}

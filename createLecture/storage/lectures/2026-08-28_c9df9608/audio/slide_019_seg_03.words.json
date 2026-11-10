@@ -1,0 +1,147 @@
+[
+  {
+    "text": "예측값",
+    "offset_ms": 50.0,
+    "duration_ms": 596.6
+  },
+  {
+    "text": "ŷ이",
+    "offset_ms": 646.6,
+    "duration_ms": 596.6
+  },
+  {
+    "text": "구해지면,",
+    "offset_ms": 1243.2,
+    "duration_ms": 994.3
+  },
+  {
+    "text": "실제",
+    "offset_ms": 2237.5,
+    "duration_ms": 397.7
+  },
+  {
+    "text": "정답",
+    "offset_ms": 2635.2,
+    "duration_ms": 397.7
+  },
+  {
+    "text": "y와",
+    "offset_ms": 3033.0,
+    "duration_ms": 397.7
+  },
+  {
+    "text": "얼마나",
+    "offset_ms": 3430.7,
+    "duration_ms": 596.6
+  },
+  {
+    "text": "차이가",
+    "offset_ms": 4027.3,
+    "duration_ms": 596.6
+  },
+  {
+    "text": "나는지를",
+    "offset_ms": 4623.9,
+    "duration_ms": 795.5
+  },
+  {
+    "text": "손실",
+    "offset_ms": 5419.3,
+    "duration_ms": 397.7
+  },
+  {
+    "text": "함수",
+    "offset_ms": 5817.0,
+    "duration_ms": 397.7
+  },
+  {
+    "text": "L(y,",
+    "offset_ms": 6214.8,
+    "duration_ms": 596.6
+  },
+  {
+    "text": "ŷ)로",
+    "offset_ms": 6811.4,
+    "duration_ms": 596.7
+  },
+  {
+    "text": "수치화합니다.",
+    "offset_ms": 7408.0,
+    "duration_ms": 1392.0
+  },
+  {
+    "text": "이",
+    "offset_ms": 8800.0,
+    "duration_ms": 187.5
+  },
+  {
+    "text": "손실값이",
+    "offset_ms": 8987.5,
+    "duration_ms": 750.0
+  },
+  {
+    "text": "클수록",
+    "offset_ms": 9737.5,
+    "duration_ms": 562.5
+  },
+  {
+    "text": "모델의",
+    "offset_ms": 10300.0,
+    "duration_ms": 562.5
+  },
+  {
+    "text": "예측이",
+    "offset_ms": 10862.5,
+    "duration_ms": 562.5
+  },
+  {
+    "text": "정답에서",
+    "offset_ms": 11425.0,
+    "duration_ms": 750.0
+  },
+  {
+    "text": "멀다는",
+    "offset_ms": 12175.0,
+    "duration_ms": 562.5
+  },
+  {
+    "text": "것을",
+    "offset_ms": 12737.5,
+    "duration_ms": 375.0
+  },
+  {
+    "text": "의미하며,",
+    "offset_ms": 13112.5,
+    "duration_ms": 937.5
+  },
+  {
+    "text": "학습의",
+    "offset_ms": 14050.0,
+    "duration_ms": 562.5
+  },
+  {
+    "text": "목표는",
+    "offset_ms": 14612.5,
+    "duration_ms": 562.5
+  },
+  {
+    "text": "이",
+    "offset_ms": 15175.0,
+    "duration_ms": 187.5
+  },
+  {
+    "text": "값을",
+    "offset_ms": 15362.5,
+    "duration_ms": 375.0
+  },
+  {
+    "text": "최소화하는",
+    "offset_ms": 15737.5,
+    "duration_ms": 937.5
+  },
+  {
+    "text": "것입니다.",
+    "offset_ms": 16675.0,
+    "duration_ms": 937.5
+  }
+]

@@ -1,0 +1,167 @@
+[
+  {
+    "text": "1958년",
+    "offset_ms": 100.0,
+    "duration_ms": 886.2
+  },
+  {
+    "text": "Rosenblatt는",
+    "offset_ms": 986.2,
+    "duration_ms": 1949.7
+  },
+  {
+    "text": "인공",
+    "offset_ms": 2935.9,
+    "duration_ms": 354.5
+  },
+  {
+    "text": "뉴런",
+    "offset_ms": 3290.4,
+    "duration_ms": 354.5
+  },
+  {
+    "text": "개념을",
+    "offset_ms": 3644.9,
+    "duration_ms": 531.7
+  },
+  {
+    "text": "발전시켜",
+    "offset_ms": 4176.6,
+    "duration_ms": 709.0
+  },
+  {
+    "text": "퍼셉트론을",
+    "offset_ms": 4885.6,
+    "duration_ms": 886.2
+  },
+  {
+    "text": "제안했습니다.",
+    "offset_ms": 5771.8,
+    "duration_ms": 1240.7
+  },
+  {
+    "text": "퍼셉트론은",
+    "offset_ms": 6962.5,
+    "duration_ms": 951.4
+  },
+  {
+    "text": "입력값에",
+    "offset_ms": 7913.9,
+    "duration_ms": 761.1
+  },
+  {
+    "text": "가중치를",
+    "offset_ms": 8675.0,
+    "duration_ms": 761.1
+  },
+  {
+    "text": "곱해",
+    "offset_ms": 9436.1,
+    "duration_ms": 380.6
+  },
+  {
+    "text": "합산하고",
+    "offset_ms": 9816.7,
+    "duration_ms": 761.1
+  },
+  {
+    "text": "결과를",
+    "offset_ms": 10577.8,
+    "duration_ms": 570.8
+  },
+  {
+    "text": "출력하는",
+    "offset_ms": 11148.6,
+    "duration_ms": 761.1
+  },
+  {
+    "text": "구조로,",
+    "offset_ms": 11909.7,
+    "duration_ms": 761.1
+  },
+  {
+    "text": "단순한",
+    "offset_ms": 12670.8,
+    "duration_ms": 570.8
+  },
+  {
+    "text": "패턴",
+    "offset_ms": 13241.7,
+    "duration_ms": 380.6
+  },
+  {
+    "text": "분류가",
+    "offset_ms": 13622.2,
+    "duration_ms": 570.8
+  },
+  {
+    "text": "가능했습니다.",
+    "offset_ms": 14193.1,
+    "duration_ms": 1331.9
+  },
+  {
+    "text": "그러나",
+    "offset_ms": 15525.0,
+    "duration_ms": 576.3
+  },
+  {
+    "text": "XOR",
+    "offset_ms": 16101.3,
+    "duration_ms": 576.3
+  },
+  {
+    "text": "문제처럼",
+    "offset_ms": 16677.6,
+    "duration_ms": 768.4
+  },
+  {
+    "text": "선형",
+    "offset_ms": 17446.1,
+    "duration_ms": 384.2
+  },
+  {
+    "text": "분리가",
+    "offset_ms": 17830.3,
+    "duration_ms": 576.3
+  },
+  {
+    "text": "불가능한",
+    "offset_ms": 18406.6,
+    "duration_ms": 768.4
+  },
+  {
+    "text": "문제는",
+    "offset_ms": 19175.0,
+    "duration_ms": 576.3
+  },
+  {
+    "text": "풀",
+    "offset_ms": 19751.3,
+    "duration_ms": 192.1
+  },
+  {
+    "text": "수",
+    "offset_ms": 19943.4,
+    "duration_ms": 192.1
+  },
+  {
+    "text": "없다는",
+    "offset_ms": 20135.5,
+    "duration_ms": 576.3
+  },
+  {
+    "text": "한계가",
+    "offset_ms": 20711.8,
+    "duration_ms": 576.3
+  },
+  {
+    "text": "곧",
+    "offset_ms": 21288.2,
+    "duration_ms": 192.1
+  },
+  {
+    "text": "드러났습니다.",
+    "offset_ms": 21480.3,
+    "duration_ms": 1344.7
+  }
+]

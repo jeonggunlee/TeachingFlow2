@@ -1,0 +1,29 @@
+{
+  "spec_version": 1,
+  "theme": "white-minimal-academic",
+  "locked": true,
+  "brand": "HALLYM EDUTECH",
+  "slide_w": 1920,
+  "slide_h": 1080,
+  "palette": {
+    "bg": "#ffffff",
+    "accent": "#0ea5e9",
+    "accent_soft": "#bae6fd",
+    "ink": "#0f172a",
+    "ink_soft": "#475569",
+    "muted": "#94a3b8",
+    "panel": "#f8fafc",
+    "panel_border": "#e2e8f0"
+  },
+  "font_stack": "'Pretendard Variable', 'Pretendard', 'Noto Sans KR', 'Noto Sans CJK KR', 'Apple SD Gothic Neo', 'Malgun Gothic', system-ui, -apple-system, BlinkMacSystemFont, sans-serif",
+  "layout_rules": [
+    "표지(title) 슬라이드는 맨 처음 정확히 1장",
+    "마무리(closing) 슬라이드는 맨 끝 정확히 1장",
+    "본문은 bullets 위주, section·two_col·quote·stat을 섞어 리듬을 준다",
+    "같은 레이아웃이 3장 이상 연속되지 않게 한다",
+    "bullets는 3~5개, 각 80자 이내 키워드 중심",
+    "two_col의 각 컬럼 points는 2~4개",
+    "stat의 value는 8자 이내",
+    "모든 텍스트는 한국어"
+  ]
+}

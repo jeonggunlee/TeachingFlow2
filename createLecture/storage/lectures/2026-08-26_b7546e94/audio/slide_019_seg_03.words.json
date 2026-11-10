@@ -1,0 +1,167 @@
+[
+  {
+    "text": "두",
+    "offset_ms": 50.0,
+    "duration_ms": 260.5
+  },
+  {
+    "text": "번째",
+    "offset_ms": 310.5,
+    "duration_ms": 521.0
+  },
+  {
+    "text": "은닉층은",
+    "offset_ms": 831.5,
+    "duration_ms": 1042.0
+  },
+  {
+    "text": "h₂",
+    "offset_ms": 1873.5,
+    "duration_ms": 521.0
+  },
+  {
+    "text": "=",
+    "offset_ms": 2394.5,
+    "duration_ms": 521.0
+  },
+  {
+    "text": "f(W₂h₁",
+    "offset_ms": 2915.5,
+    "duration_ms": 1302.5
+  },
+  {
+    "text": "+",
+    "offset_ms": 4218.0,
+    "duration_ms": 781.5
+  },
+  {
+    "text": "b₂)입니다.",
+    "offset_ms": 4999.5,
+    "duration_ms": 1563.0
+  },
+  {
+    "text": "이번에는",
+    "offset_ms": 6562.5,
+    "duration_ms": 821.4
+  },
+  {
+    "text": "입력이",
+    "offset_ms": 7383.9,
+    "duration_ms": 616.1
+  },
+  {
+    "text": "원래",
+    "offset_ms": 8000.0,
+    "duration_ms": 410.7
+  },
+  {
+    "text": "데이터",
+    "offset_ms": 8410.7,
+    "duration_ms": 616.1
+  },
+  {
+    "text": "x가",
+    "offset_ms": 9026.8,
+    "duration_ms": 410.7
+  },
+  {
+    "text": "아니라",
+    "offset_ms": 9437.5,
+    "duration_ms": 616.1
+  },
+  {
+    "text": "앞",
+    "offset_ms": 10053.6,
+    "duration_ms": 205.4
+  },
+  {
+    "text": "층의",
+    "offset_ms": 10258.9,
+    "duration_ms": 410.7
+  },
+  {
+    "text": "출력",
+    "offset_ms": 10669.6,
+    "duration_ms": 410.7
+  },
+  {
+    "text": "h₁이라는",
+    "offset_ms": 11080.4,
+    "duration_ms": 1026.8
+  },
+  {
+    "text": "점에",
+    "offset_ms": 12107.1,
+    "duration_ms": 410.7
+  },
+  {
+    "text": "주목하세요.",
+    "offset_ms": 12517.9,
+    "duration_ms": 1232.1
+  },
+  {
+    "text": "층이",
+    "offset_ms": 13750.0,
+    "duration_ms": 378.5
+  },
+  {
+    "text": "쌓일수록",
+    "offset_ms": 14128.5,
+    "duration_ms": 757.0
+  },
+  {
+    "text": "이전",
+    "offset_ms": 14885.5,
+    "duration_ms": 378.5
+  },
+  {
+    "text": "층의",
+    "offset_ms": 15264.0,
+    "duration_ms": 378.5
+  },
+  {
+    "text": "출력이",
+    "offset_ms": 15642.4,
+    "duration_ms": 567.7
+  },
+  {
+    "text": "다음",
+    "offset_ms": 16210.2,
+    "duration_ms": 378.5
+  },
+  {
+    "text": "층의",
+    "offset_ms": 16588.7,
+    "duration_ms": 378.5
+  },
+  {
+    "text": "입력으로",
+    "offset_ms": 16967.2,
+    "duration_ms": 757.0
+  },
+  {
+    "text": "연결되며,",
+    "offset_ms": 17724.1,
+    "duration_ms": 946.2
+  },
+  {
+    "text": "이것이",
+    "offset_ms": 18670.3,
+    "duration_ms": 567.7
+  },
+  {
+    "text": "'깊은'",
+    "offset_ms": 19238.1,
+    "duration_ms": 757.0
+  },
+  {
+    "text": "신경망의",
+    "offset_ms": 19995.1,
+    "duration_ms": 757.0
+  },
+  {
+    "text": "본질입니다.",
+    "offset_ms": 20752.0,
+    "duration_ms": 1135.5
+  }
+]

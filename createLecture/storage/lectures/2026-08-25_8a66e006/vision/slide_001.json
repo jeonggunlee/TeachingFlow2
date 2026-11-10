@@ -1,0 +1,42 @@
+{
+  "slide_index": 1,
+  "title": "인공지능의 개요",
+  "segments": [
+    {
+      "id": "seg_1",
+      "script": "이 슬라이드는 강의의 첫 번째 주제인 '인공지능의 개요'를 소개합니다. 인공지능이란 무엇인지, 그 학문적 출발점을 함께 살펴보겠습니다.",
+      "keyword": "인공지능의 개요",
+      "highlight": {
+        "x_pct": 5,
+        "y_pct": 30,
+        "w_pct": 55,
+        "h_pct": 15
+      },
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_2",
+      "script": "이 강의에서는 AI의 정의와 역사를 시작으로, 핵심 기술과 다양한 응용 분야를 다룰 예정입니다. 나아가 우리가 현실에서 마주하고 있는 윤리적 과제까지 폭넓게 조망합니다.",
+      "keyword": "윤리적 과제",
+      "highlight": {
+        "x_pct": 5,
+        "y_pct": 55,
+        "w_pct": 80,
+        "h_pct": 14
+      },
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_3",
+      "script": "이 강의는 인공지능을 학문으로서 처음 접하는 분들을 위한 첫걸음 과정입니다. 총 11개의 슬라이드로 구성되어 있으며, 기초부터 차근차근 개념을 쌓아 나가겠습니다.",
+      "keyword": "첫걸음",
+      "highlight": {
+        "x_pct": 5,
+        "y_pct": 63,
+        "w_pct": 75,
+        "h_pct": 10
+      },
+      "effect": "highlighter"
+    }
+  ]
+}

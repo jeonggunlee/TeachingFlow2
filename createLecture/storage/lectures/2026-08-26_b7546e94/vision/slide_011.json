@@ -1,0 +1,27 @@
+{
+  "slide_index": 11,
+  "title": "딥러닝의 주요 구성 요소와 응용",
+  "segments": [
+    {
+      "id": "seg_1",
+      "ref": "b1",
+      "keyword": "Data · Neural Network · Loss Function · Optimizer",
+      "script": "딥러닝 시스템은 크게 여섯 가지 핵심 구성 요소로 이루어집니다. 데이터(Data)가 학습의 원료가 되고, 신경망(Neural Network)이 그 데이터를 처리하며, Loss Function이 예측의 오차를 측정합니다. 그리고 Optimizer가 오차를 줄이는 방향으로 가중치를 갱신하고, 학습(Training)과 추론(Inference) 단계를 거쳐 최종적으로 결과를 만들어냅니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_2",
+      "ref": "b2",
+      "keyword": "분류·회귀·객체 탐지",
+      "script": "딥러닝의 대표적인 응용 중 첫 번째 그룹을 살펴보면, 이미지나 텍스트를 특정 범주로 나누는 분류(Classification), 연속적인 수치를 예측하는 회귀(Regression), 그리고 이미지 내 객체의 위치와 종류를 동시에 찾아내는 객체 탐지(Object Detection)가 있습니다. 이 세 가지는 딥러닝이 가장 먼저 두각을 나타낸 핵심 과제들입니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_3",
+      "ref": "b3",
+      "keyword": "자연어 처리·생성형 AI",
+      "script": "나아가 픽셀 단위로 객체를 구분하는 분할(Segmentation), 번역·요약·질의응답을 다루는 자연어 처리(NLP), 그리고 최근 주목받고 있는 생성형 AI까지 딥러닝의 응용 범위는 매우 광범위합니다. 이처럼 딥러닝은 단일 기술임에도 불구하고 다양한 도메인을 아우르는 강력한 범용 도구로 자리 잡았습니다. 다음 섹션부터는 이 구성 요소들 중 신경망의 구조를 본격적으로 살펴보겠습니다.",
+      "effect": "highlighter"
+    }
+  ]
+}

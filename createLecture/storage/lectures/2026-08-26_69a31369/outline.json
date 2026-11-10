@@ -1,0 +1,57 @@
+[
+  {
+    "layout": "title",
+    "title": "딥러닝 기초",
+    "subtitle": "역사, 정의, 인공신경망 구조와 수학적 표현"
+  },
+  {
+    "layout": "bullets",
+    "title": "딥러닝의 역사",
+    "bullets": [
+      "1943년 McCulloch & Pitts — 최초의 인공 뉴런 모델 제안",
+      "1986년 Rumelhart — 역전파(Backpropagation) 알고리즘 정립",
+      "2006년 Hinton — 심층 신뢰 신경망으로 딥러닝 부흥 시작",
+      "2012년 AlexNet — ImageNet 대회에서 오류율 급감, 딥러닝 대중화"
+    ]
+  },
+  {
+    "layout": "quote",
+    "quote": "딥러닝은 데이터로부터 표현(representation)을 계층적으로 학습하는 기계학습의 한 분야이다.",
+    "attribution": "LeCun, Bengio & Hinton, Nature 2015"
+  },
+  {
+    "layout": "two_col",
+    "title": "인공신경망의 구조",
+    "left": {
+      "heading": "주요 구성 요소",
+      "points": [
+        "입력층(Input Layer): 원시 데이터 수신",
+        "은닉층(Hidden Layer): 특징 추출 및 변환",
+        "출력층(Output Layer): 최종 예측값 생성"
+      ]
+    },
+    "right": {
+      "heading": "핵심 개념",
+      "points": [
+        "뉴런(노드): 가중합 후 활성화 함수 적용",
+        "가중치(Weight): 학습을 통해 갱신되는 파라미터",
+        "활성화 함수: ReLU, Sigmoid, Softmax 등"
+      ]
+    }
+  },
+  {
+    "layout": "bullets",
+    "title": "인공신경망의 수학적 표현",
+    "bullets": [
+      "선형 변환: z = Wx + b  (W: 가중치 행렬, b: 편향 벡터)",
+      "활성화: a = f(z)  — 비선형성 도입으로 복잡한 함수 근사",
+      "손실 함수 L(ŷ, y): 예측값과 실제값의 차이를 정량화",
+      "역전파: ∂L/∂W 계산 후 경사하강법으로 파라미터 갱신"
+    ]
+  },
+  {
+    "layout": "closing",
+    "title": "핵심 정리",
+    "subtitle": "딥러닝 = 계층적 표현 학습 | 신경망 = 선형 변환 + 비선형 활성화 + 역전파"
+  }
+]

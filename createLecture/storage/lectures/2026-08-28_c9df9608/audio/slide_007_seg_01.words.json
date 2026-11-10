@@ -1,0 +1,177 @@
+[
+  {
+    "text": "2012년",
+    "offset_ms": 50.0,
+    "duration_ms": 772.6
+  },
+  {
+    "text": "AlexNet의",
+    "offset_ms": 822.6,
+    "duration_ms": 1236.2
+  },
+  {
+    "text": "등장",
+    "offset_ms": 2058.9,
+    "duration_ms": 309.1
+  },
+  {
+    "text": "이후,",
+    "offset_ms": 2367.9,
+    "duration_ms": 463.6
+  },
+  {
+    "text": "딥러닝",
+    "offset_ms": 2831.5,
+    "duration_ms": 463.6
+  },
+  {
+    "text": "발전의",
+    "offset_ms": 3295.1,
+    "duration_ms": 463.6
+  },
+  {
+    "text": "또",
+    "offset_ms": 3758.7,
+    "duration_ms": 154.5
+  },
+  {
+    "text": "다른",
+    "offset_ms": 3913.2,
+    "duration_ms": 309.1
+  },
+  {
+    "text": "전환점은",
+    "offset_ms": 4222.3,
+    "duration_ms": 618.1
+  },
+  {
+    "text": "바로",
+    "offset_ms": 4840.4,
+    "duration_ms": 309.1
+  },
+  {
+    "text": "Attention",
+    "offset_ms": 5149.5,
+    "duration_ms": 1390.8
+  },
+  {
+    "text": "메커니즘과",
+    "offset_ms": 6540.2,
+    "duration_ms": 772.6
+  },
+  {
+    "text": "Transformer",
+    "offset_ms": 7312.9,
+    "duration_ms": 1699.8
+  },
+  {
+    "text": "아키텍처의",
+    "offset_ms": 9012.7,
+    "duration_ms": 772.6
+  },
+  {
+    "text": "등장입니다.",
+    "offset_ms": 9785.3,
+    "duration_ms": 927.2
+  },
+  {
+    "text": "2017년",
+    "offset_ms": 10712.5,
+    "duration_ms": 801.4
+  },
+  {
+    "text": "구글이",
+    "offset_ms": 11513.9,
+    "duration_ms": 480.8
+  },
+  {
+    "text": "발표한",
+    "offset_ms": 11994.7,
+    "duration_ms": 480.8
+  },
+  {
+    "text": "'Attention",
+    "offset_ms": 12475.5,
+    "duration_ms": 1602.7
+  },
+  {
+    "text": "is",
+    "offset_ms": 14078.3,
+    "duration_ms": 320.5
+  },
+  {
+    "text": "All",
+    "offset_ms": 14398.8,
+    "duration_ms": 480.8
+  },
+  {
+    "text": "You",
+    "offset_ms": 14879.6,
+    "duration_ms": 480.8
+  },
+  {
+    "text": "Need'",
+    "offset_ms": 15360.4,
+    "duration_ms": 801.4
+  },
+  {
+    "text": "논문은",
+    "offset_ms": 16161.8,
+    "duration_ms": 480.8
+  },
+  {
+    "text": "기존",
+    "offset_ms": 16642.6,
+    "duration_ms": 320.5
+  },
+  {
+    "text": "순환",
+    "offset_ms": 16963.2,
+    "duration_ms": 320.5
+  },
+  {
+    "text": "신경망의",
+    "offset_ms": 17283.7,
+    "duration_ms": 641.1
+  },
+  {
+    "text": "한계를",
+    "offset_ms": 17924.8,
+    "duration_ms": 480.8
+  },
+  {
+    "text": "극복하며",
+    "offset_ms": 18405.7,
+    "duration_ms": 641.1
+  },
+  {
+    "text": "시퀀스",
+    "offset_ms": 19046.7,
+    "duration_ms": 480.8
+  },
+  {
+    "text": "처리",
+    "offset_ms": 19527.6,
+    "duration_ms": 320.5
+  },
+  {
+    "text": "방식을",
+    "offset_ms": 19848.1,
+    "duration_ms": 480.8
+  },
+  {
+    "text": "근본적으로",
+    "offset_ms": 20328.9,
+    "duration_ms": 801.4
+  },
+  {
+    "text": "바꿔",
+    "offset_ms": 21130.3,
+    "duration_ms": 320.5
+  },
+  {
+    "text": "놓았습니다.",
+    "offset_ms": 21450.9,
+    "duration_ms": 961.6
+  }
+]

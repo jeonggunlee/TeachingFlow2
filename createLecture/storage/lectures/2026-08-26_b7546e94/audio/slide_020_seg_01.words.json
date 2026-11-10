@@ -1,0 +1,122 @@
+[
+  {
+    "text": "앞서",
+    "offset_ms": 100.0,
+    "duration_ms": 376.1
+  },
+  {
+    "text": "신경망의",
+    "offset_ms": 476.1,
+    "duration_ms": 752.3
+  },
+  {
+    "text": "수식",
+    "offset_ms": 1228.4,
+    "duration_ms": 376.1
+  },
+  {
+    "text": "구조를",
+    "offset_ms": 1604.5,
+    "duration_ms": 564.2
+  },
+  {
+    "text": "살펴봤으니,",
+    "offset_ms": 2168.8,
+    "duration_ms": 1128.4
+  },
+  {
+    "text": "이제",
+    "offset_ms": 3297.2,
+    "duration_ms": 376.1
+  },
+  {
+    "text": "신경망이",
+    "offset_ms": 3673.3,
+    "duration_ms": 752.3
+  },
+  {
+    "text": "어떻게",
+    "offset_ms": 4425.6,
+    "duration_ms": 564.2
+  },
+  {
+    "text": "'틀린",
+    "offset_ms": 4989.8,
+    "duration_ms": 564.2
+  },
+  {
+    "text": "정도'를",
+    "offset_ms": 5554.0,
+    "duration_ms": 752.3
+  },
+  {
+    "text": "측정하는지",
+    "offset_ms": 6306.3,
+    "duration_ms": 940.3
+  },
+  {
+    "text": "알아봅니다.",
+    "offset_ms": 7246.6,
+    "duration_ms": 1128.4
+  },
+  {
+    "text": "Loss",
+    "offset_ms": 8325.0,
+    "duration_ms": 618.1
+  },
+  {
+    "text": "Function은",
+    "offset_ms": 8943.1,
+    "duration_ms": 1390.7
+  },
+  {
+    "text": "모델의",
+    "offset_ms": 10333.8,
+    "duration_ms": 463.6
+  },
+  {
+    "text": "예측이",
+    "offset_ms": 10797.3,
+    "duration_ms": 463.6
+  },
+  {
+    "text": "실제",
+    "offset_ms": 11260.9,
+    "duration_ms": 309.0
+  },
+  {
+    "text": "정답과",
+    "offset_ms": 11569.9,
+    "duration_ms": 463.6
+  },
+  {
+    "text": "얼마나",
+    "offset_ms": 12033.5,
+    "duration_ms": 463.6
+  },
+  {
+    "text": "다른지를",
+    "offset_ms": 12497.1,
+    "duration_ms": 618.1
+  },
+  {
+    "text": "하나의",
+    "offset_ms": 13115.2,
+    "duration_ms": 463.6
+  },
+  {
+    "text": "숫자로",
+    "offset_ms": 13578.7,
+    "duration_ms": 463.6
+  },
+  {
+    "text": "나타내는",
+    "offset_ms": 14042.3,
+    "duration_ms": 618.1
+  },
+  {
+    "text": "함수입니다.",
+    "offset_ms": 14660.4,
+    "duration_ms": 927.1
+  }
+]

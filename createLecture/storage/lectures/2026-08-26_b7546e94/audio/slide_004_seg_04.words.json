@@ -1,0 +1,172 @@
+[
+  {
+    "text": "2012년",
+    "offset_ms": 100.0,
+    "duration_ms": 800.7
+  },
+  {
+    "text": "AlexNet이",
+    "offset_ms": 900.7,
+    "duration_ms": 1281.1
+  },
+  {
+    "text": "ImageNet",
+    "offset_ms": 2181.8,
+    "duration_ms": 1281.1
+  },
+  {
+    "text": "대회에서",
+    "offset_ms": 3463.0,
+    "duration_ms": 640.6
+  },
+  {
+    "text": "압도적인",
+    "offset_ms": 4103.5,
+    "duration_ms": 640.6
+  },
+  {
+    "text": "성능을",
+    "offset_ms": 4744.1,
+    "duration_ms": 480.4
+  },
+  {
+    "text": "보이며",
+    "offset_ms": 5224.5,
+    "duration_ms": 480.4
+  },
+  {
+    "text": "딥러닝",
+    "offset_ms": 5705.0,
+    "duration_ms": 480.4
+  },
+  {
+    "text": "부흥의",
+    "offset_ms": 6185.4,
+    "duration_ms": 480.4
+  },
+  {
+    "text": "신호탄을",
+    "offset_ms": 6665.8,
+    "duration_ms": 640.6
+  },
+  {
+    "text": "쏘아",
+    "offset_ms": 7306.4,
+    "duration_ms": 320.3
+  },
+  {
+    "text": "올렸습니다.",
+    "offset_ms": 7626.7,
+    "duration_ms": 960.8
+  },
+  {
+    "text": "이",
+    "offset_ms": 8537.5,
+    "duration_ms": 179.3
+  },
+  {
+    "text": "성공의",
+    "offset_ms": 8716.8,
+    "duration_ms": 538.0
+  },
+  {
+    "text": "배경에는",
+    "offset_ms": 9254.9,
+    "duration_ms": 717.4
+  },
+  {
+    "text": "GPU를",
+    "offset_ms": 9972.3,
+    "duration_ms": 717.4
+  },
+  {
+    "text": "활용한",
+    "offset_ms": 10689.7,
+    "duration_ms": 538.0
+  },
+  {
+    "text": "대규모",
+    "offset_ms": 11227.7,
+    "duration_ms": 538.0
+  },
+  {
+    "text": "병렬",
+    "offset_ms": 11765.8,
+    "duration_ms": 358.7
+  },
+  {
+    "text": "연산과",
+    "offset_ms": 12124.5,
+    "duration_ms": 538.0
+  },
+  {
+    "text": "빅데이터의",
+    "offset_ms": 12662.5,
+    "duration_ms": 896.7
+  },
+  {
+    "text": "확보가",
+    "offset_ms": 13559.2,
+    "duration_ms": 538.0
+  },
+  {
+    "text": "있었으며,",
+    "offset_ms": 14097.3,
+    "duration_ms": 896.7
+  },
+  {
+    "text": "이",
+    "offset_ms": 14994.0,
+    "duration_ms": 179.3
+  },
+  {
+    "text": "두",
+    "offset_ms": 15173.4,
+    "duration_ms": 179.3
+  },
+  {
+    "text": "가지는",
+    "offset_ms": 15352.7,
+    "duration_ms": 538.0
+  },
+  {
+    "text": "깊은",
+    "offset_ms": 15890.8,
+    "duration_ms": 358.7
+  },
+  {
+    "text": "신경망",
+    "offset_ms": 16249.5,
+    "duration_ms": 538.0
+  },
+  {
+    "text": "학습을",
+    "offset_ms": 16787.5,
+    "duration_ms": 538.0
+  },
+  {
+    "text": "현실적으로",
+    "offset_ms": 17325.5,
+    "duration_ms": 896.7
+  },
+  {
+    "text": "가능하게",
+    "offset_ms": 18222.3,
+    "duration_ms": 717.4
+  },
+  {
+    "text": "한",
+    "offset_ms": 18939.7,
+    "duration_ms": 179.3
+  },
+  {
+    "text": "핵심",
+    "offset_ms": 19119.0,
+    "duration_ms": 358.7
+  },
+  {
+    "text": "조건이었습니다.",
+    "offset_ms": 19477.7,
+    "duration_ms": 1434.8
+  }
+]

@@ -1,0 +1,152 @@
+[
+  {
+    "text": "이",
+    "offset_ms": 50.0,
+    "duration_ms": 220.2
+  },
+  {
+    "text": "세",
+    "offset_ms": 270.2,
+    "duration_ms": 220.2
+  },
+  {
+    "text": "단계를",
+    "offset_ms": 490.3,
+    "duration_ms": 660.5
+  },
+  {
+    "text": "하나로",
+    "offset_ms": 1150.8,
+    "duration_ms": 660.5
+  },
+  {
+    "text": "묶으면",
+    "offset_ms": 1811.3,
+    "duration_ms": 660.5
+  },
+  {
+    "text": "ŷ",
+    "offset_ms": 2471.8,
+    "duration_ms": 440.4
+  },
+  {
+    "text": "=",
+    "offset_ms": 2912.1,
+    "duration_ms": 440.3
+  },
+  {
+    "text": "F(x;",
+    "offset_ms": 3352.4,
+    "duration_ms": 660.5
+  },
+  {
+    "text": "θ)라는",
+    "offset_ms": 4012.9,
+    "duration_ms": 660.5
+  },
+  {
+    "text": "간결한",
+    "offset_ms": 4673.4,
+    "duration_ms": 660.5
+  },
+  {
+    "text": "표현이",
+    "offset_ms": 5333.9,
+    "duration_ms": 660.5
+  },
+  {
+    "text": "됩니다.",
+    "offset_ms": 5994.4,
+    "duration_ms": 880.6
+  },
+  {
+    "text": "여기서",
+    "offset_ms": 6875.0,
+    "duration_ms": 515.8
+  },
+  {
+    "text": "θ는",
+    "offset_ms": 7390.8,
+    "duration_ms": 343.9
+  },
+  {
+    "text": "모든",
+    "offset_ms": 7734.6,
+    "duration_ms": 343.9
+  },
+  {
+    "text": "층의",
+    "offset_ms": 8078.5,
+    "duration_ms": 343.9
+  },
+  {
+    "text": "Weight와",
+    "offset_ms": 8422.3,
+    "duration_ms": 1203.5
+  },
+  {
+    "text": "Bias를",
+    "offset_ms": 9625.8,
+    "duration_ms": 859.6
+  },
+  {
+    "text": "통틀어",
+    "offset_ms": 10485.5,
+    "duration_ms": 515.8
+  },
+  {
+    "text": "가리키는",
+    "offset_ms": 11001.2,
+    "duration_ms": 687.7
+  },
+  {
+    "text": "파라미터",
+    "offset_ms": 11688.9,
+    "duration_ms": 687.7
+  },
+  {
+    "text": "집합이며,",
+    "offset_ms": 12376.6,
+    "duration_ms": 859.6
+  },
+  {
+    "text": "딥러닝",
+    "offset_ms": 13236.3,
+    "duration_ms": 515.8
+  },
+  {
+    "text": "학습의",
+    "offset_ms": 13752.0,
+    "duration_ms": 515.8
+  },
+  {
+    "text": "목표는",
+    "offset_ms": 14267.8,
+    "duration_ms": 515.8
+  },
+  {
+    "text": "바로",
+    "offset_ms": 14783.6,
+    "duration_ms": 343.9
+  },
+  {
+    "text": "이",
+    "offset_ms": 15127.5,
+    "duration_ms": 171.9
+  },
+  {
+    "text": "θ를",
+    "offset_ms": 15299.4,
+    "duration_ms": 343.9
+  },
+  {
+    "text": "최적화하는",
+    "offset_ms": 15643.2,
+    "duration_ms": 859.6
+  },
+  {
+    "text": "것입니다.",
+    "offset_ms": 16502.9,
+    "duration_ms": 859.6
+  }
+]

@@ -1,0 +1,282 @@
+[
+  {
+    "text": "뉴런의",
+    "offset_ms": 100.0,
+    "duration_ms": 714.5
+  },
+  {
+    "text": "연산은",
+    "offset_ms": 814.5,
+    "duration_ms": 714.5
+  },
+  {
+    "text": "크게",
+    "offset_ms": 1528.9,
+    "duration_ms": 476.3
+  },
+  {
+    "text": "세",
+    "offset_ms": 2005.3,
+    "duration_ms": 238.2
+  },
+  {
+    "text": "단계로",
+    "offset_ms": 2243.4,
+    "duration_ms": 714.5
+  },
+  {
+    "text": "이루어집니다.",
+    "offset_ms": 2957.9,
+    "duration_ms": 1667.1
+  },
+  {
+    "text": "먼저",
+    "offset_ms": 4575.0,
+    "duration_ms": 425.0
+  },
+  {
+    "text": "입력",
+    "offset_ms": 5000.0,
+    "duration_ms": 425.0
+  },
+  {
+    "text": "벡터",
+    "offset_ms": 5425.0,
+    "duration_ms": 425.0
+  },
+  {
+    "text": "x와",
+    "offset_ms": 5850.0,
+    "duration_ms": 425.0
+  },
+  {
+    "text": "가중치",
+    "offset_ms": 6275.0,
+    "duration_ms": 637.5
+  },
+  {
+    "text": "벡터",
+    "offset_ms": 6912.5,
+    "duration_ms": 425.0
+  },
+  {
+    "text": "w의",
+    "offset_ms": 7337.5,
+    "duration_ms": 425.0
+  },
+  {
+    "text": "내적,",
+    "offset_ms": 7762.5,
+    "duration_ms": 637.5
+  },
+  {
+    "text": "즉",
+    "offset_ms": 8400.0,
+    "duration_ms": 212.5
+  },
+  {
+    "text": "각",
+    "offset_ms": 8612.5,
+    "duration_ms": 212.5
+  },
+  {
+    "text": "입력값에",
+    "offset_ms": 8825.0,
+    "duration_ms": 850.0
+  },
+  {
+    "text": "대응하는",
+    "offset_ms": 9675.0,
+    "duration_ms": 850.0
+  },
+  {
+    "text": "가중치를",
+    "offset_ms": 10525.0,
+    "duration_ms": 850.0
+  },
+  {
+    "text": "곱한",
+    "offset_ms": 11375.0,
+    "duration_ms": 425.0
+  },
+  {
+    "text": "뒤",
+    "offset_ms": 11800.0,
+    "duration_ms": 212.5
+  },
+  {
+    "text": "모두",
+    "offset_ms": 12012.5,
+    "duration_ms": 425.0
+  },
+  {
+    "text": "더합니다.",
+    "offset_ms": 12437.5,
+    "duration_ms": 1062.5
+  },
+  {
+    "text": "여기에",
+    "offset_ms": 13500.0,
+    "duration_ms": 527.2
+  },
+  {
+    "text": "Bias",
+    "offset_ms": 14027.2,
+    "duration_ms": 702.9
+  },
+  {
+    "text": "항을",
+    "offset_ms": 14730.0,
+    "duration_ms": 351.4
+  },
+  {
+    "text": "더해",
+    "offset_ms": 15081.5,
+    "duration_ms": 351.4
+  },
+  {
+    "text": "선형",
+    "offset_ms": 15432.9,
+    "duration_ms": 351.4
+  },
+  {
+    "text": "변환의",
+    "offset_ms": 15784.4,
+    "duration_ms": 527.2
+  },
+  {
+    "text": "기준점을",
+    "offset_ms": 16311.5,
+    "duration_ms": 702.9
+  },
+  {
+    "text": "이동시키고,",
+    "offset_ms": 17014.4,
+    "duration_ms": 1054.3
+  },
+  {
+    "text": "마지막으로",
+    "offset_ms": 18068.8,
+    "duration_ms": 878.6
+  },
+  {
+    "text": "활성화",
+    "offset_ms": 18947.4,
+    "duration_ms": 527.2
+  },
+  {
+    "text": "함수를",
+    "offset_ms": 19474.5,
+    "duration_ms": 527.2
+  },
+  {
+    "text": "적용하여",
+    "offset_ms": 20001.7,
+    "duration_ms": 702.9
+  },
+  {
+    "text": "비선형성을",
+    "offset_ms": 20704.6,
+    "duration_ms": 878.6
+  },
+  {
+    "text": "부여합니다.",
+    "offset_ms": 21583.2,
+    "duration_ms": 1054.3
+  },
+  {
+    "text": "이",
+    "offset_ms": 22637.5,
+    "duration_ms": 182.6
+  },
+  {
+    "text": "과정이",
+    "offset_ms": 22820.1,
+    "duration_ms": 547.9
+  },
+  {
+    "text": "뉴런",
+    "offset_ms": 23368.1,
+    "duration_ms": 365.3
+  },
+  {
+    "text": "하나의",
+    "offset_ms": 23733.3,
+    "duration_ms": 547.9
+  },
+  {
+    "text": "전체",
+    "offset_ms": 24281.3,
+    "duration_ms": 365.3
+  },
+  {
+    "text": "계산",
+    "offset_ms": 24646.5,
+    "duration_ms": 365.3
+  },
+  {
+    "text": "흐름이며,",
+    "offset_ms": 25011.8,
+    "duration_ms": 913.2
+  },
+  {
+    "text": "다음",
+    "offset_ms": 25925.0,
+    "duration_ms": 365.3
+  },
+  {
+    "text": "슬라이드에서",
+    "offset_ms": 26290.3,
+    "duration_ms": 1095.8
+  },
+  {
+    "text": "이",
+    "offset_ms": 27386.1,
+    "duration_ms": 182.6
+  },
+  {
+    "text": "구조가",
+    "offset_ms": 27568.8,
+    "duration_ms": 547.9
+  },
+  {
+    "text": "여러",
+    "offset_ms": 28116.7,
+    "duration_ms": 365.3
+  },
+  {
+    "text": "층으로",
+    "offset_ms": 28481.9,
+    "duration_ms": 547.9
+  },
+  {
+    "text": "쌓일",
+    "offset_ms": 29029.9,
+    "duration_ms": 365.3
+  },
+  {
+    "text": "때",
+    "offset_ms": 29395.1,
+    "duration_ms": 182.6
+  },
+  {
+    "text": "어떻게",
+    "offset_ms": 29577.8,
+    "duration_ms": 547.9
+  },
+  {
+    "text": "확장되는지",
+    "offset_ms": 30125.7,
+    "duration_ms": 913.2
+  },
+  {
+    "text": "살펴볼",
+    "offset_ms": 31038.9,
+    "duration_ms": 547.9
+  },
+  {
+    "text": "것입니다.",
+    "offset_ms": 31586.8,
+    "duration_ms": 913.2
+  }
+]

@@ -1,0 +1,20 @@
+{
+  "slide_index": 4,
+  "title": "지도교수 면담",
+  "segments": [
+    {
+      "id": "seg_1",
+      "ref": "no",
+      "keyword": "01",
+      "script": "지금부터 다섯 가지 필수 항목을 하나씩 살펴보겠습니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_2",
+      "ref": "t",
+      "keyword": "지도교수 면담",
+      "script": "첫 번째는 바로 지도교수 면담입니다. 이 항목은 이번 학기 Pass를 받기 위해 반드시 완료해야 하는 필수 활동 중 하나로, 다음 슬라이드에서 구체적인 방법과 주의사항을 함께 확인해 보겠습니다.",
+      "effect": "highlighter"
+    }
+  ]
+}

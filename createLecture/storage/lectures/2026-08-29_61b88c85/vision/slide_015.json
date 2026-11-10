@@ -1,0 +1,27 @@
+{
+  "slide_index": 15,
+  "title": "Neural Network의 Layer 구조",
+  "segments": [
+    {
+      "id": "seg_1",
+      "ref": "y1",
+      "keyword": "Input Layer",
+      "script": "신경망의 첫 번째 층은 Input Layer입니다. 이 층은 우리가 모델에 넣어주는 원본 데이터, 즉 특징 벡터를 그대로 받아들이는 역할을 합니다. 예를 들어 이미지라면 픽셀값들이, 텍스트라면 단어 임베딩이 입력 벡터로 들어오게 됩니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_2",
+      "ref": "y2",
+      "keyword": "Hidden Layer(s)",
+      "script": "Input Layer 다음에는 하나 이상의 Hidden Layer가 쌓입니다. 각 Hidden Layer는 이전 층의 출력을 받아 계층적으로 특징을 추출하며, 층이 깊어질수록 더 추상적이고 고수준의 표현을 학습하게 됩니다. 이렇게 층의 수, 즉 Depth가 늘어날수록 '딥'러닝이라는 이름이 붙게 된 것입니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_3",
+      "ref": "y3",
+      "keyword": "Output Layer",
+      "script": "마지막은 Output Layer로, Hidden Layer들이 학습한 표현을 바탕으로 최종 예측값을 출력합니다. 분류 문제라면 각 클래스에 대한 확률을, 회귀 문제라면 연속적인 수치를 출력하게 됩니다. 다음 슬라이드에서는 이 층들이 어떻게 완전히 연결되어 순전파를 수행하는지 수식과 함께 살펴보겠습니다.",
+      "effect": "highlighter"
+    }
+  ]
+}

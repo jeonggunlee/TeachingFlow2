@@ -1,0 +1,76 @@
+{
+  "slide_index": 13,
+  "title": "생물학적 뉴런 vs 인공 뉴런",
+  "segments": [
+    {
+      "id": "seg_1",
+      "ref": "lh",
+      "keyword": "생물학적 뉴런",
+      "script": "인공신경망의 구조를 이해하려면 먼저 그 영감의 원천인 생물학적 뉴런을 살펴봐야 합니다. 우리 뇌는 약 860억 개의 뉴런으로 이루어져 있으며, 각 뉴런은 서로 연결되어 정보를 처리합니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_2",
+      "ref": "l1",
+      "keyword": "Dendrite: 신호 수신",
+      "script": "뉴런의 가지돌기, 즉 Dendrite는 다른 뉴런으로부터 신호를 받아들이는 역할을 합니다. 수많은 가지돌기가 다양한 방향에서 입력 신호를 수집하는 구조입니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_3",
+      "ref": "l2",
+      "keyword": "Synapse: 연결 강도",
+      "script": "시냅스는 두 뉴런이 만나는 접합부로, 신호가 얼마나 강하게 전달될지를 결정합니다. 이 연결 강도가 학습을 통해 변화하면서 뇌가 정보를 기억하고 처리하게 됩니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_4",
+      "ref": "l3",
+      "keyword": "Cell Body: 신호 통합",
+      "script": "세포체, Cell Body에서는 수신된 모든 신호를 하나로 통합합니다. 통합된 신호가 일정 임계값을 넘으면 다음 단계로 신호가 출력됩니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_5",
+      "ref": "l4",
+      "keyword": "Axon: 신호 전달",
+      "script": "축삭, 즉 Axon은 통합된 신호를 다음 뉴런으로 전달하는 통로 역할을 합니다. 이렇게 뉴런 간 신호의 흐름이 이어지면서 뇌 전체의 정보 처리가 이루어집니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_6",
+      "ref": "rh",
+      "keyword": "인공 뉴런",
+      "script": "이제 오른쪽의 인공 뉴런을 살펴보겠습니다. 인공 뉴런은 생물학적 뉴런의 구조를 수학적으로 모델링한 것으로, 각 구성 요소가 생물학적 대응 개념과 긴밀히 연결됩니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_7",
+      "ref": "r1",
+      "keyword": "Input (x₁, x₂, …, xₙ)",
+      "script": "인공 뉴런의 입력값 x₁, x₂, …, xₙ은 생물학적 뉴런의 Dendrite에 해당합니다. 여러 출처로부터 들어오는 데이터 신호를 받아들이는 역할을 합니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_8",
+      "ref": "r2",
+      "keyword": "Weight (w₁, w₂, …, wₙ)",
+      "script": "각 입력값에 곱해지는 가중치 w는 시냅스의 연결 강도에 대응합니다. 학습 과정에서 이 가중치들이 조정되면서 모델이 점점 더 정확한 예측을 하게 됩니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_9",
+      "ref": "r3",
+      "keyword": "Weighted Sum + Bias → Activation Function",
+      "script": "가중합과 편향을 계산한 뒤 활성화 함수를 통과시키는 과정은 Cell Body에서 신호를 통합하고 임계값을 판단하는 과정과 같습니다. 활성화 함수는 뉴런이 다음 층으로 신호를 보낼지 여부를 결정하는 핵심 역할을 합니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_10",
+      "ref": "r4",
+      "keyword": "Output",
+      "script": "최종 출력값은 생물학적 뉴런의 Axon을 통한 신호 전달에 해당합니다. 이 출력이 다음 뉴런의 입력으로 이어지며, 이러한 연결이 층층이 쌓여 딥러닝 신경망을 구성하게 됩니다.",
+      "effect": "highlighter"
+    }
+  ]
+}

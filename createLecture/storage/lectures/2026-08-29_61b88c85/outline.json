@@ -1,0 +1,267 @@
+[
+  {
+    "layout": "title",
+    "title": "딥러닝의 이해",
+    "subtitle": "역사·정의·신경망 구조·수학적 표현"
+  },
+  {
+    "layout": "section",
+    "section_no": "01",
+    "title": "딥러닝의 역사"
+  },
+  {
+    "layout": "bullets",
+    "title": "인공지능의 등장과 발전",
+    "bullets": [
+      "인간의 학습·추론 능력을 컴퓨터로 구현하려는 시도에서 출발",
+      "초기 규칙 기반(Rule-based) AI: 전문가가 직접 규칙을 설계",
+      "데이터 기반 학습으로 패러다임 전환 — 데이터로부터 규칙을 자동 획득",
+      "McCulloch–Pitts(1943): 생물학적 뉴런을 수학적으로 단순화한 최초 모델"
+    ]
+  },
+  {
+    "layout": "bullets",
+    "title": "퍼셉트론과 다층 신경망",
+    "bullets": [
+      "Rosenblatt의 퍼셉트론(1957): 입력·가중치로 이진 분류, 가중치 자동 학습",
+      "한계: 선형 분리 불가 문제(XOR)로 1차 AI 겨울 도래",
+      "MLP(다층 퍼셉트론): 은닉층(Hidden Layer) 추가로 비선형 문제 해결",
+      "Backpropagation(1986): 다층 신경망의 효율적 학습 알고리즘 제안"
+    ]
+  },
+  {
+    "layout": "bullets",
+    "title": "딥러닝의 도약",
+    "bullets": [
+      "Big Data 증가: 대규모 레이블 데이터 확보로 학습 가능성 확대",
+      "GPU 병렬 연산: 대규모 신경망 학습 시간 획기적 단축",
+      "AlexNet(2012): ImageNet 대회에서 압도적 성능 — 딥러닝 시대 개막",
+      "CNN·RNN·LSTM 등 다양한 아키텍처로 분야별 성능 혁신"
+    ]
+  },
+  {
+    "layout": "flow",
+    "title": "딥러닝 역사의 흐름",
+    "steps": [
+      {
+        "name": "인공 뉴런",
+        "note": "McCulloch–Pitts (1943)"
+      },
+      {
+        "name": "퍼셉트론",
+        "note": "Rosenblatt (1957)"
+      },
+      {
+        "name": "MLP + 역전파",
+        "note": "Rumelhart (1986)"
+      },
+      {
+        "name": "AlexNet",
+        "note": "ImageNet (2012)"
+      },
+      {
+        "name": "Transformer·LLM",
+        "note": "BERT·GPT·생성형 AI"
+      }
+    ]
+  },
+  {
+    "layout": "bullets",
+    "title": "현대 딥러닝",
+    "bullets": [
+      "Attention 메커니즘과 Transformer 아키텍처 — 시퀀스 처리 혁신",
+      "BERT·GPT 등 대규모 언어 모델(LLM)로 자연어 처리 패러다임 전환",
+      "생성형 AI: 텍스트·이미지·영상·음악 창작 가능",
+      "멀티모달 AI: 텍스트·이미지·음성 등 복합 입력 처리"
+    ]
+  },
+  {
+    "layout": "section",
+    "section_no": "02",
+    "title": "딥러닝의 정의"
+  },
+  {
+    "layout": "venn",
+    "title": "AI · 머신러닝 · 딥러닝의 관계",
+    "mode": "nested",
+    "sets": [
+      {
+        "name": "인공지능 (AI)",
+        "note": "가장 넓은 개념"
+      },
+      {
+        "name": "머신러닝 (ML)",
+        "note": "데이터로부터 학습"
+      },
+      {
+        "name": "딥러닝 (DL)",
+        "note": "다층 신경망 기반"
+      }
+    ]
+  },
+  {
+    "layout": "two_col",
+    "title": "전통적 프로그래밍 vs 머신러닝 vs 딥러닝",
+    "left": {
+      "heading": "전통적 방법",
+      "points": [
+        "프로그래밍: Data + Rules → Output",
+        "머신러닝: Data + Output → Model (규칙 자동 학습)",
+        "전통 ML: 사람이 직접 특징(Feature)을 설계",
+        "분류·회귀 등 단순 과제에 효과적"
+      ]
+    },
+    "right": {
+      "heading": "딥러닝",
+      "points": [
+        "특징 추출과 판단을 동시에 학습 (Representation Learning)",
+        "여러 Hidden Layer → 계층적 특징 학습",
+        "예: Pixel → Edge → Shape → Object",
+        "대규모 데이터·연산 환경에서 압도적 성능"
+      ]
+    }
+  },
+  {
+    "layout": "bullets",
+    "title": "딥러닝의 주요 구성 요소와 응용",
+    "bullets": [
+      "핵심 요소: Data · Neural Network · Loss Function · Optimizer",
+      "학습(Training): Loss를 최소화하도록 파라미터 반복 갱신",
+      "추론(Inference): 학습된 모델로 새 입력에 대한 예측 수행",
+      "응용: 분류·회귀·객체 검출·분할·NLP·생성형 AI 등"
+    ]
+  },
+  {
+    "layout": "section",
+    "section_no": "03",
+    "title": "인공신경망의 구조"
+  },
+  {
+    "layout": "two_col",
+    "title": "생물학적 뉴런 vs 인공 뉴런",
+    "left": {
+      "heading": "생물학적 뉴런",
+      "points": [
+        "Dendrite: 신호 입력",
+        "Synapse: 신호 강도 조절",
+        "Cell Body: 신호 통합 처리",
+        "Axon: 신호 출력 전달"
+      ]
+    },
+    "right": {
+      "heading": "인공 뉴런",
+      "points": [
+        "Input (x₁, x₂, …, xₙ): 입력값",
+        "Weight (w₁, w₂, …, wₙ): 영향 크기",
+        "Bias (b): 활성화 기준 조절",
+        "Activation Function → Output"
+      ]
+    }
+  },
+  {
+    "layout": "bullets",
+    "title": "활성화 함수 (Activation Function)",
+    "bullets": [
+      "역할: 신경망에 비선형성을 추가해 복잡한 패턴 표현 가능",
+      "Step: 0 또는 1 이진 출력 — 퍼셉트론의 기원",
+      "Sigmoid / Tanh: 연속적 출력, 기울기 소실 문제 존재",
+      "ReLU: 가장 널리 사용, max(0, z)로 학습 속도 개선",
+      "Softmax: 다중 클래스 분류의 최종 출력 확률 변환"
+    ]
+  },
+  {
+    "layout": "layers",
+    "title": "Neural Network의 Layer 구조",
+    "layers": [
+      {
+        "name": "Input Layer",
+        "note": "원본 데이터 입력 (특징 벡터)"
+      },
+      {
+        "name": "Hidden Layer(s)",
+        "note": "계층적 특징 추출 — Depth에 따라 반복"
+      },
+      {
+        "name": "Output Layer",
+        "note": "최종 예측값 출력 (클래스·수치)"
+      }
+    ]
+  },
+  {
+    "layout": "bullets",
+    "title": "Fully Connected Layer와 순전파",
+    "bullets": [
+      "Fully Connected: 이전 Layer의 모든 뉴런이 다음 Layer와 연결",
+      "각 연결마다 독립적인 Weight 존재 — Weight·Bias가 학습 파라미터",
+      "순전파(Forward Propagation): Input → Hidden → Output으로 데이터 변환",
+      "Depth(층 수)와 Width(뉴런 수)가 신경망 표현 능력 결정"
+    ]
+  },
+  {
+    "layout": "section",
+    "section_no": "04",
+    "title": "인공신경망의 수학적 표현"
+  },
+  {
+    "layout": "bullets",
+    "title": "뉴런과 Layer의 수식 표현",
+    "bullets": [
+      "단일 뉴런: z = w₁x₁ + w₂x₂ + … + wₙxₙ + b, y = f(z)",
+      "벡터 표현: z = wᵀx + b, y = f(wᵀx + b)",
+      "Layer 단위: z = Wx + b, h = f(z) — W는 Weight 행렬",
+      "다층 신경망: h₁ = f(W₁x + b₁), h₂ = f(W₂h₁ + b₂), ŷ = g(W₃h₂ + b₃)"
+    ]
+  },
+  {
+    "layout": "bullets",
+    "title": "Loss Function과 학습 목표",
+    "bullets": [
+      "전체 신경망: ŷ = F(x; θ) — θ는 모든 Weight와 Bias의 집합",
+      "Loss Function: 실제값 y와 예측값 ŷ의 차이를 수치로 측정",
+      "회귀 문제 → MSE (Mean Squared Error)",
+      "분류 문제 → Cross Entropy Loss"
+    ]
+  },
+  {
+    "layout": "flow",
+    "title": "딥러닝 학습의 전체 흐름",
+    "steps": [
+      {
+        "name": "입력 (Input)",
+        "note": "데이터 x 투입"
+      },
+      {
+        "name": "순전파",
+        "note": "Layer를 통해 예측값 ŷ 생성"
+      },
+      {
+        "name": "Loss 계산",
+        "note": "L(y, ŷ) 산출"
+      },
+      {
+        "name": "역전파",
+        "note": "각 Weight의 Gradient 계산"
+      },
+      {
+        "name": "Weight 갱신",
+        "note": "w ← w − η·∇L"
+      }
+    ]
+  },
+  {
+    "layout": "quote",
+    "quote": "Neural Network = Weighted Sum + Activation Function\nDeep Learning = Neural Network + Data + Loss + Optimization",
+    "attribution": "딥러닝 핵심 원리 요약"
+  },
+  {
+    "layout": "stat",
+    "value": "θ 최소화",
+    "label": "딥러닝 학습의 궁극적 목표",
+    "caption": "Loss L(y, ŷ)를 최소화하는 파라미터 θ를 Gradient Descent로 반복 탐색"
+  },
+  {
+    "layout": "closing",
+    "title": "딥러닝, 데이터로 규칙을 배우다",
+    "subtitle": "역사 → 정의 → 구조 → 수식의 흐름을 기억하세요"
+  }
+]

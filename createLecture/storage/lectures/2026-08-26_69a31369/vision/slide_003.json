@@ -1,0 +1,30 @@
+{
+  "slide_index": 3,
+  "title": "딥러닝의 정의",
+  "segments": [
+    {
+      "id": "seg_1",
+      "script": "이 슬라이드에서는 딥러닝에 대한 핵심 정의를 살펴봅니다. 딥러닝은 데이터로부터 표현(representation)을 계층적으로 학습하는 기계학습의 한 분야로 정의됩니다. 이 정의는 딥러닝의 본질적인 특성을 간결하게 요약하고 있습니다.",
+      "keyword": "표현(representation)",
+      "highlight": {
+        "x_pct": 10,
+        "y_pct": 33,
+        "w_pct": 80,
+        "h_pct": 28
+      },
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_2",
+      "script": "이 정의는 딥러닝 분야의 세계적인 권위자인 LeCun, Bengio, Hinton이 2015년 Nature 저널에 발표한 논문에서 인용된 것입니다. 세 명의 연구자는 딥러닝의 이론적 토대를 정립한 선구자들로, 이 정의는 학계에서 널리 사용되고 있습니다.",
+      "keyword": "LeCun, Bengio & Hinton",
+      "highlight": {
+        "x_pct": 30,
+        "y_pct": 63,
+        "w_pct": 45,
+        "h_pct": 8
+      },
+      "effect": "highlighter"
+    }
+  ]
+}

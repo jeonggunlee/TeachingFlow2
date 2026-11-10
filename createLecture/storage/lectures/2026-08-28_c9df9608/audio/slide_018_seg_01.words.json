@@ -1,0 +1,227 @@
+[
+  {
+    "text": "앞",
+    "offset_ms": 50.0,
+    "duration_ms": 188.2
+  },
+  {
+    "text": "슬라이드에서",
+    "offset_ms": 238.2,
+    "duration_ms": 1128.9
+  },
+  {
+    "text": "단일",
+    "offset_ms": 1367.1,
+    "duration_ms": 376.3
+  },
+  {
+    "text": "뉴런의",
+    "offset_ms": 1743.4,
+    "duration_ms": 564.5
+  },
+  {
+    "text": "수식을",
+    "offset_ms": 2307.9,
+    "duration_ms": 564.5
+  },
+  {
+    "text": "살펴봤으니,",
+    "offset_ms": 2872.4,
+    "duration_ms": 1128.9
+  },
+  {
+    "text": "이제",
+    "offset_ms": 4001.3,
+    "duration_ms": 376.3
+  },
+  {
+    "text": "이",
+    "offset_ms": 4377.6,
+    "duration_ms": 188.2
+  },
+  {
+    "text": "구조를",
+    "offset_ms": 4565.8,
+    "duration_ms": 564.5
+  },
+  {
+    "text": "층층이",
+    "offset_ms": 5130.3,
+    "duration_ms": 564.5
+  },
+  {
+    "text": "쌓아",
+    "offset_ms": 5694.7,
+    "duration_ms": 376.3
+  },
+  {
+    "text": "보겠습니다.",
+    "offset_ms": 6071.1,
+    "duration_ms": 1128.9
+  },
+  {
+    "text": "첫",
+    "offset_ms": 7200.0,
+    "duration_ms": 208.8
+  },
+  {
+    "text": "번째",
+    "offset_ms": 7408.8,
+    "duration_ms": 417.7
+  },
+  {
+    "text": "은닉층은",
+    "offset_ms": 7826.5,
+    "duration_ms": 835.4
+  },
+  {
+    "text": "h₁",
+    "offset_ms": 8661.9,
+    "duration_ms": 417.7
+  },
+  {
+    "text": "=",
+    "offset_ms": 9079.6,
+    "duration_ms": 417.7
+  },
+  {
+    "text": "f(W₁x",
+    "offset_ms": 9497.3,
+    "duration_ms": 835.3
+  },
+  {
+    "text": "+",
+    "offset_ms": 10332.7,
+    "duration_ms": 626.5
+  },
+  {
+    "text": "b₁)로",
+    "offset_ms": 10959.2,
+    "duration_ms": 626.5
+  },
+  {
+    "text": "표현되며,",
+    "offset_ms": 11585.8,
+    "duration_ms": 1044.2
+  },
+  {
+    "text": "입력",
+    "offset_ms": 12630.0,
+    "duration_ms": 417.7
+  },
+  {
+    "text": "x에",
+    "offset_ms": 13047.7,
+    "duration_ms": 417.7
+  },
+  {
+    "text": "가중치",
+    "offset_ms": 13465.4,
+    "duration_ms": 626.5
+  },
+  {
+    "text": "행렬",
+    "offset_ms": 14091.9,
+    "duration_ms": 417.7
+  },
+  {
+    "text": "W₁을",
+    "offset_ms": 14509.6,
+    "duration_ms": 626.5
+  },
+  {
+    "text": "곱하고",
+    "offset_ms": 15136.2,
+    "duration_ms": 626.5
+  },
+  {
+    "text": "편향",
+    "offset_ms": 15762.7,
+    "duration_ms": 417.7
+  },
+  {
+    "text": "b₁을",
+    "offset_ms": 16180.4,
+    "duration_ms": 626.5
+  },
+  {
+    "text": "더한",
+    "offset_ms": 16806.9,
+    "duration_ms": 417.7
+  },
+  {
+    "text": "뒤",
+    "offset_ms": 17224.6,
+    "duration_ms": 208.8
+  },
+  {
+    "text": "활성화",
+    "offset_ms": 17433.5,
+    "duration_ms": 626.5
+  },
+  {
+    "text": "함수",
+    "offset_ms": 18060.0,
+    "duration_ms": 417.7
+  },
+  {
+    "text": "f를",
+    "offset_ms": 18477.7,
+    "duration_ms": 417.7
+  },
+  {
+    "text": "적용한",
+    "offset_ms": 18895.4,
+    "duration_ms": 626.5
+  },
+  {
+    "text": "결과입니다.",
+    "offset_ms": 19521.9,
+    "duration_ms": 1253.1
+  },
+  {
+    "text": "이",
+    "offset_ms": 20775.0,
+    "duration_ms": 233.9
+  },
+  {
+    "text": "h₁이",
+    "offset_ms": 21008.9,
+    "duration_ms": 701.6
+  },
+  {
+    "text": "바로",
+    "offset_ms": 21710.4,
+    "duration_ms": 467.7
+  },
+  {
+    "text": "다음",
+    "offset_ms": 22178.1,
+    "duration_ms": 467.7
+  },
+  {
+    "text": "층으로",
+    "offset_ms": 22645.8,
+    "duration_ms": 701.6
+  },
+  {
+    "text": "전달되는",
+    "offset_ms": 23347.4,
+    "duration_ms": 935.4
+  },
+  {
+    "text": "중간",
+    "offset_ms": 24282.8,
+    "duration_ms": 467.7
+  },
+  {
+    "text": "표현이",
+    "offset_ms": 24750.5,
+    "duration_ms": 701.6
+  },
+  {
+    "text": "됩니다.",
+    "offset_ms": 25452.1,
+    "duration_ms": 935.4
+  }
+]

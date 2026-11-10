@@ -1,0 +1,34 @@
+{
+  "slide_index": 14,
+  "title": "Weight · Bias · Activation Function",
+  "segments": [
+    {
+      "id": "seg_1",
+      "ref": "b1",
+      "keyword": "Weight",
+      "script": "먼저 Weight, 즉 가중치에 대해 살펴보겠습니다. Weight는 각 입력 신호가 출력에 얼마나 큰 영향을 미치는지를 결정하는 값입니다. 앞 슬라이드에서 본 시냅스의 강도에 해당하며, 학습 과정을 통해 데이터로부터 자동으로 조정된다는 점이 핵심입니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_2",
+      "ref": "b2",
+      "keyword": "Bias",
+      "script": "다음은 Bias, 편향입니다. Bias는 뉴런이 얼마나 쉽게, 혹은 어렵게 활성화될지 그 기준점을 조절하는 역할을 합니다. Bias를 추가함으로써 신경망은 훨씬 다양한 패턴을 표현할 수 있게 되어 표현 능력이 크게 확장됩니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_3",
+      "ref": "b3",
+      "keyword": "Activation Function",
+      "script": "세 번째 핵심 요소는 활성화 함수, Activation Function입니다. 활성화 함수는 뉴런의 출력에 비선형성을 부여하여, 단순한 선형 변환만으로는 풀 수 없는 복잡한 문제를 해결할 수 있게 해 줍니다. 대표적으로 Step, Sigmoid, Tanh, ReLU, Softmax 등이 있으며, 각각 쓰임새가 다릅니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_4",
+      "ref": "b4",
+      "keyword": "학습의 핵심",
+      "script": "결국 딥러닝의 학습이란, 적절한 Weight와 Bias를 찾아가는 과정이라고 요약할 수 있습니다. 다음 슬라이드에서는 이 세 요소가 신경망의 Layer 구조 안에서 어떻게 결합되는지 살펴보겠습니다.",
+      "effect": "highlighter"
+    }
+  ]
+}

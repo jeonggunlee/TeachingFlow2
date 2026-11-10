@@ -1,0 +1,202 @@
+[
+  {
+    "text": "신경망의",
+    "offset_ms": 50.0,
+    "duration_ms": 777.1
+  },
+  {
+    "text": "크기를",
+    "offset_ms": 827.1,
+    "duration_ms": 582.8
+  },
+  {
+    "text": "표현할",
+    "offset_ms": 1409.9,
+    "duration_ms": 582.8
+  },
+  {
+    "text": "때는",
+    "offset_ms": 1992.7,
+    "duration_ms": 388.5
+  },
+  {
+    "text": "두",
+    "offset_ms": 2381.2,
+    "duration_ms": 194.3
+  },
+  {
+    "text": "가지",
+    "offset_ms": 2575.5,
+    "duration_ms": 388.5
+  },
+  {
+    "text": "개념을",
+    "offset_ms": 2964.1,
+    "duration_ms": 582.8
+  },
+  {
+    "text": "사용합니다.",
+    "offset_ms": 3546.9,
+    "duration_ms": 1165.6
+  },
+  {
+    "text": "Depth는",
+    "offset_ms": 4712.5,
+    "duration_ms": 932.5
+  },
+  {
+    "text": "Layer가",
+    "offset_ms": 5645.0,
+    "duration_ms": 932.5
+  },
+  {
+    "text": "몇",
+    "offset_ms": 6577.4,
+    "duration_ms": 155.4
+  },
+  {
+    "text": "개",
+    "offset_ms": 6732.8,
+    "duration_ms": 155.4
+  },
+  {
+    "text": "쌓여",
+    "offset_ms": 6888.2,
+    "duration_ms": 310.8
+  },
+  {
+    "text": "있는가,",
+    "offset_ms": 7199.1,
+    "duration_ms": 621.6
+  },
+  {
+    "text": "즉",
+    "offset_ms": 7820.7,
+    "duration_ms": 155.4
+  },
+  {
+    "text": "신경망의",
+    "offset_ms": 7976.1,
+    "duration_ms": 621.6
+  },
+  {
+    "text": "깊이를",
+    "offset_ms": 8597.8,
+    "duration_ms": 466.2
+  },
+  {
+    "text": "뜻하고,",
+    "offset_ms": 9064.0,
+    "duration_ms": 621.6
+  },
+  {
+    "text": "Width는",
+    "offset_ms": 9685.6,
+    "duration_ms": 932.5
+  },
+  {
+    "text": "각",
+    "offset_ms": 10618.1,
+    "duration_ms": 155.4
+  },
+  {
+    "text": "Layer에",
+    "offset_ms": 10773.5,
+    "duration_ms": 932.5
+  },
+  {
+    "text": "뉴런이",
+    "offset_ms": 11706.0,
+    "duration_ms": 466.2
+  },
+  {
+    "text": "몇",
+    "offset_ms": 12172.2,
+    "duration_ms": 155.4
+  },
+  {
+    "text": "개",
+    "offset_ms": 12327.6,
+    "duration_ms": 155.4
+  },
+  {
+    "text": "있는가,",
+    "offset_ms": 12483.0,
+    "duration_ms": 621.6
+  },
+  {
+    "text": "즉",
+    "offset_ms": 13104.7,
+    "duration_ms": 155.4
+  },
+  {
+    "text": "신경망의",
+    "offset_ms": 13260.1,
+    "duration_ms": 621.6
+  },
+  {
+    "text": "너비를",
+    "offset_ms": 13881.7,
+    "duration_ms": 466.2
+  },
+  {
+    "text": "뜻합니다.",
+    "offset_ms": 14347.9,
+    "duration_ms": 777.1
+  },
+  {
+    "text": "딥러닝에서",
+    "offset_ms": 15125.0,
+    "duration_ms": 812.5
+  },
+  {
+    "text": "'딥(Deep)'이라는",
+    "offset_ms": 15937.5,
+    "duration_ms": 1625.0
+  },
+  {
+    "text": "표현",
+    "offset_ms": 17562.5,
+    "duration_ms": 325.0
+  },
+  {
+    "text": "자체가",
+    "offset_ms": 17887.5,
+    "duration_ms": 487.5
+  },
+  {
+    "text": "바로",
+    "offset_ms": 18375.0,
+    "duration_ms": 325.0
+  },
+  {
+    "text": "이",
+    "offset_ms": 18700.0,
+    "duration_ms": 162.5
+  },
+  {
+    "text": "Depth가",
+    "offset_ms": 18862.5,
+    "duration_ms": 975.0
+  },
+  {
+    "text": "깊다는",
+    "offset_ms": 19837.5,
+    "duration_ms": 487.5
+  },
+  {
+    "text": "의미에서",
+    "offset_ms": 20325.0,
+    "duration_ms": 650.0
+  },
+  {
+    "text": "비롯된",
+    "offset_ms": 20975.0,
+    "duration_ms": 487.5
+  },
+  {
+    "text": "것입니다.",
+    "offset_ms": 21462.5,
+    "duration_ms": 812.5
+  }
+]

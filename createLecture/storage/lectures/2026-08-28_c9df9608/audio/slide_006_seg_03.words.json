@@ -1,0 +1,187 @@
+[
+  {
+    "text": "그",
+    "offset_ms": 50.0,
+    "duration_ms": 180.4
+  },
+  {
+    "text": "중심에는",
+    "offset_ms": 230.4,
+    "duration_ms": 721.7
+  },
+  {
+    "text": "AlexNet이라는",
+    "offset_ms": 952.2,
+    "duration_ms": 1804.3
+  },
+  {
+    "text": "모델이",
+    "offset_ms": 2756.5,
+    "duration_ms": 541.3
+  },
+  {
+    "text": "있습니다.",
+    "offset_ms": 3297.8,
+    "duration_ms": 902.2
+  },
+  {
+    "text": "AlexNet은",
+    "offset_ms": 4200.0,
+    "duration_ms": 1400.0
+  },
+  {
+    "text": "세계",
+    "offset_ms": 5600.0,
+    "duration_ms": 350.0
+  },
+  {
+    "text": "최대",
+    "offset_ms": 5950.0,
+    "duration_ms": 350.0
+  },
+  {
+    "text": "이미지",
+    "offset_ms": 6300.0,
+    "duration_ms": 525.0
+  },
+  {
+    "text": "인식",
+    "offset_ms": 6825.0,
+    "duration_ms": 350.0
+  },
+  {
+    "text": "대회인",
+    "offset_ms": 7175.0,
+    "duration_ms": 525.0
+  },
+  {
+    "text": "ImageNet에서",
+    "offset_ms": 7700.0,
+    "duration_ms": 1750.0
+  },
+  {
+    "text": "오류율을",
+    "offset_ms": 9450.0,
+    "duration_ms": 700.0
+  },
+  {
+    "text": "기존",
+    "offset_ms": 10150.0,
+    "duration_ms": 350.0
+  },
+  {
+    "text": "26%에서",
+    "offset_ms": 10500.0,
+    "duration_ms": 875.0
+  },
+  {
+    "text": "16%로",
+    "offset_ms": 11375.0,
+    "duration_ms": 700.0
+  },
+  {
+    "text": "무려",
+    "offset_ms": 12075.0,
+    "duration_ms": 350.0
+  },
+  {
+    "text": "10%포인트",
+    "offset_ms": 12425.0,
+    "duration_ms": 1050.0
+  },
+  {
+    "text": "이상",
+    "offset_ms": 13475.0,
+    "duration_ms": 350.0
+  },
+  {
+    "text": "낮추는",
+    "offset_ms": 13825.0,
+    "duration_ms": 525.0
+  },
+  {
+    "text": "놀라운",
+    "offset_ms": 14350.0,
+    "duration_ms": 525.0
+  },
+  {
+    "text": "성과를",
+    "offset_ms": 14875.0,
+    "duration_ms": 525.0
+  },
+  {
+    "text": "거뒀습니다.",
+    "offset_ms": 15400.0,
+    "duration_ms": 1050.0
+  },
+  {
+    "text": "이",
+    "offset_ms": 16450.0,
+    "duration_ms": 188.6
+  },
+  {
+    "text": "결과는",
+    "offset_ms": 16638.6,
+    "duration_ms": 565.7
+  },
+  {
+    "text": "학계와",
+    "offset_ms": 17204.3,
+    "duration_ms": 565.7
+  },
+  {
+    "text": "산업계",
+    "offset_ms": 17769.9,
+    "duration_ms": 565.7
+  },
+  {
+    "text": "전체에",
+    "offset_ms": 18335.6,
+    "duration_ms": 565.7
+  },
+  {
+    "text": "충격을",
+    "offset_ms": 18901.3,
+    "duration_ms": 565.7
+  },
+  {
+    "text": "주었고,",
+    "offset_ms": 19467.0,
+    "duration_ms": 754.3
+  },
+  {
+    "text": "이후",
+    "offset_ms": 20221.3,
+    "duration_ms": 377.1
+  },
+  {
+    "text": "딥러닝",
+    "offset_ms": 20598.4,
+    "duration_ms": 565.7
+  },
+  {
+    "text": "연구가",
+    "offset_ms": 21164.1,
+    "duration_ms": 565.7
+  },
+  {
+    "text": "폭발적으로",
+    "offset_ms": 21729.8,
+    "duration_ms": 942.8
+  },
+  {
+    "text": "성장하는",
+    "offset_ms": 22672.6,
+    "duration_ms": 754.3
+  },
+  {
+    "text": "출발점이",
+    "offset_ms": 23426.9,
+    "duration_ms": 754.3
+  },
+  {
+    "text": "되었습니다.",
+    "offset_ms": 24181.1,
+    "duration_ms": 1131.4
+  }
+]

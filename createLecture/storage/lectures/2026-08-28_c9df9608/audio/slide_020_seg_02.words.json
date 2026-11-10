@@ -1,0 +1,202 @@
+[
+  {
+    "text": "그리고",
+    "offset_ms": 50.0,
+    "duration_ms": 580.3
+  },
+  {
+    "text": "딥러닝은",
+    "offset_ms": 630.3,
+    "duration_ms": 773.8
+  },
+  {
+    "text": "그",
+    "offset_ms": 1404.1,
+    "duration_ms": 193.4
+  },
+  {
+    "text": "신경망에",
+    "offset_ms": 1597.5,
+    "duration_ms": 773.8
+  },
+  {
+    "text": "데이터,",
+    "offset_ms": 2371.2,
+    "duration_ms": 773.8
+  },
+  {
+    "text": "손실",
+    "offset_ms": 3145.0,
+    "duration_ms": 386.9
+  },
+  {
+    "text": "함수,",
+    "offset_ms": 3531.9,
+    "duration_ms": 580.3
+  },
+  {
+    "text": "최적화",
+    "offset_ms": 4112.2,
+    "duration_ms": 580.3
+  },
+  {
+    "text": "알고리즘을",
+    "offset_ms": 4692.5,
+    "duration_ms": 967.2
+  },
+  {
+    "text": "더함으로써",
+    "offset_ms": 5659.7,
+    "duration_ms": 967.2
+  },
+  {
+    "text": "완성됩니다.",
+    "offset_ms": 6626.9,
+    "duration_ms": 1160.6
+  },
+  {
+    "text": "데이터가",
+    "offset_ms": 7787.5,
+    "duration_ms": 710.7
+  },
+  {
+    "text": "학습의",
+    "offset_ms": 8498.2,
+    "duration_ms": 533.0
+  },
+  {
+    "text": "재료라면,",
+    "offset_ms": 9031.2,
+    "duration_ms": 888.4
+  },
+  {
+    "text": "손실",
+    "offset_ms": 9919.6,
+    "duration_ms": 355.4
+  },
+  {
+    "text": "함수는",
+    "offset_ms": 10275.0,
+    "duration_ms": 533.0
+  },
+  {
+    "text": "모델이",
+    "offset_ms": 10808.0,
+    "duration_ms": 533.0
+  },
+  {
+    "text": "얼마나",
+    "offset_ms": 11341.1,
+    "duration_ms": 533.0
+  },
+  {
+    "text": "틀렸는지를",
+    "offset_ms": 11874.1,
+    "duration_ms": 888.4
+  },
+  {
+    "text": "측정하는",
+    "offset_ms": 12762.5,
+    "duration_ms": 710.7
+  },
+  {
+    "text": "기준이고,",
+    "offset_ms": 13473.2,
+    "duration_ms": 888.4
+  },
+  {
+    "text": "최적화는",
+    "offset_ms": 14361.6,
+    "duration_ms": 710.7
+  },
+  {
+    "text": "그",
+    "offset_ms": 15072.3,
+    "duration_ms": 177.7
+  },
+  {
+    "text": "오차를",
+    "offset_ms": 15250.0,
+    "duration_ms": 533.0
+  },
+  {
+    "text": "줄여나가는",
+    "offset_ms": 15783.0,
+    "duration_ms": 888.4
+  },
+  {
+    "text": "과정입니다.",
+    "offset_ms": 16671.4,
+    "duration_ms": 1066.1
+  },
+  {
+    "text": "이",
+    "offset_ms": 17737.5,
+    "duration_ms": 197.6
+  },
+  {
+    "text": "네",
+    "offset_ms": 17935.1,
+    "duration_ms": 197.6
+  },
+  {
+    "text": "요소가",
+    "offset_ms": 18132.6,
+    "duration_ms": 592.7
+  },
+  {
+    "text": "유기적으로",
+    "offset_ms": 18725.3,
+    "duration_ms": 987.8
+  },
+  {
+    "text": "맞물릴",
+    "offset_ms": 19713.2,
+    "duration_ms": 592.7
+  },
+  {
+    "text": "때",
+    "offset_ms": 20305.9,
+    "duration_ms": 197.6
+  },
+  {
+    "text": "비로소",
+    "offset_ms": 20503.5,
+    "duration_ms": 592.7
+  },
+  {
+    "text": "딥러닝",
+    "offset_ms": 21096.2,
+    "duration_ms": 592.7
+  },
+  {
+    "text": "모델이",
+    "offset_ms": 21688.9,
+    "duration_ms": 592.7
+  },
+  {
+    "text": "스스로",
+    "offset_ms": 22281.6,
+    "duration_ms": 592.7
+  },
+  {
+    "text": "학습할",
+    "offset_ms": 22874.3,
+    "duration_ms": 592.7
+  },
+  {
+    "text": "수",
+    "offset_ms": 23467.0,
+    "duration_ms": 197.6
+  },
+  {
+    "text": "있게",
+    "offset_ms": 23664.6,
+    "duration_ms": 395.1
+  },
+  {
+    "text": "됩니다.",
+    "offset_ms": 24059.7,
+    "duration_ms": 790.3
+  }
+]

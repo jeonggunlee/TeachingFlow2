@@ -1,0 +1,137 @@
+[
+  {
+    "text": "두",
+    "offset_ms": 50.0,
+    "duration_ms": 170.1
+  },
+  {
+    "text": "번째는",
+    "offset_ms": 220.1,
+    "duration_ms": 510.3
+  },
+  {
+    "text": "Hidden",
+    "offset_ms": 730.4,
+    "duration_ms": 1020.7
+  },
+  {
+    "text": "Layer,",
+    "offset_ms": 1751.1,
+    "duration_ms": 1020.7
+  },
+  {
+    "text": "은닉층입니다.",
+    "offset_ms": 2771.7,
+    "duration_ms": 1190.8
+  },
+  {
+    "text": "이",
+    "offset_ms": 3962.5,
+    "duration_ms": 186.2
+  },
+  {
+    "text": "층에서",
+    "offset_ms": 4148.7,
+    "duration_ms": 558.6
+  },
+  {
+    "text": "신경망의",
+    "offset_ms": 4707.2,
+    "duration_ms": 744.7
+  },
+  {
+    "text": "핵심",
+    "offset_ms": 5452.0,
+    "duration_ms": 372.4
+  },
+  {
+    "text": "연산이",
+    "offset_ms": 5824.3,
+    "duration_ms": 558.6
+  },
+  {
+    "text": "일어나며,",
+    "offset_ms": 6382.9,
+    "duration_ms": 930.9
+  },
+  {
+    "text": "데이터로부터",
+    "offset_ms": 7313.8,
+    "duration_ms": 1117.1
+  },
+  {
+    "text": "계층적으로",
+    "offset_ms": 8430.9,
+    "duration_ms": 930.9
+  },
+  {
+    "text": "특징을",
+    "offset_ms": 9361.8,
+    "duration_ms": 558.6
+  },
+  {
+    "text": "추출합니다.",
+    "offset_ms": 9920.4,
+    "duration_ms": 1117.1
+  },
+  {
+    "text": "딥러닝에서",
+    "offset_ms": 11037.5,
+    "duration_ms": 838.7
+  },
+  {
+    "text": "'딥(Deep)'이라는",
+    "offset_ms": 11876.2,
+    "duration_ms": 1677.3
+  },
+  {
+    "text": "말이",
+    "offset_ms": 13553.5,
+    "duration_ms": 335.5
+  },
+  {
+    "text": "바로",
+    "offset_ms": 13889.0,
+    "duration_ms": 335.5
+  },
+  {
+    "text": "이",
+    "offset_ms": 14224.4,
+    "duration_ms": 167.7
+  },
+  {
+    "text": "은닉층을",
+    "offset_ms": 14392.2,
+    "duration_ms": 670.9
+  },
+  {
+    "text": "여러",
+    "offset_ms": 15063.1,
+    "duration_ms": 335.5
+  },
+  {
+    "text": "겹",
+    "offset_ms": 15398.5,
+    "duration_ms": 167.7
+  },
+  {
+    "text": "쌓는다는",
+    "offset_ms": 15566.3,
+    "duration_ms": 670.9
+  },
+  {
+    "text": "의미에서",
+    "offset_ms": 16237.2,
+    "duration_ms": 670.9
+  },
+  {
+    "text": "비롯된",
+    "offset_ms": 16908.1,
+    "duration_ms": 503.2
+  },
+  {
+    "text": "것입니다.",
+    "offset_ms": 17411.3,
+    "duration_ms": 838.7
+  }
+]

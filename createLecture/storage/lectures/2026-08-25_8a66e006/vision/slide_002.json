@@ -1,0 +1,54 @@
+{
+  "slide_index": 2,
+  "title": "인공지능이란 무엇인가",
+  "segments": [
+    {
+      "id": "seg_1",
+      "script": "인공지능의 정의는 John McCarthy가 1956년 다트머스 컨퍼런스에서 처음 제시했습니다. 그는 인공지능을 '인간의 지적 활동 — 학습, 추론, 지각, 언어 이해 — 을 기계가 모방·수행하도록 만드는 과학과 공학의 분야'라고 정의했습니다.",
+      "keyword": "John McCarthy",
+      "highlight": {
+        "x_pct": 5,
+        "y_pct": 27,
+        "w_pct": 44,
+        "h_pct": 18
+      },
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_2",
+      "script": "중요한 점은 AI가 단일 기술이 아니라 여러 접근이 결합된 학제적(interdisciplinary) 연구 분야라는 것입니다. 즉, 컴퓨터과학, 수학, 심리학, 언어학 등 다양한 학문이 융합되어 있습니다.",
+      "keyword": "학제적(interdisciplinary)",
+      "highlight": {
+        "x_pct": 5,
+        "y_pct": 55,
+        "w_pct": 44,
+        "h_pct": 12
+      },
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_3",
+      "script": "AI를 정의하는 네 가지 관점 중 첫 번째와 두 번째는 '사고(Thinking)' 측면으로, 인간처럼 사고하는 인지과학적 접근과 합리적으로 사고하는 논리·추론 접근으로 나뉩니다.",
+      "keyword": "Thinking humanly / Thinking rationally",
+      "highlight": {
+        "x_pct": 52,
+        "y_pct": 30,
+        "w_pct": 44,
+        "h_pct": 22
+      },
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_4",
+      "script": "세 번째와 네 번째 관점은 '행동(Acting)' 측면으로, 인간처럼 행동하는 튜링 테스트 기반 접근과 합리적으로 행동하는 지능 에이전트 접근이 있습니다. 이 네 가지 관점은 AI 연구의 핵심 방향을 제시합니다.",
+      "keyword": "Acting humanly / Acting rationally",
+      "highlight": {
+        "x_pct": 52,
+        "y_pct": 53,
+        "w_pct": 44,
+        "h_pct": 22
+      },
+      "effect": "highlighter"
+    }
+  ]
+}

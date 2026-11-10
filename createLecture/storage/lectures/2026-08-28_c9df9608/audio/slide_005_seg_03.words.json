@@ -1,0 +1,162 @@
+[
+  {
+    "text": "1980년대에",
+    "offset_ms": 50.0,
+    "duration_ms": 1322.8
+  },
+  {
+    "text": "들어서면서",
+    "offset_ms": 1372.8,
+    "duration_ms": 944.9
+  },
+  {
+    "text": "다층",
+    "offset_ms": 2317.6,
+    "duration_ms": 377.9
+  },
+  {
+    "text": "퍼셉트론,",
+    "offset_ms": 2695.6,
+    "duration_ms": 944.9
+  },
+  {
+    "text": "즉",
+    "offset_ms": 3640.4,
+    "duration_ms": 189.0
+  },
+  {
+    "text": "MLP와",
+    "offset_ms": 3829.4,
+    "duration_ms": 755.9
+  },
+  {
+    "text": "역전파",
+    "offset_ms": 4585.3,
+    "duration_ms": 566.9
+  },
+  {
+    "text": "알고리즘이",
+    "offset_ms": 5152.2,
+    "duration_ms": 944.9
+  },
+  {
+    "text": "등장해",
+    "offset_ms": 6097.1,
+    "duration_ms": 566.9
+  },
+  {
+    "text": "비선형",
+    "offset_ms": 6664.0,
+    "duration_ms": 566.9
+  },
+  {
+    "text": "문제를",
+    "offset_ms": 7230.9,
+    "duration_ms": 566.9
+  },
+  {
+    "text": "해결할",
+    "offset_ms": 7797.8,
+    "duration_ms": 566.9
+  },
+  {
+    "text": "수",
+    "offset_ms": 8364.7,
+    "duration_ms": 189.0
+  },
+  {
+    "text": "있게",
+    "offset_ms": 8553.7,
+    "duration_ms": 377.9
+  },
+  {
+    "text": "됩니다.",
+    "offset_ms": 8931.6,
+    "duration_ms": 755.9
+  },
+  {
+    "text": "역전파는",
+    "offset_ms": 9687.5,
+    "duration_ms": 700.8
+  },
+  {
+    "text": "출력의",
+    "offset_ms": 10388.3,
+    "duration_ms": 525.6
+  },
+  {
+    "text": "오차를",
+    "offset_ms": 10913.8,
+    "duration_ms": 525.6
+  },
+  {
+    "text": "네트워크",
+    "offset_ms": 11439.4,
+    "duration_ms": 700.8
+  },
+  {
+    "text": "전체에",
+    "offset_ms": 12140.2,
+    "duration_ms": 525.6
+  },
+  {
+    "text": "역방향으로",
+    "offset_ms": 12665.8,
+    "duration_ms": 876.0
+  },
+  {
+    "text": "전달해",
+    "offset_ms": 13541.7,
+    "duration_ms": 525.6
+  },
+  {
+    "text": "가중치를",
+    "offset_ms": 14067.3,
+    "duration_ms": 700.8
+  },
+  {
+    "text": "조정하는",
+    "offset_ms": 14768.1,
+    "duration_ms": 700.8
+  },
+  {
+    "text": "핵심",
+    "offset_ms": 15468.8,
+    "duration_ms": 350.4
+  },
+  {
+    "text": "학습",
+    "offset_ms": 15819.2,
+    "duration_ms": 350.4
+  },
+  {
+    "text": "알고리즘으로,",
+    "offset_ms": 16169.6,
+    "duration_ms": 1226.3
+  },
+  {
+    "text": "오늘날까지도",
+    "offset_ms": 17396.0,
+    "duration_ms": 1051.2
+  },
+  {
+    "text": "딥러닝의",
+    "offset_ms": 18447.1,
+    "duration_ms": 700.8
+  },
+  {
+    "text": "근간을",
+    "offset_ms": 19147.9,
+    "duration_ms": 525.6
+  },
+  {
+    "text": "이루고",
+    "offset_ms": 19673.5,
+    "duration_ms": 525.6
+  },
+  {
+    "text": "있습니다.",
+    "offset_ms": 20199.0,
+    "duration_ms": 876.0
+  }
+]

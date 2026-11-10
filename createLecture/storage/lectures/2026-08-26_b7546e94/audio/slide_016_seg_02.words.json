@@ -1,0 +1,152 @@
+[
+  {
+    "text": "각각의",
+    "offset_ms": 100.0,
+    "duration_ms": 566.1
+  },
+  {
+    "text": "연결선마다",
+    "offset_ms": 666.1,
+    "duration_ms": 943.5
+  },
+  {
+    "text": "고유한",
+    "offset_ms": 1609.5,
+    "duration_ms": 566.1
+  },
+  {
+    "text": "Weight가",
+    "offset_ms": 2175.6,
+    "duration_ms": 1320.8
+  },
+  {
+    "text": "하나씩",
+    "offset_ms": 3496.4,
+    "duration_ms": 566.1
+  },
+  {
+    "text": "존재하고,",
+    "offset_ms": 4062.5,
+    "duration_ms": 943.5
+  },
+  {
+    "text": "각",
+    "offset_ms": 5006.0,
+    "duration_ms": 188.7
+  },
+  {
+    "text": "뉴런에는",
+    "offset_ms": 5194.6,
+    "duration_ms": 754.8
+  },
+  {
+    "text": "Bias가",
+    "offset_ms": 5949.4,
+    "duration_ms": 943.5
+  },
+  {
+    "text": "추가됩니다.",
+    "offset_ms": 6892.9,
+    "duration_ms": 1132.1
+  },
+  {
+    "text": "이",
+    "offset_ms": 7975.0,
+    "duration_ms": 163.5
+  },
+  {
+    "text": "Weight와",
+    "offset_ms": 8138.5,
+    "duration_ms": 1144.5
+  },
+  {
+    "text": "Bias가",
+    "offset_ms": 9283.0,
+    "duration_ms": 817.5
+  },
+  {
+    "text": "바로",
+    "offset_ms": 10100.5,
+    "duration_ms": 327.0
+  },
+  {
+    "text": "모델이",
+    "offset_ms": 10427.5,
+    "duration_ms": 490.5
+  },
+  {
+    "text": "데이터로부터",
+    "offset_ms": 10918.0,
+    "duration_ms": 981.0
+  },
+  {
+    "text": "학습하는",
+    "offset_ms": 11899.0,
+    "duration_ms": 654.0
+  },
+  {
+    "text": "대상,",
+    "offset_ms": 12553.0,
+    "duration_ms": 490.5
+  },
+  {
+    "text": "즉",
+    "offset_ms": 13043.5,
+    "duration_ms": 163.5
+  },
+  {
+    "text": "학습",
+    "offset_ms": 13207.0,
+    "duration_ms": 327.0
+  },
+  {
+    "text": "가능한",
+    "offset_ms": 13534.0,
+    "duration_ms": 490.5
+  },
+  {
+    "text": "Parameter입니다.",
+    "offset_ms": 14024.5,
+    "duration_ms": 2125.5
+  },
+  {
+    "text": "뉴런의",
+    "offset_ms": 16150.0,
+    "duration_ms": 490.7
+  },
+  {
+    "text": "수가",
+    "offset_ms": 16640.7,
+    "duration_ms": 327.1
+  },
+  {
+    "text": "많아질수록",
+    "offset_ms": 16967.9,
+    "duration_ms": 817.9
+  },
+  {
+    "text": "Parameter의",
+    "offset_ms": 17785.7,
+    "duration_ms": 1635.7
+  },
+  {
+    "text": "수도",
+    "offset_ms": 19421.4,
+    "duration_ms": 327.1
+  },
+  {
+    "text": "폭발적으로",
+    "offset_ms": 19748.6,
+    "duration_ms": 817.9
+  },
+  {
+    "text": "늘어나게",
+    "offset_ms": 20566.4,
+    "duration_ms": 654.3
+  },
+  {
+    "text": "됩니다.",
+    "offset_ms": 21220.7,
+    "duration_ms": 654.3
+  }
+]

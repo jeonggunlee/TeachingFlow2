@@ -1,0 +1,117 @@
+[
+  {
+    "text": "이",
+    "offset_ms": 50.0,
+    "duration_ms": 218.0
+  },
+  {
+    "text": "학습은",
+    "offset_ms": 268.0,
+    "duration_ms": 653.9
+  },
+  {
+    "text": "계층적으로",
+    "offset_ms": 921.9,
+    "duration_ms": 1089.8
+  },
+  {
+    "text": "이루어집니다.",
+    "offset_ms": 2011.7,
+    "duration_ms": 1525.8
+  },
+  {
+    "text": "예를",
+    "offset_ms": 3537.5,
+    "duration_ms": 324.2
+  },
+  {
+    "text": "들어",
+    "offset_ms": 3861.7,
+    "duration_ms": 324.2
+  },
+  {
+    "text": "이미지를",
+    "offset_ms": 4185.9,
+    "duration_ms": 648.4
+  },
+  {
+    "text": "처리할",
+    "offset_ms": 4834.3,
+    "duration_ms": 486.3
+  },
+  {
+    "text": "때",
+    "offset_ms": 5320.6,
+    "duration_ms": 162.1
+  },
+  {
+    "text": "Pixel",
+    "offset_ms": 5482.7,
+    "duration_ms": 810.5
+  },
+  {
+    "text": "→",
+    "offset_ms": 6293.1,
+    "duration_ms": 324.2
+  },
+  {
+    "text": "Edge",
+    "offset_ms": 6617.3,
+    "duration_ms": 648.4
+  },
+  {
+    "text": "→",
+    "offset_ms": 7265.7,
+    "duration_ms": 324.2
+  },
+  {
+    "text": "Shape",
+    "offset_ms": 7589.9,
+    "duration_ms": 810.5
+  },
+  {
+    "text": "→",
+    "offset_ms": 8400.4,
+    "duration_ms": 324.2
+  },
+  {
+    "text": "Object",
+    "offset_ms": 8724.6,
+    "duration_ms": 972.6
+  },
+  {
+    "text": "순서로",
+    "offset_ms": 9697.2,
+    "duration_ms": 486.3
+  },
+  {
+    "text": "점점",
+    "offset_ms": 10183.5,
+    "duration_ms": 324.2
+  },
+  {
+    "text": "추상적인",
+    "offset_ms": 10507.7,
+    "duration_ms": 648.4
+  },
+  {
+    "text": "특징을",
+    "offset_ms": 11156.0,
+    "duration_ms": 486.3
+  },
+  {
+    "text": "쌓아",
+    "offset_ms": 11642.3,
+    "duration_ms": 324.2
+  },
+  {
+    "text": "올라가며",
+    "offset_ms": 11966.5,
+    "duration_ms": 648.4
+  },
+  {
+    "text": "인식합니다.",
+    "offset_ms": 12614.9,
+    "duration_ms": 972.6
+  }
+]

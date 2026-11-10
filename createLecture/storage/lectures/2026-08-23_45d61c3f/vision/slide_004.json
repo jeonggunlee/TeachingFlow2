@@ -1,0 +1,54 @@
+{
+  "slide_index": 4,
+  "title": "인공신경망의 구조",
+  "segments": [
+    {
+      "id": "seg_1",
+      "script": "첫 번째로 입력층(Input Layer)에 대해 살펴봅니다. 입력층은 원시 데이터를 네트워크에 전달하는 가장 첫 번째 계층으로, 외부 데이터가 신경망으로 들어오는 관문 역할을 합니다.",
+      "keyword": "입력층",
+      "highlight": {
+        "x_pct": 4.1,
+        "y_pct": 23.5,
+        "w_pct": 64.5,
+        "h_pct": 6.6
+      },
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_2",
+      "script": "두 번째로 은닉층(Hidden Layer)입니다. 은닉층은 입력 데이터의 특징을 변환하고 추상화하는 역할을 하며, 층이 깊을수록 더 고수준의 표현을 학습할 수 있습니다. 딥러닝이라는 이름도 이 깊은 은닉층 구조에서 유래합니다.",
+      "keyword": "은닉층",
+      "highlight": {
+        "x_pct": 4.4,
+        "y_pct": 32.3,
+        "w_pct": 73.2,
+        "h_pct": 5.7
+      },
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_3",
+      "script": "세 번째로 출력층(Output Layer)을 살펴봅니다. 출력층은 신경망의 마지막 계층으로, 최종 예측값 또는 분류 확률을 반환하는 역할을 합니다. 문제의 종류에 따라 출력 노드의 수와 형태가 달라집니다.",
+      "keyword": "출력층",
+      "highlight": {
+        "x_pct": 4.6,
+        "y_pct": 40.8,
+        "w_pct": 61.8,
+        "h_pct": 5.7
+      },
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_4",
+      "script": "마지막으로 활성화 함수(Activation Function)입니다. 활성화 함수는 신경망에 비선형성을 부여하여 단순한 선형 변환만으로는 표현할 수 없는 복잡한 함수를 근사할 수 있게 해줍니다. ReLU, Sigmoid, Softmax 등이 대표적인 활성화 함수입니다.",
+      "keyword": "활성화 함수",
+      "highlight": {
+        "x_pct": 4.6,
+        "y_pct": 48.7,
+        "w_pct": 70.4,
+        "h_pct": 6
+      },
+      "effect": "highlighter"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "slide_index": 5,
+  "title": "딥러닝 역사의 주요 흐름",
+  "segments": [
+    {
+      "id": "seg_1",
+      "ref": "f1",
+      "keyword": "인공 뉴런 — McCulloch–Pitts (1943)",
+      "script": "딥러닝의 역사는 1943년 McCulloch와 Pitts가 제안한 인공 뉴런 모델에서 시작됩니다. 이 모델은 생물학적 뉴런의 동작을 수학적으로 단순화한 것으로, 이후 모든 신경망 연구의 출발점이 되었습니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_2",
+      "ref": "f2",
+      "keyword": "퍼셉트론 — Rosenblatt (1957)",
+      "script": "1957년 Rosenblatt는 인공 뉴런 개념을 발전시켜 퍼셉트론을 제안했습니다. 퍼셉트론은 실제로 학습할 수 있는 최초의 알고리즘으로, 당시 큰 주목을 받았으나 XOR 문제와 같은 비선형 문제를 풀지 못한다는 한계가 곧 드러났습니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_3",
+      "ref": "f3",
+      "keyword": "MLP·역전파 — Backpropagation (1986)",
+      "script": "1986년 Rumelhart 등이 역전파 알고리즘을 다층 퍼셉트론에 적용하면서 신경망 연구에 새로운 전기가 마련되었습니다. 여러 층을 쌓아 비선형 문제를 해결할 수 있게 되었으며, 이 역전파 알고리즘은 오늘날까지도 딥러닝 학습의 핵심 원리로 사용됩니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_4",
+      "ref": "f4",
+      "keyword": "딥러닝 도약 — AlexNet·GPU (2012)",
+      "script": "2012년은 딥러닝 역사의 결정적인 전환점입니다. AlexNet이 ImageNet 대회에서 압도적인 성능으로 우승하면서, GPU를 활용한 대규모 신경망 학습의 가능성이 전 세계적으로 주목받기 시작했습니다. 이 사건은 딥러닝 붐의 실질적인 시작을 알린 신호탄이었습니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_5",
+      "ref": "f5",
+      "keyword": "현대 딥러닝 — Transformer·GPT·생성형 AI",
+      "script": "그 이후 Transformer 구조와 GPT 같은 대형 언어 모델이 등장하면서 딥러닝은 언어, 이미지, 음성 등 거의 모든 분야로 확장되었습니다. 현재는 생성형 AI가 사회 전반에 큰 영향을 미치고 있으며, 딥러닝의 발전은 지금도 빠르게 진행 중입니다.",
+      "effect": "highlighter"
+    }
+  ]
+}

@@ -1,0 +1,137 @@
+[
+  {
+    "text": "이",
+    "offset_ms": 50.0,
+    "duration_ms": 186.6
+  },
+  {
+    "text": "인공",
+    "offset_ms": 236.6,
+    "duration_ms": 373.3
+  },
+  {
+    "text": "뉴런의",
+    "offset_ms": 609.9,
+    "duration_ms": 559.9
+  },
+  {
+    "text": "기본",
+    "offset_ms": 1169.8,
+    "duration_ms": 373.3
+  },
+  {
+    "text": "구조는",
+    "offset_ms": 1543.0,
+    "duration_ms": 559.9
+  },
+  {
+    "text": "여러",
+    "offset_ms": 2102.9,
+    "duration_ms": 373.3
+  },
+  {
+    "text": "입력을",
+    "offset_ms": 2476.2,
+    "duration_ms": 559.9
+  },
+  {
+    "text": "받아",
+    "offset_ms": 3036.0,
+    "duration_ms": 373.3
+  },
+  {
+    "text": "가중합을",
+    "offset_ms": 3409.3,
+    "duration_ms": 746.5
+  },
+  {
+    "text": "계산한",
+    "offset_ms": 4155.8,
+    "duration_ms": 559.9
+  },
+  {
+    "text": "뒤",
+    "offset_ms": 4715.7,
+    "duration_ms": 186.6
+  },
+  {
+    "text": "출력을",
+    "offset_ms": 4902.3,
+    "duration_ms": 559.9
+  },
+  {
+    "text": "내보내는",
+    "offset_ms": 5462.2,
+    "duration_ms": 746.5
+  },
+  {
+    "text": "형태로",
+    "offset_ms": 6208.7,
+    "duration_ms": 559.9
+  },
+  {
+    "text": "이루어집니다.",
+    "offset_ms": 6768.6,
+    "duration_ms": 1306.4
+  },
+  {
+    "text": "이",
+    "offset_ms": 8075.0,
+    "duration_ms": 199.4
+  },
+  {
+    "text": "단순한",
+    "offset_ms": 8274.4,
+    "duration_ms": 598.1
+  },
+  {
+    "text": "구조가",
+    "offset_ms": 8872.5,
+    "duration_ms": 598.1
+  },
+  {
+    "text": "다음",
+    "offset_ms": 9470.6,
+    "duration_ms": 398.8
+  },
+  {
+    "text": "슬라이드에서",
+    "offset_ms": 9869.4,
+    "duration_ms": 1196.2
+  },
+  {
+    "text": "살펴볼",
+    "offset_ms": 11065.6,
+    "duration_ms": 598.1
+  },
+  {
+    "text": "퍼셉트론과",
+    "offset_ms": 11663.8,
+    "duration_ms": 996.9
+  },
+  {
+    "text": "다층",
+    "offset_ms": 12660.6,
+    "duration_ms": 398.8
+  },
+  {
+    "text": "신경망으로",
+    "offset_ms": 13059.4,
+    "duration_ms": 996.9
+  },
+  {
+    "text": "발전해",
+    "offset_ms": 14056.2,
+    "duration_ms": 598.1
+  },
+  {
+    "text": "나가게",
+    "offset_ms": 14654.4,
+    "duration_ms": 598.1
+  },
+  {
+    "text": "됩니다.",
+    "offset_ms": 15252.5,
+    "duration_ms": 797.5
+  }
+]

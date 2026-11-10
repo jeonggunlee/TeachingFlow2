@@ -1,0 +1,27 @@
+{
+  "slide_index": 15,
+  "title": "Neural Network의 Layer 구조",
+  "segments": [
+    {
+      "id": "seg_1",
+      "ref": "y1",
+      "keyword": "입력층 (Input Layer)",
+      "script": "신경망의 첫 번째 층은 입력층입니다. 입력층은 이미지 픽셀값, 수치 데이터 등 원본 데이터를 그대로 받아들이는 역할을 하며, 별도의 연산 없이 다음 층으로 데이터를 전달합니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_2",
+      "ref": "y2",
+      "keyword": "은닉층 (Hidden Layer)",
+      "script": "그 다음은 은닉층입니다. 은닉층은 입력 데이터로부터 계층적 특징을 추출하는 핵심 공간으로, Fully Connected 방식으로 이전 층의 모든 뉴런과 연결됩니다. 층이 깊어질수록 더 추상적이고 복잡한 특징을 학습할 수 있으며, 이것이 바로 딥러닝에서 '깊다(Deep)'는 의미의 핵심입니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_3",
+      "ref": "y3",
+      "keyword": "출력층 (Output Layer)",
+      "script": "마지막은 출력층입니다. 은닉층에서 추출된 특징들을 종합하여 최종 예측값을 생성하는 층으로, 분류 문제에서는 클래스별 확률값을, 회귀 문제에서는 연속적인 수치를 출력합니다. 다음 슬라이드에서는 이 전체 구조를 수학적으로 어떻게 표현하는지 살펴보겠습니다.",
+      "effect": "highlighter"
+    }
+  ]
+}

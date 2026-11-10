@@ -1,0 +1,20 @@
+{
+  "slide_index": 11,
+  "title": "Pass 체크리스트 총정리",
+  "segments": [
+    {
+      "id": "seg_1",
+      "ref": "no",
+      "keyword": "02",
+      "script": "지금까지 각 필수 항목을 하나씩 상세히 살펴보았습니다. 이제 두 번째 큰 섹션으로 넘어가겠습니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_2",
+      "ref": "t",
+      "keyword": "Pass 체크리스트 총정리",
+      "script": "이 섹션에서는 앞서 안내한 다섯 가지 필수 항목을 한눈에 정리해 보겠습니다. 여러분이 Pass를 받기 위해 무엇을 완수해야 하는지, 빠짐없이 최종 점검하는 시간이 될 것입니다.",
+      "effect": "highlighter"
+    }
+  ]
+}

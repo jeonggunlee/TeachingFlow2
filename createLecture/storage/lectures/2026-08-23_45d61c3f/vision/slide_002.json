@@ -1,0 +1,54 @@
+{
+  "slide_index": 2,
+  "title": "딥러닝의 역사",
+  "segments": [
+    {
+      "id": "seg_1",
+      "script": "딥러닝의 역사는 1943년으로 거슬러 올라갑니다. McCulloch와 Pitts가 최초의 인공 뉴런 모델을 제안하면서 인공지능 연구의 씨앗이 뿌려졌습니다. 이것이 오늘날 딥러닝의 출발점이라고 할 수 있습니다.",
+      "keyword": "인공 뉴런 모델",
+      "highlight": {
+        "x_pct": 5.7,
+        "y_pct": 25,
+        "w_pct": 52.9,
+        "h_pct": 4.2
+      },
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_2",
+      "script": "1986년에는 Rumelhart 등이 역전파(Backpropagation) 알고리즘을 정립하면서 신경망 학습에 획기적인 전환점을 마련했습니다. 이 알고리즘은 오늘날에도 딥러닝 학습의 핵심 원리로 사용되고 있습니다.",
+      "keyword": "역전파(Backpropagation)",
+      "highlight": {
+        "x_pct": 5.4,
+        "y_pct": 32.9,
+        "w_pct": 59.7,
+        "h_pct": 4.9
+      },
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_3",
+      "script": "2012년은 딥러닝 역사에서 매우 중요한 해입니다. AlexNet이 ImageNet 대회에서 압도적인 성능을 보여주며 딥러닝 시대의 본격적인 개막을 알렸습니다. 이 사건을 계기로 전 세계적으로 딥러닝 연구가 폭발적으로 증가했습니다.",
+      "keyword": "AlexNet",
+      "highlight": {
+        "x_pct": 5.3,
+        "y_pct": 40.8,
+        "w_pct": 59.6,
+        "h_pct": 4.9
+      },
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_4",
+      "script": "2010년대 이후에는 GPU 병렬 연산과 빅데이터의 결합으로 딥러닝 성능이 급격히 향상되었습니다. 대규모 데이터와 강력한 연산 자원이 딥러닝 발전의 핵심 동력이 되었음을 알 수 있습니다.",
+      "keyword": "GPU 병렬 연산",
+      "highlight": {
+        "x_pct": 5.5,
+        "y_pct": 49.1,
+        "w_pct": 55.7,
+        "h_pct": 4.7
+      },
+      "effect": "highlighter"
+    }
+  ]
+}

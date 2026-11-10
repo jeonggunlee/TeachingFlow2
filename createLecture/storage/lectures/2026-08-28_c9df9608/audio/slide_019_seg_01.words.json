@@ -1,0 +1,137 @@
+[
+  {
+    "text": "딥러닝",
+    "offset_ms": 50.0,
+    "duration_ms": 568.2
+  },
+  {
+    "text": "학습은",
+    "offset_ms": 618.2,
+    "duration_ms": 568.2
+  },
+  {
+    "text": "가장",
+    "offset_ms": 1186.4,
+    "duration_ms": 378.8
+  },
+  {
+    "text": "먼저",
+    "offset_ms": 1565.2,
+    "duration_ms": 378.8
+  },
+  {
+    "text": "데이터",
+    "offset_ms": 1943.9,
+    "duration_ms": 568.2
+  },
+  {
+    "text": "x를",
+    "offset_ms": 2512.1,
+    "duration_ms": 378.8
+  },
+  {
+    "text": "네트워크에",
+    "offset_ms": 2890.9,
+    "duration_ms": 947.0
+  },
+  {
+    "text": "투입하는",
+    "offset_ms": 3837.9,
+    "duration_ms": 757.6
+  },
+  {
+    "text": "것에서",
+    "offset_ms": 4595.5,
+    "duration_ms": 568.2
+  },
+  {
+    "text": "시작됩니다.",
+    "offset_ms": 5163.6,
+    "duration_ms": 1136.4
+  },
+  {
+    "text": "이",
+    "offset_ms": 6300.0,
+    "duration_ms": 196.7
+  },
+  {
+    "text": "입력",
+    "offset_ms": 6496.7,
+    "duration_ms": 393.3
+  },
+  {
+    "text": "데이터는",
+    "offset_ms": 6890.0,
+    "duration_ms": 786.7
+  },
+  {
+    "text": "이미지,",
+    "offset_ms": 7676.7,
+    "duration_ms": 786.7
+  },
+  {
+    "text": "텍스트,",
+    "offset_ms": 8463.3,
+    "duration_ms": 786.7
+  },
+  {
+    "text": "수치",
+    "offset_ms": 9250.0,
+    "duration_ms": 393.3
+  },
+  {
+    "text": "등",
+    "offset_ms": 9643.3,
+    "duration_ms": 196.7
+  },
+  {
+    "text": "다양한",
+    "offset_ms": 9840.0,
+    "duration_ms": 590.0
+  },
+  {
+    "text": "형태가",
+    "offset_ms": 10430.0,
+    "duration_ms": 590.0
+  },
+  {
+    "text": "될",
+    "offset_ms": 11020.0,
+    "duration_ms": 196.7
+  },
+  {
+    "text": "수",
+    "offset_ms": 11216.7,
+    "duration_ms": 196.7
+  },
+  {
+    "text": "있으며,",
+    "offset_ms": 11413.3,
+    "duration_ms": 786.7
+  },
+  {
+    "text": "이후",
+    "offset_ms": 12200.0,
+    "duration_ms": 393.3
+  },
+  {
+    "text": "모든",
+    "offset_ms": 12593.3,
+    "duration_ms": 393.3
+  },
+  {
+    "text": "연산의",
+    "offset_ms": 12986.7,
+    "duration_ms": 590.0
+  },
+  {
+    "text": "출발점이",
+    "offset_ms": 13576.7,
+    "duration_ms": 786.7
+  },
+  {
+    "text": "됩니다.",
+    "offset_ms": 14363.3,
+    "duration_ms": 786.7
+  }
+]

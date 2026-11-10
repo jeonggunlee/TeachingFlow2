@@ -1,0 +1,97 @@
+[
+  {
+    "text": "세포체,",
+    "offset_ms": 100.0,
+    "duration_ms": 745.9
+  },
+  {
+    "text": "즉",
+    "offset_ms": 845.9,
+    "duration_ms": 186.5
+  },
+  {
+    "text": "Cell",
+    "offset_ms": 1032.4,
+    "duration_ms": 745.9
+  },
+  {
+    "text": "Body에서는",
+    "offset_ms": 1778.4,
+    "duration_ms": 1305.4
+  },
+  {
+    "text": "수신된",
+    "offset_ms": 3083.8,
+    "duration_ms": 559.5
+  },
+  {
+    "text": "모든",
+    "offset_ms": 3643.2,
+    "duration_ms": 373.0
+  },
+  {
+    "text": "신호를",
+    "offset_ms": 4016.2,
+    "duration_ms": 559.5
+  },
+  {
+    "text": "하나로",
+    "offset_ms": 4575.7,
+    "duration_ms": 559.5
+  },
+  {
+    "text": "통합하여",
+    "offset_ms": 5135.1,
+    "duration_ms": 745.9
+  },
+  {
+    "text": "처리합니다.",
+    "offset_ms": 5881.1,
+    "duration_ms": 1118.9
+  },
+  {
+    "text": "통합된",
+    "offset_ms": 6950.0,
+    "duration_ms": 617.4
+  },
+  {
+    "text": "신호의",
+    "offset_ms": 7567.4,
+    "duration_ms": 617.4
+  },
+  {
+    "text": "합이",
+    "offset_ms": 8184.8,
+    "duration_ms": 411.6
+  },
+  {
+    "text": "일정",
+    "offset_ms": 8596.4,
+    "duration_ms": 411.6
+  },
+  {
+    "text": "임계값을",
+    "offset_ms": 9008.0,
+    "duration_ms": 823.2
+  },
+  {
+    "text": "넘어야",
+    "offset_ms": 9831.3,
+    "duration_ms": 617.4
+  },
+  {
+    "text": "다음",
+    "offset_ms": 10448.7,
+    "duration_ms": 411.6
+  },
+  {
+    "text": "단계로",
+    "offset_ms": 10860.3,
+    "duration_ms": 617.4
+  },
+  {
+    "text": "전달됩니다.",
+    "offset_ms": 11477.7,
+    "duration_ms": 1234.8
+  }
+]

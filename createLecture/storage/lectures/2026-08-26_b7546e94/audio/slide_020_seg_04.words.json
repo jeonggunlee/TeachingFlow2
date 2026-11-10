@@ -1,0 +1,122 @@
+[
+  {
+    "text": "반면",
+    "offset_ms": 100.0,
+    "duration_ms": 327.8
+  },
+  {
+    "text": "클래스를",
+    "offset_ms": 427.8,
+    "duration_ms": 655.6
+  },
+  {
+    "text": "구분하는",
+    "offset_ms": 1083.3,
+    "duration_ms": 655.6
+  },
+  {
+    "text": "분류",
+    "offset_ms": 1738.9,
+    "duration_ms": 327.8
+  },
+  {
+    "text": "문제에서는",
+    "offset_ms": 2066.7,
+    "duration_ms": 819.4
+  },
+  {
+    "text": "Cross",
+    "offset_ms": 2886.1,
+    "duration_ms": 819.4
+  },
+  {
+    "text": "Entropy를",
+    "offset_ms": 3705.6,
+    "duration_ms": 1311.1
+  },
+  {
+    "text": "사용합니다.",
+    "offset_ms": 5016.7,
+    "duration_ms": 983.3
+  },
+  {
+    "text": "Cross",
+    "offset_ms": 5950.0,
+    "duration_ms": 846.7
+  },
+  {
+    "text": "Entropy는",
+    "offset_ms": 6796.7,
+    "duration_ms": 1354.7
+  },
+  {
+    "text": "예측",
+    "offset_ms": 8151.4,
+    "duration_ms": 338.7
+  },
+  {
+    "text": "확률",
+    "offset_ms": 8490.1,
+    "duration_ms": 338.7
+  },
+  {
+    "text": "분포와",
+    "offset_ms": 8828.8,
+    "duration_ms": 508.0
+  },
+  {
+    "text": "실제",
+    "offset_ms": 9336.8,
+    "duration_ms": 338.7
+  },
+  {
+    "text": "정답",
+    "offset_ms": 9675.5,
+    "duration_ms": 338.7
+  },
+  {
+    "text": "분포",
+    "offset_ms": 10014.2,
+    "duration_ms": 338.7
+  },
+  {
+    "text": "사이의",
+    "offset_ms": 10352.8,
+    "duration_ms": 508.0
+  },
+  {
+    "text": "차이를",
+    "offset_ms": 10860.8,
+    "duration_ms": 508.0
+  },
+  {
+    "text": "측정하며,",
+    "offset_ms": 11368.9,
+    "duration_ms": 846.7
+  },
+  {
+    "text": "오분류에",
+    "offset_ms": 12215.6,
+    "duration_ms": 677.4
+  },
+  {
+    "text": "더",
+    "offset_ms": 12892.9,
+    "duration_ms": 169.3
+  },
+  {
+    "text": "큰",
+    "offset_ms": 13062.3,
+    "duration_ms": 169.3
+  },
+  {
+    "text": "페널티를",
+    "offset_ms": 13231.6,
+    "duration_ms": 677.4
+  },
+  {
+    "text": "부여합니다.",
+    "offset_ms": 13909.0,
+    "duration_ms": 1016.0
+  }
+]

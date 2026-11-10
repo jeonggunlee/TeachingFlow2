@@ -1,0 +1,187 @@
+[
+  {
+    "text": "딥러닝",
+    "offset_ms": 50.0,
+    "duration_ms": 598.6
+  },
+  {
+    "text": "시스템은",
+    "offset_ms": 648.6,
+    "duration_ms": 798.1
+  },
+  {
+    "text": "크게",
+    "offset_ms": 1446.8,
+    "duration_ms": 399.1
+  },
+  {
+    "text": "여섯",
+    "offset_ms": 1845.8,
+    "duration_ms": 399.1
+  },
+  {
+    "text": "가지",
+    "offset_ms": 2244.9,
+    "duration_ms": 399.1
+  },
+  {
+    "text": "핵심",
+    "offset_ms": 2644.0,
+    "duration_ms": 399.1
+  },
+  {
+    "text": "구성",
+    "offset_ms": 3043.1,
+    "duration_ms": 399.1
+  },
+  {
+    "text": "요소로",
+    "offset_ms": 3442.1,
+    "duration_ms": 598.6
+  },
+  {
+    "text": "이루어집니다.",
+    "offset_ms": 4040.7,
+    "duration_ms": 1396.8
+  },
+  {
+    "text": "데이터(Data)가",
+    "offset_ms": 5437.5,
+    "duration_ms": 1071.0
+  },
+  {
+    "text": "학습의",
+    "offset_ms": 6508.5,
+    "duration_ms": 401.6
+  },
+  {
+    "text": "원료가",
+    "offset_ms": 6910.1,
+    "duration_ms": 401.6
+  },
+  {
+    "text": "되고,",
+    "offset_ms": 7311.8,
+    "duration_ms": 401.6
+  },
+  {
+    "text": "신경망(Neural",
+    "offset_ms": 7713.4,
+    "duration_ms": 1204.9
+  },
+  {
+    "text": "Network)이",
+    "offset_ms": 8918.3,
+    "duration_ms": 1071.0
+  },
+  {
+    "text": "그",
+    "offset_ms": 9989.3,
+    "duration_ms": 133.9
+  },
+  {
+    "text": "데이터를",
+    "offset_ms": 10123.2,
+    "duration_ms": 535.5
+  },
+  {
+    "text": "처리하며,",
+    "offset_ms": 10658.7,
+    "duration_ms": 669.4
+  },
+  {
+    "text": "Loss",
+    "offset_ms": 11328.1,
+    "duration_ms": 535.5
+  },
+  {
+    "text": "Function이",
+    "offset_ms": 11863.6,
+    "duration_ms": 1204.9
+  },
+  {
+    "text": "예측의",
+    "offset_ms": 13068.5,
+    "duration_ms": 401.6
+  },
+  {
+    "text": "오차를",
+    "offset_ms": 13470.1,
+    "duration_ms": 401.6
+  },
+  {
+    "text": "측정합니다.",
+    "offset_ms": 13871.7,
+    "duration_ms": 803.3
+  },
+  {
+    "text": "그리고",
+    "offset_ms": 14675.0,
+    "duration_ms": 448.5
+  },
+  {
+    "text": "Optimizer가",
+    "offset_ms": 15123.5,
+    "duration_ms": 1494.9
+  },
+  {
+    "text": "오차를",
+    "offset_ms": 16618.4,
+    "duration_ms": 448.5
+  },
+  {
+    "text": "줄이는",
+    "offset_ms": 17066.9,
+    "duration_ms": 448.5
+  },
+  {
+    "text": "방향으로",
+    "offset_ms": 17515.4,
+    "duration_ms": 598.0
+  },
+  {
+    "text": "가중치를",
+    "offset_ms": 18113.3,
+    "duration_ms": 598.0
+  },
+  {
+    "text": "갱신하고,",
+    "offset_ms": 18711.3,
+    "duration_ms": 747.5
+  },
+  {
+    "text": "학습(Training)과",
+    "offset_ms": 19458.8,
+    "duration_ms": 1644.4
+  },
+  {
+    "text": "추론(Inference)",
+    "offset_ms": 21103.2,
+    "duration_ms": 1644.4
+  },
+  {
+    "text": "단계를",
+    "offset_ms": 22747.6,
+    "duration_ms": 448.5
+  },
+  {
+    "text": "거쳐",
+    "offset_ms": 23196.1,
+    "duration_ms": 299.0
+  },
+  {
+    "text": "최종적으로",
+    "offset_ms": 23495.1,
+    "duration_ms": 747.5
+  },
+  {
+    "text": "결과를",
+    "offset_ms": 24242.6,
+    "duration_ms": 448.5
+  },
+  {
+    "text": "만들어냅니다.",
+    "offset_ms": 24691.0,
+    "duration_ms": 1046.5
+  }
+]

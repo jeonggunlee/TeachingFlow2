@@ -1,0 +1,147 @@
+[
+  {
+    "text": "세",
+    "offset_ms": 100.0,
+    "duration_ms": 218.8
+  },
+  {
+    "text": "번째",
+    "offset_ms": 318.8,
+    "duration_ms": 437.5
+  },
+  {
+    "text": "동력은",
+    "offset_ms": 756.2,
+    "duration_ms": 656.2
+  },
+  {
+    "text": "알고리즘과",
+    "offset_ms": 1412.5,
+    "duration_ms": 1093.8
+  },
+  {
+    "text": "아키텍처의",
+    "offset_ms": 2506.2,
+    "duration_ms": 1093.8
+  },
+  {
+    "text": "발전입니다.",
+    "offset_ms": 3600.0,
+    "duration_ms": 1312.5
+  },
+  {
+    "text": "이미지",
+    "offset_ms": 4862.5,
+    "duration_ms": 542.7
+  },
+  {
+    "text": "처리에",
+    "offset_ms": 5405.2,
+    "duration_ms": 542.7
+  },
+  {
+    "text": "강한",
+    "offset_ms": 5947.9,
+    "duration_ms": 361.8
+  },
+  {
+    "text": "CNN,",
+    "offset_ms": 6309.7,
+    "duration_ms": 723.6
+  },
+  {
+    "text": "순서",
+    "offset_ms": 7033.3,
+    "duration_ms": 361.8
+  },
+  {
+    "text": "정보를",
+    "offset_ms": 7395.1,
+    "duration_ms": 542.7
+  },
+  {
+    "text": "다루는",
+    "offset_ms": 7937.8,
+    "duration_ms": 542.7
+  },
+  {
+    "text": "RNN,",
+    "offset_ms": 8480.6,
+    "duration_ms": 723.6
+  },
+  {
+    "text": "그리고",
+    "offset_ms": 9204.2,
+    "duration_ms": 542.7
+  },
+  {
+    "text": "장기",
+    "offset_ms": 9746.9,
+    "duration_ms": 361.8
+  },
+  {
+    "text": "의존성",
+    "offset_ms": 10108.7,
+    "duration_ms": 542.7
+  },
+  {
+    "text": "문제를",
+    "offset_ms": 10651.4,
+    "duration_ms": 542.7
+  },
+  {
+    "text": "해결한",
+    "offset_ms": 11194.1,
+    "duration_ms": 542.7
+  },
+  {
+    "text": "LSTM",
+    "offset_ms": 11736.8,
+    "duration_ms": 723.6
+  },
+  {
+    "text": "등",
+    "offset_ms": 12460.4,
+    "duration_ms": 180.9
+  },
+  {
+    "text": "다양한",
+    "offset_ms": 12641.3,
+    "duration_ms": 542.7
+  },
+  {
+    "text": "구조가",
+    "offset_ms": 13184.0,
+    "duration_ms": 542.7
+  },
+  {
+    "text": "등장하면서",
+    "offset_ms": 13726.7,
+    "duration_ms": 904.5
+  },
+  {
+    "text": "딥러닝의",
+    "offset_ms": 14631.3,
+    "duration_ms": 723.6
+  },
+  {
+    "text": "적용",
+    "offset_ms": 15354.9,
+    "duration_ms": 361.8
+  },
+  {
+    "text": "범위가",
+    "offset_ms": 15716.7,
+    "duration_ms": 542.7
+  },
+  {
+    "text": "크게",
+    "offset_ms": 16259.4,
+    "duration_ms": 361.8
+  },
+  {
+    "text": "넓어졌습니다.",
+    "offset_ms": 16621.2,
+    "duration_ms": 1266.3
+  }
+]

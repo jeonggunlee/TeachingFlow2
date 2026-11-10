@@ -1,0 +1,6196 @@
+{
+  "lecture_id": "2026-08-29_23ec21b1",
+  "title": "오디세이세미나3-1주차-오디세이 세미나 3",
+  "created_at": "2026-08-28T16:39:32.750096+00:00",
+  "slide_size": {
+    "w": 1920,
+    "h": 1080
+  },
+  "slide_css": "slides/slide.css",
+  "slide_count": 14,
+  "segment_count": 47,
+  "slides": [
+    {
+      "index": 1,
+      "title": "오디세이 세미나 3",
+      "segments": [
+        {
+          "id": "seg_1",
+          "script": "안녕하세요, 여러분. 이 수업은 여러분의 전공 역량을 바탕으로 진로와 취업을 구체적으로 준비해 나가는 과정입니다.",
+          "keyword": "오디세이 세미나 3",
+          "ref": "t",
+          "highlight": null,
+          "effect": "highlighter",
+          "audio": "audio/slide_001_seg_01.mp3",
+          "duration_ms": 10187.5,
+          "words": [
+            {
+              "text": "안녕하세요,",
+              "offset_ms": 50.0,
+              "duration_ms": 1545.0
+            },
+            {
+              "text": "여러분.",
+              "offset_ms": 1595.0,
+              "duration_ms": 1030.0
+            },
+            {
+              "text": "이",
+              "offset_ms": 2625.0,
+              "duration_ms": 189.1
+            },
+            {
+              "text": "수업은",
+              "offset_ms": 2814.1,
+              "duration_ms": 567.2
+            },
+            {
+              "text": "여러분의",
+              "offset_ms": 3381.2,
+              "duration_ms": 756.2
+            },
+            {
+              "text": "전공",
+              "offset_ms": 4137.5,
+              "duration_ms": 378.1
+            },
+            {
+              "text": "역량을",
+              "offset_ms": 4515.6,
+              "duration_ms": 567.2
+            },
+            {
+              "text": "바탕으로",
+              "offset_ms": 5082.8,
+              "duration_ms": 756.2
+            },
+            {
+              "text": "진로와",
+              "offset_ms": 5839.1,
+              "duration_ms": 567.2
+            },
+            {
+              "text": "취업을",
+              "offset_ms": 6406.2,
+              "duration_ms": 567.2
+            },
+            {
+              "text": "구체적으로",
+              "offset_ms": 6973.4,
+              "duration_ms": 945.3
+            },
+            {
+              "text": "준비해",
+              "offset_ms": 7918.8,
+              "duration_ms": 567.2
+            },
+            {
+              "text": "나가는",
+              "offset_ms": 8485.9,
+              "duration_ms": 567.2
+            },
+            {
+              "text": "과정입니다.",
+              "offset_ms": 9053.1,
+              "duration_ms": 1134.4
+            }
+          ]
+        },
+        {
+          "id": "seg_2",
+          "script": "부제에서 보시다시피, 이 강의는 '전공 진로 및 취업 가이드'를 핵심 주제로 삼고 있으며, 오늘은 그 첫 시간인 수업 오리엔테이션입니다. ",
+          "keyword": "전공 진로 및 취업 가이드",
+          "ref": "st",
+          "highlight": null,
+          "effect": "highlighter",
+          "audio": "audio/slide_001_seg_02.mp3",
+          "duration_ms": 9975.0,
+          "words": [
+            {
+              "text": "부제에서",
+              "offset_ms": 50.0,
+              "duration_ms": 684.5
+            },
+            {
+              "text": "보시다시피,",
+              "offset_ms": 734.5,
+              "duration_ms": 1026.7
+            },
+            {
+              "text": "이",
+              "offset_ms": 1761.2,
+              "duration_ms": 171.1
+            },
+            {
+              "text": "강의는",
+              "offset_ms": 1932.3,
+              "duration_ms": 513.4
+            },
+            {
+              "text": "'전공",
+              "offset_ms": 2445.7,
+              "duration_ms": 513.4
+            },
+            {
+              "text": "진로",
+              "offset_ms": 2959.1,
+              "duration_ms": 342.2
+            },
+            {
+              "text": "및",
+              "offset_ms": 3301.3,
+              "duration_ms": 171.1
+            },
+            {
+              "text": "취업",
+              "offset_ms": 3472.4,
+              "duration_ms": 342.2
+            },
+            {
+              "text": "가이드'를",
+              "offset_ms": 3814.7,
+              "duration_ms": 855.6
+            },
+            {
+              "text": "핵심",
+              "offset_ms": 4670.3,
+              "duration_ms": 342.2
+            },
+            {
+              "text": "주제로",
+              "offset_ms": 5012.5,
+              "duration_ms": 513.4
+            },
+            {
+              "text": "삼고",
+              "offset_ms": 5525.9,
+              "duration_ms": 342.2
+            },
+            {
+              "text": "있으며,",
+              "offset_ms": 5868.1,
+              "duration_ms": 684.5
+            },
+            {
+              "text": "오늘은",
+              "offset_ms": 6552.6,
+              "duration_ms": 513.4
+            },
+            {
+              "text": "그",
+              "offset_ms": 7065.9,
+              "duration_ms": 171.1
+            },
+            {
+              "text": "첫",
+              "offset_ms": 7237.1,
+              "duration_ms": 171.1
+            },
+            {
+              "text": "시간인",
+              "offset_ms": 7408.2,
+              "duration_ms": 513.4
+            },
+            {
+              "text": "수업",
+              "offset_ms": 7921.6,
+              "duration_ms": 342.2
+            },
+            {
+              "text": "오리엔테이션입니다.",
+              "offset_ms": 8263.8,
+              "duration_ms": 1711.2
+            }
+          ]
+        }
+      ],
+      "html": "slides/slide_001.html"
+    },
+    {
+      "index": 2,
+      "title": "수업 기본 정보",
+      "segments": [
+        {
+          "id": "seg_1",
+          "script": "이번 강의의 과목명은 '오디세이 세미나 3 — 전공 진로 및 취업 가이드'입니다. 이름에서 알 수 있듯이, 여러분의 전공과 연계된 진로 설계와 취업 준비를 체계적으로 안내하는 수업입니다.",
+          "keyword": "오디세이 세미나 3",
+          "ref": "b1",
+          "highlight": null,
+          "effect": "highlighter",
+          "audio": "audio/slide_002_seg_01.mp3",
+          "duration_ms": 14912.5,
+          "words": [
+            {
+              "text": "이번",
+              "offset_ms": 50.0,
+              "duration_ms": 390.4
+            },
+            {
+              "text": "강의의",
+              "offset_ms": 440.4,
+              "duration_ms": 585.7
+            },
+            {
+              "text": "과목명은",
+              "offset_ms": 1026.1,
+              "duration_ms": 780.9
+            },
+            {
+              "text": "'오디세이",
+              "offset_ms": 1807.0,
+              "duration_ms": 976.1
+            },
+            {
+              "text": "세미나",
+              "offset_ms": 2783.1,
+              "duration_ms": 585.7
+            },
+            {
+              "text": "3",
+              "offset_ms": 3368.8,
+              "duration_ms": 195.2
+            },
+            {
+              "text": "—",
+              "offset_ms": 3564.0,
+              "duration_ms": 195.2
+            },
+            {
+              "text": "전공",
+              "offset_ms": 3759.2,
+              "duration_ms": 390.4
+            },
+            {
+              "text": "진로",
+              "offset_ms": 4149.6,
+              "duration_ms": 390.4
+            },
+            {
+              "text": "및",
+              "offset_ms": 4540.1,
+              "duration_ms": 195.2
+            },
+            {
+              "text": "취업",
+              "offset_ms": 4735.3,
+              "duration_ms": 390.4
+            },
+            {
+              "text": "가이드'입니다.",
+              "offset_ms": 5125.7,
+              "duration_ms": 1561.8
+            },
+            {
+              "text": "이름에서",
+              "offset_ms": 6687.5,
+              "duration_ms": 731.1
+            },
+            {
+              "text": "알",
+              "offset_ms": 7418.6,
+              "duration_ms": 182.8
+            },
+            {
+              "text": "수",
+              "offset_ms": 7601.4,
+              "duration_ms": 182.8
+            },
+            {
+              "text": "있듯이,",
+              "offset_ms": 7784.2,
+              "duration_ms": 731.1
+            },
+            {
+              "text": "여러분의",
+              "offset_ms": 8515.3,
+              "duration_ms": 731.1
+            },
+            {
+              "text": "전공과",
+              "offset_ms": 9246.4,
+              "duration_ms": 548.3
+            },
+            {
+              "text": "연계된",
+              "offset_ms": 9794.7,
+              "duration_ms": 548.3
+            },
+            {
+              "text": "진로",
+              "offset_ms": 10343.1,
+              "duration_ms": 365.6
+            },
+            {
+              "text": "설계와",
+              "offset_ms": 10708.6,
+              "duration_ms": 548.3
+            },
+            {
+              "text": "취업",
+              "offset_ms": 11256.9,
+              "duration_ms": 365.6
+            },
+            {
+              "text": "준비를",
+              "offset_ms": 11622.5,
+              "duration_ms": 548.3
+            },
+            {
+              "text": "체계적으로",
+              "offset_ms": 12170.8,
+              "duration_ms": 913.9
+            },
+            {
+              "text": "안내하는",
+              "offset_ms": 13084.7,
+              "duration_ms": 731.1
+            },
+            {
+              "text": "수업입니다.",
+              "offset_ms": 13815.8,
+              "duration_ms": 1096.7
+            }
+          ]
+        },
+        {
+          "id": "seg_2",
+          "script": "담당 교수는 한림대학교 소프트웨어학부의 이정근 교수입니다. 이번 학기 동안 진로와 취업에 관한 전반적인 내용을 함께 이끌어 나갈 예정입니다.",
+          "keyword": "담당 교수",
+          "ref": "b2",
+          "highlight": null,
+          "effect": "highlighter",
+          "audio": "audio/slide_002_seg_02.mp3",
+          "duration_ms": 11687.5,
+          "words": [
+            {
+              "text": "담당",
+              "offset_ms": 50.0,
+              "duration_ms": 408.3
+            },
+            {
+              "text": "교수는",
+              "offset_ms": 458.3,
+              "duration_ms": 612.5
+            },
+            {
+              "text": "한림대학교",
+              "offset_ms": 1070.8,
+              "duration_ms": 1020.8
+            },
+            {
+              "text": "소프트웨어학부의",
+              "offset_ms": 2091.7,
+              "duration_ms": 1633.3
+            },
+            {
+              "text": "이정근",
+              "offset_ms": 3725.0,
+              "duration_ms": 612.5
+            },
+            {
+              "text": "교수입니다.",
+              "offset_ms": 4337.5,
+              "duration_ms": 1225.0
+            },
+            {
+              "text": "이번",
+              "offset_ms": 5562.5,
+              "duration_ms": 360.3
+            },
+            {
+              "text": "학기",
+              "offset_ms": 5922.8,
+              "duration_ms": 360.3
+            },
+            {
+              "text": "동안",
+              "offset_ms": 6283.1,
+              "duration_ms": 360.3
+            },
+            {
+              "text": "진로와",
+              "offset_ms": 6643.4,
+              "duration_ms": 540.4
+            },
+            {
+              "text": "취업에",
+              "offset_ms": 7183.8,
+              "duration_ms": 540.4
+            },
+            {
+              "text": "관한",
+              "offset_ms": 7724.3,
+              "duration_ms": 360.3
+            },
+            {
+              "text": "전반적인",
+              "offset_ms": 8084.6,
+              "duration_ms": 720.6
+            },
+            {
+              "text": "내용을",
+              "offset_ms": 8805.1,
+              "duration_ms": 540.4
+            },
+            {
+              "text": "함께",
+              "offset_ms": 9345.6,
+              "duration_ms": 360.3
+            },
+            {
+              "text": "이끌어",
+              "offset_ms": 9705.9,
+              "duration_ms": 540.4
+            },
+            {
+              "text": "나갈",
+              "offset_ms": 10246.3,
+              "duration_ms": 360.3
+            },
+            {
+              "text": "예정입니다.",
+              "offset_ms": 10606.6,
+              "duration_ms": 1080.9
+            }
+          ]
+        },
+        {
+          "id": "seg_3",
+          "script": "이수 학점은 1학점이며, 성적 방식은 Pass 또는 Fail로 처리됩니다. 점수 대신 이수 여부로 평가되는 만큼, 정해진 필수 항목을 빠짐없이 완수하는 것이 핵심입니다.",
+          "keyword": "Pass / Fail",
+          "ref": "b3",
+          "highlight": null,
+          "effect": "highlighter",
+          "audio": "audio/slide_002_seg_03.mp3",
+          "duration_ms": 13900.0,
+          "words": [
+            {
+              "text": "이수",
+              "offset_ms": 50.0,
+              "duration_ms": 369.7
+            },
+            {
+              "text": "학점은",
+              "offset_ms": 419.7,
+              "duration_ms": 554.5
+            },
+            {
+              "text": "1학점이며,",
+              "offset_ms": 974.2,
+              "duration_ms": 1109.1
+            },
+            {
+              "text": "성적",
+              "offset_ms": 2083.3,
+              "duration_ms": 369.7
+            },
+            {
+              "text": "방식은",
+              "offset_ms": 2453.0,
+              "duration_ms": 554.5
+            },
+            {
+              "text": "Pass",
+              "offset_ms": 3007.6,
+              "duration_ms": 739.4
+            },
+            {
+              "text": "또는",
+              "offset_ms": 3747.0,
+              "duration_ms": 369.7
+            },
+            {
+              "text": "Fail로",
+              "offset_ms": 4116.7,
+              "duration_ms": 924.2
+            },
+            {
+              "text": "처리됩니다.",
+              "offset_ms": 5040.9,
+              "duration_ms": 1109.1
+            },
+            {
+              "text": "점수",
+              "offset_ms": 6150.0,
+              "duration_ms": 387.5
+            },
+            {
+              "text": "대신",
+              "offset_ms": 6537.5,
+              "duration_ms": 387.5
+            },
+            {
+              "text": "이수",
+              "offset_ms": 6925.0,
+              "duration_ms": 387.5
+            },
+            {
+              "text": "여부로",
+              "offset_ms": 7312.5,
+              "duration_ms": 581.2
+            },
+            {
+              "text": "평가되는",
+              "offset_ms": 7893.8,
+              "duration_ms": 775.0
+            },
+            {
+              "text": "만큼,",
+              "offset_ms": 8668.8,
+              "duration_ms": 581.2
+            },
+            {
+              "text": "정해진",
+              "offset_ms": 9250.0,
+              "duration_ms": 581.2
+            },
+            {
+              "text": "필수",
+              "offset_ms": 9831.2,
+              "duration_ms": 387.5
+            },
+            {
+              "text": "항목을",
+              "offset_ms": 10218.8,
+              "duration_ms": 581.2
+            },
+            {
+              "text": "빠짐없이",
+              "offset_ms": 10800.0,
+              "duration_ms": 775.0
+            },
+            {
+              "text": "완수하는",
+              "offset_ms": 11575.0,
+              "duration_ms": 775.0
+            },
+            {
+              "text": "것이",
+              "offset_ms": 12350.0,
+              "duration_ms": 387.5
+            },
+            {
+              "text": "핵심입니다.",
+              "offset_ms": 12737.5,
+              "duration_ms": 1162.5
+            }
+          ]
+        },
+        {
+          "id": "seg_4",
+          "script": "수강 대상은 소프트웨어학부 3학년 학생들입니다. 본격적인 취업 준비에 앞서 진로 방향을 점검하고 계획을 세우기에 가장 적합한 시기인 만큼, 이 수업을 적극적으로 활용하시기 바랍니다.",
+          "keyword": "소프트웨어학부 3학년",
+          "ref": "b4",
+          "highlight": null,
+          "effect": "highlighter",
+          "audio": "audio/slide_002_seg_04.mp3",
+          "duration_ms": 15162.5,
+          "words": [
+            {
+              "text": "수강",
+              "offset_ms": 50.0,
+              "duration_ms": 425.0
+            },
+            {
+              "text": "대상은",
+              "offset_ms": 475.0,
+              "duration_ms": 637.5
+            },
+            {
+              "text": "소프트웨어학부",
+              "offset_ms": 1112.5,
+              "duration_ms": 1487.5
+            },
+            {
+              "text": "3학년",
+              "offset_ms": 2600.0,
+              "duration_ms": 637.5
+            },
+            {
+              "text": "학생들입니다.",
+              "offset_ms": 3237.5,
+              "duration_ms": 1487.5
+            },
+            {
+              "text": "본격적인",
+              "offset_ms": 4725.0,
+              "duration_ms": 732.5
+            },
+            {
+              "text": "취업",
+              "offset_ms": 5457.5,
+              "duration_ms": 366.2
+            },
+            {
+              "text": "준비에",
+              "offset_ms": 5823.7,
+              "duration_ms": 549.3
+            },
+            {
+              "text": "앞서",
+              "offset_ms": 6373.0,
+              "duration_ms": 366.2
+            },
+            {
+              "text": "진로",
+              "offset_ms": 6739.3,
+              "duration_ms": 366.2
+            },
+            {
+              "text": "방향을",
+              "offset_ms": 7105.5,
+              "duration_ms": 549.3
+            },
+            {
+              "text": "점검하고",
+              "offset_ms": 7654.8,
+              "duration_ms": 732.5
+            },
+            {
+              "text": "계획을",
+              "offset_ms": 8387.3,
+              "duration_ms": 549.3
+            },
+            {
+              "text": "세우기에",
+              "offset_ms": 8936.6,
+              "duration_ms": 732.5
+            },
+            {
+              "text": "가장",
+              "offset_ms": 9669.1,
+              "duration_ms": 366.2
+            },
+            {
+              "text": "적합한",
+              "offset_ms": 10035.3,
+              "duration_ms": 549.3
+            },
+            {
+              "text": "시기인",
+              "offset_ms": 10584.6,
+              "duration_ms": 549.3
+            },
+            {
+              "text": "만큼,",
+              "offset_ms": 11134.0,
+              "duration_ms": 549.3
+            },
+            {
+              "text": "이",
+              "offset_ms": 11683.3,
+              "duration_ms": 183.1
+            },
+            {
+              "text": "수업을",
+              "offset_ms": 11866.4,
+              "duration_ms": 549.3
+            },
+            {
+              "text": "적극적으로",
+              "offset_ms": 12415.8,
+              "duration_ms": 915.6
+            },
+            {
+              "text": "활용하시기",
+              "offset_ms": 13331.4,
+              "duration_ms": 915.6
+            },
+            {
+              "text": "바랍니다.",
+              "offset_ms": 14246.9,
+              "duration_ms": 915.6
+            }
+          ]
+        }
+      ],
+      "html": "slides/slide_002.html"
+    },
+    {
+      "index": 3,
+      "title": "수업 목표",
+      "segments": [
+        {
+          "id": "seg_1",
+          "script": "이번 수업의 첫 번째 목표는 전공 수강 및 진로 선택에 필요한 정보를 체계적으로 전달하는 것입니다. 여러분이 앞으로 어떤 전공 과목을 선택하고, 어떤 방향으로 진로를 설계할지 판단할 수 있도록 핵심 정보를 정리해 드릴 것입니다.",
+          "keyword": "전공 수강 및 진로 선택",
+          "ref": "b1",
+          "highlight": null,
+          "effect": "highlighter",
+          "audio": "audio/slide_003_seg_01.mp3",
+          "duration_ms": 17487.5,
+          "words": [
+            {
+              "text": "이번",
+              "offset_ms": 50.0,
+              "duration_ms": 368.9
+            },
+            {
+              "text": "수업의",
+              "offset_ms": 418.9,
+              "duration_ms": 553.4
+            },
+            {
+              "text": "첫",
+              "offset_ms": 972.3,
+              "duration_ms": 184.5
+            },
+            {
+              "text": "번째",
+              "offset_ms": 1156.7,
+              "duration_ms": 368.9
+            },
+            {
+              "text": "목표는",
+              "offset_ms": 1525.6,
+              "duration_ms": 553.4
+            },
+            {
+              "text": "전공",
+              "offset_ms": 2079.0,
+              "duration_ms": 368.9
+            },
+            {
+              "text": "수강",
+              "offset_ms": 2447.9,
+              "duration_ms": 368.9
+            },
+            {
+              "text": "및",
+              "offset_ms": 2816.8,
+              "duration_ms": 184.5
+            },
+            {
+              "text": "진로",
+              "offset_ms": 3001.2,
+              "duration_ms": 368.9
+            },
+            {
+              "text": "선택에",
+              "offset_ms": 3370.1,
+              "duration_ms": 553.4
+            },
+            {
+              "text": "필요한",
+              "offset_ms": 3923.5,
+              "duration_ms": 553.4
+            },
+            {
+              "text": "정보를",
+              "offset_ms": 4476.8,
+              "duration_ms": 553.4
+            },
+            {
+              "text": "체계적으로",
+              "offset_ms": 5030.2,
+              "duration_ms": 922.3
+            },
+            {
+              "text": "전달하는",
+              "offset_ms": 5952.4,
+              "duration_ms": 737.8
+            },
+            {
+              "text": "것입니다.",
+              "offset_ms": 6690.2,
+              "duration_ms": 922.3
+            },
+            {
+              "text": "여러분이",
+              "offset_ms": 7612.5,
+              "duration_ms": 731.5
+            },
+            {
+              "text": "앞으로",
+              "offset_ms": 8344.0,
+              "duration_ms": 548.6
+            },
+            {
+              "text": "어떤",
+              "offset_ms": 8892.6,
+              "duration_ms": 365.7
+            },
+            {
+              "text": "전공",
+              "offset_ms": 9258.3,
+              "duration_ms": 365.7
+            },
+            {
+              "text": "과목을",
+              "offset_ms": 9624.1,
+              "duration_ms": 548.6
+            },
+            {
+              "text": "선택하고,",
+              "offset_ms": 10172.7,
+              "duration_ms": 914.4
+            },
+            {
+              "text": "어떤",
+              "offset_ms": 11087.0,
+              "duration_ms": 365.7
+            },
+            {
+              "text": "방향으로",
+              "offset_ms": 11452.8,
+              "duration_ms": 731.5
+            },
+            {
+              "text": "진로를",
+              "offset_ms": 12184.3,
+              "duration_ms": 548.6
+            },
+            {
+              "text": "설계할지",
+              "offset_ms": 12732.9,
+              "duration_ms": 731.5
+            },
+            {
+              "text": "판단할",
+              "offset_ms": 13464.4,
+              "duration_ms": 548.6
+            },
+            {
+              "text": "수",
+              "offset_ms": 14013.0,
+              "duration_ms": 182.9
+            },
+            {
+              "text": "있도록",
+              "offset_ms": 14195.8,
+              "duration_ms": 548.6
+            },
+            {
+              "text": "핵심",
+              "offset_ms": 14744.4,
+              "duration_ms": 365.7
+            },
+            {
+              "text": "정보를",
+              "offset_ms": 15110.2,
+              "duration_ms": 548.6
+            },
+            {
+              "text": "정리해",
+              "offset_ms": 15658.8,
+              "duration_ms": 548.6
+            },
+            {
+              "text": "드릴",
+              "offset_ms": 16207.4,
+              "duration_ms": 365.7
+            },
+            {
+              "text": "것입니다.",
+              "offset_ms": 16573.1,
+              "duration_ms": 914.4
+            }
+          ]
+        },
+        {
+          "id": "seg_2",
+          "script": "두 번째로는 교양 과목 선택과 장·단기 현장실습 활용 방안을 안내합니다. 전공 외에도 교양 과목을 어떻게 전략적으로 구성할지, 그리고 현장실습 기회를 어떻게 활용할 수 있는지 구체적인 방법을 살펴볼 것입니다.",
+          "keyword": "교양 과목 선택 및 장·단기 현장실습",
+          "ref": "b2",
+          "highlight": null,
+          "effect": "highlighter",
+          "audio": "audio/slide_003_seg_02.mp3",
+          "duration_ms": 17562.5,
+          "words": [
+            {
+              "text": "두",
+              "offset_ms": 50.0,
+              "duration_ms": 214.1
+            },
+            {
+              "text": "번째로는",
+              "offset_ms": 264.1,
+              "duration_ms": 856.5
+            },
+            {
+              "text": "교양",
+              "offset_ms": 1120.6,
+              "duration_ms": 428.2
+            },
+            {
+              "text": "과목",
+              "offset_ms": 1548.8,
+              "duration_ms": 428.2
+            },
+            {
+              "text": "선택과",
+              "offset_ms": 1977.0,
+              "duration_ms": 642.3
+            },
+            {
+              "text": "장·단기",
+              "offset_ms": 2619.4,
+              "duration_ms": 856.5
+            },
+            {
+              "text": "현장실습",
+              "offset_ms": 3475.8,
+              "duration_ms": 856.5
+            },
+            {
+              "text": "활용",
+              "offset_ms": 4332.3,
+              "duration_ms": 428.2
+            },
+            {
+              "text": "방안을",
+              "offset_ms": 4760.5,
+              "duration_ms": 642.3
+            },
+            {
+              "text": "안내합니다.",
+              "offset_ms": 5402.8,
+              "duration_ms": 1284.7
+            },
+            {
+              "text": "전공",
+              "offset_ms": 6687.5,
+              "duration_ms": 375.0
+            },
+            {
+              "text": "외에도",
+              "offset_ms": 7062.5,
+              "duration_ms": 562.5
+            },
+            {
+              "text": "교양",
+              "offset_ms": 7625.0,
+              "duration_ms": 375.0
+            },
+            {
+              "text": "과목을",
+              "offset_ms": 8000.0,
+              "duration_ms": 562.5
+            },
+            {
+              "text": "어떻게",
+              "offset_ms": 8562.5,
+              "duration_ms": 562.5
+            },
+            {
+              "text": "전략적으로",
+              "offset_ms": 9125.0,
+              "duration_ms": 937.5
+            },
+            {
+              "text": "구성할지,",
+              "offset_ms": 10062.5,
+              "duration_ms": 937.5
+            },
+            {
+              "text": "그리고",
+              "offset_ms": 11000.0,
+              "duration_ms": 562.5
+            },
+            {
+              "text": "현장실습",
+              "offset_ms": 11562.5,
+              "duration_ms": 750.0
+            },
+            {
+              "text": "기회를",
+              "offset_ms": 12312.5,
+              "duration_ms": 562.5
+            },
+            {
+              "text": "어떻게",
+              "offset_ms": 12875.0,
+              "duration_ms": 562.5
+            },
+            {
+              "text": "활용할",
+              "offset_ms": 13437.5,
+              "duration_ms": 562.5
+            },
+            {
+              "text": "수",
+              "offset_ms": 14000.0,
+              "duration_ms": 187.5
+            },
+            {
+              "text": "있는지",
+              "offset_ms": 14187.5,
+              "duration_ms": 562.5
+            },
+            {
+              "text": "구체적인",
+              "offset_ms": 14750.0,
+              "duration_ms": 750.0
+            },
+            {
+              "text": "방법을",
+              "offset_ms": 15500.0,
+              "duration_ms": 562.5
+            },
+            {
+              "text": "살펴볼",
+              "offset_ms": 16062.5,
+              "duration_ms": 562.5
+            },
+            {
+              "text": "것입니다.",
+              "offset_ms": 16625.0,
+              "duration_ms": 937.5
+            }
+          ]
+        },
+        {
+          "id": "seg_3",
+          "script": "세 번째 목표는 취업준비 기본 교육과 함께 입사지원서 작성 실습을 직접 진행하는 것입니다. 이론 설명에 그치지 않고 실제로 작성해 보는 실습 과정을 통해 실질적인 역량을 키워나가게 됩니다.",
+          "keyword": "취업준비 기본 교육 및 입사지원서 작성 실습",
+          "ref": "b3",
+          "highlight": null,
+          "effect": "highlighter",
+          "audio": "audio/slide_003_seg_03.mp3",
+          "duration_ms": 15762.5,
+          "words": [
+            {
+              "text": "세",
+              "offset_ms": 50.0,
+              "duration_ms": 211.5
+            },
+            {
+              "text": "번째",
+              "offset_ms": 261.5,
+              "duration_ms": 423.0
+            },
+            {
+              "text": "목표는",
+              "offset_ms": 684.5,
+              "duration_ms": 634.5
+            },
+            {
+              "text": "취업준비",
+              "offset_ms": 1319.1,
+              "duration_ms": 846.1
+            },
+            {
+              "text": "기본",
+              "offset_ms": 2165.1,
+              "duration_ms": 423.0
+            },
+            {
+              "text": "교육과",
+              "offset_ms": 2588.2,
+              "duration_ms": 634.5
+            },
+            {
+              "text": "함께",
+              "offset_ms": 3222.7,
+              "duration_ms": 423.0
+            },
+            {
+              "text": "입사지원서",
+              "offset_ms": 3645.7,
+              "duration_ms": 1057.6
+            },
+            {
+              "text": "작성",
+              "offset_ms": 4703.3,
+              "duration_ms": 423.0
+            },
+            {
+              "text": "실습을",
+              "offset_ms": 5126.3,
+              "duration_ms": 634.5
+            },
+            {
+              "text": "직접",
+              "offset_ms": 5760.9,
+              "duration_ms": 423.0
+            },
+            {
+              "text": "진행하는",
+              "offset_ms": 6183.9,
+              "duration_ms": 846.1
+            },
+            {
+              "text": "것입니다.",
+              "offset_ms": 7029.9,
+              "duration_ms": 1057.6
+            },
+            {
+              "text": "이론",
+              "offset_ms": 8087.5,
+              "duration_ms": 374.4
+            },
+            {
+              "text": "설명에",
+              "offset_ms": 8461.9,
+              "duration_ms": 561.6
+            },
+            {
+              "text": "그치지",
+              "offset_ms": 9023.5,
+              "duration_ms": 561.6
+            },
+            {
+              "text": "않고",
+              "offset_ms": 9585.1,
+              "duration_ms": 374.4
+            },
+            {
+              "text": "실제로",
+              "offset_ms": 9959.5,
+              "duration_ms": 561.6
+            },
+            {
+              "text": "작성해",
+              "offset_ms": 10521.0,
+              "duration_ms": 561.6
+            },
+            {
+              "text": "보는",
+              "offset_ms": 11082.6,
+              "duration_ms": 374.4
+            },
+            {
+              "text": "실습",
+              "offset_ms": 11457.0,
+              "duration_ms": 374.4
+            },
+            {
+              "text": "과정을",
+              "offset_ms": 11831.4,
+              "duration_ms": 561.6
+            },
+            {
+              "text": "통해",
+              "offset_ms": 12393.0,
+              "duration_ms": 374.4
+            },
+            {
+              "text": "실질적인",
+              "offset_ms": 12767.4,
+              "duration_ms": 748.8
+            },
+            {
+              "text": "역량을",
+              "offset_ms": 13516.2,
+              "duration_ms": 561.6
+            },
+            {
+              "text": "키워나가게",
+              "offset_ms": 14077.7,
+              "duration_ms": 936.0
+            },
+            {
+              "text": "됩니다.",
+              "offset_ms": 15013.7,
+              "duration_ms": 748.8
+            }
+          ]
+        },
+        {
+          "id": "seg_4",
+          "script": "마지막으로는 취업활동계획서, 이력서, 자기소개서를 바탕으로 진로 상담을 내실화하는 것을 목표로 합니다. 단순히 서류를 작성하는 데 그치지 않고, 그 내용을 토대로 지도교수님과의 면담을 더욱 알차게 이어갈 수 있도록 연계됩니다.",
+          "keyword": "취업활동계획서·이력서·자기소개서 기반 진로 상담",
+          "ref": "b4",
+          "highlight": null,
+          "effect": "highlighter",
+          "audio": "audio/slide_003_seg_04.mp3",
+          "duration_ms": 17762.5,
+          "words": [
+            {
+              "text": "마지막으로는",
+              "offset_ms": 50.0,
+              "duration_ms": 1110.6
+            },
+            {
+              "text": "취업활동계획서,",
+              "offset_ms": 1160.6,
+              "duration_ms": 1480.9
+            },
+            {
+              "text": "이력서,",
+              "offset_ms": 2641.5,
+              "duration_ms": 740.4
+            },
+            {
+              "text": "자기소개서를",
+              "offset_ms": 3381.9,
+              "duration_ms": 1110.6
+            },
+            {
+              "text": "바탕으로",
+              "offset_ms": 4492.6,
+              "duration_ms": 740.4
+            },
+            {
+              "text": "진로",
+              "offset_ms": 5233.0,
+              "duration_ms": 370.2
+            },
+            {
+              "text": "상담을",
+              "offset_ms": 5603.2,
+              "duration_ms": 555.3
+            },
+            {
+              "text": "내실화하는",
+              "offset_ms": 6158.5,
+              "duration_ms": 925.5
+            },
+            {
+              "text": "것을",
+              "offset_ms": 7084.0,
+              "duration_ms": 370.2
+            },
+            {
+              "text": "목표로",
+              "offset_ms": 7454.3,
+              "duration_ms": 555.3
+            },
+            {
+              "text": "합니다.",
+              "offset_ms": 8009.6,
+              "duration_ms": 740.4
+            },
+            {
+              "text": "단순히",
+              "offset_ms": 8750.0,
+              "duration_ms": 520.0
+            },
+            {
+              "text": "서류를",
+              "offset_ms": 9270.0,
+              "duration_ms": 520.0
+            },
+            {
+              "text": "작성하는",
+              "offset_ms": 9789.9,
+              "duration_ms": 693.3
+            },
+            {
+              "text": "데",
+              "offset_ms": 10483.2,
+              "duration_ms": 173.3
+            },
+            {
+              "text": "그치지",
+              "offset_ms": 10656.5,
+              "duration_ms": 520.0
+            },
+            {
+              "text": "않고,",
+              "offset_ms": 11176.4,
+              "duration_ms": 520.0
+            },
+            {
+              "text": "그",
+              "offset_ms": 11696.4,
+              "duration_ms": 173.3
+            },
+            {
+              "text": "내용을",
+              "offset_ms": 11869.7,
+              "duration_ms": 520.0
+            },
+            {
+              "text": "토대로",
+              "offset_ms": 12389.7,
+              "duration_ms": 520.0
+            },
+            {
+              "text": "지도교수님과의",
+              "offset_ms": 12909.6,
+              "duration_ms": 1213.2
+            },
+            {
+              "text": "면담을",
+              "offset_ms": 14122.8,
+              "duration_ms": 520.0
+            },
+            {
+              "text": "더욱",
+              "offset_ms": 14642.8,
+              "duration_ms": 346.6
+            },
+            {
+              "text": "알차게",
+              "offset_ms": 14989.4,
+              "duration_ms": 520.0
+            },
+            {
+              "text": "이어갈",
+              "offset_ms": 15509.4,
+              "duration_ms": 520.0
+            },
+            {
+              "text": "수",
+              "offset_ms": 16029.3,
+              "duration_ms": 173.3
+            },
+            {
+              "text": "있도록",
+              "offset_ms": 16202.6,
+              "duration_ms": 520.0
+            },
+            {
+              "text": "연계됩니다.",
+              "offset_ms": 16722.6,
+              "duration_ms": 1039.9
+            }
+          ]
+        }
+      ],
+      "html": "slides/slide_003.html"
+    },
+    {
+      "index": 4,
+      "title": "5가지",
+      "segments": [
+        {
+          "id": "seg_1",
+          "script": "이번 슬라이드에서는 핵심 숫자를 먼저 강조하겠습니다. 바로 '5가지'입니다. 이 숫자가 이번 오디세이 세미나 3의 Pass 취득을 결정짓는 핵심 키워드입니다.",
+          "keyword": "5가지",
+          "ref": "val",
+          "highlight": null,
+          "effect": "highlighter",
+          "audio": "audio/slide_004_seg_01.mp3",
+          "duration_ms": 13875.0,
+          "words": [
+            {
+              "text": "이번",
+              "offset_ms": 50.0,
+              "duration_ms": 405.2
+            },
+            {
+              "text": "슬라이드에서는",
+              "offset_ms": 455.2,
+              "duration_ms": 1418.2
+            },
+            {
+              "text": "핵심",
+              "offset_ms": 1873.4,
+              "duration_ms": 405.2
+            },
+            {
+              "text": "숫자를",
+              "offset_ms": 2278.6,
+              "duration_ms": 607.8
+            },
+            {
+              "text": "먼저",
+              "offset_ms": 2886.5,
+              "duration_ms": 405.2
+            },
+            {
+              "text": "강조하겠습니다.",
+              "offset_ms": 3291.7,
+              "duration_ms": 1620.8
+            },
+            {
+              "text": "바로",
+              "offset_ms": 4912.5,
+              "duration_ms": 447.7
+            },
+            {
+              "text": "'5가지'입니다.",
+              "offset_ms": 5360.2,
+              "duration_ms": 2014.8
+            },
+            {
+              "text": "이",
+              "offset_ms": 7375.0,
+              "duration_ms": 185.7
+            },
+            {
+              "text": "숫자가",
+              "offset_ms": 7560.7,
+              "duration_ms": 557.1
+            },
+            {
+              "text": "이번",
+              "offset_ms": 8117.9,
+              "duration_ms": 371.4
+            },
+            {
+              "text": "오디세이",
+              "offset_ms": 8489.3,
+              "duration_ms": 742.9
+            },
+            {
+              "text": "세미나",
+              "offset_ms": 9232.1,
+              "duration_ms": 557.1
+            },
+            {
+              "text": "3의",
+              "offset_ms": 9789.3,
+              "duration_ms": 371.4
+            },
+            {
+              "text": "Pass",
+              "offset_ms": 10160.7,
+              "duration_ms": 742.9
+            },
+            {
+              "text": "취득을",
+              "offset_ms": 10903.6,
+              "duration_ms": 557.1
+            },
+            {
+              "text": "결정짓는",
+              "offset_ms": 11460.7,
+              "duration_ms": 742.9
+            },
+            {
+              "text": "핵심",
+              "offset_ms": 12203.6,
+              "duration_ms": 371.4
+            },
+            {
+              "text": "키워드입니다.",
+              "offset_ms": 12575.0,
+              "duration_ms": 1300.0
+            }
+          ]
+        },
+        {
+          "id": "seg_2",
+          "script": "이 5가지는 단순한 권장 사항이 아니라, Pass 취득을 위해 반드시 완수해야 하는 필수 항목들입니다. 하나라도 빠뜨리면 Pass를 받을 수 없으니, 각 항목을 꼼꼼히 확인하는 것이 매우 중요합니다.",
+          "keyword": "Pass 취득을 위한 필수 완수 항목",
+          "ref": "lbl",
+          "highlight": null,
+          "effect": "highlighter",
+          "audio": "audio/slide_004_seg_02.mp3",
+          "duration_ms": 14987.5,
+          "words": [
+            {
+              "text": "이",
+              "offset_ms": 50.0,
+              "duration_ms": 177.3
+            },
+            {
+              "text": "5가지는",
+              "offset_ms": 227.3,
+              "duration_ms": 709.1
+            },
+            {
+              "text": "단순한",
+              "offset_ms": 936.4,
+              "duration_ms": 531.8
+            },
+            {
+              "text": "권장",
+              "offset_ms": 1468.2,
+              "duration_ms": 354.5
+            },
+            {
+              "text": "사항이",
+              "offset_ms": 1822.7,
+              "duration_ms": 531.8
+            },
+            {
+              "text": "아니라,",
+              "offset_ms": 2354.5,
+              "duration_ms": 709.1
+            },
+            {
+              "text": "Pass",
+              "offset_ms": 3063.6,
+              "duration_ms": 709.1
+            },
+            {
+              "text": "취득을",
+              "offset_ms": 3772.7,
+              "duration_ms": 531.8
+            },
+            {
+              "text": "위해",
+              "offset_ms": 4304.5,
+              "duration_ms": 354.5
+            },
+            {
+              "text": "반드시",
+              "offset_ms": 4659.1,
+              "duration_ms": 531.8
+            },
+            {
+              "text": "완수해야",
+              "offset_ms": 5190.9,
+              "duration_ms": 709.1
+            },
+            {
+              "text": "하는",
+              "offset_ms": 5900.0,
+              "duration_ms": 354.5
+            },
+            {
+              "text": "필수",
+              "offset_ms": 6254.5,
+              "duration_ms": 354.5
+            },
+            {
+              "text": "항목들입니다.",
+              "offset_ms": 6609.1,
+              "duration_ms": 1240.9
+            },
+            {
+              "text": "하나라도",
+              "offset_ms": 7850.0,
+              "duration_ms": 696.3
+            },
+            {
+              "text": "빠뜨리면",
+              "offset_ms": 8546.3,
+              "duration_ms": 696.3
+            },
+            {
+              "text": "Pass를",
+              "offset_ms": 9242.7,
+              "duration_ms": 870.4
+            },
+            {
+              "text": "받을",
+              "offset_ms": 10113.1,
+              "duration_ms": 348.2
+            },
+            {
+              "text": "수",
+              "offset_ms": 10461.3,
+              "duration_ms": 174.1
+            },
+            {
+              "text": "없으니,",
+              "offset_ms": 10635.4,
+              "duration_ms": 696.3
+            },
+            {
+              "text": "각",
+              "offset_ms": 11331.7,
+              "duration_ms": 174.1
+            },
+            {
+              "text": "항목을",
+              "offset_ms": 11505.8,
+              "duration_ms": 522.3
+            },
+            {
+              "text": "꼼꼼히",
+              "offset_ms": 12028.0,
+              "duration_ms": 522.3
+            },
+            {
+              "text": "확인하는",
+              "offset_ms": 12550.3,
+              "duration_ms": 696.3
+            },
+            {
+              "text": "것이",
+              "offset_ms": 13246.6,
+              "duration_ms": 348.2
+            },
+            {
+              "text": "매우",
+              "offset_ms": 13594.8,
+              "duration_ms": 348.2
+            },
+            {
+              "text": "중요합니다.",
+              "offset_ms": 13943.0,
+              "duration_ms": 1044.5
+            }
+          ]
+        },
+        {
+          "id": "seg_3",
+          "script": "다시 한 번 강조하지만, 아래에서 안내할 다섯 항목은 부분 이수가 아니라 전부 완수해야 Pass 처리됩니다. 지금부터 각 항목이 무엇인지 하나씩 살펴보겠습니다.",
+          "keyword": "모두 완수",
+          "ref": "cap",
+          "highlight": null,
+          "effect": "highlighter",
+          "audio": "audio/slide_004_seg_03.mp3",
+          "duration_ms": 13212.5,
+          "words": [
+            {
+              "text": "다시",
+              "offset_ms": 50.0,
+              "duration_ms": 354.3
+            },
+            {
+              "text": "한",
+              "offset_ms": 404.3,
+              "duration_ms": 177.2
+            },
+            {
+              "text": "번",
+              "offset_ms": 581.5,
+              "duration_ms": 177.2
+            },
+            {
+              "text": "강조하지만,",
+              "offset_ms": 758.7,
+              "duration_ms": 1063.0
+            },
+            {
+              "text": "아래에서",
+              "offset_ms": 1821.7,
+              "duration_ms": 708.7
+            },
+            {
+              "text": "안내할",
+              "offset_ms": 2530.4,
+              "duration_ms": 531.5
+            },
+            {
+              "text": "다섯",
+              "offset_ms": 3062.0,
+              "duration_ms": 354.3
+            },
+            {
+              "text": "항목은",
+              "offset_ms": 3416.3,
+              "duration_ms": 531.5
+            },
+            {
+              "text": "부분",
+              "offset_ms": 3947.8,
+              "duration_ms": 354.3
+            },
+            {
+              "text": "이수가",
+              "offset_ms": 4302.2,
+              "duration_ms": 531.5
+            },
+            {
+              "text": "아니라",
+              "offset_ms": 4833.7,
+              "duration_ms": 531.5
+            },
+            {
+              "text": "전부",
+              "offset_ms": 5365.2,
+              "duration_ms": 354.3
+            },
+            {
+              "text": "완수해야",
+              "offset_ms": 5719.6,
+              "duration_ms": 708.7
+            },
+            {
+              "text": "Pass",
+              "offset_ms": 6428.3,
+              "duration_ms": 708.7
+            },
+            {
+              "text": "처리됩니다.",
+              "offset_ms": 7137.0,
+              "duration_ms": 1063.0
+            },
+            {
+              "text": "지금부터",
+              "offset_ms": 8200.0,
+              "duration_ms": 871.7
+            },
+            {
+              "text": "각",
+              "offset_ms": 9071.7,
+              "duration_ms": 217.9
+            },
+            {
+              "text": "항목이",
+              "offset_ms": 9289.7,
+              "duration_ms": 653.8
+            },
+            {
+              "text": "무엇인지",
+              "offset_ms": 9943.5,
+              "duration_ms": 871.7
+            },
+            {
+              "text": "하나씩",
+              "offset_ms": 10815.2,
+              "duration_ms": 653.8
+            },
+            {
+              "text": "살펴보겠습니다.",
+              "offset_ms": 11469.0,
+              "duration_ms": 1743.5
+            }
+          ]
+        }
+      ],
+      "html": "slides/slide_004.html"
+    },
+    {
+      "index": 5,
+      "title": "필수 항목 1 — 지도교수 면담",
+      "segments": [
+        {
+          "id": "seg_1",
+          "script": "이제부터 다섯 가지 필수 항목을 하나씩 살펴보겠습니다. ",
+          "keyword": "01",
+          "ref": "no",
+          "highlight": null,
+          "effect": "highlighter",
+          "audio": "audio/slide_005_seg_01.mp3",
+          "duration_ms": 4950.0,
+          "words": [
+            {
+              "text": "이제부터",
+              "offset_ms": 50.0,
+              "duration_ms": 816.7
+            },
+            {
+              "text": "다섯",
+              "offset_ms": 866.7,
+              "duration_ms": 408.3
+            },
+            {
+              "text": "가지",
+              "offset_ms": 1275.0,
+              "duration_ms": 408.3
+            },
+            {
+              "text": "필수",
+              "offset_ms": 1683.3,
+              "duration_ms": 408.3
+            },
+            {
+              "text": "항목을",
+              "offset_ms": 2091.7,
+              "duration_ms": 612.5
+            },
+            {
+              "text": "하나씩",
+              "offset_ms": 2704.2,
+              "duration_ms": 612.5
+            },
+            {
+              "text": "살펴보겠습니다.",
+              "offset_ms": 3316.7,
+              "duration_ms": 1633.3
+            }
+          ]
+        },
+        {
+          "id": "seg_2",
+          "script": "첫 번째 필수 항목은 바로 지도교수 면담입니다. 이 항목은 Pass 조건 중 가장 먼저 챙겨야 할 사항으로, 다음 슬라이드에서 구체적인 방법과 주의사항을 자세히 안내해 드리겠습니다.",
+          "keyword": "지도교수 면담",
+          "ref": "t",
+          "highlight": null,
+          "effect": "highlighter",
+          "audio": "audio/slide_005_seg_02.mp3",
+          "duration_ms": 14137.5,
+          "words": [
+            {
+              "text": "첫",
+              "offset_ms": 50.0,
+              "duration_ms": 213.1
+            },
+            {
+              "text": "번째",
+              "offset_ms": 263.1,
+              "duration_ms": 426.2
+            },
+            {
+              "text": "필수",
+              "offset_ms": 689.4,
+              "duration_ms": 426.2
+            },
+            {
+              "text": "항목은",
+              "offset_ms": 1115.6,
+              "duration_ms": 639.4
+            },
+            {
+              "text": "바로",
+              "offset_ms": 1755.0,
+              "duration_ms": 426.2
+            },
+            {
+              "text": "지도교수",
+              "offset_ms": 2181.2,
+              "duration_ms": 852.5
+            },
+            {
+              "text": "면담입니다.",
+              "offset_ms": 3033.8,
+              "duration_ms": 1278.8
+            },
+            {
+              "text": "이",
+              "offset_ms": 4312.5,
+              "duration_ms": 172.4
+            },
+            {
+              "text": "항목은",
+              "offset_ms": 4484.9,
+              "duration_ms": 517.1
+            },
+            {
+              "text": "Pass",
+              "offset_ms": 5002.0,
+              "duration_ms": 689.5
+            },
+            {
+              "text": "조건",
+              "offset_ms": 5691.4,
+              "duration_ms": 344.7
+            },
+            {
+              "text": "중",
+              "offset_ms": 6036.2,
+              "duration_ms": 172.4
+            },
+            {
+              "text": "가장",
+              "offset_ms": 6208.6,
+              "duration_ms": 344.7
+            },
+            {
+              "text": "먼저",
+              "offset_ms": 6553.3,
+              "duration_ms": 344.7
+            },
+            {
+              "text": "챙겨야",
+              "offset_ms": 6898.0,
+              "duration_ms": 517.1
+            },
+            {
+              "text": "할",
+              "offset_ms": 7415.1,
+              "duration_ms": 172.4
+            },
+            {
+              "text": "사항으로,",
+              "offset_ms": 7587.5,
+              "duration_ms": 861.8
+            },
+            {
+              "text": "다음",
+              "offset_ms": 8449.3,
+              "duration_ms": 344.7
+            },
+            {
+              "text": "슬라이드에서",
+              "offset_ms": 8794.1,
+              "duration_ms": 1034.2
+            },
+            {
+              "text": "구체적인",
+              "offset_ms": 9828.3,
+              "duration_ms": 689.5
+            },
+            {
+              "text": "방법과",
+              "offset_ms": 10517.8,
+              "duration_ms": 517.1
+            },
+            {
+              "text": "주의사항을",
+              "offset_ms": 11034.9,
+              "duration_ms": 861.8
+            },
+            {
+              "text": "자세히",
+              "offset_ms": 11896.7,
+              "duration_ms": 517.1
+            },
+            {
+              "text": "안내해",
+              "offset_ms": 12413.8,
+              "duration_ms": 517.1
+            },
+            {
+              "text": "드리겠습니다.",
+              "offset_ms": 12930.9,
+              "duration_ms": 1206.6
+            }
+          ]
+        }
+      ],
+      "html": "slides/slide_005.html"
+    },
+    {
+      "index": 6,
+      "title": "지도교수 면담 (1회)",
+      "segments": [
+        {
+          "id": "seg_1",
+          "script": "첫 번째 필수 항목인 지도교수 면담부터 살펴보겠습니다. 우선 학생정보시스템에 접속해서 자신의 지도교수가 누구인지 확인한 뒤, 이메일로 면담 일정을 예약해야 합니다.",
+          "keyword": "학생정보시스템에서 지도교수 확인",
+          "ref": "b1",
+          "highlight": null,
+          "effect": "highlighter",
+          "audio": "audio/slide_006_seg_01.mp3",
+          "duration_ms": 14025.0,
+          "words": [
+            {
+              "text": "첫",
+              "offset_ms": 50.0,
+              "duration_ms": 215.1
+            },
+            {
+              "text": "번째",
+              "offset_ms": 265.1,
+              "duration_ms": 430.2
+            },
+            {
+              "text": "필수",
+              "offset_ms": 695.3,
+              "duration_ms": 430.2
+            },
+            {
+              "text": "항목인",
+              "offset_ms": 1125.5,
+              "duration_ms": 645.3
+            },
+            {
+              "text": "지도교수",
+              "offset_ms": 1770.8,
+              "duration_ms": 860.4
+            },
+            {
+              "text": "면담부터",
+              "offset_ms": 2631.2,
+              "duration_ms": 860.4
+            },
+            {
+              "text": "살펴보겠습니다.",
+              "offset_ms": 3491.7,
+              "duration_ms": 1720.8
+            },
+            {
+              "text": "우선",
+              "offset_ms": 5212.5,
+              "duration_ms": 367.2
+            },
+            {
+              "text": "학생정보시스템에",
+              "offset_ms": 5579.7,
+              "duration_ms": 1468.8
+            },
+            {
+              "text": "접속해서",
+              "offset_ms": 7048.4,
+              "duration_ms": 734.4
+            },
+            {
+              "text": "자신의",
+              "offset_ms": 7782.8,
+              "duration_ms": 550.8
+            },
+            {
+              "text": "지도교수가",
+              "offset_ms": 8333.6,
+              "duration_ms": 918.0
+            },
+            {
+              "text": "누구인지",
+              "offset_ms": 9251.6,
+              "duration_ms": 734.4
+            },
+            {
+              "text": "확인한",
+              "offset_ms": 9985.9,
+              "duration_ms": 550.8
+            },
+            {
+              "text": "뒤,",
+              "offset_ms": 10536.7,
+              "duration_ms": 367.2
+            },
+            {
+              "text": "이메일로",
+              "offset_ms": 10903.9,
+              "duration_ms": 734.4
+            },
+            {
+              "text": "면담",
+              "offset_ms": 11638.3,
+              "duration_ms": 367.2
+            },
+            {
+              "text": "일정을",
+              "offset_ms": 12005.5,
+              "duration_ms": 550.8
+            },
+            {
+              "text": "예약해야",
+              "offset_ms": 12556.2,
+              "duration_ms": 734.4
+            },
+            {
+              "text": "합니다.",
+              "offset_ms": 13290.6,
+              "duration_ms": 734.4
+            }
+          ]
+        },
+        {
+          "id": "seg_2",
+          "script": "면담 당일에는 반드시 면담 서식 문서를 미리 출력하여 지참해야 합니다. 교수님과 나눈 면담 내용을 서식에 직접 기록하고, 마지막으로 교수님의 서명을 받아야 한다는 점을 꼭 기억해 주세요.",
+          "keyword": "면담 서식 문서 출력, 교수 서명 수령",
+          "ref": "b2",
+          "highlight": null,
+          "effect": "highlighter",
+          "audio": "audio/slide_006_seg_02.mp3",
+          "duration_ms": 14837.5,
+          "words": [
+            {
+              "text": "면담",
+              "offset_ms": 50.0,
+              "duration_ms": 405.0
+            },
+            {
+              "text": "당일에는",
+              "offset_ms": 455.0,
+              "duration_ms": 810.0
+            },
+            {
+              "text": "반드시",
+              "offset_ms": 1265.0,
+              "duration_ms": 607.5
+            },
+            {
+              "text": "면담",
+              "offset_ms": 1872.5,
+              "duration_ms": 405.0
+            },
+            {
+              "text": "서식",
+              "offset_ms": 2277.5,
+              "duration_ms": 405.0
+            },
+            {
+              "text": "문서를",
+              "offset_ms": 2682.5,
+              "duration_ms": 607.5
+            },
+            {
+              "text": "미리",
+              "offset_ms": 3290.0,
+              "duration_ms": 405.0
+            },
+            {
+              "text": "출력하여",
+              "offset_ms": 3695.0,
+              "duration_ms": 810.0
+            },
+            {
+              "text": "지참해야",
+              "offset_ms": 4505.0,
+              "duration_ms": 810.0
+            },
+            {
+              "text": "합니다.",
+              "offset_ms": 5315.0,
+              "duration_ms": 810.0
+            },
+            {
+              "text": "교수님과",
+              "offset_ms": 6125.0,
+              "duration_ms": 711.2
+            },
+            {
+              "text": "나눈",
+              "offset_ms": 6836.2,
+              "duration_ms": 355.6
+            },
+            {
+              "text": "면담",
+              "offset_ms": 7191.8,
+              "duration_ms": 355.6
+            },
+            {
+              "text": "내용을",
+              "offset_ms": 7547.4,
+              "duration_ms": 533.4
+            },
+            {
+              "text": "서식에",
+              "offset_ms": 8080.9,
+              "duration_ms": 533.4
+            },
+            {
+              "text": "직접",
+              "offset_ms": 8614.3,
+              "duration_ms": 355.6
+            },
+            {
+              "text": "기록하고,",
+              "offset_ms": 8969.9,
+              "duration_ms": 889.0
+            },
+            {
+              "text": "마지막으로",
+              "offset_ms": 9858.9,
+              "duration_ms": 889.0
+            },
+            {
+              "text": "교수님의",
+              "offset_ms": 10748.0,
+              "duration_ms": 711.2
+            },
+            {
+              "text": "서명을",
+              "offset_ms": 11459.2,
+              "duration_ms": 533.4
+            },
+            {
+              "text": "받아야",
+              "offset_ms": 11992.6,
+              "duration_ms": 533.4
+            },
+            {
+              "text": "한다는",
+              "offset_ms": 12526.0,
+              "duration_ms": 533.4
+            },
+            {
+              "text": "점을",
+              "offset_ms": 13059.4,
+              "duration_ms": 355.6
+            },
+            {
+              "text": "꼭",
+              "offset_ms": 13415.1,
+              "duration_ms": 177.8
+            },
+            {
+              "text": "기억해",
+              "offset_ms": 13592.9,
+              "duration_ms": 533.4
+            },
+            {
+              "text": "주세요.",
+              "offset_ms": 14126.3,
+              "duration_ms": 711.2
+            }
+          ]
+        },
+        {
+          "id": "seg_3",
+          "script": "서명까지 완료된 서식은 사진으로 촬영하여 스마트 리드 과제란에 제출하면 됩니다. 제출 창구가 스마트 리드 과제란임을 혼동하지 않도록 주의해 주세요.",
+          "keyword": "사진 촬영 → 스마트 리드 과제란에 제출",
+          "ref": "b3",
+          "highlight": null,
+          "effect": "highlighter",
+          "audio": "audio/slide_006_seg_03.mp3",
+          "duration_ms": 12200.0,
+          "words": [
+            {
+              "text": "서명까지",
+              "offset_ms": 50.0,
+              "duration_ms": 760.0
+            },
+            {
+              "text": "완료된",
+              "offset_ms": 810.0,
+              "duration_ms": 570.0
+            },
+            {
+              "text": "서식은",
+              "offset_ms": 1380.0,
+              "duration_ms": 570.0
+            },
+            {
+              "text": "사진으로",
+              "offset_ms": 1950.0,
+              "duration_ms": 760.0
+            },
+            {
+              "text": "촬영하여",
+              "offset_ms": 2710.0,
+              "duration_ms": 760.0
+            },
+            {
+              "text": "스마트",
+              "offset_ms": 3470.0,
+              "duration_ms": 570.0
+            },
+            {
+              "text": "리드",
+              "offset_ms": 4040.0,
+              "duration_ms": 380.0
+            },
+            {
+              "text": "과제란에",
+              "offset_ms": 4420.0,
+              "duration_ms": 760.0
+            },
+            {
+              "text": "제출하면",
+              "offset_ms": 5180.0,
+              "duration_ms": 760.0
+            },
+            {
+              "text": "됩니다.",
+              "offset_ms": 5940.0,
+              "duration_ms": 760.0
+            },
+            {
+              "text": "제출",
+              "offset_ms": 6700.0,
+              "duration_ms": 379.3
+            },
+            {
+              "text": "창구가",
+              "offset_ms": 7079.3,
+              "duration_ms": 569.0
+            },
+            {
+              "text": "스마트",
+              "offset_ms": 7648.3,
+              "duration_ms": 569.0
+            },
+            {
+              "text": "리드",
+              "offset_ms": 8217.2,
+              "duration_ms": 379.3
+            },
+            {
+              "text": "과제란임을",
+              "offset_ms": 8596.6,
+              "duration_ms": 948.3
+            },
+            {
+              "text": "혼동하지",
+              "offset_ms": 9544.8,
+              "duration_ms": 758.6
+            },
+            {
+              "text": "않도록",
+              "offset_ms": 10303.4,
+              "duration_ms": 569.0
+            },
+            {
+              "text": "주의해",
+              "offset_ms": 10872.4,
+              "duration_ms": 569.0
+            },
+            {
+              "text": "주세요.",
+              "offset_ms": 11441.4,
+              "duration_ms": 758.6
+            }
+          ]
+        },
+        {
+          "id": "seg_4",
+          "script": "만약 면담을 이행하지 않거나 제출을 빠뜨리면 해당 항목이 미완수로 처리되어 최종 Pass를 받을 수 없습니다. 다섯 가지 필수 항목 중 하나라도 빠지면 Fail이 되므로, 면담 일정을 미루지 말고 일찍 진행하시기 바랍니다.",
+          "keyword": "미이행 시 Pass 불가",
+          "ref": "b4",
+          "highlight": null,
+          "effect": "highlighter",
+          "audio": "audio/slide_006_seg_04.mp3",
+          "duration_ms": 17075.0,
+          "words": [
+            {
+              "text": "만약",
+              "offset_ms": 50.0,
+              "duration_ms": 373.4
+            },
+            {
+              "text": "면담을",
+              "offset_ms": 423.4,
+              "duration_ms": 560.1
+            },
+            {
+              "text": "이행하지",
+              "offset_ms": 983.5,
+              "duration_ms": 746.8
+            },
+            {
+              "text": "않거나",
+              "offset_ms": 1730.3,
+              "duration_ms": 560.1
+            },
+            {
+              "text": "제출을",
+              "offset_ms": 2290.4,
+              "duration_ms": 560.1
+            },
+            {
+              "text": "빠뜨리면",
+              "offset_ms": 2850.5,
+              "duration_ms": 746.8
+            },
+            {
+              "text": "해당",
+              "offset_ms": 3597.3,
+              "duration_ms": 373.4
+            },
+            {
+              "text": "항목이",
+              "offset_ms": 3970.7,
+              "duration_ms": 560.1
+            },
+            {
+              "text": "미완수로",
+              "offset_ms": 4530.9,
+              "duration_ms": 746.8
+            },
+            {
+              "text": "처리되어",
+              "offset_ms": 5277.7,
+              "duration_ms": 746.8
+            },
+            {
+              "text": "최종",
+              "offset_ms": 6024.5,
+              "duration_ms": 373.4
+            },
+            {
+              "text": "Pass를",
+              "offset_ms": 6397.9,
+              "duration_ms": 933.5
+            },
+            {
+              "text": "받을",
+              "offset_ms": 7331.4,
+              "duration_ms": 373.4
+            },
+            {
+              "text": "수",
+              "offset_ms": 7704.8,
+              "duration_ms": 186.7
+            },
+            {
+              "text": "없습니다.",
+              "offset_ms": 7891.5,
+              "duration_ms": 933.5
+            },
+            {
+              "text": "다섯",
+              "offset_ms": 8825.0,
+              "duration_ms": 351.1
+            },
+            {
+              "text": "가지",
+              "offset_ms": 9176.1,
+              "duration_ms": 351.1
+            },
+            {
+              "text": "필수",
+              "offset_ms": 9527.1,
+              "duration_ms": 351.1
+            },
+            {
+              "text": "항목",
+              "offset_ms": 9878.2,
+              "duration_ms": 351.1
+            },
+            {
+              "text": "중",
+              "offset_ms": 10229.3,
+              "duration_ms": 175.5
+            },
+            {
+              "text": "하나라도",
+              "offset_ms": 10404.8,
+              "duration_ms": 702.1
+            },
+            {
+              "text": "빠지면",
+              "offset_ms": 11106.9,
+              "duration_ms": 526.6
+            },
+            {
+              "text": "Fail이",
+              "offset_ms": 11633.5,
+              "duration_ms": 877.7
+            },
+            {
+              "text": "되므로,",
+              "offset_ms": 12511.2,
+              "duration_ms": 702.1
+            },
+            {
+              "text": "면담",
+              "offset_ms": 13213.3,
+              "duration_ms": 351.1
+            },
+            {
+              "text": "일정을",
+              "offset_ms": 13564.4,
+              "duration_ms": 526.6
+            },
+            {
+              "text": "미루지",
+              "offset_ms": 14091.0,
+              "duration_ms": 526.6
+            },
+            {
+              "text": "말고",
+              "offset_ms": 14617.6,
+              "duration_ms": 351.1
+            },
+            {
+              "text": "일찍",
+              "offset_ms": 14968.6,
+              "duration_ms": 351.1
+            },
+            {
+              "text": "진행하시기",
+              "offset_ms": 15319.7,
+              "duration_ms": 877.7
+            },
+            {
+              "text": "바랍니다.",
+              "offset_ms": 16197.3,
+              "duration_ms": 877.7
+            }
+          ]
+        }
+      ],
+      "html": "slides/slide_006.html"
+    },
+    {
+      "index": 7,
+      "title": "필수 항목 2 — 진로취업 교육 수강",
+      "segments": [
+        {
+          "id": "seg_1",
+          "script": "지도교수 면담에 이어, 이번에는 두 번째 필수 항목으로 넘어가겠습니다. ",
+          "keyword": "02",
+          "ref": "no",
+          "highlight": null,
+          "effect": "highlighter",
+          "audio": "audio/slide_007_seg_01.mp3",
+          "duration_ms": 5962.5,
+          "words": [
+            {
+              "text": "지도교수",
+              "offset_ms": 50.0,
+              "duration_ms": 762.9
+            },
+            {
+              "text": "면담에",
+              "offset_ms": 812.9,
+              "duration_ms": 572.2
+            },
+            {
+              "text": "이어,",
+              "offset_ms": 1385.1,
+              "duration_ms": 572.2
+            },
+            {
+              "text": "이번에는",
+              "offset_ms": 1957.3,
+              "duration_ms": 762.9
+            },
+            {
+              "text": "두",
+              "offset_ms": 2720.2,
+              "duration_ms": 190.7
+            },
+            {
+              "text": "번째",
+              "offset_ms": 2910.9,
+              "duration_ms": 381.5
+            },
+            {
+              "text": "필수",
+              "offset_ms": 3292.3,
+              "duration_ms": 381.5
+            },
+            {
+              "text": "항목으로",
+              "offset_ms": 3673.8,
+              "duration_ms": 762.9
+            },
+            {
+              "text": "넘어가겠습니다.",
+              "offset_ms": 4436.7,
+              "duration_ms": 1525.8
+            }
+          ]
+        },
+        {
+          "id": "seg_2",
+          "script": "두 번째 필수 항목은 바로 진로취업 교육 수강입니다. 지정된 동영상 강의를 정해진 순서에 따라 모두 이수해야 하며, 다음 슬라이드에서 구체적인 수강 절차를 함께 살펴보겠습니다.",
+          "keyword": "진로취업 교육 수강",
+          "ref": "t",
+          "highlight": null,
+          "effect": "highlighter",
+          "audio": "audio/slide_007_seg_02.mp3",
+          "duration_ms": 14275.0,
+          "words": [
+            {
+              "text": "두",
+              "offset_ms": 50.0,
+              "duration_ms": 217.0
+            },
+            {
+              "text": "번째",
+              "offset_ms": 267.0,
+              "duration_ms": 434.1
+            },
+            {
+              "text": "필수",
+              "offset_ms": 701.1,
+              "duration_ms": 434.1
+            },
+            {
+              "text": "항목은",
+              "offset_ms": 1135.2,
+              "duration_ms": 651.1
+            },
+            {
+              "text": "바로",
+              "offset_ms": 1786.4,
+              "duration_ms": 434.1
+            },
+            {
+              "text": "진로취업",
+              "offset_ms": 2220.5,
+              "duration_ms": 868.2
+            },
+            {
+              "text": "교육",
+              "offset_ms": 3088.6,
+              "duration_ms": 434.1
+            },
+            {
+              "text": "수강입니다.",
+              "offset_ms": 3522.7,
+              "duration_ms": 1302.3
+            },
+            {
+              "text": "지정된",
+              "offset_ms": 4825.0,
+              "duration_ms": 534.9
+            },
+            {
+              "text": "동영상",
+              "offset_ms": 5359.9,
+              "duration_ms": 534.9
+            },
+            {
+              "text": "강의를",
+              "offset_ms": 5894.8,
+              "duration_ms": 534.9
+            },
+            {
+              "text": "정해진",
+              "offset_ms": 6429.7,
+              "duration_ms": 534.9
+            },
+            {
+              "text": "순서에",
+              "offset_ms": 6964.6,
+              "duration_ms": 534.9
+            },
+            {
+              "text": "따라",
+              "offset_ms": 7499.5,
+              "duration_ms": 356.6
+            },
+            {
+              "text": "모두",
+              "offset_ms": 7856.1,
+              "duration_ms": 356.6
+            },
+            {
+              "text": "이수해야",
+              "offset_ms": 8212.7,
+              "duration_ms": 713.2
+            },
+            {
+              "text": "하며,",
+              "offset_ms": 8925.9,
+              "duration_ms": 534.9
+            },
+            {
+              "text": "다음",
+              "offset_ms": 9460.8,
+              "duration_ms": 356.6
+            },
+            {
+              "text": "슬라이드에서",
+              "offset_ms": 9817.5,
+              "duration_ms": 1069.8
+            },
+            {
+              "text": "구체적인",
+              "offset_ms": 10887.3,
+              "duration_ms": 713.2
+            },
+            {
+              "text": "수강",
+              "offset_ms": 11600.5,
+              "duration_ms": 356.6
+            },
+            {
+              "text": "절차를",
+              "offset_ms": 11957.1,
+              "duration_ms": 534.9
+            },
+            {
+              "text": "함께",
+              "offset_ms": 12492.0,
+              "duration_ms": 356.6
+            },
+            {
+              "text": "살펴보겠습니다.",
+              "offset_ms": 12848.6,
+              "duration_ms": 1426.4
+            }
+          ]
+        }
+      ],
+      "html": "slides/slide_007.html"
+    },
+    {
+      "index": 8,
+      "title": "진로취업 동영상 강의 수강 순서 (5강)",
+      "segments": [
+        {
+          "id": "seg_1",
+          "script": "이번에는 필수 항목 2번, 진로취업 동영상 강의 수강에 대해 안내드리겠습니다. 총 5강으로 구성되어 있으며, 순서대로 수강하시는 것을 권장합니다.",
+          "keyword": "수강 순서 (5강)",
+          "ref": "t",
+          "highlight": null,
+          "effect": "highlighter",
+          "audio": "audio/slide_008_seg_01.mp3",
+          "duration_ms": 12375.0,
+          "words": [
+            {
+              "text": "이번에는",
+              "offset_ms": 50.0,
+              "duration_ms": 760.3
+            },
+            {
+              "text": "필수",
+              "offset_ms": 810.3,
+              "duration_ms": 380.1
+            },
+            {
+              "text": "항목",
+              "offset_ms": 1190.4,
+              "duration_ms": 380.1
+            },
+            {
+              "text": "2번,",
+              "offset_ms": 1570.6,
+              "duration_ms": 570.2
+            },
+            {
+              "text": "진로취업",
+              "offset_ms": 2140.8,
+              "duration_ms": 760.3
+            },
+            {
+              "text": "동영상",
+              "offset_ms": 2901.1,
+              "duration_ms": 570.2
+            },
+            {
+              "text": "강의",
+              "offset_ms": 3471.3,
+              "duration_ms": 380.1
+            },
+            {
+              "text": "수강에",
+              "offset_ms": 3851.5,
+              "duration_ms": 570.2
+            },
+            {
+              "text": "대해",
+              "offset_ms": 4421.7,
+              "duration_ms": 380.1
+            },
+            {
+              "text": "안내드리겠습니다.",
+              "offset_ms": 4801.8,
+              "duration_ms": 1710.7
+            },
+            {
+              "text": "총",
+              "offset_ms": 6512.5,
+              "duration_ms": 195.4
+            },
+            {
+              "text": "5강으로",
+              "offset_ms": 6707.9,
+              "duration_ms": 781.7
+            },
+            {
+              "text": "구성되어",
+              "offset_ms": 7489.6,
+              "duration_ms": 781.7
+            },
+            {
+              "text": "있으며,",
+              "offset_ms": 8271.2,
+              "duration_ms": 781.7
+            },
+            {
+              "text": "순서대로",
+              "offset_ms": 9052.9,
+              "duration_ms": 781.7
+            },
+            {
+              "text": "수강하시는",
+              "offset_ms": 9834.6,
+              "duration_ms": 977.1
+            },
+            {
+              "text": "것을",
+              "offset_ms": 10811.7,
+              "duration_ms": 390.8
+            },
+            {
+              "text": "권장합니다.",
+              "offset_ms": 11202.5,
+              "duration_ms": 1172.5
+            }
+          ]
+        },
+        {
+          "id": "seg_2",
+          "script": "1강에서는 최근 기업들이 어떤 방식으로 인재를 채용하는지, 직무 중심 채용 트렌드를 이해하는 내용을 다룹니다. 취업 준비의 출발점으로, 전체 흐름을 파악하는 데 도움이 됩니다.",
+          "keyword": "직무 중심 채용 트렌드 이해",
+          "ref": "f1",
+          "highlight": null,
+          "effect": "highlighter",
+          "audio": "audio/slide_008_seg_02.mp3",
+          "duration_ms": 13962.5,
+          "words": [
+            {
+              "text": "1강에서는",
+              "offset_ms": 50.0,
+              "duration_ms": 884.1
+            },
+            {
+              "text": "최근",
+              "offset_ms": 934.1,
+              "duration_ms": 353.6
+            },
+            {
+              "text": "기업들이",
+              "offset_ms": 1287.8,
+              "duration_ms": 707.3
+            },
+            {
+              "text": "어떤",
+              "offset_ms": 1995.1,
+              "duration_ms": 353.6
+            },
+            {
+              "text": "방식으로",
+              "offset_ms": 2348.7,
+              "duration_ms": 707.3
+            },
+            {
+              "text": "인재를",
+              "offset_ms": 3056.0,
+              "duration_ms": 530.5
+            },
+            {
+              "text": "채용하는지,",
+              "offset_ms": 3586.5,
+              "duration_ms": 1060.9
+            },
+            {
+              "text": "직무",
+              "offset_ms": 4647.4,
+              "duration_ms": 353.6
+            },
+            {
+              "text": "중심",
+              "offset_ms": 5001.0,
+              "duration_ms": 353.6
+            },
+            {
+              "text": "채용",
+              "offset_ms": 5354.7,
+              "duration_ms": 353.6
+            },
+            {
+              "text": "트렌드를",
+              "offset_ms": 5708.3,
+              "duration_ms": 707.3
+            },
+            {
+              "text": "이해하는",
+              "offset_ms": 6415.6,
+              "duration_ms": 707.3
+            },
+            {
+              "text": "내용을",
+              "offset_ms": 7122.9,
+              "duration_ms": 530.5
+            },
+            {
+              "text": "다룹니다.",
+              "offset_ms": 7653.4,
+              "duration_ms": 884.1
+            },
+            {
+              "text": "취업",
+              "offset_ms": 8537.5,
+              "duration_ms": 387.5
+            },
+            {
+              "text": "준비의",
+              "offset_ms": 8925.0,
+              "duration_ms": 581.2
+            },
+            {
+              "text": "출발점으로,",
+              "offset_ms": 9506.2,
+              "duration_ms": 1162.5
+            },
+            {
+              "text": "전체",
+              "offset_ms": 10668.8,
+              "duration_ms": 387.5
+            },
+            {
+              "text": "흐름을",
+              "offset_ms": 11056.2,
+              "duration_ms": 581.2
+            },
+            {
+              "text": "파악하는",
+              "offset_ms": 11637.5,
+              "duration_ms": 775.0
+            },
+            {
+              "text": "데",
+              "offset_ms": 12412.5,
+              "duration_ms": 193.8
+            },
+            {
+              "text": "도움이",
+              "offset_ms": 12606.2,
+              "duration_ms": 581.2
+            },
+            {
+              "text": "됩니다.",
+              "offset_ms": 13187.5,
+              "duration_ms": 775.0
+            }
+          ]
+        },
+        {
+          "id": "seg_3",
+          "script": "2강에서는 E-DISC 검사를 활용해 자신의 성향을 파악하고, 그에 맞는 직무를 탐색하는 방법을 배웁니다. 자기 이해를 바탕으로 적합한 직무를 찾는 과정이니 꼼꼼히 수강해 주세요.",
+          "keyword": "E-DISC 검사 활용 직무매칭",
+          "ref": "f2",
+          "highlight": null,
+          "effect": "highlighter",
+          "audio": "audio/slide_008_seg_03.mp3",
+          "duration_ms": 14387.5,
+          "words": [
+            {
+              "text": "2강에서는",
+              "offset_ms": 50.0,
+              "duration_ms": 859.0
+            },
+            {
+              "text": "E-DISC",
+              "offset_ms": 909.0,
+              "duration_ms": 1030.9
+            },
+            {
+              "text": "검사를",
+              "offset_ms": 1939.9,
+              "duration_ms": 515.4
+            },
+            {
+              "text": "활용해",
+              "offset_ms": 2455.3,
+              "duration_ms": 515.4
+            },
+            {
+              "text": "자신의",
+              "offset_ms": 2970.7,
+              "duration_ms": 515.4
+            },
+            {
+              "text": "성향을",
+              "offset_ms": 3486.2,
+              "duration_ms": 515.4
+            },
+            {
+              "text": "파악하고,",
+              "offset_ms": 4001.6,
+              "duration_ms": 859.0
+            },
+            {
+              "text": "그에",
+              "offset_ms": 4860.6,
+              "duration_ms": 343.6
+            },
+            {
+              "text": "맞는",
+              "offset_ms": 5204.3,
+              "duration_ms": 343.6
+            },
+            {
+              "text": "직무를",
+              "offset_ms": 5547.9,
+              "duration_ms": 515.4
+            },
+            {
+              "text": "탐색하는",
+              "offset_ms": 6063.3,
+              "duration_ms": 687.2
+            },
+            {
+              "text": "방법을",
+              "offset_ms": 6750.5,
+              "duration_ms": 515.4
+            },
+            {
+              "text": "배웁니다.",
+              "offset_ms": 7266.0,
+              "duration_ms": 859.0
+            },
+            {
+              "text": "자기",
+              "offset_ms": 8125.0,
+              "duration_ms": 404.0
+            },
+            {
+              "text": "이해를",
+              "offset_ms": 8529.0,
+              "duration_ms": 606.0
+            },
+            {
+              "text": "바탕으로",
+              "offset_ms": 9135.1,
+              "duration_ms": 808.1
+            },
+            {
+              "text": "적합한",
+              "offset_ms": 9943.1,
+              "duration_ms": 606.0
+            },
+            {
+              "text": "직무를",
+              "offset_ms": 10549.2,
+              "duration_ms": 606.0
+            },
+            {
+              "text": "찾는",
+              "offset_ms": 11155.2,
+              "duration_ms": 404.0
+            },
+            {
+              "text": "과정이니",
+              "offset_ms": 11559.3,
+              "duration_ms": 808.1
+            },
+            {
+              "text": "꼼꼼히",
+              "offset_ms": 12367.3,
+              "duration_ms": 606.0
+            },
+            {
+              "text": "수강해",
+              "offset_ms": 12973.4,
+              "duration_ms": 606.0
+            },
+            {
+              "text": "주세요.",
+              "offset_ms": 13579.4,
+              "duration_ms": 808.1
+            }
+          ]
+        },
+        {
+          "id": "seg_4",
+          "script": "3강에서는 자신이 겪어온 다양한 경험을 체계적으로 정리하는 경험리스트 작성법을 다룹니다. 이후 자기소개서나 면접 준비의 핵심 재료가 되므로, 실습과 함께 성실히 작성해 보시길 바랍니다.",
+          "keyword": "경험리스트 작성법",
+          "ref": "f3",
+          "highlight": null,
+          "effect": "highlighter",
+          "audio": "audio/slide_008_seg_04.mp3",
+          "duration_ms": 15075.0,
+          "words": [
+            {
+              "text": "3강에서는",
+              "offset_ms": 50.0,
+              "duration_ms": 903.1
+            },
+            {
+              "text": "자신이",
+              "offset_ms": 953.1,
+              "duration_ms": 541.9
+            },
+            {
+              "text": "겪어온",
+              "offset_ms": 1495.0,
+              "duration_ms": 541.9
+            },
+            {
+              "text": "다양한",
+              "offset_ms": 2036.9,
+              "duration_ms": 541.9
+            },
+            {
+              "text": "경험을",
+              "offset_ms": 2578.8,
+              "duration_ms": 541.9
+            },
+            {
+              "text": "체계적으로",
+              "offset_ms": 3120.6,
+              "duration_ms": 903.1
+            },
+            {
+              "text": "정리하는",
+              "offset_ms": 4023.8,
+              "duration_ms": 722.5
+            },
+            {
+              "text": "경험리스트",
+              "offset_ms": 4746.2,
+              "duration_ms": 903.1
+            },
+            {
+              "text": "작성법을",
+              "offset_ms": 5649.4,
+              "duration_ms": 722.5
+            },
+            {
+              "text": "다룹니다.",
+              "offset_ms": 6371.9,
+              "duration_ms": 903.1
+            },
+            {
+              "text": "이후",
+              "offset_ms": 7275.0,
+              "duration_ms": 380.5
+            },
+            {
+              "text": "자기소개서나",
+              "offset_ms": 7655.5,
+              "duration_ms": 1141.5
+            },
+            {
+              "text": "면접",
+              "offset_ms": 8797.0,
+              "duration_ms": 380.5
+            },
+            {
+              "text": "준비의",
+              "offset_ms": 9177.4,
+              "duration_ms": 570.7
+            },
+            {
+              "text": "핵심",
+              "offset_ms": 9748.2,
+              "duration_ms": 380.5
+            },
+            {
+              "text": "재료가",
+              "offset_ms": 10128.7,
+              "duration_ms": 570.7
+            },
+            {
+              "text": "되므로,",
+              "offset_ms": 10699.4,
+              "duration_ms": 761.0
+            },
+            {
+              "text": "실습과",
+              "offset_ms": 11460.4,
+              "duration_ms": 570.7
+            },
+            {
+              "text": "함께",
+              "offset_ms": 12031.1,
+              "duration_ms": 380.5
+            },
+            {
+              "text": "성실히",
+              "offset_ms": 12411.6,
+              "duration_ms": 570.7
+            },
+            {
+              "text": "작성해",
+              "offset_ms": 12982.3,
+              "duration_ms": 570.7
+            },
+            {
+              "text": "보시길",
+              "offset_ms": 13553.0,
+              "duration_ms": 570.7
+            },
+            {
+              "text": "바랍니다.",
+              "offset_ms": 14123.8,
+              "duration_ms": 951.2
+            }
+          ]
+        },
+        {
+          "id": "seg_5",
+          "script": "4강은 두 가지 중 하나를 선택해 수강하는 방식입니다. 취업을 목표로 하시는 분은 입사지원서 작성법을, 대학원 진학이나 학업 지속을 계획하시는 분은 학업계획서 작성법을 선택하시면 됩니다.",
+          "keyword": "택 1 — 입사지원서 또는 학업계획서 작성법",
+          "ref": "f4",
+          "highlight": null,
+          "effect": "highlighter",
+          "audio": "audio/slide_008_seg_05.mp3",
+          "duration_ms": 15275.0,
+          "words": [
+            {
+              "text": "4강은",
+              "offset_ms": 50.0,
+              "duration_ms": 626.1
+            },
+            {
+              "text": "두",
+              "offset_ms": 676.1,
+              "duration_ms": 208.7
+            },
+            {
+              "text": "가지",
+              "offset_ms": 884.8,
+              "duration_ms": 417.4
+            },
+            {
+              "text": "중",
+              "offset_ms": 1302.2,
+              "duration_ms": 208.7
+            },
+            {
+              "text": "하나를",
+              "offset_ms": 1510.9,
+              "duration_ms": 626.1
+            },
+            {
+              "text": "선택해",
+              "offset_ms": 2137.0,
+              "duration_ms": 626.1
+            },
+            {
+              "text": "수강하는",
+              "offset_ms": 2763.0,
+              "duration_ms": 834.8
+            },
+            {
+              "text": "방식입니다.",
+              "offset_ms": 3597.8,
+              "duration_ms": 1252.2
+            },
+            {
+              "text": "취업을",
+              "offset_ms": 4850.0,
+              "duration_ms": 539.2
+            },
+            {
+              "text": "목표로",
+              "offset_ms": 5389.2,
+              "duration_ms": 539.2
+            },
+            {
+              "text": "하시는",
+              "offset_ms": 5928.4,
+              "duration_ms": 539.2
+            },
+            {
+              "text": "분은",
+              "offset_ms": 6467.7,
+              "duration_ms": 359.5
+            },
+            {
+              "text": "입사지원서",
+              "offset_ms": 6827.2,
+              "duration_ms": 898.7
+            },
+            {
+              "text": "작성법을,",
+              "offset_ms": 7725.9,
+              "duration_ms": 898.7
+            },
+            {
+              "text": "대학원",
+              "offset_ms": 8624.6,
+              "duration_ms": 539.2
+            },
+            {
+              "text": "진학이나",
+              "offset_ms": 9163.8,
+              "duration_ms": 719.0
+            },
+            {
+              "text": "학업",
+              "offset_ms": 9882.8,
+              "duration_ms": 359.5
+            },
+            {
+              "text": "지속을",
+              "offset_ms": 10242.2,
+              "duration_ms": 539.2
+            },
+            {
+              "text": "계획하시는",
+              "offset_ms": 10781.5,
+              "duration_ms": 898.7
+            },
+            {
+              "text": "분은",
+              "offset_ms": 11680.2,
+              "duration_ms": 359.5
+            },
+            {
+              "text": "학업계획서",
+              "offset_ms": 12039.7,
+              "duration_ms": 898.7
+            },
+            {
+              "text": "작성법을",
+              "offset_ms": 12938.4,
+              "duration_ms": 719.0
+            },
+            {
+              "text": "선택하시면",
+              "offset_ms": 13657.3,
+              "duration_ms": 898.7
+            },
+            {
+              "text": "됩니다.",
+              "offset_ms": 14556.0,
+              "duration_ms": 719.0
+            }
+          ]
+        },
+        {
+          "id": "seg_6",
+          "script": "마지막 5강에서는 면접 준비 전략을 다루며, 앞선 강의들의 내용을 종합적으로 활용하는 단계입니다. 실전 면접에서 자신을 효과적으로 표현하는 방법을 익히며 전체 과정을 마무리하게 됩니다.",
+          "keyword": "면접 준비 전략",
+          "ref": "f5",
+          "highlight": null,
+          "effect": "highlighter",
+          "audio": "audio/slide_008_seg_06.mp3",
+          "duration_ms": 15212.5,
+          "words": [
+            {
+              "text": "마지막",
+              "offset_ms": 50.0,
+              "duration_ms": 541.6
+            },
+            {
+              "text": "5강에서는",
+              "offset_ms": 591.6,
+              "duration_ms": 902.6
+            },
+            {
+              "text": "면접",
+              "offset_ms": 1494.2,
+              "duration_ms": 361.0
+            },
+            {
+              "text": "준비",
+              "offset_ms": 1855.2,
+              "duration_ms": 361.0
+            },
+            {
+              "text": "전략을",
+              "offset_ms": 2216.3,
+              "duration_ms": 541.6
+            },
+            {
+              "text": "다루며,",
+              "offset_ms": 2757.8,
+              "duration_ms": 722.1
+            },
+            {
+              "text": "앞선",
+              "offset_ms": 3479.9,
+              "duration_ms": 361.0
+            },
+            {
+              "text": "강의들의",
+              "offset_ms": 3841.0,
+              "duration_ms": 722.1
+            },
+            {
+              "text": "내용을",
+              "offset_ms": 4563.1,
+              "duration_ms": 541.6
+            },
+            {
+              "text": "종합적으로",
+              "offset_ms": 5104.7,
+              "duration_ms": 902.6
+            },
+            {
+              "text": "활용하는",
+              "offset_ms": 6007.3,
+              "duration_ms": 722.1
+            },
+            {
+              "text": "단계입니다.",
+              "offset_ms": 6729.4,
+              "duration_ms": 1083.1
+            },
+            {
+              "text": "실전",
+              "offset_ms": 7812.5,
+              "duration_ms": 389.5
+            },
+            {
+              "text": "면접에서",
+              "offset_ms": 8202.0,
+              "duration_ms": 778.9
+            },
+            {
+              "text": "자신을",
+              "offset_ms": 8980.9,
+              "duration_ms": 584.2
+            },
+            {
+              "text": "효과적으로",
+              "offset_ms": 9565.1,
+              "duration_ms": 973.7
+            },
+            {
+              "text": "표현하는",
+              "offset_ms": 10538.8,
+              "duration_ms": 778.9
+            },
+            {
+              "text": "방법을",
+              "offset_ms": 11317.8,
+              "duration_ms": 584.2
+            },
+            {
+              "text": "익히며",
+              "offset_ms": 11902.0,
+              "duration_ms": 584.2
+            },
+            {
+              "text": "전체",
+              "offset_ms": 12486.2,
+              "duration_ms": 389.5
+            },
+            {
+              "text": "과정을",
+              "offset_ms": 12875.7,
+              "duration_ms": 584.2
+            },
+            {
+              "text": "마무리하게",
+              "offset_ms": 13459.9,
+              "duration_ms": 973.7
+            },
+            {
+              "text": "됩니다.",
+              "offset_ms": 14433.6,
+              "duration_ms": 778.9
+            }
+          ]
+        }
+      ],
+      "html": "slides/slide_008.html"
+    },
+    {
+      "index": 9,
+      "title": "필수 항목 3·4·5 — 과제 · 코딩테스트 · 설문",
+      "segments": [
+        {
+          "id": "seg_1",
+          "script": "이제 세 번째 섹션으로 넘어가겠습니다. 앞서 지도교수 면담과 진로취업 동영상 강의 수강을 살펴보았는데, 이번에는 나머지 세 가지 필수 항목을 한꺼번에 다룹니다.",
+          "keyword": "03",
+          "ref": "no",
+          "highlight": null,
+          "effect": "highlighter",
+          "audio": "audio/slide_009_seg_01.mp3",
+          "duration_ms": 13162.5,
+          "words": [
+            {
+              "text": "이제",
+              "offset_ms": 50.0,
+              "duration_ms": 441.2
+            },
+            {
+              "text": "세",
+              "offset_ms": 491.2,
+              "duration_ms": 220.6
+            },
+            {
+              "text": "번째",
+              "offset_ms": 711.8,
+              "duration_ms": 441.2
+            },
+            {
+              "text": "섹션으로",
+              "offset_ms": 1152.9,
+              "duration_ms": 882.4
+            },
+            {
+              "text": "넘어가겠습니다.",
+              "offset_ms": 2035.3,
+              "duration_ms": 1764.7
+            },
+            {
+              "text": "앞서",
+              "offset_ms": 3800.0,
+              "duration_ms": 360.1
+            },
+            {
+              "text": "지도교수",
+              "offset_ms": 4160.1,
+              "duration_ms": 720.2
+            },
+            {
+              "text": "면담과",
+              "offset_ms": 4880.3,
+              "duration_ms": 540.1
+            },
+            {
+              "text": "진로취업",
+              "offset_ms": 5420.4,
+              "duration_ms": 720.2
+            },
+            {
+              "text": "동영상",
+              "offset_ms": 6140.6,
+              "duration_ms": 540.1
+            },
+            {
+              "text": "강의",
+              "offset_ms": 6680.8,
+              "duration_ms": 360.1
+            },
+            {
+              "text": "수강을",
+              "offset_ms": 7040.9,
+              "duration_ms": 540.1
+            },
+            {
+              "text": "살펴보았는데,",
+              "offset_ms": 7581.0,
+              "duration_ms": 1260.3
+            },
+            {
+              "text": "이번에는",
+              "offset_ms": 8841.3,
+              "duration_ms": 720.2
+            },
+            {
+              "text": "나머지",
+              "offset_ms": 9561.5,
+              "duration_ms": 540.1
+            },
+            {
+              "text": "세",
+              "offset_ms": 10101.7,
+              "duration_ms": 180.0
+            },
+            {
+              "text": "가지",
+              "offset_ms": 10281.7,
+              "duration_ms": 360.1
+            },
+            {
+              "text": "필수",
+              "offset_ms": 10641.8,
+              "duration_ms": 360.1
+            },
+            {
+              "text": "항목을",
+              "offset_ms": 11001.9,
+              "duration_ms": 540.1
+            },
+            {
+              "text": "한꺼번에",
+              "offset_ms": 11542.1,
+              "duration_ms": 720.2
+            },
+            {
+              "text": "다룹니다.",
+              "offset_ms": 12262.3,
+              "duration_ms": 900.2
+            }
+          ]
+        },
+        {
+          "id": "seg_2",
+          "script": "필수 항목 3번 과제, 4번 코딩테스트, 5번 학기말 설문이 바로 오늘 이 섹션의 주제입니다. 세 항목 모두 Pass를 받기 위해 반드시 완수해야 하므로, 각각의 내용과 기한을 꼼꼼히 확인하시기 바랍니다.",
+          "keyword": "과제 · 코딩테스트 · 설문",
+          "ref": "t",
+          "highlight": null,
+          "effect": "highlighter",
+          "audio": "audio/slide_009_seg_02.mp3",
+          "duration_ms": 16150.0,
+          "words": [
+            {
+              "text": "필수",
+              "offset_ms": 50.0,
+              "duration_ms": 417.3
+            },
+            {
+              "text": "항목",
+              "offset_ms": 467.3,
+              "duration_ms": 417.3
+            },
+            {
+              "text": "3번",
+              "offset_ms": 884.6,
+              "duration_ms": 417.3
+            },
+            {
+              "text": "과제,",
+              "offset_ms": 1301.9,
+              "duration_ms": 626.0
+            },
+            {
+              "text": "4번",
+              "offset_ms": 1927.9,
+              "duration_ms": 417.3
+            },
+            {
+              "text": "코딩테스트,",
+              "offset_ms": 2345.2,
+              "duration_ms": 1251.9
+            },
+            {
+              "text": "5번",
+              "offset_ms": 3597.1,
+              "duration_ms": 417.3
+            },
+            {
+              "text": "학기말",
+              "offset_ms": 4014.4,
+              "duration_ms": 626.0
+            },
+            {
+              "text": "설문이",
+              "offset_ms": 4640.4,
+              "duration_ms": 626.0
+            },
+            {
+              "text": "바로",
+              "offset_ms": 5266.3,
+              "duration_ms": 417.3
+            },
+            {
+              "text": "오늘",
+              "offset_ms": 5683.7,
+              "duration_ms": 417.3
+            },
+            {
+              "text": "이",
+              "offset_ms": 6101.0,
+              "duration_ms": 208.7
+            },
+            {
+              "text": "섹션의",
+              "offset_ms": 6309.6,
+              "duration_ms": 626.0
+            },
+            {
+              "text": "주제입니다.",
+              "offset_ms": 6935.6,
+              "duration_ms": 1251.9
+            },
+            {
+              "text": "세",
+              "offset_ms": 8187.5,
+              "duration_ms": 169.4
+            },
+            {
+              "text": "항목",
+              "offset_ms": 8356.9,
+              "duration_ms": 338.8
+            },
+            {
+              "text": "모두",
+              "offset_ms": 8695.7,
+              "duration_ms": 338.8
+            },
+            {
+              "text": "Pass를",
+              "offset_ms": 9034.6,
+              "duration_ms": 847.1
+            },
+            {
+              "text": "받기",
+              "offset_ms": 9881.6,
+              "duration_ms": 338.8
+            },
+            {
+              "text": "위해",
+              "offset_ms": 10220.5,
+              "duration_ms": 338.8
+            },
+            {
+              "text": "반드시",
+              "offset_ms": 10559.3,
+              "duration_ms": 508.2
+            },
+            {
+              "text": "완수해야",
+              "offset_ms": 11067.6,
+              "duration_ms": 677.7
+            },
+            {
+              "text": "하므로,",
+              "offset_ms": 11745.2,
+              "duration_ms": 677.7
+            },
+            {
+              "text": "각각의",
+              "offset_ms": 12422.9,
+              "duration_ms": 508.2
+            },
+            {
+              "text": "내용과",
+              "offset_ms": 12931.1,
+              "duration_ms": 508.2
+            },
+            {
+              "text": "기한을",
+              "offset_ms": 13439.4,
+              "duration_ms": 508.2
+            },
+            {
+              "text": "꼼꼼히",
+              "offset_ms": 13947.6,
+              "duration_ms": 508.2
+            },
+            {
+              "text": "확인하시기",
+              "offset_ms": 14455.9,
+              "duration_ms": 847.1
+            },
+            {
+              "text": "바랍니다.",
+              "offset_ms": 15302.9,
+              "duration_ms": 847.1
+            }
+          ]
+        }
+      ],
+      "html": "slides/slide_009.html"
+    },
+    {
+      "index": 10,
+      "title": "중간고사 대체 과제 (취업활동계획서·자기소개서)",
+      "segments": [
+        {
+          "id": "seg_1",
+          "script": "세 번째 필수 항목은 중간고사 대체 과제입니다. 이 과제는 취업활동계획서와 자기소개서로 구성되며, 제출 기한 내에 내지 않으면 중간고사 점수가 0점으로 처리됩니다. 반드시 기한을 지켜 제출해 주시기 바랍니다.",
+          "keyword": "미제출 시 중간고사 점수 0점 처리",
+          "ref": "b1",
+          "highlight": null,
+          "effect": "highlighter",
+          "audio": "audio/slide_010_seg_01.mp3",
+          "duration_ms": 17987.5,
+          "words": [
+            {
+              "text": "세",
+              "offset_ms": 50.0,
+              "duration_ms": 220.6
+            },
+            {
+              "text": "번째",
+              "offset_ms": 270.6,
+              "duration_ms": 441.2
+            },
+            {
+              "text": "필수",
+              "offset_ms": 711.9,
+              "duration_ms": 441.2
+            },
+            {
+              "text": "항목은",
+              "offset_ms": 1153.1,
+              "duration_ms": 661.9
+            },
+            {
+              "text": "중간고사",
+              "offset_ms": 1815.0,
+              "duration_ms": 882.5
+            },
+            {
+              "text": "대체",
+              "offset_ms": 2697.5,
+              "duration_ms": 441.2
+            },
+            {
+              "text": "과제입니다.",
+              "offset_ms": 3138.8,
+              "duration_ms": 1323.8
+            },
+            {
+              "text": "이",
+              "offset_ms": 4462.5,
+              "duration_ms": 188.5
+            },
+            {
+              "text": "과제는",
+              "offset_ms": 4651.0,
+              "duration_ms": 565.4
+            },
+            {
+              "text": "취업활동계획서와",
+              "offset_ms": 5216.4,
+              "duration_ms": 1507.8
+            },
+            {
+              "text": "자기소개서로",
+              "offset_ms": 6724.3,
+              "duration_ms": 1130.9
+            },
+            {
+              "text": "구성되며,",
+              "offset_ms": 7855.1,
+              "duration_ms": 942.4
+            },
+            {
+              "text": "제출",
+              "offset_ms": 8797.5,
+              "duration_ms": 377.0
+            },
+            {
+              "text": "기한",
+              "offset_ms": 9174.5,
+              "duration_ms": 377.0
+            },
+            {
+              "text": "내에",
+              "offset_ms": 9551.5,
+              "duration_ms": 377.0
+            },
+            {
+              "text": "내지",
+              "offset_ms": 9928.4,
+              "duration_ms": 377.0
+            },
+            {
+              "text": "않으면",
+              "offset_ms": 10305.4,
+              "duration_ms": 565.4
+            },
+            {
+              "text": "중간고사",
+              "offset_ms": 10870.8,
+              "duration_ms": 753.9
+            },
+            {
+              "text": "점수가",
+              "offset_ms": 11624.8,
+              "duration_ms": 565.4
+            },
+            {
+              "text": "0점으로",
+              "offset_ms": 12190.2,
+              "duration_ms": 753.9
+            },
+            {
+              "text": "처리됩니다.",
+              "offset_ms": 12944.1,
+              "duration_ms": 1130.9
+            },
+            {
+              "text": "반드시",
+              "offset_ms": 14075.0,
+              "duration_ms": 617.8
+            },
+            {
+              "text": "기한을",
+              "offset_ms": 14692.8,
+              "duration_ms": 617.8
+            },
+            {
+              "text": "지켜",
+              "offset_ms": 15310.5,
+              "duration_ms": 411.8
+            },
+            {
+              "text": "제출해",
+              "offset_ms": 15722.4,
+              "duration_ms": 617.8
+            },
+            {
+              "text": "주시기",
+              "offset_ms": 16340.1,
+              "duration_ms": 617.8
+            },
+            {
+              "text": "바랍니다.",
+              "offset_ms": 16957.9,
+              "duration_ms": 1029.6
+            }
+          ]
+        },
+        {
+          "id": "seg_2",
+          "script": "평가는 단순히 제출 여부만 보는 것이 아닙니다. 성실도, 작성 분량, 그리고 표절 여부를 종합적으로 검토하여 점수가 부여되므로, 충실하게 본인의 언어로 작성하는 것이 중요합니다.",
+          "keyword": "성실도, 작성 분량, 표절 여부 종합 평가",
+          "ref": "b2",
+          "highlight": null,
+          "effect": "highlighter",
+          "audio": "audio/slide_010_seg_02.mp3",
+          "duration_ms": 14550.0,
+          "words": [
+            {
+              "text": "평가는",
+              "offset_ms": 50.0,
+              "duration_ms": 633.8
+            },
+            {
+              "text": "단순히",
+              "offset_ms": 683.8,
+              "duration_ms": 633.8
+            },
+            {
+              "text": "제출",
+              "offset_ms": 1317.5,
+              "duration_ms": 422.5
+            },
+            {
+              "text": "여부만",
+              "offset_ms": 1740.0,
+              "duration_ms": 633.8
+            },
+            {
+              "text": "보는",
+              "offset_ms": 2373.8,
+              "duration_ms": 422.5
+            },
+            {
+              "text": "것이",
+              "offset_ms": 2796.2,
+              "duration_ms": 422.5
+            },
+            {
+              "text": "아닙니다.",
+              "offset_ms": 3218.8,
+              "duration_ms": 1056.2
+            },
+            {
+              "text": "성실도,",
+              "offset_ms": 4275.0,
+              "duration_ms": 721.1
+            },
+            {
+              "text": "작성",
+              "offset_ms": 4996.1,
+              "duration_ms": 360.5
+            },
+            {
+              "text": "분량,",
+              "offset_ms": 5356.6,
+              "duration_ms": 540.8
+            },
+            {
+              "text": "그리고",
+              "offset_ms": 5897.4,
+              "duration_ms": 540.8
+            },
+            {
+              "text": "표절",
+              "offset_ms": 6438.2,
+              "duration_ms": 360.5
+            },
+            {
+              "text": "여부를",
+              "offset_ms": 6798.7,
+              "duration_ms": 540.8
+            },
+            {
+              "text": "종합적으로",
+              "offset_ms": 7339.5,
+              "duration_ms": 901.3
+            },
+            {
+              "text": "검토하여",
+              "offset_ms": 8240.8,
+              "duration_ms": 721.1
+            },
+            {
+              "text": "점수가",
+              "offset_ms": 8961.8,
+              "duration_ms": 540.8
+            },
+            {
+              "text": "부여되므로,",
+              "offset_ms": 9502.6,
+              "duration_ms": 1081.6
+            },
+            {
+              "text": "충실하게",
+              "offset_ms": 10584.2,
+              "duration_ms": 721.1
+            },
+            {
+              "text": "본인의",
+              "offset_ms": 11305.3,
+              "duration_ms": 540.8
+            },
+            {
+              "text": "언어로",
+              "offset_ms": 11846.1,
+              "duration_ms": 540.8
+            },
+            {
+              "text": "작성하는",
+              "offset_ms": 12386.8,
+              "duration_ms": 721.1
+            },
+            {
+              "text": "것이",
+              "offset_ms": 13107.9,
+              "duration_ms": 360.5
+            },
+            {
+              "text": "중요합니다.",
+              "offset_ms": 13468.4,
+              "duration_ms": 1081.6
+            }
+          ]
+        },
+        {
+          "id": "seg_3",
+          "script": "과제 작성의 세부 기준은 9월 중에 별도로 공지될 예정입니다. 안내가 나오는 즉시 꼼꼼히 확인하고 준비를 시작하시기 바랍니다.",
+          "keyword": "9월 중 별도 안내 예정",
+          "ref": "b3",
+          "highlight": null,
+          "effect": "highlighter",
+          "audio": "audio/slide_010_seg_03.mp3",
+          "duration_ms": 11112.5,
+          "words": [
+            {
+              "text": "과제",
+              "offset_ms": 50.0,
+              "duration_ms": 430.8
+            },
+            {
+              "text": "작성의",
+              "offset_ms": 480.8,
+              "duration_ms": 646.2
+            },
+            {
+              "text": "세부",
+              "offset_ms": 1126.9,
+              "duration_ms": 430.8
+            },
+            {
+              "text": "기준은",
+              "offset_ms": 1557.7,
+              "duration_ms": 646.2
+            },
+            {
+              "text": "9월",
+              "offset_ms": 2203.8,
+              "duration_ms": 430.8
+            },
+            {
+              "text": "중에",
+              "offset_ms": 2634.6,
+              "duration_ms": 430.8
+            },
+            {
+              "text": "별도로",
+              "offset_ms": 3065.4,
+              "duration_ms": 646.2
+            },
+            {
+              "text": "공지될",
+              "offset_ms": 3711.5,
+              "duration_ms": 646.2
+            },
+            {
+              "text": "예정입니다.",
+              "offset_ms": 4357.7,
+              "duration_ms": 1292.3
+            },
+            {
+              "text": "안내가",
+              "offset_ms": 5650.0,
+              "duration_ms": 585.3
+            },
+            {
+              "text": "나오는",
+              "offset_ms": 6235.3,
+              "duration_ms": 585.3
+            },
+            {
+              "text": "즉시",
+              "offset_ms": 6820.5,
+              "duration_ms": 390.2
+            },
+            {
+              "text": "꼼꼼히",
+              "offset_ms": 7210.7,
+              "duration_ms": 585.3
+            },
+            {
+              "text": "확인하고",
+              "offset_ms": 7796.0,
+              "duration_ms": 780.4
+            },
+            {
+              "text": "준비를",
+              "offset_ms": 8576.3,
+              "duration_ms": 585.3
+            },
+            {
+              "text": "시작하시기",
+              "offset_ms": 9161.6,
+              "duration_ms": 975.4
+            },
+            {
+              "text": "바랍니다.",
+              "offset_ms": 10137.1,
+              "duration_ms": 975.4
+            }
+          ]
+        },
+        {
+          "id": "seg_4",
+          "script": "제출 방법은 스마트 리드의 과제란에 직접 입력하는 방식입니다. 파일 첨부가 아니라 직접 입력 방식이므로, 미리 내용을 작성해 두었다가 해당 란에 옮겨 붙여넣기 하시면 됩니다.",
+          "keyword": "스마트 리드 과제란에 직접 입력하여 제출",
+          "ref": "b4",
+          "highlight": null,
+          "effect": "highlighter",
+          "audio": "audio/slide_010_seg_04.mp3",
+          "duration_ms": 13937.5,
+          "words": [
+            {
+              "text": "제출",
+              "offset_ms": 50.0,
+              "duration_ms": 391.7
+            },
+            {
+              "text": "방법은",
+              "offset_ms": 441.7,
+              "duration_ms": 587.5
+            },
+            {
+              "text": "스마트",
+              "offset_ms": 1029.2,
+              "duration_ms": 587.5
+            },
+            {
+              "text": "리드의",
+              "offset_ms": 1616.7,
+              "duration_ms": 587.5
+            },
+            {
+              "text": "과제란에",
+              "offset_ms": 2204.2,
+              "duration_ms": 783.3
+            },
+            {
+              "text": "직접",
+              "offset_ms": 2987.5,
+              "duration_ms": 391.7
+            },
+            {
+              "text": "입력하는",
+              "offset_ms": 3379.2,
+              "duration_ms": 783.3
+            },
+            {
+              "text": "방식입니다.",
+              "offset_ms": 4162.5,
+              "duration_ms": 1175.0
+            },
+            {
+              "text": "파일",
+              "offset_ms": 5337.5,
+              "duration_ms": 366.0
+            },
+            {
+              "text": "첨부가",
+              "offset_ms": 5703.5,
+              "duration_ms": 548.9
+            },
+            {
+              "text": "아니라",
+              "offset_ms": 6252.4,
+              "duration_ms": 548.9
+            },
+            {
+              "text": "직접",
+              "offset_ms": 6801.3,
+              "duration_ms": 366.0
+            },
+            {
+              "text": "입력",
+              "offset_ms": 7167.3,
+              "duration_ms": 366.0
+            },
+            {
+              "text": "방식이므로,",
+              "offset_ms": 7533.2,
+              "duration_ms": 1097.9
+            },
+            {
+              "text": "미리",
+              "offset_ms": 8631.1,
+              "duration_ms": 366.0
+            },
+            {
+              "text": "내용을",
+              "offset_ms": 8997.1,
+              "duration_ms": 548.9
+            },
+            {
+              "text": "작성해",
+              "offset_ms": 9546.0,
+              "duration_ms": 548.9
+            },
+            {
+              "text": "두었다가",
+              "offset_ms": 10094.9,
+              "duration_ms": 731.9
+            },
+            {
+              "text": "해당",
+              "offset_ms": 10826.9,
+              "duration_ms": 366.0
+            },
+            {
+              "text": "란에",
+              "offset_ms": 11192.8,
+              "duration_ms": 366.0
+            },
+            {
+              "text": "옮겨",
+              "offset_ms": 11558.8,
+              "duration_ms": 366.0
+            },
+            {
+              "text": "붙여넣기",
+              "offset_ms": 11924.7,
+              "duration_ms": 731.9
+            },
+            {
+              "text": "하시면",
+              "offset_ms": 12656.6,
+              "duration_ms": 548.9
+            },
+            {
+              "text": "됩니다.",
+              "offset_ms": 13205.6,
+              "duration_ms": 731.9
+            }
+          ]
+        }
+      ],
+      "html": "slides/slide_010.html"
+    },
+    {
+      "index": 11,
+      "title": "코딩 테스트 & 학기말 설문",
+      "segments": [
+        {
+          "id": "seg_1",
+          "script": "다섯 번째 필수 항목 중 네 번째는 코딩 테스트 참여입니다. 코딩 테스트는 소프트웨어 중심대학 사업단 주관으로 일괄 진행되며, 개별적으로 신청하는 방식이 아닙니다.",
+          "keyword": "코딩 테스트 참여",
+          "ref": "lh",
+          "highlight": null,
+          "effect": "highlighter",
+          "audio": "audio/slide_011_seg_01.mp3",
+          "duration_ms": 13200.0,
+          "words": [
+            {
+              "text": "다섯",
+              "offset_ms": 50.0,
+              "duration_ms": 412.5
+            },
+            {
+              "text": "번째",
+              "offset_ms": 462.5,
+              "duration_ms": 412.5
+            },
+            {
+              "text": "필수",
+              "offset_ms": 875.0,
+              "duration_ms": 412.5
+            },
+            {
+              "text": "항목",
+              "offset_ms": 1287.5,
+              "duration_ms": 412.5
+            },
+            {
+              "text": "중",
+              "offset_ms": 1700.0,
+              "duration_ms": 206.2
+            },
+            {
+              "text": "네",
+              "offset_ms": 1906.2,
+              "duration_ms": 206.2
+            },
+            {
+              "text": "번째는",
+              "offset_ms": 2112.5,
+              "duration_ms": 618.8
+            },
+            {
+              "text": "코딩",
+              "offset_ms": 2731.2,
+              "duration_ms": 412.5
+            },
+            {
+              "text": "테스트",
+              "offset_ms": 3143.8,
+              "duration_ms": 618.8
+            },
+            {
+              "text": "참여입니다.",
+              "offset_ms": 3762.5,
+              "duration_ms": 1237.5
+            },
+            {
+              "text": "코딩",
+              "offset_ms": 5000.0,
+              "duration_ms": 356.5
+            },
+            {
+              "text": "테스트는",
+              "offset_ms": 5356.5,
+              "duration_ms": 713.0
+            },
+            {
+              "text": "소프트웨어",
+              "offset_ms": 6069.6,
+              "duration_ms": 891.3
+            },
+            {
+              "text": "중심대학",
+              "offset_ms": 6960.9,
+              "duration_ms": 713.0
+            },
+            {
+              "text": "사업단",
+              "offset_ms": 7673.9,
+              "duration_ms": 534.8
+            },
+            {
+              "text": "주관으로",
+              "offset_ms": 8208.7,
+              "duration_ms": 713.0
+            },
+            {
+              "text": "일괄",
+              "offset_ms": 8921.7,
+              "duration_ms": 356.5
+            },
+            {
+              "text": "진행되며,",
+              "offset_ms": 9278.3,
+              "duration_ms": 891.3
+            },
+            {
+              "text": "개별적으로",
+              "offset_ms": 10169.6,
+              "duration_ms": 891.3
+            },
+            {
+              "text": "신청하는",
+              "offset_ms": 11060.9,
+              "duration_ms": 713.0
+            },
+            {
+              "text": "방식이",
+              "offset_ms": 11773.9,
+              "duration_ms": 534.8
+            },
+            {
+              "text": "아닙니다.",
+              "offset_ms": 12308.7,
+              "duration_ms": 891.3
+            }
+          ]
+        },
+        {
+          "id": "seg_2",
+          "script": "일정은 추후 별도로 안내될 예정이니, 공지를 반드시 확인하고 해당 일정에 맞춰 빠짐없이 참여해 주시기 바랍니다. 미리 캘린더에 표시해 두는 습관을 가져두시면 좋습니다.",
+          "keyword": "추후 안내되는 일정",
+          "ref": "l2",
+          "highlight": null,
+          "effect": "highlighter",
+          "audio": "audio/slide_011_seg_02.mp3",
+          "duration_ms": 13600.0,
+          "words": [
+            {
+              "text": "일정은",
+              "offset_ms": 50.0,
+              "duration_ms": 563.3
+            },
+            {
+              "text": "추후",
+              "offset_ms": 613.3,
+              "duration_ms": 375.5
+            },
+            {
+              "text": "별도로",
+              "offset_ms": 988.8,
+              "duration_ms": 563.3
+            },
+            {
+              "text": "안내될",
+              "offset_ms": 1552.1,
+              "duration_ms": 563.3
+            },
+            {
+              "text": "예정이니,",
+              "offset_ms": 2115.4,
+              "duration_ms": 938.8
+            },
+            {
+              "text": "공지를",
+              "offset_ms": 3054.2,
+              "duration_ms": 563.3
+            },
+            {
+              "text": "반드시",
+              "offset_ms": 3617.4,
+              "duration_ms": 563.3
+            },
+            {
+              "text": "확인하고",
+              "offset_ms": 4180.7,
+              "duration_ms": 751.0
+            },
+            {
+              "text": "해당",
+              "offset_ms": 4931.8,
+              "duration_ms": 375.5
+            },
+            {
+              "text": "일정에",
+              "offset_ms": 5307.3,
+              "duration_ms": 563.3
+            },
+            {
+              "text": "맞춰",
+              "offset_ms": 5870.6,
+              "duration_ms": 375.5
+            },
+            {
+              "text": "빠짐없이",
+              "offset_ms": 6246.1,
+              "duration_ms": 751.0
+            },
+            {
+              "text": "참여해",
+              "offset_ms": 6997.1,
+              "duration_ms": 563.3
+            },
+            {
+              "text": "주시기",
+              "offset_ms": 7560.4,
+              "duration_ms": 563.3
+            },
+            {
+              "text": "바랍니다.",
+              "offset_ms": 8123.7,
+              "duration_ms": 938.8
+            },
+            {
+              "text": "미리",
+              "offset_ms": 9062.5,
+              "duration_ms": 378.1
+            },
+            {
+              "text": "캘린더에",
+              "offset_ms": 9440.6,
+              "duration_ms": 756.2
+            },
+            {
+              "text": "표시해",
+              "offset_ms": 10196.9,
+              "duration_ms": 567.2
+            },
+            {
+              "text": "두는",
+              "offset_ms": 10764.1,
+              "duration_ms": 378.1
+            },
+            {
+              "text": "습관을",
+              "offset_ms": 11142.2,
+              "duration_ms": 567.2
+            },
+            {
+              "text": "가져두시면",
+              "offset_ms": 11709.4,
+              "duration_ms": 945.3
+            },
+            {
+              "text": "좋습니다.",
+              "offset_ms": 12654.7,
+              "duration_ms": 945.3
+            }
+          ]
+        },
+        {
+          "id": "seg_3",
+          "script": "특히 주의하실 점은, 코딩 테스트에 불참할 경우 해당 항목이 미완수로 처리된다는 것입니다. 사전에 일정을 꼭 확인하고 참여 준비를 철저히 해 주세요.",
+          "keyword": "불참 시 미완수 처리",
+          "ref": "l3",
+          "highlight": null,
+          "effect": "highlighter",
+          "audio": "audio/slide_011_seg_03.mp3",
+          "duration_ms": 12675.0,
+          "words": [
+            {
+              "text": "특히",
+              "offset_ms": 50.0,
+              "duration_ms": 381.4
+            },
+            {
+              "text": "주의하실",
+              "offset_ms": 431.4,
+              "duration_ms": 762.8
+            },
+            {
+              "text": "점은,",
+              "offset_ms": 1194.2,
+              "duration_ms": 572.1
+            },
+            {
+              "text": "코딩",
+              "offset_ms": 1766.3,
+              "duration_ms": 381.4
+            },
+            {
+              "text": "테스트에",
+              "offset_ms": 2147.8,
+              "duration_ms": 762.8
+            },
+            {
+              "text": "불참할",
+              "offset_ms": 2910.6,
+              "duration_ms": 572.1
+            },
+            {
+              "text": "경우",
+              "offset_ms": 3482.7,
+              "duration_ms": 381.4
+            },
+            {
+              "text": "해당",
+              "offset_ms": 3864.1,
+              "duration_ms": 381.4
+            },
+            {
+              "text": "항목이",
+              "offset_ms": 4245.5,
+              "duration_ms": 572.1
+            },
+            {
+              "text": "미완수로",
+              "offset_ms": 4817.6,
+              "duration_ms": 762.8
+            },
+            {
+              "text": "처리된다는",
+              "offset_ms": 5580.4,
+              "duration_ms": 953.5
+            },
+            {
+              "text": "것입니다.",
+              "offset_ms": 6534.0,
+              "duration_ms": 953.5
+            },
+            {
+              "text": "사전에",
+              "offset_ms": 7487.5,
+              "duration_ms": 648.4
+            },
+            {
+              "text": "일정을",
+              "offset_ms": 8135.9,
+              "duration_ms": 648.4
+            },
+            {
+              "text": "꼭",
+              "offset_ms": 8784.4,
+              "duration_ms": 216.1
+            },
+            {
+              "text": "확인하고",
+              "offset_ms": 9000.5,
+              "duration_ms": 864.6
+            },
+            {
+              "text": "참여",
+              "offset_ms": 9865.1,
+              "duration_ms": 432.3
+            },
+            {
+              "text": "준비를",
+              "offset_ms": 10297.4,
+              "duration_ms": 648.4
+            },
+            {
+              "text": "철저히",
+              "offset_ms": 10945.8,
+              "duration_ms": 648.4
+            },
+            {
+              "text": "해",
+              "offset_ms": 11594.3,
+              "duration_ms": 216.1
+            },
+            {
+              "text": "주세요.",
+              "offset_ms": 11810.4,
+              "duration_ms": 864.6
+            }
+          ]
+        },
+        {
+          "id": "seg_4",
+          "script": "마지막 다섯 번째 필수 항목은 학기말 설문 참여입니다. 학기 말에 지정된 온라인 설문에 응답하는 방식으로 진행되며, 형태 자체는 간단합니다.",
+          "keyword": "학기말 설문 참여",
+          "ref": "rh",
+          "highlight": null,
+          "effect": "highlighter",
+          "audio": "audio/slide_011_seg_04.mp3",
+          "duration_ms": 12112.5,
+          "words": [
+            {
+              "text": "마지막",
+              "offset_ms": 50.0,
+              "duration_ms": 634.2
+            },
+            {
+              "text": "다섯",
+              "offset_ms": 684.2,
+              "duration_ms": 422.8
+            },
+            {
+              "text": "번째",
+              "offset_ms": 1107.1,
+              "duration_ms": 422.8
+            },
+            {
+              "text": "필수",
+              "offset_ms": 1529.9,
+              "duration_ms": 422.8
+            },
+            {
+              "text": "항목은",
+              "offset_ms": 1952.7,
+              "duration_ms": 634.2
+            },
+            {
+              "text": "학기말",
+              "offset_ms": 2587.0,
+              "duration_ms": 634.2
+            },
+            {
+              "text": "설문",
+              "offset_ms": 3221.2,
+              "duration_ms": 422.8
+            },
+            {
+              "text": "참여입니다.",
+              "offset_ms": 3644.0,
+              "duration_ms": 1268.5
+            },
+            {
+              "text": "학기",
+              "offset_ms": 4912.5,
+              "duration_ms": 389.2
+            },
+            {
+              "text": "말에",
+              "offset_ms": 5301.7,
+              "duration_ms": 389.2
+            },
+            {
+              "text": "지정된",
+              "offset_ms": 5690.9,
+              "duration_ms": 583.8
+            },
+            {
+              "text": "온라인",
+              "offset_ms": 6274.7,
+              "duration_ms": 583.8
+            },
+            {
+              "text": "설문에",
+              "offset_ms": 6858.4,
+              "duration_ms": 583.8
+            },
+            {
+              "text": "응답하는",
+              "offset_ms": 7442.2,
+              "duration_ms": 778.4
+            },
+            {
+              "text": "방식으로",
+              "offset_ms": 8220.6,
+              "duration_ms": 778.4
+            },
+            {
+              "text": "진행되며,",
+              "offset_ms": 8999.0,
+              "duration_ms": 973.0
+            },
+            {
+              "text": "형태",
+              "offset_ms": 9972.0,
+              "duration_ms": 389.2
+            },
+            {
+              "text": "자체는",
+              "offset_ms": 10361.1,
+              "duration_ms": 583.8
+            },
+            {
+              "text": "간단합니다.",
+              "offset_ms": 10944.9,
+              "duration_ms": 1167.6
+            }
+          ]
+        },
+        {
+          "id": "seg_5",
+          "script": "설문의 내용보다 응답 완료 여부 자체가 이수 확인의 기준이 된다는 점을 명심해 주세요. 간단한 절차이지만 빠뜨리면 Pass를 받을 수 없으니, 학기 말에 반드시 응답을 완료하시기 바랍니다.",
+          "keyword": "응답 완료 여부로 이수 확인",
+          "ref": "r2",
+          "highlight": null,
+          "effect": "highlighter",
+          "audio": "audio/slide_011_seg_05.mp3",
+          "duration_ms": 14600.0,
+          "words": [
+            {
+              "text": "설문의",
+              "offset_ms": 50.0,
+              "duration_ms": 580.2
+            },
+            {
+              "text": "내용보다",
+              "offset_ms": 630.2,
+              "duration_ms": 773.6
+            },
+            {
+              "text": "응답",
+              "offset_ms": 1403.8,
+              "duration_ms": 386.8
+            },
+            {
+              "text": "완료",
+              "offset_ms": 1790.6,
+              "duration_ms": 386.8
+            },
+            {
+              "text": "여부",
+              "offset_ms": 2177.4,
+              "duration_ms": 386.8
+            },
+            {
+              "text": "자체가",
+              "offset_ms": 2564.2,
+              "duration_ms": 580.2
+            },
+            {
+              "text": "이수",
+              "offset_ms": 3144.4,
+              "duration_ms": 386.8
+            },
+            {
+              "text": "확인의",
+              "offset_ms": 3531.3,
+              "duration_ms": 580.2
+            },
+            {
+              "text": "기준이",
+              "offset_ms": 4111.5,
+              "duration_ms": 580.2
+            },
+            {
+              "text": "된다는",
+              "offset_ms": 4691.7,
+              "duration_ms": 580.2
+            },
+            {
+              "text": "점을",
+              "offset_ms": 5271.9,
+              "duration_ms": 386.8
+            },
+            {
+              "text": "명심해",
+              "offset_ms": 5658.7,
+              "duration_ms": 580.2
+            },
+            {
+              "text": "주세요.",
+              "offset_ms": 6238.9,
+              "duration_ms": 773.6
+            },
+            {
+              "text": "간단한",
+              "offset_ms": 7012.5,
+              "duration_ms": 517.3
+            },
+            {
+              "text": "절차이지만",
+              "offset_ms": 7529.8,
+              "duration_ms": 862.2
+            },
+            {
+              "text": "빠뜨리면",
+              "offset_ms": 8392.0,
+              "duration_ms": 689.8
+            },
+            {
+              "text": "Pass를",
+              "offset_ms": 9081.8,
+              "duration_ms": 862.2
+            },
+            {
+              "text": "받을",
+              "offset_ms": 9944.0,
+              "duration_ms": 344.9
+            },
+            {
+              "text": "수",
+              "offset_ms": 10288.9,
+              "duration_ms": 172.4
+            },
+            {
+              "text": "없으니,",
+              "offset_ms": 10461.4,
+              "duration_ms": 689.8
+            },
+            {
+              "text": "학기",
+              "offset_ms": 11151.1,
+              "duration_ms": 344.9
+            },
+            {
+              "text": "말에",
+              "offset_ms": 11496.0,
+              "duration_ms": 344.9
+            },
+            {
+              "text": "반드시",
+              "offset_ms": 11840.9,
+              "duration_ms": 517.3
+            },
+            {
+              "text": "응답을",
+              "offset_ms": 12358.2,
+              "duration_ms": 517.3
+            },
+            {
+              "text": "완료하시기",
+              "offset_ms": 12875.6,
+              "duration_ms": 862.2
+            },
+            {
+              "text": "바랍니다.",
+              "offset_ms": 13737.8,
+              "duration_ms": 862.2
+            }
+          ]
+        }
+      ],
+      "html": "slides/slide_011.html"
+    },
+    {
+      "index": 12,
+      "title": "Pass 체크리스트 — 5가지 모두 완수!",
+      "segments": [
+        {
+          "id": "seg_1",
+          "script": "첫 번째 항목은 지도교수 면담입니다. 면담을 마친 뒤에는 반드시 서식 사진을 스마트 리드 과제란에 제출해야 인정이 됩니다. 사진 제출까지 완료해야 이 항목이 Pass로 처리된다는 점, 꼭 기억하세요.",
+          "keyword": "지도교수 면담 1회",
+          "ref": "b1",
+          "highlight": null,
+          "effect": "highlighter",
+          "audio": "audio/slide_012_seg_01.mp3",
+          "duration_ms": 16537.5,
+          "words": [
+            {
+              "text": "첫",
+              "offset_ms": 50.0,
+              "duration_ms": 226.6
+            },
+            {
+              "text": "번째",
+              "offset_ms": 276.6,
+              "duration_ms": 453.1
+            },
+            {
+              "text": "항목은",
+              "offset_ms": 729.7,
+              "duration_ms": 679.7
+            },
+            {
+              "text": "지도교수",
+              "offset_ms": 1409.4,
+              "duration_ms": 906.2
+            },
+            {
+              "text": "면담입니다.",
+              "offset_ms": 2315.6,
+              "duration_ms": 1359.4
+            },
+            {
+              "text": "면담을",
+              "offset_ms": 3675.0,
+              "duration_ms": 567.7
+            },
+            {
+              "text": "마친",
+              "offset_ms": 4242.7,
+              "duration_ms": 378.5
+            },
+            {
+              "text": "뒤에는",
+              "offset_ms": 4621.2,
+              "duration_ms": 567.7
+            },
+            {
+              "text": "반드시",
+              "offset_ms": 5188.9,
+              "duration_ms": 567.7
+            },
+            {
+              "text": "서식",
+              "offset_ms": 5756.6,
+              "duration_ms": 378.5
+            },
+            {
+              "text": "사진을",
+              "offset_ms": 6135.1,
+              "duration_ms": 567.7
+            },
+            {
+              "text": "스마트",
+              "offset_ms": 6702.8,
+              "duration_ms": 567.7
+            },
+            {
+              "text": "리드",
+              "offset_ms": 7270.5,
+              "duration_ms": 378.5
+            },
+            {
+              "text": "과제란에",
+              "offset_ms": 7649.0,
+              "duration_ms": 756.9
+            },
+            {
+              "text": "제출해야",
+              "offset_ms": 8405.9,
+              "duration_ms": 756.9
+            },
+            {
+              "text": "인정이",
+              "offset_ms": 9162.8,
+              "duration_ms": 567.7
+            },
+            {
+              "text": "됩니다.",
+              "offset_ms": 9730.6,
+              "duration_ms": 756.9
+            },
+            {
+              "text": "사진",
+              "offset_ms": 10487.5,
+              "duration_ms": 366.7
+            },
+            {
+              "text": "제출까지",
+              "offset_ms": 10854.2,
+              "duration_ms": 733.3
+            },
+            {
+              "text": "완료해야",
+              "offset_ms": 11587.5,
+              "duration_ms": 733.3
+            },
+            {
+              "text": "이",
+              "offset_ms": 12320.8,
+              "duration_ms": 183.3
+            },
+            {
+              "text": "항목이",
+              "offset_ms": 12504.2,
+              "duration_ms": 550.0
+            },
+            {
+              "text": "Pass로",
+              "offset_ms": 13054.2,
+              "duration_ms": 916.7
+            },
+            {
+              "text": "처리된다는",
+              "offset_ms": 13970.8,
+              "duration_ms": 916.7
+            },
+            {
+              "text": "점,",
+              "offset_ms": 14887.5,
+              "duration_ms": 366.7
+            },
+            {
+              "text": "꼭",
+              "offset_ms": 15254.2,
+              "duration_ms": 183.3
+            },
+            {
+              "text": "기억하세요.",
+              "offset_ms": 15437.5,
+              "duration_ms": 1100.0
+            }
+          ]
+        },
+        {
+          "id": "seg_2",
+          "script": "두 번째는 진로취업 동영상 강의 수강입니다. 총 5개 강의를 이수해야 하며, 4강의 경우 두 콘텐츠 중 하나를 선택해 수강하면 됩니다. 수강 여부는 시스템에서 자동으로 확인되므로, 영상을 끝까지 시청하는 것이 중요합니다.",
+          "keyword": "진로취업 동영상 강의 5개 수강",
+          "ref": "b2",
+          "highlight": null,
+          "effect": "highlighter",
+          "audio": "audio/slide_012_seg_02.mp3",
+          "duration_ms": 18287.5,
+          "words": [
+            {
+              "text": "두",
+              "offset_ms": 50.0,
+              "duration_ms": 215.1
+            },
+            {
+              "text": "번째는",
+              "offset_ms": 265.1,
+              "duration_ms": 645.4
+            },
+            {
+              "text": "진로취업",
+              "offset_ms": 910.5,
+              "duration_ms": 860.5
+            },
+            {
+              "text": "동영상",
+              "offset_ms": 1771.1,
+              "duration_ms": 645.4
+            },
+            {
+              "text": "강의",
+              "offset_ms": 2416.4,
+              "duration_ms": 430.3
+            },
+            {
+              "text": "수강입니다.",
+              "offset_ms": 2846.7,
+              "duration_ms": 1290.8
+            },
+            {
+              "text": "총",
+              "offset_ms": 4137.5,
+              "duration_ms": 192.6
+            },
+            {
+              "text": "5개",
+              "offset_ms": 4330.1,
+              "duration_ms": 385.1
+            },
+            {
+              "text": "강의를",
+              "offset_ms": 4715.2,
+              "duration_ms": 577.7
+            },
+            {
+              "text": "이수해야",
+              "offset_ms": 5292.9,
+              "duration_ms": 770.3
+            },
+            {
+              "text": "하며,",
+              "offset_ms": 6063.2,
+              "duration_ms": 577.7
+            },
+            {
+              "text": "4강의",
+              "offset_ms": 6640.9,
+              "duration_ms": 577.7
+            },
+            {
+              "text": "경우",
+              "offset_ms": 7218.6,
+              "duration_ms": 385.1
+            },
+            {
+              "text": "두",
+              "offset_ms": 7603.7,
+              "duration_ms": 192.6
+            },
+            {
+              "text": "콘텐츠",
+              "offset_ms": 7796.3,
+              "duration_ms": 577.7
+            },
+            {
+              "text": "중",
+              "offset_ms": 8374.0,
+              "duration_ms": 192.6
+            },
+            {
+              "text": "하나를",
+              "offset_ms": 8566.6,
+              "duration_ms": 577.7
+            },
+            {
+              "text": "선택해",
+              "offset_ms": 9144.3,
+              "duration_ms": 577.7
+            },
+            {
+              "text": "수강하면",
+              "offset_ms": 9722.0,
+              "duration_ms": 770.3
+            },
+            {
+              "text": "됩니다.",
+              "offset_ms": 10492.2,
+              "duration_ms": 770.3
+            },
+            {
+              "text": "수강",
+              "offset_ms": 11262.5,
+              "duration_ms": 369.7
+            },
+            {
+              "text": "여부는",
+              "offset_ms": 11632.2,
+              "duration_ms": 554.6
+            },
+            {
+              "text": "시스템에서",
+              "offset_ms": 12186.8,
+              "duration_ms": 924.3
+            },
+            {
+              "text": "자동으로",
+              "offset_ms": 13111.2,
+              "duration_ms": 739.5
+            },
+            {
+              "text": "확인되므로,",
+              "offset_ms": 13850.7,
+              "duration_ms": 1109.2
+            },
+            {
+              "text": "영상을",
+              "offset_ms": 14959.9,
+              "duration_ms": 554.6
+            },
+            {
+              "text": "끝까지",
+              "offset_ms": 15514.5,
+              "duration_ms": 554.6
+            },
+            {
+              "text": "시청하는",
+              "offset_ms": 16069.1,
+              "duration_ms": 739.5
+            },
+            {
+              "text": "것이",
+              "offset_ms": 16808.6,
+              "duration_ms": 369.7
+            },
+            {
+              "text": "중요합니다.",
+              "offset_ms": 17178.3,
+              "duration_ms": 1109.2
+            }
+          ]
+        },
+        {
+          "id": "seg_3",
+          "script": "세 번째는 중간고사 대체 과제입니다. 취업활동계획서와 자기소개서를 작성해 스마트 리드에 직접 입력하는 방식으로 제출합니다. 단순히 파일을 첨부하는 것이 아니라 입력 양식에 내용을 직접 작성해야 하니 혼동하지 않도록 주의하세요.",
+          "keyword": "취업활동계획서·자기소개서 입력",
+          "ref": "b3",
+          "highlight": null,
+          "effect": "highlighter",
+          "audio": "audio/slide_012_seg_03.mp3",
+          "duration_ms": 19337.5,
+          "words": [
+            {
+              "text": "세",
+              "offset_ms": 50.0,
+              "duration_ms": 235.2
+            },
+            {
+              "text": "번째는",
+              "offset_ms": 285.2,
+              "duration_ms": 705.5
+            },
+            {
+              "text": "중간고사",
+              "offset_ms": 990.6,
+              "duration_ms": 940.6
+            },
+            {
+              "text": "대체",
+              "offset_ms": 1931.2,
+              "duration_ms": 470.3
+            },
+            {
+              "text": "과제입니다.",
+              "offset_ms": 2401.6,
+              "duration_ms": 1410.9
+            },
+            {
+              "text": "취업활동계획서와",
+              "offset_ms": 3812.5,
+              "duration_ms": 1512.8
+            },
+            {
+              "text": "자기소개서를",
+              "offset_ms": 5325.3,
+              "duration_ms": 1134.6
+            },
+            {
+              "text": "작성해",
+              "offset_ms": 6459.9,
+              "duration_ms": 567.3
+            },
+            {
+              "text": "스마트",
+              "offset_ms": 7027.2,
+              "duration_ms": 567.3
+            },
+            {
+              "text": "리드에",
+              "offset_ms": 7594.6,
+              "duration_ms": 567.3
+            },
+            {
+              "text": "직접",
+              "offset_ms": 8161.9,
+              "duration_ms": 378.2
+            },
+            {
+              "text": "입력하는",
+              "offset_ms": 8540.1,
+              "duration_ms": 756.4
+            },
+            {
+              "text": "방식으로",
+              "offset_ms": 9296.5,
+              "duration_ms": 756.4
+            },
+            {
+              "text": "제출합니다.",
+              "offset_ms": 10052.9,
+              "duration_ms": 1134.6
+            },
+            {
+              "text": "단순히",
+              "offset_ms": 11187.5,
+              "duration_ms": 555.7
+            },
+            {
+              "text": "파일을",
+              "offset_ms": 11743.2,
+              "duration_ms": 555.7
+            },
+            {
+              "text": "첨부하는",
+              "offset_ms": 12298.9,
+              "duration_ms": 740.9
+            },
+            {
+              "text": "것이",
+              "offset_ms": 13039.8,
+              "duration_ms": 370.5
+            },
+            {
+              "text": "아니라",
+              "offset_ms": 13410.2,
+              "duration_ms": 555.7
+            },
+            {
+              "text": "입력",
+              "offset_ms": 13965.9,
+              "duration_ms": 370.5
+            },
+            {
+              "text": "양식에",
+              "offset_ms": 14336.4,
+              "duration_ms": 555.7
+            },
+            {
+              "text": "내용을",
+              "offset_ms": 14892.0,
+              "duration_ms": 555.7
+            },
+            {
+              "text": "직접",
+              "offset_ms": 15447.7,
+              "duration_ms": 370.5
+            },
+            {
+              "text": "작성해야",
+              "offset_ms": 15818.2,
+              "duration_ms": 740.9
+            },
+            {
+              "text": "하니",
+              "offset_ms": 16559.1,
+              "duration_ms": 370.5
+            },
+            {
+              "text": "혼동하지",
+              "offset_ms": 16929.5,
+              "duration_ms": 740.9
+            },
+            {
+              "text": "않도록",
+              "offset_ms": 17670.5,
+              "duration_ms": 555.7
+            },
+            {
+              "text": "주의하세요.",
+              "offset_ms": 18226.1,
+              "duration_ms": 1111.4
+            }
+          ]
+        },
+        {
+          "id": "seg_4",
+          "script": "네 번째는 코딩 테스트 참여입니다. 사업단에서 별도로 안내하는 일정에 맞춰 응시해야 하므로, 공지를 놓치지 않도록 평소에 스마트 리드 공지사항을 자주 확인해 두시기 바랍니다.",
+          "keyword": "코딩 테스트 참여",
+          "ref": "b4",
+          "highlight": null,
+          "effect": "highlighter",
+          "audio": "audio/slide_012_seg_04.mp3",
+          "duration_ms": 13325.0,
+          "words": [
+            {
+              "text": "네",
+              "offset_ms": 50.0,
+              "duration_ms": 220.8
+            },
+            {
+              "text": "번째는",
+              "offset_ms": 270.8,
+              "duration_ms": 662.5
+            },
+            {
+              "text": "코딩",
+              "offset_ms": 933.3,
+              "duration_ms": 441.7
+            },
+            {
+              "text": "테스트",
+              "offset_ms": 1375.0,
+              "duration_ms": 662.5
+            },
+            {
+              "text": "참여입니다.",
+              "offset_ms": 2037.5,
+              "duration_ms": 1325.0
+            },
+            {
+              "text": "사업단에서",
+              "offset_ms": 3362.5,
+              "duration_ms": 830.2
+            },
+            {
+              "text": "별도로",
+              "offset_ms": 4192.7,
+              "duration_ms": 498.1
+            },
+            {
+              "text": "안내하는",
+              "offset_ms": 4690.8,
+              "duration_ms": 664.2
+            },
+            {
+              "text": "일정에",
+              "offset_ms": 5355.0,
+              "duration_ms": 498.1
+            },
+            {
+              "text": "맞춰",
+              "offset_ms": 5853.1,
+              "duration_ms": 332.1
+            },
+            {
+              "text": "응시해야",
+              "offset_ms": 6185.2,
+              "duration_ms": 664.2
+            },
+            {
+              "text": "하므로,",
+              "offset_ms": 6849.4,
+              "duration_ms": 664.2
+            },
+            {
+              "text": "공지를",
+              "offset_ms": 7513.5,
+              "duration_ms": 498.1
+            },
+            {
+              "text": "놓치지",
+              "offset_ms": 8011.7,
+              "duration_ms": 498.1
+            },
+            {
+              "text": "않도록",
+              "offset_ms": 8509.8,
+              "duration_ms": 498.1
+            },
+            {
+              "text": "평소에",
+              "offset_ms": 9007.9,
+              "duration_ms": 498.1
+            },
+            {
+              "text": "스마트",
+              "offset_ms": 9506.0,
+              "duration_ms": 498.1
+            },
+            {
+              "text": "리드",
+              "offset_ms": 10004.2,
+              "duration_ms": 332.1
+            },
+            {
+              "text": "공지사항을",
+              "offset_ms": 10336.3,
+              "duration_ms": 830.2
+            },
+            {
+              "text": "자주",
+              "offset_ms": 11166.5,
+              "duration_ms": 332.1
+            },
+            {
+              "text": "확인해",
+              "offset_ms": 11498.5,
+              "duration_ms": 498.1
+            },
+            {
+              "text": "두시기",
+              "offset_ms": 11996.7,
+              "duration_ms": 498.1
+            },
+            {
+              "text": "바랍니다.",
+              "offset_ms": 12494.8,
+              "duration_ms": 830.2
+            }
+          ]
+        },
+        {
+          "id": "seg_5",
+          "script": "다섯 번째는 학기말 설문 참여입니다. 학기가 끝날 무렵 안내되는 설문에 응답을 완료하면 마지막 항목이 충족됩니다. 지금까지 살펴본 다섯 가지 항목을 하나도 빠짐없이 완수해야 최종 Pass를 받을 수 있으니, 체크리스트를 출력해 두고 하나씩 확인해 가며 진행하시길 권장합니다.",
+          "keyword": "학기말 설문 참여",
+          "ref": "b5",
+          "highlight": null,
+          "effect": "highlighter",
+          "audio": "audio/slide_012_seg_05.mp3",
+          "duration_ms": 21912.5,
+          "words": [
+            {
+              "text": "다섯",
+              "offset_ms": 50.0,
+              "duration_ms": 446.9
+            },
+            {
+              "text": "번째는",
+              "offset_ms": 496.9,
+              "duration_ms": 670.3
+            },
+            {
+              "text": "학기말",
+              "offset_ms": 1167.2,
+              "duration_ms": 670.3
+            },
+            {
+              "text": "설문",
+              "offset_ms": 1837.5,
+              "duration_ms": 446.9
+            },
+            {
+              "text": "참여입니다.",
+              "offset_ms": 2284.4,
+              "duration_ms": 1340.6
+            },
+            {
+              "text": "학기가",
+              "offset_ms": 3625.0,
+              "duration_ms": 592.0
+            },
+            {
+              "text": "끝날",
+              "offset_ms": 4217.0,
+              "duration_ms": 394.7
+            },
+            {
+              "text": "무렵",
+              "offset_ms": 4611.7,
+              "duration_ms": 394.7
+            },
+            {
+              "text": "안내되는",
+              "offset_ms": 5006.4,
+              "duration_ms": 789.4
+            },
+            {
+              "text": "설문에",
+              "offset_ms": 5795.8,
+              "duration_ms": 592.0
+            },
+            {
+              "text": "응답을",
+              "offset_ms": 6387.9,
+              "duration_ms": 592.0
+            },
+            {
+              "text": "완료하면",
+              "offset_ms": 6979.9,
+              "duration_ms": 789.4
+            },
+            {
+              "text": "마지막",
+              "offset_ms": 7769.3,
+              "duration_ms": 592.0
+            },
+            {
+              "text": "항목이",
+              "offset_ms": 8361.4,
+              "duration_ms": 592.0
+            },
+            {
+              "text": "충족됩니다.",
+              "offset_ms": 8953.4,
+              "duration_ms": 1184.1
+            },
+            {
+              "text": "지금까지",
+              "offset_ms": 10137.5,
+              "duration_ms": 682.6
+            },
+            {
+              "text": "살펴본",
+              "offset_ms": 10820.1,
+              "duration_ms": 512.0
+            },
+            {
+              "text": "다섯",
+              "offset_ms": 11332.1,
+              "duration_ms": 341.3
+            },
+            {
+              "text": "가지",
+              "offset_ms": 11673.4,
+              "duration_ms": 341.3
+            },
+            {
+              "text": "항목을",
+              "offset_ms": 12014.7,
+              "duration_ms": 512.0
+            },
+            {
+              "text": "하나도",
+              "offset_ms": 12526.6,
+              "duration_ms": 512.0
+            },
+            {
+              "text": "빠짐없이",
+              "offset_ms": 13038.6,
+              "duration_ms": 682.6
+            },
+            {
+              "text": "완수해야",
+              "offset_ms": 13721.2,
+              "duration_ms": 682.6
+            },
+            {
+              "text": "최종",
+              "offset_ms": 14403.8,
+              "duration_ms": 341.3
+            },
+            {
+              "text": "Pass를",
+              "offset_ms": 14745.1,
+              "duration_ms": 853.3
+            },
+            {
+              "text": "받을",
+              "offset_ms": 15598.4,
+              "duration_ms": 341.3
+            },
+            {
+              "text": "수",
+              "offset_ms": 15939.7,
+              "duration_ms": 170.7
+            },
+            {
+              "text": "있으니,",
+              "offset_ms": 16110.3,
+              "duration_ms": 682.6
+            },
+            {
+              "text": "체크리스트를",
+              "offset_ms": 16792.9,
+              "duration_ms": 1023.9
+            },
+            {
+              "text": "출력해",
+              "offset_ms": 17816.8,
+              "duration_ms": 512.0
+            },
+            {
+              "text": "두고",
+              "offset_ms": 18328.8,
+              "duration_ms": 341.3
+            },
+            {
+              "text": "하나씩",
+              "offset_ms": 18670.1,
+              "duration_ms": 512.0
+            },
+            {
+              "text": "확인해",
+              "offset_ms": 19182.1,
+              "duration_ms": 512.0
+            },
+            {
+              "text": "가며",
+              "offset_ms": 19694.0,
+              "duration_ms": 341.3
+            },
+            {
+              "text": "진행하시길",
+              "offset_ms": 20035.3,
+              "duration_ms": 853.3
+            },
+            {
+              "text": "권장합니다.",
+              "offset_ms": 20888.6,
+              "duration_ms": 1023.9
+            }
+          ]
+        }
+      ],
+      "html": "slides/slide_012.html"
+    },
+    {
+      "index": 13,
+      "title": "핵심 원칙 강조",
+      "segments": [
+        {
+          "id": "seg_1",
+          "script": "자, 지금까지 다섯 가지 필수 항목을 하나씩 살펴봤는데요, 이 문장을 꼭 기억해 주시기 바랍니다. 다섯 항목을 모두 완수해야만 Pass를 받을 수 있습니다. 하나라도 빠지면 Fail 처리가 되니, 앞 슬라이드의 체크리스트를 다시 한번 꼼꼼히 확인하시기 바랍니다.",
+          "keyword": "하나라도 누락되면 Fail",
+          "ref": "q",
+          "highlight": null,
+          "effect": "highlighter",
+          "audio": "audio/slide_013_seg_01.mp3",
+          "duration_ms": 20250.0,
+          "words": [
+            {
+              "text": "자,",
+              "offset_ms": 50.0,
+              "duration_ms": 382.9
+            },
+            {
+              "text": "지금까지",
+              "offset_ms": 432.9,
+              "duration_ms": 765.9
+            },
+            {
+              "text": "다섯",
+              "offset_ms": 1198.8,
+              "duration_ms": 382.9
+            },
+            {
+              "text": "가지",
+              "offset_ms": 1581.7,
+              "duration_ms": 382.9
+            },
+            {
+              "text": "필수",
+              "offset_ms": 1964.6,
+              "duration_ms": 382.9
+            },
+            {
+              "text": "항목을",
+              "offset_ms": 2347.6,
+              "duration_ms": 574.4
+            },
+            {
+              "text": "하나씩",
+              "offset_ms": 2922.0,
+              "duration_ms": 574.4
+            },
+            {
+              "text": "살펴봤는데요,",
+              "offset_ms": 3496.3,
+              "duration_ms": 1340.2
+            },
+            {
+              "text": "이",
+              "offset_ms": 4836.6,
+              "duration_ms": 191.5
+            },
+            {
+              "text": "문장을",
+              "offset_ms": 5028.0,
+              "duration_ms": 574.4
+            },
+            {
+              "text": "꼭",
+              "offset_ms": 5602.4,
+              "duration_ms": 191.5
+            },
+            {
+              "text": "기억해",
+              "offset_ms": 5793.9,
+              "duration_ms": 574.4
+            },
+            {
+              "text": "주시기",
+              "offset_ms": 6368.3,
+              "duration_ms": 574.4
+            },
+            {
+              "text": "바랍니다.",
+              "offset_ms": 6942.7,
+              "duration_ms": 957.3
+            },
+            {
+              "text": "다섯",
+              "offset_ms": 7900.0,
+              "duration_ms": 369.0
+            },
+            {
+              "text": "항목을",
+              "offset_ms": 8269.0,
+              "duration_ms": 553.5
+            },
+            {
+              "text": "모두",
+              "offset_ms": 8822.5,
+              "duration_ms": 369.0
+            },
+            {
+              "text": "완수해야만",
+              "offset_ms": 9191.5,
+              "duration_ms": 922.5
+            },
+            {
+              "text": "Pass를",
+              "offset_ms": 10114.0,
+              "duration_ms": 922.5
+            },
+            {
+              "text": "받을",
+              "offset_ms": 11036.5,
+              "duration_ms": 369.0
+            },
+            {
+              "text": "수",
+              "offset_ms": 11405.5,
+              "duration_ms": 184.5
+            },
+            {
+              "text": "있습니다.",
+              "offset_ms": 11590.0,
+              "duration_ms": 922.5
+            },
+            {
+              "text": "하나라도",
+              "offset_ms": 12512.5,
+              "duration_ms": 672.8
+            },
+            {
+              "text": "빠지면",
+              "offset_ms": 13185.3,
+              "duration_ms": 504.6
+            },
+            {
+              "text": "Fail",
+              "offset_ms": 13689.9,
+              "duration_ms": 672.8
+            },
+            {
+              "text": "처리가",
+              "offset_ms": 14362.8,
+              "duration_ms": 504.6
+            },
+            {
+              "text": "되니,",
+              "offset_ms": 14867.4,
+              "duration_ms": 504.6
+            },
+            {
+              "text": "앞",
+              "offset_ms": 15372.0,
+              "duration_ms": 168.2
+            },
+            {
+              "text": "슬라이드의",
+              "offset_ms": 15540.2,
+              "duration_ms": 841.0
+            },
+            {
+              "text": "체크리스트를",
+              "offset_ms": 16381.3,
+              "duration_ms": 1009.2
+            },
+            {
+              "text": "다시",
+              "offset_ms": 17390.5,
+              "duration_ms": 336.4
+            },
+            {
+              "text": "한번",
+              "offset_ms": 17726.9,
+              "duration_ms": 336.4
+            },
+            {
+              "text": "꼼꼼히",
+              "offset_ms": 18063.3,
+              "duration_ms": 504.6
+            },
+            {
+              "text": "확인하시기",
+              "offset_ms": 18567.9,
+              "duration_ms": 841.0
+            },
+            {
+              "text": "바랍니다.",
+              "offset_ms": 19409.0,
+              "duration_ms": 841.0
+            }
+          ]
+        },
+        {
+          "id": "seg_2",
+          "script": "이 원칙은 오디세이 세미나 3의 공식 수업 운영 원칙으로, 예외 없이 모든 수강생에게 동일하게 적용됩니다. '설마 하나쯤은 괜찮겠지'라는 생각은 금물이니, 마감일 전에 반드시 모든 항목을 완료했는지 스스로 점검해 주세요.",
+          "keyword": "수업 운영 원칙",
+          "ref": "attr",
+          "highlight": null,
+          "effect": "highlighter",
+          "audio": "audio/slide_013_seg_02.mp3",
+          "duration_ms": 17737.5,
+          "words": [
+            {
+              "text": "이",
+              "offset_ms": 50.0,
+              "duration_ms": 191.4
+            },
+            {
+              "text": "원칙은",
+              "offset_ms": 241.4,
+              "duration_ms": 574.2
+            },
+            {
+              "text": "오디세이",
+              "offset_ms": 815.6,
+              "duration_ms": 765.6
+            },
+            {
+              "text": "세미나",
+              "offset_ms": 1581.1,
+              "duration_ms": 574.2
+            },
+            {
+              "text": "3의",
+              "offset_ms": 2155.3,
+              "duration_ms": 382.8
+            },
+            {
+              "text": "공식",
+              "offset_ms": 2538.1,
+              "duration_ms": 382.8
+            },
+            {
+              "text": "수업",
+              "offset_ms": 2920.8,
+              "duration_ms": 382.8
+            },
+            {
+              "text": "운영",
+              "offset_ms": 3303.6,
+              "duration_ms": 382.8
+            },
+            {
+              "text": "원칙으로,",
+              "offset_ms": 3686.4,
+              "duration_ms": 956.9
+            },
+            {
+              "text": "예외",
+              "offset_ms": 4643.3,
+              "duration_ms": 382.8
+            },
+            {
+              "text": "없이",
+              "offset_ms": 5026.1,
+              "duration_ms": 382.8
+            },
+            {
+              "text": "모든",
+              "offset_ms": 5408.9,
+              "duration_ms": 382.8
+            },
+            {
+              "text": "수강생에게",
+              "offset_ms": 5791.7,
+              "duration_ms": 956.9
+            },
+            {
+              "text": "동일하게",
+              "offset_ms": 6748.6,
+              "duration_ms": 765.6
+            },
+            {
+              "text": "적용됩니다.",
+              "offset_ms": 7514.2,
+              "duration_ms": 1148.3
+            },
+            {
+              "text": "'설마",
+              "offset_ms": 8662.5,
+              "duration_ms": 544.5
+            },
+            {
+              "text": "하나쯤은",
+              "offset_ms": 9207.0,
+              "duration_ms": 726.0
+            },
+            {
+              "text": "괜찮겠지'라는",
+              "offset_ms": 9933.0,
+              "duration_ms": 1270.5
+            },
+            {
+              "text": "생각은",
+              "offset_ms": 11203.5,
+              "duration_ms": 544.5
+            },
+            {
+              "text": "금물이니,",
+              "offset_ms": 11748.0,
+              "duration_ms": 907.5
+            },
+            {
+              "text": "마감일",
+              "offset_ms": 12655.5,
+              "duration_ms": 544.5
+            },
+            {
+              "text": "전에",
+              "offset_ms": 13200.0,
+              "duration_ms": 363.0
+            },
+            {
+              "text": "반드시",
+              "offset_ms": 13563.0,
+              "duration_ms": 544.5
+            },
+            {
+              "text": "모든",
+              "offset_ms": 14107.5,
+              "duration_ms": 363.0
+            },
+            {
+              "text": "항목을",
+              "offset_ms": 14470.5,
+              "duration_ms": 544.5
+            },
+            {
+              "text": "완료했는지",
+              "offset_ms": 15015.0,
+              "duration_ms": 907.5
+            },
+            {
+              "text": "스스로",
+              "offset_ms": 15922.5,
+              "duration_ms": 544.5
+            },
+            {
+              "text": "점검해",
+              "offset_ms": 16467.0,
+              "duration_ms": 544.5
+            },
+            {
+              "text": "주세요.",
+              "offset_ms": 17011.5,
+              "duration_ms": 726.0
+            }
+          ]
+        }
+      ],
+      "html": "slides/slide_013.html"
+    },
+    {
+      "index": 14,
+      "title": "함께 준비하는 진로와 취업",
+      "segments": [
+        {
+          "id": "seg_1",
+          "script": "이번 오디세이 세미나 3 강의는 여기서 마무리됩니다. 지금까지 살펴본 다섯 가지 필수 항목들은 여러분의 진로와 취업을 함께 준비하기 위해 설계된 것들입니다. 하나하나 성실히 완수하다 보면 졸업 후 진로 방향이 한층 뚜렷해질 것입니다.",
+          "keyword": "함께 준비하는 진로와 취업",
+          "ref": "t",
+          "highlight": null,
+          "effect": "highlighter",
+          "audio": "audio/slide_014_seg_01.mp3",
+          "duration_ms": 18987.5,
+          "words": [
+            {
+              "text": "이번",
+              "offset_ms": 50.0,
+              "duration_ms": 395.7
+            },
+            {
+              "text": "오디세이",
+              "offset_ms": 445.7,
+              "duration_ms": 791.3
+            },
+            {
+              "text": "세미나",
+              "offset_ms": 1237.0,
+              "duration_ms": 593.5
+            },
+            {
+              "text": "3",
+              "offset_ms": 1830.4,
+              "duration_ms": 197.8
+            },
+            {
+              "text": "강의는",
+              "offset_ms": 2028.3,
+              "duration_ms": 593.5
+            },
+            {
+              "text": "여기서",
+              "offset_ms": 2621.7,
+              "duration_ms": 593.5
+            },
+            {
+              "text": "마무리됩니다.",
+              "offset_ms": 3215.2,
+              "duration_ms": 1384.8
+            },
+            {
+              "text": "지금까지",
+              "offset_ms": 4600.0,
+              "duration_ms": 725.0
+            },
+            {
+              "text": "살펴본",
+              "offset_ms": 5325.0,
+              "duration_ms": 543.8
+            },
+            {
+              "text": "다섯",
+              "offset_ms": 5868.8,
+              "duration_ms": 362.5
+            },
+            {
+              "text": "가지",
+              "offset_ms": 6231.2,
+              "duration_ms": 362.5
+            },
+            {
+              "text": "필수",
+              "offset_ms": 6593.8,
+              "duration_ms": 362.5
+            },
+            {
+              "text": "항목들은",
+              "offset_ms": 6956.2,
+              "duration_ms": 725.0
+            },
+            {
+              "text": "여러분의",
+              "offset_ms": 7681.2,
+              "duration_ms": 725.0
+            },
+            {
+              "text": "진로와",
+              "offset_ms": 8406.2,
+              "duration_ms": 543.8
+            },
+            {
+              "text": "취업을",
+              "offset_ms": 8950.0,
+              "duration_ms": 543.8
+            },
+            {
+              "text": "함께",
+              "offset_ms": 9493.8,
+              "duration_ms": 362.5
+            },
+            {
+              "text": "준비하기",
+              "offset_ms": 9856.2,
+              "duration_ms": 725.0
+            },
+            {
+              "text": "위해",
+              "offset_ms": 10581.2,
+              "duration_ms": 362.5
+            },
+            {
+              "text": "설계된",
+              "offset_ms": 10943.8,
+              "duration_ms": 543.8
+            },
+            {
+              "text": "것들입니다.",
+              "offset_ms": 11487.5,
+              "duration_ms": 1087.5
+            },
+            {
+              "text": "하나하나",
+              "offset_ms": 12575.0,
+              "duration_ms": 801.6
+            },
+            {
+              "text": "성실히",
+              "offset_ms": 13376.6,
+              "duration_ms": 601.2
+            },
+            {
+              "text": "완수하다",
+              "offset_ms": 13977.7,
+              "duration_ms": 801.6
+            },
+            {
+              "text": "보면",
+              "offset_ms": 14779.3,
+              "duration_ms": 400.8
+            },
+            {
+              "text": "졸업",
+              "offset_ms": 15180.1,
+              "duration_ms": 400.8
+            },
+            {
+              "text": "후",
+              "offset_ms": 15580.9,
+              "duration_ms": 200.4
+            },
+            {
+              "text": "진로",
+              "offset_ms": 15781.2,
+              "duration_ms": 400.8
+            },
+            {
+              "text": "방향이",
+              "offset_ms": 16182.0,
+              "duration_ms": 601.2
+            },
+            {
+              "text": "한층",
+              "offset_ms": 16783.2,
+              "duration_ms": 400.8
+            },
+            {
+              "text": "뚜렷해질",
+              "offset_ms": 17184.0,
+              "duration_ms": 801.6
+            },
+            {
+              "text": "것입니다.",
+              "offset_ms": 17985.5,
+              "duration_ms": 1002.0
+            }
+          ]
+        },
+        {
+          "id": "seg_2",
+          "script": "궁금한 사항이 있으시면 언제든지 이메일로 문의해 주세요. 여러분의 성공적인 진로 준비를 항상 응원합니다.",
+          "keyword": "이메일로 문의",
+          "ref": "st",
+          "highlight": null,
+          "effect": "highlighter",
+          "audio": "audio/slide_014_seg_02.mp3",
+          "duration_ms": 9925.0,
+          "words": [
+            {
+              "text": "궁금한",
+              "offset_ms": 50.0,
+              "duration_ms": 651.0
+            },
+            {
+              "text": "사항이",
+              "offset_ms": 701.0,
+              "duration_ms": 651.0
+            },
+            {
+              "text": "있으시면",
+              "offset_ms": 1352.0,
+              "duration_ms": 868.0
+            },
+            {
+              "text": "언제든지",
+              "offset_ms": 2220.0,
+              "duration_ms": 868.0
+            },
+            {
+              "text": "이메일로",
+              "offset_ms": 3088.0,
+              "duration_ms": 868.0
+            },
+            {
+              "text": "문의해",
+              "offset_ms": 3956.0,
+              "duration_ms": 651.0
+            },
+            {
+              "text": "주세요.",
+              "offset_ms": 4607.0,
+              "duration_ms": 868.0
+            },
+            {
+              "text": "여러분의",
+              "offset_ms": 5475.0,
+              "duration_ms": 847.6
+            },
+            {
+              "text": "성공적인",
+              "offset_ms": 6322.6,
+              "duration_ms": 847.6
+            },
+            {
+              "text": "진로",
+              "offset_ms": 7170.2,
+              "duration_ms": 423.8
+            },
+            {
+              "text": "준비를",
+              "offset_ms": 7594.0,
+              "duration_ms": 635.7
+            },
+            {
+              "text": "항상",
+              "offset_ms": 8229.8,
+              "duration_ms": 423.8
+            },
+            {
+              "text": "응원합니다.",
+              "offset_ms": 8653.6,
+              "duration_ms": 1271.4
+            }
+          ]
+        }
+      ],
+      "html": "slides/slide_014.html"
+    }
+  ]
+}

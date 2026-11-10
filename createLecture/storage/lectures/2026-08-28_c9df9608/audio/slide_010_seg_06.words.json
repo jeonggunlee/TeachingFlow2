@@ -1,0 +1,92 @@
+[
+  {
+    "text": "이를",
+    "offset_ms": 50.0,
+    "duration_ms": 260.5
+  },
+  {
+    "text": "Representation",
+    "offset_ms": 310.5,
+    "duration_ms": 1823.7
+  },
+  {
+    "text": "Learning,",
+    "offset_ms": 2134.2,
+    "duration_ms": 1172.4
+  },
+  {
+    "text": "즉",
+    "offset_ms": 3306.6,
+    "duration_ms": 130.3
+  },
+  {
+    "text": "표현",
+    "offset_ms": 3436.8,
+    "duration_ms": 260.5
+  },
+  {
+    "text": "학습이라고",
+    "offset_ms": 3697.4,
+    "duration_ms": 651.3
+  },
+  {
+    "text": "부릅니다.",
+    "offset_ms": 4348.7,
+    "duration_ms": 651.3
+  },
+  {
+    "text": "신경망이",
+    "offset_ms": 5000.0,
+    "duration_ms": 762.2
+  },
+  {
+    "text": "여러",
+    "offset_ms": 5762.2,
+    "duration_ms": 381.1
+  },
+  {
+    "text": "계층을",
+    "offset_ms": 6143.3,
+    "duration_ms": 571.6
+  },
+  {
+    "text": "거치면서",
+    "offset_ms": 6714.9,
+    "duration_ms": 762.2
+  },
+  {
+    "text": "데이터의",
+    "offset_ms": 7477.1,
+    "duration_ms": 762.2
+  },
+  {
+    "text": "계층적",
+    "offset_ms": 8239.3,
+    "duration_ms": 571.6
+  },
+  {
+    "text": "특징을",
+    "offset_ms": 8811.0,
+    "duration_ms": 571.6
+  },
+  {
+    "text": "스스로",
+    "offset_ms": 9382.6,
+    "duration_ms": 571.6
+  },
+  {
+    "text": "자동으로",
+    "offset_ms": 9954.3,
+    "duration_ms": 762.2
+  },
+  {
+    "text": "학습한다는",
+    "offset_ms": 10716.5,
+    "duration_ms": 952.7
+  },
+  {
+    "text": "의미입니다.",
+    "offset_ms": 11669.2,
+    "duration_ms": 1143.3
+  }
+]

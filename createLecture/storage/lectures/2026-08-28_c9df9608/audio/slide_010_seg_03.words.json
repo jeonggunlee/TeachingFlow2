@@ -1,0 +1,112 @@
+[
+  {
+    "text": "머신러닝은",
+    "offset_ms": 50.0,
+    "duration_ms": 1166.7
+  },
+  {
+    "text": "이",
+    "offset_ms": 1216.7,
+    "duration_ms": 233.3
+  },
+  {
+    "text": "방향을",
+    "offset_ms": 1450.0,
+    "duration_ms": 700.0
+  },
+  {
+    "text": "뒤집습니다.",
+    "offset_ms": 2150.0,
+    "duration_ms": 1400.0
+  },
+  {
+    "text": "데이터와",
+    "offset_ms": 3550.0,
+    "duration_ms": 723.8
+  },
+  {
+    "text": "정답(Output)을",
+    "offset_ms": 4273.8,
+    "duration_ms": 1628.4
+  },
+  {
+    "text": "함께",
+    "offset_ms": 5902.2,
+    "duration_ms": 361.9
+  },
+  {
+    "text": "제공하면",
+    "offset_ms": 6264.1,
+    "duration_ms": 723.8
+  },
+  {
+    "text": "컴퓨터가",
+    "offset_ms": 6987.8,
+    "duration_ms": 723.8
+  },
+  {
+    "text": "스스로",
+    "offset_ms": 7711.6,
+    "duration_ms": 542.8
+  },
+  {
+    "text": "규칙,",
+    "offset_ms": 8254.4,
+    "duration_ms": 542.8
+  },
+  {
+    "text": "즉",
+    "offset_ms": 8797.2,
+    "duration_ms": 180.9
+  },
+  {
+    "text": "모델을",
+    "offset_ms": 8978.1,
+    "duration_ms": 542.8
+  },
+  {
+    "text": "학습해",
+    "offset_ms": 9520.9,
+    "duration_ms": 542.8
+  },
+  {
+    "text": "냅니다.",
+    "offset_ms": 10063.8,
+    "duration_ms": 723.8
+  },
+  {
+    "text": "사람이",
+    "offset_ms": 10787.5,
+    "duration_ms": 600.0
+  },
+  {
+    "text": "일일이",
+    "offset_ms": 11387.5,
+    "duration_ms": 600.0
+  },
+  {
+    "text": "규칙을",
+    "offset_ms": 11987.5,
+    "duration_ms": 600.0
+  },
+  {
+    "text": "코딩할",
+    "offset_ms": 12587.5,
+    "duration_ms": 600.0
+  },
+  {
+    "text": "필요가",
+    "offset_ms": 13187.5,
+    "duration_ms": 600.0
+  },
+  {
+    "text": "없어진",
+    "offset_ms": 13787.5,
+    "duration_ms": 600.0
+  },
+  {
+    "text": "것입니다.",
+    "offset_ms": 14387.5,
+    "duration_ms": 1000.0
+  }
+]

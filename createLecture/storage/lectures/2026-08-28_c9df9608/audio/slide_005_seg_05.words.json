@@ -1,0 +1,182 @@
+[
+  {
+    "text": "가장",
+    "offset_ms": 50.0,
+    "duration_ms": 325.0
+  },
+  {
+    "text": "최근의",
+    "offset_ms": 375.0,
+    "duration_ms": 487.5
+  },
+  {
+    "text": "흐름은",
+    "offset_ms": 862.5,
+    "duration_ms": 487.5
+  },
+  {
+    "text": "Transformer",
+    "offset_ms": 1350.0,
+    "duration_ms": 1787.5
+  },
+  {
+    "text": "구조를",
+    "offset_ms": 3137.5,
+    "duration_ms": 487.5
+  },
+  {
+    "text": "기반으로",
+    "offset_ms": 3625.0,
+    "duration_ms": 650.0
+  },
+  {
+    "text": "한",
+    "offset_ms": 4275.0,
+    "duration_ms": 162.5
+  },
+  {
+    "text": "BERT,",
+    "offset_ms": 4437.5,
+    "duration_ms": 812.5
+  },
+  {
+    "text": "GPT",
+    "offset_ms": 5250.0,
+    "duration_ms": 487.5
+  },
+  {
+    "text": "같은",
+    "offset_ms": 5737.5,
+    "duration_ms": 325.0
+  },
+  {
+    "text": "대형",
+    "offset_ms": 6062.5,
+    "duration_ms": 325.0
+  },
+  {
+    "text": "언어",
+    "offset_ms": 6387.5,
+    "duration_ms": 325.0
+  },
+  {
+    "text": "모델,",
+    "offset_ms": 6712.5,
+    "duration_ms": 487.5
+  },
+  {
+    "text": "즉",
+    "offset_ms": 7200.0,
+    "duration_ms": 162.5
+  },
+  {
+    "text": "LLM과",
+    "offset_ms": 7362.5,
+    "duration_ms": 650.0
+  },
+  {
+    "text": "생성형",
+    "offset_ms": 8012.5,
+    "duration_ms": 487.5
+  },
+  {
+    "text": "AI입니다.",
+    "offset_ms": 8500.0,
+    "duration_ms": 975.0
+  },
+  {
+    "text": "이",
+    "offset_ms": 9475.0,
+    "duration_ms": 191.2
+  },
+  {
+    "text": "모델들은",
+    "offset_ms": 9666.2,
+    "duration_ms": 765.0
+  },
+  {
+    "text": "언어,",
+    "offset_ms": 10431.2,
+    "duration_ms": 573.8
+  },
+  {
+    "text": "이미지,",
+    "offset_ms": 11005.0,
+    "duration_ms": 765.0
+  },
+  {
+    "text": "음성",
+    "offset_ms": 11770.0,
+    "duration_ms": 382.5
+  },
+  {
+    "text": "등",
+    "offset_ms": 12152.5,
+    "duration_ms": 191.2
+  },
+  {
+    "text": "다양한",
+    "offset_ms": 12343.8,
+    "duration_ms": 573.8
+  },
+  {
+    "text": "영역에서",
+    "offset_ms": 12917.5,
+    "duration_ms": 765.0
+  },
+  {
+    "text": "인간",
+    "offset_ms": 13682.5,
+    "duration_ms": 382.5
+  },
+  {
+    "text": "수준에",
+    "offset_ms": 14065.0,
+    "duration_ms": 573.8
+  },
+  {
+    "text": "근접하는",
+    "offset_ms": 14638.8,
+    "duration_ms": 765.0
+  },
+  {
+    "text": "성능을",
+    "offset_ms": 15403.8,
+    "duration_ms": 573.8
+  },
+  {
+    "text": "보여주며,",
+    "offset_ms": 15977.5,
+    "duration_ms": 956.2
+  },
+  {
+    "text": "현재",
+    "offset_ms": 16933.8,
+    "duration_ms": 382.5
+  },
+  {
+    "text": "딥러닝",
+    "offset_ms": 17316.2,
+    "duration_ms": 573.8
+  },
+  {
+    "text": "기술의",
+    "offset_ms": 17890.0,
+    "duration_ms": 573.8
+  },
+  {
+    "text": "최전선을",
+    "offset_ms": 18463.8,
+    "duration_ms": 765.0
+  },
+  {
+    "text": "대표하고",
+    "offset_ms": 19228.8,
+    "duration_ms": 765.0
+  },
+  {
+    "text": "있습니다.",
+    "offset_ms": 19993.8,
+    "duration_ms": 956.2
+  }
+]

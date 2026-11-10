@@ -1,0 +1,102 @@
+[
+  {
+    "text": "시냅스는",
+    "offset_ms": 100.0,
+    "duration_ms": 765.3
+  },
+  {
+    "text": "뉴런",
+    "offset_ms": 865.3,
+    "duration_ms": 382.6
+  },
+  {
+    "text": "사이의",
+    "offset_ms": 1247.9,
+    "duration_ms": 574.0
+  },
+  {
+    "text": "연결",
+    "offset_ms": 1821.9,
+    "duration_ms": 382.6
+  },
+  {
+    "text": "지점으로,",
+    "offset_ms": 2204.5,
+    "duration_ms": 956.6
+  },
+  {
+    "text": "신호가",
+    "offset_ms": 3161.1,
+    "duration_ms": 574.0
+  },
+  {
+    "text": "얼마나",
+    "offset_ms": 3735.1,
+    "duration_ms": 574.0
+  },
+  {
+    "text": "강하게",
+    "offset_ms": 4309.0,
+    "duration_ms": 574.0
+  },
+  {
+    "text": "전달될지를",
+    "offset_ms": 4883.0,
+    "duration_ms": 956.6
+  },
+  {
+    "text": "조절합니다.",
+    "offset_ms": 5839.6,
+    "duration_ms": 1147.9
+  },
+  {
+    "text": "이",
+    "offset_ms": 6937.5,
+    "duration_ms": 200.4
+  },
+  {
+    "text": "신호",
+    "offset_ms": 7137.9,
+    "duration_ms": 400.9
+  },
+  {
+    "text": "세기",
+    "offset_ms": 7538.8,
+    "duration_ms": 400.9
+  },
+  {
+    "text": "조절",
+    "offset_ms": 7939.7,
+    "duration_ms": 400.9
+  },
+  {
+    "text": "기능이",
+    "offset_ms": 8340.6,
+    "duration_ms": 601.3
+  },
+  {
+    "text": "인공",
+    "offset_ms": 8942.0,
+    "duration_ms": 400.9
+  },
+  {
+    "text": "뉴런의",
+    "offset_ms": 9342.9,
+    "duration_ms": 601.3
+  },
+  {
+    "text": "가중치",
+    "offset_ms": 9944.2,
+    "duration_ms": 601.3
+  },
+  {
+    "text": "개념으로",
+    "offset_ms": 10545.5,
+    "duration_ms": 801.8
+  },
+  {
+    "text": "이어집니다.",
+    "offset_ms": 11347.3,
+    "duration_ms": 1202.7
+  }
+]

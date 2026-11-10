@@ -1,0 +1,27 @@
+{
+  "slide_index": 14,
+  "title": "신경망의 Layer 구조",
+  "segments": [
+    {
+      "id": "seg_1",
+      "ref": "y1",
+      "keyword": "Input Layer",
+      "script": "신경망의 가장 첫 번째 층은 Input Layer, 즉 입력층입니다. 이 층은 이미지의 픽셀값이나 텍스트의 수치 표현처럼 원시 데이터를 그대로 받아들이는 역할을 합니다. 앞서 살펴본 인공 뉴런들이 이 입력값을 처음으로 전달받는 출발점이라고 생각하시면 됩니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_2",
+      "ref": "y2",
+      "keyword": "Hidden Layer(s)",
+      "script": "입력층 다음에는 하나 이상의 Hidden Layer, 은닉층이 위치합니다. 이 층들은 입력 데이터에서 점점 더 추상적인 특징을 계층적으로 추출해 내는 핵심 역할을 담당합니다. 층의 수를 Depth, 각 층의 뉴런 수를 Width라고 부르며, 이 두 값이 신경망의 전체 규모와 표현력을 결정합니다. 딥러닝에서 '딥(Deep)'이라는 단어가 바로 이 은닉층이 깊게 쌓인다는 의미에서 유래했습니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_3",
+      "ref": "y3",
+      "keyword": "Output Layer",
+      "script": "마지막으로 Output Layer, 출력층은 은닉층을 거쳐 가공된 정보를 바탕으로 최종 예측값을 출력합니다. 예를 들어 분류 문제라면 각 클래스에 속할 확률을, 회귀 문제라면 연속적인 수치를 출력하게 됩니다. 이렇게 입력층-은닉층-출력층의 세 단계 구조가 신경망의 기본 골격을 이루며, 다음 슬라이드에서는 각 층을 연결하는 Weight, Bias, 그리고 Activation Function에 대해 더 자세히 살펴보겠습니다.",
+      "effect": "highlighter"
+    }
+  ]
+}

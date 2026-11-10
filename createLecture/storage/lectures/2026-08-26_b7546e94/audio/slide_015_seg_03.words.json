@@ -1,0 +1,122 @@
+[
+  {
+    "text": "마지막은",
+    "offset_ms": 100.0,
+    "duration_ms": 784.8
+  },
+  {
+    "text": "Output",
+    "offset_ms": 884.8,
+    "duration_ms": 1177.2
+  },
+  {
+    "text": "Layer,",
+    "offset_ms": 2062.0,
+    "duration_ms": 1177.2
+  },
+  {
+    "text": "출력층입니다.",
+    "offset_ms": 3239.1,
+    "duration_ms": 1373.4
+  },
+  {
+    "text": "앞선",
+    "offset_ms": 4562.5,
+    "duration_ms": 420.4
+  },
+  {
+    "text": "층들에서",
+    "offset_ms": 4982.9,
+    "duration_ms": 840.7
+  },
+  {
+    "text": "처리된",
+    "offset_ms": 5823.6,
+    "duration_ms": 630.6
+  },
+  {
+    "text": "정보를",
+    "offset_ms": 6454.2,
+    "duration_ms": 630.6
+  },
+  {
+    "text": "종합해",
+    "offset_ms": 7084.7,
+    "duration_ms": 630.6
+  },
+  {
+    "text": "최종",
+    "offset_ms": 7715.3,
+    "duration_ms": 420.4
+  },
+  {
+    "text": "예측값을",
+    "offset_ms": 8135.6,
+    "duration_ms": 840.7
+  },
+  {
+    "text": "생성합니다.",
+    "offset_ms": 8976.4,
+    "duration_ms": 1261.1
+  },
+  {
+    "text": "분류",
+    "offset_ms": 10237.5,
+    "duration_ms": 407.1
+  },
+  {
+    "text": "문제라면",
+    "offset_ms": 10644.6,
+    "duration_ms": 814.1
+  },
+  {
+    "text": "각",
+    "offset_ms": 11458.7,
+    "duration_ms": 203.5
+  },
+  {
+    "text": "클래스에",
+    "offset_ms": 11662.2,
+    "duration_ms": 814.1
+  },
+  {
+    "text": "대한",
+    "offset_ms": 12476.3,
+    "duration_ms": 407.1
+  },
+  {
+    "text": "확률값을,",
+    "offset_ms": 12883.3,
+    "duration_ms": 1017.6
+  },
+  {
+    "text": "회귀",
+    "offset_ms": 13901.0,
+    "duration_ms": 407.1
+  },
+  {
+    "text": "문제라면",
+    "offset_ms": 14308.0,
+    "duration_ms": 814.1
+  },
+  {
+    "text": "연속적인",
+    "offset_ms": 15122.1,
+    "duration_ms": 814.1
+  },
+  {
+    "text": "수치를",
+    "offset_ms": 15936.2,
+    "duration_ms": 610.6
+  },
+  {
+    "text": "출력하게",
+    "offset_ms": 16546.8,
+    "duration_ms": 814.1
+  },
+  {
+    "text": "됩니다.",
+    "offset_ms": 17360.9,
+    "duration_ms": 814.1
+  }
+]

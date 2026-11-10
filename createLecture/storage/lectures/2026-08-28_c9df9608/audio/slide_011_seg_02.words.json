@@ -1,0 +1,157 @@
+[
+  {
+    "text": "이",
+    "offset_ms": 50.0,
+    "duration_ms": 204.6
+  },
+  {
+    "text": "구성",
+    "offset_ms": 254.6,
+    "duration_ms": 409.3
+  },
+  {
+    "text": "요소들을",
+    "offset_ms": 663.9,
+    "duration_ms": 818.5
+  },
+  {
+    "text": "바탕으로",
+    "offset_ms": 1482.4,
+    "duration_ms": 818.5
+  },
+  {
+    "text": "딥러닝은",
+    "offset_ms": 2300.9,
+    "duration_ms": 818.5
+  },
+  {
+    "text": "다양한",
+    "offset_ms": 3119.4,
+    "duration_ms": 613.9
+  },
+  {
+    "text": "문제를",
+    "offset_ms": 3733.3,
+    "duration_ms": 613.9
+  },
+  {
+    "text": "해결합니다.",
+    "offset_ms": 4347.2,
+    "duration_ms": 1227.8
+  },
+  {
+    "text": "입력",
+    "offset_ms": 5575.0,
+    "duration_ms": 361.3
+  },
+  {
+    "text": "데이터를",
+    "offset_ms": 5936.3,
+    "duration_ms": 722.5
+  },
+  {
+    "text": "특정",
+    "offset_ms": 6658.8,
+    "duration_ms": 361.3
+  },
+  {
+    "text": "범주로",
+    "offset_ms": 7020.1,
+    "duration_ms": 541.9
+  },
+  {
+    "text": "나누는",
+    "offset_ms": 7562.0,
+    "duration_ms": 541.9
+  },
+  {
+    "text": "분류,",
+    "offset_ms": 8103.9,
+    "duration_ms": 541.9
+  },
+  {
+    "text": "연속적인",
+    "offset_ms": 8645.8,
+    "duration_ms": 722.5
+  },
+  {
+    "text": "수치를",
+    "offset_ms": 9368.3,
+    "duration_ms": 541.9
+  },
+  {
+    "text": "예측하는",
+    "offset_ms": 9910.2,
+    "duration_ms": 722.5
+  },
+  {
+    "text": "회귀,",
+    "offset_ms": 10632.7,
+    "duration_ms": 541.9
+  },
+  {
+    "text": "그리고",
+    "offset_ms": 11174.6,
+    "duration_ms": 541.9
+  },
+  {
+    "text": "이미지",
+    "offset_ms": 11716.5,
+    "duration_ms": 541.9
+  },
+  {
+    "text": "속",
+    "offset_ms": 12258.5,
+    "duration_ms": 180.6
+  },
+  {
+    "text": "물체의",
+    "offset_ms": 12439.1,
+    "duration_ms": 541.9
+  },
+  {
+    "text": "위치와",
+    "offset_ms": 12981.0,
+    "duration_ms": 541.9
+  },
+  {
+    "text": "종류를",
+    "offset_ms": 13522.9,
+    "duration_ms": 541.9
+  },
+  {
+    "text": "동시에",
+    "offset_ms": 14064.8,
+    "duration_ms": 541.9
+  },
+  {
+    "text": "찾아내는",
+    "offset_ms": 14606.7,
+    "duration_ms": 722.5
+  },
+  {
+    "text": "객체",
+    "offset_ms": 15329.2,
+    "duration_ms": 361.3
+  },
+  {
+    "text": "검출이",
+    "offset_ms": 15690.5,
+    "duration_ms": 541.9
+  },
+  {
+    "text": "대표적인",
+    "offset_ms": 16232.4,
+    "duration_ms": 722.5
+  },
+  {
+    "text": "응용",
+    "offset_ms": 16954.9,
+    "duration_ms": 361.3
+  },
+  {
+    "text": "분야입니다.",
+    "offset_ms": 17316.2,
+    "duration_ms": 1083.8
+  }
+]

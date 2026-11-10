@@ -1,0 +1,217 @@
+[
+  {
+    "text": "딥러닝",
+    "offset_ms": 50.0,
+    "duration_ms": 598.6
+  },
+  {
+    "text": "시스템은",
+    "offset_ms": 648.6,
+    "duration_ms": 798.1
+  },
+  {
+    "text": "크게",
+    "offset_ms": 1446.8,
+    "duration_ms": 399.1
+  },
+  {
+    "text": "여섯",
+    "offset_ms": 1845.8,
+    "duration_ms": 399.1
+  },
+  {
+    "text": "가지",
+    "offset_ms": 2244.9,
+    "duration_ms": 399.1
+  },
+  {
+    "text": "핵심",
+    "offset_ms": 2644.0,
+    "duration_ms": 399.1
+  },
+  {
+    "text": "구성",
+    "offset_ms": 3043.1,
+    "duration_ms": 399.1
+  },
+  {
+    "text": "요소로",
+    "offset_ms": 3442.1,
+    "duration_ms": 598.6
+  },
+  {
+    "text": "이루어집니다.",
+    "offset_ms": 4040.7,
+    "duration_ms": 1396.8
+  },
+  {
+    "text": "학습의",
+    "offset_ms": 5437.5,
+    "duration_ms": 404.3
+  },
+  {
+    "text": "재료가",
+    "offset_ms": 5841.8,
+    "duration_ms": 404.3
+  },
+  {
+    "text": "되는",
+    "offset_ms": 6246.0,
+    "duration_ms": 269.5
+  },
+  {
+    "text": "Data,",
+    "offset_ms": 6515.5,
+    "duration_ms": 673.8
+  },
+  {
+    "text": "예측을",
+    "offset_ms": 7189.3,
+    "duration_ms": 404.3
+  },
+  {
+    "text": "수행하는",
+    "offset_ms": 7593.6,
+    "duration_ms": 539.0
+  },
+  {
+    "text": "Neural",
+    "offset_ms": 8132.6,
+    "duration_ms": 808.5
+  },
+  {
+    "text": "Network,",
+    "offset_ms": 8941.2,
+    "duration_ms": 1078.0
+  },
+  {
+    "text": "예측",
+    "offset_ms": 10019.2,
+    "duration_ms": 269.5
+  },
+  {
+    "text": "오차를",
+    "offset_ms": 10288.7,
+    "duration_ms": 404.3
+  },
+  {
+    "text": "측정하는",
+    "offset_ms": 10693.0,
+    "duration_ms": 539.0
+  },
+  {
+    "text": "Loss",
+    "offset_ms": 11232.0,
+    "duration_ms": 539.0
+  },
+  {
+    "text": "Function,",
+    "offset_ms": 11771.0,
+    "duration_ms": 1212.8
+  },
+  {
+    "text": "그리고",
+    "offset_ms": 12983.8,
+    "duration_ms": 404.3
+  },
+  {
+    "text": "오차를",
+    "offset_ms": 13388.1,
+    "duration_ms": 404.3
+  },
+  {
+    "text": "줄여",
+    "offset_ms": 13792.4,
+    "duration_ms": 269.5
+  },
+  {
+    "text": "나가는",
+    "offset_ms": 14061.9,
+    "duration_ms": 404.3
+  },
+  {
+    "text": "Optimizer가",
+    "offset_ms": 14466.2,
+    "duration_ms": 1347.6
+  },
+  {
+    "text": "있습니다.",
+    "offset_ms": 15813.7,
+    "duration_ms": 673.8
+  },
+  {
+    "text": "여기에",
+    "offset_ms": 16487.5,
+    "duration_ms": 456.3
+  },
+  {
+    "text": "모델을",
+    "offset_ms": 16943.8,
+    "duration_ms": 456.3
+  },
+  {
+    "text": "학습시키는",
+    "offset_ms": 17400.2,
+    "duration_ms": 760.6
+  },
+  {
+    "text": "Training",
+    "offset_ms": 18160.8,
+    "duration_ms": 1216.9
+  },
+  {
+    "text": "단계와",
+    "offset_ms": 19377.7,
+    "duration_ms": 456.3
+  },
+  {
+    "text": "실제",
+    "offset_ms": 19834.0,
+    "duration_ms": 304.2
+  },
+  {
+    "text": "예측을",
+    "offset_ms": 20138.3,
+    "duration_ms": 456.3
+  },
+  {
+    "text": "수행하는",
+    "offset_ms": 20594.6,
+    "duration_ms": 608.5
+  },
+  {
+    "text": "Inference",
+    "offset_ms": 21203.1,
+    "duration_ms": 1369.0
+  },
+  {
+    "text": "단계까지",
+    "offset_ms": 22572.1,
+    "duration_ms": 608.5
+  },
+  {
+    "text": "더해져",
+    "offset_ms": 23180.6,
+    "duration_ms": 456.3
+  },
+  {
+    "text": "하나의",
+    "offset_ms": 23636.9,
+    "duration_ms": 456.3
+  },
+  {
+    "text": "딥러닝",
+    "offset_ms": 24093.3,
+    "duration_ms": 456.3
+  },
+  {
+    "text": "파이프라인이",
+    "offset_ms": 24549.6,
+    "duration_ms": 912.7
+  },
+  {
+    "text": "완성됩니다.",
+    "offset_ms": 25462.3,
+    "duration_ms": 912.7
+  }
+]

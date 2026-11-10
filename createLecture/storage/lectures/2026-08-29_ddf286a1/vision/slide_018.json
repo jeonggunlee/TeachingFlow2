@@ -1,0 +1,62 @@
+{
+  "slide_index": 18,
+  "title": "Loss Function과 학습 방법",
+  "segments": [
+    {
+      "id": "seg_1",
+      "ref": "lh",
+      "keyword": "Loss Function",
+      "script": "이번 슬라이드에서는 신경망이 어떻게 학습하는지를 이해하는 핵심 개념, Loss Function부터 살펴보겠습니다. Loss Function은 한마디로 모델이 얼마나 틀렸는지를 수치로 표현하는 함수입니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_2",
+      "ref": "l1",
+      "keyword": "실제값 y와 예측값 ŷ의 차이",
+      "script": "구체적으로는 실제값 y와 모델이 출력한 예측값 ŷ 사이의 차이를 측정합니다. 이 차이가 작을수록 모델의 예측이 정확하다는 의미이며, 학습의 목표는 바로 이 차이를 줄이는 것입니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_3",
+      "ref": "l2",
+      "keyword": "회귀(Regression) → MSE",
+      "script": "문제 유형에 따라 사용하는 Loss Function이 달라집니다. 연속적인 수치를 예측하는 회귀 문제에서는 MSE, 즉 평균 제곱 오차를 주로 사용합니다. MSE는 예측값과 실제값의 차이를 제곱하여 평균낸 값입니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_4",
+      "ref": "l3",
+      "keyword": "분류(Classification) → Cross Entropy",
+      "script": "반면 카테고리를 분류하는 문제에서는 Cross Entropy를 사용합니다. Cross Entropy는 예측한 확률 분포가 실제 정답 분포와 얼마나 다른지를 측정하며, 분류 문제에서 매우 널리 쓰이는 손실 함수입니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_5",
+      "ref": "rh",
+      "keyword": "최적화 (Optimization)",
+      "script": "이제 오른쪽 열로 넘어가서, 이 Loss를 어떻게 줄여나가는지, 즉 최적화 과정을 살펴보겠습니다. 최적화란 Loss가 최소가 되는 방향으로 모델의 파라미터를 조정하는 과정입니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_6",
+      "ref": "r1",
+      "keyword": "Gradient Descent로 Loss 최소화",
+      "script": "가장 기본적인 최적화 알고리즘은 Gradient Descent, 경사 하강법입니다. Loss 함수의 경사, 즉 기울기를 따라 파라미터를 조금씩 내려가며 Loss가 최소가 되는 지점을 찾아갑니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_7",
+      "ref": "r2",
+      "keyword": "Backpropagation으로 각 Weight의 Gradient 계산",
+      "script": "이때 각 Weight에 대한 Gradient는 Backpropagation, 역전파 알고리즘을 통해 계산합니다. 역전파는 출력층에서 입력층 방향으로 연쇄 법칙을 적용하여 각 가중치가 Loss에 얼마나 기여했는지를 효율적으로 계산합니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_8",
+      "ref": "r3",
+      "keyword": "w_new = w_old − lr × gradient",
+      "script": "최종적으로 가중치는 이 수식, w_new = w_old 빼기 학습률 곱하기 gradient에 따라 업데이트됩니다. 여기서 lr, 즉 학습률은 한 번에 얼마나 크게 파라미터를 조정할지를 결정하는 중요한 하이퍼파라미터입니다. 다음 슬라이드에서는 이 학습 과정 전체를 하나의 흐름으로 정리해 보겠습니다.",
+      "effect": "highlighter"
+    }
+  ]
+}

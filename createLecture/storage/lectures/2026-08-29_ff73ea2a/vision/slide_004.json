@@ -1,0 +1,27 @@
+{
+  "slide_index": 4,
+  "title": "5가지",
+  "segments": [
+    {
+      "id": "seg_1",
+      "ref": "val",
+      "keyword": "5가지",
+      "script": "이번 슬라이드에서 핵심 숫자를 먼저 눈에 담아 두시기 바랍니다. 바로 '5가지'입니다. 이 숫자가 이번 세미나 전체를 관통하는 기준이 됩니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_2",
+      "ref": "lbl",
+      "keyword": "Pass를 위한 필수 완수 항목",
+      "script": "이 5가지는 단순한 권장 사항이 아니라, Pass를 받기 위해 반드시 완수해야 하는 필수 항목들입니다. 다음 슬라이드부터 각 항목을 하나씩 상세히 살펴볼 예정입니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_3",
+      "ref": "cap",
+      "keyword": "하나라도 빠지면 Fail",
+      "script": "특히 이 점을 강조하고 싶습니다. 다섯 항목 중 하나라도 빠지면 나머지를 모두 완수했더라도 Fail 처리됩니다. 전부 완수해야만 Pass가 인정된다는 점, 꼭 기억해 두시기 바랍니다.",
+      "effect": "highlighter"
+    }
+  ]
+}

@@ -1,0 +1,207 @@
+[
+  {
+    "text": "이",
+    "offset_ms": 50.0,
+    "duration_ms": 203.0
+  },
+  {
+    "text": "모든",
+    "offset_ms": 253.0,
+    "duration_ms": 406.0
+  },
+  {
+    "text": "층의",
+    "offset_ms": 658.9,
+    "duration_ms": 406.0
+  },
+  {
+    "text": "연산을",
+    "offset_ms": 1064.9,
+    "duration_ms": 608.9
+  },
+  {
+    "text": "하나로",
+    "offset_ms": 1673.8,
+    "duration_ms": 608.9
+  },
+  {
+    "text": "묶으면,",
+    "offset_ms": 2282.7,
+    "duration_ms": 811.9
+  },
+  {
+    "text": "전체",
+    "offset_ms": 3094.6,
+    "duration_ms": 406.0
+  },
+  {
+    "text": "신경망은",
+    "offset_ms": 3500.6,
+    "duration_ms": 811.9
+  },
+  {
+    "text": "ŷ",
+    "offset_ms": 4312.5,
+    "duration_ms": 406.0
+  },
+  {
+    "text": "=",
+    "offset_ms": 4718.5,
+    "duration_ms": 406.0
+  },
+  {
+    "text": "F(x",
+    "offset_ms": 5124.4,
+    "duration_ms": 406.0
+  },
+  {
+    "text": ";",
+    "offset_ms": 5530.4,
+    "duration_ms": 0.0
+  },
+  {
+    "text": "θ)라는",
+    "offset_ms": 5530.4,
+    "duration_ms": 609.0
+  },
+  {
+    "text": "간결한",
+    "offset_ms": 6139.3,
+    "duration_ms": 608.9
+  },
+  {
+    "text": "식으로",
+    "offset_ms": 6748.2,
+    "duration_ms": 608.9
+  },
+  {
+    "text": "요약됩니다.",
+    "offset_ms": 7357.1,
+    "duration_ms": 1217.9
+  },
+  {
+    "text": "θ는",
+    "offset_ms": 8575.0,
+    "duration_ms": 351.6
+  },
+  {
+    "text": "네트워크",
+    "offset_ms": 8926.6,
+    "duration_ms": 703.2
+  },
+  {
+    "text": "안의",
+    "offset_ms": 9629.8,
+    "duration_ms": 351.6
+  },
+  {
+    "text": "모든",
+    "offset_ms": 9981.4,
+    "duration_ms": 351.6
+  },
+  {
+    "text": "Weight와",
+    "offset_ms": 10333.0,
+    "duration_ms": 1230.6
+  },
+  {
+    "text": "Bias를",
+    "offset_ms": 11563.6,
+    "duration_ms": 879.0
+  },
+  {
+    "text": "통칭하며,",
+    "offset_ms": 12442.6,
+    "duration_ms": 879.0
+  },
+  {
+    "text": "학습이란",
+    "offset_ms": 13321.5,
+    "duration_ms": 703.2
+  },
+  {
+    "text": "결국",
+    "offset_ms": 14024.7,
+    "duration_ms": 351.6
+  },
+  {
+    "text": "이",
+    "offset_ms": 14376.3,
+    "duration_ms": 175.8
+  },
+  {
+    "text": "θ를",
+    "offset_ms": 14552.1,
+    "duration_ms": 351.6
+  },
+  {
+    "text": "최적화하는",
+    "offset_ms": 14903.7,
+    "duration_ms": 879.0
+  },
+  {
+    "text": "과정입니다.",
+    "offset_ms": 15782.7,
+    "duration_ms": 1054.8
+  },
+  {
+    "text": "다음",
+    "offset_ms": 16837.5,
+    "duration_ms": 281.0
+  },
+  {
+    "text": "슬라이드에서는",
+    "offset_ms": 17118.5,
+    "duration_ms": 983.6
+  },
+  {
+    "text": "이",
+    "offset_ms": 18102.2,
+    "duration_ms": 140.5
+  },
+  {
+    "text": "θ를",
+    "offset_ms": 18242.7,
+    "duration_ms": 281.0
+  },
+  {
+    "text": "어떻게",
+    "offset_ms": 18523.7,
+    "duration_ms": 421.6
+  },
+  {
+    "text": "업데이트하는지,",
+    "offset_ms": 18945.3,
+    "duration_ms": 1124.1
+  },
+  {
+    "text": "즉",
+    "offset_ms": 20069.4,
+    "duration_ms": 140.5
+  },
+  {
+    "text": "Loss",
+    "offset_ms": 20209.9,
+    "duration_ms": 562.1
+  },
+  {
+    "text": "Function과",
+    "offset_ms": 20772.0,
+    "duration_ms": 1264.7
+  },
+  {
+    "text": "Weight",
+    "offset_ms": 22036.6,
+    "duration_ms": 843.1
+  },
+  {
+    "text": "Update를",
+    "offset_ms": 22879.7,
+    "duration_ms": 983.6
+  },
+  {
+    "text": "살펴보겠습니다.",
+    "offset_ms": 23863.4,
+    "duration_ms": 1124.1
+  }
+]

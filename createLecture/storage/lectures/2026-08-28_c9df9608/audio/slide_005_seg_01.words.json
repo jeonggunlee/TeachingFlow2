@@ -1,0 +1,127 @@
+[
+  {
+    "text": "딥러닝의",
+    "offset_ms": 50.0,
+    "duration_ms": 642.2
+  },
+  {
+    "text": "역사는",
+    "offset_ms": 692.2,
+    "duration_ms": 481.7
+  },
+  {
+    "text": "1943년",
+    "offset_ms": 1173.9,
+    "duration_ms": 802.8
+  },
+  {
+    "text": "McCulloch와",
+    "offset_ms": 1976.7,
+    "duration_ms": 1605.6
+  },
+  {
+    "text": "Pitts가",
+    "offset_ms": 3582.2,
+    "duration_ms": 963.3
+  },
+  {
+    "text": "제안한",
+    "offset_ms": 4545.6,
+    "duration_ms": 481.7
+  },
+  {
+    "text": "인공",
+    "offset_ms": 5027.2,
+    "duration_ms": 321.1
+  },
+  {
+    "text": "뉴런",
+    "offset_ms": 5348.3,
+    "duration_ms": 321.1
+  },
+  {
+    "text": "모델에서",
+    "offset_ms": 5669.4,
+    "duration_ms": 642.2
+  },
+  {
+    "text": "시작됩니다.",
+    "offset_ms": 6311.7,
+    "duration_ms": 963.3
+  },
+  {
+    "text": "이",
+    "offset_ms": 7275.0,
+    "duration_ms": 183.2
+  },
+  {
+    "text": "모델은",
+    "offset_ms": 7458.2,
+    "duration_ms": 549.8
+  },
+  {
+    "text": "생물학적",
+    "offset_ms": 8008.0,
+    "duration_ms": 733.0
+  },
+  {
+    "text": "뉴런의",
+    "offset_ms": 8741.0,
+    "duration_ms": 549.8
+  },
+  {
+    "text": "동작을",
+    "offset_ms": 9290.8,
+    "duration_ms": 549.8
+  },
+  {
+    "text": "수학적으로",
+    "offset_ms": 9840.5,
+    "duration_ms": 916.2
+  },
+  {
+    "text": "단순화한",
+    "offset_ms": 10756.8,
+    "duration_ms": 733.0
+  },
+  {
+    "text": "최초의",
+    "offset_ms": 11489.8,
+    "duration_ms": 549.8
+  },
+  {
+    "text": "시도로,",
+    "offset_ms": 12039.5,
+    "duration_ms": 733.0
+  },
+  {
+    "text": "이후",
+    "offset_ms": 12772.5,
+    "duration_ms": 366.5
+  },
+  {
+    "text": "모든",
+    "offset_ms": 13139.0,
+    "duration_ms": 366.5
+  },
+  {
+    "text": "신경망",
+    "offset_ms": 13505.5,
+    "duration_ms": 549.8
+  },
+  {
+    "text": "연구의",
+    "offset_ms": 14055.2,
+    "duration_ms": 549.8
+  },
+  {
+    "text": "출발점이",
+    "offset_ms": 14605.0,
+    "duration_ms": 733.0
+  },
+  {
+    "text": "되었습니다.",
+    "offset_ms": 15338.0,
+    "duration_ms": 1099.5
+  }
+]

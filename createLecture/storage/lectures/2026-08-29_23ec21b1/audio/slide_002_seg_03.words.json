@@ -1,0 +1,112 @@
+[
+  {
+    "text": "이수",
+    "offset_ms": 50.0,
+    "duration_ms": 369.7
+  },
+  {
+    "text": "학점은",
+    "offset_ms": 419.7,
+    "duration_ms": 554.5
+  },
+  {
+    "text": "1학점이며,",
+    "offset_ms": 974.2,
+    "duration_ms": 1109.1
+  },
+  {
+    "text": "성적",
+    "offset_ms": 2083.3,
+    "duration_ms": 369.7
+  },
+  {
+    "text": "방식은",
+    "offset_ms": 2453.0,
+    "duration_ms": 554.5
+  },
+  {
+    "text": "Pass",
+    "offset_ms": 3007.6,
+    "duration_ms": 739.4
+  },
+  {
+    "text": "또는",
+    "offset_ms": 3747.0,
+    "duration_ms": 369.7
+  },
+  {
+    "text": "Fail로",
+    "offset_ms": 4116.7,
+    "duration_ms": 924.2
+  },
+  {
+    "text": "처리됩니다.",
+    "offset_ms": 5040.9,
+    "duration_ms": 1109.1
+  },
+  {
+    "text": "점수",
+    "offset_ms": 6150.0,
+    "duration_ms": 387.5
+  },
+  {
+    "text": "대신",
+    "offset_ms": 6537.5,
+    "duration_ms": 387.5
+  },
+  {
+    "text": "이수",
+    "offset_ms": 6925.0,
+    "duration_ms": 387.5
+  },
+  {
+    "text": "여부로",
+    "offset_ms": 7312.5,
+    "duration_ms": 581.2
+  },
+  {
+    "text": "평가되는",
+    "offset_ms": 7893.8,
+    "duration_ms": 775.0
+  },
+  {
+    "text": "만큼,",
+    "offset_ms": 8668.8,
+    "duration_ms": 581.2
+  },
+  {
+    "text": "정해진",
+    "offset_ms": 9250.0,
+    "duration_ms": 581.2
+  },
+  {
+    "text": "필수",
+    "offset_ms": 9831.2,
+    "duration_ms": 387.5
+  },
+  {
+    "text": "항목을",
+    "offset_ms": 10218.8,
+    "duration_ms": 581.2
+  },
+  {
+    "text": "빠짐없이",
+    "offset_ms": 10800.0,
+    "duration_ms": 775.0
+  },
+  {
+    "text": "완수하는",
+    "offset_ms": 11575.0,
+    "duration_ms": 775.0
+  },
+  {
+    "text": "것이",
+    "offset_ms": 12350.0,
+    "duration_ms": 387.5
+  },
+  {
+    "text": "핵심입니다.",
+    "offset_ms": 12737.5,
+    "duration_ms": 1162.5
+  }
+]

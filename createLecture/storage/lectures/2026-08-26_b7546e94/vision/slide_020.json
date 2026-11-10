@@ -1,0 +1,62 @@
+{
+  "slide_index": 20,
+  "title": "Loss Function과 Weight Update",
+  "segments": [
+    {
+      "id": "seg_1",
+      "ref": "lh",
+      "keyword": "Loss Function",
+      "script": "앞서 신경망의 수식 구조를 살펴봤으니, 이제 신경망이 어떻게 '틀린 정도'를 측정하는지 알아봅니다. Loss Function은 모델의 예측이 실제 정답과 얼마나 다른지를 하나의 숫자로 나타내는 함수입니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_2",
+      "ref": "l1",
+      "keyword": "실제값 y와 예측값 ŷ의 차이를 수치화",
+      "script": "구체적으로는 실제값 y와 모델이 출력한 예측값 ŷ 사이의 차이를 수치화합니다. 이 값이 클수록 모델이 잘못 예측하고 있다는 의미이며, 학습의 목표는 이 값을 최소화하는 것입니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_3",
+      "ref": "l2",
+      "keyword": "회귀(Regression): MSE",
+      "script": "문제 유형에 따라 사용하는 Loss Function이 달라집니다. 연속적인 수치를 예측하는 회귀 문제에서는 MSE, 즉 평균 제곱 오차를 사용하며, 예측값과 실제값의 차이를 제곱하여 평균한 값입니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_4",
+      "ref": "l3",
+      "keyword": "분류(Classification): Cross Entropy",
+      "script": "반면 클래스를 구분하는 분류 문제에서는 Cross Entropy를 사용합니다. Cross Entropy는 예측 확률 분포와 실제 정답 분포 사이의 차이를 측정하며, 오분류에 더 큰 페널티를 부여합니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_5",
+      "ref": "rh",
+      "keyword": "Weight Update (Gradient Descent)",
+      "script": "Loss를 계산했다면 이제 이를 줄이기 위해 Weight를 어떻게 갱신할지가 핵심입니다. 이를 담당하는 알고리즘이 바로 Gradient Descent, 경사 하강법입니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_6",
+      "ref": "r1",
+      "keyword": "Backpropagation으로 각 Weight의 Gradient 계산",
+      "script": "먼저 Backpropagation, 즉 역전파 알고리즘을 통해 출력층에서 입력층 방향으로 Loss를 각 Weight에 대해 미분한 Gradient를 계산합니다. 이 Gradient는 해당 Weight가 Loss를 얼마나, 어느 방향으로 변화시키는지를 알려줍니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_7",
+      "ref": "r2",
+      "keyword": "w_new = w_old − lr × gradient",
+      "script": "계산된 Gradient를 바탕으로 수식 w_new = w_old − lr × gradient에 따라 Weight를 갱신합니다. 여기서 lr은 학습률(learning rate)로, 한 번에 얼마나 크게 이동할지를 결정하는 하이퍼파라미터입니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_8",
+      "ref": "r3",
+      "keyword": "Loss가 작아지는 방향으로 반복 갱신",
+      "script": "이 과정을 Loss가 충분히 작아질 때까지 반복하면서 신경망은 점점 더 정확한 예측을 하도록 학습됩니다. 다음 슬라이드에서는 이 전체 학습 흐름을 하나의 사이클로 정리해 보겠습니다.",
+      "effect": "highlighter"
+    }
+  ]
+}

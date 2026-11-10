@@ -1,0 +1,92 @@
+[
+  {
+    "text": "뉴런의",
+    "offset_ms": 50.0,
+    "duration_ms": 503.0
+  },
+  {
+    "text": "가지돌기,",
+    "offset_ms": 553.0,
+    "duration_ms": 838.4
+  },
+  {
+    "text": "즉",
+    "offset_ms": 1391.5,
+    "duration_ms": 167.7
+  },
+  {
+    "text": "Dendrite는",
+    "offset_ms": 1559.1,
+    "duration_ms": 1509.1
+  },
+  {
+    "text": "다른",
+    "offset_ms": 3068.3,
+    "duration_ms": 335.4
+  },
+  {
+    "text": "뉴런으로부터",
+    "offset_ms": 3403.7,
+    "duration_ms": 1006.1
+  },
+  {
+    "text": "신호를",
+    "offset_ms": 4409.8,
+    "duration_ms": 503.0
+  },
+  {
+    "text": "받아들이는",
+    "offset_ms": 4912.8,
+    "duration_ms": 838.4
+  },
+  {
+    "text": "역할을",
+    "offset_ms": 5751.2,
+    "duration_ms": 503.0
+  },
+  {
+    "text": "합니다.",
+    "offset_ms": 6254.3,
+    "duration_ms": 670.7
+  },
+  {
+    "text": "수많은",
+    "offset_ms": 6925.0,
+    "duration_ms": 623.8
+  },
+  {
+    "text": "가지돌기가",
+    "offset_ms": 7548.8,
+    "duration_ms": 1039.6
+  },
+  {
+    "text": "다양한",
+    "offset_ms": 8588.3,
+    "duration_ms": 623.8
+  },
+  {
+    "text": "방향에서",
+    "offset_ms": 9212.1,
+    "duration_ms": 831.7
+  },
+  {
+    "text": "입력",
+    "offset_ms": 10043.8,
+    "duration_ms": 415.8
+  },
+  {
+    "text": "신호를",
+    "offset_ms": 10459.6,
+    "duration_ms": 623.8
+  },
+  {
+    "text": "수집하는",
+    "offset_ms": 11083.3,
+    "duration_ms": 831.7
+  },
+  {
+    "text": "구조입니다.",
+    "offset_ms": 11915.0,
+    "duration_ms": 1247.5
+  }
+]

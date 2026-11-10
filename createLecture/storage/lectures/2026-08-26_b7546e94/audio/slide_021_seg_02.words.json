@@ -1,0 +1,122 @@
+[
+  {
+    "text": "예측값이",
+    "offset_ms": 100.0,
+    "duration_ms": 813.8
+  },
+  {
+    "text": "나오면,",
+    "offset_ms": 913.8,
+    "duration_ms": 813.8
+  },
+  {
+    "text": "정답",
+    "offset_ms": 1727.6,
+    "duration_ms": 406.9
+  },
+  {
+    "text": "레이블과",
+    "offset_ms": 2134.5,
+    "duration_ms": 813.8
+  },
+  {
+    "text": "비교하여",
+    "offset_ms": 2948.3,
+    "duration_ms": 813.8
+  },
+  {
+    "text": "Loss를",
+    "offset_ms": 3762.1,
+    "duration_ms": 1017.2
+  },
+  {
+    "text": "계산합니다.",
+    "offset_ms": 4779.3,
+    "duration_ms": 1220.7
+  },
+  {
+    "text": "이",
+    "offset_ms": 5950.0,
+    "duration_ms": 173.4
+  },
+  {
+    "text": "Loss",
+    "offset_ms": 6123.4,
+    "duration_ms": 693.5
+  },
+  {
+    "text": "값이",
+    "offset_ms": 6816.9,
+    "duration_ms": 346.8
+  },
+  {
+    "text": "클수록",
+    "offset_ms": 7163.7,
+    "duration_ms": 520.1
+  },
+  {
+    "text": "모델의",
+    "offset_ms": 7683.8,
+    "duration_ms": 520.1
+  },
+  {
+    "text": "예측이",
+    "offset_ms": 8203.9,
+    "duration_ms": 520.1
+  },
+  {
+    "text": "정답에서",
+    "offset_ms": 8724.1,
+    "duration_ms": 693.5
+  },
+  {
+    "text": "멀리",
+    "offset_ms": 9417.6,
+    "duration_ms": 346.8
+  },
+  {
+    "text": "떨어져",
+    "offset_ms": 9764.4,
+    "duration_ms": 520.1
+  },
+  {
+    "text": "있다는",
+    "offset_ms": 10284.5,
+    "duration_ms": 520.1
+  },
+  {
+    "text": "신호이며,",
+    "offset_ms": 10804.6,
+    "duration_ms": 866.9
+  },
+  {
+    "text": "학습이",
+    "offset_ms": 11671.5,
+    "duration_ms": 520.1
+  },
+  {
+    "text": "얼마나",
+    "offset_ms": 12191.7,
+    "duration_ms": 520.1
+  },
+  {
+    "text": "더",
+    "offset_ms": 12711.8,
+    "duration_ms": 173.4
+  },
+  {
+    "text": "필요한지를",
+    "offset_ms": 12885.2,
+    "duration_ms": 866.9
+  },
+  {
+    "text": "수치로",
+    "offset_ms": 13752.1,
+    "duration_ms": 520.1
+  },
+  {
+    "text": "알려줍니다.",
+    "offset_ms": 14272.2,
+    "duration_ms": 1040.3
+  }
+]

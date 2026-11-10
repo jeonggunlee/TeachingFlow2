@@ -1,0 +1,66 @@
+{
+  "slide_index": 4,
+  "title": "AI 의 주요 하위 분야",
+  "segments": [
+    {
+      "id": "seg_1",
+      "script": "첫 번째로 머신러닝입니다. 머신러닝은 데이터로부터 패턴을 자동으로 학습하는 분야로, ML 또는 Statistical Learning이라고도 불립니다. AI의 가장 핵심적인 기반 기술 중 하나입니다.",
+      "keyword": "머신러닝",
+      "highlight": {
+        "x_pct": 5,
+        "y_pct": 18,
+        "w_pct": 75,
+        "h_pct": 10
+      },
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_2",
+      "script": "두 번째는 딥러닝입니다. 딥러닝은 심층 신경망을 기반으로 데이터의 복잡한 표현을 학습하는 기술이며, Deep Neural Networks라고도 합니다. 최근 AI 성능 향상의 핵심 동력입니다.",
+      "keyword": "딥러닝",
+      "highlight": {
+        "x_pct": 5,
+        "y_pct": 29,
+        "w_pct": 70,
+        "h_pct": 10
+      },
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_3",
+      "script": "세 번째는 자연어 처리(NLP)입니다. 자연어 처리는 인간의 언어를 이해하고 생성하는 기술로, 최근에는 LLM(대형 언어 모델)이 이 분야를 주도하고 있습니다. ChatGPT 같은 서비스가 대표적인 사례입니다.",
+      "keyword": "NLP·LLM",
+      "highlight": {
+        "x_pct": 5,
+        "y_pct": 40,
+        "w_pct": 65,
+        "h_pct": 10
+      },
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_4",
+      "script": "네 번째는 컴퓨터 비전입니다. 컴퓨터 비전은 이미지와 영상을 인식하고 분석하는 기술로, Computer Vision이라고도 합니다. 자율주행, 의료 영상 분석 등 다양한 분야에 활용됩니다.",
+      "keyword": "컴퓨터 비전",
+      "highlight": {
+        "x_pct": 5,
+        "y_pct": 51,
+        "w_pct": 70,
+        "h_pct": 10
+      },
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_5",
+      "script": "마지막으로 로보틱스입니다. 로보틱스는 지각, 계획, 행동을 통합하여 로봇이 실제 환경에서 동작할 수 있도록 하는 분야입니다. Robotics & Control이라 불리며 AI와 물리적 세계를 연결하는 중요한 분야입니다.",
+      "keyword": "로보틱스",
+      "highlight": {
+        "x_pct": 5,
+        "y_pct": 62,
+        "w_pct": 68,
+        "h_pct": 10
+      },
+      "effect": "highlighter"
+    }
+  ]
+}

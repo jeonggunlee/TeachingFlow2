@@ -1,0 +1,177 @@
+[
+  {
+    "text": "신경망에",
+    "offset_ms": 100.0,
+    "duration_ms": 567.9
+  },
+  {
+    "text": "데이터를",
+    "offset_ms": 667.9,
+    "duration_ms": 567.9
+  },
+  {
+    "text": "입력하면,",
+    "offset_ms": 1235.8,
+    "duration_ms": 709.9
+  },
+  {
+    "text": "정보는",
+    "offset_ms": 1945.7,
+    "duration_ms": 425.9
+  },
+  {
+    "text": "Input",
+    "offset_ms": 2371.6,
+    "duration_ms": 709.9
+  },
+  {
+    "text": "Layer에서",
+    "offset_ms": 3081.5,
+    "duration_ms": 993.8
+  },
+  {
+    "text": "시작해",
+    "offset_ms": 4075.4,
+    "duration_ms": 425.9
+  },
+  {
+    "text": "Hidden",
+    "offset_ms": 4501.3,
+    "duration_ms": 851.9
+  },
+  {
+    "text": "Layer를",
+    "offset_ms": 5353.2,
+    "duration_ms": 851.9
+  },
+  {
+    "text": "거쳐",
+    "offset_ms": 6205.0,
+    "duration_ms": 284.0
+  },
+  {
+    "text": "Output",
+    "offset_ms": 6489.0,
+    "duration_ms": 851.9
+  },
+  {
+    "text": "Layer로",
+    "offset_ms": 7340.9,
+    "duration_ms": 851.9
+  },
+  {
+    "text": "순서대로",
+    "offset_ms": 8192.7,
+    "duration_ms": 567.9
+  },
+  {
+    "text": "흘러갑니다.",
+    "offset_ms": 8760.6,
+    "duration_ms": 851.9
+  },
+  {
+    "text": "이",
+    "offset_ms": 9562.5,
+    "duration_ms": 169.1
+  },
+  {
+    "text": "과정을",
+    "offset_ms": 9731.6,
+    "duration_ms": 507.4
+  },
+  {
+    "text": "Forward",
+    "offset_ms": 10239.0,
+    "duration_ms": 1183.8
+  },
+  {
+    "text": "Propagation,",
+    "offset_ms": 11422.8,
+    "duration_ms": 2029.4
+  },
+  {
+    "text": "순전파라고",
+    "offset_ms": 13452.2,
+    "duration_ms": 845.6
+  },
+  {
+    "text": "부르며,",
+    "offset_ms": 14297.8,
+    "duration_ms": 676.5
+  },
+  {
+    "text": "이를",
+    "offset_ms": 14974.3,
+    "duration_ms": 338.2
+  },
+  {
+    "text": "통해",
+    "offset_ms": 15312.5,
+    "duration_ms": 338.2
+  },
+  {
+    "text": "모델의",
+    "offset_ms": 15650.7,
+    "duration_ms": 507.4
+  },
+  {
+    "text": "최종",
+    "offset_ms": 16158.1,
+    "duration_ms": 338.2
+  },
+  {
+    "text": "예측값이",
+    "offset_ms": 16496.3,
+    "duration_ms": 676.5
+  },
+  {
+    "text": "생성됩니다.",
+    "offset_ms": 17172.8,
+    "duration_ms": 1014.7
+  },
+  {
+    "text": "다음",
+    "offset_ms": 18187.5,
+    "duration_ms": 375.7
+  },
+  {
+    "text": "슬라이드부터는",
+    "offset_ms": 18563.2,
+    "duration_ms": 1315.1
+  },
+  {
+    "text": "이",
+    "offset_ms": 19878.3,
+    "duration_ms": 187.9
+  },
+  {
+    "text": "과정을",
+    "offset_ms": 20066.2,
+    "duration_ms": 563.6
+  },
+  {
+    "text": "수식으로",
+    "offset_ms": 20629.8,
+    "duration_ms": 751.5
+  },
+  {
+    "text": "엄밀하게",
+    "offset_ms": 21381.3,
+    "duration_ms": 751.5
+  },
+  {
+    "text": "표현하는",
+    "offset_ms": 22132.7,
+    "duration_ms": 751.5
+  },
+  {
+    "text": "방법을",
+    "offset_ms": 22884.2,
+    "duration_ms": 563.6
+  },
+  {
+    "text": "살펴봅니다.",
+    "offset_ms": 23447.8,
+    "duration_ms": 1127.2
+  }
+]

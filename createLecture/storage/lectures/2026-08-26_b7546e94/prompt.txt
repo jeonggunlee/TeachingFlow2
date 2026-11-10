@@ -1,0 +1,147 @@
+1. 딥러닝의 역사
+인공지능(AI)의 등장
+인간의 학습과 추론 능력을 컴퓨터로 구현하려는 시도
+규칙 기반 AI에서 데이터 기반 학습으로 발전
+초기 인공신경망
+McCulloch–Pitts의 인공 뉴런 모델
+생물학적 뉴런의 동작을 수학적으로 단순화
+입력 → 가중합 → 출력의 기본 구조 제안
+퍼셉트론(Perceptron)
+Rosenblatt의 퍼셉트론 모델
+입력과 가중치를 이용한 이진 분류
+학습을 통해 가중치를 자동으로 결정
+선형 분리 문제와 XOR 문제의 한계
+다층 신경망의 발전
+Multi-Layer Perceptron(MLP)의 등장
+은닉층(Hidden Layer)을 이용한 복잡한 문제 해결
+Backpropagation을 이용한 다층 신경망 학습
+딥러닝의 등장
+대규모 데이터(Big Data)의 증가
+GPU를 이용한 대규모 병렬 연산
+2012년 AlexNet과 ImageNet을 통한 딥러닝의 성공
+CNN, RNN, LSTM 등 다양한 신경망 발전
+현대 딥러닝
+Attention과 Transformer의 등장
+BERT, GPT 등 대규모 언어 모델
+생성형 AI와 멀티모달 AI로 발전
+2. 딥러닝의 정의
+인공지능, 머신러닝, 딥러닝의 관계
+Artificial Intelligence > Machine Learning > Deep Learning
+딥러닝은 머신러닝의 한 분야
+전통적 프로그래밍과 머신러닝
+전통적 프로그래밍: Data + Rules → Output
+머신러닝: Data + Output → Model
+사람이 규칙을 작성하는 대신 데이터로부터 규칙을 학습
+머신러닝과 딥러닝
+전통적 머신러닝: 사람이 특징(Feature)을 설계
+딥러닝: 특징 추출과 판단 과정을 동시에 학습
+Representation Learning의 개념
+Deep의 의미
+여러 개의 Hidden Layer를 사용하는 신경망
+여러 단계를 거쳐 계층적인 특징을 학습
+예: Pixel → Edge → Shape → Object
+딥러닝의 주요 구성 요소
+Data
+Neural Network
+Loss Function
+Optimizer
+Training
+Inference
+딥러닝의 대표적 응용
+Classification
+Regression
+Object Detection
+Segmentation
+Natural Language Processing
+Generative AI
+3. 인공신경망의 구조
+생물학적 뉴런과 인공 뉴런
+Dendrite → Input
+Synapse → Weight
+Cell Body → 입력 신호 처리
+Axon → Output
+인공 뉴런의 기본 구성
+Input: x1, x2, ..., xn
+Weight: w1, w2, ..., wn
+Bias: b
+Weighted Sum
+Activation Function
+Output
+Weight
+입력이 출력에 미치는 영향의 크기
+학습 과정에서 자동으로 변경
+딥러닝 학습의 핵심은 적절한 Weight를 찾는 과정
+Bias
+뉴런이 활성화되는 기준을 조절
+신경망의 표현 능력을 증가
+Activation Function
+신경망에 비선형성을 추가
+Step
+Sigmoid
+Tanh
+ReLU
+Softmax
+Neural Network의 Layer 구조
+Input Layer
+Hidden Layer
+Output Layer
+Fully Connected Layer
+이전 Layer의 모든 뉴런이 다음 Layer의 뉴런과 연결
+각각의 연결에 Weight가 존재
+Weight와 Bias가 학습 가능한 Parameter
+Forward Propagation
+Input → Hidden Layer → Output
+입력 데이터가 여러 Layer를 통과하며 변환
+최종적으로 예측값 생성
+신경망의 크기
+Depth: Layer의 개수
+Width: Layer에 포함된 뉴런의 개수
+4. 인공신경망의 수학적 표현
+하나의 인공 뉴런
+입력: x1, x2, ..., xn
+가중치: w1, w2, ..., wn
+Bias: b
+입력의 가중합
+z = w1*x1 + w2*x2 + ... + wn*xn + b
+활성화 함수 적용
+y = f(z)
+벡터를 이용한 표현
+z = w^T*x + b
+y = f(w^T*x + b)
+하나의 Layer
+여러 개의 뉴런을 동시에 계산
+z = W*x + b
+h = f(z)
+W: Weight Matrix
+x: Input Vector
+b: Bias Vector
+h: Layer의 Output
+다층 신경망
+1번째 Hidden Layer
+h1 = f(W1*x + b1)
+2번째 Hidden Layer
+h2 = f(W2*h1 + b2)
+Output Layer
+y_hat = g(W3*h2 + b3)
+전체 신경망의 표현
+y_hat = F(x; theta)
+x: Input
+y_hat: Prediction
+theta: 모든 Weight와 Bias
+Loss Function
+실제값 y와 예측값 y_hat의 차이를 측정
+Loss = L(y, y_hat)
+Regression → MSE
+Classification → Cross Entropy
+딥러닝 학습
+Loss가 작아지는 방향으로 Weight와 Bias를 수정
+Gradient Descent 사용
+Backpropagation을 통해 각 Weight의 Gradient 계산
+Weight Update
+w_new = w_old - learning_rate * gradient
+딥러닝 학습의 전체 흐름
+Input → Forward Propagation → Prediction → Loss 계산 → Backpropagation → Weight Update
+
+핵심 정리:
+Neural Network = Weighted Sum + Activation Function
+Deep Learning = Neural Network + Data + Loss + Optimization

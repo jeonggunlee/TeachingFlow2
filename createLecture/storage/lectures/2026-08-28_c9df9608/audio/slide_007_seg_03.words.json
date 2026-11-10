@@ -1,0 +1,162 @@
+[
+  {
+    "text": "더",
+    "offset_ms": 50.0,
+    "duration_ms": 193.3
+  },
+  {
+    "text": "나아가",
+    "offset_ms": 243.3,
+    "duration_ms": 579.8
+  },
+  {
+    "text": "딥러닝은",
+    "offset_ms": 823.1,
+    "duration_ms": 773.1
+  },
+  {
+    "text": "텍스트",
+    "offset_ms": 1596.2,
+    "duration_ms": 579.8
+  },
+  {
+    "text": "생성을",
+    "offset_ms": 2176.0,
+    "duration_ms": 579.8
+  },
+  {
+    "text": "넘어",
+    "offset_ms": 2755.8,
+    "duration_ms": 386.5
+  },
+  {
+    "text": "이미지,",
+    "offset_ms": 3142.3,
+    "duration_ms": 773.1
+  },
+  {
+    "text": "음성,",
+    "offset_ms": 3915.4,
+    "duration_ms": 579.8
+  },
+  {
+    "text": "영상까지",
+    "offset_ms": 4495.2,
+    "duration_ms": 773.1
+  },
+  {
+    "text": "다루는",
+    "offset_ms": 5268.3,
+    "duration_ms": 579.8
+  },
+  {
+    "text": "생성형",
+    "offset_ms": 5848.1,
+    "duration_ms": 579.8
+  },
+  {
+    "text": "AI와",
+    "offset_ms": 6427.9,
+    "duration_ms": 579.8
+  },
+  {
+    "text": "멀티모달",
+    "offset_ms": 7007.7,
+    "duration_ms": 773.1
+  },
+  {
+    "text": "AI로",
+    "offset_ms": 7780.8,
+    "duration_ms": 579.8
+  },
+  {
+    "text": "진화하고",
+    "offset_ms": 8360.6,
+    "duration_ms": 773.1
+  },
+  {
+    "text": "있습니다.",
+    "offset_ms": 9133.7,
+    "duration_ms": 966.3
+  },
+  {
+    "text": "ChatGPT,",
+    "offset_ms": 10100.0,
+    "duration_ms": 1249.2
+  },
+  {
+    "text": "DALL·E,",
+    "offset_ms": 11349.2,
+    "duration_ms": 1093.1
+  },
+  {
+    "text": "Gemini",
+    "offset_ms": 12442.3,
+    "duration_ms": 936.9
+  },
+  {
+    "text": "같은",
+    "offset_ms": 13379.2,
+    "duration_ms": 312.3
+  },
+  {
+    "text": "모델들이",
+    "offset_ms": 13691.5,
+    "duration_ms": 624.6
+  },
+  {
+    "text": "대표적인",
+    "offset_ms": 14316.2,
+    "duration_ms": 624.6
+  },
+  {
+    "text": "예로,",
+    "offset_ms": 14940.8,
+    "duration_ms": 468.5
+  },
+  {
+    "text": "여러",
+    "offset_ms": 15409.2,
+    "duration_ms": 312.3
+  },
+  {
+    "text": "종류의",
+    "offset_ms": 15721.5,
+    "duration_ms": 468.5
+  },
+  {
+    "text": "데이터를",
+    "offset_ms": 16190.0,
+    "duration_ms": 624.6
+  },
+  {
+    "text": "함께",
+    "offset_ms": 16814.6,
+    "duration_ms": 312.3
+  },
+  {
+    "text": "이해하고",
+    "offset_ms": 17126.9,
+    "duration_ms": 624.6
+  },
+  {
+    "text": "생성하는",
+    "offset_ms": 17751.5,
+    "duration_ms": 624.6
+  },
+  {
+    "text": "능력을",
+    "offset_ms": 18376.2,
+    "duration_ms": 468.5
+  },
+  {
+    "text": "갖추게",
+    "offset_ms": 18844.6,
+    "duration_ms": 468.5
+  },
+  {
+    "text": "되었습니다.",
+    "offset_ms": 19313.1,
+    "duration_ms": 936.9
+  }
+]

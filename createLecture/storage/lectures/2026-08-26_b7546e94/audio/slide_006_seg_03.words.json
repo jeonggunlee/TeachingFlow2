@@ -1,0 +1,167 @@
+[
+  {
+    "text": "그",
+    "offset_ms": 100.0,
+    "duration_ms": 220.8
+  },
+  {
+    "text": "주인공은",
+    "offset_ms": 320.8,
+    "duration_ms": 883.3
+  },
+  {
+    "text": "바로",
+    "offset_ms": 1204.2,
+    "duration_ms": 441.7
+  },
+  {
+    "text": "AlexNet입니다.",
+    "offset_ms": 1645.8,
+    "duration_ms": 2429.2
+  },
+  {
+    "text": "AlexNet은",
+    "offset_ms": 4025.0,
+    "duration_ms": 1251.9
+  },
+  {
+    "text": "ImageNet",
+    "offset_ms": 5276.9,
+    "duration_ms": 1251.9
+  },
+  {
+    "text": "대규모",
+    "offset_ms": 6528.7,
+    "duration_ms": 469.4
+  },
+  {
+    "text": "이미지",
+    "offset_ms": 6998.1,
+    "duration_ms": 469.4
+  },
+  {
+    "text": "인식",
+    "offset_ms": 7467.6,
+    "duration_ms": 313.0
+  },
+  {
+    "text": "대회에서",
+    "offset_ms": 7780.6,
+    "duration_ms": 625.9
+  },
+  {
+    "text": "기존",
+    "offset_ms": 8406.5,
+    "duration_ms": 313.0
+  },
+  {
+    "text": "방법들을",
+    "offset_ms": 8719.4,
+    "duration_ms": 625.9
+  },
+  {
+    "text": "압도적인",
+    "offset_ms": 9345.4,
+    "duration_ms": 625.9
+  },
+  {
+    "text": "차이로",
+    "offset_ms": 9971.3,
+    "duration_ms": 469.4
+  },
+  {
+    "text": "제치며",
+    "offset_ms": 10440.7,
+    "duration_ms": 469.4
+  },
+  {
+    "text": "1위를",
+    "offset_ms": 10910.2,
+    "duration_ms": 469.4
+  },
+  {
+    "text": "차지했습니다.",
+    "offset_ms": 11379.6,
+    "duration_ms": 1095.4
+  },
+  {
+    "text": "이",
+    "offset_ms": 12475.0,
+    "duration_ms": 196.3
+  },
+  {
+    "text": "사건을",
+    "offset_ms": 12671.3,
+    "duration_ms": 589.0
+  },
+  {
+    "text": "계기로",
+    "offset_ms": 13260.3,
+    "duration_ms": 589.0
+  },
+  {
+    "text": "학계와",
+    "offset_ms": 13849.3,
+    "duration_ms": 589.0
+  },
+  {
+    "text": "산업계",
+    "offset_ms": 14438.2,
+    "duration_ms": 589.0
+  },
+  {
+    "text": "모두",
+    "offset_ms": 15027.2,
+    "duration_ms": 392.6
+  },
+  {
+    "text": "딥러닝에",
+    "offset_ms": 15419.9,
+    "duration_ms": 785.3
+  },
+  {
+    "text": "폭발적인",
+    "offset_ms": 16205.1,
+    "duration_ms": 785.3
+  },
+  {
+    "text": "관심을",
+    "offset_ms": 16990.4,
+    "duration_ms": 589.0
+  },
+  {
+    "text": "갖기",
+    "offset_ms": 17579.4,
+    "duration_ms": 392.6
+  },
+  {
+    "text": "시작했고,",
+    "offset_ms": 17972.1,
+    "duration_ms": 981.6
+  },
+  {
+    "text": "본격적인",
+    "offset_ms": 18953.7,
+    "duration_ms": 785.3
+  },
+  {
+    "text": "딥러닝",
+    "offset_ms": 19739.0,
+    "duration_ms": 589.0
+  },
+  {
+    "text": "시대의",
+    "offset_ms": 20327.9,
+    "duration_ms": 589.0
+  },
+  {
+    "text": "막이",
+    "offset_ms": 20916.9,
+    "duration_ms": 392.6
+  },
+  {
+    "text": "올랐습니다.",
+    "offset_ms": 21309.6,
+    "duration_ms": 1177.9
+  }
+]

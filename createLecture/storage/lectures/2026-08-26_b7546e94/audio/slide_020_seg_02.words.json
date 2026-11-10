@@ -1,0 +1,122 @@
+[
+  {
+    "text": "구체적으로는",
+    "offset_ms": 50.0,
+    "duration_ms": 1150.7
+  },
+  {
+    "text": "실제값",
+    "offset_ms": 1200.7,
+    "duration_ms": 575.4
+  },
+  {
+    "text": "y와",
+    "offset_ms": 1776.1,
+    "duration_ms": 383.6
+  },
+  {
+    "text": "모델이",
+    "offset_ms": 2159.6,
+    "duration_ms": 575.4
+  },
+  {
+    "text": "출력한",
+    "offset_ms": 2735.0,
+    "duration_ms": 575.4
+  },
+  {
+    "text": "예측값",
+    "offset_ms": 3310.4,
+    "duration_ms": 575.4
+  },
+  {
+    "text": "ŷ",
+    "offset_ms": 3885.7,
+    "duration_ms": 383.6
+  },
+  {
+    "text": "사이의",
+    "offset_ms": 4269.3,
+    "duration_ms": 575.4
+  },
+  {
+    "text": "차이를",
+    "offset_ms": 4844.6,
+    "duration_ms": 575.4
+  },
+  {
+    "text": "수치화합니다.",
+    "offset_ms": 5420.0,
+    "duration_ms": 1342.5
+  },
+  {
+    "text": "이",
+    "offset_ms": 6762.5,
+    "duration_ms": 186.9
+  },
+  {
+    "text": "값이",
+    "offset_ms": 6949.4,
+    "duration_ms": 373.8
+  },
+  {
+    "text": "클수록",
+    "offset_ms": 7323.2,
+    "duration_ms": 560.7
+  },
+  {
+    "text": "모델이",
+    "offset_ms": 7883.9,
+    "duration_ms": 560.7
+  },
+  {
+    "text": "잘못",
+    "offset_ms": 8444.6,
+    "duration_ms": 373.8
+  },
+  {
+    "text": "예측하고",
+    "offset_ms": 8818.5,
+    "duration_ms": 747.6
+  },
+  {
+    "text": "있다는",
+    "offset_ms": 9566.1,
+    "duration_ms": 560.7
+  },
+  {
+    "text": "의미이며,",
+    "offset_ms": 10126.8,
+    "duration_ms": 934.5
+  },
+  {
+    "text": "학습의",
+    "offset_ms": 11061.3,
+    "duration_ms": 560.7
+  },
+  {
+    "text": "목표는",
+    "offset_ms": 11622.0,
+    "duration_ms": 560.7
+  },
+  {
+    "text": "이",
+    "offset_ms": 12182.7,
+    "duration_ms": 186.9
+  },
+  {
+    "text": "값을",
+    "offset_ms": 12369.6,
+    "duration_ms": 373.8
+  },
+  {
+    "text": "최소화하는",
+    "offset_ms": 12743.5,
+    "duration_ms": 934.5
+  },
+  {
+    "text": "것입니다.",
+    "offset_ms": 13678.0,
+    "duration_ms": 934.5
+  }
+]

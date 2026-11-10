@@ -1,0 +1,13 @@
+{
+  "slide_index": 12,
+  "title": "Pass/Fail 기준 안내",
+  "segments": [
+    {
+      "id": "seg_1",
+      "ref": "q",
+      "keyword": "모두 완수한 학생에게만 Pass",
+      "script": "자, 앞서 살펴본 체크리스트를 다시 한 번 마음에 새겨주세요. 5가지 항목을 모두 완수한 학생에게만 Pass가 주어집니다. 하나라도 빠지면 Fail이라는 점, 절대 가볍게 넘기지 마시기 바랍니다. ",
+      "effect": "highlighter"
+    }
+  ]
+}

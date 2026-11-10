@@ -1,0 +1,202 @@
+[
+  {
+    "text": "세",
+    "offset_ms": 100.0,
+    "duration_ms": 168.0
+  },
+  {
+    "text": "번째는",
+    "offset_ms": 268.0,
+    "duration_ms": 503.9
+  },
+  {
+    "text": "Activation",
+    "offset_ms": 771.9,
+    "duration_ms": 1679.7
+  },
+  {
+    "text": "Function,",
+    "offset_ms": 2451.6,
+    "duration_ms": 1511.7
+  },
+  {
+    "text": "활성화",
+    "offset_ms": 3963.3,
+    "duration_ms": 503.9
+  },
+  {
+    "text": "함수입니다.",
+    "offset_ms": 4467.2,
+    "duration_ms": 1007.8
+  },
+  {
+    "text": "활성화",
+    "offset_ms": 5425.0,
+    "duration_ms": 541.2
+  },
+  {
+    "text": "함수는",
+    "offset_ms": 5966.2,
+    "duration_ms": 541.2
+  },
+  {
+    "text": "뉴런의",
+    "offset_ms": 6507.3,
+    "duration_ms": 541.2
+  },
+  {
+    "text": "출력에",
+    "offset_ms": 7048.5,
+    "duration_ms": 541.2
+  },
+  {
+    "text": "비선형성을",
+    "offset_ms": 7589.7,
+    "duration_ms": 901.9
+  },
+  {
+    "text": "부여하는",
+    "offset_ms": 8491.6,
+    "duration_ms": 721.6
+  },
+  {
+    "text": "핵심",
+    "offset_ms": 9213.1,
+    "duration_ms": 360.8
+  },
+  {
+    "text": "요소로,",
+    "offset_ms": 9573.9,
+    "duration_ms": 721.6
+  },
+  {
+    "text": "이것이",
+    "offset_ms": 10295.5,
+    "duration_ms": 541.2
+  },
+  {
+    "text": "없다면",
+    "offset_ms": 10836.6,
+    "duration_ms": 541.2
+  },
+  {
+    "text": "아무리",
+    "offset_ms": 11377.8,
+    "duration_ms": 541.2
+  },
+  {
+    "text": "층을",
+    "offset_ms": 11919.0,
+    "duration_ms": 360.8
+  },
+  {
+    "text": "깊게",
+    "offset_ms": 12279.7,
+    "duration_ms": 360.8
+  },
+  {
+    "text": "쌓아도",
+    "offset_ms": 12640.5,
+    "duration_ms": 541.2
+  },
+  {
+    "text": "결국",
+    "offset_ms": 13181.7,
+    "duration_ms": 360.8
+  },
+  {
+    "text": "선형",
+    "offset_ms": 13542.5,
+    "duration_ms": 360.8
+  },
+  {
+    "text": "변환에",
+    "offset_ms": 13903.2,
+    "duration_ms": 541.2
+  },
+  {
+    "text": "불과하게",
+    "offset_ms": 14444.4,
+    "duration_ms": 721.6
+  },
+  {
+    "text": "됩니다.",
+    "offset_ms": 15165.9,
+    "duration_ms": 721.6
+  },
+  {
+    "text": "대표적인",
+    "offset_ms": 15887.5,
+    "duration_ms": 742.9
+  },
+  {
+    "text": "함수로는",
+    "offset_ms": 16630.4,
+    "duration_ms": 742.9
+  },
+  {
+    "text": "Step,",
+    "offset_ms": 17373.2,
+    "duration_ms": 928.6
+  },
+  {
+    "text": "Sigmoid,",
+    "offset_ms": 18301.8,
+    "duration_ms": 1485.7
+  },
+  {
+    "text": "Tanh,",
+    "offset_ms": 19787.5,
+    "duration_ms": 928.6
+  },
+  {
+    "text": "ReLU,",
+    "offset_ms": 20716.1,
+    "duration_ms": 928.6
+  },
+  {
+    "text": "그리고",
+    "offset_ms": 21644.6,
+    "duration_ms": 557.1
+  },
+  {
+    "text": "Softmax",
+    "offset_ms": 22201.8,
+    "duration_ms": 1300.0
+  },
+  {
+    "text": "등이",
+    "offset_ms": 23501.8,
+    "duration_ms": 371.4
+  },
+  {
+    "text": "있으며,",
+    "offset_ms": 23873.2,
+    "duration_ms": 742.9
+  },
+  {
+    "text": "각각의",
+    "offset_ms": 24616.1,
+    "duration_ms": 557.1
+  },
+  {
+    "text": "특성에",
+    "offset_ms": 25173.2,
+    "duration_ms": 557.1
+  },
+  {
+    "text": "따라",
+    "offset_ms": 25730.4,
+    "duration_ms": 371.4
+  },
+  {
+    "text": "용도가",
+    "offset_ms": 26101.8,
+    "duration_ms": 557.1
+  },
+  {
+    "text": "다릅니다.",
+    "offset_ms": 26658.9,
+    "duration_ms": 928.6
+  }
+]

@@ -1,0 +1,192 @@
+[
+  {
+    "text": "정리하자면,",
+    "offset_ms": 100.0,
+    "duration_ms": 1089.3
+  },
+  {
+    "text": "딥러닝",
+    "offset_ms": 1189.3,
+    "duration_ms": 544.6
+  },
+  {
+    "text": "학습의",
+    "offset_ms": 1733.9,
+    "duration_ms": 544.6
+  },
+  {
+    "text": "핵심은",
+    "offset_ms": 2278.6,
+    "duration_ms": 544.6
+  },
+  {
+    "text": "결국",
+    "offset_ms": 2823.2,
+    "duration_ms": 363.1
+  },
+  {
+    "text": "적절한",
+    "offset_ms": 3186.3,
+    "duration_ms": 544.6
+  },
+  {
+    "text": "Weight와",
+    "offset_ms": 3731.0,
+    "duration_ms": 1270.8
+  },
+  {
+    "text": "Bias를",
+    "offset_ms": 5001.8,
+    "duration_ms": 907.7
+  },
+  {
+    "text": "찾아내는",
+    "offset_ms": 5909.5,
+    "duration_ms": 726.2
+  },
+  {
+    "text": "과정입니다.",
+    "offset_ms": 6635.7,
+    "duration_ms": 1089.3
+  },
+  {
+    "text": "이",
+    "offset_ms": 7675.0,
+    "duration_ms": 158.1
+  },
+  {
+    "text": "세",
+    "offset_ms": 7833.1,
+    "duration_ms": 158.1
+  },
+  {
+    "text": "가지",
+    "offset_ms": 7991.1,
+    "duration_ms": 316.1
+  },
+  {
+    "text": "요소—Weight,",
+    "offset_ms": 8307.2,
+    "duration_ms": 1580.6
+  },
+  {
+    "text": "Bias,",
+    "offset_ms": 9887.8,
+    "duration_ms": 790.3
+  },
+  {
+    "text": "Activation",
+    "offset_ms": 10678.1,
+    "duration_ms": 1580.6
+  },
+  {
+    "text": "Function—가",
+    "offset_ms": 12258.7,
+    "duration_ms": 1580.6
+  },
+  {
+    "text": "어떻게",
+    "offset_ms": 13839.3,
+    "duration_ms": 474.2
+  },
+  {
+    "text": "맞물려",
+    "offset_ms": 14313.5,
+    "duration_ms": 474.2
+  },
+  {
+    "text": "동작하는지",
+    "offset_ms": 14787.7,
+    "duration_ms": 790.3
+  },
+  {
+    "text": "이해하는",
+    "offset_ms": 15578.0,
+    "duration_ms": 632.2
+  },
+  {
+    "text": "것이",
+    "offset_ms": 16210.2,
+    "duration_ms": 316.1
+  },
+  {
+    "text": "인공신경망",
+    "offset_ms": 16526.3,
+    "duration_ms": 790.3
+  },
+  {
+    "text": "구조를",
+    "offset_ms": 17316.6,
+    "duration_ms": 474.2
+  },
+  {
+    "text": "파악하는",
+    "offset_ms": 17790.8,
+    "duration_ms": 632.2
+  },
+  {
+    "text": "출발점이",
+    "offset_ms": 18423.0,
+    "duration_ms": 632.2
+  },
+  {
+    "text": "됩니다.",
+    "offset_ms": 19055.3,
+    "duration_ms": 632.2
+  },
+  {
+    "text": "다음",
+    "offset_ms": 19687.5,
+    "duration_ms": 345.2
+  },
+  {
+    "text": "슬라이드에서는",
+    "offset_ms": 20032.7,
+    "duration_ms": 1208.3
+  },
+  {
+    "text": "이",
+    "offset_ms": 21241.1,
+    "duration_ms": 172.6
+  },
+  {
+    "text": "요소들이",
+    "offset_ms": 21413.7,
+    "duration_ms": 690.5
+  },
+  {
+    "text": "실제",
+    "offset_ms": 22104.2,
+    "duration_ms": 345.2
+  },
+  {
+    "text": "Layer",
+    "offset_ms": 22449.4,
+    "duration_ms": 863.1
+  },
+  {
+    "text": "구조",
+    "offset_ms": 23312.5,
+    "duration_ms": 345.2
+  },
+  {
+    "text": "안에서",
+    "offset_ms": 23657.7,
+    "duration_ms": 517.9
+  },
+  {
+    "text": "어떻게",
+    "offset_ms": 24175.6,
+    "duration_ms": 517.9
+  },
+  {
+    "text": "배치되는지",
+    "offset_ms": 24693.5,
+    "duration_ms": 863.1
+  },
+  {
+    "text": "살펴보겠습니다.",
+    "offset_ms": 25556.5,
+    "duration_ms": 1381.0
+  }
+]

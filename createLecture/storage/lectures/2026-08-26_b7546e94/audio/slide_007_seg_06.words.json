@@ -1,0 +1,162 @@
+[
+  {
+    "text": "2017년",
+    "offset_ms": 100.0,
+    "duration_ms": 695.7
+  },
+  {
+    "text": "'Attention",
+    "offset_ms": 795.7,
+    "duration_ms": 1391.3
+  },
+  {
+    "text": "is",
+    "offset_ms": 2187.0,
+    "duration_ms": 278.3
+  },
+  {
+    "text": "All",
+    "offset_ms": 2465.2,
+    "duration_ms": 417.4
+  },
+  {
+    "text": "You",
+    "offset_ms": 2882.6,
+    "duration_ms": 417.4
+  },
+  {
+    "text": "Need'",
+    "offset_ms": 3300.0,
+    "duration_ms": 695.7
+  },
+  {
+    "text": "논문에서",
+    "offset_ms": 3995.7,
+    "duration_ms": 556.5
+  },
+  {
+    "text": "제안된",
+    "offset_ms": 4552.2,
+    "duration_ms": 417.4
+  },
+  {
+    "text": "Transformer",
+    "offset_ms": 4969.6,
+    "duration_ms": 1530.4
+  },
+  {
+    "text": "아키텍처는",
+    "offset_ms": 6500.0,
+    "duration_ms": 695.7
+  },
+  {
+    "text": "딥러닝의",
+    "offset_ms": 7195.7,
+    "duration_ms": 556.5
+  },
+  {
+    "text": "판도를",
+    "offset_ms": 7752.2,
+    "duration_ms": 417.4
+  },
+  {
+    "text": "완전히",
+    "offset_ms": 8169.6,
+    "duration_ms": 417.4
+  },
+  {
+    "text": "바꾼",
+    "offset_ms": 8587.0,
+    "duration_ms": 278.3
+  },
+  {
+    "text": "혁신입니다.",
+    "offset_ms": 8865.2,
+    "duration_ms": 834.8
+  },
+  {
+    "text": "기존",
+    "offset_ms": 9650.0,
+    "duration_ms": 354.5
+  },
+  {
+    "text": "RNN의",
+    "offset_ms": 10004.5,
+    "duration_ms": 709.0
+  },
+  {
+    "text": "순차",
+    "offset_ms": 10713.5,
+    "duration_ms": 354.5
+  },
+  {
+    "text": "처리",
+    "offset_ms": 11068.0,
+    "duration_ms": 354.5
+  },
+  {
+    "text": "한계를",
+    "offset_ms": 11422.5,
+    "duration_ms": 531.8
+  },
+  {
+    "text": "극복하고,",
+    "offset_ms": 11954.2,
+    "duration_ms": 886.2
+  },
+  {
+    "text": "문장",
+    "offset_ms": 12840.5,
+    "duration_ms": 354.5
+  },
+  {
+    "text": "내",
+    "offset_ms": 13195.0,
+    "duration_ms": 177.2
+  },
+  {
+    "text": "단어들",
+    "offset_ms": 13372.2,
+    "duration_ms": 531.8
+  },
+  {
+    "text": "간의",
+    "offset_ms": 13904.0,
+    "duration_ms": 354.5
+  },
+  {
+    "text": "관계를",
+    "offset_ms": 14258.5,
+    "duration_ms": 531.8
+  },
+  {
+    "text": "병렬로",
+    "offset_ms": 14790.2,
+    "duration_ms": 531.8
+  },
+  {
+    "text": "효율적으로",
+    "offset_ms": 15322.0,
+    "duration_ms": 886.2
+  },
+  {
+    "text": "포착할",
+    "offset_ms": 16208.2,
+    "duration_ms": 531.8
+  },
+  {
+    "text": "수",
+    "offset_ms": 16740.0,
+    "duration_ms": 177.2
+  },
+  {
+    "text": "있게",
+    "offset_ms": 16917.2,
+    "duration_ms": 354.5
+  },
+  {
+    "text": "해주었습니다.",
+    "offset_ms": 17271.8,
+    "duration_ms": 1240.8
+  }
+]

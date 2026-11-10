@@ -1,0 +1,97 @@
+[
+  {
+    "text": "인공",
+    "offset_ms": 50.0,
+    "duration_ms": 388.1
+  },
+  {
+    "text": "뉴런의",
+    "offset_ms": 438.1,
+    "duration_ms": 582.1
+  },
+  {
+    "text": "입력값",
+    "offset_ms": 1020.2,
+    "duration_ms": 582.1
+  },
+  {
+    "text": "x₁,",
+    "offset_ms": 1602.4,
+    "duration_ms": 582.1
+  },
+  {
+    "text": "x₂,",
+    "offset_ms": 2184.5,
+    "duration_ms": 582.1
+  },
+  {
+    "text": "…,",
+    "offset_ms": 2766.7,
+    "duration_ms": 582.1
+  },
+  {
+    "text": "xₙ은",
+    "offset_ms": 3348.8,
+    "duration_ms": 582.1
+  },
+  {
+    "text": "생물학적",
+    "offset_ms": 3931.0,
+    "duration_ms": 776.2
+  },
+  {
+    "text": "뉴런의",
+    "offset_ms": 4707.1,
+    "duration_ms": 582.1
+  },
+  {
+    "text": "Dendrite에",
+    "offset_ms": 5289.3,
+    "duration_ms": 1746.4
+  },
+  {
+    "text": "해당합니다.",
+    "offset_ms": 7035.7,
+    "duration_ms": 1164.3
+  },
+  {
+    "text": "여러",
+    "offset_ms": 8200.0,
+    "duration_ms": 369.0
+  },
+  {
+    "text": "출처로부터",
+    "offset_ms": 8569.0,
+    "duration_ms": 922.4
+  },
+  {
+    "text": "들어오는",
+    "offset_ms": 9491.4,
+    "duration_ms": 737.9
+  },
+  {
+    "text": "데이터",
+    "offset_ms": 10229.3,
+    "duration_ms": 553.4
+  },
+  {
+    "text": "신호를",
+    "offset_ms": 10782.8,
+    "duration_ms": 553.4
+  },
+  {
+    "text": "받아들이는",
+    "offset_ms": 11336.2,
+    "duration_ms": 922.4
+  },
+  {
+    "text": "역할을",
+    "offset_ms": 12258.6,
+    "duration_ms": 553.4
+  },
+  {
+    "text": "합니다.",
+    "offset_ms": 12812.1,
+    "duration_ms": 737.9
+  }
+]

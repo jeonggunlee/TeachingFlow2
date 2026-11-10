@@ -1,0 +1,20 @@
+{
+  "slide_index": 21,
+  "title": "Neural Network = Weighted Sum + Activation Function · Deep Learning = Neural Network + Data + Loss + Optimization",
+  "segments": [
+    {
+      "id": "seg_1",
+      "ref": "q",
+      "keyword": "Weighted Sum + Activation Function",
+      "script": "지금까지 배운 내용을 두 줄의 수식으로 압축해 보겠습니다. 인공신경망은 결국 가중합과 활성화 함수의 조합으로 정의됩니다. 각 뉴런이 입력값을 가중치로 합산하고, 활성화 함수를 통해 비선형성을 부여하는 것이 신경망의 본질입니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_2",
+      "ref": "attr",
+      "keyword": "딥러닝 핵심 원리 요약",
+      "script": "그리고 딥러닝은 그 신경망에 데이터, 손실 함수, 최적화까지 더한 전체 학습 체계입니다. 이 네 가지 요소가 맞물려야 비로소 모델이 스스로 규칙을 찾아내는 딥러닝이 완성된다는 점을 꼭 기억해 주십시오.",
+      "effect": "highlighter"
+    }
+  ]
+}

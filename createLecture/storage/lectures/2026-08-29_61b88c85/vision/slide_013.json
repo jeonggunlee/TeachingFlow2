@@ -1,0 +1,76 @@
+{
+  "slide_index": 13,
+  "title": "생물학적 뉴런 vs 인공 뉴런",
+  "segments": [
+    {
+      "id": "seg_1",
+      "ref": "lh",
+      "keyword": "생물학적 뉴런",
+      "script": "인공신경망의 구조를 이해하려면 먼저 그 영감의 원천인 생물학적 뉴런을 살펴봐야 합니다. 우리 뇌는 수십억 개의 뉴런이 서로 연결되어 정보를 처리하는데, 인공 뉴런은 바로 이 구조를 수학적으로 모방한 것입니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_2",
+      "ref": "l1",
+      "keyword": "Dendrite: 신호 입력",
+      "script": "뉴런의 가장 첫 단계는 Dendrite, 즉 수상돌기입니다. 수상돌기는 외부 또는 다른 뉴런으로부터 신호를 받아들이는 입력 창구 역할을 합니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_3",
+      "ref": "l2",
+      "keyword": "Synapse: 신호 강도 조절",
+      "script": "이어서 Synapse, 시냅스는 뉴런과 뉴런 사이의 연결 지점으로, 신호가 얼마나 강하게 전달될지를 결정합니다. 이 신호 강도 조절이 학습의 핵심 메커니즘이기도 합니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_4",
+      "ref": "l3",
+      "keyword": "Cell Body: 신호 통합 처리",
+      "script": "Cell Body, 즉 세포체는 수상돌기로부터 들어온 여러 신호들을 한데 모아 통합하고 처리하는 역할을 합니다. 충분히 강한 신호가 쌓이면 다음 단계로 신호를 보내게 됩니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_5",
+      "ref": "l4",
+      "keyword": "Axon: 신호 출력 전달",
+      "script": "마지막으로 Axon, 축삭은 처리된 신호를 다음 뉴런으로 전달하는 출력 통로입니다. 이렇게 입력→조절→통합→출력의 흐름이 생물학적 뉴런의 기본 동작 원리입니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_6",
+      "ref": "rh",
+      "keyword": "인공 뉴런",
+      "script": "이제 오른쪽의 인공 뉴런을 보면, 방금 살펴본 생물학적 구조가 수학적 요소들로 정확하게 대응되는 것을 확인할 수 있습니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_7",
+      "ref": "r1",
+      "keyword": "Input (x₁, x₂, …, xₙ): 입력값",
+      "script": "생물학적 뉴런의 Dendrite에 해당하는 것이 바로 Input, 즉 입력값 x₁, x₂, …, xₙ입니다. 이미지의 픽셀값이나 텍스트의 수치처럼 외부에서 들어오는 데이터가 이 역할을 합니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_8",
+      "ref": "r2",
+      "keyword": "Weight (w₁, w₂, …, wₙ): 영향 크기",
+      "script": "시냅스의 신호 강도 조절은 Weight, 가중치 w₁, w₂, …, wₙ로 표현됩니다. 각 입력이 최종 결과에 얼마나 큰 영향을 미치는지를 수치로 나타내며, 학습을 통해 이 값들이 조정됩니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_9",
+      "ref": "r3",
+      "keyword": "Bias (b): 활성화 기준 조절",
+      "script": "Bias, 편향 b는 뉴런이 활성화되는 기준점을 조절하는 역할을 합니다. 가중합이 아무리 작아도 편향을 통해 뉴런이 더 쉽게 또는 더 어렵게 활성화되도록 제어할 수 있습니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_10",
+      "ref": "r4",
+      "keyword": "Activation Function → Output",
+      "script": "마지막으로 Activation Function은 Cell Body와 Axon의 역할을 동시에 수행합니다. 가중합과 편향을 통합한 값에 활성화 함수를 적용해 최종 Output을 출력하며, 이 구조가 다음 슬라이드에서 다룰 활성화 함수의 핵심입니다.",
+      "effect": "highlighter"
+    }
+  ]
+}

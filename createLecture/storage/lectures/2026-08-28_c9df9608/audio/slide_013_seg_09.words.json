@@ -1,0 +1,142 @@
+[
+  {
+    "text": "가중합과",
+    "offset_ms": 50.0,
+    "duration_ms": 711.2
+  },
+  {
+    "text": "편향을",
+    "offset_ms": 761.2,
+    "duration_ms": 533.4
+  },
+  {
+    "text": "계산한",
+    "offset_ms": 1294.6,
+    "duration_ms": 533.4
+  },
+  {
+    "text": "뒤",
+    "offset_ms": 1828.0,
+    "duration_ms": 177.8
+  },
+  {
+    "text": "활성화",
+    "offset_ms": 2005.8,
+    "duration_ms": 533.4
+  },
+  {
+    "text": "함수를",
+    "offset_ms": 2539.2,
+    "duration_ms": 533.4
+  },
+  {
+    "text": "통과시키는",
+    "offset_ms": 3072.6,
+    "duration_ms": 889.0
+  },
+  {
+    "text": "과정은",
+    "offset_ms": 3961.6,
+    "duration_ms": 533.4
+  },
+  {
+    "text": "Cell",
+    "offset_ms": 4495.0,
+    "duration_ms": 711.2
+  },
+  {
+    "text": "Body에서",
+    "offset_ms": 5206.2,
+    "duration_ms": 1066.8
+  },
+  {
+    "text": "신호를",
+    "offset_ms": 6273.1,
+    "duration_ms": 533.4
+  },
+  {
+    "text": "통합하고",
+    "offset_ms": 6806.5,
+    "duration_ms": 711.2
+  },
+  {
+    "text": "임계값을",
+    "offset_ms": 7517.7,
+    "duration_ms": 711.2
+  },
+  {
+    "text": "판단하는",
+    "offset_ms": 8228.9,
+    "duration_ms": 711.2
+  },
+  {
+    "text": "과정과",
+    "offset_ms": 8940.1,
+    "duration_ms": 533.4
+  },
+  {
+    "text": "같습니다.",
+    "offset_ms": 9473.5,
+    "duration_ms": 889.0
+  },
+  {
+    "text": "활성화",
+    "offset_ms": 10362.5,
+    "duration_ms": 542.7
+  },
+  {
+    "text": "함수는",
+    "offset_ms": 10905.2,
+    "duration_ms": 542.7
+  },
+  {
+    "text": "뉴런이",
+    "offset_ms": 11447.9,
+    "duration_ms": 542.7
+  },
+  {
+    "text": "다음",
+    "offset_ms": 11990.6,
+    "duration_ms": 361.8
+  },
+  {
+    "text": "층으로",
+    "offset_ms": 12352.4,
+    "duration_ms": 542.7
+  },
+  {
+    "text": "신호를",
+    "offset_ms": 12895.1,
+    "duration_ms": 542.7
+  },
+  {
+    "text": "보낼지",
+    "offset_ms": 13437.8,
+    "duration_ms": 542.7
+  },
+  {
+    "text": "여부를",
+    "offset_ms": 13980.6,
+    "duration_ms": 542.7
+  },
+  {
+    "text": "결정하는",
+    "offset_ms": 14523.3,
+    "duration_ms": 723.6
+  },
+  {
+    "text": "핵심",
+    "offset_ms": 15246.9,
+    "duration_ms": 361.8
+  },
+  {
+    "text": "역할을",
+    "offset_ms": 15608.7,
+    "duration_ms": 542.7
+  },
+  {
+    "text": "합니다.",
+    "offset_ms": 16151.4,
+    "duration_ms": 723.6
+  }
+]

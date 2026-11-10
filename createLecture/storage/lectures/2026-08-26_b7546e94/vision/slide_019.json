@@ -1,0 +1,41 @@
+{
+  "slide_index": 19,
+  "title": "Layer와 다층 신경망의 수식 표현",
+  "segments": [
+    {
+      "id": "seg_1",
+      "ref": "b1",
+      "keyword": "Weight Matrix W",
+      "script": "앞 슬라이드에서 뉴런 하나의 수식을 살펴봤다면, 이제 그것을 층 전체로 확장해 보겠습니다. 한 층의 연산은 z = Wx + b, h = f(z)로 표현되는데, 여기서 W는 Weight Matrix입니다. 행렬 하나의 곱셈으로 그 층에 속한 모든 뉴런의 가중합을 동시에 계산할 수 있다는 점이 핵심입니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_2",
+      "ref": "b2",
+      "keyword": "Hidden Layer 1",
+      "script": "첫 번째 은닉층은 h₁ = f(W₁x + b₁)로 표현됩니다. 입력 벡터 x에 Weight Matrix W₁을 곱하고 편향 b₁을 더한 뒤, 활성화 함수 f를 적용해 첫 번째 은닉 표현 h₁을 만들어 냅니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_3",
+      "ref": "b3",
+      "keyword": "Hidden Layer 2",
+      "script": "두 번째 은닉층은 h₂ = f(W₂h₁ + b₂)입니다. 이번에는 입력이 원래 데이터 x가 아니라 앞 층의 출력 h₁이라는 점에 주목하세요. 층이 쌓일수록 이전 층의 출력이 다음 층의 입력으로 연결되며, 이것이 '깊은' 신경망의 본질입니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_4",
+      "ref": "b4",
+      "keyword": "Output Layer",
+      "script": "출력층은 ŷ = g(W₃h₂ + b₃)로 표현됩니다. 여기서 g는 은닉층의 f와 다를 수 있는데, 예를 들어 분류 문제에서는 Softmax, 회귀 문제에서는 항등함수를 사용하는 식으로 목적에 맞게 선택합니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_5",
+      "ref": "b5",
+      "keyword": "θ = 모든 Weight·Bias",
+      "script": "이 모든 층의 연산을 하나로 묶으면, 전체 신경망은 ŷ = F(x ; θ)라는 간결한 식으로 요약됩니다. θ는 네트워크 안의 모든 Weight와 Bias를 통칭하며, 학습이란 결국 이 θ를 최적화하는 과정입니다. 다음 슬라이드에서는 이 θ를 어떻게 업데이트하는지, 즉 Loss Function과 Weight Update를 살펴보겠습니다.",
+      "effect": "highlighter"
+    }
+  ]
+}

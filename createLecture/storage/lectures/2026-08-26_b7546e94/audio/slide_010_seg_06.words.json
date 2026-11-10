@@ -1,0 +1,112 @@
+[
+  {
+    "text": "딥러닝은",
+    "offset_ms": 100.0,
+    "duration_ms": 564.0
+  },
+  {
+    "text": "특징",
+    "offset_ms": 664.0,
+    "duration_ms": 282.0
+  },
+  {
+    "text": "추출과",
+    "offset_ms": 946.0,
+    "duration_ms": 423.0
+  },
+  {
+    "text": "최종",
+    "offset_ms": 1369.0,
+    "duration_ms": 282.0
+  },
+  {
+    "text": "판단을",
+    "offset_ms": 1651.0,
+    "duration_ms": 423.0
+  },
+  {
+    "text": "동시에",
+    "offset_ms": 2074.0,
+    "duration_ms": 423.0
+  },
+  {
+    "text": "학습하는",
+    "offset_ms": 2497.0,
+    "duration_ms": 564.0
+  },
+  {
+    "text": "Representation",
+    "offset_ms": 3061.0,
+    "duration_ms": 1974.0
+  },
+  {
+    "text": "Learning을",
+    "offset_ms": 5035.0,
+    "duration_ms": 1269.0
+  },
+  {
+    "text": "수행합니다.",
+    "offset_ms": 6304.0,
+    "duration_ms": 846.0
+  },
+  {
+    "text": "사람이",
+    "offset_ms": 7100.0,
+    "duration_ms": 567.1
+  },
+  {
+    "text": "특징을",
+    "offset_ms": 7667.1,
+    "duration_ms": 567.1
+  },
+  {
+    "text": "손수",
+    "offset_ms": 8234.1,
+    "duration_ms": 378.0
+  },
+  {
+    "text": "만들지",
+    "offset_ms": 8612.2,
+    "duration_ms": 567.1
+  },
+  {
+    "text": "않아도,",
+    "offset_ms": 9179.3,
+    "duration_ms": 756.1
+  },
+  {
+    "text": "네트워크가",
+    "offset_ms": 9935.4,
+    "duration_ms": 945.1
+  },
+  {
+    "text": "데이터",
+    "offset_ms": 10880.5,
+    "duration_ms": 567.1
+  },
+  {
+    "text": "안에서",
+    "offset_ms": 11447.6,
+    "duration_ms": 567.1
+  },
+  {
+    "text": "스스로",
+    "offset_ms": 12014.6,
+    "duration_ms": 567.1
+  },
+  {
+    "text": "유용한",
+    "offset_ms": 12581.7,
+    "duration_ms": 567.1
+  },
+  {
+    "text": "표현을",
+    "offset_ms": 13148.8,
+    "duration_ms": 567.1
+  },
+  {
+    "text": "발견합니다.",
+    "offset_ms": 13715.9,
+    "duration_ms": 1134.1
+  }
+]

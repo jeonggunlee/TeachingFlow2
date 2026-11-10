@@ -1,0 +1,122 @@
+[
+  {
+    "text": "신경망의",
+    "offset_ms": 50.0,
+    "duration_ms": 906.2
+  },
+  {
+    "text": "첫",
+    "offset_ms": 956.2,
+    "duration_ms": 226.6
+  },
+  {
+    "text": "번째",
+    "offset_ms": 1182.8,
+    "duration_ms": 453.1
+  },
+  {
+    "text": "층은",
+    "offset_ms": 1635.9,
+    "duration_ms": 453.1
+  },
+  {
+    "text": "입력층입니다.",
+    "offset_ms": 2089.1,
+    "duration_ms": 1585.9
+  },
+  {
+    "text": "입력층은",
+    "offset_ms": 3675.0,
+    "duration_ms": 716.9
+  },
+  {
+    "text": "이미지",
+    "offset_ms": 4391.9,
+    "duration_ms": 537.7
+  },
+  {
+    "text": "픽셀값,",
+    "offset_ms": 4929.7,
+    "duration_ms": 716.9
+  },
+  {
+    "text": "수치",
+    "offset_ms": 5646.6,
+    "duration_ms": 358.5
+  },
+  {
+    "text": "데이터",
+    "offset_ms": 6005.1,
+    "duration_ms": 537.7
+  },
+  {
+    "text": "등",
+    "offset_ms": 6542.8,
+    "duration_ms": 179.2
+  },
+  {
+    "text": "원본",
+    "offset_ms": 6722.0,
+    "duration_ms": 358.5
+  },
+  {
+    "text": "데이터를",
+    "offset_ms": 7080.5,
+    "duration_ms": 716.9
+  },
+  {
+    "text": "그대로",
+    "offset_ms": 7797.5,
+    "duration_ms": 537.7
+  },
+  {
+    "text": "받아들이는",
+    "offset_ms": 8335.2,
+    "duration_ms": 896.2
+  },
+  {
+    "text": "역할을",
+    "offset_ms": 9231.4,
+    "duration_ms": 537.7
+  },
+  {
+    "text": "하며,",
+    "offset_ms": 9769.1,
+    "duration_ms": 537.7
+  },
+  {
+    "text": "별도의",
+    "offset_ms": 10306.8,
+    "duration_ms": 537.7
+  },
+  {
+    "text": "연산",
+    "offset_ms": 10844.5,
+    "duration_ms": 358.5
+  },
+  {
+    "text": "없이",
+    "offset_ms": 11203.0,
+    "duration_ms": 358.5
+  },
+  {
+    "text": "다음",
+    "offset_ms": 11561.4,
+    "duration_ms": 358.5
+  },
+  {
+    "text": "층으로",
+    "offset_ms": 11919.9,
+    "duration_ms": 537.7
+  },
+  {
+    "text": "데이터를",
+    "offset_ms": 12457.6,
+    "duration_ms": 716.9
+  },
+  {
+    "text": "전달합니다.",
+    "offset_ms": 13174.6,
+    "duration_ms": 1075.4
+  }
+]

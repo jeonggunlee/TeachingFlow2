@@ -1,0 +1,41 @@
+{
+  "slide_index": 19,
+  "title": "딥러닝 학습의 전체 흐름",
+  "segments": [
+    {
+      "id": "seg_1",
+      "ref": "f1",
+      "keyword": "입력 (Input)",
+      "script": "딥러닝 학습은 가장 먼저 데이터 x를 네트워크에 투입하는 것에서 시작됩니다. 이 입력 데이터는 이미지, 텍스트, 수치 등 다양한 형태가 될 수 있으며, 이후 모든 연산의 출발점이 됩니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_2",
+      "ref": "f2",
+      "keyword": "순전파 — Forward Propagation",
+      "script": "입력이 들어오면 각 층에서 가중합과 활성화 함수를 거치며 앞 방향으로 신호가 전달됩니다. 이 과정을 순전파라고 하며, 그 결과로 네트워크의 예측값 ŷ이 생성됩니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_3",
+      "ref": "f3",
+      "keyword": "손실 계산 — Loss",
+      "script": "예측값 ŷ이 구해지면, 실제 정답 y와 얼마나 차이가 나는지를 손실 함수 L(y, ŷ)로 수치화합니다. 이 손실값이 클수록 모델의 예측이 정답에서 멀다는 것을 의미하며, 학습의 목표는 이 값을 최소화하는 것입니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_4",
+      "ref": "f4",
+      "keyword": "역전파 — Backpropagation",
+      "script": "손실값이 계산되면 이를 줄이기 위해 각 Weight가 손실에 얼마나 기여했는지를 역방향으로 추적합니다. 이 과정이 역전파이며, 연쇄 법칙(Chain Rule)을 이용해 각 Weight에 대한 Gradient를 계산합니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_5",
+      "ref": "f5",
+      "keyword": "Weight 업데이트 — Gradient Descent",
+      "script": "마지막으로, 계산된 Gradient에 학습률 η를 곱해 각 Weight를 업데이트합니다. 수식으로는 w ← w − η·∇L 로 표현되며, 이 다섯 단계를 반복하면서 네트워크는 점점 더 정확한 예측을 할 수 있게 됩니다.",
+      "effect": "highlighter"
+    }
+  ]
+}

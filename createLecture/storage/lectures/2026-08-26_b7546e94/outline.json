@@ -1,0 +1,276 @@
+[
+  {
+    "layout": "title",
+    "title": "딥러닝 입문",
+    "subtitle": "역사·정의·인공신경망 구조와 수학적 표현"
+  },
+  {
+    "layout": "section",
+    "section_no": "01",
+    "title": "딥러닝의 역사"
+  },
+  {
+    "layout": "bullets",
+    "title": "인공지능의 등장과 초기 방향",
+    "bullets": [
+      "인간의 학습·추론 능력을 컴퓨터로 구현하려는 시도에서 출발",
+      "초기에는 전문가가 직접 규칙을 작성하는 규칙 기반(Rule-based) AI",
+      "데이터의 증가와 함께 데이터 기반 학습 방식으로 패러다임 전환",
+      "McCulloch–Pitts의 인공 뉴런: 생물학적 뉴런을 수학적으로 단순화"
+    ]
+  },
+  {
+    "layout": "flow",
+    "title": "인공신경망 발전의 흐름",
+    "steps": [
+      {
+        "name": "인공 뉴런",
+        "note": "McCulloch–Pitts, 1943"
+      },
+      {
+        "name": "퍼셉트론",
+        "note": "Rosenblatt, 1958"
+      },
+      {
+        "name": "다층 신경망(MLP)",
+        "note": "은닉층 + Backpropagation"
+      },
+      {
+        "name": "딥러닝 부흥",
+        "note": "AlexNet·GPU·빅데이터, 2012"
+      },
+      {
+        "name": "현대 딥러닝",
+        "note": "Transformer·LLM·생성형 AI"
+      }
+    ]
+  },
+  {
+    "layout": "bullets",
+    "title": "퍼셉트론과 다층 신경망",
+    "bullets": [
+      "퍼셉트론: 입력과 가중치를 이용한 이진 분류, 학습으로 가중치 자동 결정",
+      "XOR 문제 — 단층 퍼셉트론의 선형 분리 한계 노출",
+      "MLP: 은닉층(Hidden Layer) 추가로 비선형 문제 해결",
+      "Backpropagation 알고리즘으로 다층 신경망 학습 가능"
+    ]
+  },
+  {
+    "layout": "stat",
+    "value": "2012년",
+    "label": "딥러닝 부흥의 원년",
+    "caption": "AlexNet이 ImageNet 대회에서 압도적 성능을 기록하며 딥러닝 시대를 열었다."
+  },
+  {
+    "layout": "two_col",
+    "title": "딥러닝 부흥의 배경과 현대 딥러닝",
+    "left": {
+      "heading": "부흥의 3대 동력",
+      "points": [
+        "대규모 데이터(Big Data)의 급격한 증가",
+        "GPU 기반 대규모 병렬 연산 가능",
+        "CNN·RNN·LSTM 등 다양한 아키텍처 발전"
+      ]
+    },
+    "right": {
+      "heading": "현대 딥러닝 키워드",
+      "points": [
+        "Attention·Transformer 아키텍처 등장",
+        "BERT·GPT 등 대규모 언어 모델(LLM)",
+        "생성형 AI·멀티모달 AI로 확장"
+      ]
+    }
+  },
+  {
+    "layout": "section",
+    "section_no": "02",
+    "title": "딥러닝의 정의"
+  },
+  {
+    "layout": "venn",
+    "title": "AI · 머신러닝 · 딥러닝의 포함 관계",
+    "mode": "nested",
+    "sets": [
+      {
+        "name": "인공지능(AI)",
+        "note": "가장 넓은 개념"
+      },
+      {
+        "name": "머신러닝(ML)",
+        "note": "데이터 기반 학습"
+      },
+      {
+        "name": "딥러닝(DL)",
+        "note": "다층 신경망 활용"
+      }
+    ]
+  },
+  {
+    "layout": "two_col",
+    "title": "전통적 프로그래밍 vs 머신러닝 vs 딥러닝",
+    "left": {
+      "heading": "전통적 프로그래밍 / 머신러닝",
+      "points": [
+        "전통: Data + Rules → Output (규칙을 사람이 작성)",
+        "머신러닝: Data + Output → Model (데이터로 규칙 학습)",
+        "머신러닝: 사람이 특징(Feature)을 직접 설계"
+      ]
+    },
+    "right": {
+      "heading": "딥러닝",
+      "points": [
+        "특징 추출과 판단을 동시에 학습 (Representation Learning)",
+        "계층적 특징 학습: Pixel → Edge → Shape → Object",
+        "여러 Hidden Layer = 'Deep'의 의미"
+      ]
+    }
+  },
+  {
+    "layout": "bullets",
+    "title": "딥러닝의 주요 구성 요소와 응용",
+    "bullets": [
+      "핵심 구성: Data · Neural Network · Loss Function · Optimizer · Training · Inference",
+      "분류(Classification)·회귀(Regression)·객체 탐지(Object Detection)",
+      "분할(Segmentation)·자연어 처리(NLP)·생성형 AI 등 광범위한 응용"
+    ]
+  },
+  {
+    "layout": "section",
+    "section_no": "03",
+    "title": "인공신경망의 구조"
+  },
+  {
+    "layout": "two_col",
+    "title": "생물학적 뉴런 vs 인공 뉴런",
+    "left": {
+      "heading": "생물학적 뉴런",
+      "points": [
+        "Dendrite — 신호 수신",
+        "Synapse — 신호 세기 조절",
+        "Cell Body — 신호 통합 처리",
+        "Axon — 신호 출력"
+      ]
+    },
+    "right": {
+      "heading": "인공 뉴런",
+      "points": [
+        "Input (x₁, x₂, …, xₙ)",
+        "Weight (w₁, w₂, …, wₙ)",
+        "Weighted Sum + Bias → z",
+        "Activation Function → Output"
+      ]
+    }
+  },
+  {
+    "layout": "bullets",
+    "title": "Weight · Bias · Activation Function",
+    "bullets": [
+      "Weight: 입력이 출력에 미치는 영향의 크기, 학습을 통해 자동 갱신",
+      "Bias: 뉴런 활성화 기준을 조절하여 신경망 표현 능력 확장",
+      "Activation Function: 비선형성 부여 — Step / Sigmoid / Tanh / ReLU / Softmax",
+      "딥러닝 학습의 핵심 = 적절한 Weight와 Bias를 찾는 과정"
+    ]
+  },
+  {
+    "layout": "layers",
+    "title": "Neural Network의 Layer 구조",
+    "layers": [
+      {
+        "name": "Input Layer",
+        "note": "원시 데이터 입력"
+      },
+      {
+        "name": "Hidden Layer",
+        "note": "계층적 특징 추출 (여러 층 가능)"
+      },
+      {
+        "name": "Output Layer",
+        "note": "최종 예측값 생성"
+      }
+    ]
+  },
+  {
+    "layout": "bullets",
+    "title": "Fully Connected Layer와 신경망 크기",
+    "bullets": [
+      "Fully Connected Layer: 이전 층 모든 뉴런이 다음 층 모든 뉴런과 연결",
+      "각 연결마다 고유한 Weight 존재, Weight·Bias가 학습 가능한 Parameter",
+      "Depth: Layer의 개수 / Width: 각 Layer의 뉴런 수",
+      "Forward Propagation: Input → Hidden → Output, 최종 예측값 생성"
+    ]
+  },
+  {
+    "layout": "section",
+    "section_no": "04",
+    "title": "인공신경망의 수학적 표현"
+  },
+  {
+    "layout": "figure",
+    "title": "하나의 뉴런: 수식 구조",
+    "caption": "입력 벡터 x와 가중치 벡터 w의 내적에 Bias를 더한 후 활성화 함수를 적용한다.",
+    "svg": "<svg viewBox=\"0 0 1680 700\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"1680\" height=\"700\" fill=\"#ffffff\"/><rect x=\"60\" y=\"290\" width=\"140\" height=\"120\" rx=\"12\" fill=\"#f0f9ff\" stroke=\"#0ea5e9\" stroke-width=\"3\"/><text x=\"130\" y=\"345\" text-anchor=\"middle\" font-size=\"28\" fill=\"#0f172a\" font-family=\"sans-serif\">x₁</text><text x=\"130\" y=\"385\" text-anchor=\"middle\" font-size=\"28\" fill=\"#0f172a\" font-family=\"sans-serif\">x₂…xₙ</text><rect x=\"60\" y=\"160\" width=\"140\" height=\"60\" rx=\"8\" fill=\"#f8fafc\" stroke=\"#94a3b8\" stroke-width=\"2\"/><text x=\"130\" y=\"198\" text-anchor=\"middle\" font-size=\"24\" fill=\"#64748b\" font-family=\"sans-serif\">입력 벡터 x</text><circle cx=\"700\" cy=\"350\" r=\"90\" fill=\"#f0f9ff\" stroke=\"#0ea5e9\" stroke-width=\"4\"/><text x=\"700\" y=\"335\" text-anchor=\"middle\" font-size=\"26\" fill=\"#0f172a\" font-family=\"sans-serif\">z = wᵀx + b</text><text x=\"700\" y=\"370\" text-anchor=\"middle\" font-size=\"24\" fill=\"#0ea5e9\" font-family=\"sans-serif\">가중합</text><line x1=\"200\" y1=\"350\" x2=\"608\" y2=\"350\" stroke=\"#0ea5e9\" stroke-width=\"3\" marker-end=\"url(#arr)\"/><text x=\"400\" y=\"330\" text-anchor=\"middle\" font-size=\"22\" fill=\"#64748b\" font-family=\"sans-serif\">w, b</text><rect x=\"480\" y=\"130\" width=\"180\" height=\"60\" rx=\"8\" fill=\"#f8fafc\" stroke=\"#94a3b8\" stroke-width=\"2\"/><text x=\"570\" y=\"168\" text-anchor=\"middle\" font-size=\"24\" fill=\"#64748b\" font-family=\"sans-serif\">Bias b</text><line x1=\"570\" y1=\"190\" x2=\"660\" y2=\"265\" stroke=\"#94a3b8\" stroke-width=\"2\" stroke-dasharray=\"6,4\"/><circle cx=\"1100\" cy=\"350\" r=\"90\" fill=\"#fff7ed\" stroke=\"#f97316\" stroke-width=\"4\"/><text x=\"1100\" y=\"335\" text-anchor=\"middle\" font-size=\"26\" fill=\"#0f172a\" font-family=\"sans-serif\">y = f(z)</text><text x=\"1100\" y=\"370\" text-anchor=\"middle\" font-size=\"24\" fill=\"#f97316\" font-family=\"sans-serif\">활성화 함수</text><line x1=\"790\" y1=\"350\" x2=\"1008\" y2=\"350\" stroke=\"#0f172a\" stroke-width=\"3\" marker-end=\"url(#arr2)\"/><rect x=\"1300\" y=\"310\" width=\"160\" height=\"80\" rx=\"12\" fill=\"#f0fdf4\" stroke=\"#22c55e\" stroke-width=\"3\"/><text x=\"1380\" y=\"358\" text-anchor=\"middle\" font-size=\"30\" fill=\"#0f172a\" font-family=\"sans-serif\">Output</text><line x1=\"1190\" y1=\"350\" x2=\"1298\" y2=\"350\" stroke=\"#22c55e\" stroke-width=\"3\" marker-end=\"url(#arr3)\"/><defs><marker id=\"arr\" markerWidth=\"10\" markerHeight=\"7\" refX=\"9\" refY=\"3.5\" orient=\"auto\"><polygon points=\"0 0,10 3.5,0 7\" fill=\"#0ea5e9\"/></marker><marker id=\"arr2\" markerWidth=\"10\" markerHeight=\"7\" refX=\"9\" refY=\"3.5\" orient=\"auto\"><polygon points=\"0 0,10 3.5,0 7\" fill=\"#0f172a\"/></marker><marker id=\"arr3\" markerWidth=\"10\" markerHeight=\"7\" refX=\"9\" refY=\"3.5\" orient=\"auto\"><polygon points=\"0 0,10 3.5,0 7\" fill=\"#22c55e\"/></marker></defs></svg>"
+  },
+  {
+    "layout": "bullets",
+    "title": "Layer와 다층 신경망의 수식 표현",
+    "bullets": [
+      "한 층: z = Wx + b, h = f(z) — Weight Matrix W로 뉴런 전체를 동시에 계산",
+      "Hidden Layer 1: h₁ = f(W₁x + b₁)",
+      "Hidden Layer 2: h₂ = f(W₂h₁ + b₂)",
+      "Output Layer: ŷ = g(W₃h₂ + b₃)",
+      "전체 신경망 요약: ŷ = F(x ; θ), θ = 모든 Weight·Bias"
+    ]
+  },
+  {
+    "layout": "two_col",
+    "title": "Loss Function과 Weight Update",
+    "left": {
+      "heading": "Loss Function",
+      "points": [
+        "실제값 y와 예측값 ŷ의 차이를 수치화",
+        "회귀(Regression): MSE",
+        "분류(Classification): Cross Entropy"
+      ]
+    },
+    "right": {
+      "heading": "Weight Update (Gradient Descent)",
+      "points": [
+        "Backpropagation으로 각 Weight의 Gradient 계산",
+        "w_new = w_old − lr × gradient",
+        "Loss가 작아지는 방향으로 반복 갱신"
+      ]
+    }
+  },
+  {
+    "layout": "cycle",
+    "title": "딥러닝 학습의 전체 흐름",
+    "steps": [
+      {
+        "name": "Forward Propagation",
+        "note": "입력 → 예측값 생성"
+      },
+      {
+        "name": "Loss 계산",
+        "note": "예측값과 정답 비교"
+      },
+      {
+        "name": "Backpropagation",
+        "note": "Gradient 계산"
+      },
+      {
+        "name": "Weight Update",
+        "note": "파라미터 갱신"
+      }
+    ]
+  },
+  {
+    "layout": "quote",
+    "quote": "Neural Network = Weighted Sum + Activation Function\nDeep Learning = Neural Network + Data + Loss + Optimization",
+    "attribution": "강의 핵심 요약"
+  },
+  {
+    "layout": "closing",
+    "title": "딥러닝의 역사·정의·구조를 이해했습니다",
+    "subtitle": "다음 강의: 활성화 함수 심화 및 학습 최적화 기법"
+  }
+]

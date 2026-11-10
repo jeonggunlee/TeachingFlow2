@@ -1,0 +1,147 @@
+[
+  {
+    "text": "마지막",
+    "offset_ms": 50.0,
+    "duration_ms": 774.1
+  },
+  {
+    "text": "출력층은",
+    "offset_ms": 824.1,
+    "duration_ms": 1032.1
+  },
+  {
+    "text": "ŷ",
+    "offset_ms": 1856.2,
+    "duration_ms": 516.0
+  },
+  {
+    "text": "=",
+    "offset_ms": 2372.3,
+    "duration_ms": 516.1
+  },
+  {
+    "text": "g(W₃h₂",
+    "offset_ms": 2888.4,
+    "duration_ms": 1290.2
+  },
+  {
+    "text": "+",
+    "offset_ms": 4178.6,
+    "duration_ms": 774.1
+  },
+  {
+    "text": "b₃)로",
+    "offset_ms": 4952.7,
+    "duration_ms": 774.1
+  },
+  {
+    "text": "나타냅니다.",
+    "offset_ms": 5726.8,
+    "duration_ms": 1548.2
+  },
+  {
+    "text": "여기서",
+    "offset_ms": 7275.0,
+    "duration_ms": 493.5
+  },
+  {
+    "text": "활성화",
+    "offset_ms": 7768.5,
+    "duration_ms": 493.5
+  },
+  {
+    "text": "함수",
+    "offset_ms": 8262.0,
+    "duration_ms": 329.0
+  },
+  {
+    "text": "g는",
+    "offset_ms": 8591.0,
+    "duration_ms": 329.0
+  },
+  {
+    "text": "은닉층의",
+    "offset_ms": 8920.0,
+    "duration_ms": 658.0
+  },
+  {
+    "text": "f와",
+    "offset_ms": 9578.0,
+    "duration_ms": 329.0
+  },
+  {
+    "text": "다를",
+    "offset_ms": 9907.0,
+    "duration_ms": 329.0
+  },
+  {
+    "text": "수",
+    "offset_ms": 10236.0,
+    "duration_ms": 164.5
+  },
+  {
+    "text": "있는데,",
+    "offset_ms": 10400.5,
+    "duration_ms": 658.0
+  },
+  {
+    "text": "예를",
+    "offset_ms": 11058.5,
+    "duration_ms": 329.0
+  },
+  {
+    "text": "들어",
+    "offset_ms": 11387.5,
+    "duration_ms": 329.0
+  },
+  {
+    "text": "분류",
+    "offset_ms": 11716.5,
+    "duration_ms": 329.0
+  },
+  {
+    "text": "문제에서는",
+    "offset_ms": 12045.5,
+    "duration_ms": 822.5
+  },
+  {
+    "text": "Softmax,",
+    "offset_ms": 12868.0,
+    "duration_ms": 1316.0
+  },
+  {
+    "text": "회귀",
+    "offset_ms": 14184.0,
+    "duration_ms": 329.0
+  },
+  {
+    "text": "문제에서는",
+    "offset_ms": 14513.0,
+    "duration_ms": 822.5
+  },
+  {
+    "text": "항등",
+    "offset_ms": 15335.5,
+    "duration_ms": 329.0
+  },
+  {
+    "text": "함수(Identity)를",
+    "offset_ms": 15664.5,
+    "duration_ms": 1809.5
+  },
+  {
+    "text": "사용하는",
+    "offset_ms": 17474.0,
+    "duration_ms": 658.0
+  },
+  {
+    "text": "것이",
+    "offset_ms": 18132.0,
+    "duration_ms": 329.0
+  },
+  {
+    "text": "일반적입니다.",
+    "offset_ms": 18461.0,
+    "duration_ms": 1151.5
+  }
+]

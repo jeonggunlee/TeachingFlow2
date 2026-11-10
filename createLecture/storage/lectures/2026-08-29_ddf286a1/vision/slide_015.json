@@ -1,0 +1,34 @@
+{
+  "slide_index": 15,
+  "title": "주요 구성 요소: Weight · Bias · Activation Function",
+  "segments": [
+    {
+      "id": "seg_1",
+      "ref": "b1",
+      "keyword": "Weight",
+      "script": "첫 번째 핵심 요소는 Weight, 즉 가중치입니다. Weight는 각 입력 신호가 출력에 얼마나 큰 영향을 미치는지를 결정하는 값으로, 학습 과정을 통해 자동으로 조정됩니다. 쉽게 말해, 신경망이 '무엇을 중요하게 볼 것인가'를 스스로 배워나가는 핵심 매개변수입니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_2",
+      "ref": "b2",
+      "keyword": "Bias",
+      "script": "두 번째 요소는 Bias, 편향입니다. Bias는 뉴런이 활성화되는 기준점을 조절하는 역할을 하며, 이를 통해 신경망의 표현 능력이 크게 향상됩니다. Weight만으로는 원점을 지나는 함수밖에 표현할 수 없기 때문에, Bias가 더해져야 훨씬 다양한 패턴을 학습할 수 있습니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_3",
+      "ref": "b3",
+      "keyword": "Activation Function",
+      "script": "세 번째는 Activation Function, 활성화 함수입니다. 활성화 함수는 뉴런의 출력에 비선형성을 추가하여, 신경망이 단순한 선형 변환을 넘어 복잡한 패턴을 학습할 수 있게 해줍니다. 대표적으로 Step, Sigmoid, Tanh, ReLU, Softmax 등이 있으며, 각각의 특성과 쓰임새가 다릅니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_4",
+      "ref": "b4",
+      "keyword": "Fully Connected Layer",
+      "script": "마지막으로 Fully Connected Layer는 이전 층의 모든 뉴런과 현재 층의 모든 뉴런이 빠짐없이 연결된 구조입니다. 이때 각 연결에 Weight와 Bias가 할당되며, 이 값들이 바로 신경망이 학습을 통해 갱신하는 학습 파라미터가 됩니다. 다음 슬라이드에서는 이 구성 요소들이 수학적으로 어떻게 표현되는지 살펴보겠습니다.",
+      "effect": "highlighter"
+    }
+  ]
+}

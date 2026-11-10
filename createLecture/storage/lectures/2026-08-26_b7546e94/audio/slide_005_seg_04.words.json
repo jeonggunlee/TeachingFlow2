@@ -1,0 +1,182 @@
+[
+  {
+    "text": "하지만",
+    "offset_ms": 100.0,
+    "duration_ms": 565.6
+  },
+  {
+    "text": "층이",
+    "offset_ms": 665.6,
+    "duration_ms": 377.1
+  },
+  {
+    "text": "여러",
+    "offset_ms": 1042.7,
+    "duration_ms": 377.1
+  },
+  {
+    "text": "개가",
+    "offset_ms": 1419.8,
+    "duration_ms": 377.1
+  },
+  {
+    "text": "되면",
+    "offset_ms": 1796.9,
+    "duration_ms": 377.1
+  },
+  {
+    "text": "가중치를",
+    "offset_ms": 2174.0,
+    "duration_ms": 754.2
+  },
+  {
+    "text": "어떻게",
+    "offset_ms": 2928.1,
+    "duration_ms": 565.6
+  },
+  {
+    "text": "학습시킬",
+    "offset_ms": 3493.7,
+    "duration_ms": 754.2
+  },
+  {
+    "text": "것인가가",
+    "offset_ms": 4247.9,
+    "duration_ms": 754.2
+  },
+  {
+    "text": "새로운",
+    "offset_ms": 5002.1,
+    "duration_ms": 565.6
+  },
+  {
+    "text": "과제였습니다.",
+    "offset_ms": 5567.7,
+    "duration_ms": 1319.8
+  },
+  {
+    "text": "이를",
+    "offset_ms": 6837.5,
+    "duration_ms": 330.1
+  },
+  {
+    "text": "해결한",
+    "offset_ms": 7167.6,
+    "duration_ms": 495.2
+  },
+  {
+    "text": "것이",
+    "offset_ms": 7662.9,
+    "duration_ms": 330.1
+  },
+  {
+    "text": "역전파,",
+    "offset_ms": 7993.0,
+    "duration_ms": 660.3
+  },
+  {
+    "text": "Backpropagation",
+    "offset_ms": 8653.3,
+    "duration_ms": 2476.1
+  },
+  {
+    "text": "알고리즘입니다.",
+    "offset_ms": 11129.4,
+    "duration_ms": 1320.6
+  },
+  {
+    "text": "출력의",
+    "offset_ms": 12450.0,
+    "duration_ms": 541.9
+  },
+  {
+    "text": "오차를",
+    "offset_ms": 12991.9,
+    "duration_ms": 541.9
+  },
+  {
+    "text": "출력층에서",
+    "offset_ms": 13533.9,
+    "duration_ms": 903.2
+  },
+  {
+    "text": "입력층",
+    "offset_ms": 14437.1,
+    "duration_ms": 541.9
+  },
+  {
+    "text": "방향으로",
+    "offset_ms": 14979.0,
+    "duration_ms": 722.6
+  },
+  {
+    "text": "거꾸로",
+    "offset_ms": 15701.6,
+    "duration_ms": 541.9
+  },
+  {
+    "text": "전파하며",
+    "offset_ms": 16243.5,
+    "duration_ms": 722.6
+  },
+  {
+    "text": "각",
+    "offset_ms": 16966.1,
+    "duration_ms": 180.6
+  },
+  {
+    "text": "층의",
+    "offset_ms": 17146.8,
+    "duration_ms": 361.3
+  },
+  {
+    "text": "가중치를",
+    "offset_ms": 17508.1,
+    "duration_ms": 722.6
+  },
+  {
+    "text": "조정하는",
+    "offset_ms": 18230.6,
+    "duration_ms": 722.6
+  },
+  {
+    "text": "이",
+    "offset_ms": 18953.2,
+    "duration_ms": 180.6
+  },
+  {
+    "text": "방법",
+    "offset_ms": 19133.9,
+    "duration_ms": 361.3
+  },
+  {
+    "text": "덕분에",
+    "offset_ms": 19495.2,
+    "duration_ms": 541.9
+  },
+  {
+    "text": "다층",
+    "offset_ms": 20037.1,
+    "duration_ms": 361.3
+  },
+  {
+    "text": "신경망의",
+    "offset_ms": 20398.4,
+    "duration_ms": 722.6
+  },
+  {
+    "text": "학습이",
+    "offset_ms": 21121.0,
+    "duration_ms": 541.9
+  },
+  {
+    "text": "비로소",
+    "offset_ms": 21662.9,
+    "duration_ms": 541.9
+  },
+  {
+    "text": "가능해졌습니다.",
+    "offset_ms": 22204.8,
+    "duration_ms": 1445.2
+  }
+]

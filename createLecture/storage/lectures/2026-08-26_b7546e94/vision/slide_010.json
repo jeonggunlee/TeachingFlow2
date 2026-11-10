@@ -1,0 +1,62 @@
+{
+  "slide_index": 10,
+  "title": "전통적 프로그래밍 vs 머신러닝 vs 딥러닝",
+  "segments": [
+    {
+      "id": "seg_1",
+      "ref": "lh",
+      "keyword": "전통적 프로그래밍 / 머신러닝",
+      "script": "먼저 왼쪽 열에서 전통적 프로그래밍과 머신러닝의 차이를 살펴보겠습니다. 전통적 프로그래밍은 사람이 직접 규칙을 작성하여 데이터와 결합함으로써 원하는 출력을 만들어 냅니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_2",
+      "ref": "l1",
+      "keyword": "Data + Rules → Output",
+      "script": "전통적 방식은 'Data + Rules → Output'으로 요약할 수 있습니다. 즉, 개발자가 모든 판단 기준을 코드로 명시해야 하므로, 복잡한 문제일수록 규칙을 설계하는 데 한계가 생깁니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_3",
+      "ref": "l2",
+      "keyword": "Data + Output → Model",
+      "script": "머신러닝은 이 방향을 뒤집어, 데이터와 정답(Output)을 함께 제공하면 모델이 스스로 규칙을 학습합니다. 'Data + Output → Model'이라는 공식이 핵심입니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_4",
+      "ref": "l3",
+      "keyword": "특징(Feature)을 직접 설계",
+      "script": "그러나 전통적 머신러닝에서는 어떤 특징을 모델에 넣을지를 사람이 직접 설계해야 합니다. 이른바 Feature Engineering이라 불리는 이 과정은 도메인 전문 지식과 많은 수작업을 요구합니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_5",
+      "ref": "rh",
+      "keyword": "딥러닝",
+      "script": "오른쪽 열에서는 딥러닝이 머신러닝과 어떻게 다른지를 살펴봅니다. 딥러닝은 특징 설계라는 부담을 모델 스스로 해결한다는 점에서 큰 전환점을 이룹니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_6",
+      "ref": "r1",
+      "keyword": "Representation Learning",
+      "script": "딥러닝은 특징 추출과 최종 판단을 동시에 학습하는 Representation Learning을 수행합니다. 사람이 특징을 손수 만들지 않아도, 네트워크가 데이터 안에서 스스로 유용한 표현을 발견합니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_7",
+      "ref": "r2",
+      "keyword": "계층적 특징 학습",
+      "script": "이 학습은 계층적으로 이루어집니다. 예를 들어 이미지를 처리할 때 Pixel → Edge → Shape → Object 순서로 점점 추상적인 특징을 쌓아 올라가며 인식합니다.",
+      "effect": "highlighter"
+    },
+    {
+      "id": "seg_8",
+      "ref": "r3",
+      "keyword": "여러 Hidden Layer = 'Deep'의 의미",
+      "script": "바로 이 '여러 층의 Hidden Layer'가 딥러닝에서 'Deep'이 의미하는 바입니다. 층이 깊어질수록 더 복잡하고 추상적인 개념을 표현할 수 있게 되며, 이것이 딥러닝의 강력한 힘의 원천입니다.",
+      "effect": "highlighter"
+    }
+  ]
+}

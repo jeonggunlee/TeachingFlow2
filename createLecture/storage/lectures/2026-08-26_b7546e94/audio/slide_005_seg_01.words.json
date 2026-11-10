@@ -1,0 +1,172 @@
+[
+  {
+    "text": "인공신경망의",
+    "offset_ms": 100.0,
+    "duration_ms": 1395.0
+  },
+  {
+    "text": "출발점은",
+    "offset_ms": 1495.0,
+    "duration_ms": 930.0
+  },
+  {
+    "text": "바로",
+    "offset_ms": 2425.0,
+    "duration_ms": 465.0
+  },
+  {
+    "text": "퍼셉트론입니다.",
+    "offset_ms": 2890.0,
+    "duration_ms": 1860.0
+  },
+  {
+    "text": "퍼셉트론은",
+    "offset_ms": 4700.0,
+    "duration_ms": 962.5
+  },
+  {
+    "text": "여러",
+    "offset_ms": 5662.5,
+    "duration_ms": 385.0
+  },
+  {
+    "text": "입력값에",
+    "offset_ms": 6047.5,
+    "duration_ms": 770.0
+  },
+  {
+    "text": "가중치를",
+    "offset_ms": 6817.5,
+    "duration_ms": 770.0
+  },
+  {
+    "text": "곱해",
+    "offset_ms": 7587.5,
+    "duration_ms": 385.0
+  },
+  {
+    "text": "합산한",
+    "offset_ms": 7972.5,
+    "duration_ms": 577.5
+  },
+  {
+    "text": "뒤,",
+    "offset_ms": 8550.0,
+    "duration_ms": 385.0
+  },
+  {
+    "text": "그",
+    "offset_ms": 8935.0,
+    "duration_ms": 192.5
+  },
+  {
+    "text": "결과로",
+    "offset_ms": 9127.5,
+    "duration_ms": 577.5
+  },
+  {
+    "text": "이진",
+    "offset_ms": 9705.0,
+    "duration_ms": 385.0
+  },
+  {
+    "text": "분류를",
+    "offset_ms": 10090.0,
+    "duration_ms": 577.5
+  },
+  {
+    "text": "수행하는",
+    "offset_ms": 10667.5,
+    "duration_ms": 770.0
+  },
+  {
+    "text": "가장",
+    "offset_ms": 11437.5,
+    "duration_ms": 385.0
+  },
+  {
+    "text": "단순한",
+    "offset_ms": 11822.5,
+    "duration_ms": 577.5
+  },
+  {
+    "text": "형태의",
+    "offset_ms": 12400.0,
+    "duration_ms": 577.5
+  },
+  {
+    "text": "신경망입니다.",
+    "offset_ms": 12977.5,
+    "duration_ms": 1347.5
+  },
+  {
+    "text": "핵심은",
+    "offset_ms": 14325.0,
+    "duration_ms": 530.4
+  },
+  {
+    "text": "이",
+    "offset_ms": 14855.4,
+    "duration_ms": 176.8
+  },
+  {
+    "text": "가중치를",
+    "offset_ms": 15032.1,
+    "duration_ms": 707.1
+  },
+  {
+    "text": "학습을",
+    "offset_ms": 15739.3,
+    "duration_ms": 530.4
+  },
+  {
+    "text": "통해",
+    "offset_ms": 16269.6,
+    "duration_ms": 353.6
+  },
+  {
+    "text": "자동으로",
+    "offset_ms": 16623.2,
+    "duration_ms": 707.1
+  },
+  {
+    "text": "결정한다는",
+    "offset_ms": 17330.4,
+    "duration_ms": 883.9
+  },
+  {
+    "text": "점으로,",
+    "offset_ms": 18214.3,
+    "duration_ms": 707.1
+  },
+  {
+    "text": "이것이",
+    "offset_ms": 18921.4,
+    "duration_ms": 530.4
+  },
+  {
+    "text": "'학습하는",
+    "offset_ms": 19451.8,
+    "duration_ms": 883.9
+  },
+  {
+    "text": "기계'의",
+    "offset_ms": 20335.7,
+    "duration_ms": 707.1
+  },
+  {
+    "text": "첫",
+    "offset_ms": 21042.9,
+    "duration_ms": 176.8
+  },
+  {
+    "text": "번째",
+    "offset_ms": 21219.6,
+    "duration_ms": 353.6
+  },
+  {
+    "text": "구현이었습니다.",
+    "offset_ms": 21573.2,
+    "duration_ms": 1414.3
+  }
+]

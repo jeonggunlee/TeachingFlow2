@@ -1,0 +1,197 @@
+[
+  {
+    "text": "이것으로",
+    "offset_ms": 100.0,
+    "duration_ms": 819.6
+  },
+  {
+    "text": "오늘",
+    "offset_ms": 919.6,
+    "duration_ms": 409.8
+  },
+  {
+    "text": "강의의",
+    "offset_ms": 1329.3,
+    "duration_ms": 614.7
+  },
+  {
+    "text": "핵심",
+    "offset_ms": 1944.0,
+    "duration_ms": 409.8
+  },
+  {
+    "text": "내용을",
+    "offset_ms": 2353.8,
+    "duration_ms": 614.7
+  },
+  {
+    "text": "모두",
+    "offset_ms": 2968.5,
+    "duration_ms": 409.8
+  },
+  {
+    "text": "살펴봤습니다.",
+    "offset_ms": 3378.3,
+    "duration_ms": 1434.2
+  },
+  {
+    "text": "딥러닝이",
+    "offset_ms": 4762.5,
+    "duration_ms": 745.1
+  },
+  {
+    "text": "어떤",
+    "offset_ms": 5507.6,
+    "duration_ms": 372.6
+  },
+  {
+    "text": "역사적",
+    "offset_ms": 5880.2,
+    "duration_ms": 558.9
+  },
+  {
+    "text": "흐름",
+    "offset_ms": 6439.1,
+    "duration_ms": 372.6
+  },
+  {
+    "text": "속에서",
+    "offset_ms": 6811.6,
+    "duration_ms": 558.9
+  },
+  {
+    "text": "발전해",
+    "offset_ms": 7370.5,
+    "duration_ms": 558.9
+  },
+  {
+    "text": "왔는지,",
+    "offset_ms": 7929.3,
+    "duration_ms": 745.1
+  },
+  {
+    "text": "머신러닝·인공지능과",
+    "offset_ms": 8674.5,
+    "duration_ms": 1862.8
+  },
+  {
+    "text": "어떤",
+    "offset_ms": 10537.3,
+    "duration_ms": 372.6
+  },
+  {
+    "text": "관계를",
+    "offset_ms": 10909.9,
+    "duration_ms": 558.9
+  },
+  {
+    "text": "맺는지,",
+    "offset_ms": 11468.8,
+    "duration_ms": 745.1
+  },
+  {
+    "text": "그리고",
+    "offset_ms": 12213.9,
+    "duration_ms": 558.9
+  },
+  {
+    "text": "인공신경망이",
+    "offset_ms": 12772.7,
+    "duration_ms": 1117.7
+  },
+  {
+    "text": "수학적으로",
+    "offset_ms": 13890.5,
+    "duration_ms": 931.4
+  },
+  {
+    "text": "어떻게",
+    "offset_ms": 14821.9,
+    "duration_ms": 558.9
+  },
+  {
+    "text": "구성되는지를",
+    "offset_ms": 15380.7,
+    "duration_ms": 1117.7
+  },
+  {
+    "text": "함께",
+    "offset_ms": 16498.4,
+    "duration_ms": 372.6
+  },
+  {
+    "text": "정리했습니다.",
+    "offset_ms": 16871.0,
+    "duration_ms": 1304.0
+  },
+  {
+    "text": "퍼셉트론부터",
+    "offset_ms": 18175.0,
+    "duration_ms": 1276.5
+  },
+  {
+    "text": "시작해",
+    "offset_ms": 19451.5,
+    "duration_ms": 638.3
+  },
+  {
+    "text": "다층",
+    "offset_ms": 20089.8,
+    "duration_ms": 425.5
+  },
+  {
+    "text": "신경망,",
+    "offset_ms": 20515.3,
+    "duration_ms": 851.0
+  },
+  {
+    "text": "손실",
+    "offset_ms": 21366.3,
+    "duration_ms": 425.5
+  },
+  {
+    "text": "함수,",
+    "offset_ms": 21791.8,
+    "duration_ms": 638.3
+  },
+  {
+    "text": "최적화까지",
+    "offset_ms": 22430.1,
+    "duration_ms": 1063.8
+  },
+  {
+    "text": "이어지는",
+    "offset_ms": 23493.9,
+    "duration_ms": 851.0
+  },
+  {
+    "text": "전체",
+    "offset_ms": 24344.9,
+    "duration_ms": 425.5
+  },
+  {
+    "text": "그림이",
+    "offset_ms": 24770.4,
+    "duration_ms": 638.3
+  },
+  {
+    "text": "머릿속에",
+    "offset_ms": 25408.7,
+    "duration_ms": 851.0
+  },
+  {
+    "text": "자리",
+    "offset_ms": 26259.7,
+    "duration_ms": 425.5
+  },
+  {
+    "text": "잡혔기를",
+    "offset_ms": 26685.2,
+    "duration_ms": 851.0
+  },
+  {
+    "text": "바랍니다.",
+    "offset_ms": 27536.2,
+    "duration_ms": 1063.8
+  }
+]

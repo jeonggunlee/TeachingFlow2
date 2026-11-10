@@ -1,0 +1,197 @@
+[
+  {
+    "text": "인공신경망의",
+    "offset_ms": 50.0,
+    "duration_ms": 1164.7
+  },
+  {
+    "text": "구조는",
+    "offset_ms": 1214.7,
+    "duration_ms": 582.4
+  },
+  {
+    "text": "딥러닝을",
+    "offset_ms": 1797.1,
+    "duration_ms": 776.5
+  },
+  {
+    "text": "이해하는",
+    "offset_ms": 2573.5,
+    "duration_ms": 776.5
+  },
+  {
+    "text": "데",
+    "offset_ms": 3350.0,
+    "duration_ms": 194.1
+  },
+  {
+    "text": "있어",
+    "offset_ms": 3544.1,
+    "duration_ms": 388.2
+  },
+  {
+    "text": "가장",
+    "offset_ms": 3932.4,
+    "duration_ms": 388.2
+  },
+  {
+    "text": "기본이",
+    "offset_ms": 4320.6,
+    "duration_ms": 582.4
+  },
+  {
+    "text": "되는",
+    "offset_ms": 4902.9,
+    "duration_ms": 388.2
+  },
+  {
+    "text": "출발점입니다.",
+    "offset_ms": 5291.2,
+    "duration_ms": 1358.8
+  },
+  {
+    "text": "뉴런이",
+    "offset_ms": 6650.0,
+    "duration_ms": 545.9
+  },
+  {
+    "text": "어떻게",
+    "offset_ms": 7195.9,
+    "duration_ms": 545.9
+  },
+  {
+    "text": "연결되고,",
+    "offset_ms": 7741.8,
+    "duration_ms": 909.9
+  },
+  {
+    "text": "정보가",
+    "offset_ms": 8651.7,
+    "duration_ms": 545.9
+  },
+  {
+    "text": "어떤",
+    "offset_ms": 9197.6,
+    "duration_ms": 363.9
+  },
+  {
+    "text": "방식으로",
+    "offset_ms": 9561.5,
+    "duration_ms": 727.9
+  },
+  {
+    "text": "흘러가는지를",
+    "offset_ms": 10289.4,
+    "duration_ms": 1091.8
+  },
+  {
+    "text": "이해해야",
+    "offset_ms": 11381.3,
+    "duration_ms": 727.9
+  },
+  {
+    "text": "이후",
+    "offset_ms": 12109.1,
+    "duration_ms": 363.9
+  },
+  {
+    "text": "수식과",
+    "offset_ms": 12473.1,
+    "duration_ms": 545.9
+  },
+  {
+    "text": "학습",
+    "offset_ms": 13019.0,
+    "duration_ms": 363.9
+  },
+  {
+    "text": "원리를",
+    "offset_ms": 13382.9,
+    "duration_ms": 545.9
+  },
+  {
+    "text": "제대로",
+    "offset_ms": 13928.8,
+    "duration_ms": 545.9
+  },
+  {
+    "text": "파악할",
+    "offset_ms": 14474.8,
+    "duration_ms": 545.9
+  },
+  {
+    "text": "수",
+    "offset_ms": 15020.7,
+    "duration_ms": 182.0
+  },
+  {
+    "text": "있습니다.",
+    "offset_ms": 15202.6,
+    "duration_ms": 909.9
+  },
+  {
+    "text": "생물학적",
+    "offset_ms": 16112.5,
+    "duration_ms": 772.5
+  },
+  {
+    "text": "뉴런과의",
+    "offset_ms": 16885.0,
+    "duration_ms": 772.5
+  },
+  {
+    "text": "비교에서",
+    "offset_ms": 17657.6,
+    "duration_ms": 772.5
+  },
+  {
+    "text": "시작해",
+    "offset_ms": 18430.1,
+    "duration_ms": 579.4
+  },
+  {
+    "text": "가중치,",
+    "offset_ms": 19009.6,
+    "duration_ms": 772.5
+  },
+  {
+    "text": "편향,",
+    "offset_ms": 19782.1,
+    "duration_ms": 579.4
+  },
+  {
+    "text": "활성화",
+    "offset_ms": 20361.5,
+    "duration_ms": 579.4
+  },
+  {
+    "text": "함수,",
+    "offset_ms": 20940.9,
+    "duration_ms": 579.4
+  },
+  {
+    "text": "그리고",
+    "offset_ms": 21520.3,
+    "duration_ms": 579.4
+  },
+  {
+    "text": "레이어",
+    "offset_ms": 22099.8,
+    "duration_ms": 579.4
+  },
+  {
+    "text": "구조까지",
+    "offset_ms": 22679.2,
+    "duration_ms": 772.5
+  },
+  {
+    "text": "단계적으로",
+    "offset_ms": 23451.7,
+    "duration_ms": 965.7
+  },
+  {
+    "text": "살펴보겠습니다.",
+    "offset_ms": 24417.4,
+    "duration_ms": 1545.1
+  }
+]

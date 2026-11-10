@@ -1,0 +1,162 @@
+[
+  {
+    "text": "퍼셉트론은",
+    "offset_ms": 50.0,
+    "duration_ms": 913.3
+  },
+  {
+    "text": "여러",
+    "offset_ms": 963.3,
+    "duration_ms": 365.3
+  },
+  {
+    "text": "입력값에",
+    "offset_ms": 1328.6,
+    "duration_ms": 730.6
+  },
+  {
+    "text": "각각",
+    "offset_ms": 2059.3,
+    "duration_ms": 365.3
+  },
+  {
+    "text": "가중치를",
+    "offset_ms": 2424.6,
+    "duration_ms": 730.6
+  },
+  {
+    "text": "곱한",
+    "offset_ms": 3155.2,
+    "duration_ms": 365.3
+  },
+  {
+    "text": "뒤",
+    "offset_ms": 3520.6,
+    "duration_ms": 182.7
+  },
+  {
+    "text": "합산하여,",
+    "offset_ms": 3703.2,
+    "duration_ms": 913.3
+  },
+  {
+    "text": "그",
+    "offset_ms": 4616.5,
+    "duration_ms": 182.7
+  },
+  {
+    "text": "결과가",
+    "offset_ms": 4799.2,
+    "duration_ms": 548.0
+  },
+  {
+    "text": "특정",
+    "offset_ms": 5347.2,
+    "duration_ms": 365.3
+  },
+  {
+    "text": "임계값을",
+    "offset_ms": 5712.5,
+    "duration_ms": 730.6
+  },
+  {
+    "text": "넘으면",
+    "offset_ms": 6443.1,
+    "duration_ms": 548.0
+  },
+  {
+    "text": "1,",
+    "offset_ms": 6991.1,
+    "duration_ms": 365.3
+  },
+  {
+    "text": "그렇지",
+    "offset_ms": 7356.5,
+    "duration_ms": 548.0
+  },
+  {
+    "text": "않으면",
+    "offset_ms": 7904.4,
+    "duration_ms": 548.0
+  },
+  {
+    "text": "0을",
+    "offset_ms": 8452.4,
+    "duration_ms": 365.3
+  },
+  {
+    "text": "출력하는",
+    "offset_ms": 8817.7,
+    "duration_ms": 730.6
+  },
+  {
+    "text": "이진",
+    "offset_ms": 9548.4,
+    "duration_ms": 365.3
+  },
+  {
+    "text": "분류",
+    "offset_ms": 9913.7,
+    "duration_ms": 365.3
+  },
+  {
+    "text": "모델입니다.",
+    "offset_ms": 10279.0,
+    "duration_ms": 1096.0
+  },
+  {
+    "text": "매우",
+    "offset_ms": 11375.0,
+    "duration_ms": 409.1
+  },
+  {
+    "text": "단순하지만",
+    "offset_ms": 11784.1,
+    "duration_ms": 1022.7
+  },
+  {
+    "text": "인간의",
+    "offset_ms": 12806.8,
+    "duration_ms": 613.6
+  },
+  {
+    "text": "뉴런",
+    "offset_ms": 13420.5,
+    "duration_ms": 409.1
+  },
+  {
+    "text": "동작",
+    "offset_ms": 13829.5,
+    "duration_ms": 409.1
+  },
+  {
+    "text": "방식을",
+    "offset_ms": 14238.6,
+    "duration_ms": 613.6
+  },
+  {
+    "text": "수학적으로",
+    "offset_ms": 14852.3,
+    "duration_ms": 1022.7
+  },
+  {
+    "text": "흉내",
+    "offset_ms": 15875.0,
+    "duration_ms": 409.1
+  },
+  {
+    "text": "낸",
+    "offset_ms": 16284.1,
+    "duration_ms": 204.5
+  },
+  {
+    "text": "첫",
+    "offset_ms": 16488.6,
+    "duration_ms": 204.5
+  },
+  {
+    "text": "시도였습니다.",
+    "offset_ms": 16693.2,
+    "duration_ms": 1431.8
+  }
+]

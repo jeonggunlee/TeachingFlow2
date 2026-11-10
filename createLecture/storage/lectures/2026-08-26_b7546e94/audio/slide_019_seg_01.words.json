@@ -1,0 +1,217 @@
+[
+  {
+    "text": "앞",
+    "offset_ms": 50.0,
+    "duration_ms": 186.9
+  },
+  {
+    "text": "슬라이드에서",
+    "offset_ms": 236.9,
+    "duration_ms": 1121.2
+  },
+  {
+    "text": "뉴런",
+    "offset_ms": 1358.0,
+    "duration_ms": 373.7
+  },
+  {
+    "text": "하나의",
+    "offset_ms": 1731.7,
+    "duration_ms": 560.6
+  },
+  {
+    "text": "수식을",
+    "offset_ms": 2292.3,
+    "duration_ms": 560.6
+  },
+  {
+    "text": "살펴봤다면,",
+    "offset_ms": 2852.9,
+    "duration_ms": 1121.2
+  },
+  {
+    "text": "이제",
+    "offset_ms": 3974.0,
+    "duration_ms": 373.7
+  },
+  {
+    "text": "그것을",
+    "offset_ms": 4347.8,
+    "duration_ms": 560.6
+  },
+  {
+    "text": "층",
+    "offset_ms": 4908.3,
+    "duration_ms": 186.9
+  },
+  {
+    "text": "전체로",
+    "offset_ms": 5095.2,
+    "duration_ms": 560.6
+  },
+  {
+    "text": "확장해",
+    "offset_ms": 5655.8,
+    "duration_ms": 560.6
+  },
+  {
+    "text": "보겠습니다.",
+    "offset_ms": 6216.3,
+    "duration_ms": 1121.2
+  },
+  {
+    "text": "한",
+    "offset_ms": 7337.5,
+    "duration_ms": 201.5
+  },
+  {
+    "text": "층의",
+    "offset_ms": 7539.0,
+    "duration_ms": 403.1
+  },
+  {
+    "text": "연산은",
+    "offset_ms": 7942.1,
+    "duration_ms": 604.6
+  },
+  {
+    "text": "z",
+    "offset_ms": 8546.7,
+    "duration_ms": 201.5
+  },
+  {
+    "text": "=",
+    "offset_ms": 8748.2,
+    "duration_ms": 403.1
+  },
+  {
+    "text": "Wx",
+    "offset_ms": 9151.3,
+    "duration_ms": 403.1
+  },
+  {
+    "text": "+",
+    "offset_ms": 9554.3,
+    "duration_ms": 604.6
+  },
+  {
+    "text": "b,",
+    "offset_ms": 10158.9,
+    "duration_ms": 403.1
+  },
+  {
+    "text": "h",
+    "offset_ms": 10562.0,
+    "duration_ms": 201.5
+  },
+  {
+    "text": "=",
+    "offset_ms": 10763.5,
+    "duration_ms": 403.1
+  },
+  {
+    "text": "f(z)로",
+    "offset_ms": 11166.6,
+    "duration_ms": 604.5
+  },
+  {
+    "text": "표현되는데,",
+    "offset_ms": 11771.2,
+    "duration_ms": 1209.2
+  },
+  {
+    "text": "여기서",
+    "offset_ms": 12980.4,
+    "duration_ms": 604.6
+  },
+  {
+    "text": "W는",
+    "offset_ms": 13584.9,
+    "duration_ms": 403.1
+  },
+  {
+    "text": "Weight",
+    "offset_ms": 13988.0,
+    "duration_ms": 1209.2
+  },
+  {
+    "text": "Matrix입니다.",
+    "offset_ms": 15197.2,
+    "duration_ms": 2015.3
+  },
+  {
+    "text": "행렬",
+    "offset_ms": 17212.5,
+    "duration_ms": 365.2
+  },
+  {
+    "text": "하나의",
+    "offset_ms": 17577.7,
+    "duration_ms": 547.9
+  },
+  {
+    "text": "곱셈으로",
+    "offset_ms": 18125.6,
+    "duration_ms": 730.5
+  },
+  {
+    "text": "그",
+    "offset_ms": 18856.1,
+    "duration_ms": 182.6
+  },
+  {
+    "text": "층에",
+    "offset_ms": 19038.7,
+    "duration_ms": 365.2
+  },
+  {
+    "text": "속한",
+    "offset_ms": 19404.0,
+    "duration_ms": 365.2
+  },
+  {
+    "text": "모든",
+    "offset_ms": 19769.2,
+    "duration_ms": 365.2
+  },
+  {
+    "text": "뉴런의",
+    "offset_ms": 20134.5,
+    "duration_ms": 547.9
+  },
+  {
+    "text": "가중합을",
+    "offset_ms": 20682.3,
+    "duration_ms": 730.5
+  },
+  {
+    "text": "동시에",
+    "offset_ms": 21412.8,
+    "duration_ms": 547.9
+  },
+  {
+    "text": "계산할",
+    "offset_ms": 21960.7,
+    "duration_ms": 547.9
+  },
+  {
+    "text": "수",
+    "offset_ms": 22508.5,
+    "duration_ms": 182.6
+  },
+  {
+    "text": "있다는",
+    "offset_ms": 22691.2,
+    "duration_ms": 547.9
+  },
+  {
+    "text": "점이",
+    "offset_ms": 23239.0,
+    "duration_ms": 365.2
+  },
+  {
+    "text": "핵심입니다.",
+    "offset_ms": 23604.3,
+    "duration_ms": 1095.7
+  }
+]
