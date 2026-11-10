@@ -364,6 +364,7 @@ function stepCreateHtml(w, status) {
     week:       String(w.week),
     week_title: w.title || '',
   });
+  if (authToken()) params.set('token', authToken());   // createLecture 변경 API용 — 도착 즉시 주소창에서 제거된다
   const createUrl = `${url}?${params.toString()}`;
 
   let statusHtml;
@@ -401,6 +402,7 @@ function stepPlayHtml(w, status) {
     week:       String(w.week),
     week_title: w.title || '',
   });
+  if (authToken()) listParams.set('token', authToken());
   const weekLecturesUrl = `${createUrl}/week-lectures?${listParams.toString()}`;
 
   let statusHtml;
@@ -433,6 +435,7 @@ function stepAnalyzeHtml(w, status) {
     week:       String(w.week),
     week_title: w.title || '',
   });
+  if (authToken()) analyzeParams.set('token', authToken());
   const weekAnalyzeUrl = `${url}/week-analyze?${analyzeParams.toString()}`;
 
   // 상태 확인 중

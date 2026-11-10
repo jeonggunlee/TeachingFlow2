@@ -14,7 +14,9 @@ import shutil
 from pathlib import Path
 
 import httpx
-from fastapi import APIRouter, BackgroundTasks, HTTPException, Request
+from fastapi import APIRouter, BackgroundTasks, Depends, HTTPException, Request
+
+from app.auth import require_admin
 from fastapi.responses import JSONResponse
 
 from app.config import settings
@@ -58,7 +60,7 @@ async def get_ledger(lecture_id: str):
 
 
 @router.post("/lectures/{lecture_id}/cqi-ledger/import")
-async def import_from_report(lecture_id: str, request: Request):
+async def import_from_report(lecture_id: str, request: Request, _: str = Depends(require_admin)):
     """analyzeLecture 보고서를 원장에 pending으로 취입."""
     base = _require(lecture_id)
     payload = await request.json()
@@ -93,7 +95,7 @@ async def import_from_report(lecture_id: str, request: Request):
 
 
 @router.post("/lectures/{lecture_id}/cqi-ledger")
-async def add_entry(lecture_id: str, request: Request):
+async def add_entry(lecture_id: str, request: Request, _: str = Depends(require_admin)):
     """교수자가 직접 지시문 추가 (즉시 승인 상태로 넣을 수도 있음)."""
     base = _require(lecture_id)
     payload = await request.json()
@@ -113,7 +115,8 @@ async def add_entry(lecture_id: str, request: Request):
 
 
 @router.patch("/lectures/{lecture_id}/cqi-ledger/{entry_id}")
-async def patch_entry(lecture_id: str, entry_id: str, request: Request):
+async def patch_entry(lecture_id: str, entry_id: str, request: Request,
+                      _: str = Depends(require_admin)):
     """승인 / 폐기 / 문구 수정 / 대체 표시."""
     base = _require(lecture_id)
     payload = await request.json()
@@ -274,7 +277,7 @@ async def _run_evolution(parent_id: str, new_id: str) -> None:
 
 
 @router.post("/lectures/{lecture_id}/evolve")
-async def evolve(lecture_id: str, background: BackgroundTasks):
+async def evolve(lecture_id: str, background: BackgroundTasks, _: str = Depends(require_admin)):
     """승인된 누적 CQI를 반영한 **새 버전**을 만든다."""
     parent = _require(lecture_id)
 

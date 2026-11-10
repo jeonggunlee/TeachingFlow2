@@ -281,7 +281,7 @@ venv activate 불필요 — 각 서비스의 `.venv/bin/uvicorn`을 직접 호�
 cd EDUTECH-3/portal
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
-cp .env.example .env          # 기본값으로 사용 가능
+cp .env.example .env          # PLAYLECTURE_ADMIN_PASSWORD 필수 (비어 있으면 기동 거부)
 uvicorn app.main:app --host 0.0.0.0 --port 8003 --reload
 # → http://localhost:8003
 
@@ -289,7 +289,7 @@ uvicorn app.main:app --host 0.0.0.0 --port 8003 --reload
 cd EDUTECH-3/createLecture
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
-cp .env.example .env          # ANTHROPIC_API_KEY 입력
+cp .env.example .env          # ANTHROPIC_API_KEY, ADMIN_PASSWORD(네 서비스 공통) 입력
 uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
 # → 포털에서 진입 (직접 접속 시 포털로 리디렉션)
 
@@ -330,4 +330,7 @@ uvicorn app.main:app --host 0.0.0.0 --port 8002 --reload
 | 키워드 추출 | 한국어 조사/어미 최장 일치 제거, 영어 소문자 정규화 |
 | CQI 슬라이드 누락 | Claude 응답에 없는 slide_idx는 stub 항목으로 자동 채움 |
 | 분석 요청 검증 | playLecture에 lecture_id 없으면 즉시 404 (조용한 실패 방지) |
+| 관리자 인증 | 네 서비스가 **같은 관리자 비밀번호**를 공유. 포털 로그인 토큰(`만료.난수.HMAC`, 키 `portal-admin:{비밀번호}`)을 createLecture·analyzeLecture도 그대로 검증한다. 포털은 서비스 링크에 `token`을 실어 보내고, 각 서비스의 `web/js/admin-auth.js`가 이를 localStorage에 옮긴 뒤 `/api/` 호출에 자동으로 붙인다(401이면 비밀번호 프롬프트 → `/api/auth/login`). 보호 대상: createLecture 변경 API 전부, analyzeLecture 분석 트리거·보고서 삭제 |
+| 비밀번호 기본값 | **없음**. `ADMIN_PASSWORD`/`PLAYLECTURE_ADMIN_PASSWORD`가 비어 있거나 `changeme`·`admin` 같은 값이면 서비스가 기동을 거부한다 |
+| 강의 ID 검증 | `^[A-Za-z0-9][A-Za-z0-9_-]{0,63}$`. createLecture `lecture_dir()`·playLecture `lecture_json_path()`가 거부(400/404) — `..` 로 storage 전체가 삭제되던 경로 차단 |
 | 퀴즈·시험 연동 | 미구현 (A5, A6 단계) — playLecture 확장 후 추가 예정 |

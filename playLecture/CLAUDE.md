@@ -178,6 +178,24 @@ GET /static/{lecture_id}/audio/slide_NNN_seg_MM.words.json
 
 ---
 
+## 6-2. 동시 수강 성능 (가상 수강생 20명 테스트, 2026-11-10)
+
+20명이 동시에 진도·난이도·채팅을 쓰는 시뮬레이션에서 드러난 세 병목과 조치:
+
+| 증상 | 원인 | 조치 |
+|------|------|------|
+| `QueuePool limit ... reached` → 500 | SQLite 기본 저널(delete)에서 쓰기가 직렬화되는데 풀이 5+10개 | `database.py`: WAL 저널 + `busy_timeout` 10s + 풀 30+30 (`PRAGMA`는 connect 이벤트에서 적용) |
+| 채팅 POST 5 rps, 커넥션 60개 전부 잠김 | AI 교수 답변을 `BackgroundTasks`로 돌려 **요청의 DB 세션이 Claude 호출(5~10초)이 끝날 때까지 반환되지 않음** | `chat.py`: `asyncio.create_task`로 요청과 분리(`_spawn`) → 117 rps |
+| 로그인 p95 11초, 다른 요청까지 지연 | bcrypt(~150ms CPU)를 async 핸들러에서 동기 호출 → 이벤트 루프 정지 | `auth.py`: `run_in_threadpool` → p95 190ms |
+
+측정(20 동시 클라이언트, 15초): 진도 저장 650 rps, 난이도 550 rps, 채팅 조회 570 rps, 채팅 등록 117 rps, 로그인 115 rps, 500 없음.
+
+> **주의 — AI 기능은 `.env`가 아니라 프로세스 환경변수로도 켜진다.** `ANTHROPIC_API_KEY`가 셸에 export 돼 있으면
+> `.env`에 없어도 `is_enabled()`가 참이 되어, `ai_answer`가 켜진 강의는 질문마다 Claude를 호출한다(비용 발생).
+> 테스트 전에 `/api/lectures/{id}/settings`로 옵션 상태를 확인할 것.
+
+---
+
 ## 7. ZIP 재업로드 동작
 
 동일 `lecture_id`의 ZIP 재업로드 시:
@@ -248,7 +266,7 @@ python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 cp .env.example .env
 # .env:
-#   ADMIN_PASSWORD=changeme
+#   ADMIN_PASSWORD=<네 서비스 공통 비밀번호 — 비어 있거나 changeme/admin 이면 기동 거부>
 #   SECRET_KEY=랜덤문자열
 #   CREATELECTURE_STORAGE_ROOT=/path/to/createLecture/storage/lectures  # 파일시스템 공유
 #   ANTHROPIC_API_KEY=sk-ant-...   # AI 교수 답변·자동 질문 생성용 (없으면 기능 비활성)

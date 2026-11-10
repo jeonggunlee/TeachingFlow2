@@ -40,11 +40,15 @@ CREATE TABLE cqi_reports (
 |--------|------|------|
 | GET  | `/api/lectures` | playLecture 강의 목록 조회 (proxy) |
 | GET  | `/api/week-lectures` | createLecture에서 특정 course+week 강의 목록 조회 (분석 상태 포함) |
-| POST | `/api/analyze/{lecture_id}` | 단일 강의 분석 시작 (202 Accepted, 백그라운드 처리) |
-| POST | `/api/analyze-week` | course+week 전체 강의 일괄 분석 시작 |
+| POST | `/api/auth/login` | 관리자 비밀번호 → Bearer 토큰 (포털 토큰과 호환) |
+| POST | `/api/analyze/{lecture_id}` | 단일 강의 분석 시작 (202 Accepted, 백그라운드 처리) — **Bearer 토큰 필수** |
+| POST | `/api/analyze-week` | course+week 전체 강의 일괄 분석 시작 — **Bearer 토큰 필수** (포털 프록시가 전달) |
 | GET  | `/api/reports` | 저장된 CQI 보고서 목록 (`?lecture_id=X` 지정 시 해당 강의 이력만, 최신순) |
 | GET  | `/api/reports/{id}` | 보고서 상세 (report_json 포함) |
-| DELETE | `/api/reports/{id}` | 보고서 삭제 |
+| DELETE | `/api/reports/{id}` | 보고서 삭제 — **Bearer 토큰 필수** |
+
+인증은 `app/auth.py`(포털과 같은 HMAC 토큰, 키 `portal-admin:{PLAYLECTURE_ADMIN_PASSWORD}`).
+`week-analyze.html`은 `admin-auth.js`가 포털에서 넘어온 `token`을 보관하고 fetch에 자동으로 붙인다.
 
 ### `GET /api/week-lectures?course=X&week=Y` 응답
 ```json
@@ -117,6 +121,14 @@ POST /api/analyze/{lecture_id}
         │
         └── 5. CQIReport(status=done, report_json=...) DB 업데이트
 ```
+
+---
+
+### 응답 길이 한도
+
+`run_analysis`의 Claude 호출은 `max_tokens=16384`. 예전 4096에서는 슬라이드 20장 이상(질문 200여 건이 쌓인 주차)에서
+응답 JSON이 중간에 잘려 `Unterminated string ...` 파싱 오류로만 보였다(2026-11-10). 지금은 `stop_reason == "max_tokens"`를
+검사해 잘림을 그대로 `error_message`에 남긴다. 그래도 잘리면 슬라이드를 나눠 호출하도록 확장해야 한다.
 
 ---
 
@@ -220,7 +232,7 @@ cp .env.example .env
 # .env 편집:
 #   ANTHROPIC_API_KEY=sk-ant-...
 #   PLAYLECTURE_URL=http://localhost:8001
-#   PLAYLECTURE_ADMIN_PASSWORD=changeme
+#   PLAYLECTURE_ADMIN_PASSWORD=<네 서비스 공통 비밀번호 — 비어 있거나 changeme 면 기동 거부>
 #   CREATELECTURE_URL=http://localhost:8000
 
 uvicorn app.main:app --host 0.0.0.0 --port 8002 --reload

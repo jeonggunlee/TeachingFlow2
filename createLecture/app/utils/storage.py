@@ -1,9 +1,25 @@
 import json
+import re
 from datetime import datetime
 from pathlib import Path
 from uuid import uuid4
 
 from app.config import settings
+
+# 강의 ID 허용 형식: 영숫자로 시작, 영숫자·_·- 만, 64자 이하.
+# 기존 ID(`2026-05-24_d6b1d14c`, `2026-05-24_AI101W2_9ad01d`)는 모두 통과하고
+# `..`·`/`·숨김 파일처럼 storage 밖을 가리킬 수 있는 값은 전부 거부한다.
+_LECTURE_ID_RE = re.compile(r"[A-Za-z0-9][A-Za-z0-9_-]{0,63}")
+
+
+class InvalidLectureId(ValueError):
+    """경로에 쓸 수 없는 강의 ID. main.py 가 400 으로 변환한다."""
+
+
+def validate_lecture_id(lecture_id) -> str:
+    if not isinstance(lecture_id, str) or not _LECTURE_ID_RE.fullmatch(lecture_id):
+        raise InvalidLectureId(f"잘못된 강의 ID: {lecture_id!r}")
+    return lecture_id
 
 
 def new_lecture_id() -> str:
@@ -11,7 +27,9 @@ def new_lecture_id() -> str:
 
 
 def lecture_dir(lecture_id: str) -> Path:
-    return settings.storage_root / "lectures" / lecture_id
+    # 예전에는 받은 문자열을 그대로 경로에 붙였다 — DELETE /api/lectures/.. 가
+    # storage 디렉터리 전체를 rmtree 할 수 있었다.
+    return settings.storage_root / "lectures" / validate_lecture_id(lecture_id)
 
 
 def ensure_lecture_dirs(lecture_id: str) -> Path:

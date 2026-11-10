@@ -1,9 +1,10 @@
 import json
 import shutil
 
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, Depends, HTTPException
 from fastapi.responses import JSONResponse
 
+from app.auth import require_admin
 from app.config import settings
 from app.utils.storage import lecture_dir
 
@@ -76,7 +77,7 @@ async def get_lecture(lecture_id: str):
 
 
 @router.delete("/lectures/{lecture_id}")
-async def delete_lecture(lecture_id: str):
+async def delete_lecture(lecture_id: str, _: str = Depends(require_admin)):
     """강의 디렉터리 전체를 디스크에서 삭제."""
     base = lecture_dir(lecture_id)
     if not base.exists():

@@ -62,7 +62,11 @@ CLAUDE_MODEL=claude-sonnet-4-6
 TTS_VOICE=ko-KR-InJoonNeural
 STORAGE_ROOT=./storage
 MAX_UPLOAD_MB=80
+ADMIN_PASSWORD=...          # 네 서비스 공통 관리자 비밀번호. 비어 있거나 changeme 면 기동 거부 (config.py)
 ```
+
+`auth.py`: `require_admin` 의존성(포털과 같은 HMAC 토큰 검증) + `POST /api/auth/login`.
+`utils/storage.py`: `validate_lecture_id()` — `lecture_dir()`이 항상 거치며, 잘못된 ID는 `InvalidLectureId` → main.py에서 400.
 
 ---
 

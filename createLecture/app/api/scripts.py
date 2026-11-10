@@ -1,9 +1,10 @@
 import json
 
-from fastapi import APIRouter, BackgroundTasks, HTTPException, Request
+from fastapi import APIRouter, BackgroundTasks, Depends, HTTPException, Request
 from fastapi.responses import JSONResponse
 
 import app.utils.sse as sse
+from app.auth import require_admin
 from app.utils.storage import lecture_dir
 
 router = APIRouter(prefix="/api", tags=["scripts"])
@@ -54,7 +55,7 @@ async def get_scripts(lecture_id: str):
 
 
 @router.put("/lectures/{lecture_id}/scripts")
-async def put_scripts(lecture_id: str, request: Request):
+async def put_scripts(lecture_id: str, request: Request, _: str = Depends(require_admin)):
     payload = await request.json()
     base = lecture_dir(lecture_id)
     vision_dir = base / "vision"
@@ -95,7 +96,8 @@ async def put_scripts(lecture_id: str, request: Request):
 
 
 @router.post("/lectures/{lecture_id}/synthesize")
-async def start_synthesize(lecture_id: str, background: BackgroundTasks):
+async def start_synthesize(lecture_id: str, background: BackgroundTasks,
+                           _: str = Depends(require_admin)):
     base = lecture_dir(lecture_id)
     if not base.exists():
         raise HTTPException(404, "lecture not found")
@@ -107,7 +109,7 @@ async def start_synthesize(lecture_id: str, background: BackgroundTasks):
 
 
 @router.post("/lectures/{lecture_id}/slides/{slide_idx}/quiz/generate")
-async def generate_quiz_draft(lecture_id: str, slide_idx: int):
+async def generate_quiz_draft(lecture_id: str, slide_idx: int, _: str = Depends(require_admin)):
     """슬라이드 컨텍스트로 4지선다 퀴즈 초안 생성. 저장은 하지 않음.
 
     slide_idx 는 vision JSON의 1-based 'slide_index'.
@@ -137,7 +139,7 @@ async def generate_quiz_draft(lecture_id: str, slide_idx: int):
 
 
 @router.post("/lectures/{lecture_id}/rebuild-json")
-async def rebuild_json(lecture_id: str):
+async def rebuild_json(lecture_id: str, _: str = Depends(require_admin)):
     """TTS 재합성 없이 lecture.json만 재빌드 (형광펜 위치 변경 등에 사용)."""
     base = lecture_dir(lecture_id)
     if not base.exists():

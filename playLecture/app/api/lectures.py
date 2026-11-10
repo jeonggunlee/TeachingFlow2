@@ -1,4 +1,5 @@
 import json
+import re
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Optional
@@ -14,6 +15,9 @@ from ..models import Lecture
 
 router = APIRouter()
 
+# createLecture 와 같은 규칙 — `..` 같은 값이 storage 밖 경로를 만들지 못하게 한다.
+_LECTURE_ID_RE = re.compile(r"[A-Za-z0-9][A-Za-z0-9_-]{0,63}")
+
 
 def lecture_json_path(lecture_id: str) -> Optional[Path]:
     """이 강의의 lecture.json 실제 경로. 두 저장소 어디에도 없으면 None.
@@ -21,6 +25,8 @@ def lecture_json_path(lecture_id: str) -> Optional[Path]:
     createLecture에서 강의 디렉터리가 삭제되면 playLecture DB 행만 남아
     "목록에는 보이지만 열면 404"인 유령 강의가 된다. 이 함수로 실재 여부를 판정한다.
     """
+    if not _LECTURE_ID_RE.fullmatch(lecture_id or ""):
+        return None
     for root in (STORAGE_ROOT, CREATELECTURE_STORAGE_ROOT):
         p = root / "lectures" / lecture_id / "lecture.json"
         if p.exists():

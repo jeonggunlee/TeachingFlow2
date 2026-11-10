@@ -83,6 +83,12 @@ CREATE TABLE weekly_lectures (
 비밀번호를 바꾸면 기존 토큰이 한 번에 무효가 된다.
 로그아웃은 프로세스 메모리의 폐기 목록(`_REVOKED`)에 담는다 — 재시작하면 비워진다.
 
+**토큰은 다른 서비스에서도 통한다.** createLecture·analyzeLecture가 같은 비밀번호로 같은 서명을
+검증하므로, 포털은 강의 제작·강의 목록·분석 페이지 링크에 `token=`을 실어 보낸다(보고서 보기 링크는 제외).
+도착한 페이지의 `admin-auth.js`가 토큰을 localStorage로 옮기고 주소창에서 지운다.
+`/api/proxy/analyze-week`도 받은 Bearer 토큰을 analyzeLecture로 그대로 전달한다.
+`PLAYLECTURE_ADMIN_PASSWORD`가 비어 있거나 `changeme`이면 포털이 기동을 거부한다.
+
 ### 과목 CRUD
 | 메서드 | 경로 | 설명 |
 |--------|------|------|

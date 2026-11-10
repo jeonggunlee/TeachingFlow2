@@ -143,8 +143,15 @@ createLecture/
 
 ## 5. 주요 API
 
+**변경 API(POST/PUT/PATCH/DELETE)는 `Authorization: Bearer {토큰}` 필수.** 토큰은 포털 로그인 토큰과
+동일한 형식·서명(`app/auth.py`, 키 `portal-admin:{ADMIN_PASSWORD}`)이라 포털에서 넘어온 토큰이 그대로 통한다.
+직접 접속 시에는 `POST /api/auth/login {password}`로 발급받는다. 프런트는 `web/js/admin-auth.js`가
+URL의 `token`을 보관하고 `/api/` fetch에 자동으로 붙이며, 401이면 비밀번호를 물어 재시도한다.
+조회·SSE·정적 파일은 인증 없음. 강의 ID는 `^[A-Za-z0-9][A-Za-z0-9_-]{0,63}$`만 허용(아니면 400).
+
 | 메서드 | 경로 | 설명 |
 |--------|------|------|
+| POST | `/api/auth/login` | 관리자 비밀번호 → Bearer 토큰 (포털 토큰과 호환) |
 | POST | `/api/upload-prompt` | 프롬프트로 웹 슬라이드 생성, course/week/week_title을 meta.json에 저장 |
 | GET  | `/api/jobs/{id}/events` | SSE 진행 스트림 |
 | GET  | `/api/lectures` | 완료 강의 목록 (course=, week= 쿼리 필터 지원) |
@@ -270,7 +277,7 @@ python -m playwright install chromium
 cd EDUTECH-3/createLecture
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
-cp .env.example .env   # ANTHROPIC_API_KEY 입력
+cp .env.example .env   # ANTHROPIC_API_KEY, ADMIN_PASSWORD(네 서비스 공통, 비어 있으면 기동 거부) 입력
 
 uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
 # → http://localhost:8000  (포털에서 진입해야 함)

@@ -10,12 +10,12 @@
 
 ### 핵심 위험 (즉시 조치)
 
-- [ ] **무인증 DELETE + path traversal 가능성**
+- [x] **무인증 DELETE + path traversal 가능성** *(2026-11-10 완료 — 변경 API 전부 Bearer 토큰, `validate_lecture_id`)*
   `DELETE /api/lectures/{id}`가 인증 없이 호출 가능, `lecture_id` 입력 검증 부재 → 임의 디렉토리 삭제 위험
 - [ ] **SSE 큐 메모리 의존**
   모듈 전역 dict라 uvicorn 재시작·다중 워커 시 진행 상태 영구 손실
 - [ ] **테스트 0건**
-  회귀 검증 불가능
+  회귀 검증 불가능 *(2026-11-10: playLecture 20명 동시 수강 시뮬레이션 스크립트로 1차 부하·기능 검증 — 영구 테스트로 편입은 미완)*
 
 ### 주요 추천 기능 (H 우선순위)
 
@@ -25,7 +25,7 @@
   `POST /api/cqi/import?report_url=` 추가, 사용자 수동 JSON 다운로드→붙여넣기 단계 제거
 - [ ] **작업 큐 영속화**
   SQLite/Redis 기반
-- [ ] **인증·인가 도입**
+- [x] **인증·인가 도입** *(2026-11-10 완료 — 포털 토큰 공유, analyzeLecture 트리거·삭제 포함, 비밀번호 기본값 제거)*
   최소 POST/PUT/DELETE 보호
 
 ---

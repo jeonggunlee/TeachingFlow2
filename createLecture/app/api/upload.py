@@ -11,7 +11,9 @@ import json
 from pathlib import Path
 from typing import Optional
 
-from fastapi import APIRouter, BackgroundTasks, Form, HTTPException
+from fastapi import APIRouter, BackgroundTasks, Depends, Form, HTTPException
+
+from app.auth import require_admin
 from fastapi.responses import JSONResponse
 
 from app.config import settings
@@ -196,6 +198,7 @@ async def upload_from_prompt(
     course: str = Form(""),
     week: str = Form(""),
     week_title: str = Form(""),
+    _: str = Depends(require_admin),
 ):
     """교수자 프롬프트로 웹 슬라이드를 생성한 뒤 강의 파이프라인을 실행한다."""
     prompt_clean = (prompt or "").strip()

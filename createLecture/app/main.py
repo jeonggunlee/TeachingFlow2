@@ -1,11 +1,12 @@
 from pathlib import Path
 
-from fastapi import FastAPI, HTTPException
-from fastapi.responses import FileResponse
+from fastapi import FastAPI, HTTPException, Request
+from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 
 _NO_CACHE = {"Cache-Control": "no-cache, no-store, must-revalidate", "Pragma": "no-cache"}
 
+from app.auth import router as auth_router
 from app.api.cqi import router as cqi_router
 from app.api.evolve import router as evolve_router
 from app.api.jobs import router as jobs_router
@@ -13,17 +14,25 @@ from app.api.lectures import router as lectures_router
 from app.api.scripts import router as scripts_router
 from app.api.upload import router as upload_router
 from app.config import settings
+from app.utils.storage import InvalidLectureId
 
 WEB_DIR = Path(__file__).resolve().parent.parent / "web"
 
 app = FastAPI(title="HALLYM EDUTECH — Lecture Creation")
 
+app.include_router(auth_router)
 app.include_router(upload_router)
 app.include_router(jobs_router)
 app.include_router(lectures_router)
 app.include_router(scripts_router)
 app.include_router(cqi_router)
 app.include_router(evolve_router)
+
+
+@app.exception_handler(InvalidLectureId)
+async def _invalid_lecture_id(request: Request, exc: InvalidLectureId):
+    return JSONResponse(status_code=400, content={"detail": str(exc)})
+
 
 (settings.storage_root / "lectures").mkdir(parents=True, exist_ok=True)
 app.mount(

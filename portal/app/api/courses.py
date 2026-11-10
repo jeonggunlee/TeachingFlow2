@@ -354,13 +354,16 @@ async def status_week(course: str = "", week: str = ""):
 
 @router.post("/api/proxy/analyze-week", status_code=202)
 async def proxy_analyze_week(course: str = "", week: str = "",
-                             _: str = Depends(require_admin)):
-    """course+week 분석 트리거를 analyzeLecture 서비스로 전달."""
+                             token: str = Depends(require_admin)):
+    """course+week 분석 트리거를 analyzeLecture 서비스로 전달.
+
+    analyzeLecture 도 같은 비밀번호로 서명한 토큰을 요구하므로 포털 토큰을 그대로 넘긴다."""
     async with httpx.AsyncClient(timeout=15.0) as client:
         try:
             r = await client.post(
                 f"{ANALYZELECTURE_URL}/api/analyze-week",
                 params={"course": course, "week": week},
+                headers={"Authorization": f"Bearer {token}"},
             )
             return r.json()
         except Exception as e:

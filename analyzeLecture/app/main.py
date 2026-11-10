@@ -6,6 +6,7 @@ from fastapi.staticfiles import StaticFiles
 
 from .database import init_db
 from .api.analyze import router
+from .auth import router as auth_router
 
 WEB = Path(__file__).parent.parent / "web"
 
@@ -22,6 +23,7 @@ async def startup():
 
 
 app.include_router(router)
+app.include_router(auth_router)
 
 @app.get("/css/{filename}")
 async def css_file(filename: str):
