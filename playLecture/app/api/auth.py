@@ -3,6 +3,7 @@ from datetime import datetime, timezone
 
 from fastapi import APIRouter, Depends, Header, HTTPException
 from passlib.context import CryptContext
+from starlette.concurrency import run_in_threadpool
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -14,6 +15,10 @@ from .deps import get_current_user
 router  = APIRouter(prefix="/api/auth")
 pwd_ctx = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
+# bcrypt 는 호출당 ~150ms 의 순수 CPU 작업이다. async 핸들러에서 그대로 부르면 이벤트 루프가 멈춰
+# 수강생 20명이 동시에 로그인할 때 모든 요청(진도 저장·채팅 포함)이 수 초씩 밀렸다(2026-11-10 실측 p95 3.6s).
+# 스레드풀로 보내 루프를 막지 않는다.
+
 
 @router.post("/register")
 async def register(body: RegisterIn, db: AsyncSession = Depends(get_db)):
@@ -24,7 +29,7 @@ async def register(body: RegisterIn, db: AsyncSession = Depends(get_db)):
     user = User(
         username=body.username,
         display_name=body.display_name,
-        password_hash=pwd_ctx.hash(body.password),
+        password_hash=await run_in_threadpool(pwd_ctx.hash, body.password),
         created_at=datetime.now(timezone.utc).isoformat(),
     )
     db.add(user)
@@ -37,7 +42,7 @@ async def register(body: RegisterIn, db: AsyncSession = Depends(get_db)):
 async def login(body: LoginIn, db: AsyncSession = Depends(get_db)):
     result = await db.execute(select(User).where(User.username == body.username))
     user = result.scalar_one_or_none()
-    if not user or not pwd_ctx.verify(body.password, user.password_hash):
+    if not user or not await run_in_threadpool(pwd_ctx.verify, body.password, user.password_hash):
         raise HTTPException(401, "아이디 또는 비밀번호가 틀렸습니다.")
 
     token = secrets.token_urlsafe(32)

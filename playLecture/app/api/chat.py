@@ -1,7 +1,8 @@
+import asyncio
 from datetime import datetime, timezone
 from typing import Optional
 
-from fastapi import APIRouter, BackgroundTasks, Depends
+from fastapi import APIRouter, Depends
 from sqlalchemy import func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -17,6 +18,18 @@ router = APIRouter()
 
 AI_TEACHER_NAME = "AI 교수"
 AI_QUESTION_CAP = 3   # 슬라이드당 자동 생성 AI 질문 최대 개수 (스팸 방지)
+
+# AI 교수 답변은 요청과 분리된 태스크로 돌린다.
+# BackgroundTasks 로 묶으면 요청의 DB 세션(get_db)이 답변 생성(Claude 호출 5~10초)이 끝날 때까지
+# 반환되지 않아, 수강생 20명이 질문을 올리자 커넥션 풀 60개가 모두 잠기고 500 이 났다(2026-11-10 실측).
+# 생성 중인 태스크 참조를 들고 있어야 GC 로 중간에 사라지지 않는다.
+_ai_tasks: set = set()
+
+
+def _spawn(coro) -> None:
+    task = asyncio.create_task(coro)
+    _ai_tasks.add(task)
+    task.add_done_callback(_ai_tasks.discard)
 
 
 def _is_teacher(username: Optional[str]) -> bool:
@@ -85,7 +98,6 @@ async def post_message(
     lecture_id: str,
     slide_idx: int,
     body: ChatIn,
-    background: BackgroundTasks,
     user: User = Depends(get_current_user),
     db: AsyncSession = Depends(get_db),
 ):
@@ -106,10 +118,10 @@ async def post_message(
     await db.commit()
     await db.refresh(msg)
 
-    # AI 교수 답변 설정이 켜져 있으면 백그라운드로 답변 생성
+    # AI 교수 답변 설정이 켜져 있으면 요청과 분리된 태스크로 답변 생성
     settings = await get_settings(db, lecture_id)
     if settings and settings.ai_answer and ai_tutor.is_enabled():
-        background.add_task(_bg_answer, lecture_id, slide_idx, body.message)
+        _spawn(_bg_answer(lecture_id, slide_idx, body.message))
 
     return _serialize(msg, user.username, user.id)
 
